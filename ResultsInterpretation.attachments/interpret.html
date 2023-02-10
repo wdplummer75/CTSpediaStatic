@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+<title> Dynamic ResultsInterpretation &lt; CTSpedia &lt; TWiki</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+
+<script type="text/javascript" src="interpret.js"></script>
+</head>
+<body class="patternViewPage">
+
+<div id="nojs">
+<strong>Please enable javascript with popups to use this page.</strong>
+</div>
+<div id="hasjs" style="visibility:hidden">
+
+    <h1>Interpretation of Relative Risk</h1>
+    <h2>Directions</h2>
+<p>
+Enter the estimated relative risk from your study, along with the
+	confidence limits, into the table below. 
+</p>
+<p>
+Interpretation requires assessing whether the estimated effect would
+	be large enough to be important if it turned out to be exactly
+	right. "Important" can mean important for patients, for public
+	health, or for scientific understanding. Similar assessments
+	are also needed for the confidence bounds.  Use the pull-down
+	menus to provide these assessments.
+</p>
+<p>
+When you have filled in all the values, suggested text appears below
+	the table. You can change the values and the text will be
+	rewritten appropriately. You will likely need to adapt it
+	further for your circumstances.
+</p>
+      
+<div class="input">
+<form action="writeup" id="user-input">
+	<p>
+	<table>
+	  <thead>
+	    <tr>
+	      <th></th>
+	      <th>Log Relative Risk</th>
+	      <th>Relative Risk</th>
+	      <th>Importance</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	    <th>Estimate</th>
+	    <td><input
+	    onchange="Interp.computeregular(this)" class="numeric" /></td>
+	    <td><input
+	    onchange="Interp.computelog(this)" class="numeric" /></td>
+	    <td><select onchange="Interp.checkSubstance(this)">
+		<option value="-9999" selected="true">Please select interpretation</option>
+		<option value="-2">Important harm</option>
+		<option value="-1">Maybe important harm</option>
+		<option value="0">Too small to be important</option>
+		<option value="1">Maybe important benefit</option>
+		<option value="2">Important benefit</option>
+	      </select>
+	      </td>
+	    </tr>
+
+	    <tr>
+	    <th>Lower Confidence Limit</th>
+	    <td><input 
+	    onchange="Interp.computeregular(this)" class="numeric" /></td>
+	    <td><input 
+	    onchange="Interp.computelog(this)" class="numeric" /></td>
+	    <td><select onchange="Interp.checkSubstance(this)">
+		<option value="-9999" selected="true">Please select interpretation</option>
+		<option value="-2">Important harm</option>
+		<option value="-1">Maybe important harm</option>
+		<option value="0">Too small to be important</option>
+		<option value="1">Maybe important benefit</option>
+		<option value="2">Important benefit</option>
+	      </select>
+	      </td>
+	    </tr>
+
+	    <tr>
+	    <th>Upper Confidence Limit</th>
+	    <td><input
+	    onchange="Interp.computeregular(this)" class="numeric" /></td>
+	    <td><input
+	    onchange="Interp.computelog(this)" class="numeric" /></td>
+	    <td><select onchange="Interp.checkSubstance(this)">
+		<option value="-9999" selected="true">Please select interpretation</option>
+		<option value="-2">Important harm</option>
+		<option value="-1">Maybe important harm</option>
+		<option value="0">Too small to be important</option>
+		<option value="1">Maybe important benefit</option>
+		<option value="2">Important benefit</option>
+	      </select>
+	      </td>
+	    </tr>
+
+	  </tbody>
+	</table>
+	</p>
+</form>
+</div>
+</div>
+<h2>Sample Text</h2>
+<div class="manuscript" id="suggested">
+</div>
+
+<!-- we are using this table only as a data source.
+Eventually it could be retrieved using ajax.  By putting it at the end
+I hope it won't interefere with page presentation time.-->
+
+<table id="texttemplate" style="visibility: collapse" cellspacing="0" cellpadding="3">
+<caption>estimate-CI combos</caption>
+<tr>
+<td><b>Estimate</b></td>
+<td><b>Lower Confidence Bound</b></td>
+<td><b>Upper Confidence Bound</b></td>
+<td><b>P&lt;0.05?</b></td>
+<td>Model Text for a Relative Risk</td>
+</tr>
+<tr>
+<td>Important Benefit</td>
+<td>Important Benefit</td>
+<td>Important Benefit</td>
+<td>Yes</td>
+<td>We found strong evidence for clinically important risk reduction, with the estimated reduction being 0.EE-fold and the confidence interval supporting a substantial reduction in risk by at least a factor of 0.UU.</td>
+</tr>
+<tr>
+<td>Important Benefit</td>
+<td>Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Yes</td>
+<td>We estimated a clinically important and statistically significant 0.EE-fold reduction in risk.  The confidence interval supports a reduction in risk by at least a factor of 0.UU, but this could possibly be considered too little risk reduction to be clinically important.</td>
+</tr>
+<tr>
+<td>Important Benefit</td>
+<td>Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>No</td>
+<td>Our results suggest a clinically important estimated risk reduction of 0.EE-fold, but this did not reach statistical significance.  The confidence interval does provide strong evidence against any substantial harm, arguing against increases in risk of more than U.UU-fold.</td>
+</tr>
+<tr>
+<td>Important Benefit</td>
+<td>Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>Yes</td>
+<td>We estimated a clinically important and statistically significant 0.EE-fold reduction in risk.  Our results therefore suggest a clinically important benefit, although the upper confidence limit of 0.UU is too little risk reduction to be clinically important.</td>
+</tr>
+<tr>
+<td>Important Benefit</td>
+<td>Important Benefit</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>Our results suggest a clinically important estimated risk reduction of 0.EE-fold, but this did not reach statistical significance.  In addition, the confidence interval leaves open the possibility of harm, because it includes increases in risk of up to U.UU-fold, which could possibly be considered clinically important.</td>
+</tr>
+<tr>
+<td>Important Benefit</td>
+<td>Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>Our results provide weak evidence for a clinically important 0.EE-fold risk reduction.  This did not reach statistical significance, and the confidence interval even leaves open the possibility of harm, because it includes increases in risk up to U.UU, which is large enough to be clinically important.</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Yes</td>
+<td>The estimated 0.EE-fold risk reduction was statistically significant and large enough to possibly be clinically important.  The confidence interval leaves open the possibility of a clearly clinically important risk reduction (as much as 0.LL) and argues against a clearly unimportant benefit, because the upper bound of 0.UU-fold risk reduction could be considered important.</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>No</td>
+<td>The estimated 0.EE-fold risk reduction was enough to possibly be considered clinically important but was not statistically significant.  The confidence interval leaves open the possibility of risk reduction large enough to be clearly clinically important (0.LL-fold) and argues against any important harm, because the upper bound of U.UU is too small to be important.</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>Yes</td>
+<td>The estimated 0.EE-fold risk reduction was statistically significant and large enough to possibly be considered clinically important.  The confidence interval leaves open the possibility of risk reductions clearly large enough (as much as 0.LL) to be clinically important and some small enough (as little as 0.UU) to be clearly unimportant.</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Important Benefit</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated 0.EE-fold risk reduction was not statistically significant but was large enough to possibly be considered clinically important.  The confidence interval leaves open the possibility of risk reductions (as much as 0.LL) of clear clinical importance but also increases in risk large enough (up to U.UU) to possibly be considered clinically important harm.</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated 0.EE-fold risk reduction was not statistically significant but was large enough to possibly be considered clinically important.  The study is relatively uninformative, because the confidence interval includes both clinically important risk reductions (as much as 0.LL) and clinically important increases in risk (up to U.UU).</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Yes</td>
+<td>The estimated 0.EE-fold risk reduction was statistically significant and large enough to possibly be considered clinically important.  The confidence interval provides strong evidence for a risk reduction in the range 0.LL to 0.UU-fold, but the clinical importance of reductions in this range could be considered unclear.</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>No</td>
+<td>The estimated 0.EE-fold risk reduction was not statistically significant but was large enough to possibly be considered clinically important.  The confidence argues against reductions large enough to be clearly important (at most 0.LL-fold) and also against increases large enough to be important (no more than U.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>Yes</td>
+<td>The estimated 0.EE-fold risk reduction was statistically significant and large enough to possibly be considered clinically important.  The confidence argues against reductions large enough to be clearly important (at most 0.LL-fold), but leaves open the possibility of reductions too small to be important (as little as 0.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated 0.EE-fold risk reduction was not statistically significant but was large enough to possibly be considered clinically important.  The confidence argues against reductions large enough to be clearly important (at most 0.LL-fold), and it leaves open the possibility of increases large enough to possibly be considered important (as much as U.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated 0.EE-fold risk reduction was not statistically significant but was large enough to possibly be considered clinically important.  The confidence argues against reductions large enough to be clearly important (at most 0.LL-fold), and it leaves open the possibility of increases large enough to be important (as much as U.UU-fold).</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>No</td>
+<td>The estimated relative risk of E.EE suggests that there is no clinically important effect on risk, and it was not statistically significant.  The confidence interval argues against any clinically important increase in risk (at most U.UU-fold), but it leaves open the possibility of a clinically important risk reduction (as much as 0.LL-fold).</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>Yes</td>
+<td>The estimated 0.EE-fold risk reduction suggests that there is no clinically important reduction in risk, although it was statistically significant.  The confidence interval nevertheless leaves open the possibility of a clinically important risk reduction (as much as 0.LL-fold).</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Important Benefit</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated relative risk of E.EE suggests that there is no clinically important effect on risk, and it was not statistically significant.  The confidence interval leaves open the possibility of a clinically important risk reduction (as much as 0.LL-fold) and also the possibility of an increase in risk large enough to possibly be considered important (U.UU-fold).</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated relative risk of 0.EE was not statistically significant and may provide some weak evidence that the relative risk is too small to be clinically important.  Unfortunately, the study was relatively uninformative, because the confidence interval included both clinically important risk reductions (as much as 0.LL) and clinically important increases in risk (up to U.UU).</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Maybe Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>No</td>
+<td>The estimated 0.EE-fold risk reduction suggests that there is no clinically important reduction in risk, although it was statistically significant.  The confidence interval nevertheless leaves open the possibility of enough risk reduction (as much as 0.LL-fold) to possibly be considered important.</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Maybe Important Benefit</td>
+<td>Small, Unimportant</td>
+<td>Yes</td>
+<td>The estimated 0.EE-fold risk reduction suggests that there is no clinically important reduction in risk, although it was statistically significant.  The confidence interval leaves open the possibility of enough risk reduction (up to 0.LL-fold) to possibly be considered important.</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated relative risk of E.EE suggests that the effect is too small be clinically important, and it was not statistically significant.  The confidence interval, however, leaves open the possibility of enough risk reduction (up to 0.LL-fold) to possibly be considered important and enough risk increase (up to U.UU-fold) to possibly be considered important.</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Maybe Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated relative risk of E.EE suggests that the effect is too small be clinically important, and it was not statistically significant.  The confidence interval, however, leaves open the possibility of enough risk reduction (up to 0.LL-fold) to possibly be considered important and the possibility of a clearly substantial risk increase (up to U.UU-fold).</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>No</td>
+<td>Our results provide strong evidence that the relative risk is too small to be clinically important, because the estimated relative risk of E.EE and the confidence interval from L.LL to U.UU are all small, unimportant effects.</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>Yes</td>
+<td>Our results provide strong evidence that the relative risk is too small to be clinically important, because the estimated relative risk of E.EE and the confidence interval from L.LL to U.UU are all small, unimportant effects.  This remains true even though the results were statistically significant.</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated relative risk of E.EE suggests that the effect is too small be clinically important, and it was not statistically significant.  The confidence interval argues against any substantial risk reduction (at most 0.LL-fold) but leaves open the possibility of enough risk increase (up to U.UU-fold) to possibly be considered important.</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>Maybe Important Harm</td>
+<td>Yes</td>
+<td>The estimated relative risk of E.EE suggests that the effect is too small be clinically important, although it was statistically significant.  The confidence interval leaves open the possibility of enough risk increase (up to U.UU-fold) to possibly be considered important.</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated relative risk of E.EE suggests that the effect is too small be clinically important, and it was not statistically significant.  The confidence interval argues against any substantial risk reduction (at most 0.LL-fold) but leaves open the possibility of a substantial risk increase (up to U.UU-fold).</td>
+</tr>
+<tr>
+<td>Small, Unimportant</td>
+<td>Small, Unimportant</td>
+<td>Important Harm</td>
+<td>Yes</td>
+<td>The estimated relative risk of E.EE suggests that the effect is too small be clinically important, although it was statistically significant.  The confidence interval, however, leaves open the possibility of a substantial risk increase (up to U.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Important Benefit</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated E.EE-fold risk increase was not statistically significant but was large enough to possibly be considered clinically important.  The confidence interval leaves open the possibility of a clinically important risk reduction (as much as 0.LL-fold) and also the possibility of an increase in risk large enough to possibly be considered important (U.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated E.EE-fold risk increase was not statistically significant but was large enough to possibly be considered clinically important.  The study is relatively uninformative, because the confidence interval includes both clinically important risk reductions (as much as 0.LL) and clinically important increases in risk (up to U.UU).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Maybe Important Benefit</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated E.EE-fold risk increase was not statistically significant but was large enough to possibly be considered clinically important.  The confidence argues against increases large enough to be clearly important (at most U.UU-fold), and it leaves open the possibility of decreases large enough to possibly be considered important (as much as 0.LL-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Maybe Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated E.EE-fold risk increase was not statistically significant but was large enough to possibly be considered clinically important.  The confidence interval leaves open the possibility of enough risk reduction (up to 0.LL-fold) to possibly be considered important and the possibility of a clearly substantial risk increase (up to U.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Small, Unimportant</td>
+<td>Maybe Important Harm</td>
+<td>No</td>
+<td>The estimated E.EE-fold risk increase was not statistically significant but was large enough to possibly be considered clinically important.  The confidence interval argues against any substantial risk reduction (at most 0.LL-fold) and against risk increases large enough to clearly be important (at most U.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Small, Unimportant</td>
+<td>Maybe Important Harm</td>
+<td>Yes</td>
+<td>The estimated E.EE-fold risk increase was statistically significant and large enough to possibly be considered clinically important.  The confidence argues against increases large enough to be clearly important (at most U.UU-fold), but leaves open the possibility of increases too small to be important (as little as L.LL-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Small, Unimportant</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>The estimated E.EE-fold risk increase was not statistically significant but was large enough to possibly be considered clinically important.  The confidence interval argues against any substantial risk reduction (at most 0.LL-fold) but leaves open the possibility of a clearly substantial risk increase (up to U.UU-fold).</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Small, Unimportant</td>
+<td>Important Harm</td>
+<td>Yes</td>
+<td>The estimated E.EE-fold risk increase was statistically significant and large enough to possibly be considered clinically important.  The confidence interval leaves open the possibility of clearly important risk increases (as much as U.UU) and some small enough (as little as L.LL) to be clearly unimportant.</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Maybe Important Harm</td>
+<td>Maybe Important Harm</td>
+<td>Yes</td>
+<td>The estimated 0.EE-fold risk increase was statistically significant and large enough to possibly be considered clinically important.  The confidence interval provides strong evidence for a risk increase in the range L.LL to U.UU-fold, but the clinical importance of increases in this range could be considered unclear.</td>
+</tr>
+<tr>
+<td>Maybe Important Harm</td>
+<td>Maybe Important Harm</td>
+<td>Important Harm</td>
+<td>Yes</td>
+<td>The estimated E.EE-fold risk increase was statistically significant and large enough to possibly be clinically important.  The confidence interval leaves open the possibility of a clearly clinically important risk increase (as much as U.UU) and argues against a clearly unimportant increase, because the lower bound of L.LL-fold risk reduction could be considered important.</td>
+</tr>
+<tr>
+<td>Important Harm</td>
+<td>Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>Our results provide weak evidence for a clinically important E.EE-fold risk increase  This did not reach statistical significance, and the confidence interval even leaves open the possibility of benefit because it includes decreases in risk of as much as 0.LL-fold, which is large enough to be clinically important.</td>
+</tr>
+<tr>
+<td>Important Harm</td>
+<td>Maybe Important Benefit</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>Our results suggest a clinically important estimated risk increase of E.EE-fold, but this did not reach statistical significance.  In addition, the confidence interval leaves open the possibility of benefit, because it includes reductions in risk of as much as U.UU-fold, which could possibly be considered clinically important.</td>
+</tr>
+<tr>
+<td>Important Harm</td>
+<td>Small, Unimportant</td>
+<td>Important Harm</td>
+<td>No</td>
+<td>Our results suggest a clinically important estimated risk increase of E.EE-fold, but this did not reach statistical significance.  The confidence interval does provide strong evidence against any substantial benefit arguing against reductions in risk of more than 0.LL-fold.</td>
+</tr>
+<tr>
+<td>Important Harm</td>
+<td>Small, Unimportant</td>
+<td>Important Harm</td>
+<td>Yes</td>
+<td>We estimated a clinically important and statistically significant E.EE-fold increase in risk.  Our results therefore suggest a clinically important harm, although the lower confidence limit of L.LL is too little risk increase to be clinically important.</td>
+</tr>
+<tr>
+<td>Important Harm</td>
+<td>Maybe Important Harm</td>
+<td>Important Harm</td>
+<td>Yes</td>
+<td>We estimated a clinically important and statistically significant E.EE-fold increase in risk.  The confidence interval supports an increase in risk by at least a factor of L.LL, but this could possibly be considered too little risk reduction to be clinically important.</td>
+</tr>
+<tr>
+<td>Important Harm</td>
+<td>Important Harm</td>
+<td>Important Harm</td>
+<td>Yes</td>
+<td>We found strong evidence for clinically important risk increase, with the estimated increase being E.EE-fold and the confidence interval supporting a substantial increase in risk by at least a factor of L.LL.</td>
+</tr>
+</table>
+    </div>
+    <hr>
+    <address><a href="mailto:ross@biostat.ucsf.edu">Ross Boylan</a></address>
+<!-- Created: Mon Oct 12 16:11:12 PDT 2009 -->
+<!-- hhmts start -->
+Last modified: Mon Apr 26 14:17:19 PDT 2010
+<!-- hhmts end -->
+  </body>
+</html>
