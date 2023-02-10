@@ -1,0 +1,212 @@
+/****************************************************************************
+**  Programmer:   Robert Gordon                                                     
+**  Date:  22Nov2011                                                                       
+**  Description:  Used CTSPedia CDISC laboratory data.  This program creates 
+**  a scatter plot resembling the FDA eDISH (evaluation of drug induced 
+**  serious hepatotoxicity) graphic plotting peak ALT versus peak bilirubin.  
+**  Note that the peaks are NOT necessarily concurrent for this version. 
+**  Edit Log:  22Nov2011 - First version complete
+**             15Feb12 - Updated font, titles, added JPEG version.
+****************************************************************************/
+
+
+/*  Using the import function within SAS, pulled in the CSV Wiki Lab dataset 
+(ADLBC)*/
+
+PROC IMPORT OUT= WORK.adlbc
+            DATAFILE= "Filepath\ADLBC.csv" 
+            DBMS=CSV REPLACE;
+     GETNAMES=YES;
+     DATAROW=2; 
+RUN;
+
+
+/*  Using the lab dataset, keep only ALT, Bili, lab result, lab high value, 
+treatment. Combined all active treatments into a single Active group.  Created 
+upper limit of  normal variable (xuln) by dividing lab result by 
+standard high value */
+
+data lfts;
+	set adlbc;
+	if lbtestcd in ('ALT', 'BILI');
+	keep usubjid lbtestcd lbstresn lbstnrhi xuln trtpn treat;
+	xuln = lbstresn/lbstnrhi;
+	if trtpn=0 then treat='Placebo';
+		else treat='Active';
+run;
+
+/*  Subset into ALT and BILI datasets, created ULN values specific for each 
+lab test. Sorted each dataset ascending by lab result and took the last 
+(maximum) value for the lab result. Output the maximum (last) value after 
+sorting by subject and ascending ULN value */
+
+	data alt;
+		set lfts;
+		if lbtestcd='ALT';
+		altuln=xuln;
+	run;
+		data bili;
+			set lfts;
+			if lbtestcd='BILI';
+			biliuln=xuln;
+		run;
+				proc sort data=alt;
+					by usubjid altuln;
+				run;
+				data altmax;
+					set alt;
+					keep usubjid altuln treat;
+					by usubjid altuln;
+					if last.usubjid then output;
+				run; 
+				proc sort data=bili;
+					by usubjid biliuln;
+				run;
+				data bilimax;
+					set bili;
+					keep usubjid biliuln treat;
+					by usubjid biliuln;
+					if last.usubjid then output;
+				run; 
+
+/*  Merged the two datasets into one so that both lab test are available for 
+the figure */
+
+data peakplot;  
+	merge altmax bilimax;
+run;
+
+/*  PLOT #1 IS THE NORMAL COLORED PLOT: One for PNG and one for JPEG*/
+/*  Create annotate dataset to include normal range box and quadrant titles */
+
+data annotate_data_1;
+length function color $8;
+retain xsys ysys '2' hsys '3';
+function='label'; color='black'; size=2.75; x=30; y=50; text='Possible Hy''s Law Range';output;
+function='label'; color='black'; size=2.75; x=0.3; y=0.125; text='Normal Range';output;
+function='label'; color='black'; size=2.75; x=30; y=0.125; text='Temple''s Corollary';output;
+function='label'; color='black'; size=2.75; x=0.3; y=50; text='Hyperbilirubinemia';output;
+function='move'; x=1; y=0.1; output;
+function='draw'; color='grey'; line=1; size=.25; x=1; y=1;output;
+function='move'; x=0.1; y=1; output;
+function='draw'; color='grey'; line=1; size=.25; x=1; y=1;output;
+run;
+
+/*  Define options, output location for the rtf and the size of the rtf output */
+
+options orientation=landscape;
+goptions reset=global;
+ods listing close;
+ods rtf file='Filepath/Filename.rtf' style=rtf;
+
+goptions reset=all device=PNG target=PNG
+         xmax = 10 in  xpixels=2000
+         ymax = 7 in  ypixels=1400
+         ftext = 'Arial' ftitle='Arial/bo' ;
+		 legend1  label=none value=( f=arial h=3.5) 
+		 position=(bottom center outside) shape=symbol(20,2);
+
+/*  Define symbols for the graph, sizes, axis labels.  Graph plot.  */
+title j=c h=4.5 'Maximum Total Bilirubin versus Maximum Alanine Aminotransferase (ALT)';
+footnote j=l h=3 '•	Maximum values are those maximum values that occur 
+post-baseline (no time constraints and not necessarily concurrent events)';
+symbol1 color=blue value=circle height=2.5 line=1;
+symbol2 color=red value=triangle height=2.5 line=1;
+axis1 value=(f=arial h=2.75) label=(f='arial/bo' h=4 "Maximum Alanine Aminotransferase 
+(/ULN)")  major=(h=2) minor=(h=1.25)
+	reflabel= (height=2.5 f=arial'3XULN')logbase=10 order=(.1 1 10 100);
+axis2 value=(h=2.75) label=(f='arial/bo' h=4 a=90 justify=center "Maximum 
+	Total Bilirubin (/ULN)") major=(h=2)
+	minor=(h=1.25) reflabel= (height=2.5 f=arial '2XULN') logbase=10 
+	order=(.1 1 10 100);
+proc gplot data=peakplot;
+	plot biliuln*altuln=treat/legend=legend1 vaxis=axis2 haxis=axis1 
+		vref=2 href=3 /*cframe=ltgray*/
+		annotate=annotate_data_1;
+
+run;
+quit;
+ods rtf close;
+ods listing;
+
+/* PLOT #2:  This will output in JPEG format */
+
+options orientation=landscape;
+goptions reset=global;
+ods listing close;
+ods rtf file=' Filepath/Filename.rtf' style=rtf;
+
+goptions reset=all device=JPEG target=JPEG
+         xmax = 10 in  xpixels=2000
+         ymax = 7 in  ypixels=1400
+         ftext = 'Arial' ftitle='Arial/bo' ;
+		 legend1  label=none value=( f=arial h=1.25) 
+		position=(bottom center outside) shape=symbol(10,1.25);
+
+/*  Define symbols for the graph, sizes, axis labels.  Graph plot.  */
+footnote j=l h=1 '•	Maximum values are those maximum values that occur 
+post-baseline (no time constraints and not necessarily concurrent events)';
+title j=c h=1.5 'Maximum Total Bilirubin versus Maximum Alanine Aminotransferase (ALT)';
+symbol1 color=blue value=circle height=1 line=1;
+symbol2 color=red value=triangle height=1 line=1;
+axis1 value=(f=arial h=1) label=(f='arial/bo' h=1.5 "Maximum Alanine Aminotransferase 
+(/ULN)")  major=(h=2) minor=(h=1.25)
+	reflabel= (height=1 f=arial'3XULN')logbase=10 order=(.1 1 10 100);
+axis2 value=(h=1) label=(f='arial/bo' h=1.5 a=90 justify=center "Maximum 
+	Total Bilirubin (/ULN)") major=(h=2)
+	minor=(h=1.25) reflabel= (height=1 f=arial '2XULN') logbase=10 order=(.1 1 10 100);
+proc gplot data=peakplot;
+	plot biliuln*altuln=treat/legend=legend1 vaxis=axis2 haxis=axis1 
+		vref=2 href=3 /*cframe=ltgray*/
+		annotate=annotate_data_1;
+run;
+quit;
+ods rtf close;
+ods listing;
+
+
+/*  PLOT #3 IS THE BLACK AND WHITE PLOT*/
+
+data annotate_data_1;
+length function color $8;
+retain xsys ysys '2' hsys '3';
+function='label'; color='black'; size=2.75; x=30; y=50; text='Possible Hy''s Law Range';output;
+function='label'; color='black'; size=2.75; x=0.3; y=0.125; text='Normal Range';output;
+function='label'; color='black'; size=2.75; x=30; y=0.125; text='Temple''s Corollary';output;
+function='label'; color='black'; size=2.75; x=0.3; y=50; text='Hyperbilirubinemia';output;
+function='move'; x=1; y=0.1; output;
+function='draw'; color='grey'; line=1; size=.25; x=1; y=1;output;
+function='move'; x=0.1; y=1; output;
+function='draw'; color='grey'; line=1; size=.25; x=1; y=1;output;
+run;
+
+options orientation=landscape;
+goptions reset=global;
+ods listing close;
+ods rtf file='Filepath/Filename.rtf' style=rtf;
+
+goptions reset=all device=PNG target=PNG
+         xmax = 10 in  xpixels=2000
+         ymax = 7 in  ypixels=1400
+         ftext = 'Arial' ftitle='Arial/bo' ;
+		 legend1  label=none value=( f=arial h=3) 
+	position=(bottom center outside) shape=symbol(20,2);
+footnote j=l h=.75 '•	Maximum values are those maximum values that occur 
+post-baseline (no time constraints and not necessarily concurrent events)';
+title j=c h=1.5 'Maximum Total Bilirubin versus Maximum Alanine Aminotransferase (ALT)';
+symbol1 color=grey value=circle height=1.5 line=1;
+symbol2 color=black value=plus height=2 line=1;
+axis1 value=(f=arial h=3) label=(f='arial/bo' h=4 "Maximum Alanine Aminotransferase
+ (/ULN)")  major=(h=2) minor=(h=1.25)
+	reflabel= (height=2 f=arial'3XULN')logbase=10 order=(.1 1 10 100);
+axis2 value=(h=3) label=(f='arial/bo' h=4 a=90 justify=center "Maximum Total 
+	Bilirubin (/ULN)") major=(h=2)
+	minor=(h=1.25) reflabel= (height=2 f=arial '2XULN') logbase=10 order=(.1 1 10 100);
+proc gplot data=peakplot;
+	plot biliuln*altuln=treat/legend=legend1 vaxis=axis2 haxis=axis1 vref=2 
+	href=3 annotate=annotate_data_1;
+run;
+quit;
+ods rtf close;
+ods listing;
+
