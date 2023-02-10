@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CommentPluginExamples &lt; Sandbox &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE Sandbox/CommentPluginExamples/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE Sandbox/CommentPluginExamples/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit CommentPluginExamples" href="CommentPluginExamples.html" rel="alternate">
+<meta name="description" content="CommentPluginExamples" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "CommentPluginExamples",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "Sandbox",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body> <ul>
+<li> Top comment output 2 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li> <li> Top comment output 1 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li></ul> 
+<p></p>
+<h1 id="CommentPlugin_examples"> CommentPlugin examples </h1>
+<p></p>
+See <a href="../System/CommentPlugin.html">CommentPlugin</a>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#CommentPlugin_templates"> CommentPlugin templates </a> <ul>
+<li> <a href="#Default"> Default </a>
+</li> <li> <a href="#A_61top_61"> top </a>
+</li> <li> <a href="#A_61bottom_61"> bottom </a>
+</li> <li> <a href="#A_61above_61"> above </a>
+</li> <li> <a href="#A_61below_61"> below </a>
+</li> <li> <a href="#A_61bulletabove_61"> bulletabove </a>
+</li> <li> <a href="#A_61threadmode_61"> threadmode </a>
+</li> <li> <a href="#A_61belowthreadmode_61"> belowthreadmode </a> <ul>
+<li> <a href="#Main.ProjectContributor_45_26_Nov_2006_45_12:09"> ProjectContributor - 26 Nov 2006 - 12:09 </a>
+</li> <li> <a href="#Main.ProjectContributor_45_2_AN1"> ProjectContributor - 26 Nov 2006 - 12:09 </a>
+</li></ul> 
+</li> <li> <a href="#A_61tableprepend_61"> tableprepend </a>
+</li> <li> <a href="#A_61tableappend_61"> tableappend </a>
+</li> <li> <a href="#A_61after_61"> after </a>
+</li> <li> <a href="#A_61action_61"> action </a>
+</li> <li> <a href="#A_61table_61"> table </a>
+</li> <li> <a href="#A_61toctalk_61"> toctalk </a> <ul>
+<li> <a href="#A_26_Nov_2006_45_00:45_Main.ProjectContributor:_Toctalk_output_summary_1"> 26 Nov 2006 - 00:45 ProjectContributor: Toctalk output summary 1 </a>
+</li> <li> <a href="#A_26_Nov_2006_45_11:09_Main.ProjectContributor:_Toctalk_output_summary_2"> 26 Nov 2006 - 11:09 ProjectContributor: Toctalk output summary 2 </a>
+</li></ul> 
+</li> <li> <a href="#A_61bookmark_61"> bookmark </a>
+</li> <li> <a href="#A_61return_61"> return </a>
+</li> <li> <a href="#A_61noform_61"> noform </a>
+</li> <li> <a href="#A_61templatetopic_61"> templatetopic </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<h2 id="CommentPlugin_templates"> CommentPlugin templates </h2>
+<p></p>
+<h3 id="Default">  Default </h3>
+<p></p>
+<p></p>
+<p></p>
+Default comment output 1
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+<p></p>
+<p></p>
+<p></p>
+Default comment output 2
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+<p></p>
+%COMMENT{}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61top_61">  <code>top</code> </h3>
+<p></p>
+%COMMENT{type="top"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61bottom_61">  <code>bottom</code> </h3>
+<p></p>
+%COMMENT{type="bottom"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61above_61">  <code>above</code> </h3>
+<p></p>
+<p></p>
+<p></p>
+Above comment output 1
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+<p></p>
+<p></p>
+Above comment output 2
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+%COMMENT{type="above"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61below_61">  <code>below</code> </h3>
+<p></p>
+%COMMENT{type="below"}% <ul>
+<li> Below comment output 2 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li> <li> Below comment output 1 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li></ul> 
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61bulletabove_61">  <code>bulletabove</code> </h3>
+Example with <code>inputsize="20"</code>:
+<p></p> <ul>
+<li> Bullet above comment output 1
+</li> <li> Bullet above comment output 2
+</li></ul> 
+%COMMENT{type="bulletabove" inputsize="20"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61threadmode_61">  <code>threadmode</code> </h3>
+<p></p>
+<p></p>
+<p></p>
+Threadmode comment output 1
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+<p></p>
+<p></p>
+Threadmode comment output 2
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+%COMMENT{type="threadmode"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61belowthreadmode_61">  <code>belowthreadmode</code> </h3>
+<p></p>
+%COMMENT{type="belowthreadmode"}%
+<p></p>
+<h4 id="Main.ProjectContributor_45_26_Nov_2006_45_12:09">  <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006 - 12:09 </h4>
+<p></p>
+Belowthreadmode comment output 2
+<p></p>
+<p></p>
+<h4 id="Main.ProjectContributor_45_2_AN1">  <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006 - 12:09 </h4>
+<p></p>
+Belowthreadmode comment output 1
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61tableprepend_61">  <code>tableprepend</code> </h3>
+<p></p>
+%COMMENT{type="tableprepend"}%
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Tablepreprend comment output 2 </td>
+			<td class="foswikiTableCol1"> <a href="../Main/ProjectContributor.html">ProjectContributor</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 26 Nov 2006 - 11:03 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Tablepreprend comment output 1 </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="../Main/ProjectContributor.html">ProjectContributor</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> 26 Nov 2006 - 11:02 </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61tableappend_61">  <code>tableappend</code> </h3>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Tableappend comment output 1 </td>
+			<td class="foswikiTableCol1"> <a href="../Main/ProjectContributor.html">ProjectContributor</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 26 Nov 2006 - 10:38 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Tableappend comment output 2 </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="../Main/ProjectContributor.html">ProjectContributor</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> 26 Nov 2006 - 10:39 </td>
+		</tr>
+	</tbody></table>
+%COMMENT{type="tableappend"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61after_61">  <code>after</code> </h3>
+<p></p> <ul>
+<li> After comment output 1 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li> <li> After comment output 2 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li></ul> 
+%COMMENT{type="after"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61action_61">  <code>action</code> </h3>
+<p></p>
+(requires <a href="https://foswiki.org/Extensions/ActionTrackerPlugin" class="interwikiLink" title="'Extensions/ActionTrackerPlugin' on foswiki.org"><noautolink>Foswiki:Extensions/ActionTrackerPlugin</noautolink></a>)
+<p></p>
+%ACTION{ due="1-Dec-2007" creator="Main.ProjectContributor" uid="000001" state="open" created="26-Nov-2006" who="Main.ProjectContributor" }% &lt;&lt;EOF
+Action comment output 1
+- Created by <a href="../Main/ProjectContributor.html">ProjectContributor</a>, 26 Nov 2006 - 10:58
+EOF
+%ACTION{ due="1-Jan-2008" creator="Main.ProjectContributor" uid="000003" state="open" created="26-Nov-2006" who="Main.ProjectContributor" }% &lt;&lt;EOF
+Action comment output 2
+- Created by <a href="../Main/ProjectContributor.html">ProjectContributor</a>, 26 Nov 2006 - 10:58
+EOF
+%COMMENT{type="action"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61table_61">  <code>table</code> </h3>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1 Dec 2007 </td>
+			<td class="foswikiTableCol1"> <a href="../Main/ProjectContributor.html">ProjectContributor</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Athens </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> 1 Jan 2008 </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="../Main/ProjectContributor.html">ProjectContributor</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> Beijing </td>
+		</tr>
+	</tbody></table>
+%COMMENT{type="table"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61toctalk_61">  <code>toctalk</code> </h3>
+<p></p>
+<p></p>
+<h4 id="A_26_Nov_2006_45_00:45_Main.ProjectContributor:_Toctalk_output_summary_1">  26 Nov 2006 - 00:45 <a href="../Main/ProjectContributor.html">ProjectContributor</a>: Toctalk output summary 1 </h4>
+Toctalk output message 1
+<p></p>
+<p></p>
+<h4 id="A_26_Nov_2006_45_11:09_Main.ProjectContributor:_Toctalk_output_summary_2">  26 Nov 2006 - 11:09 <a href="../Main/ProjectContributor.html">ProjectContributor</a>: Toctalk output summary 2 </h4>
+Toctalk output message 2
+<p></p>
+%COMMENT{type="toctalk"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61bookmark_61">  <code>bookmark</code> </h3>
+<p></p> <ul>
+<li> <a href="https://foswiki.org/">Bookmark output link label</a> 
+</li> <li> <a href="https://foswiki.org/">Foswiki</a> - Bookmark output comment
+</li></ul> 
+%COMMENT{type="bookmark"}%
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="A_61return_61">  <code>return</code> </h3>
+Post to a different topic and return to here. In this example comments are written to <a href="CommentPluginExampleComments.html">Sandbox.CommentPluginExampleComments</a>.
+<p></p>
+<!-- <ul>
+<li> Set COMMENT_TOPIC = <a href="CommentPluginExampleComments.html">CommentPluginExampleComments</a>
+</li></ul> 
+-->
+<p></p>
+<em>Comments:</em>
+<blockquote>
+<p></p>
+<p></p>
+<p></p>
+Target comment output 1
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 03 Dec 2006
+<p></p>
+<p></p>
+Target comment output 2
+<p></p>
+-- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 03 Dec 2006
+</blockquote>
+<p></p>
+<hr />
+%COMMENT{type="return" target="Sandbox.CommentPluginExampleComments"}% <br />
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<span id="NoForm"></span>
+<h3 id="A_61noform_61">  <code>noform</code> </h3>
+Example of a custom form to save a comment to a new or existing topic. If topic is created, the parent will not be set..
+<p></p>
+<form method="post" action="http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/rest/CommentPlugin/comment" enctype="application/x-www-form-urlencoded" name="noformcomment0" id="noformcomment0">
+<input type="hidden" name="topicparent" value="CommentPluginExampleComments" />
+<input type="hidden" name="topic" value="Sandbox/CommentPluginExamples" />
+<input type="hidden" name="endPoint" value="Sandbox/CommentPluginExamples#NoForm" />
+<input type="hidden" name="comment_action" value="save" />
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+<strong>New topic name:</strong> <br />
+<input class="foswikiInputField" %DISABLED% type="text" size="40" name="comment_target" id="comment_target" value="" /> <span class="foswikiGrayText">Enter a WikiWord topic name</span>
+</div>
+<div class="foswikiFormStep foswikiLast">
+<strong>Topic text:</strong> <br />
+%COMMENT{noform="on" button="Save"}%
+</div>
+</div>
+</form>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<span id="TemplateTopic"></span>
+<h3 id="A_61templatetopic_61">  <code>templatetopic</code> </h3>
+Example of a form definition in a topic. The comment template is located in <a href="CommentPluginTemplateExample.html">CommentPluginTemplateExample</a>.
+<p></p>
+<p></p>
+<span id="CommentDate1176024819"></span>
+<a href="../Main/ProjectContributor.html">ProjectContributor</a> - 08 Apr 2007:
+<p></p>
+templatetopic example comment output 1
+<p></p>
+<hr />
+%COMMENT{noform="on" type="example" templatetopic="Sandbox.CommentPluginTemplateExample" target="CommentPluginExamples" button="Add comment" }%
+<p></p>
+<hr /> <ul>
+<li> Bottom comment output 1 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li> <li> Bottom comment output 2 -- <a href="../Main/ProjectContributor.html">ProjectContributor</a> - 26 Nov 2006
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

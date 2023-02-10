@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CommentPluginTemplateExample &lt; Sandbox &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE Sandbox/CommentPluginTemplateExample/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE Sandbox/CommentPluginTemplateExample/favicon.ico" rel="shortcut icon">
+<link href="CommentPluginTemplateExample.html" rel="alternate" title="edit CommentPluginTemplateExample" type="application/x-wiki">
+<meta name="description" content="CommentPluginTemplateExample" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "CommentPluginTemplateExample",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "Sandbox"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Template_Example">  Template Example </h1>
+<p></p>
+Example template topic for <a href="CommentPluginExamples.html">CommentPluginExamples:templatetopic</a>.
+<p></p>
+<p></p>
+<pre>
+&#37;TMPL:DEF{PROMPT:example}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<pre>
+&#37;TMPL:DEF{FORM:example}&#37;
+#TemplateTopicPrompt
+&#60;form method&#61;&#34;post&#34; action&#61;&#34;&#37;SCRIPTURL{rest}&#37;/CommentPlugin/comment&#34; enctype&#61;&#34;application/x-www-form-urlencoded&#34; name&#61;&#34;examplecomment&#34; id&#61;&#34;examplecomment&#34;&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;endPoint&#34; value&#61;&#34;&#37;BASEWEB&#37;.&#37;BASETOPIC&#37;#TemplateTopic&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;topic&#34; value&#61;&#34;&#37;BASEWEB&#37;.&#37;BASETOPIC&#37;&#34; /&#62;
+&#37;COMMENTPROMPT&#37;
+&#60;/form&#62;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<pre>
+&#37;TMPL:DEF{OUTPUT:example}&#37;&#37;POS:BEFORE&#37;&#37;TMPL:P{OUTPUT:examplethreadmode}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<pre>
+&#37;TMPL:DEF{OUTPUT:examplethreadmode}&#37;&#37;POS:BEFORE&#37;
+&#37;GMTIME{&#34;#CommentDate&#36;epoch&#34;}&#37;
+&#37;WIKIUSERNAME&#37; - &#37;DATE&#37;:
+
+&#37;URLPARAM{&#34;comment&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;
+
+--- 
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<p></p>
+Include generic comment templates:
+<pre>
+&#37;TMPL:INCLUDE{&#34;&#37;SYSTEMWEB&#37;.CommentPlugin&#34;}&#37;
+</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

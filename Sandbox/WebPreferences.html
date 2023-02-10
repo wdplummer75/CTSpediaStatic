@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebPreferences &lt; Sandbox &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE Sandbox/WebPreferences/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE Sandbox/WebPreferences/favicon.ico">
+<link type="application/x-wiki" href="WebPreferences.html" rel="alternate" title="edit WebPreferences">
+<meta name="description" content="WebPreferences" />
+<link media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0" type="text/css"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="../System/JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="../System/JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="../System/JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "WebPreferences",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "Sandbox",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="Sandbox_Web_Preferences"> Sandbox Web Preferences </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Appearance"> Appearance </a>
+</li> <li> <a href="#Wiki_application_settings"> Wiki application settings </a>
+</li> <li> <a href="#Access_control"> Access control </a>
+</li> <li> <a href="#Writing_preference_settings"> Writing preference settings </a> <ul>
+<li> <a href="#Hiding_preference_settings"> Hiding preference settings </a>
+</li> <li> <a href="#Order_of_preference_settings"> Order of preference settings </a>
+</li> <li> <a href="#Preference_settings_and_topic_revision_history"> Preference settings and topic revision history </a>
+</li> <li> <a href="#Parameters"> Parameters </a> <ul>
+<li> <a href="#Parameter_defaults"> Parameter defaults </a>
+</li></ul> 
+</li> <li> <a href="#Access_Control_Settings"> Access Control Settings </a>
+</li> <li> <a href="#Local_values_for_preferences"> Local values for preferences </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Appearance">  Appearance </h2>
+<p></p> <ul>
+<li> Set WEBBGCOLOR = #FFD8AA
+</li> <li> Set WEBSUMMARY = Sandbox test area to experiment in an unrestricted hands-on web.
+</li> <li> Set SITEMAPLIST = on
+</li></ul> 
+<p></p>
+<h2 id="Wiki_application_settings">  Wiki application settings </h2>
+<p></p> <ul>
+<li> <a class="foswikiNewLink" rel="nofollow" href="WebTopicEditTemplate.html" title="Create this topic">WebTopicEditTemplate</a>  <ul>
+<li> default template for new topics in this web, if this topic does not exist, <a href="../System/WebTopicEditTemplate.html">site-level default template</a> will be used
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Set WEBFORMS = <ul>
+<li> Comma separated list of forms that can be attached to topics in this web. See <a href="../System/DataForms.html">DataForms</a> for more information.
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="Access_control">  Access control </h2>
+<p></p>
+Users or groups who are allowed to view, change and rename topics in the Sandbox web.  Empty settings are not meaningful.
+Remove the comment <code><b>#</b></code> character to enable a settting.
+Use <code><b>*</b></code> to indicate everyone including the guest users.   DENY the <a href="../Main/WikiGuest.html">WikiGuest</a> user to restrict an action to authenticated (logged-in) users.
+<p></p> <ul>
+<li> #Set DENYWEBVIEW = 
+</li> <li> #Set ALLOWWEBVIEW = 
+</li> <li> Set DENYWEBCHANGE = <a href="../Main/WikiGuest.html">WikiGuest</a>
+</li> <li> #Set ALLOWWEBCHANGE = 
+</li> <li> Set DENYWEBRENAME = <a href="../Main/WikiGuest.html">WikiGuest</a>
+</li> <li> #Set ALLOWWEBRENAME = 
+</li></ul> 
+<p></p>
+If <code>{FeatureAccess}{AllowRaw}</code> is set to <code>acl</code> in configure, then the following rules can also be used:  <ul>
+<li> #Set DENYWEBHISTORY = <a href="../Main/WikiGuest.html">WikiGuest</a>
+</li> <li> #Set ALLOWWEBHISTORY =
+</li></ul> 
+<p></p>
+If <code>{FeatureAccess}{AllowHistory}</code> is set to <code>acl</code> in configure, then the following rules can also be used:  <ul>
+<li> #Set DENYWEBRAW = <a href="../Main/WikiGuest.html">WikiGuest</a>
+</li> <li> #Set ALLOWWEBRAW =
+</li></ul> 
+<p></p>
+Users or groups allowed to change or rename this WebPreferences topic
+<p></p> <ul>
+<li> Set ALLOWTOPICCHANGE = <a href="../Main/AdminGroup.html">AdminGroup</a>
+</li> <li> Set ALLOWTOPICRENAME = <a href="../Main/AdminGroup.html">AdminGroup</a>
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<h2 id="Tools">  Tools </h2> <ul>
+<li> <a rel="nofollow" href="WebPreferences.html">   Rename, move or delete this web</a>
+</li></ul> 
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemWebPreferencesHelp7997show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited"><span class='foswikiIcon'><img height="16" alt="help" src="../System/DocumentGraphics.attachments/help.png" width="16"></span> Show help</span></a></span><span id="twistyIdSystemWebPreferencesHelp7997hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited"><span class='foswikiIcon'><img width="16" height="16" alt="help" src="../System/DocumentGraphics.attachments/help.png"></span> Hide help</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemWebPreferencesHelp7997toggle" style="" class="twistyContent twistyInited">
+<span id="SettingPrefs"></span>
+<span id="PreferencesMacros"></span>
+<h2 id="Preference_Settings">  Preference Settings </h2>
+<p></p>
+A <em>preference setting</em> lets you define a simple <a href="../System/Macros.html">macro</a> that will be expanded in your output. In addition:  <ul>
+<li> preference settings are used by Plugins to control their features,
+</li> <li> preference settings are used for <a href="../System/AccessControl.html">Access Control</a>.
+</li></ul> 
+<p></p>
+A preference setting looks like this:
+<p></p>
+<code>[multiple of 3 spaces] * [space] Set [space] MACRONAME [space] = [space] value</code>
+<p></p>
+Example:
+<p></p>
+<pre class='tml'>   &#42; Set WEBBGCOLOR &#61; #FFFFC0</pre>
+<p></p>
+Macros defined using preference settings are expanded by enclosing their name in percent signs. So when you write <code>%WEBBGCOLOR%</code>, it gets expanded to <code>#FFD8AA</code>
+<p></p>
+Preferences can also be set dynamically by using the <code>%SET{"setting" value="value"}%</code> Macro. With the exception of these dynamic preference settings, preferences are always taken from the most current topic revision, <strong><em>even when accessing previous revisions of a topic.</em></strong>
+<p></p>
+Preferences can be defined in a number of places: <ol>
+<li> <a href="../System/DefaultPreferences.html">DefaultPreferences</a> (Foswiki upgrades overwrite this topic)
+</li> <li> In (some) plugin documentation topics. (Deprecated)
+</li> <li> <a href="../Main/SitePreferences.html">SitePreferences</a>
+</li> <li> In user topics, if the user has one (yours is <a href="../Main/WikiAdmin.html">Main.WikiAdmin</a>)
+</li> <li> WebPreferences in each web.
+</li> <li> Sub-webs inherit the WebPreferences of their parent
+</li> <li> In the topic when it is loaded from the Store
+</li> <li> In <a href="../System/VarSET.html">SET</a> macros for run-time preferences
+</li></ol> 
+<p></p>
+<code>Set</code> statements which occur at numerically higher locations override macros of the same name defined at lower numbered levels, <em>unless the macro was listed in a finalpreferences setting (finalised) at a lower-numbered level.</em> When a preference is <em>finalized</em>, the macro is locked to the value at that level; <code>SET</code> statements at higher-numbered levels are ignored.  Looking at it graphically:
+<p></p>
+     <img width="560" height="432" alt="prefs-stack.jpg" src="../System/PreferenceSettings.attachments/prefs-stack.jpg">
+<p></p>
+Access Control rules (ACLs) are also written as preference settings. <strong>ACLs cannot be dynamically modified by the <code>%SET{}%</code> macro.</strong>
+<p></p>
+<p></p>
+<h2 id="Writing_preference_settings">  Writing preference settings </h2>
+<p></p>
+Preference settings are written as a simple bullet. In <a href="../System/TopicMarkupLanguage.html">TopicMarkupLanguage</a> (TML)
+they are written as <code>3-spaces,asterisk,equals,value</code>
+<p></p>
+<pre class='tml'>   &#42; Set MYSETTING &#61; My setting value</pre>
+<p></p>
+When using the Wysiwyg editor, click the "Bullet" button and write the setting
+as a simple bullet.  Don't include the asterisk or the leading spaces.
+<p></p>
+Spaces between the = sign and the value will be ignored. You can split a value over several lines by indenting following lines with spaces - as long as you don't try to use * as the first character on the following line. (Not when using the Wysiwyg editor.)
+<p></p>
+<strong>Example:</strong>
+<p></p>
+<pre class='tml'>   &#42; Set MACRONAME &#61; value starts here
+     and continues here</pre>
+<p></p>
+<img title="IDEA!" width="16" src="../System/DocumentGraphics.attachments/tip.png" alt="IDEA!" height="16"> preference settings can easily be disabled with a # sign. Example:<br />
+<p></p>
+<pre class='tml'>   &#42; #Set DENYWEBCHANGE &#61; &#37;USERSWEB&#37;.UnknownUser</pre>
+<p></p>
+<p></p>
+<p></p>
+Whatever you include in your bullet style setting will be expanded on display, exactly as if it had been entered directly (though see Parameters, below). (%SET{}% settings are expanded during the set process. See <a href="../System/VarSET.html">VarSET</a> for further information.
+<p></p>
+<strong>Example: Create a custom logo macro</strong> <ul>
+<li> To place a logo anywhere in a web by typing <code><b>%MYLOGO%</b></code>, define the preference settings in the web's WebPreferences topic, and upload a logo file, ex: <code>mylogo.gif</code>. You can upload by <a href="../System/FileAttachment.html">attaching the file</a> to <a href="../System/WebPreferences.html">WebPreferences</a>, or, to avoid clutter, to any other topic in the same web, e.g. <code>LogoTopic</code>. Sample preference setting in <a href="../System/WebPreferences.html">WebPreferences</a>:
+</li></ul> 
+<pre class='tml'>   &#42; Set MYLOGO &#61; &#37;PUBURL&#37;/&#37;WEB&#37;/LogoTopic/mylogo.gif</pre>
+<p></p>
+Preference settings are <strong>case sensitive</strong>.   (Foswiki by convention always writes settings in upper case.)
+<pre class='tml'>
+   &#42; Set lower &#61; This is LOWER
+   &#42; Set LOWER &#61; This is UPPER
+   &#42; Set LoWeR &#61; This is MIXED
+Expand &#37;lower&#37;, &#37;LOWER&#37; and &#37;LoWeR&#37;</pre>
+<p></p>
+Expand %lower%, %LOWER% and %LoWeR%.
+<p></p>
+<h3 id="Hiding_preference_settings">  Hiding preference settings </h3>
+<p></p>
+You can hide preference settings in the output by enclosing them in HTML comments; for example,
+<pre>
+&#60;!--
+   &#42; Set HIDDEN &#61; This will be invisible in the output
+--&#62;</pre>
+<p></p>
+You can also set preference settings in a topic by clicking the link <code>Edit topic preference settings</code> under <code>More topic actions</code>. Preferences set in this manner are known as 'meta' preferences and are not visible in the topic text, but take effect nevertheless.
+<strong>If the same setting appears as both an inline setting, and in topic meta settings,  the meta setting will override the inline setting!</strong>  There is no warning when the setting is duplicate. This should be avoided to prevent confusion.
+<p></p>
+<div class='foswikiHelp'><img alt="ALERT!" height="16" src="../System/DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> <strong>Caution</strong> If your topic will be used in an INCLUDE, it is recommended to not use HTML comments. instead, set preferences
+into the topic metadata  by using the "Edit Settings for this topic" button on the "More topic actions" page.  Settings in an included topic are always ignored, but nested comments will break the HTML.</div>
+<p></p>
+<h3 id="Order_of_preference_settings">  Order of preference settings </h3>
+<p></p>
+If you are setting a preference and using it in the same topic, note that Foswiki reads all the bullet style preference settings from the saved version of the topic before it displays anything.  This means you can use a setting anywhere in the topic, even if you set it at the very end. <strong>But beware:</strong>  it also means that if you change the setting of a macro you are using in the same topic, <code><b>Preview</b></code> will show the wrong thing, and you must <code><b>Save</b></code> the topic to see it correctly.  (<code>%SET{}%</code> style settings <em>are</em> assigned during the topic rendering, and their effect will be visible in the preview.)
+<p></p>
+<h3 id="Preference_settings_and_topic_revision_history">  Preference settings and topic revision history </h3>
+<p></p>
+Foswiki always reads the bullet style settings from the most current topic revision, so viewing older revisions of a topic can show unexpected results.
+<p></p>
+And especially important, <strong>bullet style preference settings are never overridden or set in when a topic content is obtained by "%INCLUDE{".</strong>  However <strong>%SET{ style settings can be overidden</strong> when an INCLUDE is expanded.
+in the below example about weather conditions, note the difference in the CONDITIONS expansion
+<p></p>
+<span id="MacroParam"></span>
+<h3 id="Parameters">  Parameters </h3>
+<p></p>
+<!-- <ul>
+<li> Set CONDITIONS = According to <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="PreferenceSettings.html">PreferenceSettings</a>, the %WHAT% is %STATE% today (Set in <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="PreferenceSettings.html">PreferenceSettings</a>).
+</li> <li> Set WEATHER = It's raining.
+</li></ul> 
+-->
+<em>The following block of code was read from <a href="../System/PreferenceSettings.html">PreferenceSettings</a>, and the "Set" statements were defined in <a href="WebPreferences.html" class="foswikiCurrentTopicLink">WebPreferences</a></em>
+<blockquote>
+Macros defined using preference settings can take parameters. These are symbols passed in the call to the macro to define local macros that will be expanded in the output.
+For example, Both System.Macros and <a href="../System/PreferenceSettings.html">PreferenceSettings</a> have a Set statement that defines the <code>%CONDITIONS%</code> macro as shown here:
+<p></p>
+<pre class='tml'> &#42; Set CONDITIONS &#61; According to &#91;&#91;&#37;TOPIC&#37;&#93;&#93; the &#37;WHAT&#37; is &#37;STATE&#37; today (Set in ...).</pre>
+The <code>%TOPIC%</code> shows where the CONDITIONS macro is expanded, and the ...  shows where the Set statement was actually defined.
+<p></p>
+You can call this macro passing in values for <code>WHAT</code> and <code>STATE</code>. For example: <ul>
+<li> <code>%CONDITIONS{WHAT="sea" STATE="choppy"}%</code> <ul>
+<li> expands to <code>%CONDITIONS{WHAT="sea" STATE="choppy"}%</code>
+</li></ul> 
+</li></ul> 
+</blockquote>
+Note that &#37;CONDITIONS% expands differently when this example is viewed in <a href="../System/Macros.html">Macros</a>.
+This is because Set statement are not active in included topics.  The including topic's set statements are used.
+<p></p>
+<h4 id="Parameter_defaults">  Parameter defaults </h4> <ul>
+<li> The special parameter name <code>DEFAULT</code> gets the value of any unnamed parameter in the macro call.
+</li> <li> Parameter macros can accept a <code>default</code> parameter so that they expand to something even when a value isn't passed for them in the call.
+</li></ul> 
+Example:
+<p></p>
+<pre class='tml'>
+   &#42; Set WEATHER &#61; It&#39;s &#37;DEFAULT{default&#61;&#34;raining&#34;}&#37;.</pre> <ul>
+<li> <code>%WEATHER%</code> expands to <code>%WEATHER%</code>
+</li> <li> <code>%WEATHER{"sunny"}%</code> expands to <code>%WEATHER{"sunny"}%</code>
+</li></ul> 
+The standard <a href="../System/FormatTokens.html">formatting tokens</a> can be used in parameters. They will be expanded immediately when the macro is instantiated.
+<p></p>
+<p></p>
+<img width="16" title="ALERT!" height="16" alt="ALERT!" src="../System/DocumentGraphics.attachments/warning.png"> Note that parameters <strong>override</strong> all other macros, including system defined macros, in the expansion of the macro where they are used.
+<p></p>
+<h3 id="Access_Control_Settings">  Access Control Settings </h3>
+<p></p>
+These are special types of preference settings to control access to content. <a href="../System/AccessControl.html">AccessControl</a> explains these security settings in detail. Parameters are <strong>not</strong> available in access control settings. <a href="../System/AccessControl.html">AccessControl</a> settings cannot be set or changed by the <code>%SET{}%</code> macro.
+<p></p>
+<h3 id="Local_values_for_preferences">  Local values for preferences </h3>
+<p></p>
+Certain topics (user, plugin, web, site and default preferences topics) have a problem; macros defined in those topics can have two meanings. For example, consider a user topic. A user may want to use the wiki text editor, but <strong>only</strong> when editing their home topic. The rest of the time, they want to use the default Wysiwyg editor. This separation is achieved using <code>Local</code> in place of <code>Set</code> in the macro definition. For example, if the user sets the following in their home topic:
+<p></p>
+<pre class='tml'>   &#42; Local NOWYSIWYG &#61; 1</pre>
+<p></p>
+Then, when they are editing any other topic, they will get the Wysiwyg editor. However, when they are editing their home topic they will get the wikitext editor.
+<code>Local</code> can be used wherever a preference needs to take a different value depending on where the current operation is being performed.
+<p></p>
+<code>%SHOWPREFERENCE%</code> can be used to get a listing of the values of all macros in their evaluation order, so you can see macro scope if you get confused.
+<pre class="tml">&#37;SHOWPREFERENCE{&#34;CONDITIONS&#34;}&#37;</pre> expands into: <ul>
+<li> Set CONDITIONS = ""
+</li></ul> 
+<p></p>
+<p></p>
+<!--  -->
+<p></p>
+<h2 id="Related_Topics">  Related Topics </h2> <ul>
+<li> <a href="../System/DefaultPreferences.html">System.DefaultPreferences</a>, <a href="../Main/SitePreferences.html">Main.SitePreferences</a> - site-level preferences
+</li> <li> <a href="../Main/WikiUsers.html">WikiUsers</a> - list of user topics. User topics can have optional user preferences
+</li> <li> <a href="../System/Macros.html">Macros</a> - what macros are and how to use them, including a list of common macros
+</li> <li> <a href="../System/AccessControl.html">AccessControl</a> - explains how to restrict access by users or groups
+</li></ul> 
+</div></div>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>
