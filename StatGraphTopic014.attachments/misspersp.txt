@@ -1,0 +1,33 @@
+dat <- read.csv('//cdsnas/oebdbdms/Graphics/Datasets/CleanTrial.csv')
+
+eot <- subset(dat, visit%in%6)
+eot$binep <- ifelse(base$catvar-eot$catvar >= 2, 1, 0)
+
+# Reduce size of data for easier calculation
+ii <- sample(1:1500, 500, replace=FALSE)
+eot2 <- eot[-ii,]
+
+# Force some of the data to be missing (10% of data)
+set.seed(77)
+ww <- sample(1:1000, 100, replace=FALSE)
+eot2$binep[ww] <- NA
+ind <- eot2$binep[eot2$trtf%in%'Active']
+ctl <- eot2$binep[eot2$trtf%in%'Placebo']
+
+source("//cdsnas/oebdbdms/Graphics/Scripts/MissSens.txt")
+
+#png('C:/Research/Graphics/Graphs4Display/webpages/classes/pages/images/misspersp.png',
+#         width=500, height=500)
+
+pp <- miss.plot(ind,            # Trt. arm with missing
+          ctl,           # Control arm with missing
+          theta=305,    # See option theta in persp
+          phi=25,       # See option phi in persp
+          nticks=5,     # See option nticks in persp
+          zpch.cex=1,   # Size of the square plotted on the z-axis
+          plane=FALSE,
+          border='black',
+          ltheta=305,
+          lphi=25,
+          main="")
+#dev.off()

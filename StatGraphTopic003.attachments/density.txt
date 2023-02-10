@@ -1,0 +1,22 @@
+set.seed(123)
+drug <- as.integer(rnorm(200, 2, 2))
+drug[drug<0] <- 0
+    
+placebo <- as.integer(rnorm(200, 4, 3))
+placebo[placebo<0] <- 0
+
+duration <- c(drug, placebo)
+trt <- factor(rep(c('Drug','Placebo'), each=200))
+
+ddrug <- density(drug)
+dplac <- density(placebo)
+
+#png('C:/Research/Graphics/Graphs4Display/webpages/classes/pages/images/density.png',
+#         width=500, height=500)
+
+plot(ddrug, xlim=c(-.5, 12), main='Density Estimates',
+        col='seagreen2', lwd=2, cex=1.5)
+lines(dplac, col='grey60', lwd=2)
+text(x=7.8, y=.01, 'Drug', col='seagreen2', adj=c(NA,0), cex=1.5)
+text(x=9.4, y=.04, 'Placebo', col='grey60', adj=c(NA,0.5), cex=1.5, srt=-24)
+#dev.off()

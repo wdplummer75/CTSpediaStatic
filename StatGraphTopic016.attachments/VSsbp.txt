@@ -1,0 +1,71 @@
+library(lattice)
+library(Hmisc)
+
+set.seed(46)
+sbpc <- round(c(rnorm(10, 118, 5)), 1)
+    sbpc[c(1,9,10)] <- c(119.1,118.6,117.7)
+sbpa <- c(118.1, 122.7, 125.6, 133.1, 136.7, 134.2, 131.0, 126.2, 124.3, 125.1)
+sda <- round(rnorm(10, 1.2, .1),1)
+sdc <- round(rnorm(10, 1.2, .1),1)
+na <- c(112, 112, 111, 110, 110, 108, 106, 105, 104, 102)
+nc <- c(113, 112, 110, 108, 108, 108, 104, 103, 100, 100)
+lcla <- sbpa-round(1.96*sda/sqrt(sda),1)
+ucla <- sbpa+round(1.96*sda/sqrt(sda),1)
+lclc <- sbpc-round(1.96*sdc/sqrt(sdc),1)
+uclc <- sbpc+round(1.96*sdc/sqrt(sdc),1)
+# Write out table to be used in slides
+dat <- data.frame(na,sbpa,sda,lcla,ucla,nc,sbpc,sdc,lclc,uclc)
+
+
+
+plotdat <- data.frame(Mean=c(sbpa,sbpc),
+                      UCL=c(ucla,uclc),
+                      LCL=c(lcla,lclc),
+                      xx=c(1:10-.1,1:10+.1),
+                      TRT=as.factor(rep(c('Active','Control'), each=10)))
+
+#### Create the vital signs graph
+#png('C:/Research/Graphics/Graphs4Display/webpages/classes/pages/images/VSsbp.png',
+#         width=500, height=500)
+                      
+new.back <- trellis.par.get("background")
+new.back$col <- "white"
+newcol <- trellis.par.get("superpose.symbol")
+newcol$col <- c('blue','black')
+newcol$pch <- c(16,17,4,8)
+new.line <- trellis.par.get("superpose.line")
+new.line$col <- c('blue','black')
+new.line$lty <- c(1,1,1,1)
+new.pan <- trellis.par.get("strip.background")
+new.pan$col <- c('gray90','white')
+trellis.par.set("background", new.back)
+trellis.par.set("superpose.symbol", newcol)
+trellis.par.set("superpose.line", new.line)
+trellis.par.set("strip.background",new.pan)
+ 
+xYplot(Cbind(Mean,LCL,UCL)~xx, groups=TRT, data=plotdat, 
+     type='b',
+     ylim=c(min(c(lcla,lclc))-3.5, max(c(ucla,uclc))+1), ph=1.5, lwd=2,
+     xlab='Vist Number',
+     ylab='Systolic Blood Pressure',
+     pch=trellis.par.get('superpose.symbol')$pch[1:2],
+     label.curves=FALSE,
+     cex=1.25,
+     scales=list(y=list(at=c(111,110,115,120,125,130,135),
+                       labels=c(expression(N[C]),expression(N[A]),'115','120','125','130','135')),
+                 x=list(at=1:10, labels=1:10)),
+     key=list(
+        lines=list(type='o',
+                col=trellis.par.get("superpose.symbol")$col[1:2], 
+                lty=trellis.par.get('superpose.line')$lty[1:2],
+                pch=trellis.par.get('superpose.symbol')$pch[1:2],
+                size=3),          
+        text=list(
+                lab=c('Active','Control'),
+                col=trellis.par.get('superpose.line')$col[1:2]),
+        columns=2, title='Treatment'))
+trellis.focus('panel',1,1, highlight=FALSE)
+ltext(1:10, rep(111,10), labels=nc, col='black')
+ltext(1:10, rep(110,10), labels=na, col='blue')
+trellis.unfocus()
+#dev.off()
