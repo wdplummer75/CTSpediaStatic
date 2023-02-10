@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryInnerFade &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryInnerFade/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE System/JQueryInnerFade/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="JQueryInnerFade.html" rel="alternate" title="edit JQueryInnerFade" type="application/x-wiki">
+<meta name="description" content="JQueryInnerFade" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "JQueryInnerFade",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/innerfade/jquery.innerfade.js?version=20080214" class="script JQUERYPLUGIN::INNERFADE"></script>
+<script class="script JQUERYPLUGIN::INNERFADE" src="JQueryPlugin.attachments/plugins/innerfade/jquery.innerfade.init.js?version=20080214"></script><!--JQUERYPLUGIN::INNERFADE-->
+</head>
+<body>
+<h1 id="JQueryInnerFade">  <a class="foswikiCurrentTopicLink" href="JQueryInnerFade.html">JQueryInnerFade</a> </h1>
+<p></p>
+    Homepage: <a href="http://medienfreunde.com/lab/innerfade">http://medienfreunde.com/lab/innerfade</a> <br />
+    Author(s): Torsten Baldes <br />
+    Version: 20080214
+<p></p>
+<p></p>
+<p></p>
+InnerFade is a small plugin for the jQuery-JavaScript-Library. It's designed to
+fade you any element inside a container in and out.  These elements could be
+anything you want, e.g. images, list-items, divs. Simply produce your own
+slideshow for your portfolio or advertisings. Create a newsticker or do an
+animation.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<h3 id="JavaScript_API"> JavaScript API </h3>
+<pre class="tml">
+&#60;ul id&#61;&#34;news&#34;&#62;
+    &#60;li&#62;content 1&#60;/li&#62;
+    &#60;li&#62;content 2&#60;/li&#62;
+    &#60;li&#62;content 3&#60;/li&#62;
+&#60;/ul&#62;
+
+&#60;script&#62;
+&#36;(&#39;#news&#39;).innerfade({
+    animationtype:
+      Type of animation &#39;fade&#39; or &#39;slide&#39;
+      (Default: &#39;fade&#39;),
+
+    speed:
+      Fading-/Sliding-Speed in milliseconds or keywords
+      (slow, normal or fast) (Default: &#39;normal&#39;),
+
+    timeout:
+      Time between the fades in milliseconds (Default: &#39;2000&#39;),
+
+    type:
+      Type of slideshow: &#39;sequence&#39;, &#39;random&#39; or &#39;random&#95;start&#39;
+      (Default: &#39;sequence&#39;),
+
+    containerheight:
+      Height of the containing element in any css-height-value
+      (Default: &#39;auto&#39;),
+
+    runningclass:
+      CSS-Class which the container get&#39;s applied
+      (Default: &#39;innerfade&#39;),
+
+    children:
+      optional children selector (Default: null)
+});
+&#60;/script&#62;
+</pre>
+<p></p>
+<h2 id="Foswiki_integration">  Foswiki integration </h2>
+<p></p>
+Use the <code><b>jqInnerfade</b></code> to mark those elements you want to generate an inner-fade for. Use <a href="JQueryMetadata.html">metadata</a> in the class attribute to specify further parameters.
+<p></p>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<div class="jqInnerfade {timeout:5000, type:'random', containerheight:'220px'}">
+<img src="JQueryInnerFade.attachments/ggbg.gif" alt="Good Guy bad Guy">
+<img src="JQueryInnerFade.attachments/whizzkids.gif" alt="Whizzkids">
+<img alt="K&ouml;nigin Mutter" src="JQueryInnerFade.attachments/km.jpg">
+<img alt="RT Hybride Archivierung" src="JQueryInnerFade.attachments/rt_arch.jpg">
+<img src="JQueryInnerFade.attachments/tuev.jpg" alt="T&Uuml;V S&Uuml;D Gruppe">
+</div>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

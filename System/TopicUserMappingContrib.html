@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>TopicUserMappingContrib &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/TopicUserMappingContrib/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/TopicUserMappingContrib/favicon.ico">
+<link rel="alternate" href="TopicUserMappingContrib.html" title="edit TopicUserMappingContrib" type="application/x-wiki">
+<meta name="description" content="TopicUserMappingContrib" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "TopicUserMappingContrib",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="TopicUserMappingContrib"> TopicUserMappingContrib </h1>
+<!--
+One line description, required for extensions repository catalog. <ul>
+<li> Set SHORTDESCRIPTION = User management using data stored in topics
+</li></ul> 
+-->
+User management using data stored in topics
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Adding_and_deleting_users"> Adding and deleting users </a>
+</li> <li> <a href="#Settings"> Settings </a>
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions </a>
+</li> <li> <a href="#Contrib_Info"> Contrib Info </a>
+</li></ul> 
+</div>
+<p></p>
+The <em>User Mapping Manager</em> interface provides services for mapping between a 'user identity' as used when talking to an external authentication provider,
+an internal canonical user ID, and the displayed name used to identify the user in topics.
+This is the default TopicUserMapping in which user information is stored in topics - one per user, and then any mapping needed is done using the
+WikiUsers topic in the Main.
+<p></p>
+It includes the topics that are used when registering and managing users and groups via Foswiki: <ul>
+<li> Registration and user management topics <ul>
+<li> <a href="UserRegistration.html">UserRegistration</a>
+</li> <li> <a href="ResetPassword.html">ResetPassword</a>
+</li> <li> <a href="ChangePassword.html">ChangePassword</a>
+</li> <li> <a href="ChangeEmailAddress.html">ChangeEmailAddress</a>
+</li> <li> <a href="BulkRegistration.html">BulkRegistration</a>
+</li> <li> <a href="BulkResetPassword.html">BulkResetPassword</a>
+</li> <li> <a href="RemoveUser.html">RemoveUser</a>
+</li></ul> 
+</li> <li> Documentation topics <ul>
+<li> <a href="ManagingUsers.html">ManagingUsers</a>
+</li> <li> <a href="UserToolsCategory.html">UserToolsCategory</a>
+</li></ul> 
+</li> <li> default groups and user <ul>
+<li> <a href="../Main/NobodyGroup.html">NobodyGroup</a>
+</li> <li> <a href="../Main/AdminGroup.html">AdminGroup</a>
+</li> <li> <a href="../Main/RegistrationAgent.html">RegistrationAgent</a>
+</li></ul> 
+</li> <li> User lists <ul>
+<li> <a href="../Main/UserList.html">UserList</a>
+</li> <li> <a href="../Main/UserListHeader.html">UserListHeader</a>
+</li> <li> <a href="../Main/UserListByDateJoined.html">UserListByDateJoined</a>
+</li> <li> <a href="../Main/UserListByLocation.html">UserListByLocation</a>
+</li></ul> 
+</li> <li> User and Group template files <ul>
+<li> <a href="NewUserTemplate.html">NewUserTemplate</a>
+</li> <li> <a href="UserForm.html">UserForm</a>
+</li> <li> <a href="UserFormHelp.html">UserFormHelp</a>
+</li> <li> <a href="UsersTemplate.html">UsersTemplate</a>
+</li> <li> <a href="../Main/UserHomepageHeader.html">UserHomepageHeader</a>
+</li> <li> <a href="UserSetting.html">UserSetting</a>
+</li> <li> <a href="../Main/GroupTemplate.html">GroupTemplate</a>
+</li></ul> 
+</li></ul> 
+<p></p>
+If you are developing a non-topic based User mapper, you might like to consider removeing or replacing the files installed by this Contrib.
+<p></p>
+<h2 id="Adding_and_deleting_users">  Adding and deleting users </h2>
+Users are added using the default registration process in Foswiki. To delete a user (admins only),
+<p></p> <ol>
+<li> Edit the .htpasswd file to delete their entry (see <code>configure</code> for the location
+</li> <li> Remove their topic files: data/Main/FredQuimby.txt and data/Main/FredQuimby.txt,v
+</li> <li> Remove the FredQuimby line from the <a href="../Main/WikiUsers.html">Main.WikiUsers</a> topic
+</li> <li> Remove user from all groups and from all the ALLOWWEB/ALLOWTOPIC... declarations, if any. <br />   <div class="foswikiHelp"><img src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16" title="ALERT!" width="16"> <strong>Note:</strong> Otherwise this will leave a security hole, as the first person to re-register with this name will be granted the permissions of the previous user.</div>
+</li></ol> 
+<p></p>
+<h2 id="Settings">  Settings </h2>
+The TopicUserMappingContrib specific settings have not yet been moved out of the standard Foswiki.spec. This will be done in a future release.
+<p></p>
+<h2 id="Installation_Instructions">  Installation Instructions </h2>
+It's a part of the default distribution of the Foswiki Core.
+<p></p>
+<h2 id="Contrib_Info">  Contrib Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Contrib Author(s): </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Copyright (C) 2007-2018 Sven Dowideit, <a href="mailto&#58;SvenDowideit&#64;WikiRing&#46;com">SvenDowideit&#64;WikiRing.com</a> and Project Contributors. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.58 (25 Feb 2018) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.1.6<br/>                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14629" title="'Item14629' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14629</noautolink></a>: Certain topics can be overridden without permission.<br/>                        <a title="'Item14639' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14639"><noautolink>Foswikitask:Item14639</noautolink></a>: Operational topics in Main, Sandbox webs should be protected from editing non-admins.<br/>                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14622" title="'Item14622' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14622</noautolink></a>: <a href="UserRegistration.html">UserRegistration</a> validate.js is not compatible with <a title="Create this topic" href="CaptchaPlugin.html" class="foswikiNewLink" rel="nofollow">CaptchaPlugin</a>. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.57 (08 Dec 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Release with Foswiki 2.1.5<br/>                        <a title="'Item14415' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14415"><noautolink>Foswikitask:Item14415</noautolink></a>: <a href="TopicUserMapping.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">TopicUserMapping</a> places non-ASCII users in wrong position in <a title="Create this topic" href="WikiUsers.html" class="foswikiNewLink" rel="nofollow">WikiUsers</a> Topic.<br/>                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14460" title="'Item14460' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14460</noautolink></a>: Login/Logon actions should create session when guest sessions are disabled. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.56 (23 Jan 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Release with Foswiki-2.1.3<br/>                        <a href="https://foswiki.org/Tasks/Item13883" class="interwikiLink" title="'Item13883' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13883</noautolink></a>: Clarify documention on removing a user, create new <a href="RemoveUser.html">RemoveUser</a> tool topic. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.55 (26 Nov 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Release with foswiki-2.1.3-Beta1<br/>                        <a title="'Item13936' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13936"><noautolink>Foswikitask:Item13936</noautolink></a>: Add alternate from= email sender address for registration messages. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.54 (8 Apr 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Release with Foswiki 2.1.1<br/>                        <a title="'Item975' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item975"><noautolink>Foswikitask:Item975</noautolink></a>: Allow bulk registration to work when Apache login is enabled.<br/>                        <a title="'Item13883' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13883" class="interwikiLink"><noautolink>Foswikitask:Item13883</noautolink></a>: Improve bulk registration documentation.<br/>                        <a title="'Item13996' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13996"><noautolink>Foswikitask:Item13996</noautolink></a>: Bulk registration should process Add to groups data.<br/>                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14005" title="'Item14005' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14005</noautolink></a>: Pass template topic parameter to templates. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.53 (3 Feb 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Release with Foswiki 2.1.0,<br/>                        <a title="'Item13854' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13854"><noautolink>Foswikitask:Item13854</noautolink></a>: Set ALLOWTOPICVIEW="*" on critical system topics<br/>                        <a title="'Item13864' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13864" class="interwikiLink"><noautolink>Foswikitask:Item13864</noautolink></a>: Restructure <a href="UserRegistration.html">UserRegistration</a> topics for easier customization, use newer Foswiki features.<br/>                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13880" title="'Item13880' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13880</noautolink></a>: Fix rendering in HEAD zone<br/>                        <a title="'Item13924' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13924"><noautolink>Foswikitask:Item13924</noautolink></a>: Missing SET in restructured registration topics. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.52 (8 Sep 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0.2.<br/>                        <a title="'Item13600' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13600" class="interwikiLink"><noautolink>Foswikitask:Item13600</noautolink></a>: Set correct parent for <a href="WikiUsers.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">WikiUsers</a> topic. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.51 (14 Jun 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0<br />                        <a href="https://foswiki.org/Tasks/Item13423" class="interwikiLink" title="'Item13423' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13423</noautolink></a>: Perl 5.22 deprecations.<br />                        <a title="'Item13323' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13323" class="interwikiLink"><noautolink>Foswikitask:Item13323</noautolink></a>: Use /usr/bin/perl in scripts<br />                        <a title="'Item13294' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13294" class="interwikiLink"><noautolink>Foswikitask:Item13294</noautolink></a>: Improvements in translation strings <br />                        <a title="'Item12162' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12162"><noautolink>Foswikitask:Item12162</noautolink></a>: Disable password reset if email disabled<br />                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13287" title="'Item13287' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13287</noautolink></a>: Improvements in regular expressions<br />                        <a title="'Item2257' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item2257"><noautolink>Foswikitask:Item2257</noautolink></a>: Improve performance of <a href="BulkResetPassword.html">BulkResetPassword</a><br />                        Note: This version is <strong>Not compatible with Foswiki 1.1.x</strong> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 4.50 (18 Dec 2014) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13060" title="'Item13060' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13060</noautolink></a>: Add toggle-all action to the <a href="BulkResetPassword.html">BulkResetPassword</a> page<br />                         <a title="'Item13106' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13106" class="interwikiLink"><noautolink>Foswikitask:Item13106</noautolink></a>: removed blockquote where possible<br />                         <a href="https://foswiki.org/Tasks/Item13027" class="interwikiLink" title="'Item13027' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13027</noautolink></a>: Most try..catch clauses were catching Error::Simple, which is effective only for catching Foswiki-specific exceptions<br />                         <a title="'Item12952' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12952"><noautolink>Foswikitask:Item12952</noautolink></a>: remove non-existent Config.spec<br />                         <a href="https://foswiki.org/Tasks/Item11737" class="interwikiLink" title="'Item11737' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11737</noautolink></a>: Change hardcoded <code>Main</code> to <code>%USERSWEB%</code> Replace <code>System</code> with <code>%SYSTEMWEB%</code> <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11705" title="'Item11705' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11705</noautolink></a>: Multiple fixes to <a href="BulkRegistration.html">BulkRegistration</a><br />                         <a title="'Item12823' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12823" class="interwikiLink"><noautolink>Foswikitask:Item12823</noautolink></a>: add auto-generated header to various plugins sending email<br />                         <a title="'Item12207' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12207" class="interwikiLink"><noautolink>Foswikitask:Item12207</noautolink></a>: Add function to remove users, generally for SPAM cleanup </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.7 (31 Jan 2013) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12329' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12329" class="interwikiLink"><noautolink>Foswikitask:Item12329</noautolink></a>: Document core change: Code that deletes stale registrations needs it's own expiration timer. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.6 (28 Nov 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11281" title="'Item11281' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11281</noautolink></a>: Don't filter user names beginning with "Web" from <a href="BulkResetPassword.html">BulkResetPassword</a> <br />                         <a title="'Item11923' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11923"><noautolink>Foswikitask:Item11923</noautolink></a>: Better logging of changes to group membership. <br />                         <a title="'Item12003' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12003"><noautolink>Foswikitask:Item12003</noautolink></a>: <a href="FAQRebuildingWikiUsersTopic.html">FAQRebuildingWikiUsersTopic</a> creates an invalid <a href="../Main/WikiUsers.html">WikiUsers</a> topic <br />                         <a title="'Item12006' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12006"><noautolink>Foswikitask:Item12006</noautolink></a>: Don't generate edit links for <a href="../Main/NobodyGroup.html">NobodyGroup</a> <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11965" title="'Item11965' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11965</noautolink></a>: Correct "undefined variable" errors in mailnotify <br />                         <a title="'Item11746' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11746"><noautolink>Foswikitask:Item11746</noautolink></a>: Change email address instructions were incorrect <br />                         <a title="'Item11267' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11267" class="interwikiLink"><noautolink>Foswikitask:Item11267</noautolink></a>: Convert to perl version strings. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.5 (06 Apr 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item652' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item652"><noautolink>Foswikitask:Item652</noautolink></a>, <a href="https://foswiki.org/Tasks/Item710" class="interwikiLink" title="'Item710' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item710</noautolink></a>, <a href="https://foswiki.org/Tasks/Item2196" class="interwikiLink" title="'Item2196' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2196</noautolink></a>: Cleanup partial registrations after failure.<br />                         <a href="https://foswiki.org/Tasks/Item10238" class="interwikiLink" title="'Item10238' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10238</noautolink></a>: Allow UI to create empty groups<br />                          <a title="'Item11196' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11196" class="interwikiLink"><noautolink>Foswikitask:Item11196</noautolink></a>: Add error messages translations for registraion and group UI errors<br />                          <a title="'Item11501' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11501"><noautolink>Foswikitask:Item11501</noautolink></a>: Validate all registration fields<br />                          <a title="'Item11349' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11349"><noautolink>Foswikitask:Item11349</noautolink></a>: Improve performance </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.4 (20 Dec 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11373" class="interwikiLink" title="'Item11373' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11373</noautolink></a>: Check for duplicate member of groups was incorrect </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.3 (05 Dec 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item10815" class="interwikiLink" title="'Item10815' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10815</noautolink></a>: Warn if registering user as admin when auto group membership is enabled.<br />                          <a title="'Item11208' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11208" class="interwikiLink"><noautolink>Foswikitask:Item11208</noautolink></a>: Throw error if group name not *Group <br />                          <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10906" title="'Item10906' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10906</noautolink></a>: Force user names to the %USERSWEB% - avoid linking errors if username might be interpreted as a Web.Topic name <br />                          Other minor code cleanup and documentation updates </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.2 (11 Apr 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item10304' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10304"><noautolink>Foswikitask:Item10304</noautolink></a> - AdminGroup moved from this extension to Foswiki core to avoid it gets overwritten when upgrading the contrib from configure <br />                         <a title="'Item10590' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item10590" class="interwikiLink"><noautolink>Foswikitask:Item10590</noautolink></a> - ChangeEmailAddress has query error <br />                         <a title="'Item10536' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10536"><noautolink>Foswikitask:Item10536</noautolink></a> - UserRegistration WikiName JS support for all skins <br />                         <a title="'Item92' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item92"><noautolink>Foswikitask:Item92</noautolink></a>: Document admin behaviour of ChangeEmailAddress <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item8876" title="'Item8876' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8876</noautolink></a>: Add admin help when registration disabled <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10131" title="'Item10131' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10131</noautolink></a>: TopicUserMapping loses creation date when updating existing user if the admin had changed the {DefaultDateFormat} <br />                         <a href="https://foswiki.org/Tasks/Item9437" class="interwikiLink" title="'Item9437' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9437</noautolink></a>: Dot after wikiwebmasters email becomes part of mailto <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item9851" title="'Item9851' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9851</noautolink></a>, <a title="'Item9848' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9848" class="interwikiLink"><noautolink>Foswikitask:Item9848</noautolink></a>, <a title="'Item9810' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item9810"><noautolink>Foswikitask:Item9810</noautolink></a>: <br />                         Fixed problem with not being able to remove users when they has Main suffix <br />                         Fixed problem where users were seen as different if prefixed by Main when added. <br />                         Correct reporting when duplicate user is attempted added <br />                         Removed code no longer used <br />                         The creator of new group is not added to group if the user is admin unless he specifies it <br />                         Fixed problem with removing duplicate users </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.1 (10 Nov 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item9415' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9415" class="interwikiLink"><noautolink>Foswikitask:Item9415</noautolink></a> - Documentation updates. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.3.0 (13 Mar 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Made UserRegistration customizable. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.2.4 (25 Feb 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Updated documentation in UserForm. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.2.3 (20 Sep 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Foswiki 1.0.7 version </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.2.2 (16 Dec 2008) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Foswiki version </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.2.1 (03 Aug 2008) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Distributed with TWiki 4.2.1 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 4.2.0 (22 Jan 2008) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Distributed with TWiki 4.2.0 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> None </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Contrib Home: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="http://foswiki.org/Extensions/TopicUserMappingContrib">http://foswiki.org/Extensions/TopicUserMappingContrib</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Support: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <a href="http://foswiki.org/Support/TopicUserMappingContrib">http://foswiki.org/Support/TopicUserMappingContrib</a> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<!-- Do <em>not</em> attempt to edit this topic; it is auto-generated. Please add comments/questions/remarks to the Dev topic instead. -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

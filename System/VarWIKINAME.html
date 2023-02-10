@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarWIKINAME &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/VarWIKINAME/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/VarWIKINAME/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="VarWIKINAME.html" title="edit VarWIKINAME" type="application/x-wiki">
+<meta name="description" content="VarWIKINAME" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarWIKINAME",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="WIKINAME_45_45_your_Wiki_username">  WIKINAME -- your Wiki username </h1>
+The <a href="WikiName.html">WikiName</a> is the same as <code>%USERNAME%</code> if not defined in the <a href="../Main/WikiUsers.html">WikiUsers</a> topic.
+This macro is an alias for the USERINFO macro with a fixed <code>format="$wikiname"</code>.
+<h2 id="Parameters">  Parameters </h2>
+     <table class="foswikiTable" rules="none">   
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Parameter</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Description</a> </th>
+		</tr>
+	</thead>   
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>"name"</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="WikiName.html">WikiName</a> or <a href="UserName.html">login username</a>. </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> current user </td>
+		</tr>
+	</tbody>   </table>
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%WIKINAME%</code> expands to <code>WikiAdmin</code>
+</li> <li> <code>%WIKINAME{guest}%</code> expands to <code>WikiGuest</code>   <div class="foswikiHelp"><img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> When used in a template topic, this macro will be expanded when the template is used to create  new topic. See <a href="TemplateTopics.html">TemplateTopics#TemplateTopicsVars</a> for details</div>
+</li></ul> 
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarREMOTEUSER.html">REMOTE_USER</a>, <a href="VarUSERINFO.html">USERINFO</a>, <a href="VarUSERNAME.html">USERNAME</a>, <a href="VarWIKIUSERNAME.html">WIKIUSERNAME</a>, <a href="VarWIKIUSERSTOPIC.html">WIKIUSERSTOPIC</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarSEARCH &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/VarSEARCH/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/VarSEARCH/favicon.ico">
+<link href="VarSEARCH.html" rel="alternate" title="edit VarSEARCH" type="application/x-wiki">
+<meta name="description" content="VarSEARCH" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "VarSEARCH",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="SEARCH_45_45_search_content">  SEARCH -- search content </h1>
+Inline search, shows a search result embedded in a topic
+<h2 id="Parameters">  Parameters </h2>
+                                          <table class="foswikiTable" id="tableVarSEARCH1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default: </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"text"</code> <br> <code>search="text"</code> </td>
+			<td class="foswikiTableCol1"> Search term. Is a keyword search, literal search, regular expression search, or query, depending on the <code>type</code> parameter. <a href="SearchHelp.html">SearchHelp</a> has more </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> required </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>web</code> </td>
+			<td class="foswikiTableCol1"> Comma-separated list of webs to search. e.g.  <br/> <code>web="Main, Know"</code> <br /> <code>web="all"</code> <br>      The special word <code>all</code> means all webs that do <strong>not</strong> have the <code>NOSEARCHALL</code> preference set to <code>on</code> in their <a href="WebPreferences.html">WebPreferences</a>.<br />     You can specifically <strong>exclude</strong> webs from an <code>all</code> search using a minus sign - for example, <code>web="all,-Secretweb"</code>.     Caution: The <code>"all,-Secretweb"</code> syntax does <em>not</em> exclude subwebs of the excluded web.   It applies to only a single web.  See <a title="'Item8893' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item8893"><noautolink>Foswikitask:Item8893</noautolink></a>     <a href="AccessControl.html">AccessControls</a> are respected when searching webs; it is <strong>much</strong> better to use them than <code>NOSEARCHALL</code>. Wildcards are not currently supported for web names.<br /> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Current web </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topic</code> </td>
+			<td class="foswikiTableCol1"> Limit search to topics e.g. <br> <code>topic="WebPreferences"</code> <br /> <code>topic="*Bug"</code> <br> <code>topic="MyTopic,YourTopic"</code> <br> A topic, a topic with asterisk wildcards, or a list of topics separated by comma. <br> <strong>Note</strong> this is a list of <strong>topic names</strong> and must <strong>not</strong> include web names. Adding a topic restriction to a search can greatly improve the search performance. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> All topics in a web </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>excludetopic</code> </td>
+			<td class="foswikiTableCol1"> Exclude topics from search e.g. <br> <code>excludetopic="Web*"</code> <br /> <code>excludetopic="WebHome, WebChanges"</code> <br> A topic, a topic with asterisk wildcards, or a list of topics separated by comma.<br> <strong>Note</strong> this is a list of <strong>topic names</strong> and must <strong>not</strong> include web names. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>scope</code> </td>
+			<td class="foswikiTableCol1"> Search topic name (<code>"topic"</code>); the body (<code>"text"</code>) of the topic; or name and body (<code>"all"</code>) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>text</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>type</code> </td>
+			<td class="foswikiTableCol1"> Control how the search is performed when <code>scope="text"</code> or <code>scope="all"</code> <br /> <code>"keyword"</code> - use Google-like controls as in <code>soap "web service" -shampoo</code>; searches word parts: using the example, topics with "soapsuds" will be found as well, but topics with "shampoos" will be excluded <br /> <code>"word"</code> - identical to <code>keyword</code> but searches whole words: topics with "soapsuds" will not be found, and topics with "shampoos" will not be excluded <br /> <code>"literal"</code> - search for the exact string, like <code>web service</code> <br /> <code>"regex"</code> - use a <a href="RegularExpression.html">RegularExpression</a> search like <code>soap;web service;!shampoo</code>; to search on whole words use <code>\bsoap\b</code> <br /> <code>"query"</code> - <a href="QuerySearch.html">query search</a> of form fields and other meta-data, like <code>(Firstname='Emma' OR Firstname='John') AND Lastname='Peel'</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>%SEARCHVARDEFAULTTYPE%</code> <a href="DefaultPreferences.html">preferences</a> setting (currently <code>literal</code>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>order</code> </td>
+			<td class="foswikiTableCol1"> Sort the results of search by the topic names (<code>"topic"</code>), topic creation time (<code>"created"</code>), last modified time (<code>"modified"</code>), last editor's <a href="WikiName.html">WikiName</a> (<code>"editby"</code>), or named field of <a href="DataForms.html">DataForms</a> (<code>"formfield(name)"</code>). The sorting is done web by web; if you want to sort across webs, create a <a href="FormattedSearch.html">formatted</a> table and sort it with <a href="TablePlugin.html">TablePlugin</a>'s initsort. Note that dates are sorted most recent date <strong>last</strong> (i.e at the bottom of the table). <br /> The web order is always alphabetical. When ordered by <code>topic</code> the result is first ordered by web and then by topic. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>topic</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>limit</code> </td>
+			<td class="foswikiTableCol1"> A number will limit the number of topics from which results will be returned. This is done after sorting if <code>order</code> is specified. Note that this does not limit the number of hits from the same topic when you have multiple="on". </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>all</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>date</code> </td>
+			<td class="foswikiTableCol1"> limits the results to those pages with latest edit time in the given <a href="TimeSpecifications.html">time interval</a>. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>reverse</code> </td>
+			<td class="foswikiTableCol1"> If <code>"on"</code> will reverse the direction of the search. Does only apply to key specified by <code>order</code>. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>casesensitive</code> </td>
+			<td class="foswikiTableCol1"> If <code>"on"</code> perform a case sensitive search. (For <code>type=query</code> searches, <code>casesensitive</code> is always <code>on</code>.  See <a href="QuerySearch.html">QuerySearch</a> for more flexible case comparison options) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>decode</code> </td>
+			<td class="foswikiTableCol1"> Reverse any encoding done to protect search terms by <code>%URLPARAM{}%</code> macro. Comma separated list of encodings, entered in reverse order of the <code>URLPARAM</code> macro arguments. Supported decoding types are <code>entity&#124;entities, safe and url</code>. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>bookview</code> </td>
+			<td class="foswikiTableCol1"> If ="on", perform a <a href="BookView.html">BookView</a> search, e.g. show complete topic text. Very resource demanding. Use only with small result sets </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>nonoise</code> </td>
+			<td class="foswikiTableCol1"> If <code>"on"</code>, shorthand for <code>nosummary="on" nosearch="on" nototal="on" zeroresults="off" noheader="on" noempty="on"</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>nosummary</code> </td>
+			<td class="foswikiTableCol1"> Show topic title only, no content summary </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>nosearch</code> </td>
+			<td class="foswikiTableCol1"> Suppress search string </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>noheader</code> </td>
+			<td class="foswikiTableCol1"> Suppress default search header <br /> <span style='background: #FFB0B0;'> <strong>Topics: Changed: By:</strong> </span>, unless a <code>header</code> is explicitly specified </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Show default search header, unless search is inline and a format is specified </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>nototal</code> </td>
+			<td class="foswikiTableCol1"> Do not show number of topics found </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>zeroresults</code> </td>
+			<td class="foswikiTableCol1"> If <code>off</code>, <code>false</code> or <code>0</code>, suppress/replace <em>all</em> output if there are no hits. Can also be set to a <strong><a href="FormattedSearch.html">FormattedSearch</a></strong> string to customise the output </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>on</code> - displays the summary, and number of topics found. "Number of topics: 0" </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>noempty</code> </td>
+			<td class="foswikiTableCol1"> If <code>"on"</code>, suppress results for webs that have no hits. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>header</code> </td>
+			<td class="foswikiTableCol1"> Custom format results: see <strong><a href="FormattedSearch.html">FormattedSearch</a></strong> for usage &amp; examples </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>format</code> </td>
+			<td class="foswikiTableCol1"> Custom format results: see <strong><a href="FormattedSearch.html">FormattedSearch</a></strong> for usage &amp; examples </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>footer</code> </td>
+			<td class="foswikiTableCol1"> Custom format results: see <strong><a href="FormattedSearch.html">FormattedSearch</a></strong> for usage &amp; examples </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>expandvariables</code> </td>
+			<td class="foswikiTableCol1"> If <code>"on"</code>, expand embedded macros before applying a <a href="FormattedSearch.html">FormattedSearch</a> on a search hit. Useful to show the expanded text, e.g. to show the result of a <a href="SpreadSheetPlugin.html">SpreadSheetPlugin</a> <code>%CALC{}%</code> instead of the formula </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>multiple</code> </td>
+			<td class="foswikiTableCol1"> If ="on", find multiple hits per topic. Each hit can be <a href="FormattedSearch.html">formatted</a>. The last token is used in case of a regular expression ";" <em>and</em> search </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> (only one hit found per topic </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>nofinalnewline</code> </td>
+			<td class="foswikiTableCol1"> If <code>"on"</code>, the search variable does not end in a line by itself. Any text continuing immediately after the SEARCH macro on the same line will be rendered as part of the table generated by the search, if appropriate. This feature is only active when format is defined. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>on</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>recurse</code> </td>
+			<td class="foswikiTableCol1"> If "on", recurse into subwebs, if subwebs are enabled. Note: recurse will currently search subwebs of explicitly excluded webs. <code>(web="all, -Sandbox" recurse="on")</code> will still search subwebs of <code>Sandbox</code>. This behavior is likely to change in a future release. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>separator</code> </td>
+			<td class="foswikiTableCol1"> Separator <em>between</em> search hits (only used when <code>format</code> is set) uses <a href="FormatTokens.html">FormatTokens</a>. <br />If <code>separator</code> is not defined, the default is "$n" (newline). Not defining the separator will additionally cause a newline to be added after a header and before a footer. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>$n</code> (Newline) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>headingoffset</code> </td>
+			<td class="foswikiTableCol1"> Adds the given offset to any HTML headings generated in the search result. Works on headings defined by HTML tags as well as headings defined using foswiki markup. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 0 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>newline</code> </td>
+			<td class="foswikiTableCol1"> Line separator <em>within</em> a search hit. Useful if you want to put multi-line content into a table cell, for example if the <code>format</code> parameter contains a <code>$pattern()</code> or a <code>$formfield()</code> the result of which may contain newlines, in which case you could use <code>newline="%BR%"</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>$n</code> (Newline) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>pagesize</code> </td>
+			<td class="foswikiTableCol1"> number of items to show per page </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>25</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>showpage</code> </td>
+			<td class="foswikiTableCol1"> Page of items to show (starts at 1) (overridden by the value specified by the URL parameter hash from <code>$previousurl</code> and <code>$nexturl</code>) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"1"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>pager</code> </td>
+			<td class="foswikiTableCol1"> If <code>"on"</code> adds paging to your SEARCHes <br>                       <em>Note:</em> the default pager (when <code>pagerformat</code> is not defined) requires the parameters to the SEARCH to not change while paging, as it uses <code>$previousurl</code> and <code>$nexturl</code>. If you use time variable parameters, you will have to define your own <code>pagerformat</code>. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>pagerformat</code> </td>
+			<td class="foswikiTableCol1"> Custom format results: see <strong><a href="FormattedSearch.html">FormattedSearch</a></strong> for usage &amp; examples </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> filled from skin template </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>groupby</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <em>Warning: this option is liable to change dramatically (and potentially incompatibly) in the next major release of foswiki.</em> Setting to <code>"none"</code> applies only to multi-web SEARCHs, and means the <code>header</code> and <code>footer</code> are only output <em>once</em> - at the beginning and end of the list of results, and the <code>order</code> parameter is applied over the entire set of results (this setting removes the legacy that results are always partitioned by web) see <a href="SiteChanges.html">SiteChanges</a> for an example. </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>web</code> </td>
+		</tr>
+	</tbody>     </table>
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <pre class="tml">&#37;SEARCH{&#34;wiki&#34; web&#61;&#34;&#37;USERSWEB&#37;&#34; scope&#61;&#34;topic&#34;}&#37;</pre>
+</li> <li> <pre class="tml">
+&#37;SEARCH{
+    &#34;FAQ&#34;
+    nonoise&#61;&#34;on&#34;
+    header&#61;&#34;&#124; &#42;Topic: &#42; &#124; &#42;Summary: &#42; &#124;&#34;
+    format&#61;&#34;&#124; &#36;topic    &#124; &#36;summary    &#124;&#34;
+}&#37;</pre> <em>(displays results in a table with header - <a href="FormattedSearch.html">details</a>)</em>
+</li></ul> 
+<p></p>
+Results are sorted alphanumerically on the web name (major key) and topic name (minor key). Only the minor key is affected by the <code>order</code> parameter.
+<p></p>
+<div class="foswikiHelp"><img src="DocumentGraphics.attachments/tip.png" alt="TIP" height="16" title="TIP" width="16"> The appearance of the table emitted by the <a class="foswikiCurrentTopicLink" href="VarSEARCH.html">SEARCH</a> may be controlled with <a href="TablePlugin.html">TablePlugin</a>'s <code>%TABLE{}%</code> macro placed just before the <code>%SEARCH{}%</code>.  Example: <code>%TABLE{ tablewidth="90%" }%</code> </div>
+<p></p>
+<p></p>
+<h2 id="Related">  Related </h2>
+<a href="FormattedSearch.html">FormattedSearch</a>, <a href="QuerySearch.html">QuerySearch</a>, <a href="SearchHelp.html">SearchHelp</a>, <a href="SearchPatternCookbook.html">SearchPatternCookbook</a>, <a href="RegularExpression.html">RegularExpression</a>, <a href="VarTOPICLIST.html">TOPICLIST</a>, <a href="VarWEBLIST.html">WEBLIST</a>
+<!--  -->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

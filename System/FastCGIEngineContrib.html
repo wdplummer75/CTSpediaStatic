@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FastCGIEngineContrib &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/FastCGIEngineContrib/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/FastCGIEngineContrib/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="FastCGIEngineContrib.html" title="edit FastCGIEngineContrib">
+<meta name="description" content="FastCGIEngineContrib" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tableFastCGIEngineContrib1 {width:100%}
+body .foswikiTable#tableFastCGIEngineContrib1 td.foswikiTableCol0 {width:7em}
+body .foswikiTable#tableFastCGIEngineContrib1 th.foswikiTableCol0 {width:7em}
+</style><!--TABLEPLUGIN_specific-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "FastCGIEngineContrib",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="FastCGI_Engine_Contrib"> FastCGI Engine Contrib </h1>
+Permits Foswiki to be executed with <a class="foswikiNewLink" rel="nofollow" href="FastCGI.html" title="Create this topic">FastCGI</a>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Overview"> Overview </a>
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions </a> <ul>
+<li> <a href="#Installation_of_the_FCGI_CPAN_library"> Installation of the FCGI CPAN library </a>
+</li> <li> <a href="#Apache"> Apache </a>
+</li> <li> <a href="#Lighttpd"> Lighttpd </a>
+</li> <li> <a href="#Nginx"> Nginx </a>
+</li></ul> 
+</li> <li> <a href="#Tuning"> Tuning </a>
+</li> <li> <a href="#Known_Issues"> Known Issues </a>
+</li> <li> <a href="#Dependencies"> Dependencies </a>
+</li> <li> <a href="#Change_History"> Change History </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Overview">  Overview </h2>
+<p></p>
+<a href="http://www.fastcgi.com/">FastCGI</a> is a technology to deliver dynamic web
+content. It differs from <a href="http://hoohoo.ncsa.uiuc.edu/cgi/">CGI</a> cause it
+remains persistent between requests, instead of CGI approach of a new forked
+process per request. This way there is a significant performance improvement,
+since all overhead related to create a new process, load the interpreter and
+compile the code is skipped.
+<p></p>
+Some FastCGI features: <ul>
+<li> The number of persistent processes is configurable, independent of the web server. This leads to easier capacity planning/management.
+</li> <li> Processes can be run with a different user: more security.
+</li> <li> Processes can be run on another machines: easier load balancing.
+</li></ul> 
+<p></p>
+<h2 id="Installation_Instructions">  Installation Instructions </h2>
+<p></p>
+<div class="foswikiHelp"><img title="TIP" width="16" src="DocumentGraphics.attachments/tip.png" height="16" alt="TIP"> We recommend that you use the thoroughly tested <a title="'Support.ApacheConfigGenerator' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Support.ApacheConfigGenerator"><noautolink>Foswiki:Support.ApacheConfigGenerator</noautolink></a> for creating your apache configuration.  It can generate a comprehensive Apache configuration for your installation.
+</div>
+<p></p>
+<p></p>
+This section is about how to configure <a href="FastCGIEngineContrib.html" class="foswikiCurrentTopicLink">FastCGIEngineContrib</a>, considering many possible environments:
+<p></p> <ul>
+<li> <a href="http://httpd.apache.org/">Apache</a> web server  <ul>
+<li> Using only <code>.htaccess</code> (typically on host services)
+</li> <li> With access to apache configuration files <ul>
+<li> Remote FastCGI processes
+</li></ul> 
+</li> <li> Using <code>mod_fcgid</code> or <code>mod_fastcgi</code>
+</li></ul> 
+</li> <li> <a href="http://www.lighttpd.net/">Lighttpd</a> web server  <ul>
+<li> Remote FastCGI processes
+</li></ul> 
+</li> <li> <a href="http://nginx.org/">nginx</a> web server <ul>
+<li> remote FastCGI processes
+</li></ul> 
+</li></ul> 
+<p></p>
+<p></p>
+<h3 id="Installation_of_the_FCGI_CPAN_library">  Installation of the FCGI CPAN library </h3>
+<noautolink>
+FastCGIEngineContrib uses a CPAN library called FCGI which is not normally distributed with Perl. Version of FCGI should be 0.67 or later.
+See SystemRequirements (<a title="'System.SystemRequirements' on foswiki.org" href="https://foswiki.org/System.SystemRequirements" class="interwikiLink"><noautolink>Foswiki:System.SystemRequirements</noautolink></a>) for a detailed requiremments by server distribution.
+<p></p> <ul>
+<li> Debian / Ubuntu:  <code>apt-get install libfcgi-perl</code>
+</li> <li> RedHat / Centos:  <code>yum install perl-FCGI</code> 
+</li> <li> SuSE: <code>zypper install&nbsp; perl-FCGI</code>
+</li> <li> Gentoo: <code>emerge dev-perl/FCGI</code>
+</li> <li> FreeBSD: <code>pkg install p5-FCGI</code>
+</li> <li> CPAN: <code>cpanm FCGI</code>
+</li></ul> 
+</noautolink>
+<h3 id="Apache">  Apache </h3>
+<p></p>
+<h4 id="Apache_Module">  Apache Module </h4>
+<p></p>
+There are two options that basicly do the same thing
+<p></p> <ul>
+<li> mod_fastcgi which is the oldest implementation. It is released under a custom non-free license but it is free of charge.
+</li> <li> mod_fcgid which is the newer implementation released under the GPL license and now part of the Apache Foundation.
+</li></ul> 
+<p></p>
+<code>mod_fcgid</code> is provided by default with apache2, and is recommended for simplicity of installation and configuration.
+<p></p>
+Below are some resources for the most common Linux distributions. The actual versions of the latest packages may have changed since this documentation was written.
+<p></p>
+mod_fcgid resources <ul>
+<li> Sources - <a href="http://httpd.apache.org/mod_fcgid/">http://httpd.apache.org/mod_fcgid/</a>
+</li> <li> Debian - <a href="http://packages.debian.org/search?searchon=names&amp;keywords=libapache2-mod-fcgid">http://packages.debian.org/search?searchon=names&amp;keywords=libapache2-mod-fcgid</a>
+</li></ul> 
+<p></p>
+<h4 id="Apache_Configuration">  Apache Configuration </h4>
+<p></p>
+<div class="foswikiHelp"> 
+<img height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> It is strongly recommended that users work from
+<a title="'Support.ApacheConfigGenerator' on foswiki.org" href="https://foswiki.org/Support.ApacheConfigGenerator" class="interwikiLink"><noautolink>Foswiki:Support.ApacheConfigGenerator</noautolink></a> to create initial Apache configurations.
+This config generator is comprehensive and well tested.</div>
+<p></p>
+There is one important parameter which should be consistent with the largest ATTACHFILESIZELIMIT of any web.  <code>FcgidMaxRequestLen</code> must be large enough to
+permit upload of the largest possible attachment, or the upload will fail with a 500 status.  Be sure the <code>FcgidMaxRequestLen</code> is larger so that the user will get a
+friendly error message from Foswiki.  The default limit on recent Apache releases is 131072 bytes.  It is <em>not</em> possible to override this in a <code>.htaccess</code> file.
+<p></p>
+Foswiki also ships  with an example apache configuration, and example
+<code>.htaccess</code> files which include Fcgi example configurations.
+<p></p>
+<h3 id="Lighttpd">  Lighttpd </h3>
+<div class="foswikiHelp">
+Edit the url (<code>/foswiki/bin</code>) and file system paths (<code>/var/www/foswiki</code>) below
+as appropriate for your system.
+</div>
+<p></p>
+You need to load <a href="http://redmine.lighttpd.net/wiki/lighttpd/Docs:ModFastCGI">mod_fastcgi</a>.
+<p></p>
+<pre class="bash">
+# Example with FastCGI processes launched by the webserver
+
+$HTTP["url"] =~ "^/foswiki/bin/" {
+    alias.url += ( "/foswiki/bin" => "/var/www/foswiki/bin/foswiki.fcgi" )
+    fastcgi.server = ( ".fcgi" => (
+            (
+                "socket"    => "/var/www/foswiki/working/tmp/foswiki.sock",
+                "bin-path"  => "/var/www/foswiki/bin/foswiki.fcgi",
+                "max-procs" => 3
+            ),
+        )
+    )
+}
+</pre>
+<p></p>
+<pre class="bash">
+# Example with external FastCGI processes (running on the same host, with another user or at a remote machine)
+
+$HTTP["url"] =~ "^/foswiki/bin/" {
+    alias.url += ( "/foswiki/bin" => "/var/www/foswiki/bin/foswiki.fcgi" )
+    fastcgi.server = ( ".fcgi" => (
+            (
+                "host"    => "example.com",
+                "port"    => "8080",
+            ),
+        )
+    )
+}
+</pre>
+<p></p>
+<h3 id="Nginx">  Nginx </h3>
+<p></p>
+In contrast to Apache or Lighttpd, Nginx does not control the life time of the <code>foswiki.fcgi</code> backend process. Instead you will
+have to start it yourself using the system's init process. The FCGI::ProcManager class will then take care of (re-)spawning 
+enough child processes as required.
+<p></p>
+<h4 id="Configure_nginx_to_contact_a_61foswiki.fcgi_61_process_on_some_socket_on_the_localhost:">  Configure nginx to contact a <code>foswiki.fcgi</code> process on some socket on the localhost: </h4>
+<p></p>
+<div class="foswikiHelp">
+Edit the file system paths (<code>/var/www/foswiki</code>, <code>/var/log/nginx</code>) below as appropriate for your system.  This configuration
+uses "short URLs".
+</div>
+<p></p>
+<pre class="bash">
+server {
+    listen       80;
+    server_name  nginx.domain.com;
+
+    set $foswiki_root "/var/www/foswiki";
+    root $foswiki_root;
+
+    access_log  /var/log/nginx/foswiki-access.log;
+    error_log   /var/log/nginx/foswiki-error.log;
+    #error_log   /var/log/nginx/foswiki-error.log debug;
+
+    client_max_body_size 10M;   # Set to maximum attachment size, See also ATTACHFILESIZELIMIT
+
+    location = / {
+        root $foswiki_root;
+    rewrite .* /Main/WebHome;
+    }
+
+    location ~ (^/pub) {
+        allow all;
+    }
+
+    location ~ ^/bin/ {
+           gzip off;
+           #fastcgi_pass             unix:/var/run/nginx/foswiki.sock;
+           fastcgi_pass             127.0.0.1:9000;
+           fastcgi_split_path_info  ^(/bin/\w+)(.*);
+           #  Captures two variables   ($fastcgi_script_name) and ($fastcgi_path_info)
+           fastcgi_param            SCRIPT_FILENAME $foswiki_root/bin/$fastcgi_script_name;
+           fastcgi_param            SCRIPT_NAME     $fastcgi_script_name;
+           fastcgi_param            PATH_INFO       $fastcgi_path_info;
+           include fastcgi_params;
+       }
+
+    location ~ (^/lib|^/data|^/locale|^/templates|^/tools|^/work) {
+        deny all;
+    }
+
+    if ($http_user_agent ~
+^SiteSucker|^iGetter|^larbin|^LeechGet|^RealDownload|^Teleport|^Webwhacker|^WebDevil|^Webzip|^Attache|^SiteSnagger|^WX_mail|^EmailCollector|^WhoWhere|^Roverbot|^ActiveAgent|^EmailSiphon|^CrownPeak-HttpAgent|^$) {
+        rewrite .* /404.html break;
+   }
+
+    location ~ ^/(.*)$ {
+        rewrite ^/(.*)$ /bin/view/$1;
+    }
+}
+</pre>
+<p></p>
+<h4 id="Add_the_61foswiki.fcgi_61_process_into_the_system_init.">  Add the <code>foswiki.fcgi</code> process into the system init. </h4>
+Integrate the <code>foswiki.fgi</code> process into the system's init process use the two helper scripts in the <code>tools</code> directory:
+<p></p> <ul>
+<li> Conventional init scripts (Should also work with systemd) <ul>
+<li> <code>tools/foswiki.init-script</code>: copy this to <code>/etc/init.d/foswiki</code>; make the file executable using <code>chmod +x /etc/init.d/foswiki</code>, and ensure that it is assigned to user/group root.
+</li> <li> <code>tools/foswiki.defaults</code>: copy this to <code>/etc/default/foswiki</code> and make appropriate adjustments;  <ul>
+<li> make sure the process uses the same socket as configured in nginx (see above, defaults to <code>127.0.0.1:9000</code>)
+</li> <li> verify that the <code>FOSWIKI_ROOT</code> setting points to your foswiki installation.
+</li></ul> 
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> systemd specific service files (Used <em>in place of the init scripts</em>. Don't use both!) <ul>
+<li> <code>tools/systemd/foswiki-fastcgi.service</code>: copy this to <code>/etc/systemd/system/foswiki.service</code>.
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> FreeBSD init scripts <ul>
+<li> <code>tools/foswiki.freebsd.init-script</code>:
+</li> <li> <code>tools/foswiki.freebsd.etc-defaults</code>:
+</li></ul> 
+</li></ul> 
+<p></p>
+<div class="foswikiHelp"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!"> <strong>Note:</strong> The service file does not honor all of
+the variables in <code>tools/foswiki.defaults</code>.  If you need to override any of: <ul>
+<li> The user/group - defaults to <code>www-data</code>
+</li> <li> The PIDFile - defaults to <code>/var/www/foswiki/working/foswiki.pid</code>
+</li> <li> The scripts directory - defaults to <code>/var/www/foswiki/bin/</code>
+</li></ul> 
+Then the <code>/etc/systemd/system/foswiki.service</code> file must be edited directly, or overridden by a systemd "drop-in" file created in
+<code>/etc/systemd/system/foswiki.d/foswiki.conf</code>.
+</div>
+<p></p>
+If your system uses <code>systemd</code>, then you will need to trigger a re-read of the init scripts and service files by running (as root): <code>systemctl daemon-reload</code>.
+<strong>This must be done any time the init scripts or service files are modified.</strong>
+<p></p>
+You should now be able to control the backend processes using either: <ul>
+<li> <code>service foswiki start/stop/reload/restart/status</code>. <em>or</em>
+</li> <li> <code>/etc/init.d/foswiki start/stop/reload/restart/status</code>
+</li></ul> 
+<p></p>
+Finally, add the service to the runlevels using <code>update-rc.d foswiki defaults</code> to make sure the service is started on system startup time.
+<p></p>
+<h5 id="Customizing_the_fcgi_process">  Customizing the fcgi process </h5>
+<p></p> <ul>
+<li> Changing the name of the process / init script <ul>
+<li> Copy <code>/etc/init.d/foswiki</code>, <code>/etc/defaults/foswiki</code> and if used, <code>/etc/systemd/system/foswiki.service</code>, to a new name   (ex. myfoswiki)
+</li> <li> Edit the init script to use the new name internally. (The <code>foswiki.service</code> file would need similar changes not detailed here.) <pre>
+# Provides:          myfoswiki
+# Short-Description: Start the myfoswiki backend server.
+NAME&#61;myfoswiki                &#60;&#61;&#61; Should match script name
+# The following defaults are overridden in etc/default/foswiki
+FOSWIKI&#95;PNAME&#61;myfoswiki       &#60;&#61;&#61; Process name displayed in &#61;ps aux&#61;
+</pre>
+</li> <li> Make sure the new instance is using a unique <code>fastcgi_pass</code> and matching <code>FOSWIKI_BIND</code>
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="Tuning">  Tuning </h2>
+<p></p>
+Except from Apache configured using only <code>.htaccess</code> file, it's possible to adjust the number of FastCGI processes. There is no <em>magic number</em>: it depends on some variables, like the hardware resources and access load. If you set this number too low, users may experience high latencies and you'll not use all hardware potential, on the other hand if this setting is adjusted too high then the server can be forced to use swap, what degrades performance a lot.
+<p></p>
+Due to possible memory growth, it's recommended to automatically restart the FCGI handlers afer they serve some number of requests.  On Apache, this is
+done using the <code>FcgidMaxRequestsPerProcess 500</code> setting.  On other web servers, use the Foswiki configuration setting: <code>{FastCGIContrib}{MaxRequests} = 100</code>
+<p></p>
+Dynamic servers are more useful when Foswiki access load on the server is low and/or it's used for something in addition to Foswiki. Under high loads, static servers can deliver better performance.
+<p></p>
+<h2 id="Known_Issues">  Known Issues </h2>
+<p></p>
+<div class="foswikiHelp">
+<img src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!" title="ALERT!" width="16"> This is a persistent engine, so you need to restart the web server after any configuration changes. 
+The Foswiki <a href="FastCGI.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FastCGI</a> implementation on Apache has an auto-reload mechanism that can detect and restart the handlers when the <code>LocalSite.cfg</code> is changed. However there is a delay, and it is recommended to restart apache.
+After the update, each process will still serve one more request before reloading itself (e.g. if you're using 3 processes, the next 3 requests after the update will not be affected. The update will take effect on the requests made after the initial 3). This reloading mechanism works only on operating systems that have the <code>exec(2)</code> system call, like Linux and other POSIX compliant systems.
+<p></p>
+<img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> FastCGI support on IIS 6.0 (and maybe other versions) is <strong>broken</strong> with respect to the <code>STDERR</code> stream. This may cause problems.
+</div>
+<p></p>
+<h2 id="Dependencies">  Dependencies </h2>
+<table border="1" class="foswikiTable"><tr><th>Name</th><th>Version</th><th>Description</th></tr><tr><td align="left">FCGI</td><td align="left"> &gt;0.67</td><td align="left">Optional. Required for nginx, and other web servers when configured for <a href="FastCGI.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FastCGI</a> support</td></tr><tr><td align="left">FCGI::ProcManager</td><td align="left"> &gt;0.23</td><td align="left">Optional. Required on nginx for dynamic FCGI handler management. Not used with Apache.</td></tr></table>
+<p></p>
+<h2 id="Change_History">  Change History </h2>
+<table class="foswikiTable" id="tableFastCGIEngineContrib1" rules="none" width="100%">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 27 Sep 2021 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.20) <a href="https://foswiki.org/Tasks/Item15043" class="interwikiLink" title="'Item15043' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item15043</noautolink></a> - fixed parameter handling, i.e. when using zeor max requests </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Oct 2020 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.10) <a title="'Item14963' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14963" class="interwikiLink"><noautolink>Foswikitask:Item14963</noautolink></a> - add warmup parameter </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 02 Dec 2017 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.05) <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14532" title="'Item14532' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14532</noautolink></a> - Allow process name to be overridden when running as started task.<br/>                        <a title="'Item11491' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11491" class="interwikiLink"><noautolink>Foswikitask:Item11491</noautolink></a> - Document relationship between <code>ATTACHFILESIZELIMIT</code> and <code>FcgidMaxRequestLen</code>.<br/>                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14577" title="'Item14577' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14577</noautolink></a> - Add sample init scripts for FreeBSD. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 May 2017 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.04) <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14346" title="'Item14346' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14346</noautolink></a> - Fix issues in the systemd service file. Improve documentation.<br/>                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14402" title="'Item14402' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14402</noautolink></a> - Fix default Foswiki root location. along with more doc improvements. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Oct 2016 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.03) <a href="https://foswiki.org/Tasks/Item13883" class="interwikiLink" title="'Item13883' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13883</noautolink></a> - Documentation updates, <a title="'Item14086' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14086"><noautolink>Foswikitask:Item14086</noautolink></a> - Add a systemd example service file. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Jun 2015 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.02) <a title="'Item10751' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item10751" class="interwikiLink"><noautolink>Foswikitask:Item10751</noautolink></a> - Prepare for Unicode core. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Mar 2015 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.01) <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13342" title="'Item13342' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13342</noautolink></a> - Add missing dependency, don't re-init back end after every transaction while bootstrapping. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Jan 2015 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (1.00) <a href="https://foswiki.org/Tasks/Item13010" class="interwikiLink" title="'Item13010' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13010</noautolink></a> - make checking <code>LocalSite.cfg</code> for changes optional so that it can be disabled for improved stability on high traffic sites </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Aug 2014 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (0.97) <a title="'Item13010' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13010" class="interwikiLink"><noautolink>Foswikitask:Item13010</noautolink></a> - fixed instability running under FCGI::ProcManager </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Feb 2014 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (0.96) <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12755" title="'Item12755' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12755</noautolink></a> - fixed socket not being closed properly on a reExec; work around error in FCGI.pm; added <code>quiet</code> parameter to suppress normal messages; fixed tainted pid filename; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Sep 2011 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (0.95) <a title="'Item9957' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9957" class="interwikiLink"><noautolink>Foswikitask:Item9957</noautolink></a> - remove uninitialised value log message </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 26 Oct 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (0.94) <a class="interwikiLink" href="https://foswiki.org/Tasks/Item9902" title="'Item9902' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9902</noautolink></a> - Adding more resources about how to get and install CPAN lib and mod_fcgid or mod_fastcgi. Also includes temporary fix from <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1515" title="'Item1515' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1515</noautolink></a>: added maxRequests to ease memory leaks and fix for <a class="interwikiLink" href="https://foswiki.org/Tasks/Item9456" title="'Item9456' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9456</noautolink></a>: Taint error with foswiki.fcgi </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Sep 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> (0.93) <a title="'Item9701' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9701" class="interwikiLink"><noautolink>Foswikitask:Item9701</noautolink></a> - Documentation update, suggest <code>mod_fcgid</code> preferred over <code>mod_fastcgi</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Sep 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item9456' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9456" class="interwikiLink"><noautolink>Foswikitask:Item9456</noautolink></a> - Taint error, <a title="'Item9390' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9390" class="interwikiLink"><noautolink>Foswikitask:Item9390</noautolink></a> - LocalSite.cfg error handling, <a href="https://foswiki.org/Tasks/Item8765" class="interwikiLink" title="'Item8765' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8765</noautolink></a> - Perl coding issue,  <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1315" title="'Item1315' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1315</noautolink></a> - Support information </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Dec 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Main.ItaloValcy' on foswiki.org" href="https://foswiki.org/Main.ItaloValcy" class="interwikiLink"><noautolink>Foswiki:Main.ItaloValcy</noautolink></a>: fix <a title="'Item8238' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item8238" class="interwikiLink"><noautolink>Foswikitask:Item8238</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 24 Jan 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Documentation enhancements and some fixes (<a title="'Item853' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item853" class="interwikiLink"><noautolink>Foswikitask:Item853</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> 25 Dec 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Initial Release </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

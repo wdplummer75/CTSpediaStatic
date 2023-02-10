@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryUITooltip &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryUITooltip/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/JQueryUITooltip/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" href="JQueryUITooltip.html" rel="alternate" title="edit JQueryUITooltip">
+<meta name="description" content="JQueryUITooltip" />
+<link type="text/css" media="all" rel="stylesheet" class="head JQUERYPLUGIN::THEME" href="JQueryPlugin.attachments/plugins/ui/themes/foswiki/jquery-ui.css"><!--JQUERYPLUGIN::THEME-->
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::EASING" src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryUITooltip",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::UI" src="JQueryPlugin.attachments/plugins/ui/jquery-ui.js?version=1.13.1"></script><!--JQUERYPLUGIN::UI-->
+<script class="script JQUERYPLUGIN::UI::TOOLTIP" src="JQueryPlugin.attachments/plugins/ui/jquery.ui.tooltip.init.js?version=1.13.1"></script><!--JQUERYPLUGIN::UI::TOOLTIP-->
+</head>
+<body>
+<h1 id="JQueryUITooltip">  <a class="foswikiCurrentTopicLink" href="JQueryUITooltip.html">JQueryUITooltip</a> </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Summary"> Summary </a>
+</li> <li> <a href="#Usage"> Usage </a>
+</li> <li> <a href="#Parameters"> Parameters </a>
+</li> <li> <a href="#Examples"> Examples </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Summary">  Summary </h2>
+<p></p>
+    Homepage: <a href="http://api.jqueryui.com/tooltip/">http://api.jqueryui.com/tooltip/</a> <br />
+    Author(s): see <a href="http://jqueryui.com/about">http://jqueryui.com/about</a> <br />
+    Version: 1.13.1
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+To load the library into the current wiki page, add this somewhere on the page:
+<p></p>
+<pre class="tml">
+&#37;JQREQUIRE{&#34;ui::tooltip&#34;}&#37;
+</pre>
+<p></p>
+<p></p>
+This will initialize all DOM elements with a <code>jqUITooltip</code> css class and add a jQuery-ui tooltip to it.
+<p></p>
+<pre class="tml">
+&#60;a href&#61;&#34;#&#34; class&#61;&#34;jqUITooltip&#34; title&#61;&#34;This is the tooltip content&#34;&#62;hover me&#60;/a&#62;
+</pre>
+<p></p>
+<a href=".." class="jqUITooltip" title="This is the tooltip content">hover me</a>
+<p></p>
+The plugin will also delegate the feature to all elements in a <code>jqUITooltip</code> container by means of delegation.
+This means that all elements contained in a <code>jqUITooltip</code> container will be tooltip-enabled.
+By default any content of a <code>title</code> attribute will serve as the content for the tooltip displayed
+when hovering over this element.
+<p></p>
+<pre class="tml">
+&#60;div class&#61;&#34;jqUITooltip&#34;&#62;
+   &#42; &#60;a href&#61;&#34;#&#34; title&#61;&#34;This is the tooltip content&#34;&#62;hover me&#60;/a&#62;
+   &#42; &#60;a href&#61;&#34;#&#34; title&#61;&#34;This is the tooltip content&#34;&#62;hover me&#60;/a&#62;
+   &#42; &#60;a href&#61;&#34;#&#34; title&#61;&#34;This is the tooltip content&#34;&#62;hover me&#60;/a&#62;
+   &#42; &#60;a href&#61;&#34;#&#34; title&#61;&#34;This is the tooltip content&#34;&#62;hover me&#60;/a&#62;
+&#60;/div&#62;
+</pre>
+<p></p>
+<div class="jqUITooltip"> <ul>
+<li> <a title="This is the tooltip content" href="..">hover me</a>
+</li> <li> <a href=".." title="This is the tooltip content">hover me</a>
+</li> <li> <a title="This is the tooltip content" href="..">hover me</a>
+</li> <li> <a title="This is the tooltip content" href="..">hover me</a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Parameters">  Parameters </h2>
+<p></p>
+The plugin comes with a set of convenient parameters that can be specified using HTML5 data attributes. See the examples below.
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Name</a> </th>
+			<th class="foswikiTableCol1"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Default</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> arrow </td>
+			<td class="foswikiTableCol1"> boolean flag to display a small arrow next to the tooltip pointing to its root element </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> delay </td>
+			<td class="foswikiTableCol1"> milliseconds delay before the tooltip appears </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 500 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> duration </td>
+			<td class="foswikiTableCol1"> duration of the animation to show/hide the tooltip </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 200 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> position </td>
+			<td class="foswikiTableCol1"> specifies the position of the tooltip relative to the element it appears at; this can either be one of the standard position specifiers known to jQuery or one of the short-cuts <code>bottom</code>, <code>top</code>, <code>left</code>, <code>right</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> default </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> theme </td>
+			<td class="foswikiTableCol1"> specifies one of the predefined look&amp;feel settings; possible values: <code>default</code>, <code>transparent</code>, <code>info</code>, <code>error</code>, <code>help</code>, <code>frame</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> default </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> track </td>
+			<td class="foswikiTableCol1 foswikiLast"> boolean flag to switch on/off the tooltip to follow the mouse pointer </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> true </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<h3 id="Use_of_HTML_data_attributes">  Use of HTML data attributes </h3>
+<pre class="tml">
+&#60;table class&#61;&#34;foswikiLayoutTable jqUITooltip&#34; data-theme&#61;&#34;info&#34; data-position&#61;&#34;bottom&#34; data-arrow&#61;&#34;true&#34; data-delay&#61;&#34;0&#34;&#62;
+&#60;tr&#62;
+  &#60;th&#62;First Name:&#60;/th&#62;
+  &#60;th&#62;Last Name:&#60;/th&#62;
+&#60;/tr&#62;
+&#60;tr&#62;
+  &#60;td&#62;
+    &#60;input type&#61;&#34;text&#34; class&#61;&#34;foswikiInputField&#34; title&#61;&#34;Please insert your first name&#34; size&#61;&#34;30&#34; /&#62;
+  &#60;/td&#62;
+  &#60;td&#62;
+    &#60;input type&#61;&#34;text&#34; class&#61;&#34;foswikiInputField&#34; title&#61;&#34;Please insert your last name&#34; size&#61;&#34;30&#34; /&#62;
+  &#60;/td&#62;
+&#60;/tr&#62;
+&#60;/table&#62;
+</pre>
+<p></p>
+<table class="foswikiLayoutTable jqUITooltip" data-theme="info" data-position="bottom" data-arrow="true" data-delay="0">
+<tr>
+  <th>First Name:</th>
+  <th>Last Name:</th>
+</tr>
+<tr>
+  <td>
+    <input type="text" class="foswikiInputField" title="Please insert your first name" size="30" />
+  </td>
+  <td>
+    <input type="text" class="foswikiInputField" title="Please insert your last name" size="30" />
+  </td>
+</tr>
+</table>
+<p></p>
+<h3 id="Themes">  Themes </h3>
+<table class="foswikiLayoutTable">
+<tr>
+  <th>Default:</th>
+  <td><input id="age" title="We ask for your age only for statistical purposes." class="foswikiInputField jqUITooltip" data-theme="default" data-position="right" data-arrow="true" data-delay="0" /></td>
+</tr>
+<tr>
+  <th>Transparent:</th>
+  <td><input id="age" title="We ask for your age only for statistical purposes." class="foswikiInputField jqUITooltip" data-theme="transparent" data-position="right" data-arrow="true" data-delay="0" /></td>
+</tr>
+<tr>
+  <th>Info:</th>
+  <td><input id="age" title="We ask for your age only for statistical purposes." class="foswikiInputField jqUITooltip" data-theme="info" data-position="right" data-arrow="true" data-delay="0" /></td>
+</tr>
+<tr>
+  <th>Error:</th>
+  <td><input id="age" title="We ask for your age only for statistical purposes." class="foswikiInputField jqUITooltip" data-theme="error" data-position="right" data-arrow="true" data-delay="0" /></td>
+</tr>
+<tr>
+  <th>Help:</th>
+  <td><input id="age" title="We ask for your age only for statistical purposes." class="foswikiInputField jqUITooltip" data-theme="help" data-position="right" data-arrow="true" data-delay="0" /></td>
+</tr>
+<tr>
+  <th>Frame:</th>
+  <td><input id="age" title="We ask for your age only for statistical purposes." class="foswikiInputField jqUITooltip" data-theme="frame" data-position="right" data-arrow="true" data-delay="0" /></td>
+</tr>
+</table>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

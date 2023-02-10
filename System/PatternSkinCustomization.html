@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PatternSkinCustomization &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/PatternSkinCustomization/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/PatternSkinCustomization/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" href="PatternSkinCustomization.html" rel="alternate" title="edit PatternSkinCustomization">
+<meta name="description" content="PatternSkinCustomization" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PatternSkinCustomization",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="System.PatternSkin_Customization">  <a href="PatternSkin.html">PatternSkin</a> Customization </h1>
+<p></p>
+<strong>Guidelines how to create and customize page templates.</strong> For styling your Foswiki using stylesheets, see <a href="PatternSkinCssCookbook.html">PatternSkinCssCookbook</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#First_Read:_How_to_modify_PatternSkin_templates"> First Read: How to modify PatternSkin templates </a> <ul>
+<li> <a href="#The_template_approach"> The template approach </a>
+</li> <li> <a href="#The_topic_template_approach_40using_VIEW_TEMPLATE_41"> The topic template approach (using VIEW_TEMPLATE) </a>
+</li></ul> 
+</li> <li> <a href="#Reference:_pattern_skin_template_INCLUDE_tree"> Reference: pattern skin template INCLUDE tree </a>
+</li> <li> <a href="#Logo"> Logo </a> <ul>
+<li> <a href="#How_can_I_change_the_web_logo_63"> How can I change the web logo? </a>
+</li> <li> <a href="#How_do_I_set_a_site_45wide_logo_63"> How do I set a site-wide logo? </a>
+</li></ul> 
+</li> <li> <a href="#Top_bar"> Top bar </a> <ul>
+<li> <a href="#Customizing_the_Top_bar"> Customizing the Top bar </a>
+</li> <li> <a href="#My_logo_does_not_fit_the_top_bar"> My logo does not fit the top bar </a>
+</li> <li> <a href="#I_want_to_change_the_white_space_above_and_below_the_logo"> I want to change the white space above and below the logo </a>
+</li> <li> <a href="#The_search_box_won_39t_find_topics_in_other_webs"> The search box won't find topics in other webs </a>
+</li> <li> <a href="#I_want_to_change_the_height_of_the_top_bar"> I want to change the height of the top bar </a>
+</li> <li> <a href="#I_want_to_set_or_change_the_top_background_image"> I want to set or change the top background image </a>
+</li> <li> <a href="#I_want_to_have_the_web_color_in_the_top_bar"> I want to have the web color in the top bar </a>
+</li> <li> <a href="#I_want_to_remove_the_Jump_and_Search_boxes_from_the_top_bar"> I want to remove the Jump and Search boxes from the top bar </a>
+</li> <li> <a href="#I_want_to_hide_the_top_bar"> I want to hide the top bar </a>
+</li></ul> 
+</li> <li> <a href="#Left_bar"> Left bar </a> <ul>
+<li> <a href="#I_want_to_customize_the_side_bar"> I want to customize the side bar </a>
+</li> <li> <a href="#I_want_to_hide_the_side_bar"> I want to hide the side bar </a>
+</li></ul> 
+</li> <li> <a href="#Buttons"> Buttons </a> <ul>
+<li> <a href="#I_want_to_hide_the_edit_buttons_from_certain_users"> I want to hide the edit buttons from certain users </a>
+</li> <li> <a href="#I_want_to_remove_the_History_button_from_the_bottom"> I want to remove the History button from the bottom </a>
+</li> <li> <a href="#I_want_to_put_the_bottom_links_as_buttons_at_the_top"> I want to put the bottom links as buttons at the top </a>
+</li></ul> 
+</li> <li> <a href="#Other_page_parts"> Other page parts </a> <ul>
+<li> <a href="#I_want_to_insert_text_outside_of_the_topic_content"> I want to insert text outside of the topic content </a>
+</li> <li> <a href="#I_want_to_place_the_form_at_the_top"> I want to place the form at the top </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<h2 id="First_Read:_How_to_modify_PatternSkin_templates">  First Read: How to modify PatternSkin templates </h2>
+<p></p>
+Everything you see on the common 'view' page is written by the <code>view</code> template. For pattern skin this file is <code>/templates/view.pattern.tmpl</code>.
+<p></p>
+We describe two approaches to override this template: <ol>
+<li> By creating a custom skin file in the <code>templates</code> directory
+</li> <li> By creating a custom topic template
+</li></ol> 
+<p></p>
+Which approach is best? <ul>
+<li> If you want to change the appearance for a lot of pages or even site-wide, the template approach is the easiest.
+</li> <li> If you want to change the appearance of a single topic, or a set of topics, use a topic template.
+</li></ul> 
+<p></p>
+<h3 id="The_template_approach">  The template approach </h3>
+<p></p>
+To change templates you will need shell access. If you don't have this read on below in <a href="#TopicTemplates" class="foswikiCurrentTopicLink">The topic template approach</a>.
+<p></p>
+The quickest way to change the view template would be to simply change the text in the template. A safer way -  strongly recommended, because it will survive a Foswiki update - is to create your own custom skin. That may sound like an awful lot of work, but in reality a skin may be as much as 1 file that consists of only a few lines of code.
+<p></p>
+<strong>Example</strong> <br />
+Let's say you want to simplify the bottom toolbar and remove all links except for "More topic actions". You would need to target <code>%TMPL:DEF{"topicactionbuttons"}%</code>, which is located in <code>view.pattern.tmpl</code>.
+<p></p>
+<strong>The steps you would need:</strong> <ol>
+<li> Think up a name for your skin. Let us use <code>myskin</code> for now.
+</li> <li> Create a new (empty) view template file in <code>/templates</code> called <code>view.myskin.tmpl</code>.
+</li> <li> In <code>view.myskin.tmpl</code> you write:   <pre class="tml">
+   &#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+   &#37;TMPL:DEF{&#34;topicactionbuttons&#34;}&#37;&#37;TMPL:P{&#34;more&#95;link&#34;}&#37;&#37;TMPL:END&#37;</pre>
+</li> <li> For testing, view any topic and append to the topic name: <code>?cover=myskin</code>. You should see an effect now.
+</li> <li> To make the changes visible on all pages, go to <a href="../Main/SitePreferences.html">Main.SitePreferences</a> (to keep <a href="DefaultPreferences.html">DefaultPreferences</a> intact) and write:   <pre class="tml">
+      * Set COVER = myskin</pre>   or write   <pre class="tml">
+      * Set SKIN = myskin,pattern</pre>
+</li></ol> 
+<p></p>
+Test by appending <code>?cover=myskin</code> to the url.
+<p></p>
+<p></p>
+<span id="TopicTemplates"></span>
+<h3 id="The_topic_template_approach_40using_VIEW_TEMPLATE_41">  The topic template approach (using VIEW_TEMPLATE) </h3>
+<p></p>
+Template overrides can be written in a topic, a so-called <em>topic template</em>. Topic template names end with <code>ViewTemplate</code>, for instance <code>BlogPostViewTemplate</code>.
+<p></p>
+Call this template by setting <code>VIEW_TEMPLATE</code>:
+<pre class="tml">
+   &#42; Set VIEW&#95;TEMPLATE &#61; BlogPostView
+</pre> <ul>
+<li> Note that you don't use the <code>Template</code> extension now
+</li> <li> You can make this setting hidden by writing this in the Settings screen: go to More and then Topic Settings
+</li></ul> 
+<p></p>
+We can use the same example as above, but extend it to also replace the Edit and Print buttons at the top with a <em>More Actions</em> button. In the topic you want to use as view template, for instance <code>OnlyMoreView</code>, write:
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;top:toolbarbuttons&#34;}&#37;&#37;TMPL:P{&#34;more&#95;link&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;topicactionbuttons&#34;}&#37;&#37;TMPL:P{&#34;more&#95;link&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+You can also test this by appending <code>?template=OnlyMoreView</code> to the url.
+<p></p>
+<h2 id="Reference:_pattern_skin_template_INCLUDE_tree">  Reference: pattern skin template INCLUDE tree </h2>
+<p></p>
+The <code>view</code> script invokes the <code>view</code> template:  (Note that to simplify customization of the top and side bar layouts, the templates include an "Example" topic if the corresponding topic does not exist.  Copy the example topic rather than changing the example directly.)
+<pre class="tml">
+view
+    foswiki
+        css
+        viewtopbar
+            &#37;SYSTEMWEB&#37;.WebTopBar or &#37;SYSTEMWEB&#37;.WebTopBarExample
+        viewsidebar
+            &#37;WEB&#37;.WebLeftBar or  &#37;SYSTEMWEB&#37;.WebLeftBarExample
+        viewtopicactionbuttons
+        viewbottombar
+            &#37;SYSTEMWEB&#37;.WebBottomBar or &#37;SYSTEMWEB&#37;.WebBottomBarExample
+</pre>
+<p></p>
+Note that <code>WebTopBar</code> is not used per web, but it's either pulled from WebTopBar, or, if it doesn't exist, from <a href="WebTopBarExample.html">WebTopBarExample</a>.
+<p></p>
+<h2 id="Logo">  Logo </h2>
+<p></p>
+<h3 id="How_can_I_change_the_web_logo_63">  How can I change the web logo? </h3>
+<p></p>
+By default the logo at the top left of each web points to the image with name <code>logo.gif</code> that is attached to each web's <a href="WebPreferences.html">WebPreferences</a>. <br />
+The <a href="PreferenceSettings.html">preference settings</a> that cause this behavior are defined in <a href="DefaultPreferences.html">DefaultPreferences</a>.
+<p></p>
+Redefine your custom <a href="PreferenceSettings.html">preference settings</a> in <a href="../Main/SitePreferences.html">Main.SitePreferences</a> (to keep <a href="DefaultPreferences.html">DefaultPreferences</a> intact):
+<pre class="tml">
+   * Set WEBLOGONAME = logo.gif
+   * Set WEBLOGOIMG = %PUBURLPATH%/%BASEWEB%/%WEBPREFSTOPIC%/%WEBLOGONAME%
+   * Set WEBLOGOURL = %SCRIPTURLPATH{"view"}%/%BASEWEB%/%HOMETOPIC%
+   * Set WEBLOGOALT = Home
+</pre>
+<p></p>
+There are 2 ways to change the logo in a web:
+<p></p>
+<strong>Using logo.gif:</strong>
+<div class="foswikiHelp"> <ul>
+<li> Create a new image named <code>logo.gif</code> and attach it to the web's <a href="WebPreferences.html">WebPreferences</a> topic. <a href="PatternSkin.html">PatternSkin</a>'s stylesheet assumes the logo is 40px high. More about that later.
+</li> <li> You can also upload the image with FTP to <code>/pub/YourWeb/WebPreferences/</code> (if permitted by your server configuration).
+</li> <li> Copy the above instructions ("Redefine your custom preference settings") and insert your logo name.
+</li></ul> 
+</div>
+<p></p>
+<strong>Using a new filename:</strong>
+<p></p>
+<div class="foswikiHelp"> <ul>
+<li> Attach whatever image and attach it to the web's <a href="WebPreferences.html">WebPreferences</a> topic. Then add to the <a href="WebPreferences.html">WebPreferences</a> (under <em>Custom web preferences</em>):
+</li></ul> 
+<pre class="tml">
+      * Set WEBLOGONAME = your-logo-name.gif-or-png
+</pre> <ul>
+<li> Copy the above instructions ("Redefine your custom preference settings") and insert your logo name.
+</li></ul> 
+</div>
+<p></p>
+<h3 id="How_do_I_set_a_site_45wide_logo_63">  How do I set a site-wide logo? </h3>
+<p></p>
+There are a bunch of site-wide logo <a href="PreferenceSettings.html">preference settings</a> in <a href="../Main/SitePreferences.html">Main.SitePreferences</a>: <code>WIKILOGOIMG</code>, <code>WIKILOGOURL</code> and <code>WIKILOGOALT</code>.
+To change only the web logo image to site-wide, in <a href="../Main/SitePreferences.html">Main.SitePreferences</a> set:
+<pre class="tml">
+   * Set WEBLOGOIMG = %WIKILOGOIMG%
+</pre>
+<p></p>
+<h2 id="Top_bar">  Top bar </h2>
+<p></p>
+<h3 id="Customizing_the_Top_bar">  Customizing the Top bar </h3>
+<p></p>
+Foswiki ships with <a href="WebTopBarExample.html">WebTopBarExample</a>.   In order to tailor the Top
+bar, navigate to <a href="WebTopBarExample.html">WebTopBarExample</a> and use the <code>More topic actions</code>
+link to copy it to WebTopBar.  Note that although the name suggest
+that this is "per web",  the WebTopBar is a site-wide setting.
+<p></p>
+<h3 id="My_logo_does_not_fit_the_top_bar">  My logo does not fit the top bar </h3>
+<p></p>
+See <em>I want to change the height of the top bar</em> in the <a href="PatternSkinCssCookbook.html">PatternSkinCssCookbook</a>
+<p></p>
+<h3 id="I_want_to_change_the_white_space_above_and_below_the_logo">  I want to change the white space above and below the logo </h3>
+<p></p>
+Change the table style in topic WebTopBar. The default top padding is 11px.
+<p></p>
+<h3 id="The_search_box_won_39t_find_topics_in_other_webs">  The search box won't find topics in other webs </h3>
+<p></p>
+In WebTopBar you can find the line:
+<pre class="tml">
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;web&#34; value&#61;&#34;&#37;BASEWEB&#37;&#34; /&#62;
+</pre>
+<p></p>
+To search all webs, write:
+<pre class="tml">
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;web&#34; value&#61;&#34;all&#34; /&#62;
+</pre>
+<p></p>
+To search a couple of webs, for instance the webs Main and System, write:
+<pre class="tml">
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;web&#34; value&#61;&#34;Main,System&#34; /&#62;
+</pre>
+<p></p>
+See also: <a href="VarSEARCH.html">Search macro</a>
+<p></p>
+<span id="TopBarChangeHeight"></span>
+<h3 id="I_want_to_change_the_height_of_the_top_bar">  I want to change the height of the top bar </h3>
+<p></p>
+<em>This information has moved to <a href="PatternSkinCssCookbook.html">PatternSkinCssCookbook</a></em>
+<p></p>
+<h3 id="I_want_to_set_or_change_the_top_background_image">  I want to set or change the top background image </h3>
+<p></p>
+The image at the top is called "header art" - commonly the top image found on blog sites. The image that is displayed by default is set by the preference <code>WEBHEADERART</code>, defined in <a href="DefaultPreferences.html">DefaultPreferences</a>.
+<p></p>
+Redefine your custom <a href="PreferenceSettings.html">preference settings</a> in <a href="../Main/SitePreferences.html">Main.SitePreferences</a> (to keep <a href="DefaultPreferences.html">DefaultPreferences</a> intact):
+<pre class="tml">
+   * Set WEBHEADERART = %PUBURLPATH%/%SYSTEMWEB%/PatternSkin/Foswiki_header.gif
+   * Set WEBHEADERBGCOLOR = somehexcolor (no quotes, for example: #ffffff)
+</pre>
+<p></p>
+You can also set <code>WEBHEADERART</code> per web, by setting the preference in the Web's <a href="WebPreferences.html">WebPreferences</a>.
+<p></p>
+<img height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> <strong>Note:</strong> For more precise control, the top bar can be controlled using CSS, however: If WEBHEADERART defaults, or is set to anything other than the empty string, the CSS for the <code>#foswikiTopBarContents</code> is expanded inline from <code>templates/css.pattern.tmpl</code>.  Overrides using css files will not be possible.
+<p></p>
+<h3 id="I_want_to_have_the_web_color_in_the_top_bar">  I want to have the web color in the top bar </h3>
+<p></p>
+Redefine <code>WEBHEADERBGCOLOR</code> in <a href="../Main/SitePreferences.html">Main.SitePreferences</a> (to keep <a href="DefaultPreferences.html">DefaultPreferences</a> intact):
+<pre class="tml">
+   * Set WEBHEADERBGCOLOR = %WEBBGCOLOR%
+</pre>
+<p></p>
+<h3 id="I_want_to_remove_the_Jump_and_Search_boxes_from_the_top_bar">  I want to remove the Jump and Search boxes from the top bar  </h3>
+<p></p>
+If you have localization enabled, you will also see a language dropdown box at the far right.
+<p></p>
+You can remove these items from WebTopBar.
+<p></p>
+<h3 id="I_want_to_hide_the_top_bar">  I want to hide the top bar </h3>
+<p></p>
+<strong>Using templates:</strong>
+<p></p>
+The view template is populated with page elements using template inclusions:
+<p></p>
+<pre class="tml">
+%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"viewtopicactionbuttons"}%
+%TMPL:INCLUDE{"viewtopbar"}%
+%TMPL:INCLUDE{"viewsidebar"}%
+</pre>
+<p></p>
+Each included template draws a part of the screen.<br />
+Omit <code>%TMPL:INCLUDE{"viewtopbar"}%</code> to hide the top bar.
+<p></p>
+Another approach is to clear the contents of module <code>topbar</code> with an empty definition. Using either a template or a topic template, write in your custom template:
+<p></p>
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;topbar&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+and add:
+<p></p>
+<pre class="tml">
+&#37;TMPL:DEF{&#34;topbardimensions&#34;}&#37;#patternTopBar,
+#patternClearHeaderCenter,
+#patternClearHeaderLeft,
+#patternClearHeaderRight {
+   height:0px;
+}&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<strong>Using style sheets:</strong> <br />
+See <a href="PatternSkinCssCookbookNoTopBar.html">PatternSkinCssCookbookNoTopBar</a>
+<p></p>
+<span id="LeftBar"></span>
+<h2 id="Left_bar">  Left bar </h2>
+<p></p>
+<h3 id="I_want_to_customize_the_side_bar">  I want to customize the side bar </h3>
+<p></p>
+In order to customize your left bar in each web, just copy <em>YourWeb</em>.WebLeftBarExample to <em>YourWeb</em>.WebLeftBar an put your customizations there.
+<p></p>
+<h3 id="I_want_to_hide_the_side_bar">  I want to hide the side bar </h3>
+<p></p>
+<strong>Using templates:</strong> <br />
+Omit <code>%TMPL:INCLUDE{"viewsidebar"}%</code> to hide the side bar, or in a custom template clear it using
+<pre class="tml">
+&#37;TMPL:DEF{&#34;sidebar&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<strong>Using style sheets:</strong> <br />
+See <a href="PatternSkinCssCookbookNoLeftBar.html">PatternSkinCssCookbookNoLeftBar</a>
+<p></p>
+<p></p>
+<h2 id="Buttons">  Buttons </h2>
+<p></p>
+<h3 id="I_want_to_hide_the_edit_buttons_from_certain_users">  I want to hide the edit buttons from certain users </h3>
+<p></p>
+It may defy the wiki-ness of your Foswiki installation, but in certain circumstances it could be useful to hide the edit buttons from users that are not logged in, for instance for clients that have gotten viewing rights only.
+<p></p>
+Using either a template or a topic template, 'empty' <code>top:toolbarbuttons</code> and <code>topicaction</code> by writing:
+<pre class="tml">
+%TMPL:INCLUDE{"view"}%
+%TMPL:DEF{"top:toolbarbuttons"}%%TMPL:END%
+%TMPL:DEF{"topicaction"}%%TMPL:END%
+</pre>
+<p></p>
+In the user page of <a href="../Main/WikiGuest.html">WikiGuest</a>, set the cover to
+<pre class="tml">
+   * Set COVER = customer
+</pre>
+<p></p>
+By default this topic is editable only by Wiki admins.
+<p></p>
+<h3 id="I_want_to_remove_the_History_button_from_the_bottom">  I want to remove the History button from the bottom </h3>
+<p></p>
+All action links and buttons are defined in <code>viewtopicactionbuttons.tmpl</code>. The bottom history link is defined in DEF <code>action_revisions</code>
+<pre class="tml">
+&#37;TMPL:DEF{&#34;topicactionbuttons&#34;}&#37;
+&#37;TMPL:P{&#34;action&#95;activatable&#95;edit&#95;or&#95;create&#34;}&#37;
+&#37;TMPL:P{&#34;action&#95;activatable&#95;attach&#34;}&#37;
+&#37;TMPL:P{&#34;action&#95;printable&#34;}&#37;
+&#37;TMPL:P{&#34;action&#95;revisions&#34;}&#37;
+&#37;TMPL:P{&#34;action&#95;backlinks&#95;simple&#34;}&#37;
+&#37;TMPL:P{&#34;action&#95;raw&#95;or&#95;view&#34;}&#37;
+&#37;TMPL:P{&#34;action&#95;activatable&#95;raw&#95;edit&#34;}&#37;
+&#37;TMPL:P{&#34;activatable&#95;more&#34;}&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+To hide that link, In a custom skin view template <code>view.myskin.tmpl</code> empty <code>action_revisions</code> by replacing it with an empty string:
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;action&#95;revisions&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<p></p>
+<h3 id="I_want_to_put_the_bottom_links_as_buttons_at_the_top">  I want to put the bottom links as buttons at the top </h3>
+<p></p>
+The default definition in <code>view.pattern.tmpl</code> is:
+<pre class="tml">
+&#37;TMPL:DEF{&#34;top:toolbarbuttons&#34;}&#37;&#37;TMPL:P{&#34;activatable&#95;edit&#95;or&#95;create&#34;}&#37;&#37;TMPL:P{&#34;activatable&#95;attach&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+Create a new skin by creating a file <code>view.myskin.tmpl</code> in the <code>templates</code> directory. Write in it:
+<p></p>
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;top:toolbarbuttons&#34;}&#37;&#37;TMPL:P{&#34;history&#95;history&#95;link&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+View any topic with <code>?skin=myskin,pattern</code>, or set the <code>SKIN</code> preference to <code>myskin,pattern</code>.
+<p></p>
+This will remove the Edit and Attach buttons, and place a History button at the top.
+<p></p>
+You will probably not just want to have the History button there. Other button include names are:
+<pre class="tml">
+create&#95;topic&#95;link
+raw&#95;edit&#95;link
+view&#95;topic&#95;link
+activatable&#95;attach
+activatable&#95;edit&#95;or&#95;create
+more&#95;link
+activatable&#95;printable
+backlinks&#95;web&#95;link
+backlinks&#95;all&#95;link
+backlinks&#95;link
+history&#95;rdiff&#95;link
+history&#95;history&#95;link
+raw&#95;link
+</pre>
+<p></p>
+<p></p>
+<h2 id="Other_page_parts">  Other page parts </h2>
+<p></p>
+<h3 id="I_want_to_insert_text_outside_of_the_topic_content">  I want to insert text outside of the topic content </h3>
+PatternSkin has 2 'buckets' to write additional content to: <code>contentheader</code> and <code>contentfooter</code>, both defined in <code>view.pattern.tmpl</code>. These containers can contain text or html and are placed directly before and after the topic text.
+<p></p>
+Both modules are wrapped in CSS containers: <ul>
+<li> <code>contentheader</code> - wrapped in <code>div</code> of class <code>foswikiContentHeader</code>. Expands <code>beforetext</code> template.
+</li> <li> <code>contentfooter</code> - wrapped in <code>div</code> of class <code>foswikiContentFooter</code>. Expands <code>aftertext</code> template.
+</li></ul> 
+<p></p>
+Note: the <code>contentheader</code> and <code>contentfooter</code> templates are
+<a href="PatternSkin.html">PatternSkin</a> specific names for the <code>beforetext</code> and <code>aftertext</code> templates.  For best
+compatibility with other skins, you should override <code>beforetext</code>, and/or <code>aftertext</code>.
+<p></p>
+To put contents <strong>before</strong> the main text, use the custom skin approach as described above.<br />
+So our custom template contains:
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;beforetext&#34;}&#37;This is the text before&#37;TMPL:END&#37;
+</pre>
+<p></p>
+Use the same procedure for contents to be put <strong>after</strong> the topic text:
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;aftertext&#34;}&#37;This is the text after&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<div class="foswikiHelp"><img title="TIP" width="16" src="DocumentGraphics.attachments/tip.png" alt="TIP" height="16"> Hint: These templates are often used by
+extensions to add to the page above or below the topic contents.  Rather than
+simply replacing them, consider extending them by using the <code>TMPL:PREV</code> option
+to expand the previous definition of the template.
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;beforetext&#34;}&#37;This text prefaces other aftertext templates.&#37;TMPL:PREV&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;aftertext&#34;}&#37;&#37;TMPL:PREV&#37;This text extends other aftertext templates.&#37;TMPL:END&#37;
+</pre>
+</div>
+<p></p>
+<h3 id="I_want_to_place_the_form_at_the_top">  I want to place the form at the top </h3>
+<p></p>
+Pattern skin has 2 buckets for the form: <code>formtop</code> (form at the top) and <code>formbottom</code> (form at the bottom). The default definition is:
+<p></p>
+<pre class="tml">
+&#37;TMPL:DEF{&#34;formtop&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;formbottom&#34;}&#37;&#37;TMPL:P{&#34;form&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+You simply swap the bucket contents. Using either a template or a topic template, write in your custom template:
+<p></p>
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;formtop&#34;}&#37;&#37;TMPL:P{&#34;form&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;formbottom&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<!--  -->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

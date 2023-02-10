@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryMetadata &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/JQueryMetadata/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryMetadata/favicon.ico">
+<link type="application/x-wiki" href="JQueryMetadata.html" rel="alternate" title="edit JQueryMetadata">
+<meta name="description" content="JQueryMetadata" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryMetadata",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryMetadata">  <a class="foswikiCurrentTopicLink" href="JQueryMetadata.html">JQueryMetadata</a> </h1>
+<p></p>
+    Homepage: <a href="https://github.com/MichaelDaum/jquery-metadata">https://github.com/MichaelDaum/jquery-metadata</a> <br />
+    Author(s): John Resig, Yehuda Katz, Joern Zaefferer, Paul McLanahan <br />
+    Version: 2.1ef2bb44c86f5d0e98d55
+<p></p>
+<p></p>
+<p></p>
+This plugin is capable of extracting metadata from classes, random attributes,
+and child elements.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+A lot of jQuery plugins are initialized and configured using <em>metadata</em> embeded into the markup thus eliminating 
+the need to explicitly write JavaScript. A behavior is assigned to an html element by giving it the pertinent class name
+that the plugin listens to. Parameters to the plugin itself are embeded as a JSON object inside the class attribute. <a href="JQueryMetadata.html" class="foswikiCurrentTopicLink">JQueryMetadata</a> can also be encoded differently. Having it inside the class attribute as well is most common. One exception is <a href="JQueryCorner.html">JQueryCorner</a> for example, that uses an explicit <code>data-corner</code> attribute, which of course isn't standard conform markup. However browsers happily ignore attributes that they don't understand. So that's not a problem in real live.
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+Load the plugin as required for the current page:
+<p></p>
+<pre class="tml">
+&#37;JQREQUIRE{&#34;mynewplugin&#34;}&#37;
+</pre>
+<p></p>
+This is how the markup looks like:
+<p></p>
+<pre class="html">
+&#60;div class&#61;&#34;jqMyNewPlugin {key1:&#39;value1&#39;, key2:&#39;value2&#39;, key3:&#39;value3&#39;}&#34;&#62;
+
+&#60;div&#62;
+</pre>
+<p></p>
+This is the plugin's initializer reading the metadata:
+<p></p>
+<pre class="js">
+jQuery(function(&#36;) {
+
+  var defaults &#61; {
+    key1: &#39;default1&#39;,
+    key2: &#39;default2&#39;,
+    key3: &#39;default3&#39;
+  };
+
+  // find all elements tagged .jqMyNewPlugin that aren&#39;t init&#39;ed yet
+  // ... using livequery instead of each to trigger initialisation of async content
+
+  &#36;(&#34;.jqMyNewPlugin:not(jqInitedMyNewPlugin)&#34;).livequery(function() {
+
+     // create a jQuery object for this
+     var &#36;this &#61; &#36;(this);
+
+     // prevent the markup to be init&#39;ed multiple times
+     &#36;this.addClass(&#34;jqInitedMyNewPlugin&#34;);
+   
+     // get plugin options by merging defaults and current json objs
+     var opts &#61; &#36;.extend({}, defaults, &#36;this.metadata());
+
+     // call the plugin handler
+     &#36;this.myNewPlugin(opts);
+  });
+});
+</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

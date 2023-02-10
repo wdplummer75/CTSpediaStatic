@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PatternSkinCssCookbookHideActions &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/PatternSkinCssCookbookHideActions/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/PatternSkinCssCookbookHideActions/favicon.ico">
+<link href="PatternSkinCssCookbookHideActions.html" rel="alternate" title="edit PatternSkinCssCookbookHideActions" type="application/x-wiki">
+<meta name="description" content="PatternSkinCssCookbookHideActions" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PatternSkinCssCookbookHideActions"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="PatternSkinCssCookbook_Recipe:_Hide_action_buttons">  <a href="PatternSkinCssCookbook.html">PatternSkinCssCookbook</a> Recipe: Hide action buttons </h1>
+<p></p>
+<strong>This recipe shows how to hide the action buttons for unauthorised and/or guest users:</strong>
+(Edit, Attach ...)
+<p></p>
+Note that the solutions in thic cookbook do not hide links to missing topics and unknown
+WikiWords.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">There are two options:</span> <ul>
+<li> <a href="#Hide_buttons_for_logged_in_44_but_unauthorized_users"> Hide buttons for logged in,  but unauthorized users </a>
+</li> <li> <a href="#Hide_buttons_for_guests_44_and_for_unauthorized_users"> Hide buttons for guests, and for unauthorized users </a>
+</li> <li> <a href="#Alternative_CSS"> Alternative CSS </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Hide_buttons_for_logged_in_44_but_unauthorized_users">  Hide buttons for logged in,  but unauthorized users </h2>
+<p></p>
+This is the recommended approach.  Edit buttons will be visible for guests,
+and will be hidden if a logged in user does not have access.   This is the
+most "friendly" approach in that a guest can click any button (for ex. edit or
+attach) and will be prompted to log in.
+<p></p>
+This line loads the extra style definition:
+<!----><pre class="tml">
+   &#42; Set USERSTYLEURL &#61; &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/PatternSkinCssCookbookHideActions/hideunauthaction.css
+</pre>
+<p></p>
+<h2 id="Hide_buttons_for_guests_44_and_for_unauthorized_users">  Hide buttons for guests, and for unauthorized users </h2>
+<p></p>
+This requires guests to find and click the login button to authenticate before
+the buttons become visible.
+<p></p>
+<div class='foswikiHelp'><img alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> <strong>Note:</strong> This is not a good way to prevent search
+engines from following edit links.  The buttons are present, but are hidden
+using CSS.</div>
+<p></p>
+This line loads the extra style definition:
+<!----><pre class="tml">
+   &#42; Set USERSTYLEURL &#61; &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/PatternSkinCssCookbookHideActions/hideguestaction.css
+</pre>
+<p></p>
+<p></p>
+<div class='foswikiHelp'>
+You can write this line in <a href="DefaultPreferences.html">DefaultPreferences</a>, in <a href="../Main/SitePreferences.html">SitePreferences</a>, in <a href="WebPreferences.html">WebPreferences</a>, in your user topic or on a single page.
+</div>
+<p></p>
+<h2 id="Alternative_CSS">  Alternative CSS </h2>
+<p></p>
+Another option is to leave the buttons present, but disabled.  The following
+CSS sets the opacity to 50%, and disables the button.
+<pre>
+/&#42; Hide action buttons for guests, and for logged in users without change permission &#42;/
+.foswikiHasNoChangePermission.foswikiLoggedIn .foswikiRequiresChangePermission {
+   pointer-events: none;
+   cursor: default;
+   opacity: 0.5;
+  }
+.foswikiHasNoChangePermission.foswikiGuest .foswikiRequiresChangePermission {
+   pointer-events: none;
+   cursor: default;
+   opacity: 0.5;
+  }
+</pre>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

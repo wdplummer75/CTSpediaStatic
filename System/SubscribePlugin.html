@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SubscribePlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/SubscribePlugin/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE System/SubscribePlugin/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit SubscribePlugin" rel="alternate" href="SubscribePlugin.html" type="application/x-wiki">
+<meta name="description" content="SubscribePlugin" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "SubscribePlugin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<img class="foswikiRight" src="SubscribePlugin.attachments/logo.gif">
+<h1 id="Subscribe_Plugin">  Subscribe Plugin </h1>
+<p></p>
+<!-- <ul>
+<li> Set SHORTDESCRIPTION = This is a companion plugin to the <a href="MailerContrib.html">MailerContrib</a>. It allows you to trivially add a "Subscribe me" link to topics to get subscribed to changes.
+</li></ul> 
+-->
+This is a companion plugin to the <a href="MailerContrib.html">MailerContrib</a>. It allows you to trivially add a "Subscribe me" link to topics to get subscribed to changes.
+<p></p>
+Example (only works if plugin is installed, and you are logged in - you are: <a href="../Main/WikiAdmin.html">WikiAdmin</a> - and you are not <a href="../Main/WikiGuest.html">WikiGuest</a>): %SUBSCRIBE%
+<p></p>
+<img alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> This version is designed for use with Foswiki 2.0 and later. While it will work with Foswiki 1.1.x, it is <strong>not</strong> recommended that you install it there.
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+Anywhere in a topic or template: <ul>
+<li> <code>%SUBSCRIBE{...}%</code> or simply <code>%SUBSCRIBE%</code>          <table class="foswikiTable" id="tableSubscribePlugin1" rules="none">     	<thead>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>			<th class="foswikiTableCol1"> Default </th>			<th class="foswikiTableCol2 foswikiLastCol"> Meaning </th>		</tr>	</thead>     	<tbody>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code>who</code> </td>			<td class="foswikiTableCol1"> Logged-in user </td>			<td class="foswikiTableCol2 foswikiLastCol"> Who to subscribe (wikiname, no web) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topic</code> </td>			<td class="foswikiTableCol1"> Current topic </td>			<td class="foswikiTableCol2 foswikiLastCol"> Topic to subscribe to. Wildcards may be used e.g. <code>topic="Item*"</code> will subscribe to all topics starting with <code>Item</code>. Use <code>topic="Main.*"</code> to subscribe to the WebNotify for the Main web. </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>unsubscribe</code> </td>			<td class="foswikiTableCol1 foswikiLast"> Not set </td>			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> If set to "on", will <strong>unsubscribe</strong> the user </td>		</tr>	</tbody>     </table>
+</li></ul> 
+<p></p>
+The format of the Subscribe/Unsubscribe button is defined in a template file <code>templates/subscribe.tmpl</code>. The normal skin mechanisms can be used to override this with your own local definitions. The default template works with Javascript to provide a smooth interactive experience.
+<p></p>
+<img width="16" title="ALERT!" height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png"> The <code>format</code>  and <code>formatunsubscribe</code> parameters have been removed and will
+be ignored. The version of PatternSkin shipped with Foswiki 1.1.9 used these
+parameters.
+<p></p>
+<p></p>
+<p></p>
+<img src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!" title="ALERT!" width="16">Note: This subscribe macro is for adding and removing individual subscriptions.  It is not aware of subscriptions due to membership in a subscribed group.  If a user is subscribed to a topic due to group membership,  the subscribe link will show the user as subscribed,
+but clicking it will <strong>not</strong> unsubscribe the individual user.  If a user wishes to unsubscribe as an exception, manually add a "negative subscription" to the <a href="WebNotify.html">WebNotify</a> topic.  Ex:  If JoeUser is a member of SomeGroup,
+then the user can unsubscribe manually:
+<noautolink> <ul>
+<li> Main.SomeGroup : *
+</li> <li> Main.JoeUser : - UndesiredTopic
+</li></ul> 
+</noautolink>
+<p></p>
+<h2 id="Access_Controls">  Access Controls </h2>
+The guest user is not allowed to subscribe for notification.
+<p></p>
+You don't need <code>VIEW</code> access to the <a href="WebNotify.html">WebNotify</a> topic in order to subscribe to changes in a web, but you must have <code>CHANGE</code> access. If you want users to be able to subscribe or unsubscribe, but you don't want them to be able to modify their subscription or otherwise edit the <a href="WebNotify.html">WebNotify</a> topic, you can restrict <code>VIEW</code> access to <a href="WebNotify.html">WebNotify</a>. This will make it uneditable from the browser (but will not block <code>save</code> urls, so is not fully secure).
+<p></p>
+<img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> Note that permissions on individual topics are <strong>not</strong> checked when subscription mails are sent out, so be very careful about who you allow to subscribe.
+<p></p>
+<h2 id="Configuration">  Configuration </h2>
+<p></p>
+If you wish to limit the plugin to one or more webs, specifiy the list of Active Webs in one of the following ways.   This list is a comma-separates list of Web names.  A "Regular-expression" style wildcard can be used.  For
+example: <code>Main,Sandbox.*</code> would permit the Main web, Sandbox, including subwebs of Sandbox, or any web prefixed with Sandbox.
+<p></p> <ul>
+<li> <a href="../.html">configure -&gt; <code>Extensions</code> tab -&gt; <code>SubscribePlugin</code> sub-tab</a> <ul>
+<li> <code>{Plugins}{SubscribePlugin}{ActiveWebs} = "Main,Sandbox.*</code>
+</li></ul> 
+</li> <li> As a standard preference setting, set in <a href="../Main/SitePreferences.html">SitePreferences</a> or individual <a href="WebPreferences.html">WebPreferences</a> topics. <ul>
+<li> <code>Set SUBSCRIBEPLUGIN_ACTIVEWEBS = Main,Sandbox.*</code>
+</li></ul> 
+</li></ul> 
+<p></p>
+The configure setting takes precedence over the topic based preference setting.
+<p></p>
+Templates for all forms and strings used by the plugin are specified in <code>templates/subscribe.tmpl</code>, which can be overridden using the standard <a href="Skins.html">Foswiki skins</a> mechanisms.
+<p></p>
+<h2 id="REST_handler">  REST handler </h2>
+<p></p>
+The plugin uses a REST handler to perform the actual subscription. This handler
+is also available for other clients wishing to use the subscription service.
+<p></p>
+<code>.../rest/SubscribePlugin/subscribe</code>
+<p></p>
+Parameters: <ul>
+<li> <code>subscribe_topic</code> topic to subscribe to/unsubscribe from. Value of <code>topic</code> parameter is used if missing. Use Web.Topic format to specify a web.
+</li> <li> <code>subscribe_subscriber</code> <a href="WikiName.html">WikiName</a> of user to subscribe/unsubscribe. Current user is used if missing.
+</li> <li> <code>subscribe_remove</code> true to unsubscribe. Default is to subscribe.
+</li></ul> 
+Note that the calling user <strong>must</strong> be authenticated, and <strong>must</strong> have write permission for the WebNotify topic in the relevant web.
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions </h2>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+A word of warning; if you used SubscribePlugin before version 3.1, please note that the use of GET requests for subscriptions is no longer supported. That means that Javascript <strong>must</strong> to be available in the browser..
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<p></p>
+Another great Foswiki extension from the <img alt="WikiRing" src="SubscribePlugin.attachments/wikiringlogo20x20.png"> <strong>WikiRing</strong> - working together to improve your wiki experience!
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <table border="1" class="foswikiTable"><tr><th>Name</th><th>Version</th><th>Description</th></tr><tr><td align="left">Foswiki::Contrib::MailerContrib</td><td align="left">&gt;=0</td><td align="left">Foswiki mailer module</td></tr><tr><td align="left">JSON</td><td align="left">&gt;0</td><td align="left">Required. Available from the CPAN archive.</td></tr></table> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change&nbsp;History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.6 (08 Dec 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14554' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14554" class="interwikiLink"><noautolink>Foswikitask:Item14554</noautolink></a>: remove link to unused wikiring.com domain. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.5 (06 Nov 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13519" class="interwikiLink" title="'Item13519' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13519</noautolink></a>: Add dependency on URI due to <a href="MailerContrib.html">MailerContrib</a> dependency. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.4 (27 Jul 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13450" class="interwikiLink" title="'Item13450' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13450</noautolink></a>: Fix support for <a title="Create this topic" href="FamFamFam.html" class="foswikiNewLink" rel="nofollow">FamFamFam</a> skin. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.3 (04 May 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13393" class="interwikiLink" title="'Item13393' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13393</noautolink></a>: simplified implementation </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.2 (24 Nov 2014) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12926' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12926" class="interwikiLink"><noautolink>Foswikitask:Item12926</noautolink></a>: removed requirement for an HTML form wrapping the button </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.1 (28 Apr 2014) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12872' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12872"><noautolink>Foswikitask:Item12872</noautolink></a>: Add CSRF validation support </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0 (14 Mar 2013) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item2258" class="interwikiLink" title="'Item2258' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2258</noautolink></a>: added template support. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item2450" title="'Item2450' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2450</noautolink></a>: Fix subscription to subweb topics. <a title="'Item11015' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11015" class="interwikiLink"><noautolink>Foswikitask:Item11015</noautolink></a>: Improve docs. <a title="'Item8095' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item8095"><noautolink>Foswikitask:Item8095</noautolink></a>: Analyse and fix load failures. <a title="'Item11543' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11543" class="interwikiLink"><noautolink>Foswikitask:Item11543</noautolink></a>: Add unit tests. <a title="'Item10045' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item10045" class="interwikiLink"><noautolink>Foswikitask:Item10045</noautolink></a>: Support non-ascii topic names. <a title="'Item11595' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11595"><noautolink>Foswikitask:Item11595</noautolink></a>: Use REST handler for post with strikeone. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.0 (03 Mar 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="GeorgeClark.html">GeorgeClark</a> - <a title="'Item11594' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11594"><noautolink>Foswikitask:Item11594</noautolink></a> - Add <a href="ActiveWebs.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">ActiveWebs</a> configuration. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> 1.0 (03 Dec 2008) </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Released for Foswiki </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

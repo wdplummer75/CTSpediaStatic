@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ModPerlEngineContrib &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/ModPerlEngineContrib/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/ModPerlEngineContrib/favicon.ico">
+<link type="application/x-wiki" title="edit ModPerlEngineContrib" href="ModPerlEngineContrib.html" rel="alternate">
+<meta name="description" content="ModPerlEngineContrib" />
+<link type="text/css" media="all" rel="stylesheet" class="head JQUERYPLUGIN::TWISTY" href="TwistyPlugin.attachments/twisty.css?version=1.6.0"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "ModPerlEngineContrib",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::TWISTY" src="TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="ModPerlEngineContrib"> ModPerlEngineContrib </h1>
+<!--
+One line description, required for extensions repository catalog. <ul>
+<li> Set SHORTDESCRIPTION = Permits Foswiki to be executed under mod_perl
+</li></ul> 
+-->
+Permits Foswiki to be executed under mod_perl
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Overview"> Overview </a>
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions </a> <ul>
+<li> <a href="#Confirming_61mod_perl_61_installation"> Confirming mod_perl installation </a>
+</li> <li> <a href="#Foswiki_configuration_tuning"> Foswiki configuration tuning </a>
+</li> <li> <a href="#A_61mod_perl_61_configuration_tuning"> mod_perl configuration tuning </a>
+</li></ul> 
+</li> <li> <a href="#Known_Issues"> Known Issues </a>
+</li> <li> <a href="#List_of_Files"> List of Files </a>
+</li> <li> <a href="#Info"> Info </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Overview">  Overview </h2>
+<p></p>
+This is a runtime engine component from <a class="interwikiLink" href="https://foswiki.org/Development.FoswikiStandAlone" title="'Development.FoswikiStandAlone' on foswiki.org"><noautolink>Foswiki Standalone</noautolink></a> architecture.
+<p></p>
+<a href="http://en.wikipedia.org/wiki/Mod_perl">mod_perl</a> is the
+<a href="http://perl.apache.org/">Perl API</a> to the
+<a href="http://httpd.apache.org/">Apache</a> web server. It permits hooking applications
+into Apache, providing good performance and great flexibility.
+<p></p>
+It has better performance than
+<a href="http://en.wikipedia.org/wiki/Common_Gateway_Interface">CGI</a> because it loads
+and compiles apps at Apache initialization and apps are kept in memory as long
+as Apache itself, so there is no need to fork+load+compile all the code for
+each request.
+<p></p>
+<h2 id="Installation_Instructions">  Installation Instructions </h2>
+<p></p>
+<p></p>
+<img src="DocumentGraphics.attachments/tip.png" alt="TIP" height="16" title="TIP" width="16"> As of Foswiki 2.0, ModPerlEngineContrib is installed by default. <button class="twistyExpandAll foswikiButton">Show all Foswiki 1.x instructions</button> 
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemModPerlEngineContrib1383show" style="" class="twistyStartHide twistyTrigger foswikiUnvisited twistyInited0"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Show Foswiki 1.x details</span></a></span><span id="twistyIdSystemModPerlEngineContrib1383hide" style="display:none" class="twistyStartHide twistyTrigger foswikiUnvisited twistyInited0"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Close</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemModPerlEngineContrib1383toggle" style="" class="twistyStartHide twistyContent twistyInited0">
+<div class="foswikiHelp">
+<strong>This block of instructions is only needed on Foswiki 1.x systems.</strong>
+<p></p>
+Install <a title="'Extensions/ModPerlEngineContrib' on foswiki.org" href="https://foswiki.org/Extensions/ModPerlEngineContrib" class="interwikiLink"><noautolink>ModPerlEngineContrib</noautolink></a>
+either manually (download the package and extract its contents over your
+foswiki directory) or using <a href="../.html">configure</a>
+(under <code>Extensions</code> section, push the <code>Find More Extensions</code> button).
+<p></p>
+<img alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> Foswiki 1.x installations <strong>must</strong> be configured before mod_perl is enabled
+in Apache. Run <a href="../.html">configure</a> <strong>before</strong> enabling mod_perl in Apache. 
+or else Apache will not start, reporting an error about a missing
+<code>lib/LocalSite.cfg</code>.  You will need to: <ol>
+<li> Configure apache with standard CGI
+</li> <li> Configure Foswiki using <code>bin/configure</code>
+</li> <li> Re-configure Apache with <code>mod_perl</code> active.
+</li></ol> 
+</div>
+</div></div>
+<p></p>
+Visit the <a title="'Support/ApacheConfigGenerator' on foswiki.org" href="https://foswiki.org/Support/ApacheConfigGenerator" class="interwikiLink"><noautolink>apache config generator</noautolink></a>
+and fill in the fields according to your environment. Select <strong><em>mod_perl</em></strong> as your
+<strong><em>Runtime Engine</em></strong> and choose your apache version. Push the <code><b>Update config file</b></code> 
+button and you'll get your config file.
+<p></p>
+In the web server configuration, you will need to load <code>mod_perl</code> but it is also recommended to load the
+<a href="http://httpd.apache.org/apreq/">Apache HTTP Request Library</a> (module apreq).
+If <code>apreq</code> is not loaded, the following error may be encountered in certain situations, e.g., during login:
+<pre>
+apache2: symbol lookup error: /usr/lib/perl5/auto/APR/Request/Apache2/Apache2.so: undefined symbol: apreq&#95;handle&#95;apache2
+</pre>
+<p></p>
+<h3 id="Confirming_61mod_perl_61_installation">  Confirming <code>mod_perl</code> installation </h3>
+<p></p>
+On Foswiki 2.0 systems. visit <a href="FoswikiServerInformation.html">FoswikiServerInformation</a>.   Look for the
+<code>Engine</code> entry in the <code>General execution environment</code> table.
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemModPerlEngineContrib7164show" style="" class="twistyStartHide twistyTrigger foswikiUnvisited twistyInited0"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Show Foswiki 1.x details</span></a></span><span id="twistyIdSystemModPerlEngineContrib7164hide" style="display:none" class="twistyStartHide twistyTrigger foswikiUnvisited twistyInited0"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited">Close</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemModPerlEngineContrib7164toggle" style="" class="twistyStartHide twistyContent twistyInited0">
+On Foswiki 1.x systems. you may (though not necessarily) be able to confirm that <code>mod_perl</code> is installed and enabled by checking
+in configure's "Environment Variables" section.  a sample:
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_SIGNATURE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Apache/2.2.9 (Debian) mod_apreq2-20051231/2.6.0 mod_perl/2.0.4 Perl/v5.10.0 Server at 127.0.0.1 Port 2116 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> SERVER_SOFTWARE </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Apache/2.2.9 (Debian) mod_apreq2-20051231/2.6.0 mod_perl/2.0.4 Perl/v5.10.0 </td>
+		</tr>
+	</tbody></table>
+</div></div>
+<p></p>
+Another technique to see which modules are enabled is using <code>apache2ctl</code>
+<pre>
+&#36; apache2ctl -M &#124; grep perl&#95;module
+ perl&#95;module (shared)
+</pre>
+If not found, enable mod_perl with 
+<pre>
+&#36; a2enmod mod&#95;perl
+</pre>
+<p></p>
+<h3 id="Foswiki_configuration_tuning">  Foswiki configuration tuning </h3>
+<p></p>
+Forking new processes under <code>mod_perl</code> can be very slow, so some configuration
+changes are recommended.
+<p></p>
+Access the <a href="../.html">configure</a> script. (On Foswiki 1.x, you will need to click the <code>Yes, I've read all the documentation</code>
+button to show the expert settings.)
+Go to <code>Store Settings</code>: <ul>
+<li> <code>Store Implementation</code>: If using RCS, adjust to <code>RcsLite</code>.  (If using the PlainFile store, no change is needed.)
+</li> <li> <code>Search Algorithm</code>: use <code>Foswiki::Store::SearchAlgorithms::PurePerl</code> or <a title="'Extensions/NativeSearchContrib' on foswiki.org" href="https://foswiki.org/Extensions/NativeSearchContrib" class="interwikiLink"><noautolink>Foswiki:Extensions/NativeSearchContrib</noautolink></a>
+</li></ul> 
+<p></p>
+<h3 id="A_61mod_perl_61_configuration_tuning">  <code>mod_perl</code> configuration tuning </h3>
+<p></p>
+<code>mod_perl</code> limits the size of attachments to 64M by default.  Set the
+<code>APREQ2_ReadLimit</code> to the maximum expected upload to permit larger
+attachments.
+<p></p>
+Note that this should be kept in sync with the Foswiki <code>ATTACHFILESIZELIMIT</code>,
+set in <a href="../Main/SitePreferences.html">SitePreferences</a>, default taken from
+<a class="foswikiNewLink" rel="nofollow" href="SitePreferences.html" title="Create this topic">SitePreferences</a>.
+<pre>
+&#60;IfModule mod&#95;perl.c&#62;
+   PerlSwitches -wT    # DO NOT USE THIS with Foswiki 2.0
+   # mod&#95;perl&#95;startup.pl must exist, otherwise Apache will not start.
+   PerlRequire &#34;/var/www/foswiki/tools/mod&#95;perl&#95;startup.pl&#34;
+   APREQ2&#95;ReadLimit  104857600
+&#60;/IfModule&#62;
+</pre>
+<p></p>
+<h2 id="Known_Issues">  Known Issues </h2>
+<p></p> <ul>
+<li> You must <code><b>restart</b></code> Apache in order for configuration changes take effect.
+</li></ul> 
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemModPerlEngineContrib2787show" style="" class="twistyStartHide twistyTrigger foswikiUnvisited twistyInited0"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Show Foswiki 1.x details</span></a></span><span id="twistyIdSystemModPerlEngineContrib2787hide" style="display:none" class="twistyStartHide twistyTrigger foswikiUnvisited twistyInited0"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited">Close</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemModPerlEngineContrib2787toggle" style="" class="twistyStartHide twistyContent twistyInited0"> <ul>
+<li> The <code>bin/configure</code> script is an exception and should be run as a plain    CGI script.  The required <code>SetHandler cgi-script</code> should already be specified   in the <code><Files configure.*></code> in your Apache config or <code>bin/.htaccess</code> file.
+</li></ul> 
+<pre>
+   &#60;FilesMatch &#34;configure.&#42;&#34;&#62;
+      SetHandler cgi-script
+      .
+      .
+   &#60;/FilesMatch&#62;
+</pre>
+</div></div> <ul>
+<li> If you are using some extension that add files to the <code>bin/</code>    directory, you may face problems as they were not designed to be executed    under <code>mod_perl</code>.  You should configure them to be run as plain CGI scripts.   You can replace <code>Files</code> directive by   <a href="http://httpd.apache.org/docs/2.2/mod/core.html#filesmatch">FilesMatch</a>    and list all the exceptions.
+</li></ul> 
+<pre>
+   &#60;FilesMatch &#34;&#91;script name needing CGI&#93;.&#42;&#34;&#62;
+      SetHandler cgi-script
+      .
+      .
+   &#60;/FilesMatch&#62;
+</pre>
+<p></p>
+<h2 id="List_of_Files">  List of Files </h2>
+<p></p>
+            <table class="foswikiTable" rules="none">   
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">File</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description</a> </th>
+		</tr>
+	</thead>   
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/ModPerlEngineContrib.txt</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Documentation </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Contrib/ModPerlEngineContrib/DEPENDENCIES</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Contrib/ModPerlEngineContrib.pm</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Perl module </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Engine/Apache.pm</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Perl module </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Engine/Apache/MP13.pm</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Perl module </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Engine/Apache2.pm</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Perl module </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Engine/Apache2/MP20.pm</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Perl module </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code><b>tools/mod_perl_startup.pl</b></code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Perl script </td>
+		</tr>
+	</tbody>   </table>
+<p></p>
+<p></p>
+<h2 id="Info">  Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Dec 2017 (1.06) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item14544" class="interwikiLink" title="'Item14544' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14544</noautolink></a>: SCRIPTURL breaks when X-FORWARDED-HOST has multiple values (partial fix). </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 30 Apr 2017 (1.05) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14381' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14381"><noautolink>Foswikitask:Item14381</noautolink></a>: Preserver URL Encoding of the Foswiki URI. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 26 Nov 2016 (1.04) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.1.3. Old Apache 1.x modules have been removed from the DEPENDENCIES file. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Apr 2016 (1.03) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14022' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14022"><noautolink>Foswikitask:Item14022</noautolink></a> Change foswiki.org links to https. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Jan 2016 (1.02) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13926" title="'Item13926' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13926</noautolink></a> Fix backwards compatibility with Foswiki 1.1. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Oct 2015 (1.01) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0.3.<br />                        <a href="https://foswiki.org/Tasks/Item13830" class="interwikiLink" title="'Item13830' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13830</noautolink></a>: Unable to upload utf-8 filenames as attachments. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Jun 2015 (1.00) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0.<br />                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13378" title="'Item13378' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13378</noautolink></a>: <a title="'Item13405' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13405" class="interwikiLink"><noautolink>Foswikitask:Item13405</noautolink></a>: Update for UNICODE core<br />                        <a title="'Item13228' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13228"><noautolink>Foswikitask:Item13228</noautolink></a>: Fix JSON operation with <a title="Create this topic" href="ApacheRequest2.html" class="foswikiNewLink" rel="nofollow">ApacheRequest2</a><br />                        <a title="'Item13125' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13125"><noautolink>Foswikitask:Item13125</noautolink></a>: CGI updates<br />                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13225" title="'Item13225' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13225</noautolink></a>: Fix compatibility with Apache 2.4<br />                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13052" title="'Item13052' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13052</noautolink></a>: Documentation improvements for APREQ2_ReadLimit<br />                        <a class="interwikiLink" href="https://foswiki.org/Tasks/Item9139" title="'Item9139' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9139</noautolink></a>: Improve compatibility. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Sep 2009 (0.9.2) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Improved documentation regarding module apreq </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Apr 2009 (0.9.1) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Improved documentation </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Jan 2009 (0.9.0) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Initial Release </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <table border="1" class="foswikiTable"><tr><th>Name</th><th>Version</th><th>Description</th></tr><tr><td align="left">mod_perl2</td><td align="left">&gt;=2.0</td><td align="left">Optional, but required if you're using Apache 2.x and plan to enable mod_perl</td></tr><tr><td align="left">Apache2::Request</td><td align="left">&gt;=2.0</td><td align="left">Optional, but recommended if you're using Apache 2.x and plan to enable mod_perl</td></tr></table> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<!-- Do <em>not</em> attempt to edit this topic; it is auto-generated. -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

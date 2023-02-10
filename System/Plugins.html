@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>Plugins &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/Plugins/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/Plugins/favicon.ico">
+<link href="Plugins.html" rel="alternate" title="edit Plugins" type="application/x-wiki">
+<meta name="description" content="Plugins" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "Plugins",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<h1 id="Foswiki_Plugins">  Foswiki Plugins </h1>
+<p></p>
+Extensions that use a simple API to talk to Foswiki
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Overview"> Overview </a>
+</li> <li> <a href="#Installing_Plugins"> Installing Plugins </a> <ul>
+<li> <a href="#Some_Notes_on_Plugin_Performance"> Some Notes on Plugin Performance </a>
+</li></ul> 
+</li> <li> <a href="#Managing_Installed_Plugins"> Managing Installed Plugins </a> <ul>
+<li> <a href="#Listing_Active_Plugins"> Listing Active Plugins </a>
+</li> <li> <a href="#Enabling_Plugins"> Enabling Plugins </a>
+</li> <li> <a href="#Plugin_Evaluation_Order"> Plugin Evaluation Order </a>
+</li> <li> <a href="#Plugin_45Specific_Settings"> Plugin-Specific Settings </a>
+</li></ul> 
+</li> <li> <a href="#Developing_your_own_plugins"> Developing your own plugins </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Overview">  Overview </h2>
+<p></p>
+You can add plugins to extend Foswiki functionality without altering the core code. A plug-in approach lets you:
+<p></p> <ul>
+<li> add virtually unlimited features while keeping the main Foswiki code compact and efficient;
+</li> <li> heavily customize an installation and still do clean updates to new versions of Foswiki;
+</li> <li> rapidly develop new Foswiki functions in Perl using the plugin API.
+</li></ul> 
+<p></p>
+Everything to do with Foswiki plugins - demos, new releases, downloads, development, general discussion - is available at Foswiki.org, in the <b> <a href="https://foswiki.org/Extensions" class="interwikiLink" title="'Extensions' on foswiki.org"><noautolink>Foswiki:Extensions</noautolink></a> </b> web.
+<p></p>
+Foswiki plugins are developed and contributed by interested members of the community. Plugins are provided on an 'as is' basis; they are not a part of Foswiki, but are independently developed and maintained.
+<p></p>
+Most <a href="http://twiki.org/cgi-bin/view/Plugins/WebHome">TWiki<sup>&reg;</sup> plugins</a> can also be used with Foswiki if the TWikiCompatibilityPlugin is installed.
+<p></p>
+<strong>See other types of extensions:</strong> <a href="ContributedAddOns.html">AddOns</a>,<a href="Contribs.html">Contribs</a>, <a href="Skins.html">Skins</a>
+<p></p>
+See <a href="InstalledPlugins.html">InstalledPlugins</a> for a list of plugins installed on this site.
+<p></p>
+<span id="InstallPlugin"></span>
+<h2 id="Installing_Plugins">  Installing Plugins </h2>
+<p></p>
+Each plugin comes with its own documentation page, which includes step-by-step installation instructions, a detailed description of any special requirements, and version details. Many also have a working example for testing.
+<p></p>
+The easiest way to install plugins is to use the <code>configure</code> interface. However you can also install plugins from the command-line. Every plugin comes with installation instructions.
+<p></p>
+Each plugin has a standard release topic, located in the <a title="'Extensions' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions"><noautolink>Foswiki:Extensions</noautolink></a> web at Foswiki.org. There's usually a number of other related topics, such as a developers page, and an appraisal page. After installation, a copy of this page will be installed to your System web.
+<p></p>
+If you install a plugin and it doesn't seem to work, then you can get information on all the <a href="InstalledPlugins.html">installed plugins</a> that may help to resolve the issue.
+<p></p>
+Failing that, you may want to check your webserver error log and the various Foswiki log files, and any notes in the support topic for the plugin (linked from the plugin front page).
+<p></p>
+<h3 id="Some_Notes_on_Plugin_Performance">  Some Notes on Plugin Performance </h3>
+<p></p>
+The performance of the system depends to some extent on the number of plugins installed and on the plugin implementation. Some plugins impose no measurable performance decrease, some do. For example, a Plugin might use many Perl libraries that need to be initialized with each page view (unless you run mod_perl). You can only really tell the performance impact by installing the plugin and by measuring the performance with and without the new plugin, on real data.
+<p></p>
+<div class="foswikiHelp">
+<img width="16" title="TIP" alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png"> If you need to install an "expensive" plugin, but you only need its functionality only in a subset of your data, you can disable it elsewhere by defining the %DISABLEDPLUGINS% setting.
+</div>
+<p></p>
+Define <code>DISABLEDPLUGINS</code> to be a comma-separated list of names of plugins to disable. Define it in <a href="../Main/SitePreferences.html">SitePreferences</a> to disable those plugins everywhere, in the WebPreferences topic to disable them in an individual web, or in a topic to disable them in that topic. For example,
+<pre class="tml">
+   * Set DISABLEDPLUGINS = SpreadSheetPlugin, EditTablePlugin
+</pre>
+<p></p>
+<span id="ManagingPlugins"></span>
+<h2 id="Managing_Installed_Plugins">  Managing Installed Plugins </h2>
+<p></p>
+Some plugins require additional settings or offer extra options that you have to select. Also, you may want to make a plugin available only in certain webs, or temporarily disable it. And may want to list all available plugins in certain topics. You can handle all of these management tasks with simple procedures:
+<p></p>
+<h3 id="Listing_Active_Plugins">  Listing Active Plugins </h3>
+<p></p>
+Plugin status macros let you list all active plugins wherever needed.
+<p></p>
+This site is running Foswiki version <strong>v2.1.6</strong>, plugin API version
+<strong>2.4</strong>
+<p></p>
+<span id="ActivatedPlugins"></span> <ul>
+<li> <code>%ACTIVATEDPLUGINS%</code> - shows the activated plugins
+</li> <li> <code>%PLUGINVERSION%</code> - shows the plugins API version
+</li> <li> <code>%FAILEDPLUGINS%</code> - shows what plugins failed, and why
+</li></ul> 
+<p></p>
+<h3 id="Enabling_Plugins">  Enabling Plugins </h3>
+<p></p>
+Plugins can be enabled and disabled with the <a href="../.html">configure</a> script. An installed plugin needs to be enabled before it can be used. Plugins can also be selectively disabled again using the DISABLED_PLUGINS preference, as described above.
+<p></p>
+<h3 id="Plugin_Evaluation_Order">  Plugin Evaluation Order </h3>
+<p></p>
+By default, plugins are executed in alphabetical order of plugin name. It is possible to change the order, for example to evaluate database macros before the spreadsheet CALCs, using the <code>{PluginsOrder}</code> in the Extensions section of <a href="../.html">configure</a>.
+<p></p>
+<h3 id="Plugin_45Specific_Settings">  Plugin-Specific Settings </h3>
+<p></p>
+Some plugins are configured with plugin <a href="PreferenceSettings.html">preference settings</a>, some with <code>configure</code> settings, and some with both. The plugin topic will contain details.
+<p></p>
+<code>configure</code> settings are accessible though the <a href="../.html">configure</a> interface. 
+<p></p>
+Note that some older plugins use <a href="PreferenceSettings.html">preference settings</a> defined in the plugin topic. For example, the (fictional) BathPlugin topic might contain: <ul>
+<li> Set ELECTRIC = on
+</li></ul> 
+This setting defines the default value for the preference BATHPLUGIN_ELECTRIC. You should <strong>never</strong> edit the BathPlugin topic to change this setting; instead, override the setting by defining BATHPLUGIN_ELECTRIC as described in <a href="PreferenceSettings.html">preference settings</a>.
+<p></p>
+<span id="PluginAPI"></span>
+<h2 id="Developing_your_own_plugins">  Developing your own plugins </h2>
+<p></p>
+<a href="DevelopingPlugins.html">Developing plugins</a> provides a simple introduction to hooking into Foswiki code from your own Perl modules. <a class="interwikiLink" href="https://foswiki.org/Development.GettingStarted" title="'Development.GettingStarted' on foswiki.org"><noautolink>Foswiki:Development.GettingStarted</noautolink></a> is the starting point for more comprehensive documentation.
+<p></p>
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="DeveloperDocumentationCategory.html">DeveloperDocumentationCategory</a>, <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>
+<!--  -->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

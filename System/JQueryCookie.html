@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryCookie &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryCookie/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/JQueryCookie/favicon.ico" type="image/x-icon">
+<link title="edit JQueryCookie" href="JQueryCookie.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="JQueryCookie" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryCookie",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryCookie">  <a class="foswikiCurrentTopicLink" href="JQueryCookie.html">JQueryCookie</a> </h1>
+<p></p>
+    Homepage: <a href="http://jquery-howto.blogspot.com/2010/09/jquery-cookies-getsetdelete-plugin.html">http://jquery-howto.blogspot.com/2010/09/jquery-cookies-getsetdelete-plugin.html</a> <br />
+    Author(s): Klaus Hartl, Uzbekjon <br />
+    Version: 20100921_1
+<p></p>
+<p></p>
+<p></p>
+Easy cookie handling using jQuery.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p> <ul>
+<li> <code>$.cookie('the_cookie');</code>: return the value of the cookie
+</li> <li> <code>$.cookie('the_cookie', 'the_value');</code>: set the value of a cookie
+</li> <li> <code>$.cookie('the_cookie', 'the_value', { expires: 7, path: '/', domain: 'jquery.com', secure: true });</code>:     create a cookie with all available options.
+</li> <li> <code>$.cookie('the_cookie', null);</code>: delete a cookie by passing null as value.      Keep in mind that you have to use the same path and domain used when the cookie was set.
+</li></ul> 
+<p></p>
+<h2 id="Options">  Options </h2>
+<p></p> <ul>
+<li> expires: either an integer specifying the expiration date from now on in days or a Date object.     If a negative value is specified (e.g. a date in the past), the cookie will     be deleted.  If set to null or omitted, the cookie will be a session cookie and     will not be retained when the the browser exits.
+</li> <li> path: the value of the path atribute of the cookie (default: path of page that created the cookie).
+</li> <li> domain: the value of the domain attribute of the cookie (default: domain of page that created the cookie).
+</li> <li> secure: if true, the secure attribute of the cookie will be set and the cookie transmission will     require a secure protocol (like HTTPS).
+</li></ul> 
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

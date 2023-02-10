@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SearchHelp &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/SearchHelp/favicon.ico"> <link href="../MISSING RESOURCE System/SearchHelp/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit SearchHelp" rel="alternate" href="SearchHelp.html" type="application/x-wiki">
+<meta name="description" content="SearchHelp" />
+<link media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="TwistyPlugin.attachments/twisty.css?version=1.6.0" type="text/css"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tableSearchHelp1 td.foswikiTableCol0 {width:20%}
+body .foswikiTable#tableSearchHelp1 td.foswikiTableCol1 {width:80%}
+body .foswikiTable#tableSearchHelp1 th.foswikiTableCol0 {width:20%}
+body .foswikiTable#tableSearchHelp1 th.foswikiTableCol1 {width:80%}
+</style><!--TABLEPLUGIN_specific-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "SearchHelp",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="Search_Help">  Search Help </h1>
+<p></p>
+<h2 id="Search_basics">  Search basics </h2>
+By default a search looks into topic titles, topic texts and form fields <strong>in the current web</strong>. Extend your search to "all public webs" to get more results.
+<p></p>
+Search this site as you are used to with Google: <ul>
+<li> Type the words you want to find
+</li> <li> Multiple words are combined: <code>intranet web service</code> returns all pages that have the three words anywhere in the page
+</li> <li> Use double quotes for <strong>literal search</strong> (also known as phrase search) to search the exact words in that exact order, for example <code>"web service"</code>
+</li> <li> <strong>Exclude words</strong> using minus signs, for instance: <code>soap -shampoo</code> (use double quotes if you want to search for a leading minus sign, like <code>"-nowarn"</code>)
+</li></ul> 
+<p></p>
+<div class="foswikiHelp">
+<img alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> TIP: to search for all topics that contain <code>"SOAP"</code>, <code>"WSDL"</code>, a literal <code>"web service"</code>, but not <code>"shampoo"</code>, write: <code>soap wsdl "web service" -shampoo</code>
+</div>
+<p></p>
+<p></p>
+<h2 id="Troubleshooting">  Troubleshooting </h2>
+<h3 id="A_34My_search_returned_less_than_I_expected_34">  "My search returned less than I expected" </h3>
+Perhaps your search words are listed in the <strong>stop word</strong> list and excluded from the results. <span class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemSearchHelp3524show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Show stop words</span></a></span><span id="twistyIdSystemSearchHelp3524hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Hide stop words</span></a></span></span><span class="twistyPlugin"><span id="twistyIdSystemSearchHelp3524toggle" style="" class="twistyContent twistyInited"> a, all, am, an, and, any, as, at, b, be, by, c, d, e, for, from, g, h, how, i, i'm, i.e., in, is, isn't, it, it's, its, j, k, l, m, n, o, of, on, or, p, q, r, s, t, that, that's, the, this, to, u, v, w, was, wasn't, what, what's, when, where, who, who's, will, with, x, y, z </span></span>
+<p></p>
+<div class="foswikiHelp">
+<img height="16" alt="TIP" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> If you want to search for a word in the stop word list, prefix the word with a plus sign
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Definitions">  Definitions </h2>
+Some explanations of used terms.
+<p></p>
+<table class="foswikiTable" id="tableSearchHelp1" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Keyword search </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Use Google-like queries as in <code>soap "web service" -shampoo</code>; searches word parts: using the example, topics with "soapsuds" will be found as well, but topics with "shampoos" will be excluded </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Word search </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Identical to <code>keyword</code> but searches whole words: topics with "soapsuds" will not be found, and topics with "shampoos" will not be excluded </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Literal search </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Also known as phrase search; search the exact words in that exact order </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Regular expression search </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Universal way of writing advanced search queries </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Query search </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Extend the search to form fields, parent relationships and file attachment information </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Case sensitive </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> By default searches are not case sensitive, so writing "Wiki" or "wiki" will get the same results </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Public webs </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> You won't see results from Webs that you don't have access to </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Creating_your_own_search">  Creating your own search </h2>
+Go to <a href="WebSearchAdvanced.html">advanced search</a> to see your search query translated to a <code>SEARCH</code> macro. It will look somewhat like this:
+<pre>
+&#37;SEARCH{
+   &#34;\&#34;stuff I&#39;ve read\&#34;&#34;
+   type&#61;&#34;word&#34;
+   scope&#61;&#34;all&#34;
+   order&#61;&#34;editby&#34;
+   reverse&#61;&#34;on&#34;
+   limit&#61;&#34;10&#34;
+   zeroresults&#61;&#34;on&#34;
+}&#37;
+</pre>
+You can copy and paste this text to any topic to get show search results on that page.
+<p></p>
+<p></p>
+<p></p>
+<h2 id="More_search_options">  More search options </h2> <ul>
+<li> <a href="VarSEARCH.html">SEARCH macro</a> - inline search, shows a search result embedded in a topic
+</li> <li> <a href="FormattedSearch.html">Formatted search</a> - formatting of inline search
+</li> <li> <a href="QuerySearch.html">Query search</a> - extend the search to form fields, parent relationships and file attachment information (but <strong>not</strong> the attached files themselves)
+</li> <li> <a href="RegularExpression.html">Regular expression search</a>
+</li> <li> <a href="https://foswiki.org/Extensions/KinoSearchPlugin">KinoSearchPlugin</a> -  search within attachments
+</li></ul> 
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemSearchHelp7309show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><img border="0" alt="" src="DocumentGraphics.attachments/toggleopen.png"><span class="foswikiLinkLabel foswikiUnvisited">Currently set search preferences</span></a></span><span id="twistyIdSystemSearchHelp7309hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><img alt="" border="0" src="DocumentGraphics.attachments/toggleclose.png"><span class="foswikiLinkLabel foswikiUnvisited">Currently set search preferences</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemSearchHelp7309toggle" style="" class="twistyContent twistyInited"> <ul>
+<li> <code>SEARCHDEFAULTTTYPE</code>: Default search type for search forms which calls the <code>search</code> script <ul>
+<li> Currently <code>keyword</code>
+</li></ul> 
+</li> <li> <code>SEARCHVARDEFAULTTYPE</code>: Default search type for <code>%SEARCH{}</code> macro  <ul>
+<li> Currenty <code>literal</code>
+</li></ul> 
+</li> <li> <code>SEARCHSTOPWORDS</code>: List of stop words (common words and characters to exclude from a keyword search) <ul>
+<li> Currently <code>a, all, am, an, and, any, as, at, b, be, by, c, d, e, for, from, g, h, how, i, i'm, i.e., in, is, isn't, it, it's, its, j, k, l, m, n, o, of, on, or, p, q, r, s, t, that, that's, the, this, to, u, v, w, was, wasn't, what, what's, when, where, who, who's, will, with, x, y, z</code>
+</li></ul> 
+</li></ul> 
+<p></p>
+Define or change these settings in <a href="../Main/SitePreferences.html">SitePreferences</a>.
+</div></div>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

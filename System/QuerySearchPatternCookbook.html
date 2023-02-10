@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>QuerySearchPatternCookbook &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/QuerySearchPatternCookbook/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/QuerySearchPatternCookbook/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit QuerySearchPatternCookbook" href="QuerySearchPatternCookbook.html" rel="alternate">
+<meta name="description" content="QuerySearchPatternCookbook" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "QuerySearchPatternCookbook",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="QuerySearch_Pattern_Cookbook"> QuerySearch Pattern Cookbook </h1>
+<p></p>
+This topic provides tips on the usage of <a href="QuerySearch.html">QuerySearch</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Pattern_1:_Show_recent_changes_without_user_pages"> Pattern 1: Show recent changes without user pages </a>
+</li> <li> <a href="#Pattern_2:_List_the_5_most_recent_blog_post_comments"> Pattern 2: List the 5 most recent blog post comments </a>
+</li> <li> <a href="#Pattern_3:_Search_named_form_fields_using_interactive_user_45input_text"> Pattern 3: Search named form fields using interactive user-input text </a>
+</li> <li> <a href="#Pattern_4:_Search_all_topics_with_a_form_and_a_particular_attachment"> Pattern 4: Search all topics with a form and a particular attachment </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Pattern_1:_Show_recent_changes_without_user_pages">  Pattern 1: Show recent changes without user pages </h2>
+<p></p>
+We have everything in the Main web. But the updates to the personal pages are not that interesting to others, so we want to remove these.
+<p></p>
+We are looking for any page that does not have a form field "FirstName":
+<p></p>
+<pre class='tml'>
+&#60;dl&#62;
+&#37;SEARCH{
+&#34;name~&#39;&#42;&#39; AND NOT FirstName&#34;
+web&#61;&#34;Main&#34;
+excludetopic&#61;&#34;Web&#42;,PersonalInfo,TWikiUsers&#34;
+type&#61;&#34;query&#34;
+reverse&#61;&#34;on&#34;
+limit&#61;&#34;15&#34;
+order&#61;&#34;modified&#34;
+nonoise&#61;&#34;on&#34;
+format&#61;&#34;&#60;dt&#62;&#91;&#91;&#36;web.&#36;topic&#93;&#91;&#36;topic(25,...)&#93;&#93;&#60;br /&#62;&#60;span class&#61;&#39;foswikiGrayText foswikiSmall&#39;&#62;&#36;date - &#60;nop&#62;&#36;wikiname&#60;/span&#62;&#60;/dt&#62;&#34;
+}&#37;
+&#60;/dl&#62;</pre>
+<p></p>
+<h2 id="Pattern_2:_List_the_5_most_recent_blog_post_comments">  Pattern 2: List the 5 most recent blog post comments </h2>
+<p></p>
+The simple <a href="../Plugins/BlogAddOn.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">BlogAddOn</a> has 1 comment topic that gathers all comments on the blog post. It has no Data Form (the blog post has one: BlogPostForm); the topic title is the name of the blog post + "Comments". How can we show the latest 5 comments?
+<p></p>
+We are looking for a topic with the title "xxxxComments". It has a parent and the parent has a form named "BlogPostForm":
+<p></p>
+<pre class='tml'>
+&#60;dl&#62;
+&#37;SEARCH{
+&#34;name~&#39;&#42;Comments&#39; AND (parent.name/(form.name&#61;&#39;BlogPostForm&#39;)).value&#34;
+web&#61;&#34;Main&#34;
+type&#61;&#34;query&#34;
+limit&#61;&#34;15&#34;
+reverse&#61;&#34;on&#34;
+order&#61;&#34;modified&#34;
+nonoise&#61;&#34;on&#34;
+format&#61;&#34;&#60;dt&#62;&#91;&#91;&#36;web.&#36;parent#BlogPostPrompt&#93;&#91;&#36;parent(30,...)&#93;&#93; (&#36;rev)&#60;br /&#62;&#60;span class&#61;&#39;foswikiGrayText foswikiSmall&#39;&#62;&#36;date - &#60;nop&#62;&#36;wikiname&#60;/span&#62;&#60;/dt&#62;&#34;
+}&#37;
+&#60;/dl&#62;</pre>
+<p></p>
+<h2 id="Pattern_3:_Search_named_form_fields_using_interactive_user_45input_text">  Pattern 3: Search named form fields using interactive user-input text </h2>
+<p></p>
+The code below searches through (two) named fields in all topics having the form 'MyPageForm'. A user search-form has input boxes for the search strings. The page calls itself recursively with results output to a table. The 'lc()' function forces case-insensitive lower case matching.
+<pre class='tml'>
+&#60;noautolink&#62; 
+&#60;form method&#61;&#34;post&#34; action&#61;&#34;&#37;SCRIPTURLPATH{view}&#37;/&#37;INCLUDINGWEB&#37;/&#37;INCLUDINGTOPIC&#37;&#34;&#62;
+Field One: &#60;input type&#61;&#34;text&#34; name&#61;&#34;search&#95;field&#95;one&#34; value&#61;&#34;&#37;URLPARAM{ &#34;search&#95;field&#95;one&#34; encode&#61;&#34;entity&#34; }&#37;&#34; size&#61;&#34;15&#34; /&#62;&#60;br /&#62;
+Field Two: &#60;input type&#61;&#34;text&#34; name&#61;&#34;search&#95;field&#95;two&#34; value&#61;&#34;&#37;URLPARAM{ &#34;search&#95;field&#95;two&#34; encode&#61;&#34;entity&#34; }&#37;&#34; size&#61;&#34;15&#34; /&#62;&#60;br /&#62;
+&#60;input type&#61;&#34;submit&#34; name&#61;&#34;search&#95;submit&#34; value&#61;&#34;Search&#34;&#62;
+&#60;/form&#62;
+&#60;/noautolink&#62;
+
+&#124; &#42;Page Link&#42; &#124; &#42;Field One&#42; &#124; &#42;Field Two&#42; &#124; &#42;Field Three&#42; &#124; &#42;Field Four&#42; &#124;
+&#37;SEARCH{
+search&#61;&#34;(lc(FieldOne) ~ lc(&#39;&#37;URLPARAM{&#34;search&#95;field&#95;one&#34; encode&#61;&#34;quote&#34;}&#37;&#39;) AND 
+lc(FieldTwo) ~ lc(&#39;&#37;URLPARAM{&#34;search&#95;field&#95;two&#34; encode&#61;&#34;quote&#34;}&#37;&#39;))&#34;
+type&#61;&#34;query&#34;
+limit&#61;&#34;150&#34;
+excludetopic&#61;&#34;Web&#42;&#34; 
+order&#61;&#34;formfield(FieldOne),formfield(FieldTwo)&#34;
+nonoise&#61;&#34;on&#34;
+format&#61;&#34;&#124; &#91;&#91;&#36;topic&#93;&#93; &#124; &#60;i&#62;&#60;b&#62; &#36;formfield(FieldOne)&#60;/b&#62;&#60;/i&#62; &#124; &#36;formfield(FieldTwo) &#124; &#36;formfield(FieldThree) &#124; &#36;formfield(FieldFour) &#124;&#34;
+}&#37;</pre>
+<p></p>
+<h2 id="Pattern_4:_Search_all_topics_with_a_form_and_a_particular_attachment">  Pattern 4: Search all topics with a form and a particular attachment </h2>
+<p></p>
+This pattern is used in the <a title="Create this topic" href="FastReport.html" class="foswikiNewLink" rel="nofollow">FastReport</a>. The <code>bin/configure</code> "Find and Install Extensions" needs to find all Extension topics that also have the <code>_installer</code> file used to install the Extension. In this application the returned format is very specific as it is parsed by the <code>bin/configure</code> application. The Query Search is used to find the matching topics. The formatted output uses a combination of Formfields (compatibility, classification and image) and regular expressions (description, version and release) to extract information from the topic.
+<pre>
+ &#37;SEARCH{ 
+&#34;form.name&#61;&#39;PackageForm&#39; AND attachments&#91;name~&#39;&#42;&#95;installer&#39;&#93;&#34; 
+type&#61;&#34;query&#34; 
+web&#61;&#34;Extensions&#34;
+nosearch&#61;&#34;on&#34; 
+nototal&#61;&#34;on&#34; 
+format&#61;&#34;{ topic: &#36;topic
+ description: &#36;pattern(.&#42;?\&#42;\sSet\sSHORTDESCRIPTION\s\&#61;(&#91;^
+\r&#93;&#42;).&#42;)
+ compatibility: &#36;formfield(Compatibility)
+ classification: &#36;formfield(ExtensionClassification)
+ version:&#36;pattern(.&#42;?
+\&#124;&#91;\s\w-&#93;&#42;\s&#91;Vv&#93;ersion:\s&#42;\&#124;(&#91;^&#124;&#93;&#42;)\&#124;.&#42;)
+ release:&#36;pattern(.&#42;?
+\&#124;&#91;\s\w-&#93;&#42;\s&#91;Rr&#93;elease:\s&#42;\&#124;(&#91;^&#124;&#93;&#42;)\&#124;.&#42;)
+ image: &#36;formfield(ImageUrl)
+ }&#36;n&#34;
+}&#37;</pre>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

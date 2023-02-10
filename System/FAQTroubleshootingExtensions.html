@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FAQTroubleshootingExtensions &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/FAQTroubleshootingExtensions/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/FAQTroubleshootingExtensions/favicon.ico">
+<link title="edit FAQTroubleshootingExtensions" href="FAQTroubleshootingExtensions.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="FAQTroubleshootingExtensions" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "FAQTroubleshootingExtensions",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+Some questions to answer: <ul>
+<li> Perhaps the plugin is installed, but did you remember to enable it in configure?
+</li> <li> Did the installer mention any missing dependencies? Examine the Dependencies section of the plugin's System topic to determine if your environment has all the necessary dependencies: other Plugins/Contribs, perl libraries, 3rd-party software, etc. <ul>
+<li> Note that you can have the installer re-check dependencies by executing it with the "dependencies" option from the server:      <pre class="bash">cd /path/to/my/foswiki/
+&#36;  perl GenPDFAddOn&#95;installer dependencies
+CGI,&#62;&#61;0,cpan,May be required for lib/Foswiki/Contrib/GenPDF.pm
+Data::Dumper,&#62;&#61;0,cpan,May be required for lib/Foswiki/Contrib/GenPDF.pm
+Error,&#62;&#61;0,cpan,May be required for lib/Foswiki/Contrib/GenPDF.pm
+File::Temp,&#62;&#61;0,cpan,May be required for lib/Foswiki/Contrib/GenPDF.pm
+htmldoc,0,external,Obtain from http://www.htmldoc.org/software.php
+</pre>
+</li></ul> 
+</li> <li> Check <a href="InstalledPlugins.html">System.InstalledPlugins</a> and look against your plugin to see if it is listed. <ul>
+<li> If it is listed, then it must be enabled in configure.
+</li> <li> If there is an initialisation error, it will be shown and hopefully provides a clue on how to fix the problem.
+</li></ul> 
+</li> <li> Are you using a persistent perl environment such as <a title="'Extensions.FastCGIEngineContrib' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions.FastCGIEngineContrib"><noautolink>Foswiki:Extensions.FastCGIEngineContrib</noautolink></a> or <a title="'Extensions.ModPerlEngineContrib' on foswiki.org" href="https://foswiki.org/Extensions.ModPerlEngineContrib" class="interwikiLink"><noautolink>Foswiki:Extensions.ModPerlEngineContrib</noautolink></a>? Perhaps you need to restart your web server (apache, for example) so that the latest <code>LocalSite.cfg</code> changes may take effect
+</li> <li> Are there any clues in the webserver's error log?
+</li> <li> Are there any clues in Foswiki's warn log (on Foswiki 1.0.x, <code>data/warnYYYYMM.txt</code> - on Foswiki 1.1.x, default is <code>working/logs/error.log</code>)?
+</li> <li> Perhaps the problem isn't with Foswiki itself (ie. not a problem with the plugin's perl code), but some interaction with the web server and/or web browser <ul>
+<li> Are there any javascript errors reported by the web browser? <ul>
+<li> Sometimes javascript libraries may be loaded in the wrong order. This might be due to the new <a href="VarADDTOZONE.html">ADDTOZONE</a> feature - not all plugins have been updated to work properly. If you are on Foswiki 1.0.x, you must have the latest version of <a href="JQueryPlugin.html">JQueryPlugin</a> and <a title="'Extensions.ZonePlugin' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions.ZonePlugin"><noautolink>Foswiki:Extensions.ZonePlugin</noautolink></a> installed. In <a href="../.html">configure</a>, enabling <code>{MergeHeadAndScriptZones}</code> can help.
+</li> <li> Sometimes javascript libraries aren't correctly received by the web browser. You may wish to check your webserver's error log for 404 not found, 403 unauthorised etc. errors on your Foswiki's <code>pub</code> directory, Eg. <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System</code> <br/>         If the web server's error logs aren't readily accessible, a web browser may be used instead. Using <a href="http://www.getfirefox.com/">Firefox</a> for example, the <a href="http://www.getfirebug.com/">Firebug</a> debugging plugin can show files that failed to download in the 'net' panel. The failed files should be shown in red (eg. 404 not found, 403, 400, etc. errors). This might lead you to check filesystem permissions and perhaps webserver access controls.
+</li></ul> 
+</li></ul> 
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<h2 id="Other_resources">  Other resources </h2> <ul>
+<li> Check the "Tasks" page for your plugin - perhaps the issue is already known. You can check progress on the resolution and perhaps learn of some work-around. If the plugin is named <a class="interwikiLink" href="https://foswiki.org/Extensions.EmptyPlugin" title="'Extensions.EmptyPlugin' on foswiki.org"><noautolink>EmptyPlugin</noautolink></a>, then its tasks page will be at <a href="https://foswiki.org/Tasks.EmptyPlugin" class="interwikiLink" title="'Tasks.EmptyPlugin' on foswiki.org"><noautolink>Foswiki:Tasks.EmptyPlugin</noautolink></a>.
+</li> <li> Browse existing support requests in the <a class="interwikiLink" href="https://foswiki.org/Support.WebHome" title="'Support.WebHome' on foswiki.org"><noautolink>Support web</noautolink></a> to see if the problem you are having has an FAQ for it, or perhaps another user has worked through the same issue before as a support question. As with the Tasks system, if <a href="https://foswiki.org/Extensions.EmptyPlugin" class="interwikiLink" title="'Extensions.EmptyPlugin' on foswiki.org"><noautolink>Foswiki:Extensions.EmptyPlugin</noautolink></a> has existing Support questions filed against it, they should be available at <a class="interwikiLink" href="https://foswiki.org/Support.EmptyPlugin" title="'Support.EmptyPlugin' on foswiki.org"><noautolink>Foswiki:Support.EmptyPlugin</noautolink></a>
+</li></ul> 
+<p></p>
+<h2 id="Getting_Help">  Getting Help </h2> <ul>
+<li> <a title="'Community.InternetRelayChat' on foswiki.org" href="https://foswiki.org/Community.InternetRelayChat" class="interwikiLink"><noautolink>#foswiki IRC</noautolink></a> on freenode
+</li> <li> <a href="https://foswiki.org/Support.SupportQuestions" class="interwikiLink" title="'Support.SupportQuestions' on foswiki.org"><noautolink>Ask a support question</noautolink></a>
+</li> <li> <a class="interwikiLink" href="https://foswiki.org/Community.MailingLists" title="'Community.MailingLists' on foswiki.org"><noautolink>foswiki-discuss mailing list</noautolink></a>
+</li> <li> <a class="interwikiLink" href="https://foswiki.org/Support.WikiConsultants" title="'Support.WikiConsultants' on foswiki.org"><noautolink>Commercial (paid) support</noautolink></a>
+</li></ul> 
+<!--  -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

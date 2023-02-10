@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryCycle &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryCycle/favicon.ico"> <link href="../MISSING RESOURCE System/JQueryCycle/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" href="JQueryCycle.html" rel="alternate" title="edit JQueryCycle">
+<meta name="description" content="JQueryCycle" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/cycle/jquery.cycle.js?version=3.0.3" class="script JQUERYPLUGIN::CYCLE"></script>
+<script class="script JQUERYPLUGIN::CYCLE" src="JQueryPlugin.attachments/plugins/cycle/jquery.cycle.init.js?version=3.0.3"></script><!--JQUERYPLUGIN::CYCLE-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "JQueryCycle",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryCycle">  <a class="foswikiCurrentTopicLink" href="JQueryCycle.html">JQueryCycle</a> </h1>
+<p></p>
+    Homepage: <a href="http://www.malsup.com/jquery/cycle">http://www.malsup.com/jquery/cycle</a> <br />
+    Author(s): M. Alsup <br />
+    Version: 3.0.3
+<p></p>
+<p></p>
+<p></p>
+The jQuery Cycle Plugin is a lightweight slideshow plugin. Its implementation
+is based on the <a href="JQueryInnerFade.html">JQueryInnerFade</a> Plugin by Torsten Baldes, the Slideshow Plugin by
+Matt Oakes, and the jqShuffle Plugin by Benjamin Sterling. It supports
+pause-on-hover, auto-stop, auto-fit, before/after callbacks, click triggers and
+many transition effects. It also supports, but does not require, the Metadata
+Plugin and the Easing Plugin.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+Add the <code><b>jqCycle</b></code> class to the container holding the elements to be cycled. 
+<p></p>
+<h2 id="Commands">  Commands </h2>
+The cycle function can be passed a command string in the form:
+<p></p>
+<pre class="js">
+&#36;(&#39;#slideshow&#39;).cycle(&#39;command&#39;);
+</pre>
+<p></p>
+The following command strings are supported:
+<p></p>
+<pre class="js">
+&#39;pause&#39;   // pauses the slideshow, slideshow can be resumed with &#39;resume&#39; command 
+&#39;resume&#39;  // resumes a paused slideshow 
+&#39;toggle&#39;  // toggles the pause/resume state of the slideshow 
+&#39;next&#39;    // advances slideshow to next slide 
+&#39;prev&#39;    // advances slideshow to previous slide 
+&#39;stop&#39;    // stops the slideshow 
+&#39;destroy&#39; // stops the slideshow and unbinds all events 
+</pre>
+<p></p>
+<h2 id="Options">  Options </h2>
+The following default options are provided by the plugin. They can be overridden by passing an options object to the cycle method, by using metadata on the container element, or by redefining these values in your own code. Lots of cool effects can be achieved by taking advantage of these options, but none of them are required. So override the ones you like and ignore the ones you don't care about.
+<p></p>
+<pre class="js">
+// override these globally if you like (they are all optional) 
+&#36;.fn.cycle.defaults &#61; { 
+        activePagerClass: &#39;activeSlide&#39;, // class name used for the active pager link
+        after:             null,  // transition callback (scope set to element that was shown):  function(currSlideElement, nextSlideElement, options, forwardFlag)
+        allowPagerClickBubble: false, // allows or prevents click event on pager anchors from bubbling
+        animIn:            null,  // properties that define how the slide animates in
+        animOut:           null,  // properties that define how the slide animates out
+        aspect:            false,  // preserve aspect ratio during fit resizing, cropping if necessary (must be used with fit option)
+        autostop:          0,     // true to end slideshow after X transitions (where X &#61;&#61; slide count)
+        autostopCount:     0,         // number of transitions (optionally used with autostop to define X)
+        backwards:         false, // true to start slideshow at last slide and move backwards through the stack
+        before:            null,  // transition callback (scope set to element to be shown):     function(currSlideElement, nextSlideElement, options, forwardFlag)
+        center:            null,  // set to true to have cycle add top/left margin to each slide (use with width and height options)
+        cleartype:         !&#36;.support.opacity,  // true if clearType corrections should be applied (for IE)
+        cleartypeNoBg: false, // set to true to disable extra cleartype fixing (leave false to force background color setting on slides)
+        containerResize:   1,       // resize container to fit largest slide
+        continuous:        0,     // true to start next transition immediately after current one completes
+        cssAfter:          null,  // properties that defined the state of the slide after transitioning out
+        cssBefore:         null,  // properties that define the initial state of the slide before transitioning in
+        delay:             0,     // additional delay (in ms) for first transition (hint: can be negative)
+        easeIn:            null,  // easing for &#34;in&#34; transition
+        easeOut:           null,  // easing for &#34;out&#34; transition
+        easing:            null,  // easing method for both in and out transitions
+        end:               null,  // callback invoked when the slideshow terminates (use with autostop or nowrap options): function(options)
+        fastOnEvent:       0,         // force fast transitions when triggered manually (via pager or prev/next); value &#61;&#61; time in ms
+        fit:               0,     // force slides to fit container
+        fx:                &#39;fade&#39;, // name of transition effect (or comma separated names, ex: &#39;fade,scrollUp,shuffle&#39;)
+        fxFn:              null,  // function used to control the transition: function(currSlideElement, nextSlideElement, options, afterCalback, forwardFlag)
+        height:            &#39;auto&#39;, // container height (if the &#39;fit&#39; option is true, the slides will be set to this height as well)
+        manualTrump:       true,  // causes manual transition to stop an active transition instead of being ignored
+        metaAttr:          &#39;cycle&#39;,// data- attribute that holds the option data for the slideshow
+        next:              null,  // element, jQuery object, or jQuery selector string for the element to use as event trigger for next slide
+        nowrap:            0,     // true to prevent slideshow from wrapping
+        onPagerEvent:      null,  // callback fn for pager events: function(zeroBasedSlideIndex, slideElement)
+        onPrevNextEvent:   null,// callback fn for prev/next events: function(isNext, zeroBasedSlideIndex, slideElement)
+        pager:             null,  // element, jQuery object, or jQuery selector string for the element to use as pager container
+        pagerAnchorBuilder: null, // callback fn for building anchor links:  function(index, DOMelement)
+        pagerEvent:        &#39;click.cycle&#39;, // name of event which drives the pager navigation
+        pause:             0,     // true to enable &#34;pause on hover&#34;
+        pauseOnPagerHover: 0, // true to pause when hovering over pager link
+        prev:              null,  // element, jQuery object, or jQuery selector string for the element to use as event trigger for previous slide
+        prevNextEvent:     &#39;click.cycle&#39;,// event which drives the manual transition to the previous or next slide
+        random:            0,     // true for random, false for sequence (not applicable to shuffle fx)
+        randomizeEffects:  1,  // valid when multiple effects are used; true to make the effect sequence random
+        requeueOnImageNotLoaded: true, // requeue the slideshow if any image slides are not yet loaded
+        requeueTimeout:    250,  // ms delay for requeue
+        rev:               0,     // causes animations to transition in reverse (for effects that support it such as scrollHorz/scrollVert/shuffle)
+        shuffle:           null,  // coords for shuffle animation, ex: { top:15, left: 200 }
+        skipInitializationCallbacks: false, // set to true to disable the first before/after callback that occurs prior to any transition
+        slideExpr:         null,  // expression for selecting slides (if something other than all children is required)
+        slideResize:       1,     // force slide width/height to fixed size before every transition
+        speed:             1000,  // speed of the transition (any valid fx speed value)
+        speedIn:           null,  // speed of the &#39;in&#39; transition
+        speedOut:          null,  // speed of the &#39;out&#39; transition
+        startingSlide:     0,         // zero-based index of the first slide to be displayed
+        sync:              1,     // true if in/out transitions should occur simultaneously
+        timeout:           4000,  // milliseconds between slide transitions (0 to disable auto advance)
+        timeoutFn:         null,  // callback for determining per-slide timeout value:  function(currSlideElement, nextSlideElement, options, forwardFlag)
+        updateActivePagerLink: null, // callback fn invoked to update the active pager link (adds/removes activePagerClass style)
+        width:             null   // container width (if the &#39;fit&#39; option is true, the slides will be set to this width as well)
+};
+</pre>
+<p></p>
+<h2 id="Transition_effects">  Transition effects </h2>
+<p></p>
+Use these in the <code>fx</code> option.
+<p></p> <ul>
+<li> blindX
+</li> <li> blindY
+</li> <li> blindZ
+</li> <li> cover
+</li> <li> curtainX
+</li> <li> curtainY
+</li> <li> fade
+</li> <li> fadeZoom
+</li> <li> growX
+</li> <li> growY
+</li> <li> none
+</li> <li> scrollUp
+</li> <li> scrollDown
+</li> <li> scrollLeft
+</li> <li> scrollRight
+</li> <li> scrollHorz
+</li> <li> scrollVert
+</li> <li> shuffle
+</li> <li> slideX
+</li> <li> slideY
+</li> <li> toss
+</li> <li> turnUp
+</li> <li> turnDown
+</li> <li> turnLeft
+</li> <li> turnRight
+</li> <li> uncover
+</li> <li> wipe
+</li> <li> zoom
+</li></ul> 
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+<div class="pics jqCycle {fx:'scrollLeft', timeout:5000}">
+<div>
+  <img src="JQueryCycle.attachments/beach1.jpg">
+<p></p>
+  St Andrews State Park
+</div>
+<div>
+  <img src="JQueryCycle.attachments/beach2.jpg">
+<p></p>
+  Located in the Florida panhandle
+</div>
+<div>
+  <img src="JQueryCycle.attachments/beach3.jpg">
+<p></p>
+  Endless fun.
+</div>
+</div>
+<p></p>
+<style>
+.pics  {  
+ width:232px;
+ height:272px;
+ padding:0;  
+ margin:0;
+ text-align:center;
+}
+.pics img {  
+ padding: 15px;  
+ border:  1px solid #ccc;  
+ background-color: #eee;  
+ width:  200px; 
+ height: 200px; 
+ top:  0; 
+ left: 0 
+} 
+</style>
+</literal>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

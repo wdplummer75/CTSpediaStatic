@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarEXPAND &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/VarEXPAND/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/VarEXPAND/favicon.ico" type="image/x-icon">
+<link rel="alternate" href="VarEXPAND.html" title="edit VarEXPAND" type="application/x-wiki">
+<meta name="description" content="VarEXPAND" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "VarEXPAND",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="EXPAND_45_45_expand_macros_in_a_string_as_if_they_were_used_in_another_topic">  EXPAND -- expand macros in a string as if they were used in another topic </h1>
+The viewer must have VIEW access to <code>topictoexpandin</code> for this to work. All the standard formatting macros can be used in <code>expression</code>, such as <code>$percent</code> and <code>$quot</code>.
+<h2 id="Parameters">  Parameters </h2>
+       <table class="foswikiTable" id="tableVarEXPAND1" rules="none">   
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>   
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"text"</code> </td>
+			<td class="foswikiTableCol1"> Text to expand. Note that %-signs must be escaped using <code>$percent</code>, or they will be expanded in the context of the calling topic </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>scope</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Scope to expand the topic in. This is the name of a topic. You can use Web.Topic syntax to refer to a topic in another web </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>%TOPIC%</code> </td>
+		</tr>
+	</tbody>   </table>
+<h2 id="Examples">  Examples </h2>
+<code>EXPAND</code> can be useful when you want to pick up the value of macros defined in another topic. For example, you might want to define a set of preferences in one topic, but pick up their value in another topic (this is very useful when building reusable applications). In this case you can write:
+<pre class="tml">
+   * Set MYPREFERENCE = value
+</pre>
+in "SettingsTopic" and then, in "MyTopic", write:
+<pre class="tml">
+&#37;EXPAND{&#34;&#36;percentMYPREFERENCE&#36;percent&#34; scope&#61;&#34;SettingsTopic&#34;}&#37;
+</pre>
+Of course we can also write:
+<pre class="tml">
+&#37;EXPAND{&#34;&#36;percentMYPREFERENCE&#36;percent&#34; scope&#61;&#34;&#37;OTHERTOPIC&#37;&#34;}&#37;
+</pre>
+which lets us select which other topic to get the preference value from.
+<p></p>
+Additional parameters can be passed to the macro being expanded using the standard macro syntax in the name of the macro; for example,
+<p></p>
+<pre class="tml">
+&#37;EXPAND{&#34;&#36;percentMYPREFERENCE{&#36;quotdefault&#36;quot param&#61;&#36;quotvalue&#36;quot}&#34; scope&#61;&#34;SettingsTopic&#34;}&#37;
+</pre>
+<p></p>
+<div class="foswikiHelp">
+<img height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> <code>EXPAND</code> is not very efficient, and should be used sparingly.
+<p></p>
+<img width="16" title="HELP" height="16" alt="HELP" src="DocumentGraphics.attachments/help.png"> To expand a web preference (for example, a web access control) then set <code>scope="Theotherweb.%WEBPREFSTOPIC%"</code>
+</div>
+<!---->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

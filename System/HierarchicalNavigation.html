@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>HierarchicalNavigation &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/HierarchicalNavigation/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/HierarchicalNavigation/favicon.ico">
+<link href="HierarchicalNavigation.html" rel="alternate" title="edit HierarchicalNavigation" type="application/x-wiki">
+<meta name="description" content="HierarchicalNavigation" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "HierarchicalNavigation",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Hierarchical_Navigation">  Hierarchical Navigation </h1>
+<p></p>
+Navigation block that displays the current topic, its parent and children (if any).
+This is intended to be included in other topics, for example in a side navigation bar (WebLeftBar).
+<p></p>
+<div class="foswikiHelp">
+<img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> WARNING: The lookup for parent and children will increase the loading time of your pages.
+</div>
+<p></p>
+<h2 id="Displaying_parent_44_current_and_child_topics">  Displaying parent, current and child topics </h2>
+<p></p>
+<pre class="tml">
+&#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.HierarchicalNavigation&#34; section&#61;&#34;all&#34;}&#37;
+</pre>
+<p></p>
+<h2 id="Displaying_child_topics">  Displaying child topics </h2>
+<p></p>
+<pre class="tml">
+&#42;Child topics:&#42;
+&#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.HierarchicalNavigation&#34; section&#61;&#34;children&#34;}&#37;
+</pre>
+<p></p>
+<pre class="foswikiHidden">
+&#37;STARTSECTION{&#34;all&#34;}&#37;&#60;div class&#61;&#34;foswikiHierarchicalNavigation&#34;&#62;
+&#60;ul&#62;
+&#37;SEARCH{
+   &#34;parent&#34;
+   type&#61;&#34;query&#34;
+   topic&#61;&#34;&#37;BASETOPIC&#37;&#34;
+   web&#61;&#34;&#37;BASEWEB&#37;&#34;
+   nonoise&#61;&#34;on&#34;
+   format&#61;&#34;&#60;li class&#61;&#39;foswikiParentTopic&#39;&#62;&#36;percentICON{parent&#95;gray}&#36;percent &#91;&#91;&#36;web.&#36;parent&#93;&#91;&#36;parent&#93;&#93;&#60;/li&#62;&#34;
+}&#37;
+&#60;li class&#61;&#39;foswikiCurrentTopic&#39; style&#61;&#39;font-weight:bold;&#39;&#62;&#60;nop&#62;&#37;BASETOPIC&#37;&#60;/li&#62;&#37;INCLUDE{&#34;&#37;TOPIC&#37;&#34; section&#61;&#34;childlist&#34;}&#37;
+&#60;/ul&#62;
+&#60;/div&#62;&#60;!--/foswikiHierarchicalNavigation--&#62;&#37;ENDSECTION{&#34;all&#34;}&#37;
+
+&#37;STARTSECTION{&#34;children&#34;}&#37;&#60;div class&#61;&#34;foswikiHierarchicalNavigation&#34;&#62;
+&#60;ul&#62;&#37;INCLUDE{&#34;&#37;TOPIC&#37;&#34; section&#61;&#34;childlist&#34;}&#37;&#60;/ul&#62;
+&#60;/div&#62;&#60;!--/foswikiHierarchicalNavigation--&#62;&#37;ENDSECTION{&#34;children&#34;}&#37;
+
+&#37;STARTSECTION{&#34;childlist&#34;}&#37;&#37;SEARCH{
+   &#34;parent.name&#61;&#39;&#37;BASETOPIC&#37;&#39;&#34;
+   web&#61;&#34;&#37;BASEWEB&#37;&#34;
+   type&#61;&#34;query&#34;
+   nonoise&#61;&#34;on&#34;
+   format&#61;&#34;&#60;li class&#61;&#39;childTopic&#39;&#62;&#36;percentICON{line&#95;ur&#95;gray}&#36;percent &#91;&#91;&#36;web.&#36;topic&#93;&#91;&#36;topic&#93;&#93;&#60;/li&#62;&#34;
+}&#37;&#37;ENDSECTION{&#34;childlist&#34;}&#37;
+</pre>
+<!--  -->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

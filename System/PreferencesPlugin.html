@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PreferencesPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/PreferencesPlugin/favicon.ico"> <link href="../MISSING RESOURCE System/PreferencesPlugin/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="PreferencesPlugin.html" rel="alternate" title="edit PreferencesPlugin" type="application/x-wiki">
+<meta name="description" content="PreferencesPlugin" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PreferencesPlugin",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="PreferencesPlugin"> PreferencesPlugin </h1>
+<p></p>
+Allows editing of preferences using fields predefined in a <a href="DataForms.html">DataForms</a>. However, the edit fields are inlined in the text, similar to how tables are edited in <a class="interwikiLink" href="https://foswiki.org/Extensions/EditTablePlugin" title="'Extensions/EditTablePlugin' on foswiki.org"><noautolink>Foswiki:Extensions/EditTablePlugin</noautolink></a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Syntax_Rules"> Syntax Rules </a>
+</li> <li> <a href="#Examples"> Examples </a>
+</li> <li> <a href="#Plugin_Installation_Instructions"> Plugin Installation Instructions </a>
+</li> <li> <a href="#Plugin_Info"> Plugin Info </a>
+</li></ul> 
+</div>
+<p></p>
+Insert the <code>%EDITPREFERENCES%</code> preference (see below) anywhere in your topic. It will be replaced by a button that allows editing each preference in its predefined input format (or a text box, when no format is defined for this preference).
+<p></p>
+In edit mode, the edit button is replaced by Save and Cancel buttons, with their obvious meanings.
+<p></p>
+<h2 id="Syntax_Rules">  Syntax Rules </h2>
+<p></p> <ul>
+<li> <code>%EDITPREFERENCES{ "topic" }%</code> <ul>
+<li> <em>topic</em> references a <a href="DataForms.html">DataForm</a> defining the format of the edit fields for preferences. It may be prefixed by a web.
+</li> <li> If a <a href="PreferenceSettings.html">preference setting</a> is not mentioned in the form referenced by <em>topic</em>, a text input box of the specified length is provided.
+</li> <li> Otherwise, the input can be through textareas, select, radio, checkbox, date, or text, as provided by <a href="DataForms.html">DataForms</a>.
+</li></ul> 
+</li> <li> <code>%EDITPREFERENCES%</code> <ul>
+<li> Edit existing preferences in the topic using a simple text field.
+</li></ul> 
+</li></ul> 
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%EDITPREFERENCES%</code> 
+</li> <li> <code>%EDITPREFERENCES{ "%SYSTEMWEB%.DefaultPreferencesForm" }%</code> 
+</li></ul> 
+<p></p>
+<!-- <ul>
+<li> Set SHORTDESCRIPTION = Allows editing of preferences using fields predefined in a form
+</li></ul> 
+-->
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions </h2>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p> <ul>
+<li> If the installation was successful, an edit button should appear below:
+</li></ul> 
+%EDITPREFERENCES%
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Jun 2015 (1.16) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13423' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13423" class="interwikiLink"><noautolink>Foswikitask:Item13423</noautolink></a>: Perl 5.22 deprecations. <a title="'Item12864' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12864" class="interwikiLink"><noautolink>Foswikitask:Item12864</noautolink></a>: Change to simple decimal versions. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Oct 2013 (1.1.5) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12607" title="'Item12607' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12607</noautolink></a>: Document EDITBOX* settings ignored when cookie set </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Nov 2012 (1.1.4) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11267" class="interwikiLink" title="'Item11267' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11267</noautolink></a>: Convert to perl version strings </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Apr 2012 (1.1.3) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item11445' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11445" class="interwikiLink"><noautolink>Foswikitask:Item11445</noautolink></a>: Use %SANDBOXWEB% macro. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 02 Dec 2011 (1.1.2) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Minor updates for internal compatibility with Foswiki </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Jun 2011 (1.1.1) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Switch to x.y.z version numbering. Minor update to play better with custom formfield types ( <code>Foswiki::Meta-&gt;new()</code> behaviour ) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 11 Apr 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.3. Only a minor change related to how the plugin is being upgraded </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Sep 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Small documentation update. Code tidied up. No preferences in plugin topic. No other functional changes. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 19 Apr 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Ignore all saving unless it happened by saving a form using POST method. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Dec 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Arthur Clemens added reading of <code>Local</code> preferences. Foswiki version </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Nov 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Kenneth Lavrsen fixed problem when settings are hidden in html comments. These settings are now ignored. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Jun 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Crawford Currie added testcases, recoded to work without a form definition, fixed for TWiki 4.2 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Feb 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Arthur Clemens added access keys for Save and Cancel, bold style for editable preference names, and a descriptive Save button label. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Apr 2006: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Adding css classes to buttons. Removed debug print statement causing 500s on SunOne. Prevent extra space in settings on saves. Switched to earlier handler. Converted all SCRIPTURL to SCRIPTURLPATH, and added support. The only SCRIPTURLs should be the one in the BASE tag and those in mail notification templates. Because the forms package was throwing an exception when it failed to create a form, the edit preferences plugin was aborting the whole of the session whenever the form specified in EDITPREFERENCES didn't exist. Changed it so that the Form constructor does not throw, but returns undef on a non-existant form, and changed preferences plugin to be tolerant of missing forms (ie defaults all fields to text if the form is missing, of is a Set exists which is not in the form). </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 26 May 2005: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Crawford Currie recoded to use code from Form.pm to render form fields. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 May 2005: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Add plugin preference to define default input length </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> 07 May 2005: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Initial version </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="DefaultPreferences.html">DefaultPreferences</a>, <a href="../Main/SitePreferences.html">SitePreferences</a>, <a href="DataForms.html">DataForms</a>
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

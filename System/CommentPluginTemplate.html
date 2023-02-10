@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CommentPluginTemplate &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/CommentPluginTemplate/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/CommentPluginTemplate/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" rel="alternate" href="CommentPluginTemplate.html" title="edit CommentPluginTemplate">
+<meta name="description" content="CommentPluginTemplate" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "CommentPluginTemplate",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<h1 id="Templates_for_CommentPlugin">  Templates for <a href="CommentPlugin.html">CommentPlugin</a> </h1>
+<p></p>
+See <a href="CommentPlugin.html">CommentPlugin: Customisation</a> for help.
+<p></p>
+While this topic can be viewed as a topic, it is used by the <a href="CommentPlugin.html">CommentPlugin</a> as a template file. The syntax is the same as used for the templates used for presentation in skins - see <a href="SkinTemplates.html">SkinTemplates</a>. The important content in here is in the verbatim blocks. The rest of the topic is just comments.
+<p></p>
+<span class='foswikiIcon'><img width="16" src="DocumentGraphics.attachments/hand.png" height="16" alt="hand"></span> See <a href="../Sandbox/CommentPluginExamples.html">CommentPluginExamples</a> to view rendered templates
+<p></p>
+<div class="foswikiBroadcastMessage" style="background-color:#ffc;">WARNING: THIS FILE WILL BE OVERWRITTEN WHEN YOU UPGRADE THE COMMENT PLUGIN</div>
+<p></p>
+Put your local templates into <a title="Create this topic" href="UserCommentsTemplate.html" class="foswikiNewLink" rel="nofollow">UserCommentsTemplate</a> (create if it does not exist yet). <strong>Local templates defined in that topic will override templates defined below.</strong>
+<p></p>
+CommentPlugin can work in two modes, <em>refresh</em> and <em>ajax</em>. In refresh mode,
+the entire topic is refreshed whenever a comment is added. This is rather slow,
+but gives the most accurate results. In <em>ajax</em> mode, insertion of comments is
+handled by Javascript in the browser, but what the user sees after adding
+a comment is not necessarily identical to what they will see when the topic is
+refreshed.
+<p></p>
+The templates below all use ajax mode for best performance by default.
+The plugin will fall back to refresh mode if Javascript is not available
+(e.g. it is enabled in your user's browsers).
+<p></p>
+If you want to disable ajax completely, then override the following template
+<pre>
+&#37;TMPL:DEF{ajax}&#37;commentPluginAjax&#37;TMPL:END&#37;
+</pre>
+setting it to empty.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">Table of Contents</span> <ul>
+<li> <a href="#Template_definitions"> Template definitions </a> <ul>
+<li> <a href="#Templates_used_in_rest_of_file"> Templates used in rest of file </a>
+</li> <li> <a href="#User_templates"> User templates </a> <ul>
+<li> <a href="#top"> top </a>
+</li> <li> <a href="#bottom"> bottom </a>
+</li> <li> <a href="#above"> above </a>
+</li> <li> <a href="#bulletabove"> bulletabove </a>
+</li> <li> <a href="#threadmode"> threadmode </a>
+</li> <li> <a href="#belowthreadmode"> belowthreadmode </a>
+</li> <li> <a href="#below"> below </a>
+</li> <li> <a href="#tableprepend"> tableprepend </a>
+</li> <li> <a href="#tableappend"> tableappend </a>
+</li> <li> <a href="#after:_Add_before_the_comment_box_44_after_the_last_comment"> after: Add before the comment box, after the last comment </a>
+</li> <li> <a href="#action"> action </a>
+</li> <li> <a href="#table"> table </a>
+</li> <li> <a href="#toctalk"> toctalk </a>
+</li> <li> <a href="#bookmark"> bookmark </a>
+</li> <li> <a href="#return"> return </a>
+</li></ul> 
+</li></ul> 
+</li> <li> <a href="#Include_UserComments"> Include UserComments </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Template_definitions">  Template definitions </h2>
+<p></p>
+<img src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!" title="ALERT!" width="16"> Note that the use of URLPARAM in the templates should be done in a way that prevents Cross Site Scripting attacks. The safest is to let URLPARAM encode the unsafe characters (default) but this prevents the user from entering Foswiki macros in the comment input fields. It is however safe to use encode="off" when the following rules are observed. <ul>
+<li> The encode="off" option for URLPARAM is only used in this topic within verbatim tags to prevent this topic from being an XSS attack vector.
+</li> <li> The encode="off" option is only used in OUTPUT defs and never in the PROMPT.
+</li> <li> The encode="off" should never be used for guest comments.  The comment plugin will expand the <code>$encodeguest</code> token to "off" for logged in users and "entity" for guests.
+</li></ul> 
+<p></p>
+<h3 id="Templates_used_in_rest_of_file">  Templates used in rest of file </h3>
+<p></p>
+Generic prompt box used by other templates
+<pre>
+&#37;TMPL:DEF{promptbox}&#37;&#60;div class&#61;&#34;commentPlugin commentPluginPromptBox&#34;&#62;&#60;table border&#61;&#34;0&#34; cellpadding&#61;&#34;0&#34; cellspacing&#61;&#34;0&#34;&#62;&#60;tr valign&#61;&#34;middle&#34;&#62;&#60;td&#62;&#60;textarea &#37;DISABLED&#37; rows&#61;&#34;&#37;rows&#124;3&#37;&#34; cols&#61;&#34;&#37;cols&#124;70&#37;&#34; name&#61;&#34;comment&#34; class&#61;&#34;foswikiInputField commentPluginPromptBox&#34; title&#61;&#34;&#37;MESSAGE&#37;&#34;&#62;&#37;MESSAGE&#37;&#60;/textarea&#62;&#60;/td&#62;&#60;td&#62;&#38;nbsp;&#60;input &#37;DISABLED&#37; type&#61;&#34;submit&#34; value&#61;&#34;&#37;button&#124;Add comment&#37;&#34; class&#61;&#34;foswikiButton &#37;TMPL:P{ajax}&#37;&#34; /&#62;&#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;&#60;/div&#62;&#60;!--/commentPlugin--&#62;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+Short comment, signed and dated
+<pre>
+&#37;TMPL:DEF{outputoneliner}&#37;   &#42; &#37;URLPARAM{&#34;comment&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37; -- &#37;WIKIUSERNAME&#37; - &#37;GMTIME{&#34;&#36;day &#36;month &#36;year&#34;}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img width="16" src="DocumentGraphics.attachments/hand.png" height="16" alt="hand"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">Default</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="User_templates">  User templates </h3>
+<h4 id="top">  top </h4>
+Comments, signed and dated, added at top of file
+<pre>
+&#37;TMPL:DEF{PROMPT:top}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<pre>
+&#37;TMPL:DEF{OUTPUT:top}&#37;&#37;TMPL:P{outputoneliner}&#37;&#37;POS:TOP&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img height="16" alt="hand" src="DocumentGraphics.attachments/hand.png" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">top</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="bottom">  bottom </h4>
+Comments, signed and dated, added at end of file
+<pre>
+&#37;TMPL:DEF{PROMPT:bottom}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:bottom}&#37;&#37;POS:BOTTOM&#37;&#37;TMPL:P{outputoneliner}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img src="DocumentGraphics.attachments/hand.png" height="16" alt="hand" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">bottom</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="above">  above </h4>
+Comments, signed and dated, added immediately before anchor
+<pre>
+&#37;TMPL:DEF{PROMPT:above}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:above}&#37;&#37;POS:BEFORE&#37;&#37;TMPL:P{OUTPUT:threadmode}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img alt="hand" height="16" src="DocumentGraphics.attachments/hand.png" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">above</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="bulletabove">  bulletabove </h4>
+Bullet item added immediately before anchor. The input field width is passed with parameter <code>inputsize</code>, for example:
+<p></p>
+<pre>
+&#37;COMMENT{type&#61;&#34;bulletabove&#34; inputsize&#61;&#34;20&#34;}&#37;
+</pre>
+<p></p>
+<pre>
+&#37;TMPL:DEF{PROMPT:bulletabove}&#37;&#60;input class&#61;&#34;foswikiInputField&#34; name&#61;&#34;bullet&#95;above&#95;item&#34; id&#61;&#34;bullet&#95;above&#95;item&#34; type&#61;&#34;text&#34; size&#61;&#34;&#37;inputsize&#124;40&#37;&#34; value&#61;&#34;&#37;URLPARAM{&#34;bullet&#95;above&#95;item&#34;}&#37;&#34; /&#62;&#38;nbsp;&#60;input &#37;DISABLED&#37; type&#61;&#34;button&#34; value&#61;&#34;&#37;button&#124;Add item&#37;&#34; class&#61;&#34;foswikiButton &#37;TMPL:P{ajax}&#37;&#34; /&#62;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:bulletabove}&#37;   &#42; &#37;URLPARAM{&#34;bullet&#95;above&#95;item&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;&#37;POS:BEFORE&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img src="DocumentGraphics.attachments/hand.png" alt="hand" height="16" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">bulletabove</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="threadmode">  threadmode </h4>
+Wiki thread mode comment, signed and dated
+<pre>
+&#37;TMPL:DEF{PROMPT:threadmode}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:threadmode}&#37;&#37;POS:BEFORE&#37;
+
+&#37;URLPARAM{&#34;comment&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;
+
+-- &#37;WIKIUSERNAME&#37; - &#37;DATE&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img width="16" height="16" alt="hand" src="DocumentGraphics.attachments/hand.png"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">threadmode</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="belowthreadmode">  belowthreadmode </h4>
+Comments, signed and dated, added recurse after comment box.
+<p></p>
+<pre>
+&#37;TMPL:DEF{PROMPT:belowthreadmode}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:belowthreadmode}&#37;&#37;POS:AFTER&#37;
+---++++ &#37;WIKIUSERNAME&#37; - &#37;SERVERTIME&#37;
+
+&#37;URLPARAM{&#34;comment&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;
+
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img alt="hand" height="16" src="DocumentGraphics.attachments/hand.png" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">belowthreadmode</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="below">  below </h4>
+Comments, signed and dated, added immediately below anchor
+<pre>
+&#37;TMPL:DEF{PROMPT:below}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:below}&#37;&#37;POS:AFTER&#37;&#37;TMPL:P{outputoneliner}&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img alt="hand" height="16" src="DocumentGraphics.attachments/hand.png" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">below</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="tableprepend">  tableprepend </h4>
+Comments, signed and dated, added at top of table below the
+anchor/location/COMMENT
+<pre>
+&#37;TMPL:DEF{PROMPT:tableprepend}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:tableprepend}&#37;&#37;POS:AFTER&#37;&#124; &#37;URLPARAM{&#34;comment&#34; newline&#61;&#34;&#60;br /&#62;&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37; &#124; &#37;WIKIUSERNAME&#37; &#124; &#37;SERVERTIME&#37; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img width="16" alt="hand" height="16" src="DocumentGraphics.attachments/hand.png"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">tableprepend</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="tableappend">  tableappend </h4>
+Comments, signed and dated, added at end of table above the anchor/location/COMMENT
+<pre>
+&#37;TMPL:DEF{PROMPT:tableappend}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:tableappend}&#37;&#37;POS:BEFORE&#37;&#124; &#37;URLPARAM{&#34;comment&#34; newline&#61;&#34;&#60;br /&#62;&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37; &#124; &#37;WIKIUSERNAME&#37; &#124; &#37;SERVERTIME&#37; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img width="16" alt="hand" height="16" src="DocumentGraphics.attachments/hand.png"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">tableappend</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="after:_Add_before_the_comment_box_44_after_the_last_comment">  after: Add before the comment box, after the last comment </h4>
+<pre>
+&#37;TMPL:DEF{PROMPT:after}&#37;&#37;TMPL:P{promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:after}&#37;&#37;NOP&#37;&#37;TMPL:P{outputoneliner}&#37;
+&#37;POS:BEFORE&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img width="16" src="DocumentGraphics.attachments/hand.png" alt="hand" height="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">after</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="action">  action </h4>
+Action added to action table directly above comment box
+(requires <a title="'Extensions/ActionTrackerPlugin' on foswiki.org" href="https://foswiki.org/Extensions/ActionTrackerPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions/ActionTrackerPlugin</noautolink></a>)
+<pre>
+&#37;TMPL:DEF{PROMPT:action}&#37;
+
+&#37;TABLE{databg&#61;&#34;#ffffff&#34; tableborder&#61;&#34;0&#34; cellborder&#61;&#34;0&#34;}&#37;
+&#124;        &#60;label for&#61;&#34;action&#95;who&#34;&#62;Action for&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; name&#61;&#34;action&#95;who&#34; id&#61;&#34;action&#95;who&#34; type&#61;&#34;text&#34; size&#61;&#34;50&#34; value&#61;&#34;&#37;URLPARAM{&#34;who&#34;}&#37;&#34; /&#62; &#124;
+&#124; &#60;label for&#61;&#34;action&#95;due&#34;&#62;Due date&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; name&#61;&#34;action&#95;due&#34; id&#61;&#34;action&#95;due&#34; type&#61;&#34;text&#34; size&#61;&#34;30&#34; value&#61;&#34;&#37;URLPARAM{&#34;due&#34;}&#37;&#34; /&#62; &#124;
+&#124;    &#60;label for&#61;&#34;action&#95;comment&#34;&#62;Comment&#60;/label&#62;&#124; &#60;textarea &#37;DISABLED&#37; rows&#61;&#34;&#37;rows&#124;3&#37;&#34; cols&#61;&#34;&#37;cols&#124;50&#37;&#34; name&#61;&#34;action&#95;comment&#34; id&#61;&#34;action&#95;comment&#34; class&#61;&#34;foswikiInputField commentPluginPromptBox&#34; onfocus&#61;&#34;if(this.value&#61;&#61;&#39;&#37;MESSAGE&#37;&#39;)this.value&#61;&#39;&#39;&#34; onblur&#61;&#34;if(this.value&#61;&#61;&#39;&#39;)this.value&#61;&#39;&#37;MESSAGE&#37;&#39;&#34;&#62;&#37;MESSAGE&#37;&#60;/textarea&#62; &#124;
+&#124;&#124; &#60;input &#37;DISABLED&#37; type&#61;&#34;button&#34; class&#61;&#34;foswikiButton &#37;TMPL:P{ajax}&#37;&#34; value&#61;&#34;Add action&#34; /&#62; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:action}&#37;&#37;POS:BEFORE&#37;&#37;AC&#37;NOP&#37;TION{who&#61;&#34;&#37;URLPARAM{&#34;action&#95;who&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;&#34; due&#61;&#34;&#37;URLPARAM{&#34;action&#95;due&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;&#34;}&#37; &#37;URLPARAM{&#34;action&#95;comment&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;&#60;br /&#62;- Created by &#37;WIKIUSERNAME&#37;, &#37;SERVERTIME&#37;&#37;ENDACTION&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img height="16" alt="hand" src="DocumentGraphics.attachments/hand.png" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">action</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="table">  table </h4>
+Tablerows adding on end
+<pre>
+&#37;TMPL:DEF{PROMPT:table}&#37;
+&#37;TABLE{databg&#61;&#34;#ffffff&#34; tableborder&#61;&#34;0&#34; cellborder&#61;&#34;0&#34;}&#37;
+&#124;        &#60;label for&#61;&#34;comment&#95;date&#34;&#62;Date&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; &#37;DISABLED&#37; type&#61;&#34;text&#34; size&#61;&#34;40&#34; name&#61;&#34;comment&#95;date&#34; id&#61;&#34;comment&#95;date&#34; /&#62; &#124;
+&#124;        &#60;label for&#61;&#34;comment&#95;city&#34;&#62;City&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; &#37;DISABLED&#37; type&#61;&#34;text&#34; size&#61;&#34;40&#34; name&#61;&#34;comment&#95;city&#34; id&#61;&#34;comment&#95;city&#34; value&#61;&#34;&#34; /&#62; &#124;
+&#124;&#124; &#60;input &#37;DISABLED&#37; type&#61;&#34;button&#34; class&#61;&#34;foswikiButton &#37;TMPL:P{ajax}&#37;&#34; value&#61;&#34;&#37;button&#124;Add entry&#37;&#34; /&#62; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:table}&#37;&#37;POS:BEFORE&#37;&#124; &#37;URLPARAM{&#34;comment&#95;date&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37; &#124; &#37;WIKIUSERNAME&#37; &#124; &#37;URLPARAM{&#34;comment&#95;city&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img width="16" alt="hand" height="16" src="DocumentGraphics.attachments/hand.png"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">table</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="toctalk">  toctalk </h4>
+Talk using TOC adding on end
+<pre>
+&#37;TMPL:DEF{PROMPT:toctalk}&#37;
+&#37;TABLE{databg&#61;&#34;#ffffff&#34; tableborder&#61;&#34;0&#34; cellborder&#61;&#34;0&#34;}&#37;
+&#124;        &#60;label for&#61;&#34;comment&#95;summary&#34;&#62;Summary&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; &#37;DISABLED&#37; type&#61;&#34;text&#34; size&#61;&#34;40&#34; name&#61;&#34;comment&#95;summary&#34; id&#61;&#34;comment&#95;summary&#34; /&#62; &#124;
+&#124;        &#60;label for&#61;&#34;toctalk&#95;comment&#95;text&#34;&#62;Message&#60;/label&#62;&#124; &#60;textarea &#37;DISABLED&#37; rows&#61;&#34;&#37;rows&#124;3&#37;&#34; cols&#61;&#34;&#37;cols&#124;50&#37;&#34; name&#61;&#34;toctalk&#95;comment&#95;text&#34; id&#61;&#34;toctalk&#95;comment&#95;text&#34; class&#61;&#34;foswikiInputField commentPluginPromptBox&#34; onfocus&#61;&#34;if(this.value&#61;&#61;&#39;&#37;MESSAGE&#37;&#39;)this.value&#61;&#39;&#39;&#34; onblur&#61;&#34;if(this.value&#61;&#61;&#39;&#39;)this.value&#61;&#39;&#37;MESSAGE&#37;&#39;&#34;&#62;&#37;MESSAGE&#37;&#60;/textarea&#62; &#124;
+&#124;&#124; &#60;input &#37;DISABLED&#37; type&#61;&#34;button&#34; value&#61;&#34;&#37;button&#124;Add&#37;&#34; class&#61;&#34;foswikiButton &#37;TMPL:P{ajax}&#37;&#34; /&#62; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:toctalk}&#37;
+&#37;POS:BEFORE&#37;---++++ &#37;SERVERTIME&#37; &#37;WIKIUSERNAME&#37;: &#37;URLPARAM{&#34;comment&#95;summary&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;
+&#37;POS:BEFORE&#37;&#37;URLPARAM{&#34;toctalk&#95;comment&#95;text&#34; encode&#61;&#34;&#36;encodeguest&#34;}&#37;
+&#37;POS:BEFORE&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img src="DocumentGraphics.attachments/hand.png" alt="hand" height="16" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">toctalk</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="bookmark">  bookmark </h4>
+Create a list of annotated bookmarks
+<pre>
+&#37;TMPL:DEF{PROMPT:bookmark}&#37;
+&#37;TABLE{databg&#61;&#34;#ffffff&#34; tableborder&#61;&#34;0&#34; cellborder&#61;&#34;0&#34;}&#37;
+&#124;        &#60;label for&#61;&#34;comment&#95;url&#34;&#62;Url&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; &#37;DISABLED&#37; type&#61;&#34;text&#34; size&#61;&#34;40&#34; name&#61;&#34;comment&#95;url&#34; id&#61;&#34;comment&#95;url&#34; value&#61;&#34;http://&#34; /&#62; &#124;
+&#124; &#60;label for&#61;&#34;comment&#95;link&#34;&#62;Link label&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; &#37;DISABLED&#37; type&#61;&#34;text&#34; size&#61;&#34;40&#34; name&#61;&#34;comment&#95;link&#34; id&#61;&#34;comment&#95;link&#34; /&#62; &#124;
+&#124;    &#60;label for&#61;&#34;bookmark&#95;comment&#95;text&#34;&#62;Comment&#60;/label&#62;&#124; &#60;input class&#61;&#34;foswikiInputField&#34; &#37;DISABLED&#37; type&#61;&#34;text&#34; size&#61;&#34;40&#34; name&#61;&#34;bookmark&#95;comment&#95;text&#34; id&#61;&#34;bookmark&#95;comment&#95;text&#34; value&#61;&#34;&#37;MESSAGE&#37;&#34; /&#62; &#124;
+&#124;&#124; &#60;input &#37;DISABLED&#37; type&#61;&#34;button&#34; value&#61;&#34;&#37;button&#124;Add bookmark&#37;&#34; class&#61;&#34;foswikiButton &#37;TMPL:P{ajax}&#37;&#34; /&#62; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:bookmark}&#37;&#37;POS:BEFORE&#37;   &#42; &#91;&#91;&#37;URLPARAM{&#34;comment&#95;url&#34; encode&#61;&#34;entity&#34;}&#37;&#93;&#91;&#37;URLPARAM{&#34;comment&#95;link&#34; encode&#61;&#34;entity&#34;}&#37;&#93;&#93; &#37;IF{&#34; &#39;&#37;URLPARAM{&#34;bookmark&#95;comment&#95;text&#34; encode&#61;&#34;entity&#34;}&#37;&#39; &#61; &#39;&#39; &#34; then&#61;&#34;&#34; else&#61;&#34;- &#34;}&#37;&#37;URLPARAM{&#34;bookmark&#95;comment&#95;text&#34; encode&#61;&#34;entity&#34;}&#37;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img width="16" height="16" alt="hand" src="DocumentGraphics.attachments/hand.png"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">bookmark</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="return">  return </h4>
+Post to a different topic and return to here. The comment <code>target</code> is set in the <code>PROMPT</code>. In the form below the <code>redirectto</code> is set to the current (including) topic.
+<p></p>
+<pre>
+&#37;TMPL:DEF{return&#95;promptbox}&#37;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;redirectto&#34; value&#61;&#34;&#37;BASEWEB&#37;.&#37;BASETOPIC&#37;&#34; /&#62;
+&#37;TMPL:P{promptbox}&#37;
+&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{PROMPT:return}&#37;&#37;TMPL:P{return&#95;promptbox}&#37;&#37;TMPL:END&#37;
+</pre>
+<pre>
+&#37;TMPL:DEF{OUTPUT:return}&#37;&#37;POS:BEFORE&#37;&#37;TMPL:P{OUTPUT:threadmode}&#37;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<span class='foswikiIcon'><img src="DocumentGraphics.attachments/hand.png" height="16" alt="hand" width="16"></span> See rendered template <a href="../Sandbox/CommentPluginExamples.html">return</a>
+<p></p>
+<p></p>
+<h2 id="Include_UserComments">  Include UserComments </h2>
+<p></p>
+Including <a class="foswikiNewLink" rel="nofollow" href="UserCommentsTemplate.html" title="Create this topic">UserCommentsTemplate</a> ("Template" gets automatically appended to the name):
+<p></p>
+%TMPL:INCLUDE{"UserComments"}%
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

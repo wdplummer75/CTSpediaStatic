@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarPUBURL &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/VarPUBURL/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/VarPUBURL/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit VarPUBURL" href="VarPUBURL.html" rel="alternate">
+<meta name="description" content="VarPUBURL" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "VarPUBURL",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="PUBURL_45_45_generate_an_URL_for_an_attachment">  PUBURL -- generate an URL for an attachment </h1>
+Generate an absolute URL for an attachment, or for a web or topic within the attachment database.
+<h2 id="Parameters">  Parameters </h2>
+          <table class="foswikiTable" id="tableVarPUBURL1" rules="none">   
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>   
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"attachment"</code> </td>
+			<td class="foswikiTableCol1"> Name of attachment to link </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>web</code> </td>
+			<td class="foswikiTableCol1"> Web </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topic</code> </td>
+			<td class="foswikiTableCol1"> Topic, or Web.Topic </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topic_version</code> </td>
+			<td class="foswikiTableCol1"> Select topic version, if supported </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> most recent </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>attachment_version</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Select attachment version, if supported </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> most recent </td>
+		</tr>
+	</tbody>   </table>
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%PUBURL%</code> expands to <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub</code>
+</li> <li> <code>%PUBURL{"icon_plus.png"}%</code> expands to <code>=%PUBURL{"icon_plus.png"}%</code>
+</li> <li> <code>%PUBURL{web="System"}%</code> expands to <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System</code>
+</li> <li> <code>%PUBURL{topic="System.MainFeatures"}%</code> expands to <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System/MainFeatures</code>
+</li> <li> <code>%PUBURL{web="System" topic="MainFeatures"}%</code> expands to <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System/MainFeatures</code>
+</li> <li> <code>%PUBURL{topic="System.MainFeatures"}%</code> expands to <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System/MainFeatures</code>
+</li> <li> <code>%PUBURL{topic="System.MainFeatures" "icon_plus.png"}%</code> expands to <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System/MainFeatures/icon_plus.png</code>
+</li> <li> Also supports <code>topic_version</code> and <code>attachment_version</code> parameters. These can be used with advanced store implementations to select specific attachment versions. However simple file-based stores do not normally support them.   <div class="foswikiHelp"><img alt="HELP" height="16" src="DocumentGraphics.attachments/help.png" width="16" title="HELP"> The 'old' way of building URLs using <code>PUBURL</code> involved concatenating the web and topic names to the <code>PUBURL</code> e.g. <code>%PUBURL%/Main/SystemFeatures</code>. This practice is <strong>strongly</strong> discouraged, as it does not correctly handle encoding of the parts of the URL. At the first opportunity you should replace all such URLs with the equivalent <code>%PUBURL%{topic="System.MainFeatures"}%</code>, which will handle URL encoding for you.<br><br><img width="16" title="IDEA!" alt="IDEA!" height="16" src="DocumentGraphics.attachments/tip.png"> <a href="VarATTACHURL.html">ATTACHURL</a> provides a shorter way to refer to the attachments on the current topic.</div>
+</li></ul> 
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarPUBURLPATH.html">PUBURLPATH</a>, <a href="VarATTACHURL.html">ATTACHURL</a>, <a href="VarATTACHURLPATH.html">ATTACHURLPATH</a>, <a href="VarSCRIPTURL.html">SCRIPTURL</a>, <a href="VarSCRIPTURL.html">SCRIPTURLPATH</a>, <a href="FileAttachment.html">FileAttachments</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

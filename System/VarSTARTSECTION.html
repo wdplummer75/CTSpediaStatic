@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarSTARTSECTION &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarSTARTSECTION/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/VarSTARTSECTION/favicon.ico" rel="shortcut icon">
+<link title="edit VarSTARTSECTION" rel="alternate" href="VarSTARTSECTION.html" type="application/x-wiki">
+<meta name="description" content="VarSTARTSECTION" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "VarSTARTSECTION",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="STARTSECTION_45_45_marks_the_start_of_a_section_within_a_topic">  STARTSECTION -- marks the start of a section within a topic </h1>
+Section boundaries are defined with <code>%STARTSECTION{}%</code> and <code>%ENDSECTION{}%</code>.
+Sections may be given a name to help identify them, and/or a type, which changes how they are used. <ul>
+ <li>
+ <ul>
+<li> <code>type="section"</code> - the default, used for a generic section, such as a named section used by <a href="VarINCLUDE.html">INCLUDE</a>.
+</li> <li> <code>type="include"</code> - like <code>%STARTINCLUDE%</code> ... <code>%STOPINCLUDE%</code> except that you can have as many include blocks as you want which are all merged into one when included (<code>%STARTINCLUDE%</code> is restricted to only one). Sections of type include may not be given a name.
+</li> <li> <code>type="expandvariables"</code> - all macros inside an "expandvariables" type section gets expanded when a new topic based on the template topic is created. See <a href="TemplateTopics.html">TemplateTopics</a> for more information.
+</li> <li> <code>type="templateonly"</code> - start position of text to be removed when a template topic is used. This is used to embed text that you <em>do not</em> want expanded when a new topic based on the template topic is created. See <a href="TemplateTopics.html">TemplateTopics</a> for more information.
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="Parameters">  Parameters </h2>
+          <table class="foswikiTable" id="tableVarSTARTSECTION1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"name"</code> </td>
+			<td class="foswikiTableCol1"> Name of the section. Must be unique inside a topic. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Generated name </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> =type=" </td>
+			<td class="foswikiTableCol1"> Type of the section; type <code>"section"</code>, <code>"expandvariables"</code>, <code>"include"</code> or <code>"templateonly"</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"section"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiFirstCol foswikiLast" colspan="3"> Any other parameter will be defined as a default value for a macro within the scope of the section. The example parameters on the left will result in <code>%PARONE%</code> and <code>%PARTWO%</code> being defined <em>if</em> they are not defined parameters to the INCLUDE, or nested INCLUDEs surrounding it, or previsouly defined Preferences. </td>
+		</tr>
+	</tbody>     </table>
+<p></p>
+<div class="foswikiHelp">
+<img width="16" title="HELP" alt="HELP" height="16" src="DocumentGraphics.attachments/help.png"> If a section is not given a name, it will be assigned one. Unnamed sections are assigned names starting with <code>_SECTION0</code> for the first unnamed section in the topic, <code>_SECTION1</code> for the second, etc..
+<p></p>
+<img width="16" title="HELP" alt="HELP" height="16" src="DocumentGraphics.attachments/help.png"> You can define nested sections. It is not recommended to overlap sections, although it is valid in Foswiki. Use named sections to make sure that the correct START and ENDs are matched. Section markers are <strong>not</strong> displayed when a topic is viewed.
+</div>
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%STARTSECTION{"name"}% ................... %ENDSECTION{"name"}%</code>
+</li> <li> <code>%STARTSECTION{"name" type="section"}% .... %ENDSECTION{"name" type="section"}%</code> <em>(type="section" is the default)</em>
+</li> <li> <code>%STARTSECTION{type="include"}% ........... %ENDSECTION{type="include"}%</code>
+</li> <li> <code>%STARTSECTION{type="expandvariables"}% ... %ENDSECTION{type="expandvariables"}%</code>
+</li> <li> <code>%STARTSECTION{type="templateonly"}% ...... %ENDSECTION{type="templateonly"}%</code>
+</li></ul> 
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarENDSECTION.html">ENDSECTION</a>, <a href="VarINCLUDE.html">INCLUDE</a>, <a href="VarNOP.html">NOP</a>, <a href="VarSTARTINCLUDE.html">STARTINCLUDE</a>, <a href="VarSTOPINCLUDE.html">STOPINCLUDE</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

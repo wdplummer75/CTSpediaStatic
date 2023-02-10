@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebCreateNewTopicComponents &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/WebCreateNewTopicComponents/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE System/WebCreateNewTopicComponents/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit WebCreateNewTopicComponents" rel="alternate" href="WebCreateNewTopicComponents.html">
+<meta name="description" content="WebCreateNewTopicComponents" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "WebCreateNewTopicComponents",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="WebCreateNewTopicComponents"> WebCreateNewTopicComponents </h1>
+This topic is meant for developers. It contains <code>INCLUDE</code> sections to build a "create new topic" form.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Usage"> Usage </a> <ul>
+<li> <a href="#Including_the_form_40simple_41"> Including the form (simple) </a>
+</li> <li> <a href="#Customizing_the_order_and_layout"> Customizing the order and layout </a>
+</li></ul> 
+</li> <li> <a href="#List_of_components"> List of components </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<h3 id="Including_the_form_40simple_41">  Including the form (simple) </h3>
+Create a form with an empty name field:
+<pre>
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;newtopic&#34;
+    newtopic&#61;&#34;&#34;
+}&#37;
+</pre>
+<p></p>
+Create a form with an "auto increment" name, and with customised INCLUDE sections in topics listed in <code>override</code> param:
+<pre>
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;newtopic&#34;
+    newtopic&#61;&#34;TestTopicAUTOINC0&#34;
+    override&#61;&#34;&#37;USERSWEB&#37;.TopicFields,&#37;BASEWEB&#37;.TopicFieldsForWeb&#34;
+}&#37;
+</pre>
+<p></p>
+<h3 id="Customizing_the_order_and_layout">  Customizing the order and layout </h3>
+See the component table below what parts you can use to construct a form.
+<p></p>
+This is the code used in the <a href="../Sandbox/WebHome.html">Sandbox.WebHome</a> form:
+<pre>
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;js&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;formstart&#34;
+}&#37;
+&#60;div class&#61;&#34;foswikiFormSteps&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;topicname&#34;
+    newtopic&#61;&#34;&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;topicnamefeedback&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;wikiword&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;errorfeedback&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;submit&#34;
+}&#37;
+&#60;/div&#62;
+&#60;/div&#62;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;formend&#34;
+}&#37;
+</pre>
+<p></p>
+<h2 id="List_of_components">  List of components </h2>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Component</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Description</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>js</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Includes necessary Javascript files </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>formstart</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Opens the form </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topicname</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Topic name field </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>wikiword</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Javascript to automatically construct topicname text to <a href="WikiWord.html">WikiWord</a> and tickbox to allow non-WikiWords </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topicnamefeedback</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Provides feedback on the automatically constructed topic name </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topicparent</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Input field with toggle to select list of topics in the current web to select as topic parent </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>templatetopic</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Select list of template topics </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>errorfeedback</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Provides feedback on why the submit button is disabled </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>submit</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> The submit button </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>formend</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Closes the form </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<pre class="foswikiHidden">
+
+&#37;STARTSECTION{&#34;newtopic&#34; override&#61;&#34;&#34; sectionlist&#61;&#34;js, formstart, topicname, submit, topicnamefeedback, errorfeedback, formend&#34;}&#37;&#37;FORMAT{
+    &#34;&#37;sectionlist&#37;&#34;
+    type&#61;&#34;string&#34;
+    format&#61;&#34;&#36;percntINCLUDE{
+    &#36;quot&#37;override&#37;,&#37;TOPIC&#37;&#36;quot
+    section&#61;&#36;quot&#36;item&#36;quot
+}&#36;percnt&#34;
+}&#37;&#37;ENDSECTION{&#34;newtopic&#34;}&#37;
+
+&#37;STARTSECTION{&#34;js&#34;}&#37;&#37;TMPL:P{&#34;JavascriptFiles/foswikiString&#34;}&#37;&#37;TMPL:P{
+ &#34;LIBJS&#34;
+ id&#61;&#34;JavascriptFiles/foswikiStringUnicodeChars&#34;
+ requires&#61;&#34;JavascriptFiles/foswikiString&#34;
+}&#37;&#37;TMPL:P{
+ &#34;LIBJS&#34;
+ id&#61;&#34;JavascriptFiles/foswikiWebTopicCreator&#34;
+ requires&#61;&#34;JavascriptFiles/foswikiStringUnicodeChars&#34;
+}&#37;&#37;ADDTOZONE{&#34;head&#34; 
+ tag&#61;&#34;WebCreateNewTopicTemplate:META&#34; 
+ text&#61;&#34;&#60;noautolink&#62;&#60;literal&#62;&#60;meta name&#61;&#39;foswiki.webTopicCreator.nameFeedback&#39; content&#61;&#39;&#37;MAKETEXT{&#34;Topic will be named: &#34;}&#37;&#39; /&#62;
+&#60;meta name&#61;&#39;foswiki.webTopicCreator.errorFeedbackNoWikiName&#39; content&#61;&#39;&#60;p class&#61;\&#34;foswikiGrayText\&#34;&#62;&#37;ENCODE{&#34;&#37;MAKETEXT{&#34;Enter the topic name as WikiWord or check the allow non-Wiki Word box.&#34;}&#37;&#34; type&#61;&#34;entity&#34;}&#37;&#60;/p&#62;&#39; /&#62;&#60;/literal&#62;&#60;/noautolink&#62;&#34;
+ requires&#61;&#34;&#34;
+}&#37;&#37;ENDSECTION{&#34;js&#34;}&#37;
+
+&#37;STARTSECTION{&#34;formstart&#34; defaultweb&#61;&#34;&#37;INCLUDINGWEB&#37;&#34;}&#37;&#60;form name&#61;&#34;newtopicform&#34; action&#61;&#34;&#37;SCRIPTURLPATH{edit}&#37;/&#37;defaultweb&#37;/&#34;&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;t&#34; value&#61;&#34;&#37;GMTIME{&#34;&#36;epoch&#34;}&#37;&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;onlynewtopic&#34; value&#61;&#34;on&#34; /&#62;&#37;ENDSECTION{&#34;formstart&#34;}&#37;
+
+&#37;STARTSECTION{&#34;webname&#34;}&#37;    &#60;select name&#61;&#34;defaultweb&#34; class&#61;&#34;foswikiSelect&#34;&#62; 
+     &#60;option&#62;&#37;SANDBOXWEB&#37;&#60;/option&#62;
+    &#37;SEARCH{
+        type&#61;&#34;query&#34;
+        web&#61;&#34;all,-&#37;SANDBOXWEB&#37;&#34;
+        topic&#61;&#34;&#37;WEBPREFSTOPIC&#37;&#34;
+        &#34;1&#34;
+        format&#61;&#34;&#60;option&#62;&#36;web&#60;/option&#62;&#34;
+        nonoise&#61;&#34;on&#34;
+    }&#37; &#60;/select&#62;&#37;ENDSECTION{&#34;webname&#34;}&#37;
+
+&#37;STARTSECTION{&#34;topicname&#34;}&#37;&#60;input type&#61;&#34;text&#34; class&#61;&#34;foswikiInputField&#34; name&#61;&#34;topic&#34; size&#61;&#34;40&#34; placeholder&#61;&#34;&#37;IF{
+    &#34;defined placeholder&#34;
+    then&#61;&#34;&#37;URLPARAM{&#34;placeholder&#34; default&#61;&#34;&#37;placeholder&#37;&#34;}&#37;&#34;
+}&#37;&#34; value&#61;&#34;&#37;IF{
+    &#34;defined newtopic&#34;
+    then&#61;&#34;&#37;URLPARAM{&#34;newtopic&#34; default&#61;&#34;&#37;newtopic&#37;&#34;}&#37;&#34;
+    else&#61;&#34;&#37;IF{&#34;&#36;BASETOPIC&#61;&#39;WebCreateNewTopic&#39;&#34; then&#61;&#34;&#34; else&#61;&#34;&#37;BASETOPIC&#37;&#34;}&#37;&#34;
+}&#37;&#34; /&#62;&#37;ENDSECTION{&#34;topicname&#34;}&#37;
+
+&#37;STARTSECTION{&#34;wikiword&#34;}&#37;&#37;TMPL:P{&#34;onlywikiname&#34;}&#37;&#37;ENDSECTION{&#34;wikiword&#34;}&#37;
+
+&#37;STARTSECTION{&#34;topicnamefeedback&#34;}&#37;&#60;span class&#61;&#34;webTopicCreatorFeedback foswikiGrayText&#34;&#62;&#60;!--generated name will be put here--&#62;&#60;/span&#62;&#37;ENDSECTION{&#34;topicnamefeedback&#34;}&#37;
+
+&#37;STARTSECTION{&#34;topicparent&#34;}&#37;
+&#37;JQREQUIRE{&#34;ui::autocomplete&#34;}&#37;
+&#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.JQueryAjaxHelper&#34; section&#61;&#34;topicselector&#34; INPUT&#95;VALUE&#61;&#34;&#37;URLPARAM{&#34;topicparent&#34; default&#61;&#34;&#34;}&#37;&#34; INPUT&#95;NAME&#61;&#34;topicparent&#34; EXCLUDE&#61;&#34;&#37;TOPIC&#37;&#34; PLACEHOLDER&#61;&#34;&#37;MAKETEXT{&#34;Enter parent name&#34;}&#37;&#34; }&#37;
+&#37;ENDSECTION{&#34;topicparent&#34;}&#37;
+
+&#37;STARTSECTION{&#34;templatetopic&#34;}&#37;&#60;select name&#61;&#34;templatetopic&#34; class&#61;&#34;foswikiSelect&#34;&#62;&#37;IF{&#34;&#39;&#37;URLPARAM{&#34;templatetopic&#34;}&#37;&#39;&#34; then&#61;&#39;&#60;option selected&#61;&#34;selected&#34;&#62;&#37;URLPARAM{&#34;templatetopic&#34;}&#37;&#60;/option&#62;&#39;}&#37;&#60;option value&#61;&#34;&#34;&#62;&#37;MAKETEXT{&#34;Default template&#34;}&#37;&#60;/option&#62;&#37;SEARCH{&#34;name~&#39;&#42;Template&#39;&#34; scope&#61;&#34;topic&#34; topic&#61;&#34;&#42;Template&#34; web&#61;&#34;&#37;BASEWEB&#37;&#34; excludetopic&#61;&#34;&#42;EditTemplate,&#42;WebCreateNewTopicTemplate,&#42;ViewTemplate&#34; type&#61;&#34;query&#34; nonoise&#61;&#34;on&#34; format&#61;&#34;&#60;option value&#61;\&#34;&#36;web.&#36;topic\&#34;&#62;&#36;topic&#60;/option&#62;&#34;}&#37;&#60;/select&#62;&#37;SEARCH{&#34;name~&#39;&#42;Template&#39;&#34; scope&#61;&#34;topic&#34; topic&#61;&#34;&#42;Template&#34; web&#61;&#34;&#37;BASEWEB&#37;&#34; limit&#61;&#34;1&#34; excludetopic&#61;&#34;WebTopicEditTemplate,&#42;WebCreateNewTopicTemplate,&#42;ViewTemplate&#34; type&#61;&#34;query&#34; nonoise&#61;&#34;on&#34; format&#61;&#34; &#60;span class&#61;&#39;foswikiUnvisited&#39;&#62;&#37;POPUPWINDOW{
+url&#61;&#34;&#37;SCRIPTURL{view}&#37;/&#37;SYSTEMWEB&#37;/WebTemplateTopics?web&#61;&#37;BASEWEB&#37;;template&#61;viewplain&#34;
+template&#61;&#34;viewplain&#34;
+toolbar&#61;&#34;1&#34;
+label&#61;&#34;&#37;MAKETEXT{&#34;View templates&#34;}&#37;&#34;
+}&#37;&#60;/span&#62;&#34;}&#37;&#37;JQREQUIRE{&#34;popupwindow&#34;}&#37;&#37;ENDSECTION{&#34;templatetopic&#34;}&#37;
+
+&#37;STARTSECTION{&#34;errorfeedback&#34;}&#37;&#60;div class&#61;&#39;webTopicCreatorError&#39;&#62;&#60;!--generated name will be put here--&#62;&#60;/div&#62;&#37;ENDSECTION{&#34;errorfeedback&#34;}&#37;&#60;
+
+&#37;STARTSECTION{&#34;submit&#34;}&#37;&#60;input type&#61;&#34;submit&#34; class&#61;&#34;foswikiSubmit&#34; value&#61;&#39;&#37;MAKETEXT{&#34;Create this topic&#34;}&#37;&#39; /&#62;&#37;ENDSECTION{&#34;submit&#34;}&#37;
+
+&#37;STARTSECTION{&#34;formend&#34;}&#37;&#60;/form&#62;&#37;ENDSECTION{&#34;formend&#34;}&#37;
+
+</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

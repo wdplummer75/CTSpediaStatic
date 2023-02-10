@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SiteChanges &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/SiteChanges/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/SiteChanges/favicon.ico">
+<link title="edit SiteChanges" rel="alternate" href="SiteChanges.html" type="application/x-wiki">
+<meta name="description" content="SiteChanges" />
+<link type="text/css" media="all" rel="stylesheet" class="head JQUERYPLUGIN::BUTTON" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "SiteChanges",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="SiteChanges">  <a href="SiteChanges.html" class="foswikiCurrentTopicLink">SiteChanges</a> </h1>
+Recent changes
+<div class="foswikiHelp"><img alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> This topic can be resource intensive on a large site with a large public web.
+The <a title="'Extensions.SolrPlugin' on foswiki.org" href="https://foswiki.org/Extensions.SolrPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions.SolrPlugin</noautolink></a> can be used to replace this search with a high performing indexed search.  Large sites should
+consider installing the Solr serverlet and indexing system to improve
+performance.</div>
+<p></p>
+<a onclick="window.location.href='/foswiki/bin/view/System/SiteChanges?section=content';return false;" class="jqButton " href=".."><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/book.png)'></span><span class='jqButtonText'>Load content</span></a> Use this button to load the content.<br /> <strong>Caution</strong> the search on this topic can be very resource intensive. Only load the content if you really need it, otherwise review the <a href="WebChanges.html">WebChanges</a> topic from each web.
+<p></p>
+<pre class="foswikiHidden">
+&#37;STARTSECTION{&#34;content&#34;}&#37;
+---+ &#37;IF{
+ &#34;defined web AND &#36;web!&#61;&#39;all&#39;&#34;
+ then&#61;&#34;&#37;MAKETEXT{&#34;Recently changed topics in &#91;&#95;1&#93; Web&#34; args&#61;&#34;&#36;percntURLPARAM{&#36;quotweb&#36;quot default&#61;&#36;quotall&#36;quot}&#36;percnt&#34;}&#37;&#34;
+ else&#61;&#34;&#37;MAKETEXT{&#34;Recently changed topics in all Webs&#34;}&#37;&#34;
+}&#37;
+&#60;!-- START DATE SELECTION --&#62;
+&#60;form name&#61;&#34;seeChangesSince&#34; id&#61;&#34;siteChangesForm&#34; method&#61;&#34;get&#34; action&#61;&#34;&#37;TOPIC&#37;&#34; /&#62;
+&#60;noautolink&#62;
+&#60;div class&#61;&#34;foswikiFormSteps&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+&#37;MAKETEXT{&#34;See changes since:&#34;}&#37; &#60;select class&#61;&#34;foswikiSelect&#34; id&#61;&#34;siteChangesSelect&#34; name&#61;&#34;since&#34;&#62;
+&#60;option id&#61;&#34;last&#95;time&#95;checked&#34; value&#61;&#34;magic&#34;&#62;&#60;/option&#62;
+&#60;option id&#61;&#34;1&#95;hour&#95;ago&#34; value&#61;&#34;P1h/&#36;now&#34; &#37;IF{&#34;&#36;since &#61; &#39;P1h/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;1 hour ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;6&#95;hours&#95;ago&#34; value&#61;&#34;P6h/&#36;now&#34; &#37;IF{&#34;&#36;since &#61; &#39;P6h/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;6 hours ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;12&#95;hours&#95;ago&#34; value&#61;&#34;P12h/&#36;now&#34; &#37;IF{&#34;&#36;since &#61; &#39;P12h/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;12 hours ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;24&#95;hours&#95;ago&#34; value&#61;&#34;P1d/&#36;now&#34; &#37;IF{&#34;&#36;since &#61; &#39;P1d/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;24 hours ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;3&#95;days&#95;ago&#34; value&#61;&#34;P3d/&#36;now&#34;}&#37;&#34; &#37;IF{&#34;&#36;since &#61; &#39;P3d/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;3 days ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;1&#95;week&#95;ago&#34; value&#61;&#34;P1w/&#36;now&#34;}&#37;&#34; &#37;IF{&#34;&#36;since &#61; &#39;P12/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;1 week ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;2&#95;weeks&#95;ago&#34; value&#61;&#34;P2w/&#36;now&#34; &#37;IF{&#34;&#36;since &#61; &#39;P2w/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;2 weeks ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;4&#95;weeks&#95;ago&#34; value&#61;&#34;P4w/&#36;now&#34;}&#37;&#34; &#37;IF{&#34;&#36;since &#61; &#39;P4w/&#36;now&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;4 weeks ago&#34;}&#37;&#60;/option&#62;
+&#60;option id&#61;&#34;beginning&#34; value&#61;&#34;&#34;}&#37;&#34; &#37;IF{&#34;&#36;since &#61; &#39;&#39;&#34; then&#61;&#34;selected&#61;&#39;selected&#39;&#34;}&#37;&#62;&#37;MAKETEXT{&#34;the beginning&#34;}&#37;&#60;/option&#62;
+&#60;/select&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;sinceReadable&#34; value&#61;&#34;&#37;URLPARAM{&#34;sinceReadable&#34;}&#37;&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;debugJs&#34; value&#61;&#34;&#37;URLPARAM{&#34;debugJs&#34; default&#61;&#34;0&#34;}&#37;&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;section&#34; value&#61;&#34;&#37;URLPARAM{&#34;section&#34; default&#61;&#34;0&#34;}&#37;&#34; /&#62;
+&#60;noscript&#62;
+&#60;input type&#61;&#34;submit&#34; class&#61;&#34;foswikiButton&#34; name&#61;&#34;findChanges&#34; value&#61;&#34;&#37;MAKETEXT{&#34;Update&#34;}&#37;&#34; /&#62;
+&#60;/noscript&#62;
+&#60;/div&#62;
+&#60;/div&#62;
+&#37;TABLE{sort&#61;&#34;on&#34; initsort&#61;&#34;1&#34; initdirection&#61;&#34;up&#34; headerrows&#61;&#34;1&#34; tablewidth&#61;&#34;100&#37;&#34;}&#37;
+&#37;SEARCH{
+    &#34;info.author!&#61;&#39;WikiGnome&#39;&#34;
+    type&#61;&#34;query&#34;
+    nosearch&#61;&#34;on&#34;
+    nototal&#61;&#34;on&#34;
+    pagesize&#61;&#34;&#37;URLPARAM{&#34;limit&#34; default&#61;&#34;25&#34;}&#37;&#34;
+    showpage&#61;&#34;1&#34;
+    web&#61;&#34;&#37;URLPARAM{&#34;web&#34; default&#61;&#34;all&#34;}&#37;&#34;
+    excludetopic&#61;&#34;&#37;STATISTICSTOPIC&#37;&#34;
+    reverse&#61;&#34;on&#34;
+    order&#61;&#34;modified&#34;
+    format&#61;&#34;&#124; &#36;date &#124; &#60;nop&#62;&#36;web &#124; &#91;&#91;&#37;SCRIPTURLPATH{&#34;view&#34;}&#37;/&#36;web/&#36;topic#foo&#95;&#36;rev&#93;&#91;&#36;topic&#93;&#93;&#36;percentIF{
+ &#36;quot&#39;&#36;formfield(Summary, 20)&#39; &#61; &#39;&#39;&#36;quot
+ NOthen&#61;&#36;quot&#36;topic&#36;quot
+ else&#61;&#36;quot&#37;BR&#37; &#36;formfield(Summary)&#36;quot
+    }&#36;percent &#124; &#91;&#91;&#36;wikiusername&#93;&#91;&#36;wikiname&#93;&#93; &#124; &#91;&#91;&#37;SCRIPTURLPATH{&#34;rdiff&#34;}&#37;/&#36;web/&#36;topic#&#95;foo&#61;&#36;rev&#93;&#91;&#37;MAKETEXT{&#34;diff&#34;}&#37;&#93;&#93;, &#91;&#91;&#37;SCRIPTURLPATH{&#34;rdiff&#34;}&#37;/&#36;web/&#36;topic?type&#61;last&#38;render&#61;sequential&#38;context&#61;9000&#38;&#95;foo&#61;&#36;rev#diff001&#93;&#91;&#37;MAKETEXT{&#34;last change&#34;}&#37;&#93;&#93; &#124; &#34;
+    header&#61;&#34;&#124; &#42;&#37;MAKETEXT{&#34;Last modified&#34;}&#37;&#42; &#124; &#42;&#37;MAKETEXT{&#34;Web&#34;}&#37;&#42; &#124; &#42;&#37;MAKETEXT{&#34;Topic&#34;}&#37;&#42; &#124; &#42;&#37;MAKETEXT{&#34;Last editor&#34;}&#37;&#42; &#124; &#42;&#37;MAKETEXT{&#34;View&#34;}&#37;&#42; &#124;&#34;
+    nofooter&#61;&#34;&#36;n---&#36;n &#36;pager &#36;n----&#36;n&#34;
+    pager&#61;&#34;on&#34;
+    groupby&#61;&#34;none&#34;
+    date&#61;&#34;&#37;URLPARAM{&#34;since&#34; default&#61;&#34;P1d/&#36;now&#34;}&#37;&#34;
+    zeroresults&#61;&#34;&#60;p&#62;&#37;MAKETEXT{&#34;No changes&#34;}&#37;&#60;/p&#62;&#34;
+}&#37;
+&#60;div class&#61;&#34;foswikiFormSteps&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+&#37;MAKETEXT{&#34;Maximum &#91;&#95;1&#93; items per web&#34; args&#61;&#34;&#37;URLPARAM{&#34;limit&#34; default&#61;&#34;25&#34;}&#37;&#34;}&#37; &#37;TWISTY{
+ remember&#61;&#34;on&#34;
+ showlink&#61;&#34;&#37;MAKETEXT{&#34;change display options&#34;}&#37;&#34;
+ hidelink&#61;&#34;&#37;MAKETEXT{&#34;close display options&#34;}&#37;&#34;
+ mode&#61;&#34;span&#34;
+}&#37;
+&#60;div class&#61;&#34;foswikiFormSteps&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+&#60;h4&#62;&#37;MAKETEXT{&#34;Number of changes for each Web&#34;}&#37;&#60;/h4&#62;
+&#60;p&#62;&#60;input type&#61;&#34;radio&#34; name&#61;&#34;limit&#34; value&#61;&#34;10&#34; id&#61;&#34;limit10&#34; &#37;IF{&#34;&#36;limit&#61;&#39;10&#39;&#34; then&#61;&#34;checked&#61;\&#34;1\&#34;&#34;}&#37; /&#62;&#60;label for&#61;&#34;limit10&#34;&#62;10&#60;/label&#62;
+&#60;input type&#61;&#34;radio&#34; name&#61;&#34;limit&#34; value&#61;&#34;25&#34; id&#61;&#34;limit0&#34; &#37;IF{&#34;&#36;limit&#61;&#39;25&#39; OR NOT defined limit OR &#36;limit&#61;&#39;&#39;&#34; then&#61;&#34;checked&#61;\&#34;1\&#34;&#34;}&#37;/&#62;&#60;label for&#61;&#34;limit0&#34;&#62;&#37;MAKETEXT{&#34;&#91;&#95;1&#93; (default)&#34; args&#61;&#34;25&#34;}&#37;&#60;/label&#62;
+&#60;input type&#61;&#34;radio&#34; name&#61;&#34;limit&#34; value&#61;&#34;50&#34; id&#61;&#34;limit50&#34; &#37;IF{&#34;&#36;limit&#61;&#39;50&#39;&#34; then&#61;&#34;checked&#61;\&#34;1\&#34;&#34;}&#37;/&#62;&#60;label for&#61;&#34;limit50&#34;&#62;50&#60;/label&#62;
+&#60;input type&#61;&#34;radio&#34; name&#61;&#34;limit&#34; value&#61;&#34;100&#34; id&#61;&#34;limit100&#34; &#37;IF{&#34;&#36;limit&#61;&#39;100&#39;&#34; then&#61;&#34;checked&#61;\&#34;1\&#34;&#34;}&#37;/&#62;&#60;label for&#61;&#34;limit100&#34;&#62;100&#60;/label&#62;
+&#60;input type&#61;&#34;radio&#34; name&#61;&#34;limit&#34; value&#61;&#34;200&#34; id&#61;&#34;limit200&#34; &#37;IF{&#34;&#36;limit&#61;&#39;200&#39;&#34; then&#61;&#34;checked&#61;\&#34;1\&#34;&#34;}&#37;/&#62;&#60;label for&#61;&#34;limit200&#34;&#62;200&#60;/label&#62;
+&#60;input type&#61;&#34;radio&#34; name&#61;&#34;limit&#34; value&#61;&#34;400&#34; id&#61;&#34;limit400&#34; &#37;IF{&#34;&#36;limit&#61;&#39;400&#39;&#34; then&#61;&#34;checked&#61;\&#34;1\&#34;&#34;}&#37;/&#62;&#60;label for&#61;&#34;limit400&#34;&#62;400&#60;/label&#62;&#60;/p&#62;
+&#60;/div&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+&#60;h4&#62;&#37;MAKETEXT{&#34;Webs&#34;}&#37;&#60;/h4&#62;
+&#60;p&#62;&#60;input type&#61;&#34;text&#34; class&#61;&#34;foswikiInputField&#34; name&#61;&#34;web&#34; value&#61;&#34;&#37;URLPARAM{&#34;web&#34; default&#61;&#34;all&#34;}&#37;&#34; size&#61;&#34;80&#34; /&#62;&#60;/p&#62;
+&#60;p&#62;&#37;MAKETEXT{&#34;Specify &#61;all&#61; for all webs, or a comma separated list of webs from: &#91;&#95;1&#93;&#34; args&#61;&#34;&#60;code&#62;&#37;WEBLIST{&#34;&#36;name&#34; separator&#61;&#34;&#38;#44; &#34;}&#37;&#60;/code&#62;&#34;}&#37;&#60;/p&#62;
+&#60;/div&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;section&#34; value&#61;&#34;&#37;URLPARAM{&#34;section&#34; default&#61;&#34;0&#34;}&#37;&#34; /&#62;
+&#60;input type&#61;&#34;submit&#34; class&#61;&#34;foswikiButton&#34; name&#61;&#34;listChanges&#34; value&#61;&#34;&#37;MAKETEXT{&#34;Update&#34;}&#37;&#34; /&#62;
+&#60;/div&#62;
+&#60;/div&#62;
+&#37;ENDTWISTY&#37;
+&#60;/div&#62;
+&#60;/div&#62;
+&#60;/noautolink&#62;
+&#60;/form&#62;
+&#37;ADDTOZONE{ &#34;script&#34;
+  id&#61;&#34;SiteChangesScript&#34;
+  requires&#61;&#34;JavascriptFiles/foswikiPrefs&#34;
+  text&#61;&#34;&#60;script type&#61;&#39;text/javascript&#39; src&#61;&#39;&#37;PUBURLPATH{&#34;sitechanges.js&#34; topic&#61;&#34;&#37;BASEWEB&#37;.&#37;BASETOPIC&#37;&#34;}&#37;&#39;&#62;&#60;/script&#62;&#34;
+}&#37;
+&#37;ADDTOZONE{
+ &#34;head&#34;
+ id&#61;&#34;sitechanges&#34;
+ text&#61;&#34;&#60;literal&#62;&#60;style type&#61;&#39;text/css&#39; media&#61;&#39;all&#39;&#62;
+#siteChangesForm .foswikiTable {
+ margin-top: 20px;
+}
+&#60;/style&#62;&#60;/literal&#62;&#34;
+}&#37;
+&#37;ENDSECTION{&#34;content&#34;}&#37;
+</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

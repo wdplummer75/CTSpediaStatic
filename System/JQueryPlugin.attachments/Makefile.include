@@ -1,0 +1,155 @@
+FOSWIKI_ROOT?=~/foswiki/trunk/core
+FOSWIKI_LIB=$(FOSWIKI_ROOT)/lib
+JQUERYPLUGIN_LIB=$(FOSWIKI_LIB)/Foswiki/Plugins/JQueryPlugin
+
+BUILD_DIR=.
+ifneq (,$(wildcard build))
+  BUILD_DIR=build
+  VPATH:=:$(BUILD_DIR)
+endif
+
+SRC_DIR=.
+ifneq (,$(wildcard src))
+  SRC_DIR=src
+  VPATH:=$(VPATH):$(SRC_DIR)
+endif
+
+ifneq (,$(wildcard lib))
+  LIB_DIR=lib
+  VPATH:=$(VPATH):$(LIB_DIR)
+endif
+
+GZIP=gzip
+CAT=cat
+DEBUG=false
+
+NPM_INSTALL=npm install -g
+JSMIN=$(shell which terser 2>/dev/null || which uglifyjs) -m -c --
+CSSMIN=$(shell which csso 2>/dev/null || echo cat) 
+CSSMIN_ARGS="--no-restructure"
+ESLINT=eslint -f compact --env es6
+SASS=node-sass --output-style expanded
+
+DEV_DEPENDENCIES=\
+  csso \
+  csso-cli \
+  eslint \
+  sass \
+  terser \
+  node-sass
+
+.SUFFIXES: .js .css .jslint .install 
+.PHONY: subdirs $(SUBDIRS) deps vars
+
+all: subdirs $(TARGET) $(TARGET:.js=.js.gz) $(TARGET:.css=.css.gz) $(TARGET:.ttf=.ttf.gz) $(TARGET:.eot=.eot.gz) $(TARGET:.otf=.otf.gz) $(TARGET:.svg=.svg.gz)
+	@echo -n ""
+
+vars:
+	@echo "NPM_INSTALL=$(NPM_INSTALL)"
+	@echo "JSMIN=$(JSMIN)"
+	@echo "CSSMIN=$(CSSMIN) $(CSSMIN_ARGS)"
+	@echo "ESLINT=$(ESLINT)"
+	@echo "SASS=$(SASS)"
+
+deps: 
+	@$(NPM_INSTALL) $(DEV_DEPENDENCIES) >/dev/null
+
+jslint: subdirs $(TARGET:.js=.jslint) 
+	@echo -n ""
+
+$(SRC_DIR)/%.jslint: %.uncompressed.js
+	@echo checking code quality of $<
+	@$(ESLINT) $< && touch $@
+
+$(SRC_DIR)/%.jslint: %_src.js
+	@echo checking code quality of $<
+	@$(ESLINT) $< && touch $@
+
+# src -> build
+$(BUILD_DIR)/%.js: $(SRC_DIR)/%.uncompressed.js
+	@if $(DEBUG); then \
+	  echo creating $@ from $<; $(CAT) $< > $@; \
+	else \
+	  echo minifying $@ from $<; $(JSMIN) $< > $@; \
+	fi
+
+$(BUILD_DIR)/%.js: $(SRC_DIR)/%_src.js
+	@if $(DEBUG); then \
+	  echo creating $@ from $<; $(CAT) $< > $@; \
+	else \
+	  echo minifying $@ from $<; $(JSMIN) $< > $@; \
+	fi
+
+$(BUILD_DIR)/%.css: $(SRC_DIR)/%.uncompressed.css
+	@echo minifying $@ from $<
+	@$(CSSMIN) $< $(CSSMIN_ARGS)> $@
+
+$(BUILD_DIR)/%.css: $(SRC_DIR)/%_src.css
+	@echo minifying $@ from $<
+	@$(CSSMIN) $< $(CSSMIN_ARGS) > $@
+
+$(BUILD_DIR)/%.uncompressed.css: $(SRC_DIR)/%.scss
+	@echo sassing $@ from $<
+	@$(SASS) $< > $@
+
+# lib -> build
+$(BUILD_DIR)/%.js: $(LIB_DIR)/%.uncompressed.js
+	@if $(DEBUG); then \
+	  echo creating $@ from $<; $(CAT) $< > $@; \
+	else \
+	  echo minifying $@ from $<; $(JSMIN) $< > $@; \
+	fi
+
+$(BUILD_DIR)/%.js: $(LIB_DIR)/%_src.js
+	@if $(DEBUG); then \
+	  echo creating $@ from $<; $(CAT) $< > $@; \
+	else \
+	  echo minifying $@ from $<; $(JSMIN) $< > $@; \
+	fi
+
+$(BUILD_DIR)/%.css: $(LIB_DIR)/%.uncompressed.css
+	@echo minifying $@ from $<
+	@$(CSSMIN) $< $(CSSMIN_ARGS) > $@
+
+$(BUILD_DIR)/%.css: $(LIB_DIR)/%_src.css
+	@echo minifying $@ from $<
+	@$(CSSMIN) $< $(CSSMIN_ARGS) > $@
+
+# build -> buid
+$(BUILD_DIR)/%.gz: $(BUILD_DIR)/%
+	@echo zipping $< to $@
+	@$(GZIP) -9 -c $< > $@
+
+$(BUILD_DIR)/%.css: $(BUILD_DIR)/%.uncompressed.css
+	@echo minifying $@ from $<
+	@$(CSSMIN) $< $(CSSMIN_ARGS) > $@
+
+$(BUILD_DIR)/%.css: $(BUILD_DIR)/%_src.css
+	@echo minifying $@ from $<
+	@$(CSSMIN) $< $(CSSMIN_ARGS) > $@
+
+$(BUILD_DIR)/%.js: $(BUILD_DIR)/%.uncompressed.js
+	@if $(DEBUG); then \
+	  echo creating $@ from $<; $(CAT) $< > $@; \
+	else \
+	  echo minifying $@ from $<; $(JSMIN) $< > $@; \
+	fi
+
+$(BUILD_DIR)/%.js: $(BUILD_DIR)/%_src.js
+	@if $(DEBUG); then \
+	  echo creating $@ from $<; $(CAT) $< > $@; \
+	else \
+	  echo minifying $@ from $<; $(JSMIN) $< > $@; \
+	fi
+
+subdirs: $(SUBDIRS)
+
+$(SUBDIRS):
+	@$(MAKE) --no-print-directory -C $@
+
+%.pm:
+	@if test -f $@; then \
+	   echo "found"; \
+	 else \
+	   echo "WARNING: no perl stub found at $@ " >&2; \
+	 fi

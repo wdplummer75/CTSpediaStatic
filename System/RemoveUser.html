@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>RemoveUser &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/RemoveUser/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE System/RemoveUser/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="alternate" href="RemoveUser.html" title="edit RemoveUser" type="application/x-wiki">
+<meta name="description" content="RemoveUser" />
+<link type="text/css" media="all" class="head JQUERYPLUGIN::THEME" rel="stylesheet" href="JQueryPlugin.attachments/plugins/ui/themes/foswiki/jquery-ui.css"><!--JQUERYPLUGIN::THEME-->
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::EASING" src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "RemoveUser",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/ui/jquery-ui.js?version=1.13.1" class="script JQUERYPLUGIN::UI"></script><!--JQUERYPLUGIN::UI-->
+<script class="script JQUERYPLUGIN::UI::AUTOCOMPLETE" src="JQueryPlugin.attachments/plugins/ui/jquery.ui.autocomplete.init.js?version=1.13.1"></script><!--JQUERYPLUGIN::UI::AUTOCOMPLETE-->
+
+<script>
+jQuery(function($){
+  $(".jqUserSelector").data("ui-autocomplete")._renderItem = function(ul, item) {
+    if (typeof(item.label) !== 'undefined') {
+      return $("<li></li>")
+        .data("item.autocomplete", item)
+        .append("<a><table width='100%'><tr><td width='60px'><img src="+item.img+" width="50"></td><td>"+item.label+"<br />"+item.email+"</td></tr></table></a>")
+        .appendTo(ul);
+    }
+  };
+});
+</script>
+<!--userselector::js-->
+</head>
+<body>
+<h1 id="Remove_User">  Remove User </h1>
+<p></p>
+Utility for removing registered users, when supported by the User Mapper.
+<p></p>
+The following form can be used by administrators to delete a user's account: <ul>
+<li> The user is removed from the user database.
+</li> <li> The user's topic is moved to the trash web.
+</li> <li> The user is removed from any groups.
+</li> <li> Other topics like the users LeftBar are <em>not</em> removed.
+</li></ul> 
+<p></p>
+<strong>Note:</strong> Consider leaving the user topic file in place so their past signatures and revision author entries don't end up looking like <a title="Create this topic" href="AnUncreatedTopic.html" class="foswikiNewLink" rel="nofollow">AnUncreatedTopic</a>.
+If you want to make it clear the user is no longer around, replace the topic content with a note to that effect.
+The existence of the UserName topic should also prevent that username from being re-used, sealing the potential security hole regarding inherited permissions.
+<p></p>
+<p></p>
+<!--  -->
+<form name="admin" action="/foswiki/bin/manage/System/RemoveUser" method="post">
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+<h4 id="Enter_user_to_be_removed">  Enter user to be removed </h4>
+<!-- userselector -->
+<input type="text" class="foswikiInputField jqUserSelector" name="user" id="user"  autocomplete="http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/JQueryAjaxHelper?section=user;skin=text;contenttype=application/json" size="60" value="" />
+<p></p>
+<!-- //userselector -->
+<hr />
+<h4 id="Remove_user_topic_63">  Remove user topic? </h4>
+<input type="checkbox" id="removeTopic" name="removeTopic" checked="checked" class="foswikiCheckbox" /> <em>(Check to remove topic)</em> 
+Prefix for deleted topic: <input type="text" name="topicPrefix" class="foswikiInputField" value="DeletedUser" /> <em>(Follow topic naming rules)</em>
+<hr />
+<input type="hidden" name="action" value="deleteUserAccount" />
+<input type="submit" class="foswikiSubmit" value="Remove User" />
+</form>
+</div>
+</div>
+<p></p>
+<p></p>
+<!--
+<pre class="foswikiHidden">
+&#37;STARTSECTION{&#34;removeUser&#34;}&#37;
+&#60;!-- &#37;JQREQUIRE{&#34;ui, ui::autocomplete&#34;}&#37; --&#62;
+&#60;form name&#61;&#34;admin&#34; action&#61;&#34;&#37;SCRIPTURLPATH{manage}&#37;/&#37;BASEWEB&#37;/&#37;BASETOPIC&#37;&#34; method&#61;&#34;post&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormSteps&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+---++++!! Enter user to be removed
+&#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.JQueryAjaxHelper&#34; section&#61;&#34;userselector&#34; INPUT&#95;NAME&#61;&#34;user&#34; MULTI&#61;&#34;false&#34;}&#37;
+&#60;hr /&#62;
+---++++!! Remove user topic?
+&#60;input type&#61;&#34;checkbox&#34; id&#61;&#34;removeTopic&#34; name&#61;&#34;removeTopic&#34; checked&#61;&#34;checked&#34; class&#61;&#34;foswikiCheckbox&#34; /&#62; &#95;(Check to remove topic)&#95; 
+Prefix for deleted topic: &#60;input type&#61;&#34;text&#34; name&#61;&#34;topicPrefix&#34; class&#61;&#34;foswikiInputField&#34; value&#61;&#34;DeletedUser&#34; /&#62; &#95;(Follow topic naming rules)&#95;
+&#60;hr /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;action&#34; value&#61;&#34;deleteUserAccount&#34; /&#62;
+&#60;input type&#61;&#34;submit&#34; class&#61;&#34;foswikiSubmit&#34; value&#61;&#34;Remove User&#34; /&#62;
+&#60;/form&#62;
+&#60;/div&#62;
+&#60;/div&#62;
+&#37;ENDSECTION{&#34;removeUser&#34;}&#37;
+</pre>
+-->
+<p></p>
+<p></p>
+<div class="foswikiHelp">
+<img height="16" alt="TIP" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> For Foswiki versions prior to Foswiki 2.0, see the <a href="http://foswiki.org/Extensions/AntiWikiSpamPlugin">AntiWikiSpamPlugin</a> extension for another method of removing users.  It provides a <code>rest</code> handler to: <ul>
+<li> Move the user topic to the Trash web.
+</li> <li> Remove the user from the password / mapper
+</li> <li> Remove the user from any groups.
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<hr />
+<strong>Related topics:</strong> <a href="ResetPassword.html">ResetPassword</a>, <a href="ChangeEmailAddress.html">ChangeEmailAddress</a>, <a href="UserToolsCategory.html">UserToolsCategory</a>, <a href="AdminToolsCategory.html">AdminToolsCategory</a>
+<p></p>
+<!-- <ul>
+<li> Set DENYTOPICVIEW = <a class="foswikiNewLink" rel="nofollow" href="WikiGuest.html" title="Create this topic">WikiGuest</a>
+</li></ul> 
+-->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>MacrosQuickReference &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/MacrosQuickReference/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/MacrosQuickReference/favicon.ico">
+<link href="MacrosQuickReference.html" rel="alternate" title="edit MacrosQuickReference" type="application/x-wiki">
+<meta name="description" content="MacrosQuickReference" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "MacrosQuickReference",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<h1 id="Macros_Quick_Reference">  Macros Quick Reference </h1>
+<p></p>
+See <a href="Macros.html">Macros</a> for a detailed description of how to use Macros
+<p></p>
+<h2 id="Predefined_Macros">  Predefined Macros </h2>
+<p></p> <ul>
+<li> <a href="VarACTIVATEDPLUGINS.html">ACTIVATEDPLUGINS -- list of currently activated plugins</a>
+</li> <li> <a href="VarADDTOHEAD.html">ADDTOHEAD -- deprecated, use ADDTOZONE instead</a>
+</li> <li> <a href="VarADDTOZONE.html">ADDTOZONE -- add content to a named zone on the page</a>
+</li> <li> <a href="VarALLVARIABLES.html">ALLVARIABLES -- list of currently defined macros</a>
+</li> <li> <a href="VarATTACHURL.html">ATTACHURL -- full URL for attachments in the current topic</a>
+</li> <li> <a href="VarATTACHURLPATH.html">ATTACHURLPATH -- path of the attachment URL of the current topic</a>
+</li> <li> <a href="VarAUTHREALM.html">AUTHREALM -- authentication realm</a>
+</li> <li> <a href="VarBASETOPIC.html">BASETOPIC -- base topic where an INCLUDE started</a>
+</li> <li> <a href="VarBASEWEB.html">BASEWEB -- base web where an INCLUDE started</a>
+</li> <li> <a href="VarBUTTON.html">BUTTON -- renders a nice button </a>
+</li> <li> <a href="VarCALC.html">CALC -- add spreadsheet calculations to tables and outside tables</a>
+</li> <li> <a href="VarCALCULATE.html">CALCULATE -- add spreadsheet formulae calls using standard Macro evaluation order.</a>
+</li> <li> <a href="VarCOMMENT.html">COMMENT -- insert an edit box into the topic to easily add comments.</a>
+</li> <li> <a href="VarCOVER.html">COVER -- current skin cover</a>
+</li> <li> <a href="VarDATE.html">DATE -- signature format date</a>
+</li> <li> <a href="VarDISPLAYTIME.html">DISPLAYTIME -- display formatted time</a>
+</li> <li> <a href="VarEDITTABLE.html">EDITTABLE{ <em>attributes</em> } -- edit tables using edit fields and other input fields</a>
+</li> <li> <a href="VarENCODE.html">ENCODE -- encode characters in a string</a>
+</li> <li> <a href="VarENDCOLOR.html">ENDCOLOR -- end colored text</a>
+</li> <li> <a href="VarENDINCLUDE.html">ENDINCLUDE -- end position of topic text if included</a>
+</li> <li> <a href="VarENDSECTION.html">ENDSECTION -- marks the end of a named section within a topic</a>
+</li> <li> <a href="VarENDTAB.html">ENDTAB -- ending marker for a tab of a tabpane</a>
+</li> <li> <a href="VarENDTABPANE.html">ENDTABPANE -- ending tag for tabpane widget</a>
+</li> <li> <a href="VarENDTWISTY.html">ENDTWISTY -- complements an opening TWISTY tag to close a twisty</a>
+</li> <li> <a href="VarENDTWISTYTOGGLE.html">ENDTWISTYTOGGLE -- Twisty closure</a>
+</li> <li> <a href="VarENV.html">ENV -- inspect the value of an environment variable</a>
+</li> <li> <a href="VarEXAMPLETAG.html">EXAMPLETAG -- example macro tag</a>
+</li> <li> <a href="VarEXPAND.html">EXPAND -- expand macros in a string as if they were used in another topic</a>
+</li> <li> <a href="VarFAILEDPLUGINS.html">FAILEDPLUGINS -- debugging for plugins that failed to load</a>
+</li> <li> <a href="VarFORMAT.html">FORMAT -- format a list of objects</a>
+</li> <li> <a href="VarFORMFIELD.html">FORMFIELD -- renders a field in the form attached to some topic</a>
+</li> <li> <a href="VarGMTIME.html">GMTIME -- formatted Greenwich Mean Time (UTC)</a>
+</li> <li> <a href="VarGROUPINFO.html">GROUPINFO -- retrieve details about a group</a>
+</li> <li> <a href="VarGROUPS.html">GROUPS -- a formatted list of groups</a>
+</li> <li> <a href="VarHISTORY.html">HISTORY -- control attributes of tables and sorting of table columns</a>
+</li> <li> <a href="VarHOMETOPIC.html">HOMETOPIC -- home topic in each web</a>
+</li> <li> <a href="VarHTTP.html">HTTP -- get HTTP headers</a>
+</li> <li> <a href="VarHTTPHOST.html">HTTP_HOST -- environment variable</a>
+</li> <li> <a href="VarHTTPS.html">HTTPS -- get HTTPS headers</a>
+</li> <li> <a href="VarICON.html">ICON -- small documentation graphic or icon of common attachment types</a>
+</li> <li> <a href="VarICONURL.html">ICONURL -- URL of small documentation graphic or icon</a>
+</li> <li> <a href="VarICONURLPATH.html">ICONURLPATH -- URL path of small documentation graphic or icon</a>
+</li> <li> <a href="VarIF.html">IF -- simple conditionals</a>
+</li> <li> <a href="VarINCLUDE.html">INCLUDE -- include another topic, or subsection of a topic, or a URL, or Foswiki embedded documentation</a>
+</li> <li> <a href="VarINCLUDINGTOPIC.html">INCLUDINGTOPIC -- name of topic that includes current topic</a>
+</li> <li> <a href="VarINCLUDINGWEB.html">INCLUDINGWEB -- web that includes current topic</a>
+</li> <li> <a href="VarJQICON.html">JQICON -- render an image </a>
+</li> <li> <a href="VarJQICONPATH.html">JQICONPATH -- render the url path to an image icon</a>
+</li> <li> <a href="VarJQPLUGINS.html">JQPLUGINS -- display a summary of available plugins</a>
+</li> <li> <a href="VarJQREQUIRE.html">JQREQUIRE -- enable a plugin on the current page</a>
+</li> <li> <a href="VarJQTHEME.html">JQTHEME -- switch jQuery UI theme</a>
+</li> <li> <a href="VarLANG.html">LANG -- the language specified by the server locale</a>
+</li> <li> <a href="VarLANGUAGE.html">LANGUAGE -- language code for the current user</a>
+</li> <li> <a href="VarLANGUAGES.html">LANGUAGES -- list available languages</a>
+</li> <li> <a href="VarLOCALSITEPREFS.html">LOCALSITEPREFS -- web.topicname of site preferences topic</a>
+</li> <li> <a href="VarLOGIN.html">LOGIN -- present a full login link</a>
+</li> <li> <a href="VarLOGOUT.html">LOGOUT -- present a full logout link</a>
+</li> <li> <a href="VarMAINWEB.html">MAINWEB -- deprecated synonym for USERSWEB</a>
+</li> <li> <a href="VarMAKETEXT.html">MAKETEXT -- creates text using Foswiki's I18N infrastructure</a>
+</li> <li> <a href="VarMETA.html">META -- displays meta-data</a>
+</li> <li> <a href="VarMETASEARCH.html">METASEARCH -- special search of meta data</a>
+</li> <li> <a href="VarNONCE.html">NONCE -- generate a nonce (developers only)</a>
+</li> <li> <a href="VarNOP.html">NOP -- template text not to be expanded in instantiated topics</a>
+</li> <li> <a href="VarNOTIFYTOPIC.html">NOTIFYTOPIC -- name of the notify topic</a>
+</li> <li> <a href="VarPERLDEPENDENCYREPORT.html">PERLDEPENDENCYREPORT -- report perl module dependencies</a>
+</li> <li> <a href="VarPLUGINDESCRIPTIONS.html">PLUGINDESCRIPTIONS -- list of plugin descriptions</a>
+</li> <li> <a href="VarPLUGINVERSION.html">PLUGINVERSION -- the version of a Foswiki Plugin, or the Foswiki Plugins API</a>
+</li> <li> <a href="VarPOPUPWINDOW.html">POPUPWINDOW -- opens a topic or url in a new window</a>
+</li> <li> <a href="VarPUBURL.html">PUBURL -- generate an URL for an attachment</a>
+</li> <li> <a href="VarPUBURLPATH.html">PUBURLPATH -- generate a relative URL for an attachment</a>
+</li> <li> <a href="VarQUERY.html">QUERY -- get the value of meta-data</a>
+</li> <li> <a href="VarQUERYPARAMS.html">QUERYPARAMS -- show parameters to the query</a>
+</li> <li> <a href="VarQUERYSTRING.html">QUERYSTRING -- full, unprocessed string of parameters to this URL</a>
+</li> <li> <a href="VarREMOTEADDR.html">REMOTE_ADDR -- environment variable</a>
+</li> <li> <a href="VarREMOTEPORT.html">REMOTE_PORT -- environment variable</a>
+</li> <li> <a href="VarREMOTEUSER.html">REMOTE_USER -- environment variable</a>
+</li> <li> <a href="VarRENDERLIST.html">RENDERLIST -- render bullet lists in a variety of formats</a>
+</li> <li> <a href="VarRENDERZONE.html">RENDERZONE - render the content of a zone</a>
+</li> <li> <a href="VarREVARG.html">REVARG -- <code>&amp;rev=n</code> parameter of current request</a>
+</li> <li> <a href="VarREVINFO.html">REVINFO -- revision information of current topic</a>
+</li> <li> <a href="VarREVTITLE.html">REVTITLE -- The requested revision as displayed in topic breadcrumbs </a>
+</li> <li> <a href="VarSCRIPTNAME.html">SCRIPTNAME -- name of current script</a>
+</li> <li> <a href="VarSCRIPTSUFFIX.html">SCRIPTSUFFIX -- script suffix</a>
+</li> <li> <a href="VarSCRIPTURL.html">SCRIPTURL -- URL of script(s)</a>
+</li> <li> <a href="VarSCRIPTURLPATH.html">SCRIPTURLPATH -- URL path of script(s)</a>
+</li> <li> <a href="VarSEARCH.html">SEARCH -- search content</a>
+</li> <li> <a href="VarSERVERINFORMATION.html">SERVERINFORMATION -- report detailed web server information</a>
+</li> <li> <a href="VarSERVERTIME.html">SERVERTIME -- formatted server time</a>
+</li> <li> <a href="VarSESSIONID.html">SESSIONID -- unique ID for this session</a>
+</li> <li> <a href="VarSESSIONVAR.html">SESSIONVAR -- name of CGI and session variable that stores the session ID</a>
+</li> <li> <a href="VarSESSIONVARIABLE.html">SESSION_VARIABLE -- get, set or clear a session variable</a>
+</li> <li> <a href="VarSET.html">SET -- set a preference setting during runtime</a>
+</li> <li> <a href="VarSHOWPREFERENCE.html">SHOWPREFERENCE -- show where preferences are defined.</a>
+</li> <li> <a href="VarSKIN.html">SKIN -- current skin</a>
+</li> <li> <a href="VarSLIDESHOWEND.html">SLIDESHOWEND -- end slideshow</a>
+</li> <li> <a href="VarSLIDESHOWSTART.html">SLIDESHOWSTART -- convert a topic with headings into a slideshow</a>
+</li> <li> <a href="VarSPACEDTOPIC.html">SPACEDTOPIC -- topic name, spaced and URL-encoded <strong>deprecated</strong></a>
+</li> <li> <a href="VarSPACEOUT.html">SPACEOUT -- renders string with spaces inserted in sensible places</a>
+</li> <li> <a href="VarSTARTINCLUDE.html">STARTINCLUDE -- start position of topic text if included</a>
+</li> <li> <a href="VarSTARTSECTION.html">STARTSECTION -- marks the start of a section within a topic</a>
+</li> <li> <a href="VarSTATISTICSTOPIC.html">STATISTICSTOPIC -- name of statistics topic</a>
+</li> <li> <a href="VarSTOPINCLUDE.html">STOPINCLUDE -- Alias for ENDINCLUDE</a>
+</li> <li> <a href="VarSTOPSECTION.html">STOPSECTION -- Alias for ENDSECTION</a>
+</li> <li> <a href="VarSUBSCRIBE.html">SUBSCRIBE{ <em>attributes</em> } - subscribe the current user for notification of changes to the current topic</a>
+</li> <li> <a href="VarSYSTEMWEB.html">SYSTEMWEB -- name of documentation web</a>
+</li> <li> <a href="VarTAB.html">TAB -- tab inside a tabpane widget </a>
+</li> <li> <a href="VarTABLE.html">TABLE -- control attributes of tables and sorting of table columns</a>
+</li> <li> <a href="VarTABPANE.html">TABPANE -- tabpane widget</a>
+</li> <li> <a href="VarTOC.html">TOC -- table of contents</a>
+</li> <li> <a href="VarTOPIC.html">TOPIC -- name of current topic</a>
+</li> <li> <a href="VarTOPICLIST.html">TOPICLIST -- topic index of a web</a>
+</li> <li> <a href="VarTWIKIWEB.html">TWIKIWEB -- synonym for SYSTEMWEB</a>
+</li> <li> <a href="VarTWISTY.html">TWISTY -- generate content block with interactive visibility controls</a>
+</li> <li> <a href="VarTWISTYBUTTON.html">TWISTYBUTTON -- Shorthand version for TWISTYSHOW &amp; TWISTYHIDE</a>
+</li> <li> <a href="VarTWISTYHIDE.html">TWISTYHIDE - Hide/close link</a>
+</li> <li> <a href="VarTWISTYSHOW.html">TWISTYSHOW - Show/open link</a>
+</li> <li> <a href="VarTWISTYTOGGLE.html">TWISTYTOGGLE -- Twisty Toggle contents section</a>
+</li> <li> <a href="VarURLPARAM.html">URLPARAM -- get URL or HTTP POST parameter value</a>
+</li> <li> <a href="VarUSERINFO.html">USERINFO -- retrieve details about a user</a>
+</li> <li> <a href="VarUSERNAME.html">USERNAME -- your login username</a>
+</li> <li> <a href="VarUSERSWEB.html">USERSWEB -- name of users web</a>
+</li> <li> <a href="VarVAR.html">VAR -- get a preference value from another web </a>
+</li> <li> <a href="VarWEB.html">WEB -- name of current web</a>
+</li> <li> <a href="VarWEBLIST.html">WEBLIST -- index of all webs</a>
+</li> <li> <a href="VarWEBPREFSTOPIC.html">WEBPREFSTOPIC -- name of web preferences topic</a>
+</li> <li> <a href="VarWIKIAGENTEMAIL.html">WIKIAGENTEMAIL -- From: email address in emails sent by Foswiki.</a>
+</li> <li> <a href="VarWIKIAGENTNAME.html">WIKIAGENTNAME -- From: Name used in emails sent by Foswiki </a>
+</li> <li> <a href="VarWIKIHOMEURL.html">WIKIHOMEURL -- site home URL</a>
+</li> <li> <a href="VarWIKINAME.html">WIKINAME -- your Wiki username</a>
+</li> <li> <a href="VarWIKIPREFSTOPIC.html">WIKIPREFSTOPIC -- name of site-wide preferences topic</a>
+</li> <li> <a href="VarWIKITOOLNAME.html">WIKITOOLNAME -- name of your site</a>
+</li> <li> <a href="VarWIKIUSERNAME.html">WIKIUSERNAME -- your Wiki username with web prefix</a>
+</li> <li> <a href="VarWIKIUSERSTOPIC.html">WIKIUSERSTOPIC -- name of topic listing all registered users</a>
+</li> <li> <a href="VarWIKIVERSION.html">WIKIVERSION -- the version of the installed Foswiki engine</a>
+</li> <li> <a href="VarWIKIWEBMASTER.html">WIKIWEBMASTER -- feedback email address for site</a>
+</li> <li> <a href="VarWIKIWEBMASTERNAME.html">WIKIWEBMASTERNAME -- Name of the administrator for the site</a>
+</li></ul> 
+<p></p>
+<h3 id="Deprecated_macros">  Deprecated macros </h3>
+The following macros are deprecated and should not be used. <ul>
+<li> <a href="VarADDTOHEAD.html">ADDTOHEAD -- deprecated, use ADDTOZONE instead</a>
+</li> <li> <a href="VarALLVARIABLES.html">ALLVARIABLES -- list of currently defined macros</a>
+</li> <li> <a href="VarGROUPS.html">GROUPS -- a formatted list of groups</a>
+</li> <li> <a href="VarMAINWEB.html">MAINWEB -- deprecated synonym for USERSWEB</a>
+</li> <li> <a href="VarMETASEARCH.html">METASEARCH -- special search of meta data</a>
+</li> <li> <a href="VarREVARG.html">REVARG -- <code>&amp;rev=n</code> parameter of current request</a>
+</li> <li> <a href="VarTWIKIWEB.html">TWIKIWEB -- synonym for SYSTEMWEB</a>
+</li></ul> 
+<p></p>
+<h2 id="Shortcuts">  Shortcuts </h2>
+<p></p> <ul>
+<li> TOPICURL -- absolute URL for the current topic
+</li> <li> BR -- line break
+</li> <li> CLEAR -- clear floats
+</li> <li> BULLET -- &#8226;
+</li> <li> VBAR -- &#124;
+</li> <li> CARET -- &#94;
+</li> <li> BB -- line break and bullet
+</li></ul> 
+For example, <code>%CARET%</code> will appear as <code>&#94;</code>
+<p></p>
+<h2 id="Icons">  Icons </h2> <ul>
+<li> H - <img width="16" title="HELP" height="16" alt="HELP" src="DocumentGraphics.attachments/help.png">
+</li> <li> I - <img height="16" alt="IDEA!" src="DocumentGraphics.attachments/tip.png" width="16" title="IDEA!">
+</li> <li> M - <img src="DocumentGraphics.attachments/arrowright.png" alt="MOVED TO..." height="16" title="MOVED TO..." width="16">
+</li> <li> N - <img alt="NEW" height="16" src="DocumentGraphics.attachments/new.png" width="30" title="NEW">
+</li> <li> P - <img title="REFACTOR" width="16" src="DocumentGraphics.attachments/pencil.png" alt="REFACTOR" height="16">
+</li> <li> Q - <img title="QUESTION?" width="16" src="DocumentGraphics.attachments/question.png" height="16" alt="QUESTION?">
+</li> <li> S - <img title="PICK" width="16" src="DocumentGraphics.attachments/starred.png" height="16" alt="PICK">
+</li> <li> T - <img height="16" alt="TIP" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP">
+</li> <li> U - <img width="55" title="UPDATED" height="16" alt="UPDATED" src="DocumentGraphics.attachments/updated.png">
+</li> <li> X - <img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16">
+</li> <li> Y - <img alt="DONE" height="16" src="DocumentGraphics.attachments/choice-yes.png" width="16" title="DONE">
+</li></ul> 
+<hr />
+<strong>Related Topics:</strong> <a href="Macros.html">Macros</a>, <a href="PreferenceSettings.html">PreferenceSettings</a>, <a href="UserDocumentationCategory.html">UserDocumentationCategory</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

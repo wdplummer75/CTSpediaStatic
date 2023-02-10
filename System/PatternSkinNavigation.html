@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PatternSkinNavigation &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/PatternSkinNavigation/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/PatternSkinNavigation/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" rel="alternate" href="PatternSkinNavigation.html" title="edit PatternSkinNavigation">
+<meta name="description" content="PatternSkinNavigation" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PatternSkinNavigation",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="PatternSkin_Navigation"> PatternSkin Navigation </h1>
+<p></p>
+Include main navigation with:
+<pre class="tml">
+&#37;INCLUDE{&#34;Navigation&#34; section&#61;&#34;main&#34;}&#37;
+</pre>
+<p></p>
+<h2 id="Include_sections">  Include sections </h2>
+<pre class="tml">
+&#37;STARTSECTION{&#34;main&#34;}&#37;&#60;noautolink&#62;
+&#60;div id&#61;&#34;patternTopBarButtons&#34; class&#61;&#34;clear&#34;&#62;&#60;ul class&#61;&#34;sf-menu&#34;&#62;
+  &#37;INCLUDE{&#34;&#37;TOPIC&#37;&#34; section&#61;&#34;topbarbutton&#34; DESTWEB&#61;&#34;&#37;USERSWEB&#37;&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;&#37;JQICON{&#34;fa-home&#34; style&#61;&#34;font-size:1.1em&#34;}&#37; &#37;USERSWEB&#37;&#34;}&#37;
+  &#60;li&#62;&#91;&#91;&#37;WIKIUSERNAME&#37;&#93;&#91;&#37;JQICON{&#34;fa-user&#34;}&#37; &#37;MAKETEXT{&#34;My Profile&#34;}&#37;&#93;&#93;&#60;/li&#62;
+  &#37;IF{&#34;istopic &#39;&#37;USERSWEB&#37;.&#37;WIKINAME&#37;LeftBar&#39;&#34;
+    then&#61;&#34;&#60;li&#62;&#91;&#91;&#37;USERSWEB&#37;.&#37;WIKINAME&#37;LeftBar&#93;&#91;&#37;JQICON{&#34;fa-bookmark&#34;}&#37; &#37;MAKETEXT{&#34;My Links&#34;}&#37;&#93;&#93;&#36;n&#36;percntINCLUDE{\&#34;&#37;USERSWEB&#37;.&#37;WIKINAME&#37;LeftBar\&#34;}&#36;percnt&#60;/li&#62;&#34;
+  }&#37;&#37;IF{&#34;istopic &#39;&#37;USERSWEB&#37;.&#37;WIKIUSERSTOPIC&#37;&#39;&#34;
+    then&#61;&#34;&#60;li&#62;&#91;&#91;&#37;USERSWEB&#37;.&#37;WIKIUSERSTOPIC&#37;&#93;&#91;&#37;JQICON{&#34;fa-users&#34;}&#37; Users&#93;&#93;&#60;/li&#62;&#34;
+  }&#37;&#37;IF{&#34;&#39;&#37;BASEWEB&#37;&#39;!&#61;&#39;&#37;USERSWEB&#37;&#39;&#34;
+    then&#61;&#34;&#60;li&#62;
+        &#60;a href&#61;&#39;&#37;SCRIPTURLPATH{&#34;view&#34;}&#37;/&#37;BASEWEB&#37;/&#37;HOMETOPIC&#37;&#39; class&#61;&#39;active&#39;&#62;&#37;JQICON{&#34;fa-thumb-tack&#34;}&#37; &#37;BASEWEB&#37;&#60;/a&#62;
+        &#36;percntINCLUDE{\&#34;&#37;TOPIC&#37;\&#34; section&#61;\&#34;webtools\&#34;}&#36;percnt
+      &#60;/li&#62;&#34;
+  }&#37;&#60;li&#62;&#60;a&#62;&#37;JQICON{&#34;fa-cloud&#34;}&#37; Webs&#60;/a&#62;&#37;INCLUDE{&#34;&#37;TOPIC&#37;&#34; section&#61;&#34;webs&#34;}&#37;&#60;/li&#62;
+&#60;/ul&#62;&#60;/div&#62;
+&#37;JQREQUIRE{&#34;superfish&#34;}&#37;&#37;ADDTOZONE{
+  &#34;script&#34; 
+  id&#61;&#34;PATTERNMENU&#34; 
+  topic&#61;&#34;&#37;WEB&#37;.&#37;TOPIC&#37;&#34; 
+  section&#61;&#34;js&#34; 
+  requires&#61;&#34;JQUERYPLUGIN::SUPERFISH&#34;
+}&#37;&#37;ADDTOZONE{&#34;head&#34; 
+   id&#61;&#34;SUPERFISH::CSS&#34; 
+   text&#61;&#34;&#60;link rel&#61;&#39;stylesheet&#39; href&#61;&#39;&#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/JQueryPlugin/plugins/superfish/jquery.superfish.css&#39; type&#61;&#39;text/css&#39;/&#62;&#34;
+}&#37;&#60;/noautolink&#62;&#37;ENDSECTION{&#34;main&#34;}&#37;
+</pre>
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;webs&#34;}&#37;&#60;ul&#62;
+&#37;FORMAT{
+  &#34;&#37;CALCULATE{&#34;&#36;LISTUNIQUE(&#36;SUBSTITUTE(&#37;WEBLIST{
+    webs&#61;&#34;&#37;USERSWEB&#37;,public&#34;
+    format&#61;&#34;&#36;name&#34;
+    separator&#61;&#34;; &#34;
+  }&#37;, (/.&#42;?)?;, &#36;comma , , r))&#34;}&#37;&#34;
+  type&#61;&#34;string&#34;
+  format&#61;&#34;&#36;percntINCLUDE{
+      \&#34;&#37;TOPIC&#37;\&#34;
+      section&#61;\&#34;topbarbutton\&#34;
+      ID&#61;\&#34;\&#34; 
+      DESTWEB&#61;\&#34;&#36;item\&#34; 
+      DESTTOPIC&#61;\&#34;&#37;HOMETOPIC&#37;\&#34; 
+      LABEL&#61;\&#34;&#36;item\&#34;
+    }&#36;percnt&#34;
+}&#37;
+&#60;/ul&#62;&#37;ENDSECTION{&#34;webs&#34;}&#37;
+</pre>
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;webtools&#34;}&#37;&#60;ul&#62;
+  &#60;li&#62;&#91;&#91;&#37;BASEWEB&#37;.WebTopicList&#93;&#91;&#37;MAKETEXT{&#34;Index&#34;}&#37;&#93;&#93;&#60;/li&#62;
+  &#60;li&#62;&#91;&#91;&#37;BASEWEB&#37;.WebSearch&#93;&#91;&#37;MAKETEXT{&#34;Search&#34;}&#37;&#93;&#93;&#60;/li&#62;
+  &#60;li&#62;&#91;&#91;&#37;BASEWEB&#37;.WebChanges&#93;&#91;&#37;MAKETEXT{&#34;Changes&#34;}&#37;&#93;&#93;&#60;/li&#62;
+  &#60;li&#62;&#91;&#91;&#37;BASEWEB&#37;.WebNotify&#93;&#91;&#37;MAKETEXT{&#34;Notifications&#34;}&#37;&#93;&#93;&#60;/li&#62;
+  &#60;li&#62;&#91;&#91;&#37;BASEWEB&#37;.WebStatistics&#93;&#91;&#37;MAKETEXT{&#34;Statistics&#34;}&#37;&#93;&#93;&#60;/li&#62;
+  &#60;li&#62;&#91;&#91;&#37;BASEWEB&#37;.WebPreferences&#93;&#91;&#37;MAKETEXT{&#34;Preferences&#34;}&#37;&#93;&#93;&#60;/li&#62;
+&#60;/ul&#62;&#37;ENDSECTION{&#34;webtools&#34;}&#37;
+</pre>
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;topbarbutton&#34;}&#37;&#60;li&#37;IF{
+    &#34;&#39;&#36;ID&#39; and &#39;&#37;ID&#37;&#39;!&#61;&#39;&#39;&#34;
+    then&#61;&#34; id&#61;\&#34;&#37;ID&#37;\&#34;&#34;
+}&#37;&#62;&#60;a href&#61;&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#37;DESTWEB&#37;/&#37;DESTTOPIC&#37;&#34; class&#61;&#34;&#37;IF{
+    &#34;&#39;&#37;DESTWEB&#37;&#39;&#61;&#39;&#37;BASEWEB&#37;&#39;&#34;
+    then&#61;&#34;active&#34;
+    else&#61;&#34;inactive&#34;
+}&#37;&#34;&#62;&#37;LABEL&#37;&#60;/a&#62;&#60;/li&#62;&#37;ENDSECTION{&#34;topbarbutton&#34;}&#37;
+</pre>
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;js&#34;}&#37;&#60;script&#62;
+jQuery(function(&#36;) {
+  &#36;(&#34;#patternTopBarButtons &#62; ul&#34;).superfish({
+    dropShadows: false, 
+    cssArrows: false,
+    speed:200
+  })
+});
+&#60;/script&#62;&#37;ENDSECTION{&#34;js&#34;}&#37;
+
+!-- &#37;JQREQUIRE{&#34;chili&#34;}&#37; --&#62;</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WikiWord &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/WikiWord/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/WikiWord/favicon.ico">
+<link title="edit WikiWord" rel="alternate" href="WikiWord.html" type="application/x-wiki">
+<meta name="description" content="WikiWord" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "WikiWord",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="What_is_a_WikiWord_63">  What is a WikiWord? </h1>
+A WikiWord consists of two or more words with initial capitals, run together. <a href="WikiWord.html" class="foswikiCurrentTopicLink">WikiWords</a> are used to refer to topics.
+<p></p>
+<strong>WikiWords refer to topics, and topic names are <a class="foswikiCurrentTopicLink" href="WikiWord.html">WikiWords</a></strong>. When you type a WikiWord, you create a link to that topic, or a link to create that topic if it doesn't exist yet. You type <code>WebHome</code> and on saving the page this becomes <a href="WebHome.html" class="foswikiCurrentWebHomeLink">WebHome</a>. It's as easy as that.
+<p></p>
+WikiWord linking is easy to use: <ul>
+<li> You don't have to know the full path to where the topic is stored - you just type the name
+</li> <li> You don't need to write HTML
+</li> <li> Easy linking leads to interesting texts with links placed in context
+</li></ul> 
+<p></p>
+WikiWords are styled like this because: <ul>
+<li> It makes Wiki hyperlinks instantly recognizable
+</li> <li> It leads to interesting Wiki topics
+</li> <li> It avoids over-general topics because at least two words are required
+</li></ul> 
+<p></p>
+<div class="foswikiHelp"><img alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> Note that <a href="ACRONYM.html">acronyms</a> are also auto-linked, but <em>only</em> if the topic already exists.</div>
+<p></p>
+<h2 id="Syntax_of_a_WikiWord">  Syntax of a WikiWord </h2>
+<p></p> <ul>
+<li> Uppercase letter(s)
+</li> <li> Lowercase letter(s) or numbers(s)
+</li> <li> Uppercase letter(s)
+</li> <li> Optional lowercase or uppercase letter(s) or number(s)
+</li></ul> 
+<p></p>
+WikiWord syntax in <a title="'Extended_Backus_Naur_Form' on 'Wikipedia'" class="interwikiLink" href="https://en.wikipedia.org/wiki/Extended_Backus_Naur_Form"><noautolink>Extended Backus.Naur form</noautolink></a> (EBNF):
+<p></p>
+<pre class="tml">
+    wikiWord        &#61; upperLetters , lowerNumLetters , upperLetters , { alphaNum } ;
+    upperLetters    &#61; upperCase , { upperCase } ;
+    lowerNumLetters &#61; lowerNum , { lowerNum } ;
+    alphaNum        &#61; upperCase &#124; lowerCase &#124; digit ;
+    lowerNum        &#61; lowerCase &#124; digit ;
+    lowerCase       &#61; &#34;a&#34; &#124; &#34;b&#34; &#124; &#34;c&#34; &#124; &#34;d&#34; &#124; &#34;e&#34; &#124; &#34;f&#34; &#124; &#34;g&#34; &#124; &#34;h&#34; &#124; &#34;i&#34;
+                    &#124; &#34;j&#34; &#124; &#34;k&#34; &#124; &#34;l&#34; &#124; &#34;m&#34; &#124; &#34;n&#34; &#124; &#34;o&#34; &#124; &#34;p&#34; &#124; &#34;q&#34; &#124; &#34;r&#34;
+                    &#124; &#34;s&#34; &#124; &#34;t&#34; &#124; &#34;u&#34; &#124; &#34;v&#34; &#124; &#34;w&#34; &#124; &#34;x&#34; &#124; &#34;y&#34; &#124; &#34;z&#34; ;
+    upperCase       &#61; &#34;A&#34; &#124; &#34;B&#34; &#124; &#34;C&#34; &#124; &#34;D&#34; &#124; &#34;E&#34; &#124; &#34;F&#34; &#124; &#34;G&#34; &#124; &#34;H&#34; &#124; &#34;I&#34;
+                    &#124; &#34;J&#34; &#124; &#34;K&#34; &#124; &#34;L&#34; &#124; &#34;M&#34; &#124; &#34;N&#34; &#124; &#34;O&#34; &#124; &#34;P&#34; &#124; &#34;Q&#34; &#124; &#34;R&#34;
+                    &#124; &#34;S&#34; &#124; &#34;T&#34; &#124; &#34;U&#34; &#124; &#34;V&#34; &#124; &#34;W&#34; &#124; &#34;X&#34; &#124; &#34;Y&#34; &#124; &#34;Z&#34; ;
+    digit           &#61; &#34;0&#34; &#124; &#34;1&#34; &#124; &#34;2&#34; &#124; &#34;3&#34; &#124; &#34;4&#34; &#124; &#34;5&#34; &#124; &#34;6&#34; &#124; &#34;7&#34; &#124; &#34;8&#34; &#124; &#34;9&#34; ;
+</pre>
+<p></p>
+<h2 id="Preventing_automatic_linking">  Preventing automatic linking </h2>
+Sometimes you want to be able to enter a WikiWord without the automatic
+linking. When editing in TML, simply put an exclamation mark (!) before the word. <code>!WikiWord WikiWord</code> will be displayed as WikiWord <a href="WikiWord.html" class="foswikiCurrentTopicLink">WikiWord</a>.
+<p></p>
+<h2 id="Good_examples_of_WikiWords">  Good examples of WikiWords </h2>
+<p></p> <ul>
+<li> <a class="foswikiCurrentTopicLink" href="WikiWord.html">WikiWord</a>
+</li> <li> <a href="GoodStyle.html">GoodStyle</a>
+</li> <li> <a title="Create this topic" href="VersionFiveDotThree.html" class="foswikiNewLink" rel="nofollow">VersionFiveDotThree</a>
+</li> <li> <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="ReleaseVersion5dot3.html">ReleaseVersion5dot3</a>
+</li> <li> <a title="Create this topic" href="AVeryLongWikiTopicNameIsAlsoPossible.html" class="foswikiNewLink" rel="nofollow">AVeryLongWikiTopicNameIsAlsoPossible</a>: wherever an uppercase or lowercase letter is allowed, a group of letters of the same case is allowed
+</li> <li> <a title="Create this topic" href="YearTwoThousand.html" class="foswikiNewLink" rel="nofollow">YearTwoThousand</a>
+</li> <li> <a title="Create this topic" href="Nine2Five.html" class="foswikiNewLink" rel="nofollow">Nine2Five</a>: Note that numbers are considered to be lowercase letters in WikiWords
+</li></ul> 
+<p></p>
+<h2 id="Bad_examples_of_WikiWords:">  Bad examples of WikiWords: </h2>
+<p></p> <ul>
+<li> Web: Name without the uppercase letter(s), lowercase letter(s), uppercase letter(s) sequence
+</li> <li> 5Alive: Name beginning with a number
+</li> <li> Know-How: Name with dashes in between
+</li></ul> 
+<p></p>
+<h2 id="Variations_in_linking">  Variations in linking </h2>
+<p></p>
+When you write a WikiWord, it becomes a link. There are more ways
+<p></p> <ul>
+<li> To write a custom <strong>link label</strong>, use bracket notation: <code>[[AccessControl][access control]]</code> - this becomes: <a href="AccessControl.html">access control</a>
+</li> <li> To link to a topic in <strong>another web</strong>, write: <code>Sandbox.WebSearch</code> - this becomes: <a href="../Sandbox/WebSearch.html">WebSearch</a>
+</li> <li> To link to a topic in <strong>another subweb</strong> write: <code>Sandbox.Subweb.WebSearch</code>.
+</li> <li> To show the web name in the link use bracket notation: <code>[[Sandbox.WebHome]]</code> - this becomes: <a href="../Sandbox/WebHome.html">Sandbox.WebHome</a>
+</li> <li> To link to a topic on <strong>another Wiki site</strong>, use: <code><a class="interwikiLink" href="https://foswiki.org/Main/WebHome" title="'Main/WebHome' on foswiki.org"><noautolink>Foswiki:Main/WebHome</noautolink></a></code> - this becomes: <a title="'Main/WebHome' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Main/WebHome"><noautolink>Foswiki:Main/WebHome</noautolink></a> (sites are defined in the <a href="InterwikiPlugin.html">InterwikiPlugin</a>)
+</li> <li> To link to a part on the <strong>same page</strong>, write a "#" followed by the name of an anchor. The anchor is a "#" followed by a name which must be a WikiName. Example <code>#MyAnchor</code>. You can also link to an anchor on another page: <code>System.WebHome#MyAnchor</code>.
+</li> <li> To link to a header on the <strong>same page</strong>, write a "#" followed by the header text, with spaces replaced by underscores (and <code>!</code> removed): <code>[[#Good_examples_of_WikiWords]]</code> becomes: <a class="foswikiCurrentTopicLink" href="#Good_examples_of_WikiWords">#Good_examples_of_WikiWords</a>. You can also link to a header on another page: <code>System.WebHome#Disclaimer</code> becomes: <a href="WebHome.html" class="foswikiCurrentWebHomeLink">WebHome#Disclaimer.</a>
+</li></ul> 
+<p></p>
+<h2 id="Hints">  Hints </h2> <ul>
+<li> Insert WikiWords wherever you can. Rich linking helps to make a Wiki successful.
+</li> <li> Be specific. All topics in a web share one name space. For example, instead of <code>FunctionalSpec</code> write <code>BreadSlicerFunctionalSpec</code> because other projects might also have a functional spec topic.
+</li> <li> Create topics with singular names. Plural WikiWords are automatically linked to the singular topic, i.e. the link <a href="WikiWord.html" class="foswikiCurrentTopicLink">WikiWords</a> links to the topic <a href="WikiWord.html" class="foswikiCurrentTopicLink">WikiWord</a> (works only in English).
+</li> <li> Sometimes you have to be creative to find a good WikiName. Examples: <ul>
+<li> To create a topic about the the <strong>Bread Slicer 1.2</strong> product, use <code>BreadSlicer1dot2</code> or <code>BreadSlicer1pt2</code>, but not <code>BreadSlicer1.2</code>.
+</li> <li> Numbers are considered lowercase which makes <code>Year2K</code> and <code>Y2K</code> WikiWords but not <code>Y2000</code> and <code>Y2k</code>.
+</li></ul> 
+</li> <li> Turn <a href="ACRONYM.html">acronyms</a> into WikiWords, i.e. take <code>FaqIndex</code> for a "FAQ index" topic.
+</li> <li> It is possible to turn off the auto-linking of WikiWords and to rely only on the bracket notation using the NOAUTOLINK <a href="PreferenceSettings.html">preference setting</a>.   <div class="foswikiHelp"><img src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16" title="ALERT!" width="16"> When linking to a WebHome topic <em>in another web</em>, the link will be rendered as the name of the web, e.g. <code>Sandbox.WebHome</code> becomes <a href="../Sandbox/WebHome.html">Sandbox</a>.   <p></p>   <img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> Dots (.) are used as seperators between webs, subwebs, and topics. It is not possible to use dots in topic names. Foswiki does not attempt to guess if a dot could be part of a topic name.</div>
+</li></ul> 
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="TopicMarkupLanguage.html">TopicMarkupLanguage</a>
+<!---->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

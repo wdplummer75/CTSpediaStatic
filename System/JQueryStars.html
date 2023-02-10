@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryStars &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQueryStars/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryStars/favicon.ico">
+<link rel="alternate" href="JQueryStars.html" title="edit JQueryStars" type="application/x-wiki">
+<meta name="description" content="JQueryStars" />
+<link href="JQueryPlugin.attachments/plugins/stars/jquery.stars.css?version=2.20" class="head JQUERYPLUGIN::STARS" media="all" rel="stylesheet" type="text/css"><!--JQUERYPLUGIN::STARS-->
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryStars",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::MOUSEWHEEL" src="JQueryPlugin.attachments/plugins/mousewheel/jquery.mousewheel.js?version=3.1.13"></script><!--JQUERYPLUGIN::MOUSEWHEEL-->
+<script class="script JQUERYPLUGIN::SPRINTF" src="JQueryPlugin.attachments/plugins/sprintf/sprintf.js?version=1.1.2"></script><!--JQUERYPLUGIN::SPRINTF-->
+<script class="script JQUERYPLUGIN::STARS" src="JQueryPlugin.attachments/plugins/stars/jquery.stars.js?version=2.20"></script><!--JQUERYPLUGIN::STARS-->
+</head>
+<body>
+<h1 id="JQueryStars">  <a class="foswikiCurrentTopicLink" href="JQueryStars.html">JQueryStars</a> </h1>
+<p></p>
+    Homepage: <a href="http://foswiki.org/Extensions/JQueryPlugin">http://foswiki.org/Extensions/JQueryPlugin</a> <br />
+    Author(s): Michael Daum <br />
+    Version: 2.20
+<p></p>
+<p></p>
+<p></p>
+Flexible and non-obstructive star rating. This plugin turns an HTML <code>&lt;input&gt;</code> element into a star rating widget.
+The design is heavily influenced by <a href="JQueryRating.html">System.JQueryRating</a> by Fyneworks.com bit requries considerably less HTML markup
+which is of advantage with high precision ratings.
+<p></p>
+Features:
+<p></p> <ul>
+<li> arbitrary number of stars
+</li> <li> arbitrary precision of star rating by splitting each star
+</li> <li> mouse wheel support
+</li> <li> non-obstructive integration using CSS and HTML5 
+</li></ul> 
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+There are two ways to make use of this plugin, either as part of a <a href="DataForms.html">DataForm definition</a> (see <a href="#Formfield_61rating_61" class="foswikiCurrentTopicLink">Formfield <code>rating</code></a>) 
+or writing HTML yourself.
+<p></p>
+<pre class="tml">
+&#37;JQREQUIRE{&#34;stars&#34;}&#37;
+
+&#60;input class&#61;&#39;jqStars&#39; 
+       value&#61;&#39;...&#39;
+       name&#61;&#39;...&#39;
+       data-num-stars&#61;&#39;...&#39;
+       data-split&#61;&#39;...&#39;
+       data-values&#61;&#39;...&#39;
+       disabled /&#62;
+</pre>
+<p></p> <ul>
+<li> any <code>input</code> element with a CSS class <code>jqStars</code> will be initialized automatically
+</li> <li> <code>value</code> defines the initial value of the star rating
+</li> <li> the <code>disabled</code> property flags the <code>input</code> element as read-only
+</li> <li> the <code>data-num-stars</code> parameter specifies the maximum number of stars
+</li> <li> the <code>data-split</code> parameter specifies the precision of a sub-star rating by numbers of parts each star is split up
+</li> <li> the <code>data-values</code> parameter may optionally provide a json object of values to be selected
+</li></ul> 
+<p></p>
+The json object in <code>data-values</code> can either be a plain array of values such as in
+<p></p>
+<pre class="html">
+&#60;input class&#61;&#34;jqStars&#34; 
+       value&#61;&#34;I like it&#34; 
+       data-values&#61;&#39;&#91;&#34;very low&#34;, &#34;low&#34;, &#34;substandard&#34;, &#34;standard&#34;, &#34;superior&#34;, &#34;I like it&#34;, &#34;quite good&#34;, &#34;good&#34;, &#34;very good&#34;, &#34;excellent&#34;&#93;&#39; 
+/&#62;
+</pre>
+<p></p>
+... or an array of objects of the form <code>{"label": "value"}</code>:
+<p></p>
+<pre class="html">
+&#60;input class&#61;&#34;jqStars&#34; 
+       value&#61;&#34;e&#34; 
+       data-values&#61;&#39;&#91;{&#34;very low&#34;:&#34;a&#34;}, {&#34;low&#34;:&#34;b&#34;}, {&#34;substandard&#34;:&#34;c&#34;}, {&#34;standard&#34;:&#34;d&#34;}, {&#34;superior&#34;:&#34;e&#34;}, {&#34;I like it&#34;:&#34;f&#34;}, {&#34;quite good&#34;:&#34;g&#34;}, {&#34;good&#34;:&#34;i&#34;}, {&#34;very good&#34;:&#34;j&#34;}, {&#34;excellent&#34;:&#34;k&#34;}&#93;&#39; 
+/&#62;
+</pre>
+<p></p>
+<h2 id="Formfield_61rating_61">  Formfield <code>rating</code> </h2>
+<p></p>
+The jquery stars plugin is used to implement a <code>rating</code> formfield. Here are some examples:
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Name</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Type</a> </th>
+			<th class="foswikiTableCol2"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Size</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Values</a> </th>
+			<th class="foswikiTableCol4"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description</a> </th>
+			<th class="foswikiTableCol5 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Attributes</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Rating1 </td>
+			<td class="foswikiTableCol1"> rating </td>
+			<td class="foswikiTableCol2"> 5 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Rating2 </td>
+			<td class="foswikiTableCol1"> rating </td>
+			<td class="foswikiTableCol2"> 1 </td>
+			<td class="foswikiTableCol3"> very low, low, substandard, standard, superior, I like it, quite good, good, very good, excellent </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Rating3 </td>
+			<td class="foswikiTableCol1"> rating </td>
+			<td class="foswikiTableCol2"> 10 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> split="2" </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Rating4 </td>
+			<td class="foswikiTableCol1 foswikiLast"> rating+values </td>
+			<td class="foswikiTableCol2 foswikiLast"> 1 </td>
+			<td class="foswikiTableCol3 foswikiLast"> very low=1, low=2, substandard=3, standard=4, superior=5, I like it=6, quite good=7, good=8, very good=9, excellent=10 </td>
+			<td class="foswikiTableCol4 foswikiLast"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody></table>
+<p></p> <ul>
+<li> Rating1 defines a simple numeric 5 star rating
+</li> <li> Rating2 defines a simple scheme using named categories.
+</li> <li> Rating3 defines a 10 star rating by increments of 0.5 steps
+</li> <li> Rating4 defines a numeric rating where each value is mapped to a named category
+</li></ul> 
+<p></p>
+The <code>Size</code> column specifies the number of stars. If <code>Values</code> are defined as well, their number will overwrite the <code>Size</code> value.
+Note, that the <code>Attributes</code> column will be used to parametrize the jquery.stars plugin. 
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+<h3 id="default_settings">  default settings </h3>
+<input class="jqStars"  value="0" />
+<p></p>
+<h3 id="read_only">  read only </h3>
+<input class="jqStars" value="2" disabled />
+<p></p>
+<input class="jqStars" value="2.5" disabled />
+<p></p>
+<input class="jqStars" value="2.5" data-split="2" disabled />
+<p></p>
+<h3 id="A_10_stars">  10 stars </h3>
+<p></p>
+<input class="jqStars" data-num-stars="10" />
+<p></p>
+<h3 id="A_10_stars_44_split_10">  10 stars, split 10 </h3>
+<p></p>
+<input class="jqStars" value="4.2" data-num-stars="10" data-split="10" />
+<p></p>
+<h3 id="A_10_stars_44_split_100">  10 stars, split 100 </h3>
+<p></p>
+<input class="jqStars" value="5.25" data-num-stars="10" data-split="100" />
+<p></p>
+<h3 id="named_values">  named values </h3>
+<p></p>
+<input class="jqStars" value="I like it" data-values='["very low", "low", "substandard", "standard", "superior", "I like it", "quite good", "good", "very good", "excellent"]' />
+<p></p>
+<h3 id="mapped_values">  mapped values </h3>
+<p></p>
+<input class="jqStars" value="e" data-values='[{"very low":"a"}, {"low":"b"}, {"substandard":"c"}, {"standard":"d"}, {"superior":"e"}, {"I like it":"f"}, {"quite good":"g"}, {"good":"i"}, {"very good":"j"}, {"excellent":"k"}]' />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WysiwygPluginSettings &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/WysiwygPluginSettings/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/WysiwygPluginSettings/favicon.ico">
+<link type="application/x-wiki" rel="alternate" href="WysiwygPluginSettings.html" title="edit WysiwygPluginSettings">
+<meta name="description" content="WysiwygPluginSettings" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "WysiwygPluginSettings",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Settings_for_WysiwygPlugin_that_are_common_to_most_editor_integrations">  Settings for <a href="WysiwygPlugin.html">WysiwygPlugin</a> that are common to most editor integrations </h1>
+<p></p>
+<h4 id="WYSIWYG_EXCLUDE_45_Prevent_WYSIWYG_editing">  WYSIWYG_EXCLUDE - Prevent <a href="WYSIWYG.html">WYSIWYG</a> editing  </h4>
+The <strong>global</strong> <a href="PreferenceSettings.html">preference setting</a> <code>WYSIWYG_EXCLUDE</code> can be set to make the plugin sensitive to what is in a topic, before allowing it to be edited. The comma separated list to fall back to text edit can include: <ul>
+<li> <code>html</code> - HTML tags (e.g. <code>&lt;div&gt;</code>, not including &lt;br&gt;), or 
+</li> <li> <code>macros</code> - simple macros (e.g. <code>%VAR%</code>) or 
+</li> <li> <code>calls</code> - macros with parameters e.g. <code>%MACRO{...}%</code>
+</li> <li> <code>pre</code> blocks (<code>&lt;pre&gt;</code>)
+</li> <li> HTML <code>comments</code> (<code>&lt;!--</code> ... <code>--&gt;</code>)
+</li> <li> <code>script</code> = inline HTML Script tags - <em>default</em>
+</li> <li> <code>style</code> = inline Css style tags - <em>default</em>
+</li> <li> <code>table</code> = inline html tables (=&lt;table ..&gt;.  TML tables are not excluded)
+</li></ul> 
+If the plugin detects an excluded construct in the topic, it will refuse to allow the edit and will redirect to the default editor.
+<h5 id="WYSIWYG_EDITABLE_CALLS_45_Exceptions_to_WYSIWYG_EXCLUDE">  WYSIWYG_EDITABLE_CALLS - Exceptions to WYSIWYG_EXCLUDE </h5>
+If you excluded <code>calls</code> in <code>WYSIWYG_EXCLUDE</code>, you can still define a subset of macros that do <strong>not</strong> block edits. this is done in the <strong>global</strong> <a href="PreferenceSettings.html">preference setting</a> <code>WYSIWYG_EDITABLE_CALLS</code>, which should be a list of macro names separated by vertical bars, with no spaces, e.g: <code>* Set WYSIWYG_EDITABLE_CALLS = COMMENT|CALENDAR|INCLUDE</code>
+<p></p>
+You should set <code>WYSIWYG_EXCLUDE</code> and <code>WYSIWYG_EDITABLE_CALLS</code> in <a href="../Main/SitePreferences.html">SitePreferences</a>, or in <a href="WebPreferences.html">WebPreferences</a> for each web.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS_45_Protect_specific_tags_originally_in_the_topic_text">  WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS - Protect specific tags originally in the topic text </h4>
+The <code>WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS</code> preference tells the translator 
+that certain HTML tags which were originally in the topic text should <em>remain</em> as HTML tags;
+the translator will not try to convert them to TML.  This protects the tags
+themselves, and not the contents enclosed between the <code>&lt;tag&gt;</code> and <code>&lt;/tag&gt;</code>
+<p></p>
+The default setting for this preference is defined within the plugin.
+It corresponds to <code>div, span</code>.
+<p></p>
+This feature may be disabled by setting the preference to a single comma.
+This does <em>not</em> guarantee that HTML markup will be removed; the conversion
+of HTML tags to TML markup remains subject to the other controls provided
+by the WysiwygPlugin, including the <code>WYSIWYGPLUGIN_STICKYBITS</code> and
+<code>WYSIWYGPLUGIN_IGNOREATTRS</code> preferences,
+<code>&lt;sticky&gt;</code> blocks, <code>&lt;literal&gt;</code> blocks and the rules applied 
+to tables and lists.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS_45_Protect_specific_tag_blocks_originally_in_the_topic_text">  WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS - Protect specific tag blocks originally in the topic text </h4>
+The <code>WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS</code> preference tells the translator
+that certain HTML tag blocks which were originally in the topic text should <em>remain</em> as HTML blocks;
+the translator will not try to convert them to TML.
+<p></p>
+The default setting for this preference is defined within the plugin.
+It corresponds to <code>script, style</code>.
+<p></p>
+As an example, individual html tables can be protected by surrounding them
+with =&lt;sticky&gt; .. &lt;/sticky&gt; block.  However,if you want to have all
+=&lt;table&gt; markup preserved as entered into topics by default, rather than subject to
+<a href="WYSIWYG.html">WYSIWYG</a> editing,  add <code>table</code> to this list, and =&lt;table&gt; markup will become
+automatically sticky.
+<p></p>
+This feature may be disabled by setting the preference to a single comma.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_STICKYBITS_45_Protect_tags_based_upon_their_arguments">  WYSIWYGPLUGIN_STICKYBITS - Protect tags based upon their arguments </h4>
+You can define the global preference <code>WYSIWYGPLUGIN_STICKYBITS</code> to stop the
+plugin from ever trying to convert specific HTML tags into
+TML when certain specific attributes are present on the tag. This is most
+useful when you have styling or alignment information in tags that must be
+preserved.
+<p></p>
+This <a href="PreferenceSettings.html">preference setting</a> is used to tell the translator which attributes, when present
+on a tag, make it "stick" i.e. block conversion back to TML. <blockquote>For example, setting it to
+<code>table=background,lang;tr=valign</code> will stop the translator from trying to
+convert any <code>table</code> tag that has <code>background</code> or <code>lang</code> attributes, and any
+<code>tr</code> tag that has a <code>valign</code> attribute back to Foswiki <code>| table | column |</code>
+markup (regardless of where that <code>table</code> tag comes from).</blockquote>
+<p></p>
+This setting is used only after the page has been processed by the editor.  If
+the editor does not support a particular tag or attribute and the editor corrupts the
+tag, this setting will not be helpful.  It is only used to prevent
+an HTML tag from being converted back to TML.
+<p></p>
+Format of the setting is <code>tag1=attrib,attrib;tag2=attrib</code>.  Attributes delimited by
+comma, and tags delimited by semicolon. <ul>
+<li> The left side of the equal sign is the tag. 
+</li> <li> The right side of the equal sign is a comma delimited list of attributes to be matched.  
+</li></ul> 
+If a matching tag is found, that matches any of the attributes listed,
+the tag will not be converted back to TML.
+You can use perl regular expressions to match tag and attribute names, so
+<code>.*=id,on.*</code> will ensure that any tag with an id or <code>on*</code> event handler is kept as
+HTML.
+<p></p>
+Note:  HTML has been gradually deprecating HTML attributes, replacing
+them with equivalent styles.  For example, the table, row and cell background
+color attribute: <code>bgcolor="#123456"</code> has been deprecated, replaced with <code>style="background-color: #123456;"</code>
+A limited subset of tags ( <code>table, th, tr, td</code> ) will match against both the
+attributes and the style components.  Styles have been added to the default
+setting.
+<p></p>
+The default setting for this preference are hard coded in the plugin.  If you
+wish to change the settings, the following list is the default setting coded
+in the plugin:
+<pre class="tml">
+   * Set WYSIWYGPLUGIN_STICKYBITS = 
+        (?!IMG).*=id,lang,title,dir,on.*;
+        A=accesskey,coords,shape,target;
+        BDO=dir;
+        BR=clear;
+        COL=char,charoff,span,valign,width;
+        COLGROUP=align,char,charoff,span,valign,width;
+        DIR=compact;
+        DIV=align,style;
+        DL=compact;
+        FONT=size,face;
+        H[0-9]=align;
+        HR=align,noshade,size,width;
+        LEGEND=accesskey,align;
+        LI=value;
+        OL=compact,start,type;
+        P=align;
+        PARAM=name,type,value,valuetype;
+        PRE=width;
+        Q=cite;
+        TABLE=align,bgcolor,.*?background-color:.*,frame,rules,summary,width;
+        TBODY=align,char,charoff,valign;
+        TD=abbr,align,axis,bgcolor,.*?background-color:.*,.*?border-color:.*,char,charoff,headers,height,nowrap,rowspan,scope,valign,width;
+        TFOOT=align,char,charoff,valign;
+        TH=abbr,align,axis,bgcolor,.*?background-color:.*,char,charoff,height,nowrap,rowspan,scope,valign,width,headers;
+        THEAD=align,char,charoff,valign;
+        TR=bgcolor,.*?background-color:.*,char,charoff,valign;
+        UL=compact,type
+
+</pre><!-- 
+<p></p>
+        (?!IMG).*=id,lang,title,dir,on.*;
+        A=accesskey,coords,shape,target;
+        BDO=dir;
+        BR=clear;
+        COL=char,charoff,span,valign,width;
+        COLGROUP=align,char,charoff,span,valign,width;
+        DIR=compact;
+        DIV=align,style;
+        DL=compact;
+        FONT=size,face;
+        H[0-9]=align;
+        HR=align,noshade,size,width;
+        LEGEND=accesskey,align;
+        LI=value;
+        OL=compact,start,type;
+        P=align;
+        PARAM=name,type,value,valuetype;
+        PRE=width;
+        Q=cite;
+        TABLE=align,bgcolor,.*?background-color:.*,frame,rules,summary,width;
+        TBODY=align,char,charoff,valign;
+        TD=abbr,align,axis,bgcolor,.*?background-color:.*,.*?border-color:.*,char,charoff,headers,height,nowrap,rowspan,scope,valign,width;
+        TFOOT=align,char,charoff,valign;
+        TH=abbr,align,axis,bgcolor,.*?background-color:.*,char,charoff,height,nowrap,rowspan,scope,valign,width,headers;
+        THEAD=align,char,charoff,valign;
+        TR=bgcolor,.*?background-color:.*,char,charoff,valign;
+        UL=compact,type
+<p></p>
+-->
+<p></p>
+If you edit using the plain-text editor, you can use the &lt;sticky&gt;..&lt;/sticky&gt; tags to delimit HTML (or TML) that you do <strong>not</strong> want to be <a href="WYSIWYG.html">WYSIWYG</a> edited.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_IGNOREATTRS_45_Ignore_tag_attributes_when_deciding_whether_to_keep_a_tag_or_not_when_converting_HTML_to_TML._This_is_most_useful_when_you">  WYSIWYGPLUGIN_IGNOREATTRS - Ignore tag attributes when deciding whether to keep a tag or not when converting HTML to TML. This is most useful when you </h4>
+have specific styling that you want to make sure you strip off.
+<p></p>
+This preference takes the same format as <code>WYSIWYGPLUGIN_STICKYBITS</code>. It
+specifies tags and their attributes that are to be ignored when making the
+decision whether to keep the tag or not. For example, a <code>&lt;font face="Open Sans"&gt;</code> tag will normally be maintained in the TML. However setting
+<code>WYSIWYGPLUGIN_IGNOREATTRS</code> to <code>font=face</code> will result in it being removed.
+<p></p>
+By default <code>WYSIWYGPLUGIN_IGNOREATTRS</code> is empty. <code>WYSIWYGPLUGIN_STICKYBITS</code>
+takes precedence over this setting.
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>IncludeTopicsAndWebPages &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/IncludeTopicsAndWebPages/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE System/IncludeTopicsAndWebPages/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit IncludeTopicsAndWebPages" href="IncludeTopicsAndWebPages.html" rel="alternate">
+<meta name="description" content="IncludeTopicsAndWebPages" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "IncludeTopicsAndWebPages",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Include_Topics_and_Web_Pages_Using_61_37INCLUDE_123..._125_37_61_Macro">  Include Topics and Web Pages Using <code>%INCLUDE{...}%</code> Macro </h1>
+<p></p>
+Embed topics, or subsections of topics, or other web pages.
+<p></p>
+The <a href="VarINCLUDE.html">%INCLUDE{...}%</a> macro embeds the content of the specified topic at the place where the <a href="VarINCLUDE.html">INCLUDE</a> is used. The whole content or only parts of of a page can be included.
+<div class="foswikiHelp">
+<img src="DocumentGraphics.attachments/help.png" height="16" alt="HELP" title="HELP" width="16"> If permitted in <a href="../.html">configure</a>, content from any arbitrary URL may be included also. This is disabled by default because it may be used for malicious purposes, especially on public installations.
+See: <em>Security and Authentication &gt; Environment &gt;</em> <code>{INCLUDE}{AllowURLs}</code>.
+<p></p>
+<img height="16" alt="HELP" src="DocumentGraphics.attachments/help.png" width="16" title="HELP"> If your web server connects to the internet via a proxy server, Proxy settings should be set in <a href="../.html">configure</a>. See: <em>Security and Authentication &gt; Proxies &gt;</em> <code>{PROXY}{HOST}</code>
+</div>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Syntax_Example"> Syntax Example </a>
+</li> <li> <a href="#Usage_Examples"> Usage Examples </a> <ul>
+<li> <a href="#A_1._Display_regression_test_results"> 1. Display regression test results </a>
+</li> <li> <a href="#A_2._Display_foswiki.org_39s_frequently_asked_questions"> 2. Display foswiki.org's frequently asked questions </a>
+</li> <li> <a href="#A_3._Include_a_topic"> 3. Include a topic </a>
+</li> <li> <a href="#A_4._Include_a_topic_MyTopic_with_two_parameters"> 4. Include a topic MyTopic with two parameters </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Syntax_Example">  Syntax Example </h2>
+<p></p>
+<pre class="tml">
+&#37;INCLUDE{
+   &#34;page&#34;
+   pattern&#61;&#34;reg-exp&#34;
+   rev&#61;&#34;2&#34;
+   warn&#61;&#34;off&#34;
+   section&#61;&#34;clients&#34;
+   PARAMETER1&#61;&#34;value&#34;
+   PARAMETER2&#61;&#34;Some value&#34;
+}&#37;
+</pre>
+<p></p>
+The <code>pattern</code> parameter is optional and allows you to extract some parts of a web page. Specify a <a href="RegularExpression.html">RegularExpression</a> that contains the text you want to keep in parenthesis. It may be helpful for the pattern to match more than just the text you wish to keep, e.g. <code>pattern="Some prefix(Start here.*?to here)"</code>. If needed, the pattern may even scan from start (<code>'^'</code>) to end and match the whole topic, e.g. <code>pattern="^.*?(from here.*?to here).*"</code>.
+<p></p>
+You need to make sure that the integrity of a web page is not compromised; for example, if you include a table, make sure to include everything including the table end tag.
+<p></p>
+The example parameters PARAMETER1 and PARAMETER2 will be defined as macros within the scope of the included topic. The example parameters shown will result in %PARAMETER1% and %PARAMETER2% being defined within the included topic.
+<p></p>
+<a href="VarINCLUDE.html">VarINCLUDE</a> explains the other parameters.
+<p></p>
+<div class="foswikiHelp"> <img src="DocumentGraphics.attachments/help.png" alt="HELP" height="16" title="HELP" width="16"> All text of a topic is included unless it contains a <a href="VarSTARTINCLUDE.html">%STARTINCLUDE%</a> and <a href="VarSTOPINCLUDE.html">%STOPINCLUDE%</a>, or you specify a <code>section</code> parameter (see <a href="VarSTARTSECTION.html">STARTSECTION</a> and <a href="VarENDSECTION.html">ENDSECTION</a>) and/or a <code>pattern</code> parameter. A pattern will only search between <code>%STARTINCLUDE%</code> and <code>%STOPINCLUDE%</code> or within the <code>section</code> specified.</div>
+<p></p>
+<h2 id="Usage_Examples">  Usage Examples </h2>
+<p></p>
+<h3 id="A_1._Display_regression_test_results">  1. Display regression test results </h3>
+<pre class="tml">
+  &#60;pre&#62;
+  &#37;INCLUDE{&#34;http://domain/~qa/v1.1/REDTest.log.txt&#34;}&#37;
+  &#60;/pre&#62;
+</pre>
+<p></p>
+<h3 id="A_2._Display_foswiki.org_39s_frequently_asked_questions">  2. Display foswiki.org's frequently asked questions </h3>
+<p></p> <ul>
+<li> You type:
+</li></ul> 
+<pre class="tml">
+  &#37;INCLUDE{&#34;https://foswiki.org/Support/FrequentlyAskedQuestion?skin&#61;text&#34;}&#37;
+</pre>
+<p></p> <ul>
+<li> You get:
+</li></ul> 
+<span class='foswikiAlert'> <dl>
+<dt> Warning </dt><dd> This site does not allow %INCLUDE% of URLs 
+</dd></dl> 
+</span>
+<p></p>
+<div class="foswikiHelp"><img height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> Including URLs is disabled by default as it presents a security risk. It may be enabled via <a href="../.html">configure</a>. <em>Only enable this if you understand the risk</em>.</div>
+<p></p>
+<h3 id="A_3._Include_a_topic">  3. Include a topic </h3>
+<p></p> <ul>
+<li> You type:
+</li></ul> 
+<pre class="tml">
+  &#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.TipsOfTheDayInclude&#34;}&#37;
+</pre>
+<p></p> <ul>
+<li> You get:
+</li></ul> 
+<p></p>
+<dirtyarea>
+<div class="tipsOfTheDay">
+   <div class="tipsOfTheDayContents">
+      <h4 class="tipsOfTheDayHeader"><span class='foswikiIcon'><img height="16" alt="tip" src="DocumentGraphics.attachments/tip.png" width="16"></span> Tip of the Day</h4>
+      <div class="tipsOfTheDayText">
+           <div class='tipsOfTheDayTitle'><a href="TipTopic027.html"> Custom rendered bullets</a></div>
+ RenderListPlugin can render bulleted lists in a variety of different ways. Use %RENDERLIST{ paramet...
+                  <a href="TipTopic027.html">Read on&nbsp;<img title="Read on" src="DocumentGraphics.attachments/more-small.png" alt="Read more"></a>
+      </div>
+   </div>
+</div>
+</dirtyarea>
+<p></p>
+<p></p>
+<h3 id="A_4._Include_a_topic_MyTopic_with_two_parameters">  4. Include a topic MyTopic with two parameters </h3>
+<p></p>
+You include the topic with this line
+<pre class="tml">
+  &#37;INCLUDE{&#34;MyTopic&#34; BETTER&#61;&#34;apples&#34; WORSE&#61;&#34;Oranges&#34;}&#37;
+</pre>
+<p></p>
+An example of a very simple MyTopic could contain
+<p></p>
+<pre class="tml">
+   &#42; I like &#37;BETTER&#37; better than &#37;WORSE&#37;.
+</pre> 
+<p></p>
+The result would be
+<p></p> <ul>
+<li> I like apples better than oranges.
+</li></ul> 
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="VarINCLUDE.html">VarINCLUDE</a>, <a href="UserDocumentationCategory.html">UserDocumentationCategory</a>
+<!--  -->
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

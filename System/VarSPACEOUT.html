@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarSPACEOUT &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/VarSPACEOUT/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/VarSPACEOUT/favicon.ico" type="image/x-icon">
+<link title="edit VarSPACEOUT" href="VarSPACEOUT.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="VarSPACEOUT" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "VarSPACEOUT",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="SPACEOUT_45_45_renders_string_with_spaces_inserted_in_sensible_places">  SPACEOUT -- renders string with spaces inserted in sensible places </h1>
+Inserts spaces after lower case letters that are followed by a digit or a capital letter, and after digits that are followed by a capital letter. Useful for spacing out <a href="WikiWord.html">WikiWords</a>
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%SPACEOUT{"WebHome"}%</code> expands to: <code>Web Home</code>
+</li></ul> 
+<h2 id="Parameters">  Parameters </h2>
+        <table class="foswikiTable" id="tableVarSPACEOUT1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>separator</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> The separator to put between words e.g. <code>%SPACEOUT{"DogsCatsBudgies" separator=", "}%</code> -&gt; Dogs, Cats, Budgies </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> ' ' </td>
+		</tr>
+	</tbody>     </table>
+   <div class="foswikiHelp"><img src="DocumentGraphics.attachments/tip.png" height="16" alt="TIP" title="TIP" width="16"> Spaced out WikiWords are not automatically linked. To <code>SPACEOUT</code> a WikiWord but preserve the link use "double bracket" format. For example, <code>[[WebHome][%SPACEOUT{"WebHome"}%]]</code> expands to <a class="foswikiCurrentWebHomeLink" href="WebHome.html">Web Home</a></div>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarSPACEDTOPIC.html">SPACEDTOPIC</a>, <a href="SpreadSheetPlugin.html">$PROPERSPACE()</a> of <a href="SpreadSheetPlugin.html">SpreadSheetPlugin</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

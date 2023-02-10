@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>InterWikis &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/InterWikis/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/InterWikis/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" href="InterWikis.html" rel="alternate" title="edit InterWikis">
+<meta name="description" content="InterWikis" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "InterWikis",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Inter_45Wiki_Link_Rules_40or_Links_to_other_Sites_41"> Inter-Wiki Link Rules (or Links to other Sites) </h1>
+<p></p>
+This topic lists all aliases needed to map inter-wiki links to external wikis/sites.
+<p></p>
+Whenever you write <code><b>ExternalSite:Page</b></code> it will be linked automatically to the page on the external site. The link points to the URL corresponding to the <code><b>ExternalSite</b></code> alias below, concatenated to the <code><b>Page</b></code> you choose. Example: Type <code><b>Wiki:RecentChanges</b></code> to get <a href="http://c2.com/cgi/wiki?RecentChanges">Wiki:RecentChanges</a>, the RecentChanges page at the original Wiki site.
+<p></p>
+<div class="foswikiHelp"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> Note: This topic needs to be visible for all users, or the plugin will not work correctly.</div>
+<p></p>
+<h3 id="How_to_define_Inter_45Wiki_Links">  How to define Inter-Wiki Links </h3>
+<p></p>
+Inter-wiki links are defined in the tables below.   <ul>
+<li> Each entry must be three or four columns, using the following format: <br /> <code><b>| External site alias | URL | Tooltip help text | Optional INTERLINKFORMAT override |</b></code>.
+</li> <li> The Alias must start with an upper case letter and may contain alphanumeric characters.
+</li> <li> The URL and Tooltip Text may contain optional <code><b>$page</b></code> formatting tokens; the token gets expanded to the page name.
+</li> <li> The URL may contain Foswiki macros.  They are expanded when the URL is rendered.
+</li> <li> The Tooltip Text must <strong><em>not</em></strong> contain: <ul>
+<li> any HTML tags (including <code><b>&lt;nop&gt;</b></code> escape code)
+</li> <li> any internal <a href="WikiWord.html">WikiWord</a> links
+</li> <li> any external links
+</li> <li> Hint: Escape <code><b>'WikiWords'</b></code> and <code><b>'$page'</b></code>.
+</li> <li> If the link format override is provided, it overrides the <code>INTERWIKIPLUGIN_INTERLINKFORMAT</code> for just that entry.
+</li></ul> 
+</li></ul> 
+<p></p>
+<div class="foswikiHelp"><img alt="HELP" height="16" src="DocumentGraphics.attachments/help.png" width="16" title="HELP"> Note that Interwiki links do not properly resolve when part of an INCLUDEd page name.  e.g. <code>%INCLUDE{"Interwiki:link"}%</code> </div>
+<p></p>
+<div class="foswikiHelp"><img src="DocumentGraphics.attachments/help.png" alt="HELP" height="16" title="HELP" width="16"> For Foswiki and TWiki sites, both the <strong>web</strong> and the <strong>topic</strong> have to be specified: <code><b>Foswiki:Webname/SomePage</b></code>
+<a href="https://foswiki.org/Extensions/InterwikiPlugin" class="interwikiLink" title="'Extensions/InterwikiPlugin' on foswiki.org"><noautolink>Foswiki:Extensions/InterwikiPlugin</noautolink></a> or <a title="'Extensions.InterwikiPlugin' on foswiki.org" href="https://foswiki.org/Extensions.InterwikiPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions.InterwikiPlugin</noautolink></a>
+</div>
+<p></p>
+<div class="foswikiHelp">
+<img src="DocumentGraphics.attachments/help.png" height="16" alt="HELP" title="HELP" width="16"> For links with parentheses you will need to write as <code><b>[[Wikipedia:Fork_(software_development)]]</b></code>, or quoted, as <code><b>Wikipedia:'Fork_(software_development)'</b></code>
+as the plugin will not include the closing parenthesis as part of the link. 
+</div>
+<p></p>
+<p></p>
+The optional INTERLINKFORMAT override can incorporate the following tokens
+which are expanded when the link is generated:
+           <table class="foswikiTable" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Token</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Meaning</a> </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $site </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Site alias </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $page </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Page (part after colon) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $url </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Site URL (might contain $page) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $label </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Equal to $site:$page </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> $tooltip </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Tooltip message </td>
+		</tr>
+	</tbody>     </table>
+<p></p>
+<p></p>
+See <a href="InterwikiPlugin.html">InterwikiPlugin</a> for more details on specifiying the INTERLINKFORMAT.
+<p></p>
+<span id="AddingYourOwn"></span>
+<h3 id="Adding_your_own_Inter_45Wiki_Links">  Adding your own Inter-Wiki Links </h3>
+<p></p>
+Rather than adding your own inter-wiki links to this topic, the recommended approach is to create a topic in your Main Web, for example <a title="Create this topic" href="../Main/InterWikis.html" class="foswikiNewLink" rel="nofollow">Main.InterWikis</a>.
+You can then set the <code>INTERWIKIPLUGIN_RULESTOPIC</code> preference setting in <a href="../Main/SitePreferences.html">Main.SitePreferences</a> as follows:
+<p></p>
+<pre class="tml">
+   * Set INTERWIKIPLUGIN_RULESTOPIC = System.InterWikis, Main.InterWikis
+</pre>
+<p></p>
+Any inter-wikis you add to <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/InterWikis.html">Main.InterWikis</a> will then be available in the same way that the inter-wikis from here are. If you create a rule in <a href="../Main/InterWikis.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">Main.InterWikis</a> which has the same alias as a rule in this topic, the rule from <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/InterWikis.html">Main.InterWikis</a> will take preference.
+<p></p>
+<h3 id="General_Inter_45Site_Links">  General Inter-Site Links </h3>
+<p></p>
+<noautolink>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Alias:</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">URL:</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Tooltip Text:</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Acronym </td>
+			<td class="foswikiTableCol1"> <a href="http://www.acronymfinder.com/af-query.asp?Acronym=$page&amp;String=exact">http://www.acronymfinder.com/af-query.asp?Acronym=$page&amp;String=exact</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Look up '$page' on Acronym Finder site </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CPAN </td>
+			<td class="foswikiTableCol1"> <a href="https://metacpan.org/module/">https://metacpan.org/module/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> CPAN perl repository </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Dictionary </td>
+			<td class="foswikiTableCol1"> <a href="http://www.dictionary.com/cgi-bin/dict.pl?term=">http://www.dictionary.com/cgi-bin/dict.pl?term=</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Look up '$page' at Dictionary.com </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Google </td>
+			<td class="foswikiTableCol1"> <a href="https://google.com/search?q=">https://google.com/search?q=</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Search for '$page' on Google </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Group </td>
+			<td class="foswikiTableCol1"> <a href="https://groups.google.com/forum/#!search/">https://groups.google.com/forum/#!search/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> News group '$page' at Google.com </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ISBN </td>
+			<td class="foswikiTableCol1"> <a href="http://www.bookfinder.com/search/?st=sr;ac=qr;isbn=">http://www.bookfinder.com/search/?st=sr;ac=qr;isbn=</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Book with ISBN $page </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> News </td>
+			<td class="foswikiTableCol1"> <a href="https://news.google.com/news?q=">https://news.google.com/news?q=</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Search for '$page' on Google news </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> RFC </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="http://www.faqs.org/rfcs/rfc$page.html">http://www.faqs.org/rfcs/rfc$page.html</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> IETF RFC #$page </td>
+		</tr>
+	</tbody></table>
+<p></p>
+</noautolink>
+<p></p>
+<h3 id="Inter_45Wiki_Links">  Inter-Wiki Links </h3>
+<p></p>
+<noautolink>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Alias:</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">URL:</a> </th>
+			<th class="foswikiTableCol2"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Tooltip Text:</a> </th>
+			<th class="foswikiTableCol3 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Format override:</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Advogato </td>
+			<td class="foswikiTableCol1"> <a href="http://www.advogato.org/article/$page.html">http://www.advogato.org/article/$page.html</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on Advogato community site (with peer review) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> C2find </td>
+			<td class="foswikiTableCol1"> <a href="http://c2.com/cgi/wiki?FindPage&amp;value=">http://c2.com/cgi/wiki?FindPage&amp;value=</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Search '$page' on the original 'WikiWikiWeb' site </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> DokuWiki </td>
+			<td class="foswikiTableCol1"> <a href="http://dokuwiki.org/">http://dokuwiki.org/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on Doku Wiki site </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki </td>
+			<td class="foswikiTableCol1"> <a href="https://foswiki.org/">https://foswiki.org/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on foswiki.org </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswikitask </td>
+			<td class="foswikiTableCol1"> <a href="https://foswiki.org/Tasks/">https://foswiki.org/Tasks/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on the 'Foswiki' issue tracking site </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> FoxWiki </td>
+			<td class="foswikiTableCol1"> <a href="http://fox.wikis.com/wc.dll?Wiki~">http://fox.wikis.com/wc.dll?Wiki~</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on Fox Wiki site </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HammondWiki </td>
+			<td class="foswikiTableCol1"> <a href="http://www.dairiki.org/HammondWiki/">http://www.dairiki.org/HammondWiki/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on 'HammondWiki' site </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> MeatBall </td>
+			<td class="foswikiTableCol1"> <a href="http://www.usemod.com/cgi-bin/mb.pl">http://www.usemod.com/cgi-bin/mb.pl</a>? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on 'MeatBall' site, a 'UseMod' Wiki variant </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> MoinMoin </td>
+			<td class="foswikiTableCol1"> <a href="https://moinmo.in/">https://moinmo.in/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on 'MoinMoin' Wiki site </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> PPR </td>
+			<td class="foswikiTableCol1"> <a href="http://c2.com/cgi/wiki">http://c2.com/cgi/wiki</a>? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on the original 'PortlandPatternRepository' site </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Squeak </td>
+			<td class="foswikiTableCol1"> <a href="http://wiki.squeak.org/squeak/">http://wiki.squeak.org/squeak/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on Squeak Smalltalk Wiki </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> TWiki </td>
+			<td class="foswikiTableCol1"> <a href="http://twiki.org/cgi-bin/view/">http://twiki.org/cgi-bin/view/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on TWiki.org </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> TWikibug </td>
+			<td class="foswikiTableCol1"> <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/">http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on the TWiki issue tracking site </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> TWikirev </td>
+			<td class="foswikiTableCol1"> <a href="http://develop.twiki.org/trac/changeset/">http://develop.twiki.org/trac/changeset/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> revision $page of TWiki svn </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> UseMod </td>
+			<td class="foswikiTableCol1"> <a href="http://www.usemod.com/cgi-bin/wiki.pl">http://www.usemod.com/cgi-bin/wiki.pl</a>? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on 'UseMod' Wiki site </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Wiki </td>
+			<td class="foswikiTableCol1"> <a href="http://c2.com/cgi/wiki">http://c2.com/cgi/wiki</a>? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on the original 'WikiWikiWeb' site </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Wikipedia </td>
+			<td class="foswikiTableCol1"> <a href="https://en.wikipedia.org/wiki/">https://en.wikipedia.org/wiki/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> '$page' on 'Wikipedia' </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> ZWiki </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="http://zwiki.org/">http://zwiki.org/</a> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> '$page' on Zope's Wiki </td>
+		</tr>
+	</tbody></table>
+<p></p>
+</noautolink>
+<p></p>
+<strong>Note:</strong> This topic configures the <a href="InterwikiPlugin.html">InterwikiPlugin</a>.
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="Plugins.html">Plugins</a>, <a href="UserDocumentationCategory.html">UserDocumentationCategory</a>, <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>
+<p></p>
+<!--
+<p></p>
+-->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

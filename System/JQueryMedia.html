@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryMedia &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryMedia/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryMedia/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit JQueryMedia" href="JQueryMedia.html" rel="alternate">
+<meta name="description" content="JQueryMedia" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryMedia",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryMedia">  <a href="JQueryMedia.html" class="foswikiCurrentTopicLink">JQueryMedia</a> </h1>
+<p></p>
+<p></p>
+<p></p>
+jQuery Media Plugin for converting elements into rich media content.
+<p></p>
+Supported Media Players: <ul>
+<li> Flash
+</li> <li> Quicktime
+</li> <li> Real Player
+</li> <li> Silverlight
+</li> <li> Windows Media Player
+</li> <li> iframe
+</li></ul> 
+<p></p>
+Supported Media Formats:<br />
+Any types supported by the above players, such as: <ul>
+<li> Video: asf, avi, flv, mov, mpg, mpeg, mp4, qt, smil, swf, wmv, 3g2, 3gp
+</li> <li> Audio: aif, aac, au, gsm, mid, midi, mov, mp3, m4a, snd, rm, wav, wma
+</li> <li> Other: bmp, html, pdf, psd, qif, qtif, qti, tif, tiff, xaml
+</li></ul> 
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+To enable the media plugin surround (a set of) links to the media with a <code><b>jqMedia</b></code> div element. All
+links inside will be processed and an according player will be embeded.
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<pre class="tml">
+&#37;JQREQUIRE{&#34;media&#34;}&#37;
+
+&#60;div class&#61;&#34;jqMedia&#34;&#62;
+http://....flv
+&#60;/div&#62;
+</pre>
+<p></p>
+<strong>Embeding a youtube video</strong>:
+<p></p>
+<pre class="tml">
+&#60;div class&#61;&#34;jqMedia {type:&#39;swf&#39;}&#34;&#62;
+http://youtube.com/v/TyvN59L4hJU
+&#60;/div&#62;
+</pre>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

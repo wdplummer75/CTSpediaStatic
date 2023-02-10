@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryTreeview &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQueryTreeview/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryTreeview/favicon.ico" rel="shortcut icon">
+<link href="JQueryTreeview.html" rel="alternate" title="edit JQueryTreeview" type="application/x-wiki">
+<meta name="description" content="JQueryTreeview" />
+<link media="all" class="head JQUERYPLUGIN::TREEVIEW" rel="stylesheet" href="JQueryPlugin.attachments/plugins/treeview/jquery.treeview.css?version=1.4" type="text/css"><!--JQUERYPLUGIN::TREEVIEW-->
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryTreeview",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::TREEVIEW" src="JQueryPlugin.attachments/plugins/treeview/jquery.treeview.js?version=1.4"></script>
+<script src="JQueryPlugin.attachments/plugins/treeview/jquery.treeview.async.js?version=1.4" class="script JQUERYPLUGIN::TREEVIEW"></script>
+<script src="JQueryPlugin.attachments/plugins/treeview/jquery.treeview.init.js?version=1.4" class="script JQUERYPLUGIN::TREEVIEW"></script><!--JQUERYPLUGIN::TREEVIEW-->
+</head>
+<body>
+<h1 id="JQueryTreeview">  <a href="JQueryTreeview.html" class="foswikiCurrentTopicLink">JQueryTreeview</a> </h1>
+<p></p>
+    Homepage: <a href="http://bassistance.de/jquery-plugins/jquery-plugin-treeview">http://bassistance.de/jquery-plugins/jquery-plugin-treeview</a> <br />
+    Author(s): Joern Zaefferer <br />
+    Version: 1.4
+<p></p>
+<p></p>
+<p></p>
+Lightweight and flexible transformation of an unordered list into an
+expandable and collapsable tree, great for unobtrusive navigation enhancements.
+Supports both location and cookie based persistence.
+<p></p>
+Subtrees can be loaded on demand using AJAX. See the <a title="'Extensions/RenderPlugin' on foswiki.org" href="https://foswiki.org/Extensions/RenderPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions/RenderPlugin</noautolink></a>
+how to implement such REST handlers easily.
+<p></p>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<div class="jqTreeview"> <ul>
+<li> list <ul>
+<li> item
+</li> <li> item
+</li> <li> item
+</li></ul> 
+</li> <li> list <ul>
+<li> item
+</li> <li> item
+</li> <li> item
+</li></ul> 
+</li> <li> list <ul>
+<li> item
+</li> <li> item
+</li> <li> item
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<div class="jqTreeview closed red"> <ul>
+<li> list <ul>
+<li> item
+</li> <li> item
+</li> <li> item
+</li></ul> 
+</li> <li> list <ul>
+<li> item
+</li> <li> item
+</li> <li> item
+</li></ul> 
+</li> <li> list <ul>
+<li> item
+</li> <li> item
+</li> <li> item
+</li></ul> 
+</li></ul> 
+</div>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

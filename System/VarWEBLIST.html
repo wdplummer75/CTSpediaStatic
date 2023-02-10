@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarWEBLIST &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/VarWEBLIST/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/VarWEBLIST/favicon.ico">
+<link rel="alternate" href="VarWEBLIST.html" title="edit VarWEBLIST" type="application/x-wiki">
+<meta name="description" content="VarWEBLIST" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarWEBLIST",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="WEBLIST_45_45_index_of_all_webs">  WEBLIST -- index of all webs </h1>
+Generate a list of webs. Obfuscated webs are excluded, e.g. webs with a <code>NOSEARCHALL = on</code> <a href="PreferenceSettings.html">preference setting</a>. The <code>"format"</code> defines the format of one web item. The <code>$name</code> gets expanded to the name of the web, <code>$qname</code> gets expanded to double quoted name, <code>$marker</code> to <code>marker</code> where web matches <code>selection</code>. Subwebs are listed recursively.
+<h2 id="Parameters">  Parameters </h2>
+              <table class="foswikiTable" id="tableVarWEBLIST1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"format"</code> <br> <code>format="format"</code> </td>
+			<td class="foswikiTableCol1"> Format of one line, may include <code>$name</code> (the name of the web), $qname (the name of the web in double quotes), <code>$indentedname</code> (the name of the web with parent web names replaced by indents, for use in indented lists), and <code>$marker</code> (which expands to <code>marker</code> for the item matching <code>selection</code> only).  The standard <a href="FormatTokens.html">format tokens</a> may also be used. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>$name</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>separator</code> </td>
+			<td class="foswikiTableCol1"> Web separator </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>$n</code> (new line).  Standard <a href="FormatTokens.html">format tokens</a> may also be used. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>web</code> </td>
+			<td class="foswikiTableCol1"> if you specify <code>$web</code> in format, it will be replaced with this value. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>webs</code> </td>
+			<td class="foswikiTableCol1"> Comma separated list of webs to consider. This list can include two pseudo-webs, <code>public</code> which expands to all non-hidden and <code>webtemplate</code> which expands to the names of all template webs.<br /> <strong>NOTE:</strong> Administrators will see all webs, not just the public ones </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>public</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>subwebs</code> </td>
+			<td class="foswikiTableCol1"> Specifies a single web. If specified, then <code>public</code> and <code>webtemplate</code> (described above) will expand relative to show subwebs *below this web only. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>selection</code> </td>
+			<td class="foswikiTableCol1"> Entry to be selected in list. If one of the webs matches this selection, then <code>$marker</code> in the <code>format</code> will be expanded </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>%WEB%</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>marker</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Text for <code>$marker</code> if the item matches <code>selection</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>selected="selected"</code> </td>
+		</tr>
+	</tbody>     </table>
+<h2 id="Examples">  Examples </h2>
+Create a bullet list of all webs: <pre class="tml">&#37;WEBLIST{&#34;   &#42; &#91;&#91;&#36;name.&#37;HOMETOPIC&#37;&#93;&#93;&#34;}&#37;</pre>
+Create a dropdown of all public webs + Trash web, with the current web highlighted: <pre class="tml">&lt;form&gt;&lt;select name="web"&gt;%WEBLIST{
+      "&lt;option $marker value='$qname'&gt;$name&lt;/option&gt;"
+      webs="Trash, public"
+      selection="%WEB%"
+      separator=" "
+   }% &lt;/select&gt;&lt;/form&gt;</pre>
+   <div class="foswikiHelp"><img width="16" title="ALERT!" height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png"> <code>WEBLIST</code> will not show a web called 'TWiki' even if it exists in the file system unless the <code>TWikiCompatibilityPlugin</code> is installed and activated in <a href="../.html">configure</a>. This is done to ensure that the TWiki compatibility components such as the TWiki web are only visible and active when needed</div>
+<p></p>
+<h2 id="Related">  Related </h2>
+<a href="VarTOPICLIST.html">TOPICLIST</a>, <a href="VarSEARCH.html">SEARCH</a>
+<!---->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

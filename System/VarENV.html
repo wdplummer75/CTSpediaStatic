@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarENV &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/VarENV/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/VarENV/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" rel="alternate" href="VarENV.html" title="edit VarENV">
+<meta name="description" content="VarENV" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "VarENV",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="ENV_45_45_inspect_the_value_of_an_environment_variable">  ENV -- inspect the value of an environment variable </h1>
+Returns the current value of the environment variable in the CGI (Common Gateway Interface) environment. This is the environment that the <a href="CommandAndCGIScripts.html">CommandAndCGIScripts</a> are running in.
+<p></p>
+If an environment variable is undefined (as against being set to the empty string) it will be returned as <code>not set</code>.
+<p></p>
+<strong>Note:</strong> For security reasons, only those environment variables whose names match the regular expression in the configuration setting <code>{AccessibleENV}</code> (in the <strong>Security Settings/Miscellaneous</strong> section of <code>configure</code>) can be displayed. Any other variable will just be shown as an empty string, irrespective of its real value.
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%ENV{MOD_PERL}%</code> displays as: not set
+</li></ul> 
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarHTTPHOST.html">HTTP_HOST</a>, <a href="VarREMOTEADDR.html">REMOTE_ADDR</a>, <a href="VarREMOTEPORT.html">REMOTE_PORT</a>, <a href="VarREMOTEUSER.html">REMOTE_USER</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

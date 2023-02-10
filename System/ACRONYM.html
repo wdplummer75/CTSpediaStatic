@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ACRONYM &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/ACRONYM/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE System/ACRONYM/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit ACRONYM" rel="alternate" href="ACRONYM.html">
+<meta name="description" content="ACRONYM" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "ACRONYM",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="What_is_an_ACRONYM_63">  What is an ACRONYM? </h1>
+<p></p>
+Linking topics using acronyms.
+<p></p>
+An acronym is an abbreviation that is typically made up of the first letter or letters of a phrase. An acronym of 3 or more letters will be automatically linked if (and only if) a topic of that name already exists in the current web.
+<p></p>
+Just like WikiWord linking, acronym linking is easy to use: <ul>
+<li> You don't have to know the full path to where the topic is stored - you just type the name
+</li> <li> You don't need to write HTML
+</li> <li> Without HTML, the topic text is easier to read when editing
+</li> <li> Easy linking leads to interesting texts with links placed in context
+</li></ul> 
+<p></p>
+<h2 id="Examples_of_Acronyms">  Examples of Acronyms </h2>
+<p></p> <ul>
+<li> HTML
+</li> <li> RADAR
+</li></ul> 
+<p></p>
+But <em>Not</em> <ul>
+<li> HTML5 - A digit breaks the acronym link.
+</li> <li> FAQs - The lower case letter breaks the link.
+</li></ul> 
+<p></p>
+<h2 id="Variations_in_linking">  Variations in linking </h2>
+<p></p>
+When you write an acronym and the acronym topic already exists, it becomes a link. There are more ways
+<p></p> <ul>
+<li> To force a link to to an acronym, use bracket notation: <code>[[HTML5]]</code> - this becomes: <a href="HTML5.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">HTML5</a> and will display the broken link indicator (red dotted underline) if the topic does not exist.
+</li> <li> To link to an acronym in <strong>another web</strong>, write: <code>Sandbox.HTML</code> - this becomes: Sandbox.HTML
+</li> <li> To link to an acronym on a site like the Acronym Finder, use: <code><a href="http://www.acronymfinder.com/af-query.asp?Acronym=HTTP&amp;String=exact" class="interwikiLink" title="Look up 'HTTP' on Acronym Finder site"><noautolink>Acronym:HTTP</noautolink></a></code> - this becomes: <a href="http://www.acronymfinder.com/af-query.asp?Acronym=HTTP&amp;String=exact" class="interwikiLink" title="Look up 'HTTP' on Acronym Finder site"><noautolink>Acronym:HTTP</noautolink></a> (sites are defined in the <a href="InterwikiPlugin.html">InterwikiPlugin</a>)
+</li></ul> 
+<p></p>
+<h2 id="Hints">  Hints </h2> <ul>
+<li> To stop an Acronym from being turned into a hyperlink, insert an exclamation point immediately before the Acronym. For example, write <code>!HTML</code> to get HTML.
+</li> <li> Unlike <a href="WikiWord.html">WikiWords</a>, plural Acronyms are <em>not</em> automatically linked to the singular topic.
+</li> <li> <code>FAQ</code> will be linked, but <code>FAQIndex</code> will not. Turn acronyms into WikiWords, i.e. Change <code>FAQIndex</code> to <code>FaqIndex</code> for a "FAQ index" topic.
+</li> <li> It is possible to turn off the auto-linking and to rely only on the bracket notation using the NOAUTOLINK <a href="PreferenceSettings.html">preference setting</a>. <ul>
+<li> You can set NOAUTOLINK in your personal topic, or directly in any topic to change linking behavior for you or an individual topic.
+</li></ul> 
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<strong>Related Topics:</strong> <a href="TopicMarkupLanguage.html">TopicMarkupLanguage</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

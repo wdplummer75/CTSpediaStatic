@@ -1,0 +1,652 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WysiwygPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/WysiwygPlugin/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/WysiwygPlugin/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit WysiwygPlugin" href="WysiwygPlugin.html" rel="alternate">
+<meta name="description" content="WysiwygPlugin" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "WysiwygPlugin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Wysiwyg_Plugin">  Wysiwyg Plugin </h1>
+<!-- <ul>
+<li> Set SHORTDESCRIPTION = Translator framework for <a href="WYSIWYG.html">WYSIWYG</a> editors
+</li></ul> 
+-->
+<!-- Do <em>not</em> attempt to edit this topic; it is auto-generated. Please add comments/questions/remarks to the Dev topic instead. -->
+Translator framework for <a href="WYSIWYG.html">WYSIWYG</a> editors
+<p></p>
+Support for the integration of <a href="WYSIWYG.html">WYSIWYG</a> (What-You-See-Is-What-You-Get) editors. On its own, the only thing this plugin gives you is a stand-alone HTML to TML (<a href="TopicMarkupLanguage.html">Topic Markup Language</a> translator script. For <a href="WYSIWYG.html">WYSIWYG</a> editing you will also need to install a specific editor package such as <a title="'Extensions.TinyMCEPlugin' on foswiki.org" href="https://foswiki.org/Extensions.TinyMCEPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions.TinyMCEPlugin</noautolink></a>.
+<p></p>
+This plugin provides a generic framework that supports editing of topics using any browser-based HTML editor. It works by transforming TML into HTML for the editor, and then transforming HTML back into TML on save.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Features"> Features </a>
+</li> <li> <a href="#Details"> Details </a> <ul>
+<li> <a href="#What_39s_in_the_package"> What's in the package </a>
+</li> <li> <a href="#How_it_works"> How it works </a>
+</li> <li> <a href="#Using_the_translators_from_Perl_scripts"> Using the translators from Perl scripts </a>
+</li> <li> <a href="#Integrating_a_HTML_Editor"> Integrating a HTML Editor </a> <ul>
+<li> <a href="#Generating_content_directly_in_the_standard_edit_template"> Generating content directly in the standard edit template </a>
+</li> <li> <a href="#Generating_content_directly_in_a_specialised_edit_template"> Generating content directly in a specialised edit template </a>
+</li> <li> <a href="#Fetching_content_from_a_URL"> Fetching content from a URL </a>
+</li></ul> 
+</li> <li> <a href="#Other_techniques"> Other techniques </a> <ul>
+<li> <a href="#Asynchronous_saves"> Asynchronous saves </a>
+</li> <li> <a href="#Handling_Attachments"> Handling Attachments </a>
+</li> <li> <a href="#REST_handlers"> REST handlers </a>
+</li></ul> 
+</li></ul> 
+</li> <li> <a href="#Plugin_Installation_Instructions"> Plugin Installation Instructions </a>
+</li> <li> <a href="#Plugin_Configuration_Settings"> Plugin Configuration Settings </a> <ul>
+<li> <a href="#Translator_control"> Translator control </a> <ul>
+<li> <a href="#WYSIWYG_EXCLUDE_45_Prevent_WYSIWYG_editing"> WYSIWYG_EXCLUDE - Prevent WYSIWYG editing </a> <ul>
+<li> <a href="#WYSIWYG_EDITABLE_CALLS_45_Exceptions_to_WYSIWYG_EXCLUDE"> WYSIWYG_EDITABLE_CALLS - Exceptions to WYSIWYG_EXCLUDE </a>
+</li></ul> 
+</li> <li> <a href="#WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS_45_Protect_specific_tags_originally_in_the_topic_text"> WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS - Protect specific tags originally in the topic text </a>
+</li> <li> <a href="#WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS_45_Protect_specific_tag_blocks_originally_in_the_topic_text"> WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS - Protect specific tag blocks originally in the topic text </a>
+</li> <li> <a href="#WYSIWYGPLUGIN_STICKYBITS_45_Protect_tags_based_upon_their_arguments"> WYSIWYGPLUGIN_STICKYBITS - Protect tags based upon their arguments </a>
+</li> <li> <a href="#WYSIWYGPLUGIN_IGNOREATTRS_45_Ignore_tag_attributes_when_deciding_whether_to_keep_a_tag_or_not_when_converting_HTML_to_TML._This_is_most_useful_when_you"> WYSIWYGPLUGIN_IGNOREATTRS - Ignore tag attributes when deciding whether to keep a tag or not when converting HTML to TML. This is most useful when you </a>
+</li></ul> 
+</li></ul> 
+</li> <li> <a href="#Known_issues"> Known issues </a> <ul>
+<li> <a href="#Incompatible_with_34non_45standard_34_syntax"> Incompatible with "non-standard" syntax </a>
+</li> <li> <a href="#Overlapping_styles"> Overlapping styles </a>
+</li> <li> <a href="#Rowspan_processing_needs_System.TablePlugin"> Rowspan processing needs TablePlugin </a>
+</li> <li> <a href="#TinyMCEPlugin_integration"> TinyMCEPlugin integration </a>
+</li></ul> 
+</li> <li> <a href="#Plugin_Info"> Plugin Info </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Features">  Features </h2> <ul>
+<li> Supports the input of malformed HTML
+</li> <li> Full round-trip (TML -&gt; XHTML -&gt; TML)
+</li> <li> Framework is editor-agnostic
+</li></ul> 
+<p></p>
+<h2 id="Details">  Details </h2>
+<h3 id="What_39s_in_the_package">  What's in the package </h3>
+The package includes the following pieces: <ul>
+<li> TML to HTML translator
+</li> <li> HTML to TML translator (with stand-alone script)
+</li> <li> Generic plugin for automating the translation during editing
+</li></ul> 
+<p></p>
+<h3 id="How_it_works">  How it works </h3>
+The plugin works by translating the topic text into HTML when someone edits a topic. The HTML is then fed to the <a href="WYSIWYG.html">WYSIWYG</a> editor. On save, the edited HTML is run through the reverse translation before saving to the topic. TML is used in preference to HTML in the stored topic wherever possible, though HTML may be used if the translator can't find a suitable TML equivalent.
+<p></p>
+The default rendering that Foswiki uses to generate HTML for display in browsers is 'lossy' - information in the TML is lost in the HTML output, and a round-trip (recovering the original TML from the HTML) is impossible. To solve this problem the plugin instead uses its own translation of TML to XHTML. The generated XHTML is annotated with CSS classes that support the accurate recovery of the original TML.
+<p></p>
+<em>Before you ask the obvious question, yes, the translator <strong>could</strong> be used to replace the Foswiki rendering pipeline for generating HTML pages. In fact, the translator is taken almost directly from the implementation of the rendering pipeline for the TWiki-4 release</em>
+<p></p>
+Translation of the HTML back to TML uses the <a href="https://metacpan.org/module/HTML::Parser" class="interwikiLink" title="CPAN perl repository"><noautolink>CPAN:HTML::Parser</noautolink></a>. This parser is used in preference to a more modern XML parser, because the <a href="WYSIWYG.html">WYSIWYG</a> editor may not generate fully compliant XHTML. A strict parser would risk losing content. <a title="CPAN perl repository" href="https://metacpan.org/module/HTML::Parser" class="interwikiLink"><noautolink>CPAN:HTML::Parser</noautolink></a> is better at handling malformed HTML.
+<p></p>
+There is also the advantage that the translator can be used to <strong>import</strong> HTML from other sources - for example, existing web pages. Due to the simple nature of TML and the potential complexity of web pages, this translation is often lossy - i.e. there will be HTML features that can be entered by editors that will be lost in this translation step. This is especially noticeable with HTML tables.
+<p></p>
+<h3 id="Using_the_translators_from_Perl_scripts">  Using the translators from Perl scripts </h3>
+<p></p>
+Both translators can be used directly from Perl scripts, for example to build your own stand-alone translators.
+<p></p>
+A stand-alone convertor script for HTML to TML is included in the installation. It can be found in <code>tools/html2tml.pl</code>. Run it with a <code>--help</code> parameter to find out how to use it i.e. <code>perl -I bin tools/html2tml.pl --help</code>
+<p></p>
+There is also a stand-alone translator for TML to HTML, in <code>tools/tml2html.pl</code>.
+<p></p>
+<h3 id="Integrating_a_HTML_Editor">  Integrating a HTML Editor </h3>
+The plugin can be used to integrate an HTML editor in a number of different ways. <ol>
+<li> The HTML for the content-to-be-edited can be generated directly in the standard edit template.
+</li> <li> The HTML for the content-to-be-edited can be generated directly in a specialised edit template.
+</li> <li> A URL can be used to fetch the content-to-be-edited from the server, for use in an IFRAME.
+</li> <li> REST handlers can be called from Javascript to convert content.
+</li></ol> 
+<p></p>
+<h4 id="Generating_content_directly_in_the_standard_edit_template">  Generating content directly in the standard edit template </h4>
+This is the technique used by <a href="WYSIWYG.html">WYSIWYG</a> editors that can sit on top of HTML
+textareas, such as TinyMCE. The topic content is pre-converted to HTML before inclusion in the standard edit template. These editors use plugins that have a <code>beforeEditHandler</code> and an <code>afterEditHandler</code>. These handlers are responsible for the conversion of topic text to HTML, and post-conversion of HTML back to TML. <ol>
+<li> User hits "edit".
+</li> <li> Editor-specific plugin <code>beforeEditHandler</code> converts topic content to HTML by calling <code>Foswiki::Plugins::WysiwygPlugin::TranslateTML2HTML</code>.
+</li> <li> User edits and saves
+</li> <li> Editor-specific plugin <code>afterEditHandler</code> converts HTML back to TML by calling <code>Foswiki::Plugins::WysiwygPlugin::TranslateHTML2TML</code>.
+</li>  </ol><ul>
+<li> WysiwygPlugin should <strong>not</strong> be enabled in <code>configure</code>.
+</li> <li> <code>WYSIWYGPLUGIN_WYSIWYGSKIN</code> should <strong>not</strong> be set.
+</li> <li> Your plugin should set the <code>textareas_hijacked</code> context id, to signal to skins to suppress their textarea manipulation functions.
+</li></ul> 
+This is the recommended integration technique, if your editor can support it.
+<p></p>
+<h4 id="Generating_content_directly_in_a_specialised_edit_template">  Generating content directly in a specialised edit template </h4>
+This technique is useful when the editor requires the topic content in a variety of different formats at the same time. In this scenario the editor uses a custom edit template. The <a href="WYSIWYG.html">WYSIWYG</a> content is made available for instantiation in that template in a number of different formats. <code>WYSIWYGPLUGIN_WYSIWYGSKIN</code> <strong>must</strong> be set for this to work.
+<p></p>
+The flow of control is as follows: <ol>
+<li> User hits "edit" with the skin (or cover) set the same as <code>WYSIWYGPLUGIN_WYSIWYGSKIN</code>.
+</li> <li> The WysiwygPlugin <code>beforeEditHandler</code> determines if the topic is <a href="WYSIWYG.html">WYSIWYG</a> editable, and vetos the edit if not by redirecting to the standard edit skin. the edit
+</li> <li> The <code>edit</code> template containing the JS editor is instantiated.
+</li> <li> The following macros are available for expansion in the template: <ul>
+<li> <code>%WYSIWYG_TEXT%</code> expands to the HTML of the content-to-be-edited. This is suitable for use in a <code>textarea</code>.
+</li> <li> <code>%JAVASCRIPT_TEXT%</code> expands to the HTML of the content-to-be-edited in a javascript constant.
+</li></ul> 
+</li> <li> User edits and saves
+</li> <li> The <code>afterEditHandler</code> in the WyswiygPlugin sees that <code>wysiwyg_edit</code> is set, which triggers the conversion back to TML.
+</li></ol> 
+<p></p> <ul>
+<li> The HTML form in the edit template <strong>must</strong> include an <code>&lt;input</code> called <code>wysiwyg_edit</code> and set it to 1, to trigger the conversion from HTML back to TML.
+</li> <li> <code>WYSIWYGPLUGIN_WYSIWYGSKIN</code> must be set to the name of the skin used for <a href="WYSIWYG.html">WYSIWYG</a> editing. This is often the name of the editor e.g. <code>xinha</code>.
+</li></ul> 
+<p></p>
+<h4 id="Fetching_content_from_a_URL">  Fetching content from a URL </h4>
+In this scenario, the edit template is generated <strong>without</strong> the content-to-be-edited. The content is retrieved from the server using a URL e.g. from an <code>IFRAME</code>.
+<p></p>
+The flow of control is as follows: <ol>
+<li> As <em>Generating content directly in a specialised edit template</em>
+</li> <li> As <em>Generating content directly in a specialised edit template</em>
+</li> <li> As <em>Generating content directly in a specialised edit template</em>
+</li> <li> When the document loads in the browser, the JS editor invokes a content URL (using an <code>IFRAME</code> or a <code>XmlHttpRequest</code>) to obtain the HTML document to be edited <ul>
+<li> The content URL is just a Foswiki <code>view</code> URL with the <code>wysiwyg_edit</code>        parameter set.
+</li> <li> The WysiwygPlugin recognises the <code>wysiwyg_edit</code> parameter and uses the        <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="TML2HTML.html">TML2HTML</a> translator to prepare the text, which is then returned        as <code>text/plain</code> to the browser.
+</li> <li> Two macros, <code>%OWEB%</code> and <code>%OTOPIC%</code>, can be used in the content URL in the edit template to refer to the source topic for the content.
+</li></ul> 
+</li> <li> After edit handling is as for <em>Generating content directly in a specialised edit template</em>
+</li></ol> 
+<p></p>
+<h3 id="Other_techniques">  Other techniques </h3>
+<h4 id="Asynchronous_saves">  Asynchronous saves </h4>
+Editors can use <code>XmlHttpRequest</code> to perform saves, by POSTing to the Foswiki <code>save</code> script with the <code>wysiwyg_edit</code> parameter set to <code>1</code>. This parameter tells the <code>beforeSaveHandler</code> in the WysiwygPlugin to convert the content back to TML. See <a href="CommandAndCGIScripts.html">CommandAndCGIScripts</a> for details of the other parameters to the <code>save</code> script.
+<p></p>
+Once the save script has completed it responds with a redirect, either to an Oops page if the save failed, or to the appropriate post-save URL (usually a <code>view</code>). The editor must be ready to handle this redirect.
+<p></p>
+<h4 id="Handling_Attachments">  Handling Attachments </h4>
+Attachment uploads can be handled by URL requests from the editor template to the Foswiki
+<code>upload</code> script. The <code>upload</code> script normally redirects to the containing topic; a behaviour that you usually don't want in an editor! There are two ways to handle this: <ul>
+<li> If the uploads are done in an <code>IFRAME</code> or via <code>XmlHttpRequest</code>, then the     302 redirect at the end of the upload can simply be ignored.
+</li> <li> You can pass <code>noredirect</code> to the <code>upload</code> script to suppress the redirect. In this case     you will get a <code>text/plain</code> response of <code>OK</code> followed by a message if everything went well, or an error message if it did not.
+</li></ul> 
+<p></p>
+<h4 id="REST_handlers">  REST handlers </h4>
+If you are confident in Javascript you can use REST handlers with <code>XmlHttpRequest</code> to convert content from TML to HTML and back again.
+<p></p>
+The plugin defines the following REST handlers:
+<p></p>
+<code>.../rest/WysiwygPlugin/html2tml?topic=Web.Topic;text=htmltexttotranslate</code>
+<p></p>
+Converts the HTML text to TML. <code>topic</code> <strong>must</strong> be specified.
+<p></p>
+<code>.../rest/WysiwygPlugin/tml2html?topic=Web.Topic;text=tmltexttotranslate</code>
+<p></p>
+Converts the TML text to HTML. <code>topic</code> <strong>must</strong> be specified. The response is a <code>text/plain</code> page of converted content.
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions </h2>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+<h2 id="Plugin_Configuration_Settings">  Plugin Configuration Settings </h2>
+<p></p>
+<h3 id="Translator_control">  Translator control </h3>
+<p></p>
+<h4 id="WYSIWYG_EXCLUDE_45_Prevent_WYSIWYG_editing">  WYSIWYG_EXCLUDE - Prevent <a href="WYSIWYG.html">WYSIWYG</a> editing  </h4>
+The <strong>global</strong> <a href="PreferenceSettings.html">preference setting</a> <code>WYSIWYG_EXCLUDE</code> can be set to make the plugin sensitive to what is in a topic, before allowing it to be edited. The comma separated list to fall back to text edit can include: <ul>
+<li> <code>html</code> - HTML tags (e.g. <code>&lt;div&gt;</code>, not including &lt;br&gt;), or 
+</li> <li> <code>macros</code> - simple macros (e.g. <code>%VAR%</code>) or 
+</li> <li> <code>calls</code> - macros with parameters e.g. <code>%MACRO{...}%</code>
+</li> <li> <code>pre</code> blocks (<code>&lt;pre&gt;</code>)
+</li> <li> HTML <code>comments</code> (<code>&lt;!--</code> ... <code>--&gt;</code>)
+</li> <li> <code>script</code> = inline HTML Script tags - <em>default</em>
+</li> <li> <code>style</code> = inline Css style tags - <em>default</em>
+</li> <li> <code>table</code> = inline html tables (=&lt;table ..&gt;.  TML tables are not excluded)
+</li></ul> 
+If the plugin detects an excluded construct in the topic, it will refuse to allow the edit and will redirect to the default editor.
+<h5 id="WYSIWYG_EDITABLE_CALLS_45_Exceptions_to_WYSIWYG_EXCLUDE">  WYSIWYG_EDITABLE_CALLS - Exceptions to WYSIWYG_EXCLUDE </h5>
+If you excluded <code>calls</code> in <code>WYSIWYG_EXCLUDE</code>, you can still define a subset of macros that do <strong>not</strong> block edits. this is done in the <strong>global</strong> <a href="PreferenceSettings.html">preference setting</a> <code>WYSIWYG_EDITABLE_CALLS</code>, which should be a list of macro names separated by vertical bars, with no spaces, e.g: <code>* Set WYSIWYG_EDITABLE_CALLS = COMMENT|CALENDAR|INCLUDE</code>
+<p></p>
+You should set <code>WYSIWYG_EXCLUDE</code> and <code>WYSIWYG_EDITABLE_CALLS</code> in <a href="../Main/SitePreferences.html">SitePreferences</a>, or in <a href="WebPreferences.html">WebPreferences</a> for each web.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS_45_Protect_specific_tags_originally_in_the_topic_text">  WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS - Protect specific tags originally in the topic text </h4>
+The <code>WYSIWYGPLUGIN_PROTECT_EXISTING_TAGS</code> preference tells the translator 
+that certain HTML tags which were originally in the topic text should <em>remain</em> as HTML tags;
+the translator will not try to convert them to TML.  This protects the tags
+themselves, and not the contents enclosed between the <code>&lt;tag&gt;</code> and <code>&lt;/tag&gt;</code>
+<p></p>
+The default setting for this preference is defined within the plugin.
+It corresponds to <code>div, span</code>.
+<p></p>
+This feature may be disabled by setting the preference to a single comma.
+This does <em>not</em> guarantee that HTML markup will be removed; the conversion
+of HTML tags to TML markup remains subject to the other controls provided
+by the WysiwygPlugin, including the <code>WYSIWYGPLUGIN_STICKYBITS</code> and
+<code>WYSIWYGPLUGIN_IGNOREATTRS</code> preferences,
+<code>&lt;sticky&gt;</code> blocks, <code>&lt;literal&gt;</code> blocks and the rules applied 
+to tables and lists.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS_45_Protect_specific_tag_blocks_originally_in_the_topic_text">  WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS - Protect specific tag blocks originally in the topic text </h4>
+The <code>WYSIWYGPLUGIN_PROTECT_TAG_BLOCKS</code> preference tells the translator
+that certain HTML tag blocks which were originally in the topic text should <em>remain</em> as HTML blocks;
+the translator will not try to convert them to TML.
+<p></p>
+The default setting for this preference is defined within the plugin.
+It corresponds to <code>script, style</code>.
+<p></p>
+As an example, individual html tables can be protected by surrounding them
+with =&lt;sticky&gt; .. &lt;/sticky&gt; block.  However,if you want to have all
+=&lt;table&gt; markup preserved as entered into topics by default, rather than subject to
+<a href="WYSIWYG.html">WYSIWYG</a> editing,  add <code>table</code> to this list, and =&lt;table&gt; markup will become
+automatically sticky.
+<p></p>
+This feature may be disabled by setting the preference to a single comma.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_STICKYBITS_45_Protect_tags_based_upon_their_arguments">  WYSIWYGPLUGIN_STICKYBITS - Protect tags based upon their arguments </h4>
+You can define the global preference <code>WYSIWYGPLUGIN_STICKYBITS</code> to stop the
+plugin from ever trying to convert specific HTML tags into
+TML when certain specific attributes are present on the tag. This is most
+useful when you have styling or alignment information in tags that must be
+preserved.
+<p></p>
+This <a href="PreferenceSettings.html">preference setting</a> is used to tell the translator which attributes, when present
+on a tag, make it "stick" i.e. block conversion back to TML. <blockquote>For example, setting it to
+<code>table=background,lang;tr=valign</code> will stop the translator from trying to
+convert any <code>table</code> tag that has <code>background</code> or <code>lang</code> attributes, and any
+<code>tr</code> tag that has a <code>valign</code> attribute back to Foswiki <code>| table | column |</code>
+markup (regardless of where that <code>table</code> tag comes from).</blockquote>
+<p></p>
+This setting is used only after the page has been processed by the editor.  If
+the editor does not support a particular tag or attribute and the editor corrupts the
+tag, this setting will not be helpful.  It is only used to prevent
+an HTML tag from being converted back to TML.
+<p></p>
+Format of the setting is <code>tag1=attrib,attrib;tag2=attrib</code>.  Attributes delimited by
+comma, and tags delimited by semicolon. <ul>
+<li> The left side of the equal sign is the tag. 
+</li> <li> The right side of the equal sign is a comma delimited list of attributes to be matched.  
+</li></ul> 
+If a matching tag is found, that matches any of the attributes listed,
+the tag will not be converted back to TML.
+You can use perl regular expressions to match tag and attribute names, so
+<code>.*=id,on.*</code> will ensure that any tag with an id or <code>on*</code> event handler is kept as
+HTML.
+<p></p>
+Note:  HTML has been gradually deprecating HTML attributes, replacing
+them with equivalent styles.  For example, the table, row and cell background
+color attribute: <code>bgcolor="#123456"</code> has been deprecated, replaced with <code>style="background-color: #123456;"</code>
+A limited subset of tags ( <code>table, th, tr, td</code> ) will match against both the
+attributes and the style components.  Styles have been added to the default
+setting.
+<p></p>
+The default setting for this preference are hard coded in the plugin.  If you
+wish to change the settings, the following list is the default setting coded
+in the plugin:
+<pre class="tml">
+   * Set WYSIWYGPLUGIN_STICKYBITS = 
+        (?!IMG).*=id,lang,title,dir,on.*;
+        A=accesskey,coords,shape,target;
+        BDO=dir;
+        BR=clear;
+        COL=char,charoff,span,valign,width;
+        COLGROUP=align,char,charoff,span,valign,width;
+        DIR=compact;
+        DIV=align,style;
+        DL=compact;
+        FONT=size,face;
+        H[0-9]=align;
+        HR=align,noshade,size,width;
+        LEGEND=accesskey,align;
+        LI=value;
+        OL=compact,start,type;
+        P=align;
+        PARAM=name,type,value,valuetype;
+        PRE=width;
+        Q=cite;
+        TABLE=align,bgcolor,.*?background-color:.*,frame,rules,summary,width;
+        TBODY=align,char,charoff,valign;
+        TD=abbr,align,axis,bgcolor,.*?background-color:.*,.*?border-color:.*,char,charoff,headers,height,nowrap,rowspan,scope,valign,width;
+        TFOOT=align,char,charoff,valign;
+        TH=abbr,align,axis,bgcolor,.*?background-color:.*,char,charoff,height,nowrap,rowspan,scope,valign,width,headers;
+        THEAD=align,char,charoff,valign;
+        TR=bgcolor,.*?background-color:.*,char,charoff,valign;
+        UL=compact,type
+
+</pre><!-- 
+<p></p>
+        (?!IMG).*=id,lang,title,dir,on.*;
+        A=accesskey,coords,shape,target;
+        BDO=dir;
+        BR=clear;
+        COL=char,charoff,span,valign,width;
+        COLGROUP=align,char,charoff,span,valign,width;
+        DIR=compact;
+        DIV=align,style;
+        DL=compact;
+        FONT=size,face;
+        H[0-9]=align;
+        HR=align,noshade,size,width;
+        LEGEND=accesskey,align;
+        LI=value;
+        OL=compact,start,type;
+        P=align;
+        PARAM=name,type,value,valuetype;
+        PRE=width;
+        Q=cite;
+        TABLE=align,bgcolor,.*?background-color:.*,frame,rules,summary,width;
+        TBODY=align,char,charoff,valign;
+        TD=abbr,align,axis,bgcolor,.*?background-color:.*,.*?border-color:.*,char,charoff,headers,height,nowrap,rowspan,scope,valign,width;
+        TFOOT=align,char,charoff,valign;
+        TH=abbr,align,axis,bgcolor,.*?background-color:.*,char,charoff,height,nowrap,rowspan,scope,valign,width,headers;
+        THEAD=align,char,charoff,valign;
+        TR=bgcolor,.*?background-color:.*,char,charoff,valign;
+        UL=compact,type
+<p></p>
+-->
+<p></p>
+If you edit using the plain-text editor, you can use the &lt;sticky&gt;..&lt;/sticky&gt; tags to delimit HTML (or TML) that you do <strong>not</strong> want to be <a href="WYSIWYG.html">WYSIWYG</a> edited.
+<p></p>
+<h4 id="WYSIWYGPLUGIN_IGNOREATTRS_45_Ignore_tag_attributes_when_deciding_whether_to_keep_a_tag_or_not_when_converting_HTML_to_TML._This_is_most_useful_when_you">  WYSIWYGPLUGIN_IGNOREATTRS - Ignore tag attributes when deciding whether to keep a tag or not when converting HTML to TML. This is most useful when you </h4>
+have specific styling that you want to make sure you strip off.
+<p></p>
+This preference takes the same format as <code>WYSIWYGPLUGIN_STICKYBITS</code>. It
+specifies tags and their attributes that are to be ignored when making the
+decision whether to keep the tag or not. For example, a <code>&lt;font face="Open Sans"&gt;</code> tag will normally be maintained in the TML. However setting
+<code>WYSIWYGPLUGIN_IGNOREATTRS</code> to <code>font=face</code> will result in it being removed.
+<p></p>
+By default <code>WYSIWYGPLUGIN_IGNOREATTRS</code> is empty. <code>WYSIWYGPLUGIN_STICKYBITS</code>
+takes precedence over this setting.
+<p></p>
+<p></p>
+<p></p>
+<strong>Implementors note</strong> if you are using your own before/after edit handlers, you can call <code>Foswiki::Plugins::WysiwygPlugin::isWysiwygEditable()</code> to check these controls.
+<p></p>
+<h2 id="Known_issues">  Known issues </h2>
+<p></p>
+<h3 id="Incompatible_with_34non_45standard_34_syntax">  Incompatible with "non-standard" syntax </h3>
+<a class="foswikiCurrentTopicLink" href="WysiwygPlugin.html">WysiwygPlugin</a> is incompatible with plugins that expand non-standard syntax e.g. <a title="'Extensions.MathModePlugin' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions.MathModePlugin"><noautolink>Foswiki:Extensions.MathModePlugin</noautolink></a> (<a href="WysiwygPlugin.html" class="foswikiCurrentTopicLink">WysiwygPlugin</a>)
+<p></p>
+Plugins that extend the syntax using macros, such as <code>%MYMACRO%</code>, should work fine.
+<p></p>
+<strong>Implementors note</strong> plugins that use XML-like tags may call <a href="PerlDoc.html">Foswiki::Plugins::WysiwygPlugin::addXMLTag()</a> from their <code>initPlugin</code> handlers to make <a href="WysiwygPlugin.html" class="foswikiCurrentTopicLink">WysiwygPlugin</a> protect the content between XML-like tags, just like it does for macros. 
+<p></p>
+<h3 id="Overlapping_styles">  Overlapping styles </h3>
+Because Foswiki uses a "best guess" approach to some formatting, it allows overlapping of tags in a way forbidden by HTML, and it is impossible to guarantee 100% that formatting in the original Foswiki document will still be there when the same document is loaded and then saved through the <a class="foswikiCurrentTopicLink" href="WysiwygPlugin.html">WysiwygPlugin</a>. The most obvious case of this is to do with styles. For example, the sentence
+<pre class="tml">
+&#42;bold &#95;bold-italic&#42; italic&#95;
+</pre>
+is legal in TML, but in HTML is represented by
+<pre class="tml">
+&#60;strong&#62;bold &#60;em&#62;bold-italic&#60;/em&#62;&#60;/strong&#62; &#60;em&#62;italic&#60;/em&#62;
+</pre>
+which gets translated back to TML as
+<pre class="tml">
+&#42;bold &#95;bold-italic&#95;&#42; &#95;italic&#95;
+</pre>
+which is correct by construction, but does not render correctly in Foswiki. This problem is unfortunately unavoidable due to the way TML works.
+<p></p>
+<h3 id="Rowspan_processing_needs_System.TablePlugin">  Rowspan processing needs <a href="TablePlugin.html">TablePlugin</a> </h3>
+<p></p>
+<a class="foswikiCurrentTopicLink" href="WysiwygPlugin.html">WysiwygPlugin</a> is able to convert tables with cells that span rows into TML. This requires syntax provided by the <a href="TablePlugin.html">TablePlugin</a> (that is, the <code>| ^ |</code> markup). <a href="WysiwygPlugin.html" class="foswikiCurrentTopicLink">WysiwygPlugin</a> will therefore only perform row-span related conversion if <a href="TablePlugin.html">TablePlugin</a> is enabled. <a href="TablePlugin.html">TablePlugin</a> is enabled by default and hence <a href="WysiwygPlugin.html" class="foswikiCurrentTopicLink">WysiwygPlugin</a> converts tables with cells that span rows between TML and HTML by default.
+<p></p>
+If <a href="TablePlugin.html">TablePlugin</a> is <strong>not</strong> enabled, then TML table cells containing only <code>^</code> are not converted to rowspans, and HTML tables containing rowspans are not converted to TML.
+<p></p>
+<h3 id="TinyMCEPlugin_integration">  <a href="TinyMCEPlugin.html">TinyMCEPlugin</a> integration </h3>
+<p></p> <ul>
+<li> <a title="'Item1396' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item1396"><noautolink>Foswikitask:Item1396</noautolink></a> - Anchors are not handled by <a href="WysiwygPlugin.html" class="foswikiCurrentTopicLink">WysiwygPlugin</a>
+</li> <li> <a title="'Item5955' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item5955"><noautolink>Foswikitask:Item5955</noautolink></a> - <a href="WysiwygPlugin.html" class="foswikiCurrentTopicLink">WysiwygPlugin</a> fails to roundtrip tables with align="center", border attributes, etc. <ul>
+<li> Description: Sometimes tables will fail to be converted to TML syntax (will stay as HTML) because there are attributes on the table (such as alignment or border decorations) that <a href="WysiwygPlugin.html" class="foswikiCurrentTopicLink">WysiwygPlugin</a> does not know how to preserve. If such attributes are necessary, please use <a href="VarTABLE.html">VarTABLE</a> instead.
+</li> <li> Work-around: <ul>
+<li> Click inside the offending table
+</li> <li> Click the table toolbar button (usually used to create a new table)
+</li> <li> With the exception of <code>Cols</code> and <code>Rows</code>, delete/reset all content from the fields on the 'General' and 'Advanced' tabs.
+</li> <li> Write a <a href="VarTABLE.html">VarTABLE</a> macro above the offending table that adds the desired attributes safely
+</li></ul> 
+</li></ul> 
+</li></ul> 
+<p></p>
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<p></p>
+This plugin is brought to you by a <img alt="WikiRing: Professional Wiki Innovation and Support" src="WysiwygPlugin.attachments/wikiringlogo20x20.png"> <strong>WikiRing Partner</strong> - working together to improve your wiki experience!
+<p></p>
+Many thanks to the following sponsors for supporting this work: <ul>
+<li> <a href="http://ilog.fr/">ILOG</a>
+</li> <li> <a href="http://www.carrier.com/">Carrier Corporation</a>
+</li> <li> <a href="http://twiki.net/">TWIKI.NET</a>
+</li></ul> 
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Copyright </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> &copy; ILOG 2005 <a href="http://www.ilog.fr/">http://www.ilog.fr</a> <br />                &copy; 2008-2018 Foswiki Contributors </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.38   (13 Jun 2018) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14731' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14731" class="interwikiLink"><noautolink>Foswikitask:Item14731</noautolink></a>: use JSON.pm to create proper json in attachments rest handler </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.36   (08 Dec 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14554' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14554"><noautolink>Foswikitask:Item14554</noautolink></a>: remove link to unused wikiring.com domain </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.35   (04 Apr 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14324' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14324"><noautolink>Foswikitask:Item14324</noautolink></a>: Unescaped left brace - Perl 5.25.10. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.34   (26 Nov 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.1.3 <a href="https://foswiki.org/Tasks/Item14078" class="interwikiLink" title="'Item14078' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14078</noautolink></a>: Wysiwyg merges horizontal rules (---) into a preceeding list and looses the TML markup.<br />                          <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14253" title="'Item14253' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14253</noautolink></a>: <a class="foswikiCurrentTopicLink" href="WysiwygPlugin.html">WysiwygPlugin</a> inserts extra spaces in front of square bracket links. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.33   (08 Apr 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.1.1 <a title="'Item13960' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13960" class="interwikiLink"><noautolink>Foswikitask:Item13960</noautolink></a>: Editor fails to preserve alignment of cells containing "0".<br/>                          <a href="https://foswiki.org/Tasks/Item13957" class="interwikiLink" title="'Item13957' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13957</noautolink></a>: Fix rendering of empty "indent" lines<br/>                          <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13958" title="'Item13958' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13958</noautolink></a>: Don't remove empty lines between two indent blocks. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.32   (10 Dec 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.1  <a title="'Item13405' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13405" class="interwikiLink"><noautolink>Foswikitask:Item13405</noautolink></a>: NFC normalize strings for better OSx compatibility. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.31   (14 Jun 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0  <a href="https://foswiki.org/Tasks/Item13405" class="interwikiLink" title="'Item13405' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13405</noautolink></a>: <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13378" title="'Item13378' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13378</noautolink></a>: utf-8 support<br />                          <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13423" title="'Item13423' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13423</noautolink></a>: Perl 5.22 deprecations<br />                          <a title="'Item13390' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13390" class="interwikiLink"><noautolink>Foswikitask:Item13390</noautolink></a>: Don't link escaped square bracket links<br />                          <a title="'Item13323' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13323" class="interwikiLink"><noautolink>Foswikitask:Item13323</noautolink></a>: Update scripts to use /usr/bin/env perl<br />                          <a href="https://foswiki.org/Tasks/Item13369" class="interwikiLink" title="'Item13369' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13369</noautolink></a>: <a title="'Item13371' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13371"><noautolink>Foswikitask:Item13371</noautolink></a>: <a title="'Item13372' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13372"><noautolink>Foswikitask:Item13372</noautolink></a>: Character encoding issues<br />                          <a title="'Item13327' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13327"><noautolink>Foswikitask:Item13327</noautolink></a>: Character encoding issues<br />                          <a title="'Item13345' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13345" class="interwikiLink"><noautolink>Foswikitask:Item13345</noautolink></a>: CGI deprecations<br />                          <a href="https://foswiki.org/Tasks/Item13291" class="interwikiLink" title="'Item13291' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13291</noautolink></a>: URL anchor / query param order was reversed<br />                          <a href="https://foswiki.org/Tasks/Item13178" class="interwikiLink" title="'Item13178' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13178</noautolink></a>: Macros inside html tags were permanently expanded<br />                          <a href="https://foswiki.org/Tasks/Item13287" class="interwikiLink" title="'Item13287' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13287</noautolink></a>: Regular expression enhancements<br />                          <a title="'Item13287' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13287" class="interwikiLink"><noautolink>Foswikitask:Item13287</noautolink></a>: Emit single quotes in HTML,<br />                          <a title="'Item10107' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item10107" class="interwikiLink"><noautolink>Foswikitask:Item10107</noautolink></a>: Don't protect macros inside tags </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.3    (21 Jan 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Minor release with many improvements </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.2.3  (16 May 2013) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12444" title="'Item12444' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12444</noautolink></a>: Fix problem with entities being expanded to unrepresentable characters </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.2.2  (21 Dec 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12278" title="'Item12278' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12278</noautolink></a>: Changing a wikiword should not require visiting the <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="TinyMCE.html">TinyMCE</a> link dialog. <strong>Requires changes to TINYMCEPLUGIN_INIT settings</strong> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.2.1  (16 Dec 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12297' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12297" class="interwikiLink"><noautolink>Foswikitask:Item12297</noautolink></a>: Minor perlcritic coding change </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.2.0  (20 Jun 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item8032" title="'Item8032' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8032</noautolink></a>: enable <a title="'Extensions.WysiwygFormfieldsPlugin' on foswiki.org" href="https://foswiki.org/Extensions.WysiwygFormfieldsPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions.WysiwygFormfieldsPlugin</noautolink></a>. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.14 (28 Nov 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item11912' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11912" class="interwikiLink"><noautolink>Foswikitask:Item11912</noautolink></a>: Clean up hex markers left behind by <a href="TinyMCEPlugin.html">TinyMCEPlugin</a> <br />                          <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11267" title="'Item11267' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11267</noautolink></a>: Convert to perl version strings<br />                          <a title="'Item12043' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12043"><noautolink>Foswikitask:Item12043</noautolink></a>: Preserve Square bracket links </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 1.1.13 (5 Jun 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11915" title="'Item11915' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11915</noautolink></a>: Backslash line continuation incorrectly requires a space dlimitier. <br />                         <a title="'Item11925' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11925"><noautolink>Foswikitask:Item11925</noautolink></a>: Extraneous hex 03 characters replace % in nested tags </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.12 (30 May 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item11906' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11906"><noautolink>Foswikitask:Item11906</noautolink></a>: Fix for Item10089 caused link corruption in certain cases. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.11 (22 May 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11890" class="interwikiLink" title="'Item11890' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11890</noautolink></a>: Compile errors with perl 5.8.8 due to use of new regular expression features. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.10 (21 May 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item11872' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11872" class="interwikiLink"><noautolink>Foswikitask:Item11872</noautolink></a>: Better fix for &lt;div tags, also cover &lt;blockquote tags. <br />                          <a href="https://foswiki.org/Tasks/Item11884" class="interwikiLink" title="'Item11884' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11884</noautolink></a>: Unable to position cursor above initial verbatim, pre and blockquote blocks <br />                          <a title="'Item2516' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item2516" class="interwikiLink"><noautolink>Foswikitask:Item2516</noautolink></a>: Syntax for indent was added earlier, but missed from release notes. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.9 (test release) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11872" class="interwikiLink" title="'Item11872' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11872</noautolink></a>: &lt;div&gt; tags are wrapped in &lt;p&gt; tags. TMCE auto closes them. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.8 (test release) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11862" class="interwikiLink" title="'Item11862' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11862</noautolink></a>: Fix for Item11814 breaks %ATTACHURL macro in link. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.7 (test release) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11859" class="interwikiLink" title="'Item11859' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11859</noautolink></a>: Wysiwyg removes &lt;br /&gt; tags at end of lines. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.6 (test release) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item1396' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1396" class="interwikiLink"><noautolink>Foswikitask:Item1396</noautolink></a>: Process TML links as HTML links <br />                         <a href="https://foswiki.org/Tasks/Item9305" class="interwikiLink" title="'Item9305' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9305</noautolink></a>: TMCE should honor NOAUTOLINK preference and noautolink blocks. <br />                         <a href="https://foswiki.org/Tasks/Item10089" class="interwikiLink" title="'Item10089' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10089</noautolink></a>: Allow TMCE to recognize TML links as HTML links. <br />                         <a title="'Item11592' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11592" class="interwikiLink"><noautolink>Foswikitask:Item11592</noautolink></a>: Protect Glue format markup in macros. <br />                         <a title="'Item11722' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11722"><noautolink>Foswikitask:Item11722</noautolink></a>: Don't merge verbatim blocks if they have different classes. <br />                         <a title="'Item11784' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11784" class="interwikiLink"><noautolink>Foswikitask:Item11784</noautolink></a>: Handle colors implemented using CSS classes. <br />                         <a href="https://foswiki.org/Tasks/Item11814" class="interwikiLink" title="'Item11814' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11814</noautolink></a>: Preserve URI Encoding in links.  <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11818" title="'Item11818' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11818</noautolink></a>: WikiWords escaped with ! are show as linking. <br />                         <a title="'Item11819' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11819"><noautolink>Foswikitask:Item11819</noautolink></a>: TMCE is failing to protect newlines. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.5 (06 Apr 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11603" class="interwikiLink" title="'Item11603' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11603</noautolink></a>: protect inline script and style tags from wysiwyg. <br />                         <a title="'Item11440' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11440"><noautolink>Foswikitask:Item11440</noautolink></a>: protect tags inside pre.<br />                         <a href="https://foswiki.org/Tasks/Item9259" class="interwikiLink" title="'Item9259' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9259</noautolink></a>: Protect TML tables from corrupting embedded html markup.<br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10125" title="'Item10125' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10125</noautolink></a>: Prevent #Anchors from being wrapped to the previous line.<br />                         <a title="'Item11312' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11312"><noautolink>Foswikitask:Item11312</noautolink></a>: Prevent corruption of HTML tables containin blank lines. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.4 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11378" class="interwikiLink" title="'Item11378' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11378</noautolink></a>: support pass-through of DEL and INS tags </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.3 (08 Nov 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item2174" class="interwikiLink" title="'Item2174' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2174</noautolink></a>: Fix <a class="foswikiCurrentTopicLink" href="WysiwygPlugin.html">WysiwygPlugin</a> eating newlines inside <code>%MACRO{...}</code> expressions (Michael Tempest) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.2 (11 Apr 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.3. Only a minor change related to how the plugin is being upgraded </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 1.1.1 (19 Jan 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item10271' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10271"><noautolink>Foswikitask:Item10271</noautolink></a>: Switch to x.y.z release numbering <br />                          <a title="'Item10048' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10048"><noautolink>Foswikitask:Item10048</noautolink></a>: Try to use Macros in the src URLs of images with titles <br />                          <a class="interwikiLink" href="https://foswiki.org/Tasks/Item9973" title="'Item9973' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9973</noautolink></a>: Fix attachments REST handler to deal with topics named with international characters <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1391" title="'Item1391' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1391</noautolink></a>: Protect div and span tags with <code>style</code> attributes </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Jun 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item761' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item761" class="interwikiLink"><noautolink>Foswikitask:Item761</noautolink></a>, <a href="https://foswiki.org/Tasks/Item2311" class="interwikiLink" title="'Item2311' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2311</noautolink></a>, <a class="interwikiLink" href="https://foswiki.org/Tasks/Item5990" title="'Item5990' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item5990</noautolink></a>, <a title="'Item9170' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9170" class="interwikiLink"><noautolink>Foswikitask:Item9170</noautolink></a>: Fix conversion between character encodings. Any characters may be entered in the <a href="WYSIWYG.html">WYSIWYG</a> editor, regardless of the site's encoding. Where possible, they are converted to the site encoding, otherwise they become entities. <br />                 <a title="'Item2254' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item2254"><noautolink>Foswikitask:Item2254</noautolink></a>: Fix cursor-movement problems on Mozilla browsers (introduced by Foswikitask:Item1798)<br />                 <a href="https://foswiki.org/Tasks/Item2605" class="interwikiLink" title="'Item2605' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2605</noautolink></a>: Can now place cursor into empty list-item<br />                 <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1417" title="'Item1417' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1417</noautolink></a>: Can now move cursor above a table at start of a topic and below a table at the end of the topic <br />                 <a href="https://foswiki.org/Tasks/Item9148" class="interwikiLink" title="'Item9148' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9148</noautolink></a>: Protect &lt;br /&gt; tags at the end of a protected line (e.g. in a macro parameter)<br />                 <a title="'Item6068' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item6068"><noautolink>Foswikitask:Item6068</noautolink></a>: Protect newlines within a &lt;pre&gt; block<br />                 <a href="https://foswiki.org/Tasks/Item2259" class="interwikiLink" title="'Item2259' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2259</noautolink></a>: Keep the content of &lt;big&gt; and &lt;var&gt; tags <br />                 <a title="'Item8289' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item8289" class="interwikiLink"><noautolink>Foswikitask:Item8289</noautolink></a>: Fix stand-alone (command-line) HTML-to-TML conversion </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 May 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item5221" class="interwikiLink" title="'Item5221' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item5221</noautolink></a>: Use Wysiwyg transition to remove usually unwanted paragraph html tags in table cells, which are otherwise impossible to remove in TinyMCE up to at least 3.3.6<br />                 <a class="interwikiLink" href="https://foswiki.org/Tasks/Item8274" title="'Item8274' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8274</noautolink></a>: Fix problem where Wysiwyg transition merges two consecutive lists (a result of work on <a class="interwikiLink" href="https://foswiki.org/Tasks/Item2254" title="'Item2254' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2254</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Jan 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item2337' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item2337" class="interwikiLink"><noautolink>Foswikitask:Item2337</noautolink></a>: ATTACHFILESIZELIMIT check fails confusingly if value is "0 " </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Dec 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item2511" class="interwikiLink" title="'Item2511' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2511</noautolink></a>: move code out of the plugin module to accelerate loading </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Nov 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item2369" class="interwikiLink" title="'Item2369' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2369</noautolink></a>: Convert tables with cells that span rows </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 22 Oct 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item2183" title="'Item2183' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2183</noautolink></a>: Protect div style= by default </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Sep 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item1980' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1980" class="interwikiLink"><noautolink>Foswikitask:Item1980</noautolink></a>: Prevent dataloss when saving a topic in Wysiwyg where there are a pair of sticky tags inside verbatim tags </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Jun 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item1770" class="interwikiLink" title="'Item1770' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1770</noautolink></a>: Protect XML tags registered by plugins, and not just the content between them (Michael Tempest) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Jun 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item1013" class="interwikiLink" title="'Item1013' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1013</noautolink></a>: Correct dependency on HTML::Parser (Will Norris) <a title="'Item1397' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1397" class="interwikiLink"><noautolink>Foswikitask:Item1397</noautolink></a>: <a title="'Item1535' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item1535"><noautolink>Foswikitask:Item1535</noautolink></a>: <a title="'Item1666' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item1666"><noautolink>Foswikitask:Item1666</noautolink></a>: Correct processing of colour and typewriter-text in several situations, include application to bold text and table cells (Michael Tempest) <a title="'Item1667' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1667" class="interwikiLink"><noautolink>Foswikitask:Item1667</noautolink></a>: Remove unwanted extra &lt;sticky&gt; tags (Michael Tempest) <a title="'Item1674' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1674" class="interwikiLink"><noautolink>Foswikitask:Item1674</noautolink></a>: Let plugins register XML tags that should be protected like macros </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Apr 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1394" title="'Item1394' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1394</noautolink></a>: fixed colour handling </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Dec 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item6041' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item6041" class="interwikiLink"><noautolink>Foswikitask:Item6041</noautolink></a>: fixed empty bullet list problem. Foswiki version </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 22 Oct 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Fixed <a title="'Item5961' on the TWiki issue tracking site" class="interwikiLink" href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item5961"><noautolink>TWikibug:Item5961</noautolink></a> (emphasis), <a class="interwikiLink" href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item6089" title="'Item6089' on the TWiki issue tracking site"><noautolink>TWikibug:Item6089</noautolink></a> (backslash in verbatim) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 07 Aug 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Fixed <a title="'Item5707' on the TWiki issue tracking site" class="interwikiLink" href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item5707"><noautolink>TWikibug:Item5707</noautolink></a> (mod_perl) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" colspan="2"> See Subversion logs for earlier versions </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <table border="1" class="foswikiTable"><tr><th>Name</th><th>Version</th><th>Description</th></tr><tr><td align="left">JSON</td><td align="left">&gt;=0</td><td align="left">Required</td></tr><tr><td align="left">HTML::Parser</td><td align="left">&gt;=3.28</td><td align="left">Required for <a href="WYSIWYG.html">WYSIWYG</a> editing.</td></tr><tr><td align="left">HTML::Entities</td><td align="left">&gt;=1.25</td><td align="left">Required for <a href="WYSIWYG.html">WYSIWYG</a> editing.</td></tr><tr><td align="left">Encode</td><td align="left">&gt;=2.01</td><td align="left">Required for <a href="WYSIWYG.html">WYSIWYG</a> editing.</td></tr></table> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<!-- Do <em>not</em> attempt to edit this topic; it is auto-generated. Please add comments/questions/remarks to the Dev topic instead. -->
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

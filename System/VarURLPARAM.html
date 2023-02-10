@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarURLPARAM &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/VarURLPARAM/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE System/VarURLPARAM/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit VarURLPARAM" href="VarURLPARAM.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="VarURLPARAM" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarURLPARAM",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="URLPARAM_45_45_get_URL_or_HTTP_POST_parameter_value">  URLPARAM -- get URL or HTTP POST parameter value </h1>
+Returns the value of the named parameter in the URL or HTTP POST request.
+<h2 id="Parameters">  Parameters </h2>
+             <table class="foswikiTable" id="tableVarURLPARAM1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter: </th>
+			<th class="foswikiTableCol1"> Description: </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default: </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"name"</code> </td>
+			<td class="foswikiTableCol1"> The name of a URL parameter </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> required </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>default</code> </td>
+			<td class="foswikiTableCol1"> Default value, used if the parameter is not present </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>""</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>newline</code> </td>
+			<td class="foswikiTableCol1"> Convert newlines in textarea to other delimiters </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>encode</code> </td>
+			<td class="foswikiTableCol1"> Control how special characters are encoded <br /> <code>"off"</code> - No encoding. Avoid using this when possible. See the security warning below. <br />                  <code>"entity"</code> - Encode special characters into HTML entities. See <a href="VarENCODE.html">ENCODE</a> for more details. <br />                   <code>"safe"</code> - Encode characters <code>'"&lt;&gt;%</code> into HTML entities. <br />                  <code>"url"</code> - Encode special characters for URL parameter use, like a double quote into <code>%22</code> <br />                  <code>"quote"</code> - Escape double quotes with backslashes (<code>\"</code>), does not change other characters; required when feeding URL parameters into other macros.<br/>                  You can combine several encodings together, and they will be applied in the order you specify e.g. <code>encode="safe, quote"</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>safe</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>multiple</code> </td>
+			<td class="foswikiTableCol1"> If set, gets all selected elements of a <code>&lt;select multiple="multiple"&gt;</code> tag. Can be set to a format string, with <code>$item</code> indicating the element, e.g. <code>multiple="Option: $item"</code> (also supports the standard <a href="FormatTokens.html">format tokens</a>) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> first element </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>separator</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Separator between multiple selections. Only relevant if multiple is specified </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>$n</code> (new line) </td>
+		</tr>
+	</tbody>     </table>
+<h2 id="Examples">  Examples </h2>
+<code>%URLPARAM{"skin"}%</code> returns <code>print</code> for a <code>.../view/System/VarURLPARAM?skin=print</code> URL
+<p></p>
+<div class="foswikiHelp">
+<img src="DocumentGraphics.attachments/help.png" alt="HELP" height="16" title="HELP" width="16"> URL parameters passed into HTML form fields must be <a href="VarENCODE.html">entity encoded</a>.
+<p></p>
+<img alt="HELP" height="16" src="DocumentGraphics.attachments/help.png" width="16" title="HELP"> Double quotes in URL parameters must be escaped when passed into other macros.<br /> Example: <code>%SEARCH{ "%URLPARAM{ "search" encode="safe, quote" }%" noheader="on" }%</code>
+<p></p>
+<img title="HELP" width="16" src="DocumentGraphics.attachments/help.png" alt="HELP" height="16"> Reverse the encoding when used in SEARCH.<br /> Example:  <code>%SEARCH{ "%URLPARAM{ "search" encode="safe, quote"}%" decode="safe" noheader="on" }%</code>.  (It is not necessary to reverse quote encoding, otherwise <code>decode=</code> options should be specified in the reverse order from the <code>encode=</code> options.)
+<p></p>
+<img alt="HELP" height="16" src="DocumentGraphics.attachments/help.png" width="16" title="HELP"> When used in a template topic, this macro will be expanded when the template is used to create a new topic. See <a href="TemplateTopics.html">TemplateTopics#TemplateTopicsVars</a> for details.
+<p></p>
+<img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> Watch out for internal parameters, such as <code>rev</code>, <code>skin</code>, <code>template</code>, <code>topic</code>, <code>web</code>; they have a special meaning in Foswiki. Common parameters and view script specific parameters are documented at <a href="CommandAndCGIScripts.html">CommandAndCGIScripts</a>.
+<p></p>
+<img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> If you have <code>%URLPARAM{</code> in the value of a URL parameter, it will be modified to <code>%&lt;nop&gt;URLPARAM{</code>. This is to prevent an infinite loop during expansion.
+<p></p>
+<img src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!" title="ALERT!" width="16"> Security warning! Using URLPARAM can easily be misused for cross-site scripting unless specific characters are entity encoded. By default URLPARAM encodes the characters <code>'"&lt;&gt;%</code> into HTML entities (same as encode="safe") which is relatively safe. The safest is to use encode="entity". When passing URLPARAM inside another macro always use double quotes ("") combined with using URLPARAM with encode="quote". For maximum security against cross-site scripting you are adviced to install the <a title="'Extensions.SafeWikiPlugin' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions.SafeWikiPlugin"><noautolink>Foswiki:Extensions.SafeWikiPlugin</noautolink></a>.
+</div>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarENCODE.html">ENCODE</a>, <a href="VarSEARCH.html">SEARCH</a>, <a href="FormattedSearch.html">FormattedSearch</a>, <a href="VarQUERYSTRING.html">QUERYSTRING</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

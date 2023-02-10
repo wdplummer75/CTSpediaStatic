@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FormatTokens &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/FormatTokens/favicon.ico"> <link href="../MISSING RESOURCE System/FormatTokens/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="FormatTokens.html" rel="alternate" title="edit FormatTokens" type="application/x-wiki">
+<meta name="description" content="FormatTokens" />
+<link type="text/css" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" rel="stylesheet" media="all" class="head JQUERYPLUGIN::BUTTON"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::BUTTON" src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "FormatTokens",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h2 id="Formatting_Tokens">  Formatting Tokens </h2>
+<p></p>
+Foswiki defines some standard special tokens that can be used to replace characters in some parameters - notably those to <a href="FormattedSearch.html">FormattedSearch</a> and <a href="IfStatements.html">IfStatements</a> - to defer evaluation of the parameter until later. These special tokens are often called "escapes", because they allow the character to "escape" from its normal meaning. 
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$n</code> or <code>$n()</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> New line. Use <code>$n()</code> if followed by alphanumeric character, e.g. write <code>Foo$n()Bar</code> instead of <code>Foo$nBar</code> <p class="foswikiHelp"><img src="DocumentGraphics.attachments/tip.png" height="16" alt="TIP" title="TIP" width="16"> Most macros accept parameter strings which are split over multiple lines. This is usually more readable than using <code>$n</code> tokens. If you are familiar with <a href="VarSTARTSECTION.html">sectional includes</a>, you might also consider <a href="FormattedSearch.html">nested sectional includes</a> to hold the newline content outside of the parameter string entirely.</p>  <p class="foswikiHelp"><img src="DocumentGraphics.attachments/tip.png" alt="TIP" height="16" title="TIP" width="16"> Note that newline is <em>not</em> a line break.  The browser will wrap the lines together. If you require a line break, displaying the results on two lines, use <code>%BR%</code>.  Or use two consecutive newlines to create a TML "Paragraph".</p> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$nop</code> or <code>$nop()</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Is a "no operation". This token gets removed; useful for nested search </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$quot</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Double quote (<code>"</code>) (\" also works) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$percent</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Percent sign (<code>%</code>) (<code>$percnt</code> also works) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$dollar</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Dollar sign (<code>$</code>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$lt</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Less than sign (<code>&lt;</code>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$gt</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Greater than sign (<code>&gt;</code>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$amp</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Ampersand (<code>&amp;</code>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>$comma</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Comma (<code>,</code>) </td>
+		</tr>
+	</tbody></table>
+<p></p>
+If you ever find yourself needing to escape an escape, you can use <code>$dollar</code> to escape the leading dollar, thus: <code>$dollarpercent</code>.
+<p></p>
+<h3 id="Interactive_Example">  Interactive Example </h3>
+Click the buttons below to escape or unescape the sample text.
+<p></p>
+<form>
+<textarea rows="6" cols="120" id="tmlForEscape">
+$ & < > % , "
+</textarea>
+<span class='foswikiClear'></span>
+<a onclick="$('#tmlForEscape').val(foswiki.String.escapeTML( $('#tmlForEscape').val() )); return false" href=".." class="jqButton "><span class='jqButtonText'>Escape</span></a>
+<a onclick="$('#tmlForEscape').val(foswiki.String.unescapeTML( $('#tmlForEscape').val() )); return false" href=".." class="jqButton "><span class='jqButtonText'>Unescape</span></a>
+<span class='foswikiClear'></span>
+</form>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

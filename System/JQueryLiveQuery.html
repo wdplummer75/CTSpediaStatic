@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryLiveQuery &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQueryLiveQuery/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryLiveQuery/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" rel="alternate" href="JQueryLiveQuery.html" title="edit JQueryLiveQuery">
+<meta name="description" content="JQueryLiveQuery" />
+<link type="text/css" media="all" class="head JQUERYPLUGIN::ANIMATE" rel="stylesheet" href="JQueryPlugin.attachments/plugins/animate/animate.css?version=3.7.0"><!--JQUERYPLUGIN::ANIMATE-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+ <litreral>
+<script>
+
+jQuery(function($) {
+  $(".trigger").livequery(
+    function() {
+      var $this = $(this);
+
+      $this.css({
+        color:'#fff',
+        background:'#b20000',
+        display:'inline-block',
+        padding:'0.5em'
+      });
+
+      //alert("there's a new trigger");
+    },
+    function() {
+      //alert("there's a trigger going offline");
+    }
+  );
+
+  // adds the refresh behavior
+  $(".refresh").click(function() {
+    $("#loader").trigger("refresh");
+    return false;
+  });
+});
+
+
+</script>
+ <!--7420: requires= missing ids: JQUERYPLUGIN::LIVEQUERY-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/animate/animate.js?version=3.7.0" class="script JQUERYPLUGIN::ANIMATE"></script><!--JQUERYPLUGIN::ANIMATE-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryLiveQuery"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::LOADER" src="JQueryPlugin.attachments/plugins/loader/jquery.loader.js?version=4.60"></script><!--JQUERYPLUGIN::LOADER-->
+</head>
+<body>
+<h1 id="JQueryLiveQuery">  <a class="foswikiCurrentTopicLink" href="JQueryLiveQuery.html">JQueryLiveQuery</a> </h1>
+<p></p>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#How_to_use_it"> How to use it </a>
+</li> <li> <a href="#API"> API </a> <ul>
+<li> <a href="#A_61livequery_61_signatures"> livequery signatures </a>
+</li> <li> <a href="#A_61expire_61_signatures"> expire signatures </a>
+</li></ul> 
+</li> <li> <a href="#For_Plugin_Developers"> For Plugin Developers </a>
+</li> <li> <a href="#Example"> Example </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="How_to_use_it">  How to use it </h2>
+<p></p>
+<p></p>
+Live Query utilizes the power of jQuery selectors by firing callbacks for
+matched elements auto-magically, even after the page has been loaded and the
+DOM updated.
+<p></p>
+<p></p>
+Live Query fires a function (callback) when it matches a new element and
+another function (callback) for when an element is no longer matched. This
+provides ultimate flexibility and untold use-cases. For example the following
+code uses a function based Live Query to implement the jQuery hover helper
+method and remove it when the element is no longer matched.
+<p></p>
+<pre class="js">
+&#36;(&#39;li&#39;) 
+    .livequery(function(){ 
+    // use the helper function hover to bind a mouseover and mouseout event 
+        &#36;(this) 
+            .hover(function() { 
+                &#36;(this).addClass(&#39;hover&#39;); 
+            }, function() { 
+                &#36;(this).removeClass(&#39;hover&#39;); 
+            }); 
+    }, function() { 
+        // unbind the mouseover and mouseout events 
+        &#36;(this) 
+            .unbind(&#39;mouseover&#39;) 
+            .unbind(&#39;mouseout&#39;); 
+    }); 
+</pre>
+<p></p>
+<h2 id="API">  API </h2>
+<p></p>
+<h3 id="A_61livequery_61_signatures">  <code>livequery</code> signatures </h3>
+<p></p>
+The <code>livequery</code> method has 2 different signatures or ways to call it.
+<p></p>
+Pass one or two functions to <code>livequery</code>. Doing this, <code>livequery</code> will call the
+first passed function when an element is newly matched and will call the second
+passed function when an element is removed or no longer matched. The second
+function is optional. The <code>this</code> or context of the first function will be the
+newly matched element. For the second function it will be the element that is
+no longer matched.
+<p></p>
+<pre class="js">
+// matchedFn: the function to execute when a new element is matched
+&#36;(selector).livequery( matchedFn );
+
+// matchedFn: the function to execute when a new element is matched
+// unmatchedFn: the function to execute when an element is no longer matched
+&#36;(selector).livequery( matchedFn, unmatchFn );
+</pre>
+<p></p>
+<h3 id="A_61expire_61_signatures">  <code>expire</code> signatures </h3>
+<p></p>
+The <code>expire</code> method has 3 different signatures or ways to call it.
+<p></p>
+The first way will stop/expire all live queries associated with the selector.
+<p></p>
+<pre class="js">
+&#36;(selector).expire();
+</pre>
+<p></p>
+The second way will stop/expire all live queries associated with the selector and matchedFn.
+<p></p>
+<pre class="js">
+// matchedFn: the function to execute when a new element is matched
+&#36;(selector).expire( matchedFn );
+</pre>
+<p></p>
+The third way will stop/expire all live queries associated with the selector, matchedFn, and unmatchedFn.
+<p></p>
+<pre class="js">
+// matchedFn: the function to execute when a new element is matched
+// unmatchedFn: the function to execute when an element is no longer matched
+&#36;(selector).expire( matchedFn, unmatchFn );
+</pre>
+<p></p>
+<h2 id="For_Plugin_Developers">  For Plugin Developers </h2>
+<p></p>
+If your plugin modifies the DOM without using the built-in DOM Modification methods (append, addClass, etc), you can register your plugin with Live Query like this.
+<p></p>
+<pre class="js">
+if (jQuery.livequery) 
+    jQuery.livequery.registerPlugin(&#34;pluginMethodName&#34;); 
+</pre>
+<p></p>
+You can register several plugin methods at once by just passing them as additional arguments to the registerPlugin method.
+<p></p>
+<pre class="js">
+if (jQuery.livequery) 
+    jQuery.livequery.registerPlugin(&#34;method1&#34;, &#34;method2&#34;, &#34;method3&#34;); 
+</pre>
+<p></p>
+<h2 id="Example">  Example </h2>
+<p></p>
+<div class='foswikiAlert'>No such plugin livequery</div>
+<p></p>
+This is the <code>livequery</code> code to prepare the page to process any dom element of class <code>trigger</code> when no matter when it appears.
+<p></p>
+<pre class="js">
+&#37;STARTSECTION{&#34;javascript&#34;}&#37; &#60;litreral&#62;
+&#60;script&#62;
+
+jQuery(function(&#36;) {
+  &#36;(&#34;.trigger&#34;).livequery(
+    function() {
+      var &#36;this &#61; &#36;(this);
+
+      &#36;this.css({
+        color:&#39;#fff&#39;,
+        background:&#39;#b20000&#39;,
+        display:&#39;inline-block&#39;,
+        padding:&#39;0.5em&#39;
+      });
+
+      //alert(&#34;there&#39;s a new trigger&#34;);
+    },
+    function() {
+      //alert(&#34;there&#39;s a trigger going offline&#34;);
+    }
+  );
+
+  // adds the refresh behavior
+  &#36;(&#34;.refresh&#34;).click(function() {
+    &#36;(&#34;#loader&#34;).trigger(&#34;refresh&#34;);
+    return false;
+  });
+});
+
+
+&#60;/script&#62;
+&#60;/literal&#62; &#37;ENDSECTION{&#34;javascript&#34;}&#37;
+</pre>
+<p></p>
+<p></p>
+<p></p>
+This is the content to be loaded asynchronously. It contains a div element with a <code>trigger</code> class. This div will be 
+processed by an event handler registered using <code>livequery</code>.
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;loadme&#34;}&#37; &#60;div class&#61;&#34;trigger&#34;&#62;hello world&#60;/div&#62; &#37;ENDSECTION{&#34;loadme&#34;}&#37;
+</pre>
+<p></p>
+This is a <a href="JQueryLoader.html">JQueryLoader</a> that will load the content of the <code>loadme</code> section below one with a delay of two second.
+<p></p>
+<div id="loader" class="jqLoader" data-section="loadme" data-delay="2000">
+<span class='foswikiIcon'><img width="16" src="DocumentGraphics.attachments/processing.gif" alt="processing" height="16"></span>
+</div>
+<p></p>
+Click <a class="refresh" href="..">refresh</a> to do it again.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

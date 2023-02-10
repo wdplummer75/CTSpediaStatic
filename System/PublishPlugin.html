@@ -1,0 +1,865 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PublishPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/PublishPlugin/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/PublishPlugin/favicon.ico">
+<link type="application/x-wiki" rel="alternate" href="PublishPlugin.html" title="edit PublishPlugin">
+<meta name="description" content="PublishPlugin" />
+<style class='head 6096' type="text/css" media="all">
+.foswikiPageForm table th, .foswikiPageForm table td {
+  vertical-align:top;
+  border-bottom:1px solid #ddd;
+  padding:.5em;
+}
+table.publishForm {
+  width:100%;
+}
+table.publishForm th {
+  background:#2989bb;
+  color:#fff;
+}
+table.publishForm th, table.publishForm td {
+  padding:0.4em 1em;
+  text-align:left;
+}
+table.publishForm th {
+  border-color:#2989bb;
+}
+table.publishForm td {
+  border-color:#dfdfdf;
+}
+table.publishForm .nameCol {
+  background:#f1f1f1;
+}
+table.publishForm .inputCol {
+  background:#f7f9f0;
+}
+table.publishForm .infoCol {
+  background:#f1f1f1;
+}
+table.publishForm .paramCol {
+  background:#f7f9f0;
+}
+</style><!--6096-->
+<link type="text/css" href="JQueryPlugin.attachments/plugins/tabpane/jquery.tabpane.css?version=2.10" rel="stylesheet" media="all" class="head JQUERYPLUGIN::TABPANE"><!--JQUERYPLUGIN::TABPANE-->
+<link media="all" rel="stylesheet" class="head JQUERYPLUGIN::TWISTY" href="TwistyPlugin.attachments/twisty.css?version=1.6.0" type="text/css"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tablePublishPlugin2 {width:100%}
+body .foswikiTable#tablePublishPlugin2 td.foswikiTableCol0 {width:10em}
+body .foswikiTable#tablePublishPlugin2 th.foswikiTableCol0 {width:10em}
+body .foswikiTable#tablePublishPlugin3 td {vertical-align:middle; vertical-align:top}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol0 {text-align:left}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol1 {text-align:left}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol2 {text-align:left}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol3 {text-align:right}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol4 {text-align:left}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol5 {text-align:left}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol6 {text-align:left}
+body .foswikiTable#tablePublishPlugin3 td.foswikiTableCol7 {text-align:left}
+body .foswikiTable#tablePublishPlugin3 th {vertical-align:middle; background-color:#ffffff; color:#0066cc; text-align:left}
+body .foswikiTable#tablePublishPlugin3 th a:link {color:#0066cc}
+body .foswikiTable#tablePublishPlugin3 th a:visited {color:#0066cc}
+body .foswikiTable#tablePublishPlugin3 th a:hover {color:#0066cc; background-color:#ffffff}
+body .foswikiTable#tablePublishPlugin3 th.foswikiSortedCol {background-color:#eeeeee}
+body .foswikiTable#tablePublishPlugin3 tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable#tablePublishPlugin3 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f5f5f5}
+</style><!--TABLEPLUGIN_specific-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3" class="script JQUERYPLUGIN::EASING"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PublishPlugin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/tabpane/jquery.tabpane.js?version=2.10" class="script JQUERYPLUGIN::TABPANE"></script><!--JQUERYPLUGIN::TABPANE-->
+<script src="TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="PublishPlugin"> PublishPlugin </h1>
+<strong>Generates a static view of a web, as HTML files on disc, or as a <code>PDF</code>, or as a <code>zip</code> or <code>tgz</code> archive file, or by uploading directly to an FTP server.</strong>
+<p></p>
+<!--
+<p></p>
+   PLEASE DO NOT EDIT THIS TOPIC
+<p></p>
+   It is automatically generated from the git repository, and any changes
+   you make will simply be overwritten the next time a release is generated.
+<p></p>
+   Instead, you could check your fix in, raise a task in the Foswiki Tasks web, or mail thge author.
+<p></p> <ul>
+<li> Set SHORTDESCRIPTION = Generate static output (HTML, PDF) for a web and optionally upload (FTP) the output to a publishing site.
+</li></ul> 
+-->
+<p></p>
+<em>This is the most complete publishing solution for Foswiki.</em>
+<p></p>
+<img alt="" src="PublishPlugin.attachments/publish.gif" style="float:right">
+PublishPlugin provides support for the generation of stand-alone HTML
+from a Foswiki installation. It will generate fully rendered versions of
+a set of Foswiki pages together with any attached files, and (optionally)
+any external resources referenced.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Features"> Features </a>
+</li> <li> <a href="#Usage"> Usage </a> <ul>
+<li> <a href="#Publish_Form"> Publish Form </a>
+</li> <li> <a href="#Using_a_61rest_61_call"> Using a rest call </a>
+</li> <li> <a href="#Using_Bookmaker"> Using Bookmaker </a>
+</li> <li> <a href="#Using_a_Publish_Topic_40configtopic_41"> Using a Publish Topic (configtopic) </a>
+</li> <li> <a href="#Publishing_from_the_command_line"> Publishing from the command line </a>
+</li></ul> 
+</li> <li> <a href="#How_45tos"> How-tos </a> <ul>
+<li> <a href="#How_to_control_which_parts_of_a_topic_get_published"> How to control which parts of a topic get published </a>
+</li> <li> <a href="#How_to_use_Wildcard_Patterns"> How to use Wildcard Patterns </a>
+</li> <li> <a href="#How_to_generate_a_Publishing_History"> How to generate a Publishing History </a>
+</li> <li> <a href="#How_to_attach_the_output_to_a_Topic"> How to attach the output to a Topic </a>
+</li></ul> 
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions </a>
+</li> <li> <a href="#Dependencies"> Dependencies </a>
+</li> <li> <a href="#Compatibility_Notes_for_version_3.0"> Compatibility Notes for version 3.0 </a>
+</li> <li> <a href="#Change_History"> Change History </a>
+</li> <li> <a href="#Info_38_Copyright"> Info &amp; Copyright </a>
+</li></ul> 
+</div>
+<p></p>
+When you want to read a document stored in Foswiki, you have to have
+access to the web server that hosts that document. There are times
+when this may not be desirable, or even possible. For example: <ol>
+<li> Foswiki is used to create documentation which has to be readable off-line
+</li> <li> Published versions of Foswiki pages must be read-only
+</li> <li> The Foswiki server is inaccessible to the audience (e.g. on the other side of a corporate firewall)
+</li> <li> You want an efficient, high-density snapshot of the wiki content
+</li></ol> 
+<p></p>
+To address these requirements the <a href="PublishPlugin.html" class="foswikiCurrentTopicLink">PublishPlugin</a> supports the generation of several different document formats from Foswiki pages, including HTML and PDF.
+<p></p>
+<h2 id="Features">  Features </h2> <ul>
+<li> All standard Foswiki macros are interpreted, and plugins are called
+</li> <li> Powerful support for choosing what content gets published
+</li> <li> Full support for hierarchical webs
+</li> <li> Any links to the 'pub' areas of topics in the web are automatically    resolved, and the referenced files copied
+</li> <li> Any links to resource outside the wiki are resolved, and a snapshot     of the resource is stored in the output
+</li> <li> Output in HTML or PDF
+</li> <li> HTML can be compressed in different archive formats
+</li> <li> Incremental output of HTML for efficient incremental publishing
+</li> <li> Format-specific skins (such as viewpdf) can be specified
+</li> <li> Able to upload directly to a remote server via ftp
+</li> <li> Complete history of what was published, and when
+</li> <li> Fully compatible with <a href="https://foswiki.org/Extensions.BookmakerPlugin" class="interwikiLink" title="'Extensions.BookmakerPlugin' on foswiki.org"><noautolink>BookmakerPlugin</noautolink></a>
+</li></ul> 
+<p></p>
+<h2 id="Usage">  Usage </h2>
+The plugin can be used in a number of different ways: <ul>
+<li> Via the Publish Form on this page (recommended)
+</li> <li> From the command line (recommended)
+</li> <li> From a re-usable configuration topic
+</li> <li> Using <a class="interwikiLink" href="https://foswiki.org/Extensions.BookmakerPlugin" title="'Extensions.BookmakerPlugin' on foswiki.org"><noautolink>BookmakerPlugin</noautolink></a> (if installed)
+</li></ul> 
+<p></p>
+<h3 id="Publish_Form">  Publish Form </h3>
+The quickest way to publish is by filling in the following form.
+<p></p>
+The output is always generated in a directory designated during
+installation. Admins can use the
+<a href="PublishPluginControlCentre.html">PublishPluginControlCentre</a> to manage the published output.
+<p></p>
+Publishing is an access-controlled process; before you can publish,
+you have to have VIEW access to the topics you want to publish (and
+CHANGE access to the publishing history topic, if you have asked for
+one).
+<p></p>
+You can also create a <a class="foswikiCurrentTopicLink" href="#PublishTopic">permanent topic in a web</a> to
+help with a repeated publishing process.
+<p></p>
+<img height="16" alt="HELP" src="DocumentGraphics.attachments/help.png" width="16" title="HELP"> Most publishing tasks will only require setting the immediately
+visible options.  Other more advanced options can be accessed by
+opening the collapsible sections.
+<p></p>
+<p></p>
+<p></p>
+<div class="foswikiPageForm">
+  <form method="post" name="publish" action="http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/rest/PublishPlugin/publish">
+    <table class="foswikiTable publishForm">
+      <tr>
+        <th colspan="3">Choose what to publish</th>
+        <th> Parameter Name </th>
+      </tr>
+      <tr>
+        <td class="nameCol">
+          Topics
+        </td>
+        <td class="inputCol">
+          <input type="text" name="topics" class="foswikiInputField" value="&#42;.&#42;,-TestWeb,-System,-Sandbox,-Trash" size="30"/>
+        </td>
+        <td class="infoCol">
+The <code>topics</code> parameter is used to give a (comma-separated) list of web.topic names. These can be specified using  <a class="foswikiCurrentTopicLink" href="#WildcardPattern">wildcard patterns</a>. <ul>
+<li> <code>Myweb.*</code> will publish all topics in the <code>Myweb</code> web (but not in subwebs)
+</li> <li> <code>Myweb*.*</code> will publish all topics in the <code>Myweb</code> web and all its subwebs
+</li> <li> <code>*.*</code> will publish all topics in the wiki
+</li> <li> <code>Web.</code> implies <code>Web.*</code>, and <code>.Topic</code> and <code>Topic</code> both imply <code>*.Topic</code>
+</li> <li> The list is expanded in left-right order. You can edit the list at any point by prefixing an entry with a <code>-</code> sign e.g. <code>*.*,-*.Last*</code> will publish all topics in the wiki in web.topic order except topics starting with <code>Last</code>
+</li> <li> You can use <code>-</code> to control the ordering; <code>*.*,-*.Last*,*.Last*</code> will do the same, but followed by all topics in the wiki starting with <code>Last</code>
+</li> <li> If a topic is matched twice in the ordering, it will be published twice (this will be a no-operation for most types of output, but may be useful in PDF)
+</li> <li> The order in which wildcards are expanded is defined by the locale collation.
+</li></ul> 
+These topics are only the start points for publishing. Links to other topics
+in the wiki will automatically be followed, and those topics published as well.
+        <td class="paramCol">
+          <code>topics</code>
+        </td>
+      </tr>
+      <tr>
+        <td class="nameCol">
+          Unpublished Topics
+        </td>
+        <td class="inputCol">
+          <select name="unpublished" class="foswikiInputField" value="rewrite"/>
+          <option>rewrite</option>
+          <option>follow</option>
+          <option>404</option>
+          <option>ignore</option>
+          </select>
+        </td>
+        <td class="infoCol">
+        Sometimes links to topics that are not selected by the <code>topics</code>
+        parameter may be found during publishing. You can choose how these
+        links will be handled: <ul>
+<li> <code>rewrite</code> (the default) - the link will be processed as if the topic     was being published
+</li> <li> <code>follow</code> - the link will be rewritten and the most recent version of the     topic referred to in the link will itself be published,
+</li> <li> <code>404</code> - the link will be rewritten to ensure it is broken,
+</li> <li> <code>ignore</code> - the link will be left as a link to the wiki. Note that in     most cases this will leave a broken link, but may be useful for certain     server configurations.        </td>        <td class="paramCol">          <code>unpublished</code>        </td>      </tr>      <tr>        <td colspan="4">          <div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemPublishPlugin704show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Advanced topic selection...</span></a></span><span id="twistyIdSystemPublishPlugin704hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Close</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemPublishPlugin704toggle" style="" class="twistyContent twistyInited">          <table class="foswikiTable publishForm">     <tr>       <td class="nameCol">          Versions Topic       </td>       <td class="inputCol">          <input type="text" name="versions" class="foswikiInputField" value="" size="30" title="Leave blank to publish the most recent version of each topic"/>       </td>       <td class="infoCol">
+</li></ul> 
+Name of a topic <em>in each published web</em> that contains a table, each
+row of which maps topic names to the version of that topic to
+publish. <br /> The table can be generated by a <code>%SEARCH{}%</code> or
+other macro. For example: <code>|Web.TopicName|1.33|</code>.<br />  If a
+topic does not appear in the table, the most recent version will be
+published.
+       </td>
+       <td class="paramCol">
+         <code>versions</code>
+       </td>
+     </tr>
+     <tr>
+       <td class="nameCol"> 
+         Content Filter
+       </td>
+       <td class="inputCol"> 
+         <input type="text" name="rexclude" class="foswikiInputField" value="" size="30" title="Leave blank to include all topics"/>
+       </td>
+       <td class="infoCol">
+A regular expression that will cause a topic to be excluded if the
+expression matches the topic content. You can use a simple string
+here, which will be matched exactly, or you can read up on perl
+regular expressions on the web.
+       </td>
+       <td class="paramCol">
+         <code>rexclude</code>
+       </td>
+     </tr>
+          </table>
+          </div></div>
+        </td>
+      </tr>
+      <!-- -->
+      <tr>
+        <th colspan="4">Processing options</th>
+      </tr>
+      <tr>
+        <td colspan="4">
+Default processing of topics for publishing tries to render the topics as
+closely to the way they are viewed in the wiki as possible. These options
+provide a finer level of control.
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemPublishPlugin2919show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited">Show processing options...</span></a></span><span id="twistyIdSystemPublishPlugin2919hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Close</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemPublishPlugin2919toggle" style="" class="twistyContent twistyInited">
+          <table class="foswikiTable publishForm">
+     <tr>
+       <td class="nameCol">Publish skin </td>
+       <td class="inputCol">
+         <input type="text" name="publishskin" class="foswikiInputField" size="20" value="basic_publish" title="Use basic_publish unless you have your own customised publishing skin"/>
+       </td>
+       <td class="infoCol">
+Setting of the <code>SKIN</code> preference to be used when topics are
+published. See <a href="Skins.html">Skins</a> for more informations on
+skins. You can pick <code>basic_publish</code> (a very, very simple skin), or <code>plain</code>, or a
+<code>print</code> skin.  Your installation may also offer a special <code>export</code> or
+<code>publish</code> skin.<br /><img src="DocumentGraphics.attachments/tip.png" height="16" alt="IDEA!" title="IDEA!" width="16"> The <code>view</code> <a href="SkinTemplates.html">template</a> is
+used to generate published pages, so <code>view.basic_publish.tmpl</code> is the template that will be used to
+generate the output. You can preview any topic in this skin simply by
+appending <code>?skin=basic_publish</code> to the
+end of the view URL. Note that the standard <code>VIEW_TEMPLATE</code> template
+override still works when publishing (but only if the VIEW_TEMPLATE has
+some content).
+       </td>
+       <td class="paramCol">
+         <code>publishskin</code>
+       </td>
+     </tr>
+     <tr>
+       <td class="nameCol">Extra Preferences </td>
+       <td class="inputCol">
+         <textarea name="preferences" class="foswikiInputField" rows="5" cols="80"></textarea>
+       </td>
+       <td class="infoCol">
+Lets you define Foswiki <a href="PreferenceSettings.html">preferences</a> that will
+be available for use in topics during this publishing run. Define
+preferences one per line, using the syntax
+         <code>PREFERENCE=VALUE</code> - for example,
+<pre>
+TOOL&#95;VERSION&#61;3.14.15
+ISBN&#61;1-56592-149-6
+</pre>
+Preferences defined this way can be used in topics (including the
+history topic) like any other Foswiki preference.
+       </td>
+       <td class="paramCol">
+         <code>preferences</code>
+       </td>
+     </tr>
+     <tr>
+       <td class="nameCol"> 
+         Enable/Disable Plugins 
+       </td>
+       <td class="inputCol">
+                <!-- Keep this list in sync with Publisher.pm -->
+         <input type="text" name="enableplugins" class="foswikiInputField" value="-CommentPlugin,-EditRowPlugin,-EditTablePlugin,-NatEditPlugin,-SubscribePlugin,-TinyMCEPlugin,-UpdatesPlugin" size="30"title="Leave blank to enable all plugins"/><br /><div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemPublishPlugin2639show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited">View currently enabled plugins</span></a></span><span id="twistyIdSystemPublishPlugin2639hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited">Hide currently enabled plugins</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemPublishPlugin2639toggle" style="" class="twistyContent twistyInited"> <a href="SpreadSheetPlugin.html">SpreadSheetPlugin</a>, <a href="SlideShowPlugin.html">SlideShowPlugin</a>, <a href="AutoViewTemplatePlugin.html">AutoViewTemplatePlugin</a>, <a href="CommentPlugin.html">CommentPlugin</a>, <a href="CompareRevisionsAddonPlugin.html">CompareRevisionsAddonPlugin</a>, <a href="ConfigurePlugin.html">ConfigurePlugin</a>, <a href="EditRowPlugin.html">EditRowPlugin</a>, <a href="HistoryPlugin.html">HistoryPlugin</a>, <a href="HomePagePlugin.html">HomePagePlugin</a>, <a href="InterwikiPlugin.html">InterwikiPlugin</a>, <a href="JQueryPlugin.html">JQueryPlugin</a>, <a href="MailerContribPlugin.html">MailerContribPlugin</a>, <a href="NatEditPlugin.html">NatEditPlugin</a>, <a href="PreferencesPlugin.html">PreferencesPlugin</a>, <a href="PublishPlugin.html" class="foswikiCurrentTopicLink">PublishPlugin</a>, <a href="RenderListPlugin.html">RenderListPlugin</a>, <a href="SmiliesPlugin.html">SmiliesPlugin</a>, <a href="SubscribePlugin.html">SubscribePlugin</a>, <a href="TablePlugin.html">TablePlugin</a>, <a href="TinyMCEPlugin.html">TinyMCEPlugin</a>, <a href="TwistyPlugin.html">TwistyPlugin</a>, <a href="UpdatesPlugin.html">UpdatesPlugin</a>, <a href="WysiwygPlugin.html">WysiwygPlugin</a> </div></div>
+       </td>
+       <td class="infoCol">
+         Comma-separated list of plugins to enable during publishing.
+<p></p>
+You can enable a normally-disabled plugin by giving the plugin name
+e.g. <code>MyPlugin</code>, or disable a normally-enabled plugin by prefixing it
+with a minus sign e.g. <code>-CommentPlugin</code>. You can disable <em>all</em> plugins
+by starting the list with <code>-*</code> and then selectively enable plugins
+again later in the list e.g.
+<code>-*, SmiliesPlugin, AutoViewTemplatePlugin, HomePagePlugin, InterwikiPlugin</code>.
+<p></p>
+You are recommended to disable any plugins that generate interactive
+buttons in the output. Only plugins present in <code>configure</code> can be
+enabled/disabled.
+       </td>
+       <td class="paramCol">
+         <code>enableplugins</code>
+       </td>
+     </tr>
+     <tr>
+       <td class="nameCol">Template </td>
+       <td class="inputCol">
+         <input type="text" name="template" class="foswikiInputField" size="20" value="view" title="Override default view template"/>
+       </td>
+       <td class="infoCol">
+By default the plugin uses the default <code>view</code> template when it renders
+topics for publishing. You can override this here. Note that this is a
+very specialised feature; you will normally only need to override the
+skin when publishing.
+              </td>
+       <td class="paramCol">
+         <code>template</code>
+       </td>
+     </tr>
+            <tr>
+              <td class="nameCol">Copy External Resources </td>
+              <td class="inputCol">
+                <input type="checkbox" name="copyexternal" checked="checked" class="foswikiCheckbox" />
+              </td>
+              <td class="infoCol">
+Copy externally referenced resources (e.g. images on other servers).
+This option enables the copying of resources hosted on external
+servers into the published content. If it is disabled, the plugin will
+maintain an internet link to the external content. Enable this option
+if you want the pubished content to be totally self-contained (for
+example, for offline reading) or disable it for faster publishing
+process and smaller output.
+              </td>
+              <td class="paramCol">
+                <code>copyexternal</code>
+              </td>
+      </tr>
+            <tr>
+              <td class="nameCol">Publish All Attachments </td>
+              <td class="inputCol">
+                <input type="checkbox" name="allattachments" class="foswikiCheckbox" />
+              </td>
+              <td class="infoCol">
+Normally only attachments that are explicitly referenced in the text
+are published. Enable this option to publish attachments on topics
+that are not referenced in the text as well.
+              </td>
+              <td class="paramCol">
+                <code>allattachments</code>
+              </td>
+      </tr>
+            <tr>
+              <td class="nameCol">Publishing history topic</td>
+              <td class="inputCol">
+                <input type="text" name="history" class="foswikiInputField" size="30" value="" />
+              </td>
+              <td class="infoCol">
+This is where the history of your publishing is stored. Specify a full
+web.topic name (you must have write access). Each time you publish,
+this topic is re-written with the log of the publishing process. You
+need CHANGE access to this topic. You can leave this blank if you
+don't need a history.
+              </td>
+              <td class="paramCol">
+                <code>history</code>
+              </td>
+            </tr>
+            <tr>
+              <td class="nameCol">Debug</td>
+              <td class="inputCol">
+                <input type="checkbox" name="debug" class="foswikiCheckbox" />
+              </td>
+              <td class="infoCol">
+Enable to get a lot of debug messages, mainly relating to the processing of URL.
+              </td>
+              <td class="paramCol">
+                <code>debug</code>
+              </td>
+            </tr>
+          </table>
+          </div></div>
+        </td>
+      </tr>
+      <!-- -->
+      <tr>
+        <th colspan="4">Output options</th>
+      </tr>
+      <tr>
+        <td colspan=4>
+          The plugin can use a number of different 'back ends' to generate output
+          in different formats. These are selected using the <code>format</code> parameter. Open the relevant tab below to select a format and set parameters.
+        </td>
+      </tr>
+      <tr>
+        <td colspan=4>
+<input type='text' id="format_picker" name='format' value="file" style="display:none">
+<div class='jqTabPane jqTabPaneDefault'  data-select='.file' data-auto-max-expand='false' data-animate='false' data-remember='false' data-min-height='0'>
+<script>function beforeHandler9749(oldTabId, newTabId) {document.forms['publish'].format.value='file'}</script>
+<div id='tab9749' class='jqTab file' data-before-handler="beforeHandler9749" style='display:none'>
+<h2 class='jqTabLabel'>file</h2>
+<div class='jqTabContents' >Generates a directory tree on the server containing an HTML file for each topic, and copies of all published attachments. If you have selected <code>copyexternal</code>, then copied resources will be stored in a <code>_rsrc</code> directory at the root of the generated output.<p/><table><tr><td> <code>defaultpage</code> </td><td><input type='text' size=30 name='file_defaultpage' value=''/></td><td>Web.Topic to redirect to from index.html / default.html. If you leave this blank, the index will contain a simple list of all the published topics.</td></tr><tr><td> <code>googlefile</code> </td><td><input type='text' size=30 name='file_googlefile' value=''/></td><td>Comma-separated list of Google HTML verification file names.</td></tr><tr><td> <code>keep</code> </td><td><input type='text' size=30 name='file_keep' value='nothing'/></td><td>Set to <code>unchanged</code> to publish only those topics that have changed in the store since they were last published. Set to <code>unselected</code> to republish all selected topics, but also keep previously published topics in the output area that were not selected for publishing this time. Set to <code>nothing</code> to clear down the output before each time it is published. Does not work with <code>versions</code>.</td></tr><tr><td> <code>outfile</code> </td><td><input type='text' size=30 name='file_outfile' value='file'/></td><td>Filename at the root of your generated output. If you leave this blank, the name of the format will be used</td></tr><tr><td> <code>relativedir</code> </td><td><input type='text' size=30 name='file_relativedir' value=''/></td><td>Additional path components to put between the {PublishPlugin}{Dir} and the top of the published output. See <a href="#PublishToTopic" class="foswikiCurrentTopicLink">here</a> for one way this can be used.</td></tr></table></div></div><script>function beforeHandler685(oldTabId, newTabId) {document.forms['publish'].format.value='flatdir'}</script>
+<div id='tab685' class='jqTab flatdir' data-before-handler="beforeHandler685" style='display:none'>
+<h2 class='jqTabLabel'>flatdir</h2>
+<div class='jqTabContents' >Flat directory of HTML and attachment files. External resources (if <code>copyexternal is selected</code>) will be saved to a <code>_rsrc</code> subdirectory.<p/><table><tr><td> <code>defaultpage</code> </td><td><input type='text' size=30 name='flatdir_defaultpage' value=''/></td><td>Web.Topic to redirect to from index.html / default.html. If you leave this blank, the index will contain a simple list of all the published topics.</td></tr><tr><td> <code>googlefile</code> </td><td><input type='text' size=30 name='flatdir_googlefile' value=''/></td><td>Comma-separated list of Google HTML verification file names.</td></tr><tr><td> <code>keep</code> </td><td><input type='text' size=30 name='flatdir_keep' value='nothing'/></td><td>Set to <code>unchanged</code> to publish only those topics that have changed in the store since they were last published. Set to <code>unselected</code> to republish all selected topics, but also keep previously published topics in the output area that were not selected for publishing this time. Set to <code>nothing</code> to clear down the output before each time it is published. Does not work with <code>versions</code>.</td></tr><tr><td> <code>outfile</code> </td><td><input type='text' size=30 name='flatdir_outfile' value='flatdir'/></td><td>Filename at the root of your generated output. If you leave this blank, the name of the format will be used</td></tr><tr><td> <code>relativedir</code> </td><td><input type='text' size=30 name='flatdir_relativedir' value=''/></td><td>Additional path components to put between the {PublishPlugin}{Dir} and the top of the published output. See <a href="#PublishToTopic" class="foswikiCurrentTopicLink">here</a> for one way this can be used.</td></tr></table></div></div><script>function beforeHandler4183(oldTabId, newTabId) {document.forms['publish'].format.value='flatfile'}</script>
+<div id='tab4183' class='jqTab flatfile' data-before-handler="beforeHandler4183" style='display:none'>
+<h2 class='jqTabLabel'>flatfile</h2>
+<div class='jqTabContents' >Single HTML file containing all topics. If <code>copyexternal</code> is selected, external resources will be saved to a top level <code>_files</code> directory next to the HTML file.<p/><table><tr><td> <code>googlefile</code> </td><td><input type='text' size=30 name='flatfile_googlefile' value=''/></td><td>Comma-separated list of Google HTML verification file names.</td></tr><tr><td> <code>outfile</code> </td><td><input type='text' size=30 name='flatfile_outfile' value='flatfile'/></td><td>Filename at the root of your generated output. If you leave this blank, the name of the format will be used</td></tr><tr><td> <code>relativedir</code> </td><td><input type='text' size=30 name='flatfile_relativedir' value=''/></td><td>Additional path components to put between the {PublishPlugin}{Dir} and the top of the published output. See <a class="foswikiCurrentTopicLink" href="#PublishToTopic">here</a> for one way this can be used.</td></tr></table></div></div><script>function beforeHandler2876(oldTabId, newTabId) {document.forms['publish'].format.value='ftp'}</script>
+<div id='tab2876' class='jqTab ftp' data-before-handler="beforeHandler2876" style='display:none'>
+<h2 class='jqTabLabel'>ftp</h2>
+<div class='jqTabContents' >Upload generated HTML and resources to an FTP site. The generated directory structure is the same as for the <code>file</code> generator<p/><table><tr><td> <code>defaultpage</code> </td><td><input type='text' size=30 name='ftp_defaultpage' value=''/></td><td>Web.Topic to redirect to from index.html / default.html. If you leave this blank, the index will contain a simple list of all the published topics.</td></tr><tr><td> <code>destinationftppassword</code> </td><td><input type='text' size=30 name='ftp_destinationftppassword' value=''/></td><td>FTP server password</td></tr><tr><td> <code>destinationftppath</code> </td><td><input type='text' size=30 name='ftp_destinationftppath' value=''/></td><td>Root path on the server to upload to</td></tr><tr><td> <code>destinationftpserver</code> </td><td><input type='text' size=30 name='ftp_destinationftpserver' value=''/></td><td>Server host name e.g. some.host.name</td></tr><tr><td> <code>destinationftpusername</code> </td><td><input type='text' size=30 name='ftp_destinationftpusername' value=''/></td><td>FTP server username</td></tr><tr><td> <code>fastupload</code> </td><td><input type='text' size=30 name='ftp_fastupload' value='1'/></td><td>Speed up the ftp publishing by only uploading modified files. This will store a (tiny) checksum (.md5) file on the server alongside each uploaded file which will be used to optimise future uploads. Recommended.</td></tr><tr><td> <code>googlefile</code> </td><td><input type='text' size=30 name='ftp_googlefile' value=''/></td><td>Comma-separated list of Google HTML verification file names.</td></tr></table></div></div><script>function beforeHandler3305(oldTabId, newTabId) {document.forms['publish'].format.value='pdf'}</script>
+<div id='tab3305' class='jqTab pdf' data-before-handler="beforeHandler3305" style='display:none'>
+<h2 class='jqTabLabel'>pdf</h2>
+<div class='jqTabContents' >PDF file with all content in it, generated using htmldoc --webpage --links --linkstyle plain --outfile %FILE|F% %EXTRAS|U% %FILES|F%<p/><table><tr><td> <code>extras</code> </td><td><input type='text' size=30 name='pdf_extras' value=''/></td><td>Extra parameters to pass to htmldoc</td></tr><tr><td> <code>outfile</code> </td><td><input type='text' size=30 name='pdf_outfile' value='pdf'/></td><td>Filename at the root of your generated output. If you leave this blank, the name of the format will be used</td></tr><tr><td> <code>relativedir</code> </td><td><input type='text' size=30 name='pdf_relativedir' value=''/></td><td>Additional path components to put between the {PublishPlugin}{Dir} and the top of the published output. See <a class="foswikiCurrentTopicLink" href="#PublishToTopic">here</a> for one way this can be used.</td></tr></table></div></div><script>function beforeHandler3690(oldTabId, newTabId) {document.forms['publish'].format.value='tgz'}</script>
+<div id='tab3690' class='jqTab tgz' data-before-handler="beforeHandler3690" style='display:none'>
+<h2 class='jqTabLabel'>tgz</h2>
+<div class='jqTabContents' >HTML compressed into a single tgz archive for shipping.<p/><table><tr><td> <code>defaultpage</code> </td><td><input type='text' size=30 name='tgz_defaultpage' value=''/></td><td>Web.Topic to redirect to from index.html / default.html. If you leave this blank, the index will contain a simple list of all the published topics.</td></tr><tr><td> <code>googlefile</code> </td><td><input type='text' size=30 name='tgz_googlefile' value=''/></td><td>Comma-separated list of Google HTML verification file names.</td></tr><tr><td> <code>outfile</code> </td><td><input type='text' size=30 name='tgz_outfile' value='tgz'/></td><td>Filename at the root of your generated output. If you leave this blank, the name of the format will be used</td></tr><tr><td> <code>relativedir</code> </td><td><input type='text' size=30 name='tgz_relativedir' value=''/></td><td>Additional path components to put between the {PublishPlugin}{Dir} and the top of the published output. See <a class="foswikiCurrentTopicLink" href="#PublishToTopic">here</a> for one way this can be used.</td></tr></table></div></div><script>function beforeHandler9652(oldTabId, newTabId) {document.forms['publish'].format.value='zip'}</script>
+<div id='tab9652' class='jqTab zip' data-before-handler="beforeHandler9652" style='display:none'>
+<h2 class='jqTabLabel'>zip</h2>
+<div class='jqTabContents' >HTML compressed into a single zip file for shipping.<p/><table><tr><td> <code>defaultpage</code> </td><td><input type='text' size=30 name='zip_defaultpage' value=''/></td><td>Web.Topic to redirect to from index.html / default.html. If you leave this blank, the index will contain a simple list of all the published topics.</td></tr><tr><td> <code>googlefile</code> </td><td><input type='text' size=30 name='zip_googlefile' value=''/></td><td>Comma-separated list of Google HTML verification file names.</td></tr><tr><td> <code>outfile</code> </td><td><input type='text' size=30 name='zip_outfile' value='zip'/></td><td>Filename at the root of your generated output. If you leave this blank, the name of the format will be used</td></tr><tr><td> <code>relativedir</code> </td><td><input type='text' size=30 name='zip_relativedir' value=''/></td><td>Additional path components to put between the {PublishPlugin}{Dir} and the top of the published output. See <a href="#PublishToTopic" class="foswikiCurrentTopicLink">here</a> for one way this can be used.</td></tr></table></div></div>
+</div>
+<!--
+<select>
+%PUBLISHING_GENERATORS{format="<option name='format'>$name</option>"}%</select>
+%PUBLISHING_GENERATORS{format="<h3> <code>$name</code> </h3><p>$help</p><table>$params=(<tr><td> <code>$pname</code> </td><td><input type='text' size=30 name='$name_$pname' value='$pdefault'/></td><td>$phelp</td></tr>)</table>"}%-->
+        </td>
+      </tr>
+      <!-- SUBMIT -->
+      <tr>
+        <td colspan="4" class="inputCol">
+          <input type="submit" class="foswikiSubmit" value="Publish" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<p></p>
+<h3 id="Using_a_61rest_61_call">  Using a <code>rest</code> call </h3>
+<p></p>
+Create a link that invokes the <code>rest</code> script and pass the current topic:
+(added newlines for readability).
+<pre>
+&#60;a class&#61;&#39;foswikiPopUp&#39;
+href&#61;&#39;&#37;SCRIPTURLPATH{&#34;rest&#34;}&#37;/PublishPlugin/publish?&#37;REVARG&#37;;
+topics&#61;&#37;BASEWEB&#37;.&#37;BASETOPIC&#37;;
+format&#61;file;
+rel&#61;&#39;nofollow&#39;&#62;
+Publish this page
+&#60;/a&#62;
+</pre>
+<p></p>
+<!--
+<a href="../PublishPlugin/publish.html" class="foswikiPopUp" rel="nofollow">(Try it)</a>
+-->
+<p></p>
+<span id="BookMaker"></span>
+<h3 id="Using_Bookmaker">  Using Bookmaker </h3>
+The Bookmaker allows you to select a number of topics by visiting them in turn and adding them to the book. Once your book is complete, you can return to this page to publish it.
+<p></p>
+To start the bookmaker, enable the BookmakerPlugin, and revisit this page to enable the interface. Once the bookmaker is running, visit the pages you want to add to the book and add them to the book. Once you are finished, use the bookmaker interface to return to this page to publish the results. To publish a book generated by Bookmaker, use the <code>%BOOKLIST{"Bookweb.BookName"}%</code> macro in the <code>topics</code> parameter.
+<p></p>
+<span id="PublishTopic"></span>
+<h3 id="Using_a_Publish_Topic_40configtopic_41">  Using a Publish Topic (configtopic) </h3>
+You can create a publish topic that contains all the details needed to publish. This is just a topic with a series of standard preference settings (which correspond to the parameters described here) in it.
+<p></p>
+You can use the <a href="PublishWeb.html">PublishWeb</a> topic in this web as a template for your own topics.
+<p></p>
+To use a publish topic, you must pass the <code>configtopic</code> parameter to the <code>publish</code> script set to the name of the topic to use to control publishing. This should be a full web.topic specification (if you only give a topic name it will pick the topic up from the Main).
+<p></p>
+<h3 id="Publishing_from_the_command_line">  Publishing from the command line </h3>
+This is the recommended way to publish if you are regularly updating
+published content.
+Just <code>cd</code> to the <code>bin</code> directory, and
+<code>perl rest /PublishPlugin/publish</code>. Parameters are passed as name=value pairs, for example:
+<pre>
+perl rest /PublishPlugin/publish topics&#61;&#39;System.&#42;,-&#42;.Web&#42;&#39; format&#61;file
+</pre>
+The available parameter names are shown in the publish form above.
+<p></p>
+<h2 id="How_45tos">  How-tos </h2>
+<h3 id="How_to_control_which_parts_of_a_topic_get_published">  How to control which parts of a topic get published </h3>
+You can control what gets published from a topic using <code>%STARTPUBLISH%</code> and <code>%STOPPUBLISH%</code> control tags: <ul>
+<li> If <code>%STARTPUBLISH%</code> is the first control tag seen in the file, everything before it will be ignored.
+</li> <li> Everything between <code>%STOPPUBLISH%</code> and the next <code>%STARTPUBLISH%</code> (or the end of the topic) will be ignored.
+</li> <li> <code>%STARTPUBLISH%</code> and <code>%STOPPUBLISH%</code> will be visible in the viewed topic, so you can easily see what will be published from the topic. <ul>
+<li> If you don't want to see the tags in normal view, then just define global preferences STARTPUBLISH and STOPPUBLISH using <code>Set</code>. Set them to the empty string. That won't stop them being interpreted by the plugin, but will make them invisible in normal view.
+</li></ul> 
+</li></ul> 
+<p></p>
+Another good trick is to set up a special "publishing" web. Create topics in the web that %INCLUDE the topics from <strong>other</strong> webs that you want to publish. You can use <a href="VarSTARTSECTION.html">STARTSECTION</a> and <a href="VarENDSECTION.html">ENDSECTION</a> to highlight what you want published. This way the "publishing" web gives you a view of exactly what will be in the published output, without the need for special publishing tags.
+<p></p>
+<span id="WildcardPattern"></span>
+<h3 id="How_to_use_Wildcard_Patterns">  How to use Wildcard Patterns </h3>
+A wildcard is a special string that you can put into a filename so that it matches a whole range of files:
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">String</a> </th>
+			<th class="foswikiTableCol1"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">What  it does</a> </th>
+			<th class="foswikiTableCol2"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Example</a> </th>
+			<th class="foswikiTableCol3 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">What the example matches</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> * </td>
+			<td class="foswikiTableCol1"> Matches any string, including an empty string. </td>
+			<td class="foswikiTableCol2"> <code>*Cheese*</code> </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> Every topic with "Cheese" somewhere in the name (but <em>not</em> "cheese") </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ? </td>
+			<td class="foswikiTableCol1"> Matches any single character. </td>
+			<td class="foswikiTableCol2"> Example1? </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> Example10 and Example 1X but <em>not</em> example1 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> [...] </td>
+			<td class="foswikiTableCol1 foswikiLast"> Matches any one of the enclosed characters.  A pair of characters separated by a hyphen denotes a range  expression; any  character that sorts between those two characters, inclusive, using the current locale's collating sequence and character set, is matched.  If the first character following the <code>[</code> is a <code>^</code> then any character not enclosed is matched. A <code>-</code> may be matched by including it as the first or  last  character  in  the set.  A <code>]</code> may be matched by including it as the first character in the set.<br /> Within  <code>[</code>  and <code>]</code>, character classes can be specified using the syntax <code>[:class:]</code>, where <code>class</code> is one of the following classes defined in the POSIX.2 standard: <code>alnum</code>, <code>alpha</code>, <code>ascii</code>, <code>blank</code>, <code>cntrl</code>, <code>digit</code>, <code>graph</code>, <code>lower</code>, <code>print</code>, <code>punct</code>, <code>space</code>, <code>upper</code>, <code>word</code>, <code>xdigit</code>. A character class matches any character belonging to that class.  The <code>word</code> character class matches letters, digits, and the character _. </td>
+			<td class="foswikiTableCol2 foswikiLast"> <code>B[aeiou]g</code> </td>
+			<td class="foswikiTableCol3 foswikiLastCol foswikiLast"> Bag, Bog, Big, Beg, Bug </td>
+		</tr>
+	</tbody></table>
+<p></p>
+Irrespective of the archive being used, local output is always generated in
+the directory specified by the <code>{Plugins}{PublishPlugin}{Dir}</code> <a href="../.html">configuration setting</a>. Administrators can
+manage the contents of this directory from the browser using the
+<code>%PUBLISHERS_CONTROL_CENTRE%</code> macro (see <a href="PublishPluginControlCentre.html">PublishPluginControlCentre</a>).
+<p></p>
+If <em>relativedir</em> is set, then it will be added after <code>{Plugins}{PublishPlugin}{Dir}</code>. See <a href="#PublishToTopic" class="foswikiCurrentTopicLink">How to attach the output to a Topic</a> for an example of how to use this.
+<p></p>
+If <em>outfile</em> is not set in the parameters it defaults to the name of the format being published.
+<p></p>
+Most formats generate a single file with a unique extension that identifies the format e.g. <code>.pdf</code>. When publishing a format that generates multiple files (e.g. <code>file</code>) then <em>outfile</em> will normally be a directory.
+<p></p>
+<img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!"> The rendered data can get pretty big, and the publishing process itself puts a heavy load on the server, especially when using compression on large webs.
+<p></p>
+<h3 id="How_to_generate_a_Publishing_History">  How to generate a Publishing History </h3>
+Every time a web is published, then the results of that publishing step can be stored in a topic in the web, by setting the <code>history</code> parameter to the name of a topic. In order to publish a web, you have to be able to write to this topic. 
+<p></p>
+If the selected publishing skin defines a <a href="SkinTemplates.html">skin template</a> called <code>publish_history</code>, then that template will be used as the basis of the history topic. This (for example) allows you to use a template with a skin to define access controls for the history topic. The template can refer to a Foswiki macro <code>%PUBLISHING_HISTORY%</code> to get the expanded history. The <code>basic_publish</code> skin provides <code>templates/publish_history.basic_publish.tmpl</code> for this purpose.
+<p></p>
+The history topic contains a list of all the parameters used, and the versions of the topics that were published, so it is very useful for tracking exactly what you publish. However it can grow very large, if (for example) you are updating a static site from the wiki content regularly.
+<p></p>
+<span id="PublishToTopic"></span>
+<h3 id="How_to_attach_the_output_to_a_Topic">  How to attach the output to a Topic </h3>
+If you are using an on-disk file store, such as PlainFile or one of the RCS stores, you can publish an attachment direct to an attachment on a topic.
+<p></p>
+<img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> Note that overwriting attachments this way is extremely dangerous, so this should only be done by experts! You have been warned. <img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16">
+<p></p> <ul>
+<li> Open <code>configure</code>
+</li> <li> First set the <code>{Plugins}{PublishPlugin}{Dir}</code> to the same as <code>{PubDir}</code>
+</li> <li> Then publish with a <code>relativedir</code> setting that corresponds to the attachment directory for the web/topic that you want to attach to
+</li> <li> If <code>{AutoAttachPubFiles}</code> is enabled, it will automatically be attached to the topic.
+</li></ul> 
+<p></p>
+<h2 id="Installation_Instructions">  Installation Instructions </h2>
+<p></p>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+<strong>IMPORTANT</strong> Run <code>configure</code> and complete the installation in the <strong>PublishPlugin</strong> section.
+<p></p>
+If you want to generate PDF files, you will need to install a PDF generator, for example <code>htmldoc</code> or <code>prince</code>. Find them using google.
+<p></p>
+Note that <code>htmldoc</code> can also be used to generate PostScript. See the <code>htmldoc</code> man pages for details.
+<p></p>
+If you want <code>zip</code> output you will have to install <code>Archive::Zip</code>.
+<p></p>
+If you want <code>tgz</code> output, install Archive::Tar.
+<p></p>
+If you want to use the <code>ftp</code> upload, you will need to install Net::FTP.
+<p></p>
+<strong>WARNING!</strong> Anything published is no longer under the
+control of Foswiki access controls, and if you make the publish output
+directory visible on the web then you may need to
+take precautions to prevent accidental leakage of confidential information
+by restricting web access to this directory, for example in the Apache
+configuration.
+<p></p>
+One way to do this is to use the <code>viewfile</code> access rights management to control
+access to the published content: <ul>
+<li> Create a hidden web named e.g. Publish
+</li> <li> Make this web public readable (via <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Publish/WebPreferences.html">WebPreferences</a>; ALLOW/DENYTOPICVIEW)
+</li> <li> Create a topic <a href="../Publish/PublishedContent.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">PublishedContent</a>
+</li> <li> Change PublishPlugin Settings in <code>configure</code> to publish to <code>pub/Publish/PublishedContent</code>
+</li></ul> 
+Access controles on <code>Publish</code> web and <code>!Publish.PublishedContent</code> will then
+apply.
+<p></p>
+<h2 id="Dependencies">  Dependencies </h2>
+<p></p>
+<table border="1" class="foswikiTable"><tr><th>Name</th><th>Version</th><th>Description</th></tr><tr><td align="left">File::Spec</td><td align="left">&gt;0</td><td align="left">Required. Used to analyse URL paths.</td></tr><tr><td align="left">File::Copy</td><td align="left">&gt;0</td><td align="left">Required. Used to move files around.</td></tr><tr><td align="left">File::Path</td><td align="left">&gt;0</td><td align="left">Required to manipulate directories.</td></tr><tr><td align="left">File::Temp</td><td align="left">&gt;0</td><td align="left">Required for temporary files.</td></tr><tr><td align="left">URI</td><td align="left">&gt;0</td><td align="left">Required for URL manipulation</td></tr><tr><td align="left">Scalar::Util</td><td align="left">&gt;0</td><td align="left">Required, supporting URI</td></tr><tr><td align="left">LWP</td><td align="left">&gt;0</td><td align="left">Optional. Used to include images referenced by absolute URLs</td></tr><tr><td align="left">Archive::Zip</td><td align="left">&gt;=0</td><td align="left">Optional. Required to generate .zip output</td></tr><tr><td align="left">Archive::Tar</td><td align="left">&gt;=0</td><td align="left">Optional. Required to generate .tgz output</td></tr><tr><td align="left">Net::FTP</td><td align="left">&gt;0</td><td align="left">Optional. Required for ftp publishing.</td></tr><tr><td align="left">htmldoc</td><td align="left"></td><td align="left">Optional. Required to generate .pdf output</td></tr><tr><td align="left">Digest::MD5</td><td align="left">&gt;0</td><td align="left">Optional. Required for fast upload to ftp servers.</td></tr></table>
+<p></p>
+<h2 id="Compatibility_Notes_for_version_3.0">  Compatibility Notes for version 3.0 </h2> <ul>
+<li> Only tested on Foswiki 2.0.
+</li> <li> The <code>compress</code> parameter has been removed.
+</li> <li> The &lt;nopublish&gt; tag has been removed.
+</li> <li> The <code>templates</code> parameter has been removed. We couldn't find anyone who was using it. The <code>template</code> parameter provides a subset of it's functionality.
+</li> <li> Deletion of existing published content before publishing is now under the     control of the <code>keep</code> parameter.
+</li> <li> The <code>web</code>, <code>topiclist</code>, <code>exclusions</code> and <code>inclusions</code> parameters are still supported, but are undocumented and will be removed in a later version. They are ignored if <code>topics</code> is given. 
+</li></ul> 
+<p></p>
+<h2 id="Change_History">  Change History </h2>
+<p></p>
+<table class="foswikiTable" id="tablePublishPlugin2" rules="none" width="100%">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.6 (28 Jul 2022) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item15055" class="interwikiLink" title="'Item15055' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item15055</noautolink></a>: Publish jquery plugins as internal resource. <a title="'Item15056' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item15056"><noautolink>Foswikitask:Item15056</noautolink></a>: Allow publication of dynamic html. <a href="https://foswiki.org/Tasks/Item15161" class="interwikiLink" title="'Item15161' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item15161</noautolink></a>: Support simple url() function references in <code>.css</code>. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.5 (07 Dec 2021) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item15050' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item15050" class="interwikiLink"><noautolink>Foswikitask:Item15050</noautolink></a>: Bug fix. <a title="'Item15051' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item15051"><noautolink>Foswikitask:Item15051</noautolink></a>: Improve saved publishing history. <a title="'Item15052' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item15052"><noautolink>Foswikitask:Item15052</noautolink></a>: Allow <code>cover</code> on <code>publishskin</code>. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item15053" title="'Item15053' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item15053</noautolink></a>: Improve publishing resources. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.4 (30 Jan 2018) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14611' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14611" class="interwikiLink"><noautolink>Foswikitask:Item14611</noautolink></a>: flatdir generator, <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14612" title="'Item14612' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14612</noautolink></a>: add support for handling external resources, <a title="'Item14613' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14613"><noautolink>Foswikitask:Item14613</noautolink></a>: <a href="https://foswiki.org/Tasks/Item14613" class="interwikiLink" title="'Item14613' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14613</noautolink></a>: improve format UI, <a href="https://foswiki.org/Tasks/Item14513" class="interwikiLink" title="'Item14513' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14513</noautolink></a>: add HTML to basic_publish skin <a href="https://foswiki.org/Tasks/Item14614" class="interwikiLink" title="'Item14614' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14614</noautolink></a>: support parameters passed to resource URLs </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.3 (26 Jan 2018) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14540' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14540" class="interwikiLink"><noautolink>Foswikitask:Item14540</noautolink></a>: correct internal resource resolution <a title="'Item14610' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14610" class="interwikiLink"><noautolink>Foswikitask:Item14610</noautolink></a>: re-implement defaultpage </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.2 (23 Jan 2018) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14609' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14609"><noautolink>Foswikitask:Item14609</noautolink></a>: fix for subweb names </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.1 (23 Apr 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14421' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14421"><noautolink>Foswikitask:Item14421</noautolink></a>: <a title="'Item14422' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14422"><noautolink>Foswikitask:Item14422</noautolink></a>: bugfix release </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0 (22 Apr 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Crawford Currie extensively rewrote to separate concerns and get rid of some of the poor code that had crept in over the years. Removed ability to publish several templates in one go, due to performance and complexity concerns. Removed flatpdf format, as it's pretty useless with modern htmldoc. Deprecated <code>web</code>, <code>topiclist</code>, <code>inclusions</code>, <code>exclusions</code> and simplified to one parameter, <code>topics</code>, renamed <code>topicsearch</code> to <code>rexclude</code> and <code>skin</code> to <code>publishskin</code>. WARNING: untested on Foswiki &lt;2 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.5 (25 Jan 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Update to work with Foswiki 2.x.  <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14198" title="'Item14198' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14198</noautolink></a> <a title="'Item11808' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11808" class="interwikiLink"><noautolink>Foswikitask:Item11808</noautolink></a> <a href="https://foswiki.org/Tasks/Item8898" class="interwikiLink" title="'Item8898' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8898</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.4 (30 Jul 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12016' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12016" class="interwikiLink"><noautolink>Foswikitask:Item12016</noautolink></a> Add capability to construct flat HTML and PDF files. Bugfixes: <a title="'Item11988' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11988" class="interwikiLink"><noautolink>Foswikitask:Item11988</noautolink></a> <a href="https://foswiki.org/Tasks/Item11339" class="interwikiLink" title="'Item11339' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11339</noautolink></a> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11345" title="'Item11345' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11345</noautolink></a> <a title="'Item8260' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item8260" class="interwikiLink"><noautolink>Foswikitask:Item8260</noautolink></a> <a href="https://foswiki.org/Tasks/Item10597" class="interwikiLink" title="'Item10597' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10597</noautolink></a> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11346" title="'Item11346' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11346</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.3.2 (10 Aug 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item10944' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item10944" class="interwikiLink"><noautolink>Foswikitask:Item10944</noautolink></a>: Fix publishing of attachments </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.3.1 (14 Jun 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item10870' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10870"><noautolink>Foswikitask:Item10870</noautolink></a>: support skinning of the history topic. <a href="https://foswiki.org/Tasks/Item10870" class="interwikiLink" title="'Item10870' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10870</noautolink></a>: support definition of session preferences from the publish form. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10843" title="'Item10843' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10843</noautolink></a>: bugfix to publishers control centre </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.1 (25 May 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item10578" class="interwikiLink" title="'Item10578' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10578</noautolink></a>: allow list of publishskins; <a title="'Item10580' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10580"><noautolink>Foswikitask:Item10580</noautolink></a>: allow empty outfile param; <a href="https://foswiki.org/Tasks/Item10585" class="interwikiLink" title="'Item10585' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10585</noautolink></a>: support all valid topic names in topiclist; <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10578" title="'Item10578' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10578</noautolink></a>: made template purging configurable <a href="https://foswiki.org/Tasks/Item10594" class="interwikiLink" title="'Item10594' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10594</noautolink></a>: merged patch; <a href="https://foswiki.org/Tasks/Item10581" class="interwikiLink" title="'Item10581' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10581</noautolink></a>: correct paths to resources in HTML output. (Diab Jerius and Crawford Currie) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.0 (28 Mar 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item8225" class="interwikiLink" title="'Item8225' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8225</noautolink></a>: fix handling of plugin contexts <a class="interwikiLink" href="https://foswiki.org/Tasks/Item2635" title="'Item2635' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2635</noautolink></a>: make sure index.html is generated <a href="https://foswiki.org/Tasks/Item10529" class="interwikiLink" title="'Item10529' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10529</noautolink></a>: test integration with <a class="foswikiNewLink" rel="nofollow" href="BookmakerPlugin.html" title="Create this topic">BookmakerPlugin</a> via new topiclist parameter </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.7 (01 Nov 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item8658" class="interwikiLink" title="'Item8658' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8658</noautolink></a>: fix rest output when publishing to file, pdf and ftp </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.6 (29 Oct 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item8522" class="interwikiLink" title="'Item8522' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8522</noautolink></a>: support for Foswiki 1.1.x and also 1.0.x+ZonePlugin <a title="'Item1638' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1638" class="interwikiLink"><noautolink>Foswikitask:Item1638</noautolink></a>: fixed finding resources with parameters (e.g. <code>?t=2365421</code>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.5 (05 Feb 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Documentation update. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.4 (12 Jan 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item2557' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item2557" class="interwikiLink"><noautolink>Foswikitask:Item2557</noautolink></a>: fixed publish head elements added by ADDTOHEAD </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.3 (11 Jan 2010) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item2615" class="interwikiLink" title="'Item2615' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2615</noautolink></a>: fixed finding resources not inside quotes </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.2 (30 May 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item8168" class="interwikiLink" title="'Item8168' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8168</noautolink></a>: fixed genopt (extras) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.1 (22 May 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item8165' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item8165"><noautolink>Foswikitask:Item8165</noautolink></a>: fixed missing BASEWEB and other internal preferences. This was resulting in the wrong web being used for some operations </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.0 (16 May 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item1626" class="interwikiLink" title="'Item1626' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1626</noautolink></a>: fixed META{"formfield" <a class="interwikiLink" href="https://foswiki.org/Tasks/Item8150" title="'Item8150' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8150</noautolink></a>: (Marc Schaefer) fix for -skin parameter <a href="https://foswiki.org/Tasks/Item1557" class="interwikiLink" title="'Item1557' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1557</noautolink></a>: doc fix <a title="'Item1585' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item1585"><noautolink>Foswikitask:Item1585</noautolink></a>: allow history topic in different web <a title="'Item871' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item871" class="interwikiLink"><noautolink>Foswikitask:Item871</noautolink></a>: add missing newline at start of topic text. <a title="'Item1449' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1449" class="interwikiLink"><noautolink>Foswikitask:Item1449</noautolink></a>: topic publisher was not popping the context correctly <a title="'Item1632' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item1632"><noautolink>Foswikitask:Item1632</noautolink></a>: improve backporting support </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.0.2 (18 Mar 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item804" class="interwikiLink" title="'Item804' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item804</noautolink></a>: automatically create publish dir <a href="https://foswiki.org/Tasks/Item8078" class="interwikiLink" title="'Item8078' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8078</noautolink></a>: support publishing to a subdir of the publish dir, under url param control </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.0.1 (14 Feb 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1033" title="'Item1033' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1033</noautolink></a>: fixed button in <a href="PublishWeb.html">PublishWeb</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.0.0 (27 Nov 2008) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item8019" title="'Item8019' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8019</noautolink></a>: refactored as a plugin and tested in Foswiki </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> 1.1.0 (7 Jan 2003) </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Initial version </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h2 id="Info_38_Copyright">  Info &amp; Copyright </h2>
+<p></p>
+This add-on started life as the GenHTMLAddon, written by <a title="'Main/CrawfordCurrie' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Main/CrawfordCurrie"><noautolink>Foswiki:Main/CrawfordCurrie</noautolink></a> at Motorola. It was then extended by Eric Scouten, and then further fixed and enhanced by <a title="'Main/CrawfordCurrie' on foswiki.org" href="https://foswiki.org/Main/CrawfordCurrie" class="interwikiLink"><noautolink>Foswiki:Main/CrawfordCurrie</noautolink></a> (<a href="http://c-dot.co.uk/">http://c-dot.co.uk</a>). It has also been extended by <a class="interwikiLink" href="https://foswiki.org/Main/SvenDowideit" title="'Main/SvenDowideit' on foswiki.org"><noautolink>Foswiki:Main/SvenDowideit</noautolink></a> and <a title="'Main/MartinCleaver' on foswiki.org" href="https://foswiki.org/Main/MartinCleaver" class="interwikiLink"><noautolink>Foswiki:Main/MartinCleaver</noautolink></a>, and most recently refactored for Foswiki by <a class="interwikiLink" href="https://foswiki.org/Main/CrawfordCurrie" title="'Main/CrawfordCurrie' on foswiki.org"><noautolink>Foswiki:Main/CrawfordCurrie</noautolink></a>. Other significant contributors are <a title="'Main.ArthurClemens' on foswiki.org" href="https://foswiki.org/Main.ArthurClemens" class="interwikiLink"><noautolink>Foswiki:Main.ArthurClemens</noautolink></a> and <a title="'Main.MichaelDaum' on foswiki.org" href="https://foswiki.org/Main.MichaelDaum" class="interwikiLink"><noautolink>Foswiki:Main.MichaelDaum</noautolink></a>.
+<p></p>
+This code is a development of the Architectures and System Platforms group of Motorola Inc. and is protected by the following copyrights: <ul>
+<li> Copyright &copy;  2001 Motorola. All Rights Reserved.
+</li> <li> Copyright &copy;  2002-2003, Eric Scouten.
+</li> <li> Copyright &copy;  2004-2006 Crawford Currie <a href="http://c-dot.co.uk/">http://c-dot.co.uk</a>
+</li> <li> Copyright &copy;  2006 Martin Cleaver <a href="http://www.cleaver.org/">http://www.cleaver.org</a>
+</li> <li> Copyright &copy;  2006-2017, Foswiki Contributors
+</li></ul> 
+<p></p>
+The 2005 functionality improvements were sponsored by <a href="http://www.windriver.com/">Wind River Systems</a>
+<p></p>
+The <code>pdf</code> and <code>tgz</code> output formats were made possible by <a href="http://www.sabiolabs.com/"> <code>Sabio Labs</code> </a>
+<p></p>
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details, published at
+<a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<div class="foswikiAttachments foswikiFormStep" style="overflow:auto">
+<div class="twistyPlugin foswikiMakeVisible"><span id="topicattachmentslist1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="patternTwistyButton" href=".."><img src="DocumentGraphics.attachments/toggleopen.png" alt="" border="0"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>2</span></span></a></span><span id="topicattachmentslist1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class="patternTwistyButton"><img border="0" alt="" src="DocumentGraphics.attachments/toggleclose.png"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>2</span></span></a></span></div><div class="twistyPlugin"><div id="topicattachmentslist1toggle" style="" class="twistyRememberSetting twistyContent twistyInited">
+<table class="foswikiTable" id="tablePublishPlugin3" rules="none" summary="Topic attachments"><caption>Topic attachments</caption>
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">I</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Attachment</a> </th>
+			<th class="foswikiTableCol2"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Action</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Size</a> </th>
+			<th class="foswikiTableCol4"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Date</a> </th>
+			<th class="foswikiTableCol5"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Who</a> </th>
+			<th class="foswikiTableCol6 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img alt="publish.gif" height="16" src="DocumentGraphics.attachments/gif.png" width="16"></span><span class="foswikiHidden">gif</span> </td>
+			<td class="foswikiTableCol1"> <a href="PublishPlugin.attachments/publish.gif"><noautolink>publish.gif</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a title="change, update, previous revisions, move, delete..." rel="nofollow" href="PublishPlugin.html">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 53 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Jul 2022 - 04:26</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> Logo </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <span class='foswikiIcon'><img width="16" src="DocumentGraphics.attachments/png.png" height="16" alt="wikiringlogo20x20.png"></span><span class="foswikiHidden">png</span> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="PublishPlugin.attachments/wikiringlogo20x20.png"><noautolink>wikiringlogo20x20.png</noautolink></a> </td>
+			<td class="foswikiTableCol2 foswikiLast"> <a title="change, update, previous revisions, move, delete..." href="PublishPlugin.html" rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3 foswikiLast" style="text-align:right"> 1 K </td>
+			<td class="foswikiTableCol4 foswikiLast"> <span class="foswikiNoBreak">28 Jul 2022 - 04:26</span> </td>
+			<td class="foswikiTableCol5 foswikiLast"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody></table>
+</div></div></div>
+</body>

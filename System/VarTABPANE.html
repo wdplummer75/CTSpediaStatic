@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarTABPANE &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarTABPANE/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE System/VarTABPANE/favicon.ico" type="image/x-icon">
+<link title="edit VarTABPANE" href="VarTABPANE.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="VarTABPANE" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "VarTABPANE",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="TABPANE_45_45_tabpane_widget">  TABPANE -- tabpane widget </h1>
+This macro starts the tabpane, containing a series of TAB...ENDTABs and ends with ENDTABPANE. A complete tabpane normally looks like this:
+     <pre class="tml">
+&#37;TABPANE&#37;
+ &#37;TAB{&#34;tab 1&#34;}&#37;
+   ...
+ &#37;ENDTAB&#37;
+ &#37;TAB{&#34;tab 2&#34;}&#37;
+   ...
+ &#37;ENDTAB&#37;
+&#37;ENDTABPANE&#37;
+</pre>
+      Multiple tabpanes can be nested using the following scheme:
+     <pre class="tml">
+&#37;TABPANE&#37;
+ &#37;TAB{&#34;tab 1&#34;}&#37;
+   &#37;TABPANE&#37;
+     &#37;TAB{&#34;tab 1.1&#34;}&#37;
+       ...
+     &#37;ENDTAB&#37;
+     &#37;TAB{&#34;tab1.2&#34;}&#37;
+       ...
+     &#37;ENDTAB&#37;
+   &#37;ENDTABPANE&#37;
+ &#37;ENDTAB&#37;
+ &#37;TAB{&#34;tab 2&#34;}&#37;
+   ...
+ &#37;ENDTAB&#37;
+&#37;ENDTABPANE&#37;
+</pre>
+<h2 id="Parameters">  Parameters </h2>
+             <table class="foswikiTable" id="tableVarTABPANE1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>select</code> </td>
+			<td class="foswikiTableCol1"> number or id of tab to select </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>1</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>automaxexpand</code> </td>
+			<td class="foswikiTableCol1"> resizes the tabpane to the maximum height to fit into the window </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>minheight</code> </td>
+			<td class="foswikiTableCol1"> when automaxexpand is enabled, this is the minimum size a tab is allowed to be resized </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 230 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>class</code> </td>
+			<td class="foswikiTableCol1"> extra class: use <code>simple</code> for a non-3D tabpane; use=plain= for a no-frame look&amp;feel </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>animate</code> </td>
+			<td class="foswikiTableCol1"> enables/disables animation of switching tabs </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>off</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>remember</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> enables/disables recording the current tab into the url anchor, as well as initialize the currently selected tab reading the anchor </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>off</code> </td>
+		</tr>
+	</tbody>     </table>
+<h2 id="Examples">  Examples </h2>
+see <a href="JQueryTabpane.html">JQueryTabpane</a> for more examples
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarTAB.html">TAB</a>, <a href="VarENDTAB.html">ENDTAB</a>, <a class="foswikiNewLink" rel="nofollow" href="!VarENDTABPANE.html" title="Create this topic">ENDTABPANE</a>, <a href="JQueryPlugin.html">JQueryPlugin</a>, <a href="JQueryTabpane.html">JQueryTabpane</a>
+<!---->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

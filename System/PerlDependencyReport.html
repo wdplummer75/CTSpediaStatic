@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PerlDependencyReport &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/PerlDependencyReport/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/PerlDependencyReport/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit PerlDependencyReport" href="PerlDependencyReport.html" rel="alternate">
+<meta name="description" content="PerlDependencyReport" />
+<link media="all" class="head JQUERYPLUGIN::BUTTON" rel="stylesheet" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" type="text/css"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::BUTTON" src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PerlDependencyReport",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Perl_dependencies_for_Foswiki_and_Extensions">  Perl dependencies for Foswiki and Extensions </h1>
+<p></p>
+This topic lists the dependencies required by the Foswiki core
+and installed extensions. It is designed to help administrators analyse and
+resolve missing dependencies.  In the report, all users of the module are identified (including the Foswiki
+core).
+<p></p> <ul>
+<li> For perl modules, the module name links to the module information on the <a href="https://metacpan.org/">Comprehensive Perl Archive Network (CPAN)</a>.
+</li></ul> 
+<p></p> <ul>
+<li> For extensions, the module name links to the Extension topic in the <a href="https://foswiki.org/Extensions">Foswiki Extensions web</a>. (The extension topic might not exist for extensions installed from other sources).
+</li></ul> 
+<p></p>
+<div class="foswikiHelp"><b>Note:</b> Not all missing dependencies need
+resolution.  Optional or "recommended" dependencies will note when they are
+needed, and should only be installed if you know that your particular
+installation will require them.</div>
+<p></p>
+<a class="jqButton " href=".." onclick="window.location.href='http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/PerlDependencyReport?include=all';return false;"><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/book.png)'></span><span class='jqButtonText'>Show all dependencies</span></a>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Foswiki_core_dependencies"> Foswiki core dependencies </a>
+</li> <li> <a href="#Foswiki_extension_dependencies"> Foswiki extension dependencies </a>
+</li></ul> 
+</div>
+<p></p>
+<noautolink>
+<h2 id="Foswiki_core_dependencies">  Foswiki core dependencies </h2>
+<p></p> <ul>
+<li> <strong>Perl version:</strong> 5.030000
+</li></ul> 
+Perl modules used by Foswiki:
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a title="CPAN perl repository" class="interwikiLink" href="https://metacpan.org/module/Convert::PEM"><noautolink>CPAN:Convert::PEM</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Convert::PEM is not installed.  <br />Optional  S/MIME email signing feature.<br/><span class="foswikiAlert"><img alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a title="CPAN perl repository" href="https://metacpan.org/module/Crypt::Eksblowfish::Bcrypt" class="interwikiLink"><noautolink>CPAN:Crypt::Eksblowfish::Bcrypt</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Crypt::Eksblowfish::Bcrypt is not installed.  <br />Optional only needed if Foswiki passwords should be encoded using bcrypt.<br/><span class="foswikiAlert"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a title="CPAN perl repository" class="interwikiLink" href="https://metacpan.org/module/Crypt::SMIME"><noautolink>CPAN:Crypt::SMIME</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Crypt::SMIME is not installed.  <br />Optional  S/MIME email signing feature.<br/><span class="foswikiAlert"><img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a title="CPAN perl repository" href="https://metacpan.org/module/Crypt::X509" class="interwikiLink"><noautolink>CPAN:Crypt::X509</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Crypt::X509 is not installed.  <br />Optional  S/MIME email signing feature.<br/><span class="foswikiAlert"><img width="16" title="ALERT!" height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="https://metacpan.org/module/DBD::SQLite" class="interwikiLink" title="CPAN perl repository"><noautolink>CPAN:DBD::SQLite</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> DBD::SQLite is not installed.  <br />Optional  Foswiki Page Cache using SQLite<br/><span class="foswikiAlert"><img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="https://metacpan.org/module/DBD::mysql" class="interwikiLink" title="CPAN perl repository"><noautolink>CPAN:DBD::mysql</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> DBD::mysql is not installed.  <br />Optional  Foswiki Page Cache using MySQL<br/><span class="foswikiAlert"><img src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16" title="ALERT!" width="16"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a title="CPAN perl repository" href="https://metacpan.org/module/Mozilla::CA" class="interwikiLink"><noautolink>CPAN:Mozilla::CA</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Mozilla::CA is not installed.  <br />Optional SSL host verification for e-mail and other SSL/TLS connections.<br/><span class="foswikiAlert"><img width="16" title="ALERT!" height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <a title="CPAN perl repository" href="https://metacpan.org/module/Win32::Console" class="interwikiLink"><noautolink>CPAN:Win32::Console</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Win32::Console is not installed.  <br />Optional required on Windows platforms if {UserInterfaceInternationalisation} is enabled in configuration.<br/><span class="foswikiAlert"><img src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!" title="ALERT!" width="16"> Possible missing dependency!</span> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+<h2 id="Foswiki_extension_dependencies">  Foswiki extension dependencies </h2>
+<p></p>
+Note: If a minimum version is identified, the extension requiring the highest minimum version is underlined.
+<p></p>
+Extensions and Perl modules used by installed Extensions:
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a title="CPAN perl repository" class="interwikiLink" href="https://metacpan.org/module/Apache2::Request"><noautolink>CPAN:Apache2::Request</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Apache2::Request is not installed. <br /><strong>ModPerlEngineContrib</strong>: Optional but recommended if you're using Apache 2.x and plan to enable mod_perl <br><b>Used by:</b> <a href="ModPerlEngineContrib.html">ModPerlEngineContrib</a><br/><span class="foswikiAlert"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!"> Possible missing dependency!</span> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <a title="CPAN perl repository" href="https://metacpan.org/module/FCGI::ProcManager" class="interwikiLink"><noautolink>CPAN:FCGI::ProcManager</noautolink></a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> FCGI::ProcManager is not installed. <br /><strong>FastCGIEngineContrib</strong>: Optional Required on nginx for dynamic FCGI handler management. Not used with Apache. <br><b>Used by:</b> <a href="FastCGIEngineContrib.html">FastCGIEngineContrib</a><br/><span class="foswikiAlert"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!"> Possible missing dependency!</span> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+</noautolink>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

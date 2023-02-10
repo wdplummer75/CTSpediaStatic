@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryQueryObject &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQueryQueryObject/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryQueryObject/favicon.ico">
+<link title="edit JQueryQueryObject" rel="alternate" href="JQueryQueryObject.html" type="application/x-wiki">
+<meta name="description" content="JQueryQueryObject" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryQueryObject",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryQueryObject">  <a class="foswikiCurrentTopicLink" href="JQueryQueryObject.html">JQueryQueryObject</a> </h1>
+<p></p>
+    Homepage: <a href="https://github.com/alrusdi/jquery-plugin-query-object">https://github.com/alrusdi/jquery-plugin-query-object</a> <br />
+    Author(s): Blair Mitchelmore <br />
+    Version: 2.2.2
+<p></p>
+<p></p>
+<p></p>
+This extension creates a singleton query string object for quick and
+readable query string modification and creation. This plugin provides a
+simple way of taking a page's query string and creating a modified
+version of this with little code. 
+<p></p>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<pre class="js">
+var url &#61; location.search;
+&#62; &#34;?action&#61;view&#38;section&#61;info&#38;id&#61;123&#38;debug&#38;testy&#91;&#93;&#61;true&#38;testy&#91;&#93;&#61;false&#38;testy&#91;&#93;&#34;
+var section &#61; &#36;.query.get(&#39;section&#39;);
+&#62; &#34;info&#34;
+var id &#61; &#36;.query.get(&#39;id&#39;);
+&#62; 123
+var debug &#61; &#36;.query.get(&#39;debug&#39;);
+&#62; true
+var arr &#61; &#36;.query.get(&#39;testy&#39;);
+&#62; &#91;&#34;true&#34;, &#34;false&#34;, true&#93;
+var arrayElement &#61; &#36;.query.get(&#39;testy&#91;1&#93;&#39;);
+&#62; &#34;false&#34;
+var newUrl &#61; &#36;.query.set(&#34;section&#34;, 5).set(&#34;action&#34;, &#34;do&#34;).toString();
+&#62; &#34;?action&#61;do&#38;section&#61;5&#38;id&#61;123&#34;
+var newQuery &#61; &#34;&#34; + &#36;.query.set(&#39;type&#39;, &#39;string&#39;);
+&#62; &#34;?action&#61;view&#38;section&#61;info&#38;id&#61;123&#38;type&#61;string&#34;
+var oldQuery &#61; &#36;.query.toString();
+&#62; &#34;?action&#61;view&#38;section&#61;info&#38;id&#61;123&#34;
+var oldQuery2 &#61; &#36;.query;
+&#62; ?action&#61;view&#38;section&#61;info&#38;id&#61;123
+var newerQuery &#61; &#36;.query.SET(&#39;type&#39;, &#39;string&#39;);
+&#62; ?action&#61;view&#38;section&#61;info&#38;id&#61;123&#38;type&#61;string
+var notOldQuery &#61; &#36;.query.toString();
+&#62; &#34;?action&#61;view&#38;section&#61;info&#38;id&#61;123&#38;type&#61;string&#34;
+var oldQueryAgain &#61; &#36;.query.REMOVE(&#34;type&#34;);
+&#62; ?action&#61;view&#38;section&#61;info&#38;id&#61;123
+var emptyQuery &#61; &#36;.query.empty();
+&#62; &#34;&#34;
+var stillTheSame &#61; &#36;.query.copy();
+&#62; ?action&#61;view&#38;section&#61;info&#38;id&#61;123
+</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

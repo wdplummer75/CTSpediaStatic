@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarENCODE &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarENCODE/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/VarENCODE/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit VarENCODE" rel="alternate" href="VarENCODE.html">
+<meta name="description" content="VarENCODE" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "VarENCODE",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="ENCODE_45_45_encode_characters_in_a_string">  ENCODE -- encode characters in a string </h1>
+Encode character sequences in <code>"string"</code>, by mapping characters (or sequences of characters) to an alternative character (or sequence of characters). This macro can be used to encode strings for use in URLs, to encode to HTML entities, to protect quotes, and for as many other uses as you can imagine.
+<h2 id="Parameters">  Parameters </h2>
+           <table class="foswikiTable" id="tableVarENCODE1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"string"</code> </td>
+			<td class="foswikiTableCol1"> String to encode </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> "" (empty string) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>type</code> </td>
+			<td class="foswikiTableCol1"> Use a predefined encoding (see below). </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Default is 'url'. Parameter <code>type</code> not be used if <code>old</code> or <code>new</code> are given. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>old</code> </td>
+			<td class="foswikiTableCol1"> Comma-separated list of tokens to replace. Tokens are normally single characters, but can also be sequences of characters. The standard <a href="FormatTokens.html">format tokens</a> may be used in this list. Each token must be unique - you cannot list the same token twice. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> May not be used with <code>type</code>; required if <code>new</code> is used </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>new</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> comma-separated list of replacement tokens. The elements in this list match 1:1 with the elements in the <code>old</code> list. Again, the standard <a href="FormatTokens.html">format tokens</a> may be used. An empty element in the <code>new</code> list will result in the corresponding token in the <code>old</code> list being deleted from the string. If the <code>new</code> list is shorter than the <code>old</code> list it will be extended to the same length using the empty element. Tokens do not have to be unique. <div class="foswikiHelp"><img width="16" title="ALERT!" height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png"> When using <code>old</code> and <code>new</code>, be aware that the results of applying earlier tokens are not processed again using later tokens. (see examples below)</div> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> May not be used with <code>type</code>; required if <code>old</code> is used </td>
+		</tr>
+	</tbody>     </table>
+If <code>ENCODE</code> is called with no optional parameters (e.g. <code>%ENCODE{"string"}%</code>) then the default <code>type="url"</code> encoding will be used.
+<h2 id="Predefined_encodings">  Predefined encodings </h2>
+Unless otherwise specified, the <code>type</code> parameter encodes the following "special characters" <ul>
+<li> <code>type="entity"</code> or <code>type="entities"</code> Encode special characters into HTML entities, like a double quote into &#38;#34; <ul>
+<li> all non-printable ASCII characters below space, except newline (="
+</li></ul> 
+</li></ul> 
+"=) and carriage return (<code>"\r"</code>). <ul>
+ <li>
+ <ul>
+<li> HTML special characters <code>"&lt;"</code>, <code>"&gt;"</code>, <code>"&amp;"</code>, single quote (<code>'</code>) and double quote (<code>"</code>)
+</li> <li> TML special characters <code>"%"</code>, <code>"["</code>, <code>"]"</code>, <code>"@"</code>, <code>"_"</code>, <code>"*"</code>, <code>"="</code>, <code>"$"</code> and <code>"|"</code>
+</li></ul> 
+</li> <li> <code>type="html"</code> As <code>type="entity"</code> except it also encodes =
+</li></ul> 
+= (newline) and carriage return (<code>"\r"</code>). <ul>
+<li> <code>type="safe"</code> Encode just the characters <code>'"&lt;&gt;%</code> into HTML entities.
+</li> <li> <code>type="quote"</code> or <code>type="quotes"</code> Escapes double quotes with backslashes (<code>\"</code>), does not change any other characters
+</li> <li> <code><b>type="url"</b></code> (default) Encode special characters for use in URL parameters, like a double quote into <code>%22</code>.
+</li></ul> 
+<h1 id="Examples">  Examples </h1> <ul>
+<li> <code>%ENCODE{"spaced name"}%</code> expands to spaced%20name
+</li> <li> <code>%ENCODE{"| Blah | | More blah |" old="|,$n" new="&amp;#124;,&lt;br /&gt;"}% expands to =&#124; Blah &#124; &#124; More blah &#124;</code>      - this encoding is useful to protect special TML characters in tables.
+</li> <li> <code>%ENCODE{"10xx1x01x" old="1,x,0" new="A,,B"}%</code> expands to <code>ABABA</code>
+</li> <li> <code>%ENCODE{"1,2" old="$comma" new=";"}%</code> expands to <code>1;2</code>
+</li></ul> 
+Values for HTML input fields must be entity encoded. <br /> Example: <pre class="tml">&lt;input type="text" name="address" value="%ENCODE{ "any text" type="entity" }%" /&gt;</pre>
+<code>ENCODE</code> can be used to filter user input from URL parameters and similar to help protect against cross-site scripting. The safest approach is to use <code>type="entity"</code>. This can however prevent an application from fully working. You can alternatively use <code>type="safe"</code> which encodes only the characters <code>'"&lt;&gt;%</code> into HTML entities. When <code>ENCODE</code> is passing a string inside another macro always use double quotes ("") type="quote". For maximum protection against cross-site scripting you are advised to install the <a class="interwikiLink" href="https://foswiki.org/Extensions.SafeWikiPlugin" title="'Extensions.SafeWikiPlugin' on foswiki.org"><noautolink>Foswiki:Extensions.SafeWikiPlugin</noautolink></a>.
+<p></p>
+Double quotes in strings must be escaped when passed into other macros.<br /> Example: <pre class="tml">&#37;SEARCH{ &#34;&#37;ENCODE{ &#34;string with &#34;quotes&#34;&#34; type&#61;&#34;quotes&#34; }&#37;&#34; noheader&#61;&#34;on&#34; }&#37;</pre>
+<p></p>
+<div class="foswikiHelp"><img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> When using <code>old</code> and <code>new</code>, be aware that the results of applying earlier tokens are not processed again using later tokens. For example:<!--  --><pre class="tml">
+   &#37;ENCODE{&#34;A&#34; old&#61;&#34;A,B&#34; new&#61;&#34;B,C&#34;}&#37; will result in &#39;B&#39; (not &#39;C&#39;),
+   &#37;ENCODE{&#34;asd&#34; old&#61;&#34;as,d&#34; new&#61;&#34;d,f&#34;}&#37; will yield &#39;df&#39;, and
+   &#37;ENCODE{&#34;A&#34; old&#61;&#34;A,AA&#34; new&#61;&#34;AA,B&#34;}&#37; will give &#39;AA&#39; and.
+   &#37;ENCODE{&#34;asdf&#34; old&#61;&#34;a,asdf&#34; new&#61;&#34;a,2&#34;}&#37; will give &#39;asdf&#39;</pre></div>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarURLPARAM.html">URLPARAM</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

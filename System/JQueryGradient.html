@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryGradient &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryGradient/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/JQueryGradient/favicon.ico" type="image/x-icon">
+<link title="edit JQueryGradient" href="JQueryGradient.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="JQueryGradient" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "JQueryGradient",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryGradient">  <a href="JQueryGradient.html" class="foswikiCurrentTopicLink">JQueryGradient</a> </h1>
+<p></p>
+<p></p>
+<p></p>
+Adds a gradient to the background of an element.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<h3 id="JavaScript_API"> JavaScript API </h3>
+<p></p>
+This basically looks like this:
+<p></p>
+<pre class="js">&#36;(&#39;div&#39;).gradient({ from: &#39;000000&#39;, to: &#39;CCCCCC&#39; });</pre>
+<p></p>
+Options:
+<p></p> <ul>
+<li> <strong>from</strong>: The hex color code to start the gradient with. By default the value is "000000".
+</li> <li> <strong>to</strong>: The hex color code to end the gradient with.     By default the value is "FFFFFF".
+</li> <li> <strong>direction</strong>: This tells the gradient to be horizontal or vertical.     By default the value is "horizontal".
+</li> <li> <strong>length</strong>: This is used to constrain the gradient to a     particular width or height (depending on the direction). By default     the length is set to null, which will use the width or height     (depending on the direction) of the element.
+</li> <li> <strong>position</strong>: This tells the gradient to be positioned     at the top, bottom, left and/or right within the element. The     value is just a string that specifices top or bottom and left or right.     By default the value is 'top left'.
+</li></ul> 
+<p></p>
+<h3 id="Foswiki_integration">  Foswiki integration </h3>
+<p></p>
+The gradient will be applied to elements with a <code><b>jqGradient</b></code> class name. Options are specified using <a href="JQueryMetadata.html">JQueryMetadata</a>.
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<div class='foswikiAlert'>No such plugin gradient</div>
+<p></p>
+<div class="jqGradient {from: '00088', to: '0088ff', direction: 'horizontal'}" style="width:300px;padding:10px;border:1px solid #08f;color:white;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ornare fringilla est, eget condimentum quam auctor quis. Curabitur vitae nibh eu nisl scelerisque facilisis. Vestibulum posuere pretium magna, eu pulvinar libero cursus in. Phasellus tortor dui, viverra vitae molestie a, aliquam quis risus. Mauris fringilla mattis ligula, et laoreet dui rhoncus vel. Aliquam bibendum, nisi nec pellentesque convallis, augue elit rutrum sapien, nec molestie augue mauris et tellus. 
+</div>
+<p></p>
+<div class="jqGradient {from: 'ffcccc', to: 'FFFD00', direction: 'horizontal'}" style="width:300px;padding:10px;border:1px solid #ddd">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ornare fringilla est, eget condimentum quam auctor quis. Curabitur vitae nibh eu nisl scelerisque facilisis. Vestibulum posuere pretium magna, eu pulvinar libero cursus in. Phasellus tortor dui, viverra vitae molestie a, aliquam quis risus. Mauris fringilla mattis ligula, et laoreet dui rhoncus vel. Aliquam bibendum, nisi nec pellentesque convallis, augue elit rutrum sapien, nec molestie augue mauris et tellus. 
+</div>
+<p></p>
+<div class="jqGradient {from: '000088', to: 'FF0000', direction: 'vertical'}" style="width:300px;padding:10px;border:1px solid #ddd;color:white">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ornare fringilla est, eget condimentum quam auctor quis. Curabitur vitae nibh eu nisl scelerisque facilisis. Vestibulum posuere pretium magna, eu pulvinar libero cursus in. Phasellus tortor dui, viverra vitae molestie a, aliquam quis risus. Mauris fringilla mattis ligula, et laoreet dui rhoncus vel. Aliquam bibendum, nisi nec pellentesque convallis, augue elit rutrum sapien, nec molestie augue mauris et tellus. 
+</div>
+<p></p>
+<div class="jqGradient {from: 'f9f9f9', to: 'dddddd', length:10, position:'bottom'}" style="width:300px;padding:10px 10px 20px 10px;border:1px solid #aaa; background:f9f9f9">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ornare fringilla est, eget condimentum quam auctor quis. Curabitur vitae nibh eu nisl scelerisque facilisis. Vestibulum posuere pretium magna, eu pulvinar libero cursus in. Phasellus tortor dui, viverra vitae molestie a, aliquam quis risus. Mauris fringilla mattis ligula, et laoreet dui rhoncus vel. Aliquam bibendum, nisi nec pellentesque convallis, augue elit rutrum sapien, nec molestie augue mauris et tellus. 
+</div>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

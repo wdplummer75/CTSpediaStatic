@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryMigrate &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryMigrate/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryMigrate/favicon.ico">
+<link title="edit JQueryMigrate" href="JQueryMigrate.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="JQueryMigrate" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "JQueryMigrate",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryMigrate">  <a class="foswikiCurrentTopicLink" href="JQueryMigrate.html">JQueryMigrate</a> </h1>
+<p></p>
+    Homepage: <a href="https://github.com/jquery/jquery-migrate/">https://github.com/jquery/jquery-migrate/</a> <br />
+    Author(s): jQuery Foundation, Inc. and other contributors <br />
+    Version: 3.3.1
+<p></p>
+<p></p>
+<p></p>
+This plugin can be used to detect and restore APIs, features or functionality that have been deprecated in jQuery and removed as of version 1.9. They include:
+<p></p> <ul>
+<li> jQuery.browser docs
+</li> <li> jQuery.fn.andSelf() docs
+</li> <li> jQuery.sub() docs
+</li> <li> jQuery.fn.toggle() docs (<em>event click signature only</em>)
+</li> <li> "hover" pseudo-event name docs
+</li> <li> jQuery.fn.error() docs
+</li> <li> ajaxStart, ajaxSend, ajaxSuccess, ajaxError, ajaxComplete, ajaxStop global events on non-document targets docs
+</li> <li> Use of attrChange, attrName, relatedNode, srcElement on the Event object (use Event.originalEvent.attrChange etc. instead)
+</li> <li> jQuery.fn.attr() using the pass argument (undocumented)
+</li> <li> jQuery.attrFn object (undocumented)
+</li> <li> jQuery.fn.data() data events (undocumented)
+</li> <li> jQuery.fn.data("events") to retrieve event-related data (undocumented)
+</li></ul> 
+<p></p>
+See the warnings page for more information regarding messages the plugin generates.
+<p></p>
+Use <code>%JQREQUIRE{"migrate"}%</code> to load the plugin into the page.
+<p></p>
+The plugin can be included with versions of jQuery as old as 1.6.4 as a
+migration tool to identify potential upgrade issues. However, the plugin is
+<strong>only required for version 1.9 or higher</strong> to restore deprecated and removed
+functionality.
+<p></p>
+See the <a href="http://jquery.com/upgrade-guide/1.9/">Upgrade guide</a> for more information.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

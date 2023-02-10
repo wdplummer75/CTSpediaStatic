@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SitePermissions &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/SitePermissions/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/SitePermissions/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit SitePermissions" rel="alternate" href="SitePermissions.html">
+<meta name="description" content="SitePermissions" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "SitePermissions",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<hr />
+Permissions settings of the webs on this Foswiki site
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Web </th>
+			<th class="foswikiTableCol1"> Sitemap </th>
+			<th class="foswikiTableCol2" colspan="2"> VIEW </th>
+			<th class="foswikiTableCol4" colspan="2"> CHANGE </th>
+			<th class="foswikiTableCol6" colspan="2"> RENAME </th>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<th class="foswikiTableCol0 foswikiFirstCol"> &nbsp; </th>
+			<th class="foswikiTableCol1"> Listed </th>
+			<th class="foswikiTableCol2"> DENY </th>
+			<th class="foswikiTableCol3"> ALLOW </th>
+			<th class="foswikiTableCol4"> DENY </th>
+			<th class="foswikiTableCol5"> ALLOW </th>
+			<th class="foswikiTableCol6"> DENY </th>
+			<th class="foswikiTableCol7 foswikiLastCol"> ALLOW </th>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="../CTSpedia/WebPreferences.html"><img src="DocumentGraphics.attachments/wrench.gif" height="16" border="0" alt="Preferences" title="Preferences of CTSpedia web" width="16"></a> <a href="../CTSpedia/WebHome.html"><img height="16" border="0" alt="Home" src="DocumentGraphics.attachments/home.gif" width="16" title="Home of CTSpedia web"></a> <a href="../CTSpedia/WebHome.html">CTSpedia</a> </td>
+			<td class="foswikiTableCol1"> on </td>
+			<td class="foswikiTableCol2"> &nbsp; </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol6"> &nbsp; </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="../GraphicsWorkingGroup/WebPreferences.html"><img alt="Preferences" border="0" height="16" src="DocumentGraphics.attachments/wrench.gif" width="16" title="Preferences of GraphicsWorkingGroup web"></a> <a href="../GraphicsWorkingGroup/WebHome.html"><img alt="Home" border="0" height="16" src="DocumentGraphics.attachments/home.gif" width="16" title="Home of GraphicsWorkingGroup web"></a> <a href="../GraphicsWorkingGroup/WebHome.html">GraphicsWorkingGroup</a> </td>
+			<td class="foswikiTableCol1"> on </td>
+			<td class="foswikiTableCol2"> &nbsp; </td>
+			<td class="foswikiTableCol3"> <a href="../Main/AdminGroup.html">AdminGroup</a>, <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/MaryBanach.html">MaryBanach</a> </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminGroup.html">AdminGroup</a>, <a href="../Main/MaryBanach.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">MaryBanach</a> </td>
+			<td class="foswikiTableCol6"> &nbsp; </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="../Main/WebPreferences.html"><img width="16" title="Preferences of Main web" height="16" border="0" alt="Preferences" src="DocumentGraphics.attachments/wrench.gif"></a> <a href="../Main/WebHome.html"><img src="DocumentGraphics.attachments/home.gif" alt="Home" border="0" height="16" title="Home of Main web" width="16"></a> <a href="../Main/WebHome.html">Main</a> </td>
+			<td class="foswikiTableCol1"> on </td>
+			<td class="foswikiTableCol2"> <em>not set</em> </td>
+			<td class="foswikiTableCol3"> <em>not set</em> </td>
+			<td class="foswikiTableCol4"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol6"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="../ResearchEthics/WebPreferences.html"><img width="16" title="Preferences of ResearchEthics web" height="16" border="0" alt="Preferences" src="DocumentGraphics.attachments/wrench.gif"></a> <a href="../ResearchEthics/WebHome.html"><img src="DocumentGraphics.attachments/home.gif" height="16" border="0" alt="Home" title="Home of ResearchEthics web" width="16"></a> <a href="../ResearchEthics/WebHome.html">ResearchEthics</a> </td>
+			<td class="foswikiTableCol1"> on </td>
+			<td class="foswikiTableCol2"> &nbsp; </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol6"> &nbsp; </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="../ReviewsBERD/WebPreferences.html"><img width="16" title="Preferences of ReviewsBERD web" alt="Preferences" border="0" height="16" src="DocumentGraphics.attachments/wrench.gif"></a> <a href="../ReviewsBERD/WebHome.html"><img title="Home of ReviewsBERD web" width="16" src="DocumentGraphics.attachments/home.gif" height="16" border="0" alt="Home"></a> <a href="../ReviewsBERD/WebHome.html">ReviewsBERD</a> </td>
+			<td class="foswikiTableCol1"> on </td>
+			<td class="foswikiTableCol2"> &nbsp; </td>
+			<td class="foswikiTableCol3"> <a title="Create this topic" href="../Main/MaryBanach.html" class="foswikiNewLink" rel="nofollow">MaryBanach</a>, <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5"> <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/MaryBanach.html">MaryBanach</a>, <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol6"> &nbsp; </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="../Sandbox/WebPreferences.html"><img alt="Preferences" border="0" height="16" src="DocumentGraphics.attachments/wrench.gif" width="16" title="Preferences of Sandbox web"></a> <a href="../Sandbox/WebHome.html"><img src="DocumentGraphics.attachments/home.gif" height="16" border="0" alt="Home" title="Home of Sandbox web" width="16"></a> <a href="../Sandbox/WebHome.html">Sandbox</a> </td>
+			<td class="foswikiTableCol1"> on </td>
+			<td class="foswikiTableCol2"> <em>not set</em> </td>
+			<td class="foswikiTableCol3"> <em>not set</em> </td>
+			<td class="foswikiTableCol4"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol6"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="WebPreferences.html"><img title="Preferences of System web" width="16" src="DocumentGraphics.attachments/wrench.gif" height="16" border="0" alt="Preferences"></a> <a href="WebHome.html" class="foswikiCurrentWebHomeLink"><img src="DocumentGraphics.attachments/home.gif" alt="Home" border="0" height="16" title="Home of System web" width="16"></a> <a href="WebHome.html" class="foswikiCurrentWebHomeLink">System</a> </td>
+			<td class="foswikiTableCol1"> on </td>
+			<td class="foswikiTableCol2"> <em>not set</em> </td>
+			<td class="foswikiTableCol3"> <em>not set</em> </td>
+			<td class="foswikiTableCol4"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol6"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="../Trash/WebPreferences.html"><img title="Preferences of Trash web" width="16" src="DocumentGraphics.attachments/wrench.gif" height="16" border="0" alt="Preferences"></a> <a href="../Trash/WebHome.html"><img width="16" title="Home of Trash web" height="16" border="0" alt="Home" src="DocumentGraphics.attachments/home.gif"></a> <a href="../Trash/WebHome.html">Trash</a> </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2"> <em>not set</em> </td>
+			<td class="foswikiTableCol3"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol4"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol6"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol7 foswikiLastCol"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <a href="../Trash/TestWeb/WebPreferences.html"><img alt="Preferences" border="0" height="16" src="DocumentGraphics.attachments/wrench.gif" width="16" title="Preferences of Trash/TestWeb web"></a> <a href="../Trash/TestWeb/WebHome.html"><img width="16" title="Home of Trash/TestWeb web" height="16" border="0" alt="Home" src="DocumentGraphics.attachments/home.gif"></a> <a href="../Trash/TestWeb/WebHome.html">Trash.TestWeb</a> </td>
+			<td class="foswikiTableCol1 foswikiLast"> on </td>
+			<td class="foswikiTableCol2 foswikiLast"> <em>not set</em> </td>
+			<td class="foswikiTableCol3 foswikiLast"> <a href="../Main/AdminGroup.html">AdminGroup</a> </td>
+			<td class="foswikiTableCol4 foswikiLast"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol5 foswikiLast"> <a href="../Main/WikiAdmin.html">WikiAdmin</a> </td>
+			<td class="foswikiTableCol6 foswikiLast"> <a href="../Main/WikiGuest.html">WikiGuest</a> </td>
+			<td class="foswikiTableCol7 foswikiLastCol foswikiLast"> <a href="../Main/WikiAdmin.html">WikiAdmin</a> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<strong>Please Note:</strong>
+<p></p> <ul>
+<li> <a href="../Main/WikiGuest.html">WikiGuest</a> is the guest account - used by unauthenticated users.
+</li> <li> The web must not deny view to <a href="../Main/WikiGuest.html">WikiGuest</a>; otherwise, people will not be able to register.
+</li></ul> 
+<p></p>
+<p></p>
+<p></p>
+See <a href="AccessControl.html">AccessControl</a> for details 
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="SiteMap.html">SiteMap</a>, <a href="UserDocumentationCategory.html">UserDocumentationCategory</a>, <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>, <a href="AdminToolsCategory.html">AdminToolsCategory</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

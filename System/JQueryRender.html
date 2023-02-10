@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryRender &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryRender/favicon.ico"> <link href="../MISSING RESOURCE System/JQueryRender/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="JQueryRender.html" title="edit JQueryRender">
+<meta name="description" content="JQueryRender" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryRender",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/render/jquery.render.js?version=1.0.7" class="script JQUERYPLUGIN::RENDER"></script>
+<script src="JQueryPlugin.attachments/plugins/render/jquery.template-loader.js?version=1.0.7" class="script JQUERYPLUGIN::RENDER"></script><!--JQUERYPLUGIN::RENDER-->
+<script>
+jQuery(function($) {
+   $('#container2').html($('#personTemplate2').render(arrayOfPersons));
+});
+</script><!--JQueryRender::INIT-->
+<script>
+var arrayOfPersons = [
+   {
+      firstName:'David',
+      lastName:'Duchovny'
+   },
+   {
+      firstName:'Natascha',
+      lastName:'McElhone',
+   },
+   {
+      firstName:'Evan',
+      lastName:'Handler'
+   },
+   {
+      firstName:'Madeleine',
+      lastName:'Martin'
+   },
+   {
+      firstName:'Pamela',
+      lastName:'Adlon'
+   }
+];
+
+jQuery(function($) {
+   $('#container1').html($('#personTemplate1').render(arrayOfPersons));
+});
+</script><!--JQueryRender::PERSONS-->
+</head>
+<body>
+<h1 id="JQueryRender">  <a class="foswikiCurrentTopicLink" href="JQueryRender.html">JQueryRender</a> </h1>
+<p></p>
+<p></p>
+    Homepage: <a href="http://www.jsviews.com/">http://www.jsviews.com</a> <br />
+    Author(s): Boris Moore <br />
+    Version: 1.0.7
+<p></p>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Usage"> Usage </a>
+</li> <li> <a href="#Further_reading"> Further reading </a>
+</li> <li> <a href="#Syntax"> Syntax </a>
+</li></ul> 
+</div>
+<p></p>
+%IMAGE{"logo-jsr.png"}%
+<p></p>
+<p></p>
+This plugin brings modern template based javascript apps to Foswiki based on the libraries by Boris Moore. It is intended to supersede <code>jquery.tmpl</code>.
+<a href="JsRender.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">JsRender</a> is a light-weight but powerful templating engine, highly extensible, and optimized for high-performance pure string-based rendering, without DOM or jQuery dependency.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<p></p>
+Have you ever found yourself writing code like this?
+<p></p>
+<pre class="js">
+&#60;script&#62;
+var i &#61; 1;
+
+&#36;(arrayOfPersons).each(function () {
+   var person &#61; this;
+   &#36;(&#34;#container&#34;).append(
+      &#34;&#60;div&#62;&#34; + 
+      i++ + 
+      &#34;: &#34; + 
+      person.firstName + 
+      &#34; &#34; + 
+      person.lastName + 
+    &#34;&#60;/div&#62;&#34;);
+});
+&#60;/script&#62;
+</pre>
+<p></p>
+This is rather cumbersome and a nightmare to actually extend, even more so when you meet this kind of common jQuery code in real-life applications.
+Instead of "DOM plumbing" use a templates like this one:
+<p></p>
+<pre class="js">
+&#60;script id&#61;&#34;personTemplate&#34; type&#61;&#34;text/x-jsrender &#34;&#62;
+  &#60;div&#62;{{:#index+1}}: {{:firstName}} {{:lastName}}&#60;/div&#62;
+&#60;/script&#62;
+</pre>
+<p></p>
+This is straight forward and resembles the intended output much closer. Then make use of this template by expanding it for each <code>person</code> in your <code>arrayOfPersons</code>:
+<p></p>
+<pre class="js">
+&#60;script&#62;
+   var result &#61; &#36;(&#34;#personTemplate&#34;).render(arrayOfPersons);
+   &#36;(&#34;#container&#34;).html(result);
+&#60;/script&#62;
+</pre>
+<p></p>
+See how this works out:
+<p></p>
+<p></p>
+<p></p>
+<div id="container1"></div>
+<p></p>
+<script id="personTemplate1" type="text/x-jsrender ">
+  <p>
+   #{{:#index+1}} <br />
+   <b>First Name:</b> {{:firstName}} <br />
+   <b>Last Name:</b> {{:lastName}}
+  </p>
+</script>
+<p></p>
+<p></p>
+<p></p>
+Whenever you'd like to use a different layout for the same data just use a different template. No big deal.
+Imagine doing the same using DOM plumbing...
+<p></p>
+<pre class="js">
+&#60;script id&#61;&#34;personTemplate2&#34; type&#61;&#34;text/x-jsrender &#34;&#62;
+  &#60;li&#62;{{:firstName}} {{:lastName}}&#60;/li&#62;
+&#60;/script&#62;
+</pre>
+<p></p>
+<ol id="container2"></ol>
+<p></p>
+<script id="personTemplate2" type="text/x-jsrender ">
+  <li>{{:firstName}} {{:lastName}}</li>
+</script>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Further_reading">  Further reading </h2>
+<p></p> <ul>
+<li> <a href="http://www.jsviews.com/">http://www.jsviews.com</a>
+</li> <li> <a href="http://borismoore.github.io/jsrender/demos/demos.html">JsRender Demos</a>
+</li> <li> <a href="http://msdn.microsoft.com/en-us/magazine/hh882454.aspx">Using JsRender with JavaScript and HTML</a>
+</li> <li> <a href="http://msdn.microsoft.com/en-us/magazine/hh975379.aspx">Advanced JsRender Templating Features</a>
+</li></ul> 
+<p></p>
+<h2 id="Syntax">  Syntax  </h2>
+<p></p>
+JsRender templates consist of HTML markup plus JsRender tags, such as the <code>{{for ..}}</code> tag or <code>{{: ...}}</code>. 
+All JsRender template tags are wrapped with double curly braces. The tag name can be followed by one or more parameters or expressions. 
+In the case of the <code>{{: }}</code> tag, the result of the expression would then be rendered. A template is used while looping over elements of a JSON array.
+In each iteration the template is used as a blueprint to process the current property of the JSON object under consideration. All expansions of a template
+are then concatenated.
+Templates can also be used to render just a single element. You don't necessarily need to pass an array as data. JsRender can also take a single JSON object
+and return the rendered template.
+<p></p>
+(see also <a href="http://www.jsviews.com/#jsrapi">http://www.jsviews.com/#jsrapi</a>)
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Tag</a> </th>
+			<th class="foswikiTableCol1"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Example</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{:&nbsp;pathOrExpr }}</code> </td>
+			<td class="foswikiTableCol1"> get the value of the data path or expression, and insert it into the rendered output as a string </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{:address.street}}</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{&gt;&nbsp;pathOrExpr }}</code> </td>
+			<td class="foswikiTableCol1"> get the HTML-encoded value of the data path or expression, and insert it into the rendered output </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{&gt;address.street}}</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{include&nbsp;tmpl&#61;nameOrExpr /}}</code> </td>
+			<td class="foswikiTableCol1"> template composition: Iinclude the referenced template: tmpl, rendered using the current data context </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{:name}} lives in {{include tmpl&#61;"#addressTemplate"/}}</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{for&nbsp;pathOrExpr }} <br /> ... {{/for}}</code> </td>
+			<td class="foswikiTableCol1"> template composition: render the block content of the <code>{{for}}</code> tag using the object or array specified by the path or expression as data context. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{for billing.address}} {{:city}} {{/for}}</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{for&nbsp;pathOrExpr tmpl&#61;nameOrExpr /}}</code> </td>
+			<td class="foswikiTableCol1"> template composition: render the referenced external template using the specified object or array </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{for billing.address tmpl&#61;"addressTmpl" /}}</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{props pathOrExpr}} <br /> ... {{/props}}</code> </td>
+			<td class="foswikiTableCol1"> template composition: iterate over the properties of the object, and render the block content of the {{props}} tag (or the referenced external template) once for each property -- using as data context <code>{key: propertyName, prop: propertyValue}</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{props billing.address}} {{:key}}: {{:prop}} {{/props}}</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{props&nbsp;pathOrExpr tmpl&#61;nameOrExpr /}}</code> </td>
+			<td class="foswikiTableCol1"> template composition: iterate over the properties of the object, and render the referenced external template once for each property -- using as data context <code>{key: propertyName, prop: propertyValue}</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{props billing.address tmpl&#61;"addressTmpl" /}}</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{if&nbsp;pathOrExpr }} <br /> ... {{/if}}</code> </td>
+			<td class="foswikiTableCol1"> conditional inclusion: render the block content of the <code>{{if}}</code> tag only if the data-path or expression evaluates to true </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{if nickname}} Nickname: {{:nickname}} {{/if}})</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{if&nbsp;pathOrExpr tmpl&#61;nameOrExpr /}}</code> </td>
+			<td class="foswikiTableCol1"> conditional inclusion: render the referenced external template only if the data-path or expression evaluates to true </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{if nickname tmpl&#61;"nicknameTemplate" /}}</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{if&nbsp;...}} <br /> ... {{else}} <br /> ... {{/if}}</code> </td>
+			<td class="foswikiTableCol1"> conditional inclusion: render the block content of the <code>{{if}}</code> tag if the expression is true, otherwise render the <code>{{else}}</code> block </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{if nickname}} Nickname: {{:nickname}} {{else}} No nickname {/if}}</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{if&nbsp;pathOrExpr1&nbsp;tmpl&#61;nameOrExpr1 }} <br /> {{else&nbsp;tmpl&#61;nameOrExpr2 }} <br /> {{/if}}</code> </td>
+			<td class="foswikiTableCol1"> conditional inclusion: render different templates depending on one or more expressions </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> ={{if nickname tmpl&#61;"nicknameTemplate"}} {{else tmpl="noNicknameTemplate"}} {{/if}} = </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{if&nbsp;pathOrExpr1 }} <br /> ... {{else&nbsp;pathOrExpr2}} <br /> ... {{else}} <br /> ... {{/if}}</code> </td>
+			<td class="foswikiTableCol1"> conditional blocks: render the first <code>{{if}}</code> or <code>{{else}}</code> block for which the expression is true; if none are true, and there is an <code>{{else}}</code> without an expression, render that block </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{if nickname}} Nickname: {{:nickname}} {{else altnickname}} Alternate nickname: {{:altnickname}} {{else}} No nickname {{/if}}</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>{{else ... }}</code> </td>
+			<td class="foswikiTableCol1"> acts as a separator, to divide the content of a tag into two or more different content blocks; <code>{{else}}</code> can be used with <code>{{if}}</code>, <code>{{for}}</code> or any custom tag </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{{for members}} Member Name: {{:name}} {{else}} There are currently no member {{/for}}</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>{{!-- ... --}}</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> comments to templates, or commenting out sections of a template </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>{{!-- this is a comment --}}</code> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

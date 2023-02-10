@@ -1,0 +1,430 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SkinTemplates &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/SkinTemplates/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/SkinTemplates/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit SkinTemplates" href="SkinTemplates.html" rel="alternate">
+<meta name="description" content="SkinTemplates" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "SkinTemplates",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<h1 id="Skin_Templates">  Skin Templates </h1>
+<p></p>
+The framework used to render output.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Overview"> Overview </a>
+</li> <li> <a href="#How_Template_Directives_Work"> How Template Directives Work </a> <ul>
+<li> <a href="#Parameters_to_blocks"> Parameters to blocks </a> <ul>
+<li> <a href="#Block_parameters"> Block parameters </a>
+</li> <li> <a href="#Block_definition_parameters"> Block definition parameters </a>
+</li> <li> <a href="#Naming"> Naming </a>
+</li></ul> 
+</li> <li> <a href="#Conditional_expansion"> Conditional expansion </a> <ul>
+<li> <a href="#Using_context_identifiers"> Using context identifiers </a>
+</li> <li> <a href="#Using_parameters"> Using parameters </a>
+</li></ul> 
+</li> <li> <a href="#A_61TMPL:INCLUDE_61_recursion"> TMPL:INCLUDE recursion </a>
+</li> <li> <a href="#Comments"> Comments </a>
+</li></ul> 
+</li> <li> <a href="#Finding_Skin_Templates"> Finding Skin Templates </a> <ul>
+<li> <a href="#Security_and_usability"> Security and usability </a>
+</li></ul> 
+</li> <li> <a href="#Developing_new_templates"> Developing new templates </a> <ul>
+<li> <a href="#Debugging"> Debugging </a>
+</li> <li> <a href="#Overview_of_the_default_templates"> Overview of the default templates </a> <ul>
+<li> <a href="#Template_processing"> Template processing </a>
+</li></ul> 
+</li> <li> <a href="#Other_important_templates:"> Other important templates: </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<h2 id="Overview">  Overview </h2>
+<p></p>
+<em>Skin Templates</em> are plain text with embedded <em>template directives</em>,
+<a href="Macros.html">macros</a> and <a href="SkinTemplateTokens.html">tokens</a> that are expanded by
+Foswiki to build an output page, usually HTML.
+<p></p>
+(If you are looking for the template used as 'starter text' for new topics.  see <a href="TemplateTopics.html">TemplateTopics</a>.)
+<p></p>
+<span id="HtmlTemplates"></span>
+Skin templates are used when composing the output from all actions, such as
+view, edit, and preview. By sharing common template definitions between all
+these actions, it makes it easy to change the look and feel of all
+pages by editing just a few templates.
+<p></p>
+Skin templates are either stored as text files with the extension <code>.tmpl</code>
+in the <code>templates/</code> directory, or in Foswiki topics.
+<p></p>
+<em>Template directives</em> are expanded when the template is loaded, and are
+used to define the general structure of the output. <em>Macros</em> and Template
+<em>Tokens</em> are expanded when the page is rendered, and fill in page-specific 
+information.
+<p></p>
+Note that <em>Macros</em> and <em>Tokens</em> are written using the same syntax.  
+See <a href="Macros.html">Macros</a> for more information on macros.
+<p></p>
+<em>Tokens</em> look exactly like Macros, but they are specific for the script
+expanding the template, and cannot be used elsewhere in Foswiki.  See
+<a href="SkinTemplateTokens.html">SkinTemplateTokens</a> for more information on tokens.
+<p></p>
+<span id="TemplateMacros"></span>
+<h2 id="How_Template_Directives_Work">  How Template Directives Work </h2>
+Template directives look a lot like standard <a href="Macros.html">macros</a>. <ul>
+<li> <code>%TMPL:INCLUDE{"file"}%</code> includes a template file. The file is found as described <a class="foswikiCurrentTopicLink" href="#FindingTemplates">below</a>.
+</li> <li> <code>%TMPL:DEF{"name"}%</code> defines a block. <strong>All</strong> text between this and the next <code>%TMPL:END%</code> directive is removed and saved for later use with <code>%TMPL:P%</code>.
+</li> <li> <code>%TMPL:END%</code> ends a block definition.
+</li> <li> <code>%TMPL:PREV%</code>: returns the previous definition of the block being defined.
+</li> <li> <code>%TMPL:P{"name"}%</code> includes a previously defined block.
+</li> <li> <code>%{...}%</code> is a comment. Whitespace either side of the comment     (newlines, spaces, tabs etc) is treated as part of the comment, and     removed when the comment is removed.
+</li></ul> 
+You can use a block before <em>or</em> after declaring it. If you define the same
+block twice, only the second definition is used.
+<p></p>
+<div class="foswikiHelp">
+<img src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16" title="ALERT!" width="16"> Most template directives work only for templates: they do not get processed in normal topic text. The one exception is <code>%TMPL:P</code>.
+</div>
+<p></p>
+<h3 id="Parameters_to_blocks">  Parameters to blocks </h3>
+<code>%TMPL:DEF%</code> and <code>%TMPL:P%</code> support simple parameters.
+<p></p>
+Parameters are only available in the immediate definition being included; they
+are not passed on to any other <code>TMPL:P</code> inside the <code>TMPL:DEF</code> being expanded
+unless they are passed on explicitly in a new parameter.
+<p></p>
+<p></p>
+<h4 id="Block_parameters">  Block parameters </h4>
+For example, we can define a parameter <code>P</code> inside a block:
+<pre class="tml">
+&#37;TMPL:DEF{&#34;x&#34;}&#37; x&#37;P&#37;z &#37;TMPL:END&#37;
+</pre>
+then pass a value to that parameter:
+<pre class="tml">
+&#37;TMPL:P{&#34;x&#34; P&#61;&#34;y&#34;}&#37;
+</pre>
+This will expand to <code>xyz</code>.
+<p></p>
+<h4 id="Block_definition_parameters">  Block definition parameters </h4>
+Default parameter values can be set in the definition:
+<pre class="tml">
+&#37;TMPL:DEF{&#34;x&#34; y&#61;&#34;1&#34;}&#37; x&#37;y&#37;z &#37;TMPL:END&#37;
+</pre>
+then
+<pre class="tml">
+&#37;TMPL:P{&#34;x&#34;}&#37;
+</pre>
+will expand to <code>x1z</code>.
+<p></p>
+You can also use a parameter inside a default parameter:
+<pre class="tml">
+&#37;TMPL:DEF{&#34;x&#34; y&#61;&#34;&#37;value&#37;&#34;}&#37; x&#37;y&#37;z &#37;TMPL:END&#37;
+</pre>
+then
+<pre class="tml">
+&#37;TMPL:P{&#34;x&#34; value&#61;&#34;1000&#34;}&#37;
+</pre>
+will expand to <code>x1000z</code>.
+<p></p>
+<p></p>
+<h4 id="Naming">  Naming </h4>
+Any alphanumeric characters can be used in parameter names. <code>TMPL:P</code> parameters
+override any other possible definition of the name, so you should not use
+parameter names that might clash with <a href="Macros.html">Macros</a>.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="Conditional_expansion">  Conditional expansion </h3>
+<h4 id="Using_context_identifiers">  Using context identifiers </h4>
+Three parameter names, <code>context</code>, <code>then</code> and <code>else</code> are <strong>reserved</strong>.
+They are used to support a limited form of "if" condition that you can use to select which of two <code>TMPL:DEF</code> to expand, based on a <em>context identifier</em>:
+<pre class="tml">
+&#37;TMPL:DEF{&#34;link&#95;inactive&#34;}&#37;&#60;input type&#61;&#34;button&#34; disabled value&#61;&#34;Link&#62;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;link&#95;active&#34;}&#37;&#60;input type&#61;&#34;button&#34; onclick&#61;&#34;link()&#34; value&#61;&#34;Link&#34; /&#62;&#37;TMPL:END&#37;
+&#37;TMPL:P{context&#61;&#34;inactive&#34; then&#61;&#34;link&#95;inactive&#34; else&#61;&#34;link&#95;active&#34;}&#37; for &#37;CONTEXT&#37;
+</pre>
+When the <code>inactive</code> context is set, then this will expand the <code>link_inactive</code>
+<code>TMPL:DEF</code>; otherwise it will expand <code>link_active</code>.
+<p></p>
+This style of conditional expansion is used in preference to the
+<code><a href="VarIF.html">%IF{}</a></code> macro where possible because it is much more efficient.
+<p></p>
+See <a href="IfStatements.html">If Statements: Context identifiers</a> for details of supported context identifiers.
+<p></p>
+<h4 id="Using_parameters">  Using parameters </h4>
+The mechanism to pass parameters to blocks can be used to conditionally call different template blocks. For example:
+<pre class="tml">
+&#37;TMPL:DEF{&#34;conditional&#34; tmpl&#61;&#34;default&#34;}&#37;
+&#37;TMPL:P{&#34;&#37;tmpl&#37;&#34;}&#37;
+&#37;TMPL:END&#37;
+
+&#37;TMPL:DEF{&#34;default&#34;}&#37;
+This is a default template.
+&#37;TMPL:END&#37;
+
+&#37;TMPL:DEF{&#34;special&#34;}&#37;
+This is a special template.
+&#37;TMPL:END&#37;
+
+...
+&#37;TMPL:P{&#34;conditional&#34; tmpl&#61;&#34;special&#34;}&#37;
+</pre>
+<p></p>
+<p></p>
+<h3 id="A_61TMPL:INCLUDE_61_recursion">  <code>TMPL:INCLUDE</code> recursion </h3>
+You can use recursion with <code>%TMPL:INCLUDE%</code> for piecewise customisation, or
+mixing in new features.
+<p></p>
+If there is a recursion in the <code>%TMPL:INCLUDE%</code> chain (eg. <code>view.tmpl</code> contains
+<code>%TMPL:INCLUDE{"view"}%</code>), the templating system will detect that you
+are trying to include the same template again, and will instead include the
+<em>next</em> version of the template of that name that it finds in the
+<a class="foswikiCurrentTopicLink" href="#TemplatePath">template path</a>. 
+<p></p>
+For example, say you <em>only</em> want to override the breadcrumbs for the view
+script. You could create a tempate called <code>view.crumbless.tmpl</code>:
+<pre class="tml">
+&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;
+&#37;TMPL:DEF{&#34;breadcrumb&#34;}&#37; We don&#39;t want any crumbs &#37;TMPL:END&#37;
+</pre>
+and then <code>* Set SKIN=crumbless,pattern</code>
+<p></p>
+Remember: the template path contains the most specific template first.
+<p></p>
+<h3 id="Comments">  Comments </h3>
+Comments <code>%{...}%</code> are removed from the templates as soon as the file is
+read, before any other template macros are evaluated. Whitespace either side
+of the comment (newlines, spaces, tabs etc) is also removed.
+<p></p>
+<span id="FindingTemplates"></span>
+<h2 id="Finding_Skin_Templates">  Finding Skin Templates </h2>
+<p></p>
+Most skin templates are stored in <code>.tmpl</code> files in the <code>templates</code> directory.
+For example, <code>templates/view.tmpl</code> is the default skin template file for
+the <code>bin/view</code> script. You can also save skin templates in user topics.
+<p></p>
+The <code>{TemplatePath}</code> configuration setting (in the Miscellaneous section of
+the <a href="../.html">configure</a> page) defines which directories,
+files and Foswiki topics will be recognised as containing templates.
+<p></p>
+Skin templates that are loaded using <code>%TMPL:INCLUDE</code> with an explicit <code>.tmpl</code>
+extension are looked for <em>only</em> in the <code>templates/</code> directory. For instance
+<code>%TMPL:INCLUDE{"example.tmpl"}%</code> will only return <code>templates/example.tmpl</code>,
+regardless of <code>{TemplatePath}</code> and <code>SKIN</code> settings.
+<p></p>
+<span id="TemplatePath"></span>
+All other templates are searched for using the <code>{TemplatePath}</code>. This is a
+list of generic name patterns, each of which contains the placeholders
+<code>$name</code> (the template name), <code>$web</code> (the web), and <code>$skin</code> (the skin),
+each standing in for part of the name. Each entry in this list is expanded
+in turn until the template is found.
+<p></p>
+The rules defined by the out-of-the-box setting of <code>{TemplatePath}</code> are: <ol>
+<li> <code>templates/$web/$name.$skin.tmpl</code>
+</li> <li> <code>templates/$name.$skin.tmpl</code>
+</li> <li> <code>$web.$skinSkin$nameTemplate</code>
+</li> <li> <code>System.$skinSkin$nameTemplate</code>
+</li> <li> <code>templates/$web/$name.tmpl</code>
+</li> <li> <code>templates/$name.tmpl</code>
+</li> <li> <code>$web.$nameTemplate</code>
+</li> <li> <code>System.$nameTemplate</code>
+</li></ol> 
+For example, let's say we are viewing a topic in web <code>Sandbox</code> and are searching for the template called <code>function</code>. The skin path is set to <code>custom,pattern</code>. The following locations will be considered in turn, until a template is found: <ol>
+<li> <code>templates/Sandbox/function.custom.tmpl</code> <em>(rule 1)</em> <img alt="dead, deadly, doom" src="SmiliesPlugin.attachments/skull.gif" class="smily" title="dead, deadly, doom">
+</li> <li> <code>templates/Sandbox/function.pattern.tmpl</code> <em>(rule 1)</em> <img class="smily" title="dead, deadly, doom" alt="dead, deadly, doom" src="SmiliesPlugin.attachments/skull.gif">
+</li> <li> <code>templates/function.custom.tmpl</code> <em>(rule 2)</em>
+</li> <li> <code>templates/function.pattern.tmpl</code> <em>(rule 2)</em>
+</li> <li> <code>Sandbox.CustomSkinFunctionTemplate</code> <em>(rule 3)</em>
+</li> <li> <code>Sandbox.PatternSkinFunctionTemplate</code> <em>(rule 3)</em>
+</li> <li> <code>System.CustomSkinFunctionTemplate</code> <em>(rule 4)</em>
+</li> <li> <code>System.PatternSkinFunctionTemplate</code> <em>(rule 4)</em>
+</li> <li> <code>templates/Sandbox/function.tmpl</code> <em>(rule 5)</em> <img alt="dead, deadly, doom" src="SmiliesPlugin.attachments/skull.gif" class="smily" title="dead, deadly, doom">
+</li> <li> <code>templates/function.tmpl</code> <em>(rule 6)</em>
+</li> <li> <code>Sandbox.FunctionTemplate</code> <em>(rule 7)</em>
+</li> <li> <code>System.FunctionTemplate</code> <em>(rule 8)</em>
+</li></ol> 
+<div class="foswikiHelp"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!"> <img src="SmiliesPlugin.attachments/skull.gif" alt="dead, deadly, doom" title="dead, deadly, doom" class="smily"> This usage is supported <strong>for compatibility only</strong> and is <strong>deprecated</strong>. Store web-specific templates in topics instead. </div>
+<p></p>
+When a skin name or template name is used to build a topic name, the first character is automatically capitalised.
+<p></p>
+The <em>skin path</em> is set as described in <a href="Skins.html">Skins</a>.
+<p></p>
+<span id="TemplatePreferences"></span>
+Template file names are usually derived from the name of the currently executing script; however it is also possible to override these settings in the <code>view</code> and <code>edit</code> scripts, for example when a topic-specific template is required. Two <a href="PreferenceSettings.html">preference settings</a> can be used to override the skin templates used: <ul>
+<li> <code>VIEW_TEMPLATE</code> sets the template to be used for viewing a topic.
+</li> <li> <code>EDIT_TEMPLATE</code> sets the template for editing a topic.
+</li></ul> 
+If these preferences are set <ul>
+<li> locally (using <em>Local</em> instead of <em>Set</em>) in a topic, or
+</li> <li> in <a href="WebPreferences.html">WebPreferences</a>, or
+</li> <li> in <a href="../Main/SitePreferences.html">Main.SitePreferences</a>, or
+</li> <li> in <a href="DefaultPreferences.html">System.DefaultPreferences</a> (using <em>Set</em>),
+</li></ul> 
+then the indicated templates will be chosen for <code>view</code> and <code>edit</code> respectively. The template search order remains as specified above.
+<p></p>
+Note that the topic name specified as a template may need to be fully qualified with Web and SubWeb. E.g.
+<pre>
+   &#42; Set VIEW&#95;TEMPLATE &#61; Web/SubWeb.SpecificViewTemplate
+</pre>
+Also the qualification needs to be given in the form Web/SubWeb.TopicTemplate as in the example; Web/SubWeb/TopicTemplate does not work.
+<p></p>
+<span id="TemplateSecurity"></span>
+<h3 id="Security_and_usability">  Security and usability </h3>
+Setting the <code>{TemplatePath}</code> is a compromise between the often
+opposing goals of security and usability. From a security perspective,
+allowing templates to be loaded from topics might open a door to people
+who want to inject their own evil HTML in those topics. From a usability
+perspective, it's very desireable to be able to override templates from topics,
+as it vastly increases the range of wiki applications.
+<p></p>
+The default <code>{TemplatePath}</code> comes down on the side of usability, by allowing
+templates from topics to be found before templates from the (more secure)
+<code>templates</code> directory. If you are particularly security concious, you may
+want to <strong>reverse</strong> this order, so that templates in <code>templates/</code> are always
+found before those in topics. You can do this by simply moving rules
+3 and 7 to the end of the list.
+<p></p>
+Note that topics containing templates are checked for VIEW access using the
+normal <a href="AccessControl.html">Foswiki access controls</a>. Any access control failure
+is silently ignored, and the template path expansion continues.
+<p></p>
+<h2 id="Developing_new_templates">  Developing new templates </h2>
+<h3 id="Debugging">  Debugging </h3>
+When writing new templates, it can sometimes it can be hard to work out
+where different parts of the generated output come from. To help you debug
+your new templates, the <code>Foswiki::Templates</code> module has a "trace" mode. In
+this mode, the HTML source created is annotated with HTML comments that are wrapped around the output generated by each template, as it is expanded. For example, when trace mode is off,
+<pre class="tml">
+&#37;TMPL:DEF{&#34;x:y&#34;}&#37; de &#37;TMPL:END&#37;
+blah &#37;TMPL:P{&#34;x:y&#34;}&#37; blah
+</pre>
+will expand to:
+<pre class="tml">
+blah  de  blah
+</pre>
+With tracing enabled, the HTML source will look like:
+<pre class="tml">
+blah &#60;!--x:y--&#62; de &#60;!--/x:y--&#62; blah
+</pre>
+To enable the trace mode, edit <code>lib/Foswiki/Templates.pm</code> in your
+installation and change <code>use constant TRACE =&gt; 0</code> to
+<code>use constant TRACE =&gt; 1</code>.
+<p></p>
+Note that the trace annotations may make your output look strange. However
+you can usually "view source" in the browser to see what was generated (or
+you may be able to run the script from the command-line e.g. <code>cd bin; perl -T -I . view topic=MyWeb.MyTopic skin=mynewskin</code>).
+<p></p>
+<div class="foswikiHelp"><img src="DocumentGraphics.attachments/tip.png" alt="IDEA!" height="16" title="IDEA!" width="16"> Don't forget to switch the trace mode off again when you are finished!</div>
+<p></p>
+<h3 id="Overview_of_the_default_templates">  Overview of the default templates </h3>
+<p></p>
+Finally, here's a very high-level overview of the default
+templates. These templates are rarely used on their own, but are used as
+the base on which skins, such as <a href="PatternSkin.html">PatternSkin</a>, are built.
+<p></p>
+<code>foswiki.tmpl</code> is the default master template. The main purpose of this
+template is to instantiate the following blocks: <ul>
+<li> <code>htmldoctype</code> - start of all HTML pages
+</li> <li> <code>bodystart</code> - start of the body tag
+</li> <li> <code>main</code> - page content
+</li> <li> <code>bodyend</code> - end of the page
+</li></ul> 
+Default definitions are provided for each of these blocks. <code>foswiki.tmpl</code>
+is never used on its own, but is frequently included by other templates.
+<p></p>
+Next, there are a number of action-specific templates, such as <code>view.tmpl</code>,
+<code>edit.tmpl</code>, <code>login.tmpl</code>. These are the templates loaded by the actions of
+the same name. Their purpose is to include <code>foswiki.tmpl</code>, and provide new,
+page-specific, definitions of the blocks described above.
+<p></p>
+Several of the action-specific templates have <em>skinned</em> versions, such as <code>view.print.tmpl</code> and <code>view.text.tmpl</code>.
+These skinned versions are used to view the page in a specific way - for printing, or as plain text, for example.
+<p></p>
+<h4 id="Template_processing">  Template processing </h4>
+<p></p>
+The templates that render topic text are typically broken up into 3 areas,
+divided by a token <code>%TEXT%</code>. 
+<pre>
+..header area before any topic text...
+&#37;TEXT&#37;  (will be substituted with topic text)
+...footer area after the topic text...
+</pre>
+<p></p>
+When the core expands the template, it happens in 3 phases <ol>
+<li> Macros are expanded and TML is rendered in the header area before the %TEXT% token, with context <code>header_text</code> set.
+</li> <li> The topic text then has its macros expanded, and TML rendered with context <code>body_text</code> set. The results replaces the %TEXT% token.
+</li> <li> Finally the footer area has it's macros expanded  and TML rendered in the area after the %TEXT% token with context <code>footer_text</code> set.
+</li></ol> 
+<p></p>
+The contexts - <code>header_text</code>, <code>body_text</code> and <code>footer_text</code> are not used by the Foswiki core, but can be used by extensions during macro expansion to
+determine which part  of the page is being processed.
+<p></p>
+<h3 id="Other_important_templates:">  Other important templates: </h3>
+<p></p>
+<code>messages.tmpl</code> is an important template; it provides the basic definitions of
+all error and warning messages that Foswiki issues. These are defined using
+the <code>%MAKETEXT</code> macro to simplify translation into different languages.
+<p></p>
+<code>attachtables.tmpl</code> is another template worthy of separate mention. This
+template defines the different parts of the page that are involved in
+displaying tables of attachments. The blocks defined in this template are
+instantiated directly from code, rather than via <code>%TMPL:P</code>.
+<p></p>
+The remainder of the templates are used for varying purposes; their names,
+or introductory comments, should clarify.
+<p></p>
+A skin can provide a new version of any or all of these templates, depending
+on the depth of customisation. See the template files named <code>*.pattern.*</code> to
+see what <a href="PatternSkin.html">PatternSkin</a> defines.
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="Skins.html">Skins</a> <a href="Macros.html">Macros</a> <a href="JavascriptFiles.html">JavascriptFiles</a>
+<!--  -->
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

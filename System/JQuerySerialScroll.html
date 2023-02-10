@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQuerySerialScroll &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQuerySerialScroll/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE System/JQuerySerialScroll/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit JQuerySerialScroll" rel="alternate" href="JQuerySerialScroll.html">
+<meta name="description" content="JQuerySerialScroll" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3" class="script JQUERYPLUGIN::EASING"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "JQuerySerialScroll",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/scrollto/jquery.scrollTo.js?version=2.1.2" class="script JQUERYPLUGIN::SCROLLTO"></script>
+<script src="JQueryPlugin.attachments/plugins/scrollto/jquery.scrollTo.init.js?version=2.1.2" class="script JQUERYPLUGIN::SCROLLTO"></script><!--JQUERYPLUGIN::SCROLLTO-->
+<script src="JQueryPlugin.attachments/plugins/serialscroll/jquery.serialScroll.js?version=1.3.1" class="script JQUERYPLUGIN::SERIALSCROLL"></script><!--JQUERYPLUGIN::SERIALSCROLL-->
+</head>
+<body>
+<h1 id="JQuerySerialScroll">  <a class="foswikiCurrentTopicLink" href="JQuerySerialScroll.html">JQuerySerialScroll</a> </h1>
+<p></p>
+    Homepage: <a href="https://github.com/flesler/jquery.serialScroll">https://github.com/flesler/jquery.serialScroll</a> <br />
+    Author(s): Ariel Flesler <br />
+    Version: 1.3.1
+<p></p>
+<p></p>
+<p></p>
+This plugin allows you to easily animate any series of elements, by sequentially scrolling them.
+It uses <a href="JQueryScrollTo.html">JQueryScrollTo</a> to achieve the scrolling animation.
+<p></p>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<div id="screen1">
+<div id="slideshow">
+<ul>
+  <li><img width="225" height="300" src="http://lorempixel.com/255/300/people?t=1"></li>
+  <li><img width="225" height="300" src="http://lorempixel.com/255/300/people?t=2"></li>
+  <li><img width="225" src="http://lorempixel.com/255/300/people?t=3" height="300"></li>
+  <li><img width="225" height="300" src="http://lorempixel.com/255/300/people?t=4"></li>
+  <li><img src="http://lorempixel.com/255/300/people?t=5" height="300" width="225"></li>
+  <li><img src="http://lorempixel.com/255/300/people?t=6" height="300" width="225"></li>
+  <li><img src="http://lorempixel.com/255/300/people?t=7" height="300" width="225"></li>
+  <li><img width="225" src="http://lorempixel.com/255/300/people?t=8" height="300"></li>
+  <li><img src="http://lorempixel.com/255/300/people?t=9" height="300" width="225"></li>
+  <li><img width="225" height="300" src="http://lorempixel.com/255/300/people?t=10"></li>
+</ul>
+</div>
+  <div id="buttons">
+    <a class="prev" href="..">Previous</a>
+    <a class="next" href="..">Next</a>
+  <span class='foswikiClear'></span>
+  </div>
+</div>
+<p></p>
+
+<script>
+(function($) {
+  $(function() {
+    $('#slideshow').serialScroll({
+      items:'li',
+      prev:'#screen1 a.prev',
+      next:'#screen1 a.next',
+      offset:-230, //when scrolling to photo, stop 230 before reaching it (from the left)
+      start:1, //as we are centering it, start at the 2nd
+      duration:1200,
+      force:true,
+      stop:true,
+      lock:false,
+      cycle:false, //don't pull back once you reach the end
+      easing:'easeOutQuart', //use this easing equation for a funny effect
+      jump: true //click on the images to scroll to them
+    });
+  });
+})(jQuery);
+</script>
+
+<style>
+#slideshow{
+  overflow:hidden;
+  width:680px;
+  border:1px solid #eee;
+}
+
+#slideshow ul{
+  padding:0;
+  margin:0;
+  list-style:none;
+  width:3900px;
+  padding-left:225px;
+}
+
+#slideshow li{
+  padding:0;
+  list-style:none;
+  float:left;
+  margin:0 16px;
+  cursor:pointer;
+}
+.prev{
+  float:left;
+}
+.next{
+  float:right;
+}
+</style>
+
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryValidate &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryValidate/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryValidate/favicon.ico">
+<link type="application/x-wiki" href="JQueryValidate.html" rel="alternate" title="edit JQueryValidate">
+<meta name="description" content="JQueryValidate" />
+<link type="text/css" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" class="head JQUERYPLUGIN::BUTTON" media="all" rel="stylesheet"><!--JQUERYPLUGIN::BUTTON-->
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/form/jquery.form.js?version=4.3.0" class="script JQUERYPLUGIN::FORM"></script><!--JQUERYPLUGIN::FORM-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "JQueryValidate",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::MASKEDINPUT" src="JQueryPlugin.attachments/plugins/maskedinput/jquery.maskedinput.js?version=1.4.1"></script>
+<script class="script JQUERYPLUGIN::MASKEDINPUT" src="JQueryPlugin.attachments/plugins/maskedinput/jquery.maskedinput.init.js?version=1.4.1"></script><!--JQUERYPLUGIN::MASKEDINPUT-->
+<script class="script JQUERYPLUGIN::VALIDATE" src="JQueryPlugin.attachments/plugins/validate/pkg.js?version=1.19.4_1"></script><!--JQUERYPLUGIN::VALIDATE-->
+</head>
+<body>
+<h1 id="JQueryValidate">  <a href="JQueryValidate.html" class="foswikiCurrentTopicLink">JQueryValidate</a> </h1>
+<p></p>
+    Homepage: <a href="http://jqueryvalidation.org/">http://jqueryvalidation.org/</a> <br />
+    Author(s): Joern Zaefferer <br />
+    Version: 1.19.4_1
+<p></p>
+<p></p>
+<p></p>
+Very powerful client-side form validation framework
+(<a href="http://bassistance.de/2007/07/04/about-client-side-form-validation-and-frameworks/">article</a>).
+<p></p>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+<p></p>
+<form id="validateForm" class="jqValidate">
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+    <h3>First name:</h3>
+    <input type="text" size="30" class="foswikiInputField required" name="firstname" value="" />
+<p></p>
+    <h3>Last name:</h3>
+    <input type="text" size="30" class="foswikiInputField required" name="lastname"  value="" />
+<p></p>
+    <h3>Date of birth:</h3>
+    <input type="text" size="10" class="required date foswikiInputField" mask="99/99/9999" name="dateofbirth" value="" />
+  </div>
+  <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
+    <a class="jqButton  jqSubmitButton" href=".."><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/application.png)'></span><span class='jqButtonText'>Submit</span></a><input type='submit' style='display:none' />
+    <span class='foswikiClear'></span>
+  </div>
+</div>
+</form>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

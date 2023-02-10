@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>TemplateTopics &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/TemplateTopics/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/TemplateTopics/favicon.ico">
+<link type="application/x-wiki" title="edit TemplateTopics" href="TemplateTopics.html" rel="alternate">
+<meta name="description" content="TemplateTopics" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "TemplateTopics",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<span id="TemplateTopics"></span>
+<h1 id="Template_topics">  Template topics </h1>
+<p></p>
+Foswiki uses several types of templates. <strong><em>Template topics are topics that define the default text for new topics.</em></strong>
+<p></p>
+(If you are looking for templates used to display existing topics, see <a href="SkinTemplates.html">SkinTemplates</a>.  These are combined with <a href="DataForms.html">DataForms</a>
+for custom presentation of topic data (View Template) and custom editing (Edit Template).
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Overview"> Overview </a>
+</li> <li> <a href="#Macro_expansion"> Macro expansion </a> <ul>
+<li> <a href="#Macro_notes:"> Macro notes: </a>
+</li></ul> 
+</li> <li> <a href="#Specifying_a_form"> Specifying a form </a>
+</li> <li> <a href="#Automatically_generated_topic_names"> Automatically generated topic names </a>
+</li> <li> <a href="#Template_topics_in_action"> Template topics in action </a>
+</li> <li> <a href="#Using_absolute_vs_relative_URLs_in_templates"> Using absolute vs relative URLs in templates </a>
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<h2 id="Overview">  Overview </h2>
+There are four types of template topics:
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Topic Name:</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">What it is:</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="WebCreateNewTopicTemplate.html">WebCreateNewTopicTemplate</a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Page shown when you click on a <span class='foswikiIcon'><img width="16" height="16" alt="newtopic" src="DocumentGraphics.attachments/newtopic.png"></span> <strong>Create New Topic</strong> link. It provides a form requesting the necessary information to create a new, nonexistent topic. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="TopicDoesNotExistViewTemplate.html">TopicDoesNotExistViewTemplate</a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Alert page shown when you try to view a nonexistent topic and usually used as a prompt to help you create this new topic. For this reason, the form of the <a href="WebCreateNewTopicTemplate.html">WebCreateNewTopicTemplate</a> is included and therefore shown, too. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="WebTopicEditTemplate.html">WebTopicEditTemplate</a> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Default text used in a new topic. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> &lt;MyCustomNamed&gt;Template </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Whenever you create a topic ending in the word "Template", it is automatically added to the list of available template topics in the "Use Template" drop down field on the WebCreateNewTopic page. </td>
+		</tr>
+	</tbody></table>
+<p></p>
+When you create a new topic using the <code>edit</code> script, the system locates a template topic according to the following search order: <ol>
+<li> A topic name specified by the <code>templatetopic</code> CGI parameter <ul>
+<li> if no web is specified, the current web is searched first and then the System web
+</li></ul> 
+</li> <li> WebTopicEditTemplate in the current web
+</li> <li> WebTopicEditTemplate in the System web
+</li></ol> 
+<p></p>
+<span id="TemplateTopicsVars"></span>
+<h2 id="Macro_expansion">  Macro expansion </h2>
+<p></p>
+When the following macros are used in a template topic, they automatically get expanded when new topic is created based on it:
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Macro:</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description:</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%DATE%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Signature format date. See <a href="VarDATE.html">VarDATE</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%GMTIME%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Date/time. See <a href="VarGMTIME.html">VarGMTIME</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%GMTIME{...}%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Formatted date/time. See <a href="VarGMTIME.html">VarGMTIME</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%NOP%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> A no-operation macro that gets removed. Useful to prevent a SEARCH from hitting an edit template topic; also useful to escape a variable, such as <code>%URLPA%NOP%RAM{...}%</code> escaping URLPARAM </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%STARTSECTION{type="templateonly"}%<br />...<br />%ENDSECTION{type="templateonly"}%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Text that gets removed when a new topic based on the template topic is created. See notes below. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%STARTSECTION{type="expandvariables"}%<br />...<br />%ENDSECTION{type="expandvariables"}%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> All Foswiki macros enclosed in this section type are expanded when a new topic based on the template topic is created. Otherwise only the macros listed in this table are expanded. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%SERVERTIME%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Date/time. See <a href="VarSERVERTIME.html">VarSERVERTIME</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%SERVERTIME{...}%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Formatted date/time. See <a href="VarSERVERTIME.html">VarSERVERTIME</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%USERNAME%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Login username of user who is instantiating the new topic, e.g. WikiAdmin (On some systems this will be the same as the WikiName). </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%URLPARAM{"name"}%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Value of a named URL or HTTP POST parameter </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%WIKINAME%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="WikiName.html">WikiName</a> of user who is creating the new topic, e.g. WikiAdmin </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>%WIKIUSERNAME%</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> User name of user who is creating the new topic, e.g. Main.WikiAdmin </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h3 id="Macro_notes:">  Macro notes: </h3>
+<pre class="tml">%STARTSECTION{type="templateonly"}%<br />...<br />%ENDSECTION{type="templateonly"}%</pre> markers are used to embed text that you <em>do not</em> want expanded when a new topic based on the template topic is created. For example, you might want to write in the template topic:
+<pre class="tml">
+%STARTSECTION{type="templateonly"}%
+This template topic can only be changed by:
+   * Set ALLOWTOPICCHANGE = Main.AdminGroup
+%ENDSECTION{type="templateonly"}%
+</pre>
+This will restrict who can edit the template topic, but will get removed when a new topic based on that template topic is created.
+<p></p>
+<code>%NOP%</code> can be used to prevent expansion of <a href="Macros.html">macros</a> that would otherwise be expanded during topic creation e.g. escape <code>%SERVERTIME%</code> with <code>%SER%NOP%VERTIME%</code>.
+<p></p>
+All other macros are unchanged, e.g. are carried over "as is" into the new topic, <em>unless they are contained within a %STARTSECTION{type="expandvariables"}% section.</em>
+<p></p>
+<h2 id="Specifying_a_form">  Specifying a form </h2>
+When you create a new topic based on a template topic, you often want the new topic to have a form attached to it. You can attach a form to the template topic, in which case it will automatically be copied into the new topic.
+<p></p>
+Sometimes this isn't quite what you want, as it copies all the existing data from the template topic into the new topic. To avoid this and use the default values specified in the form definition instead, you can use the <code>formtemplate</code> parameter to the <code>edit</code> script to specify the name of a form to attach.
+<p></p>
+See <a href="CommandAndCGIScripts.html">CommandAndCGIScripts</a> for information about this, and all the other parameters to <code>edit</code>.
+<p></p>
+<span id="AutomaticallyGeneratedTopicname"></span>
+<h2 id="Automatically_generated_topic_names">  Automatically generated topic names </h2>
+<p></p>
+For some applications it is useful to be able to automatically generate unique topicnames, such as BugID0001, BugID0002, etc. You can add <code>AUTOINC&lt;n&gt;</code> to the topic name in the edit and save scripts, and it will be replaced with an auto-incremented number on topic save. <code>&lt;n&gt;</code> is a number starting from 0, and may include leading zeros. Leading zeros are used to zero-pad numbers so that auto-incremented topic names can sort properly. Deleted topics are not re-used to ensure uniqueness of topic names. That is, the auto-incremented number is always higher than the existing ones, even if there are gaps in the number sequence.
+<p></p>
+<strong>Examples:</strong> <ul>
+<li> <code>BugAUTOINC0</code> - creates topic names <code>Bug0</code>, <code>Bug1</code>, <code>Bug2</code>, ... (does not sort properly)
+</li> <li> <code>ItemAUTOINC0000</code> - creates topic names <code>Item0000</code>, <code>Item0001</code>, <code>Item0002</code>, ... (sorts properly up to 9999)
+</li> <li> <code>DocIDAUTOINC10001</code> - start with <code>DocID10001</code>, <code>DocID10002</code>, ... (sorts properly up to 99999; auto-links)
+</li></ul> 
+<p></p>
+Example link to create a new topic:<br />
+<pre class="tml">
+&#91;&#91;&#37;SCRIPTURLPATH{edit}&#37;/&#37;WEB&#37;/BugIDAUTOINC00001?templatetopic&#61;BugTemplate;topicparent&#61;&#37;TOPIC&#37;;t&#61;&#37;SERVERTIME{&#34;&#36;day&#36;hour&#36;min&#36;sec&#34;}&#37;&#93;&#91;Create new item&#93;&#93;
+</pre>
+<p></p>
+<h2 id="Template_topics_in_action">  Template topics in action </h2>
+<p></p>
+Here is an example for creating new topics (in the Sandbox web) based on a specific template topic and form:
+<p></p>
+<form name="new" action="/foswiki/bin/edit/Sandbox/" method="post">
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep foswikiLast">
+New example topic: <input type="text" name="topic" class="foswikiInputField" value="ExampleTopicAUTOINC0001" size="30" />&nbsp;<input type="submit" class="foswikiSubmit" value="Create" />
+<input type="hidden" name="templatetopic" value="ExampleTopicTemplate" />
+<input type="hidden" name="topicparent" value="TemplateTopics" />
+<input type="hidden" name="onlywikiname" value="on" />
+<input type="hidden" name="onlynewtopic" value="on" />
+</div>
+</div>
+</form>
+<p></p>
+The above form asks for a topic name. A hidden input tag named <code><b>templatetopic</b></code> specifies <a href="ExampleTopicTemplate.html">ExampleTopicTemplate</a> as the template topic to use. Here is the HTML source of the form:
+<p></p>
+<pre class="tml">
+&#60;form name&#61;&#34;new&#34; action&#61;&#34;&#37;SCRIPTURLPATH{edit}&#37;/&#37;SANDBOXWEB&#37;/&#34; method&#61;&#34;post&#34;&#62;
+New example topic: &#60;input type&#61;&#34;text&#34; name&#61;&#34;topic&#34; class&#61;&#34;foswikiInputField&#34; value&#61;&#34;ExampleTopicAUTOINC0001&#34; size&#61;&#34;30&#34; /&#62;&#38;nbsp;&#60;input type&#61;&#34;submit&#34; class&#61;&#34;foswikiSubmit&#34; value&#61;&#34;Create&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;templatetopic&#34; value&#61;&#34;ExampleTopicTemplate&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;topicparent&#34; value&#61;&#34;&#37;TOPIC&#37;&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;onlywikiname&#34; value&#61;&#34;on&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;onlynewtopic&#34; value&#61;&#34;on&#34; /&#62;
+&#60;/form&#62;
+</pre>
+<p></p>
+<div class="foswikiHelp"> <strong><img width="16" title="ALERT!" height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png"> Note:</strong> You can create a topic in one step, without going through the edit screen. To do that, specify the <code>save</code> script instead of the <code>edit</code> script in the form action. When you specify the save script you must use the "post" method. Example:
+<pre class="tml">
+&lt;form name="new" action="%SCRIPTURLPATH{save}%/Sandbox/" method="post"&gt;
+    ...
+&lt;/form&gt;
+</pre>
+<p></p>
+See <a href="CommandAndCGIScripts.html">CommandAndCGIScripts#edit</a> for details of the parameters that the <code>edit</code> script understands.</div>
+<p></p>
+<div class="foswikiHelp"><img width="16" title="TIP" alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png"> You can use the <code>%WIKIUSERNAME%</code> and <code>%DATE%</code> macros in your template topics to include the signature of the person creating a new topic. The macros are expanded into fixed text when a new topic is created. The standard signature is: <br />
+<code><b>-- %WIKIUSERNAME% - %DATE%</b></code> </div>
+<p></p>
+<h2 id="Using_absolute_vs_relative_URLs_in_templates">  Using absolute vs relative URLs in templates </h2>
+<p></p>
+When you use <a href="Macros.html">Macros</a> such as <a href="VarPUBURL.html">%PUBURL%</a> and <a href="VarPUBURLPATH.html">%PUBURLPATH%</a> in template topics you should be aware that using <a href="VarPUBURL.html">%PUBURL%</a> instead of <a href="VarPUBURLPATH.html">%PUBURLPATH%</a> puts absolute URLs in the produced HTML. This means that when a user saves a page in HTML and emails the file to someone outside a company firewall, the receiver has a severe problem viewing it. It is therefore recommended always to use the <a href="VarPUBURLPATH.html">%PUBURLPATH%</a> to refer to images, CSS, Javascript files etc so links become relative. This way browsers just give up right away and show a usable html file.
+<p></p>
+<p></p>
+<!--  -->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FAQAnApplicationWithWikiForm &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/FAQAnApplicationWithWikiForm/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/FAQAnApplicationWithWikiForm/favicon.ico" type="image/x-icon">
+<link title="edit FAQAnApplicationWithWikiForm" href="FAQAnApplicationWithWikiForm.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="FAQAnApplicationWithWikiForm" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "FAQAnApplicationWithWikiForm",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+This answer assumes you have basic knowledge about <a href="DataForms.html">Data Forms</a>.
+<p></p>
+Using the steps below, you will create: <ol>
+<li> A form definition
+</li> <li> A topic creation (HTML) form to automatically attach a data form to a topic
+</li> <li> A query search to find topics based on the data fields
+</li></ol> 
+<p></p>
+Step by step:
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+<h3 id="Create_a_data_form_definition">  Create a data form definition </h3>
+See <a href="DataForms.html">Data Form</a>, specifically the section <a href="DataForms.html">The form table</a>.
+<p></p>
+As an example we will create the topic "ReadingForm" with these contents:
+<pre class="tml">
+&#124; &#42;Name&#42;   &#124; &#42;Type&#42; &#124; &#42;Size&#42; &#124; &#42;Values&#42; &#124; &#42;Tooltip message&#42; &#124; &#42;Attributes&#42; &#124;
+&#124; Title    &#124; text   &#124; 80     &#124;          &#124; Book or article title &#124; &#124;
+&#124; Category &#124; select &#124; 1      &#124; ,Interesting,Remarkable,So-so &#124; How you rate this reading material &#124; &#124;
+&#124; Author   &#124; text   &#124; 50     &#124;          &#124; Author&#39;s last name &#124; &#124;
+</pre>
+<p></p>
+</div>
+<div class="foswikiFormStep">
+<h3 id="Enable_the_form">  Enable the form </h3>
+Add the form in the list of Web forms. This is done by setting the preference <code>WEBFORMS</code> in the Web's <a href="WebPreferences.html">WebPreferences</a> (a comma separated list).
+<p></p>
+If you create a topic, you can always add a form to the topic by choosing "Add form" in the edit screen.
+<p></p>
+Now we will create an HTML form that does this automatically.
+</div>
+<div class="foswikiFormStep">
+<h3 id="Create_an_HTML_form_for_easy_topic_creation">  Create an HTML form for easy topic creation </h3>
+HTML forms have nothing to do with data forms, except that they are a way to create topics with pre-defined values.
+<p></p>
+Example HTML form:
+<pre class="tml">
+&#60;form action&#61;&#34;&#37;SCRIPTURLPATH{edit}&#37;/&#37;WEB&#37;/&#34; method&#61;&#34;post&#34;&#62;
+Name of the new topic: &#37;BR&#37;
+&#60;input type&#61;&#34;text&#34; name&#61;&#34;topic&#34; class&#61;&#34;foswikiInputField&#34; size&#61;&#34;32&#34; /&#62;
+
+Title of article or book: &#37;BR&#37;
+&#60;input type&#61;&#34;text&#34; name&#61;&#34;Title&#34; class&#61;&#34;foswikiInputField&#34; size&#61;&#34;32&#34; /&#62;
+
+&#60;input type&#61;&#34;submit&#34; class&#61;&#34;foswikiSubmit&#34; value&#61;&#34;Create topic&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;onlywikiname&#34; value&#61;&#34;on&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;formtemplate&#34; value&#61;&#34;ReadingForm&#34; /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;topicparent&#34; value&#61;&#34;&#37;TOPIC&#37;&#34; /&#62;
+&#60;/form&#62;
+</pre>
+Now create a bunch of topics with this form.
+</div>
+<div class="foswikiFormStep">
+<h3 id="Create_a_query_search">  Create a query search    </h3>
+To list all topics that have a form named ReadingForm:
+<pre class="tml">
+&#37;SEARCH{
+ type&#61;&#34;query&#34;
+ &#34;form.name &#61; &#39;ReadingForm&#39;&#34;
+ nonoise&#61;&#34;on&#34;
+ format&#61;&#34;   &#42; &#91;&#91;&#36;web.&#36;topic&#93;&#91;&#36;formfield(Title)&#93;&#93;&#34;
+}&#37;
+</pre>
+<p></p>
+To list all topics where the author name ends in "Auden":
+<pre class="tml">
+&#37;SEARCH{
+ type&#61;&#34;query&#34;
+ &#34;form.name &#61; &#39;ReadingForm&#39; AND Author ~ &#39;&#42;Auden&#39;&#34;
+ nonoise&#61;&#34;on&#34;
+ format&#61;&#34;   &#42; &#91;&#91;&#36;web.&#36;topic&#93;&#91;&#36;formfield(Title)&#93;&#93;&#34;
+}&#37;
+</pre>
+</div>
+</div>
+<p></p>
+<a href="VarSEARCH.html">SEARCH</a> has more information on using <code>%SEARCH</code>.
+<!--  -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

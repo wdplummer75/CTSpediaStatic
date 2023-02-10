@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarTWISTYBUTTON &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarTWISTYBUTTON/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/VarTWISTYBUTTON/favicon.ico">
+<link title="edit VarTWISTYBUTTON" rel="alternate" href="VarTWISTYBUTTON.html" type="application/x-wiki">
+<meta name="description" content="VarTWISTYBUTTON" />
+<link type="text/css" media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="TwistyPlugin.attachments/twisty.css?version=1.6.0"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarTWISTYBUTTON",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="TWISTYBUTTON_45_45_Shorthand_version_for_TWISTYSHOW_38_TWISTYHIDE">  TWISTYBUTTON -- Shorthand version for TWISTYSHOW &amp; TWISTYHIDE </h1>
+This is useful if both the show and the hide button take the same arguments.
+<h2 id="Parameters">  Parameters </h2>
+All parameters supported by <a href="VarTWISTYSHOW.html">TWISTY</a>, except for <ul>
+<li> <code>noscript</code> and <code>class</code> (only used for 'toggle' content)
+</li> <li> <code>mode</code> button mode defaults to div
+</li></ul> 
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<pre class="tml">&#37;TWISTYBUTTON{
+    id&#61;&#34;myid&#34;
+    link&#61;&#34;more&#34;
+  }&#37;&#37;TWISTYTOGGLE{
+    id&#61;&#34;myid&#34;
+  }&#37;content&#37;ENDTWISTYTOGGLE&#37;</pre> <ul>
+<li> Expands as: <div class="twistyPlugin foswikiMakeVisible"><span id="myidshow" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">more</span></a></span><span id="myidhide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">more</span></a></span></div><div class="twistyPlugin"><div id="myidtoggle" style="" class="twistyContent twistyInited">content</div></div>
+</li></ul> 
+<h1 id="Related">  Related </h1> <ul>
+<li> <a href="VarENDTWISTY.html">ENDTWISTY -- complements an opening TWISTY tag to close a twisty</a>
+</li> <li> <a href="VarENDTWISTYTOGGLE.html">ENDTWISTYTOGGLE -- Twisty closure</a>
+</li> <li> <a href="VarTWISTY.html">TWISTY -- generate content block with interactive visibility controls</a>
+</li> <li> <a href="VarTWISTYHIDE.html">TWISTYHIDE - Hide/close link</a>
+</li> <li> <a href="VarTWISTYSHOW.html">TWISTYSHOW - Show/open link</a>
+</li> <li> <a href="VarTWISTYTOGGLE.html">TWISTYTOGGLE -- Twisty Toggle contents section</a>
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

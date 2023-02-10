@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryCorner &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/JQueryCorner/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryCorner/favicon.ico">
+<link type="application/x-wiki" title="edit JQueryCorner" rel="alternate" href="JQueryCorner.html">
+<meta name="description" content="JQueryCorner" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryCorner",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryCorner">  <a class="foswikiCurrentTopicLink" href="JQueryCorner.html">JQueryCorner</a> </h1>
+<p></p>
+<p></p>
+<p></p>
+This plugin adds cross-browser support for rounded corners. For modern browsers the appropriate css attributes are used while
+there is a fallback strategy for others.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<h3 id="JavaScript_API"> JavaScript API </h3>
+<p></p>
+The javascript API: <code>corner()</code> takes a single string argument:  
+<pre class="js">
+&#36;(&#39;#myDiv&#39;).corner(&#34;effect corners width&#34;);
+</pre>
+<p></p>
+with
+<p></p> <ul>
+<li> effect: name of the effect to apply, such as round, bevel, notch, bite, etc (default is round). 
+</li> <li> corners: one or more of: top, bottom, tr, tl, br, or bl.by default, all four corners are adorned. 
+</li> <li> width: width of the effect; in the case of rounded corners this is the radius.             specify this value using the px suffix such as 10px
+</li></ul> 
+<p></p>
+Any element using the <code>jqCorner</code> class will be rounded. Options are extracted from the <code>data-corner</code> attribute of the markup.
+<p></p>
+<h3 id="Foswiki_integration">  Foswiki integration </h3>
+<p></p>
+Add the <code><b>jqCorner</b></code> class to elements that should be rounded. Additional parameter are provided via
+the <code>data-corner</code> attribute of an HTML element. (Note, that this differs from other plugins where parameters
+are provided inside the <code>class</code> attribute using <a href="JQueryMetadata.html">JQueryMetadata</a>.)
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<div class='foswikiAlert'>No such plugin corner</div>
+<p></p>
+
+<style>
+.jqCorner {
+  margin:1em 0.8em;
+  padding:1em;
+  float:left;
+  width:250px;
+}
+.jqCorner h2.jqCorner {
+  margin:-1em -0.7em 0.7em -0.7em;
+  padding:0.8em;
+  border:0px;
+  float:none;
+  width:auto;
+}
+</style>
+
+<p></p>
+<div class="jqCorner" style="background:#bfdded;color:black">
+  <h2 class="jqCorner" data-corner="round top" style="color:#ffffff;background:#778cca">
+    1. Lorem ipsum dolor sit amet
+  </h2>
+  Consectetuer adipiscing elit. Nulla dui turpis,
+  convallis eget, lacinia id, vulputate ut, ipsum. Donec sed sem. Ut tempus. Nunc
+  egestas consectetuer augue. Sed a nibh. Duis rutrum nibh. Sed in orci at arcu
+  molestie ultrices. Quisque a lectus. In mollis, nulla id rutrum tincidunt,
+</div>
+<p></p>
+<div class="jqCorner" style="background:#C4E786;color:black">
+  <h2 class="jqCorner" data-corner="round top" style="color:#ffffff;background:#9DC35B">
+    2. Lorem ipsum dolor sit amet
+  </h2>
+  Consectetuer adipiscing elit. Nulla dui turpis,
+  convallis eget, lacinia id, vulputate ut, ipsum. Donec sed sem. Ut tempus. Nunc
+  egestas consectetuer augue. Sed a nibh. Duis rutrum nibh. Sed in orci at arcu
+  molestie ultrices. Quisque a lectus. In mollis, nulla id rutrum tincidunt,
+</div>
+<p></p>
+<div class="jqCorner" style="background:#ffd154;color:black">
+  <h2 class="jqCorner" data-corner="round top" style="color:#ffffff;background:#DBB13F">
+    3. Lorem ipsum dolor sit amet
+  </h2>
+  Consectetuer adipiscing elit. Nulla dui turpis,
+  convallis eget, lacinia id, vulputate ut, ipsum. Donec sed sem. Ut tempus. Nunc
+  egestas consectetuer augue. Sed a nibh. Duis rutrum nibh. Sed in orci at arcu
+  molestie ultrices. Quisque a lectus. In mollis, nulla id rutrum tincidunt,
+</div>
+<p></p>
+<div class="jqCorner" style="background:#EDC2C2;color:black">
+  <h2 class="jqCorner" data-corner="round top" style="color:#ffffff;background:#aa0000">
+    4. Lorem ipsum dolor sit amet
+  </h2>
+  Consectetuer adipiscing elit. Nulla dui turpis,
+  convallis eget, lacinia id, vulputate ut, ipsum. Donec sed sem. Ut tempus. Nunc
+  egestas consectetuer augue. Sed a nibh. Duis rutrum nibh. Sed in orci at arcu
+  molestie ultrices. Quisque a lectus. In mollis, nulla id rutrum tincidunt,
+</div>
+<span class='foswikiClear'></span>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

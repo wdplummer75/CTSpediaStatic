@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>DeveloperDocumentationCategory &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/DeveloperDocumentationCategory/favicon.ico"> <link href="../MISSING RESOURCE System/DeveloperDocumentationCategory/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit DeveloperDocumentationCategory" href="DeveloperDocumentationCategory.html" rel="alternate">
+<meta name="description" content="DeveloperDocumentationCategory" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "DeveloperDocumentationCategory",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Developer_Documentation">  Developer Documentation </h1>
+ List of documents for application developers as well as developers of skins and extensions.
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Application_Developer_Topics"> Application Developer Topics </a> <ul>
+<li> <a href="#Reference"> Reference </a>
+</li> <li> <a href="#Background_on_core_functionalities"> Background on core functionalities </a>
+</li> <li> <a href="#Extensions_44_working_with_extensions"> Extensions, working with extensions </a>
+</li> <li> <a href="#Utilities"> Utilities </a>
+</li> <li> <a href="#Example_topics_and_applications"> Example topics and applications </a>
+</li></ul> 
+</li> <li> <a href="#Core_44_Skin_44_and_Extensions_Developer_Topics"> Core, Skin, and Extensions Developer Topics </a> <ul>
+<li> <a href="#Reference_AN1"> Reference </a>
+</li> <li> <a href="#Background_on_functionalities"> Background on functionalities </a>
+</li> <li> <a href="#Utilities_AN1"> Utilities </a>
+</li> <li> <a href="#Skins_and_extensions"> Skins and extensions </a>
+</li> <li> <a href="#Other"> Other </a>
+</li></ul> 
+</li> <li> <a href="#Related_Topics"> Related Topics </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Application_Developer_Topics">  Application Developer Topics </h2>
+Topics for normal users that want to develop Foswiki applications.
+<p></p>
+<h3 id="Reference">  Reference </h3> <dl>
+<dt> <a href="ReferenceManual.html">ReferenceManual</a>  </dt><dd> Documentation for webmasters, system administrators, project managers, team leaders, and all other users of Foswiki 
+</dd></dl> 
+<p></p>
+<h3 id="Background_on_core_functionalities">  Background on core functionalities </h3> <dl>
+<dt> <a href="CommandAndCGIScripts.html">CommandAndCGIScripts</a>  </dt><dd> These scripts are located in the bin and tools directories. This topic describes the interfaces to some of those scripts
+</dd> <dt> <a href="DataForms.html">DataForms</a>  </dt><dd> Data forms allow you to add structured data to topics. The data stored in the form fields can be used to search and filter topics. The combination of structured data and search queries are the base for building database applications
+</dd> <dt> <a href="FormattedSearch.html">FormattedSearch</a>  </dt><dd> Foswiki's inline search feature allows flexible formatting of search result. This is a key feature for most Foswiki applications
+</dd> <dt> <a href="FormatTokens.html">FormatTokens</a>  </dt><dd> Description of the format tokens such as $n, $quot, $percent etc used in <a href="FormattedSearch.html">FormattedSearch</a> and a few other macros.
+</dd> <dt> <a href="IfStatements.html">IfStatements</a>  </dt><dd> The <code>%IF%</code> construct gives Foswiki the power to include content in topics based on the value of simple expressions
+</dd> <dt> <a href="IncludeTopicsAndWebPages.html">IncludeTopicsAndWebPages</a>  </dt><dd> Include Topics and Web Pages Using <code>%INCLUDE{...}%</code> Macro
+</dd> <dt> <a href="QuerySearch.html">QuerySearch</a>  </dt><dd> Query searches help you search the contents of forms attached to your topics, as well as the values of other meta-data attached to the topic using simple query language
+</dd> <dt> <a href="RegularExpression.html">RegularExpression</a>  </dt><dd> A short introduction to regular expressions
+</dd> <dt> <a href="SearchHelp.html">SearchHelp</a>  </dt><dd> An introduction to searching
+</dd> <dt> <a href="SkinTemplates.html">SkinTemplates</a>  </dt><dd> Skin templates are used when composing the output from all actions, such as view, edit, and preview. This allows you to change the look and feel of all pages by editing just a few template files. This topic describes the special template directives. Both for Skin developers and for advanced wiki application development.
+</dd> <dt> <a href="TemplateTopics.html">TemplateTopics</a>  </dt><dd> Template topics are topics that define the default text for new topics. A basic feature is most wiki applications.
+</dd> <dt> <a href="WebTemplateTopics.html">WebTemplateTopics</a>  </dt><dd> A brief introduction to topic template and a list of templates in this web
+</dd></dl> 
+<p></p>
+<p></p>
+<h3 id="Extensions_44_working_with_extensions">  Extensions, working with extensions </h3> <dl>
+<dt> <a href="JQueryPlugin.html">JQueryPlugin</a>  </dt><dd> JQueryPlugin enables the use of the jQuery Javascript library in wiki applications and is used by many plugins to create the user interfaces
+</dd> <dt> <a href="AutoViewTemplatePlugin.html">AutoViewTemplatePlugin</a>  </dt><dd> This plugin enables using special view and edit templates depending on the data form used on the topics
+</dd> <dt> <a href="CommentPlugin.html">CommentPlugin</a>  </dt><dd> Comment Plugin lets users quickly post comments to a page without an edit/preview/save cycle. The comment forms can be customized and form very advanced user interface for application development
+</dd> <dt> <a href="CommentPluginTemplate.html">CommentPluginTemplate</a>  </dt><dd> This topic is used by the <a href="CommentPlugin.html">CommentPlugin</a> as a template file
+</dd> <dt> <a href="EditRowPlugin.html">EditRowPlugin</a>  </dt><dd> Edit tables using edit fields, date pickers and drop down boxes
+</dd> <dt> <a href="JSCalendarContrib.html">JSCalendarContrib</a>  </dt><dd> Enables smart Javascript calender for text entry fields. Users can add calendar directly in their own hand-built forms, without having to write any code. 
+</dd> <dt> <a href="PlainSkin.html">PlainSkin</a>  </dt><dd> The plain skin is used to get the rendered topic text without any page decoration such as side, top or bottom bars. The text is shown without any markup styles. It can be used to display topic content inside an IFRAME.
+</dd></dl> 
+<p></p>
+<h3 id="Utilities">  Utilities </h3> <dl>
+<dt> <a href="CountryList.html">CountryList</a>  </dt><dd> List of countries used in the <a href="UserForm.html">UserForm</a>. Can also be used in Foswiki applications
+</dd> <dt> <a href="DocumentGraphics.html">DocumentGraphics</a>  </dt><dd> This is a Foswiki icon library. The graphics can be used in topics and by web applications
+</dd> <dt> <a href="HierarchicalNavigation.html">HierarchicalNavigation</a>  </dt><dd> Navigation block that displays the current topic, its parent and children (if any). This is intended to be included in other topics, for example in a side navigation bar 
+</dd> <dt> <a href="InstalledPlugins.html">InstalledPlugins</a>  </dt><dd> List of the plugins currently installed and enabled in this Foswiki site
+</dd></dl> 
+<p></p>
+<h3 id="Example_topics_and_applications">  Example topics and applications </h3> <dl>
+<dt> <a href="FAQAnApplicationWithWikiForm.html">FAQAnApplicationWithWikiForm</a>  </dt><dd> A simple example of a Foswiki application using data forms and a submission page made with an HTML form
+</dd> <dt> <a href="ExampleTopicTemplate.html">ExampleTopicTemplate</a>  </dt><dd> An example used in <a href="TemplateTopics.html">TemplateTopics</a> illustrating how to create a new topic based on a specific template topic  
+</dd> <dt> <a href="SearchPatternCookbook.html">SearchPatternCookbook</a>  </dt><dd> A cookbook with many examples how to use the powerful SEARCH feature in wiki applications. See examples of both regular expression searches, query searches, and the use of formatted output
+</dd> <dt> <a href="WebLeftBarExample.html">WebLeftBarExample</a>  </dt><dd> This topic defines the default left bar in <a href="PatternSkin.html">PatternSkin</a>. Each web has its own left bar. If you need to change it please read in <a href="PatternSkin.html">PatternSkin</a> how to tailor the bars so they do not get overwritten when you upgrade Foswiki
+</dd></dl> 
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Core_44_Skin_44_and_Extensions_Developer_Topics">  Core, Skin, and Extensions Developer Topics </h2>
+Topics for programmers that which to design new skins and develop new extensions for Foswiki.
+<p></p>
+<h3 id="Reference_AN1">  Reference </h3> <dl>
+<dt> <a href="ReferenceManual.html">ReferenceManual</a>  </dt><dd> Documentation for webmasters, system administrators, project managers, team leaders, and all other users of Foswiki 
+</dd> <dt> <a href="DevelopingPlugins.html">DevelopingPlugins</a>  </dt><dd> An introduction to developing Plugins
+</dd> <dt> <a href="ContributedAddOns.html">[AddOns</a>  </dt><dd> A short introduction to Add-Ons. Add-Ons are the old name for Contribs. 
+</dd> <dt> <a href="Contribs.html">Contribs</a>  </dt><dd> A short introduction to Contribs. Contribs are Extensions to Foswiki that do not implement macros or register to the Plugins API.
+</dd> <dt> <a href="Plugins.html">Plugins</a>  </dt><dd> A short introduction to Plugins.
+</dd> <dt> <a href="Skins.html">Skins</a>  </dt><dd> An introduction to skins and skin development
+</dd> <dt> <a href="PerlDoc.html">PerlDoc</a>  </dt><dd> This topic is a helper topic that enables displaying the inline documentation of the Foswiki perl modules. It is used in the <a href="DevelopingPlugins.html">DevelopingPlugins</a> topic
+</dd></dl> 
+<p></p>
+<h3 id="Background_on_functionalities">  Background on functionalities </h3> <dl>
+<dt> <a href="AppendixCascadingStyleSheets.html">AppendixCascadingStyleSheets</a>  </dt><dd> Listing of CSS class names emitted from Foswiki core code and standard extensions
+</dd> <dt> <a href="JavascriptFiles.html">JavascriptFiles</a>  </dt><dd> Foswiki Javascript support comprises a number of base Javascript files, attached to this topic, that provide support for features in the basic screens, and are used by most skins. 
+</dd> <dt> <a href="SkinTemplates.html">SkinTemplates</a>  </dt><dd> Skin templates are used when composing the output from all actions, such as view, edit, and preview. This allows you to change the look and feel of all pages by editing just a few template files. This topic describes the special template directives. Both for Skin developers and for advanced wiki application development.
+</dd> <dt> <a href="MetaData.html">MetaData</a>  </dt><dd> Additional data, Foswiki-generated or from <a href="DataForms.html">forms</a>, may be embedded in the topic text using <code>META:</code> macros
+</dd> <dt> <a href="ClassMethod.html">ClassMethod</a>  </dt><dd> A <a href="ClassMethod.html">ClassMethod</a> is a method that must be called relative to the containing class object
+</dd> <dt> <a href="ObjectMethod.html">ObjectMethod</a>  </dt><dd> An <a href="ObjectMethod.html">ObjectMethod</a> is a method that must be called relative to a previous constructed object of the class type
+</dd> <dt> <a href="StaticMethod.html">StaticMethod</a>  </dt><dd> A <a href="StaticMethod.html">StaticMethod</a> is a method in a package that can be called without reference to an object of the package type
+</dd></dl> 
+<p></p>
+<h3 id="Utilities_AN1">  Utilities </h3> <dl>
+<dt> <a href="InstalledPlugins.html">InstalledPlugins</a>  </dt><dd> List of the plugins currently installed and enabled in this Foswiki site. Developers can see any code errors in the plugins which is very useful during development
+</dd> <dt> <a href="LanguageSelector.html">LanguageSelector</a>  </dt><dd> Language selection dropdown. To be included where a language selection is needed, for instance in the top bar or left bar
+</dd></dl> 
+<p></p>
+<h3 id="Skins_and_extensions">  Skins and extensions </h3> <dl>
+<dt> <a href="PatternSkin.html">PatternSkin</a>  </dt><dd> This is the default skin that Foswiki is shipped with. This topic is the entry point for selecting themes and doing tailoring of how your Foswiki installation looks like
+</dd> <dt> <a href="PatternSkinCss.html">PatternSkinCss</a>  </dt><dd> This page is a reference for all CSS classes used in <a href="PatternSkin.html">PatternSkin</a>.
+</dd> <dt> <a href="PatternSkinCssCookbook.html">PatternSkinCssCookbook</a>  </dt><dd> Cookbook for how to alter the appearance of PatternSkin using CSS. This includes how to change the color scheme, hide the left bar, change the height of the top bar, removing the top bar, etc.
+</dd> <dt> <a href="PatternSkinCustomization.html">PatternSkinCustomization</a>  </dt><dd> How to customize the apperance of <a href="PatternSkin.html">PatternSkin</a> using templates. This includes how to change the site logos, how to change the features of the top and side bars, and how to hide certain user interface elements depending who the user is.
+</dd> <dt> <a href="PatternSkinElements.html">PatternSkinElements</a>  </dt><dd> This topic shows the most common elements that you can change in the <a href="PatternSkin.html">PatternSkin</a>. Use this topic to see the result of your changes to CSS.
+</dd> <dt> <a href="PrintSkin.html">PrintSkin</a>  </dt><dd> The print skin, used for printable pages with a small footer. Other skins, such as <a href="PatternSkin.html">PatternSkin</a>, may introduce their own print skin. 
+</dd></dl> 
+<p></p>
+<h3 id="Other">  Other </h3> <dl>
+<dt> <a href="TopicDoesNotExistViewTemplate.html">TopicDoesNotExistViewTemplate</a>  </dt><dd> This template topic defines the look of the page shown when the user has tried to view a topic that does not exist
+</dd></dl> 
+<p></p>
+More in-depth developer documentation can be found in the <a href="https://foswiki.org/Support.SupplementalDocuments" class="interwikiLink" title="'Support.SupplementalDocuments' on foswiki.org"><noautolink>supplemental documentation</noautolink></a>.
+<p></p>
+Really detailed documentation, including how to get started as a core developer, can be found on the <a title="'Development.WebHome' on foswiki.org" href="https://foswiki.org/Development.WebHome" class="interwikiLink"><noautolink>Foswiki developer site</noautolink></a>.
+<p></p>
+<h2 id="Related_Topics">  Related Topics </h2> <dl>
+<dt> <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>  </dt><dd> List of documents relevant for the installer and administrator of the Foswiki installation
+</dd> <dt> <a href="AdminToolsCategory.html">AdminToolsCategory</a>  </dt><dd> List of tools available to the Foswiki administrator
+</dd> <dt> <a href="UserDocumentationCategory.html">UserDocumentationCategory</a>  </dt><dd> Documentation mainly useful to end users
+</dd> <dt> <a href="UserToolsCategory.html">UserToolsCategory</a>  </dt><dd> List of tools the user may need for setting and resetting passwords, changing email address etc.
+</dd></dl> 
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

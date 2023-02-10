@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebLeftBarCookbook &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/WebLeftBarCookbook/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/WebLeftBarCookbook/favicon.ico" rel="shortcut icon">
+<link title="edit WebLeftBarCookbook" rel="alternate" href="WebLeftBarCookbook.html" type="application/x-wiki">
+<meta name="description" content="WebLeftBarCookbook" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "WebLeftBarCookbook",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="WebLeftBar_Cookbook"> WebLeftBar Cookbook </h1>
+<p></p>
+<strong>Instructions and tips how to use <a href="WebLeftBarPersonalTemplate.html">WebLeftBarPersonalTemplate</a></strong>.
+<p></p>
+WebLeftBarPersonalTemplate is a topic template to create a personal left bar block for each user. The personal topic, &lt;user&gt;LeftBar is included in the left bar. Its contents are only visible to you. You may put there whatever suits you - links to frequently visited topics, or a dynamically generated list of topics.
+<p></p>
+Each link is an item in a bullet list. So it can look like this:
+<p></p> <ul>
+<li> <strong>My links</strong> <ul>
+<li> <a href="WebHome.html" class="foswikiCurrentWebHomeLink">WebHome</a>
+</li> <li> <a href="WebIndex.html">WebIndex</a>
+</li> <li> <a href="WebChanges.html">WebChanges</a>
+</li></ul> 
+</li></ul> 
+<p></p>
+(or use your own personal topics).
+<p></p>
+The list is formatted with CSS. To get an idea of the actual look, see the list above formatted as in the left bar (you need to have <code>SKIN</code> set to <a href="PatternSkin.html">PatternSkin</a>):
+<p></p>
+<div class="patternSideBar" style="position:relative; top:0; left:0; padding:0; margin:0; border:0;">
+<div class="patternLeftBarPersonal"> <ul>
+<li> <strong>My links</strong> <ul>
+<li> <a class="foswikiCurrentWebHomeLink" href="WebHome.html">WebHome</a>
+</li> <li> <a href="WebIndex.html">WebIndex</a>
+</li> <li> <a href="WebChanges.html">WebChanges</a>
+</li></ul> 
+</li></ul> 
+</div> 
+</div>
+<p></p>
+By default the &lt;user&gt;LeftBar topic has an edit link. In case you loose the edit link line of text, here's a copy:
+<pre>
+&#60;div class&#61;&#34;foswikiSmall&#34;&#62;&#60;a href&#61;&#34;&#37;SCRIPTURLPATH{&#34;edit&#34;}&#37;/&#37;WEB&#37;/&#37;TOPIC&#37;?t&#61;&#37;GMTIME{&#34;&#36;year&#36;mo&#36;day&#36;hours&#36;minutes&#36;seconds&#34;}&#37;&#34;&#62;edit&#60;/a&#62;&#60;/div&#62;
+</pre>
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

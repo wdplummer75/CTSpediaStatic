@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarRENDERLIST &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/VarRENDERLIST/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/VarRENDERLIST/favicon.ico">
+<link title="edit VarRENDERLIST" rel="alternate" href="VarRENDERLIST.html" type="application/x-wiki">
+<meta name="description" content="VarRENDERLIST" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "VarRENDERLIST",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="RENDERLIST_45_45_render_bullet_lists_in_a_variety_of_formats">  RENDERLIST -- render bullet lists in a variety of formats </h1>
+The <code>%RENDERLIST%</code> macro is handled by the <a href="RenderListPlugin.html">RenderListPlugin</a>
+<h2 id="Examples">  Examples </h2>
+<pre class="tml">&#37;RENDERLIST{&#34;org&#34; focus&#61;&#34;Sales.WestCoastTeam&#34;}&#37;
+      &#42; &#91;&#91;Eng.WebHome&#93;&#91;Engineering&#93;&#93;
+         &#42; &#91;&#91;Eng.TechPubs&#93;&#91;Tech Pubs&#93;&#93;
+      &#42; &#91;&#91;Sales.WestCoastTeam&#93;&#91;Sales&#93;&#93;
+         &#42; &#91;&#91;Sales.EastCoastTeam&#93;&#91;East Coast&#93;&#93;
+         &#42; &#91;&#91;Sales.WestCoastTeam&#93;&#91;West Coast&#93;&#93;</pre>
+<div style="padding-left: 3em;">Expands as:
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+<td valign="top"><img height="16" border="0" alt="" src="RenderListPlugin.attachments/dot_ur.gif" width="16"></td>
+<td valign="top"><img width="16" height="16" border="0" alt="" src="RenderListPlugin.attachments/home.gif"></td>
+<td valign="top" class="foswikiNoBreak" >&nbsp; <b> Sales </b> </td>
+</tr></table>
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+<td valign="top"><img width="16" alt="" border="0" height="16" src="RenderListPlugin.attachments/empty.gif"></td>
+<td valign="top"><img width="16" src="RenderListPlugin.attachments/dot_udr.gif" alt="" border="0" height="16"></td>
+<td valign="top"><img height="16" border="0" alt="" src="RenderListPlugin.attachments/home.gif" width="16"></td>
+<td valign="top" class="foswikiNoBreak" >&nbsp; <a href="../Sales/EastCoastTeam.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">East Coast</a> </td>
+</tr></table>
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+<td valign="top"><img width="16" src="RenderListPlugin.attachments/empty.gif" height="16" border="0" alt=""></td>
+<td valign="top"><img src="RenderListPlugin.attachments/dot_ur.gif" height="16" border="0" alt="" width="16"></td>
+<td valign="top"><img width="16" src="RenderListPlugin.attachments/home.gif" alt="" border="0" height="16"></td>
+<td valign="top" class="foswikiNoBreak" >&nbsp; <a title="Create this topic" href="../Sales/WestCoastTeam.html" class="foswikiNewLink" rel="nofollow">West Coast</a> </td>
+</tr></table>
+<p></p>
+</div>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="RenderListPlugin.html">RenderListPlugin</a>
+<!---->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

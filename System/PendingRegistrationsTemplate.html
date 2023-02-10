@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PendingRegistrationsTemplate &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/PendingRegistrationsTemplate/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/PendingRegistrationsTemplate/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit PendingRegistrationsTemplate" rel="alternate" href="PendingRegistrationsTemplate.html">
+<meta name="description" content="PendingRegistrationsTemplate" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PendingRegistrationsTemplate",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Pending_Registrations_Template">  Pending Registrations Template </h1>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Tailoring_instructions:"> Tailoring instructions: </a>
+</li> <li> <a href="#Templates_for_34Pending_Approval_34_registrations"> Templates for "Pending Approval" registrations </a>
+</li> <li> <a href="#Templates_for_34Pending_Verification_34_registrations"> Templates for "Pending Verification" registrations </a>
+</li> <li> <a href="#Common_templates"> Common templates </a>
+</li></ul> 
+</div>
+<h2 id="Tailoring_instructions:">  Tailoring instructions: </h2>
+The contents of the Pending Registrations report can be modified to report any fields collected on a customized <a href="UserRegistration.html">UserRegistration</a> form.  Each formfield name
+is substituted with the similarly named token in the row definition:  For example,  if your User Registration form includes the <code>Organization</code> field, it can
+be included by adding <code>$Organization</code> to the below ApprovalRow and VerificationRow templates.
+<p></p>
+Both this topic, and the <a href="PendingRegistrations.html">PendingRegistrations</a> topic must be in the same web for the override to work: <ol>
+<li> Copy this template topic to Main.PendingRegistrationsTemplate
+</li> <li> Edit Main.PendingRegistrationsTemplate and make the desired changes.
+</li> <li> Copy <a href="PendingRegistrations.html">PendingRegistrations</a> to Main.PendingRegistrations.
+</li> <li> <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/PendingRegistrations.html">PendingRegistrations</a> will now generate a report using your tailored layout.
+</li></ol> 
+<p></p>
+<h2 id="Templates_for_34Pending_Approval_34_registrations">  Templates for "Pending Approval" registrations </h2>
+<pre>
+&#37;TMPL:DEF{&#34;ApprovalHeader&#34;}&#37;&#60;noautolink&#62;
+&#124; &#42;WikiName&#42; &#124; &#42;Email&#42; &#124; &#42;LastName&#42; &#124; &#42;FirstName&#42; &#124; &#42;LoginName&#42; &#124; &#42;Code&#42; &#124; &#42;Action&#42; &#124;
+&#37;TMPL:END&#37;
+
+&#37;TMPL:DEF{&#34;approvalNotEnabled&#34;}&#37;&#60;div class&#61;&#34;foswikiAlert&#34;&#62;&#37;MAKETEXT{&#34;Registration approval is not enabled.&#34;}&#37;&#60;/div&#62;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;approveAction&#34;}&#37;
+&#37;MAKETEXT{&#34;You can use the \&#34;approve\&#34; or \&#34;reject\&#34; links to approve or reject these registrations&#34;}&#37;
+&#37;TMPL:END&#37;
+
+&#37;TMPL:DEF{&#34;ApprovalRow&#34;}&#37;&#124; &#36;WikiName &#124; &#36;Email &#124; &#36;LastName &#124; &#36;FirstName &#124; &#36;LoginName &#124; &#36;ApprovalCode &#124;\
+&#91;&#91;&#37;SCRIPTURLPATH{&#34;register&#34; action&#61;&#34;approve&#34; code&#61;&#34;&#36;ApprovalCode&#34; referee&#61;&#34;&#37;WIKINAME&#37;&#34;}&#37;&#93;&#91;&#37;MAKETEXT{&#34;Approve&#34;}&#37;&#93;&#93; / \
+&#91;&#91;&#37;SCRIPTURLPATH{&#34;register&#34; action&#61;&#34;disapprove&#34; code&#61;&#34;&#36;ApprovalCode&#34; referee&#61;&#34;&#37;WIKINAME&#37;&#34;}&#37;&#93;&#91;&#37;MAKETEXT{&#34;Reject&#34;}&#37;&#93;&#93; &#124;
+&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<h2 id="Templates_for_34Pending_Verification_34_registrations">  Templates for "Pending Verification" registrations </h2>
+<pre>
+&#37;TMPL:DEF{&#34;VerificationHeader&#34;}&#37;&#60;noautolink&#62;
+&#124; &#42;WikiName&#42; &#124; &#42;Email&#42; &#124; &#42;LastName&#42; &#124; &#42;FirstName&#42; &#124; &#42;LoginName&#42; &#124; &#42;Code&#42; &#124; 
+&#37;TMPL:END&#37;
+
+&#37;TMPL:DEF{&#34;verifyNotEnabled&#34;}&#37;&#60;div class&#61;&#34;foswikiAlert&#34;&#62;&#37;MAKETEXT{&#34;Email verification is not enabled.&#34;}&#37;&#60;/div&#62;&#37;TMPL:END&#37;
+
+&#37;TMPL:DEF{&#34;VerificationRow&#34;}&#37;&#124; &#36;WikiName &#124; &#36;Email &#124; &#36;LastName &#124; &#36;FirstName &#124; &#36;LoginName &#124; &#36;VerificationCode &#124;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<h2 id="Common_templates">  Common templates </h2>
+<pre>
+&#37;TMPL:DEF{&#34;accessdenied&#34;}&#37;&#60;div class&#61;&#34;foswikiAlert&#34;&#62;&#37;MAKETEXT{&#34;Access to pending registrations is restricted to administrators.&#34;}&#37;&#60;/div&#62;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;nothingPending&#34;}&#37;&#60;div class&#61;&#34;foswikiAlert&#34;&#62;&#37;MAKETEXT{&#34;No registrations are pending.&#34;}&#37;&#60;/div&#62;&#37;TMPL:END&#37;
+</pre>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

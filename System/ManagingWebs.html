@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ManagingWebs &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/ManagingWebs/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/ManagingWebs/favicon.ico">
+<link href="ManagingWebs.html" rel="alternate" title="edit ManagingWebs" type="application/x-wiki">
+<meta name="description" content="ManagingWebs" />
+<style class='head 4342' type='text/css'>
+    #createWeb .col1 {float:left; width:30%; margin:0 3% 0 0;}
+    #createWeb .col2 {float:left; width:66%;}
+    #createWeb .col1 .foswikiInputField,
+    #createWeb .col1 .foswikiSelect {width:90%;}
+    #createWeb .required {font-size:80%; color:#aaa;}
+    #createWeb .foswikiHelp {margin:.5em 0;}
+    #createWeb .additionalSettings {margin:.5em -10px;}
+    #createWeb .additionalSettings .foswikiActionFormStepSign {display:none;}
+    #createWeb .additionalSettings .foswikiFormSteps {background:#fff;}
+    #createWeb .additionalSettings .foswikiFormStep {padding:5px 10px;}
+</style><!--4342-->
+<link media="all" rel="stylesheet" class="head JQUERYPLUGIN::FARBTASTIC" href="JQueryPlugin.attachments/plugins/farbtastic/jquery.farbtastic.css?version=1.2" type="text/css"><!--JQUERYPLUGIN::FARBTASTIC-->
+<link type="text/css" media="all" rel="stylesheet" class="head JQUERYPLUGIN::THEME" href="JQueryPlugin.attachments/plugins/ui/themes/foswiki/jquery-ui.css"><!--JQUERYPLUGIN::THEME-->
+<link media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="TwistyPlugin.attachments/twisty.css?version=1.6.0" type="text/css"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3" class="script JQUERYPLUGIN::EASING"></script><!--JQUERYPLUGIN::EASING-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::UI" src="JQueryPlugin.attachments/plugins/ui/jquery-ui.js?version=1.13.1"></script><!--JQUERYPLUGIN::UI-->
+<script src="JQueryPlugin.attachments/plugins/farbtastic/jquery.farbtastic.js?version=1.2" class="script JQUERYPLUGIN::FARBTASTIC"></script>
+<script src="JQueryPlugin.attachments/plugins/farbtastic/jquery.farbtastic.init.js?version=1.2" class="script JQUERYPLUGIN::FARBTASTIC"></script><!--JQUERYPLUGIN::FARBTASTIC-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "ManagingWebs",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::POPUPWINDOW" src="JQueryPlugin.attachments/plugins/popupwindow/jquery.popupwindow.js?version=1.0.1"></script>
+<script class="script JQUERYPLUGIN::POPUPWINDOW" src="JQueryPlugin.attachments/plugins/popupwindow/jquery.popupwindow.init.js?version=1.0.1"></script><!--JQUERYPLUGIN::POPUPWINDOW-->
+<script src="TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<p></p>
+<h1 id="Managing_Webs">  Managing Webs </h1>
+Browser-based rename, move, copy, and delete for individual webs
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#What_are_Webs_63"> What are Webs? </a>
+</li> <li> <a href="#Create_a_new_web"> Create a new web </a>
+</li> <li> <a href="#In_45depth_info_on_Webs"> In-depth info on Webs </a> <ul>
+<li> <a href="#Subweb_preferences_are_inherited"> Subweb preferences are inherited </a>
+</li> <li> <a href="#Subweb_navigation"> Subweb navigation </a>
+</li></ul> 
+</li> <li> <a href="#Renaming_or_Deleting_a_Web"> Renaming or Deleting a Web </a> <ul>
+<li> <a href="#Permissions"> Permissions </a>
+</li> <li> <a href="#Renaming_the_webs_in_the_distribution"> Renaming the webs in the distribution </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<!--  -->
+<p></p>
+<h2 id="What_are_Webs_63">  What are Webs? </h2>
+A Foswiki site is divided into "Webs", or groups or topics - each one represents one subject, one area of collaboration. Administrators can add, rename or delete webs.<br />
+At file level, a Web is a directory located inside the <code>data</code> directory, with text files as topics. <br />
+A number of Webs are fixed: <code>System</code> for documentation, <code>Main</code> to store user pages and site-wide preferences, <code>Trash</code> for the topic recycle bin. <br />
+Other webs can be created as needed.
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemManagingWebs6065show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited"><img alt="application_cascade" src="FamFamFamSilkIcons.attachments/application_cascade.png" class="foswikiIcon jqIcon application_cascade" width="16"> List all Webs</span></a></span><span id="twistyIdSystemManagingWebs6065hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited"><img width="16" class="foswikiIcon jqIcon application_cascade" src="FamFamFamSilkIcons.attachments/application_cascade.png" alt="application_cascade"> List all Webs</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemManagingWebs6065toggle" style="" class="twistyContent twistyInited">
+<div class="foswikiHelp">
+<strong>Public and hidden webs:</strong>
+<a href="../CTSpedia/WebHome.html">CTSpedia</a>, <a href="../GraphicsWorkingGroup/WebHome.html">GraphicsWorkingGroup</a>, <a href="../Main/WebHome.html">Main</a>, <a href="../ResearchEthics/WebHome.html">ResearchEthics</a>, <a href="../ReviewsBERD/WebHome.html">ReviewsBERD</a>, <a href="../Sandbox/WebHome.html">Sandbox</a>, <a href="WebHome.html" class="foswikiCurrentWebHomeLink">System</a>, <a href="../Trash/WebHome.html">Trash</a>, <a href="../Trash/TestWeb/WebHome.html">Trash.TestWeb</a>
+<p></p>
+<strong>Template webs:</strong>
+<a href="../_default/WebPreferences.html">_default</a>, <a href="../_empty/WebPreferences.html">_empty</a>
+</div>
+</div></div>
+<p></p>
+<span id="CreateNewWeb"></span>
+<h2 id="Create_a_new_web">  Create a new web </h2>
+To use this form you must be administrator.
+<p></p>
+Before you begin: consider that less webs are better than more webs. Cross-linking topics is easier, and searches are faster, if there are only a few larger webs.
+<p></p>
+<noautolink>
+<form name="admin" action="/foswiki/bin/manage/System/ManagingWebs" method="post">
+ <div id="createWeb" class="foswikiFormSteps">
+  <input name="newtopic" type="hidden" value="" /> <input name="action" type="hidden" value="createweb" />
+  <div class="foswikiFormStep">
+   <h3>Name of the new web <span class="required">Required</span></h3>
+   <div class="col1">
+    <p>
+     <input name="newweb" class="foswikiInputField" type="text" value="" size="40" />
+    </p>
+   </div><!--//col1-->
+   <div class="col2">
+    <p>
+     Naming rule: the name must start with an upper case letter, followed by upper or lower case letters or numbers. Examples: <code>Learn</code>, <code>SupDocs</code>, <code>KNow3</code>.  It is recommended to use Web names that are <em>not</em> autolinking as WikiWords.
+                    See <a href="TopicsAndWebs.html">TopicsAndWebs</a> for more information about naming webs, and disambiguation when a Web contains a topic of the same name.
+    </p>
+    <p>
+     If you are creating a sub-web (a web inside a web), use the notation <code>Existingweb.Newweb</code>.
+    </p>
+    <span class="twistyPlugin foswikiMakeVisible"><span id="infoOnSubWebsshow" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><img alt="" border="0" src="DocumentGraphics.attachments/toggleopen.png"><span class="foswikiLinkLabel foswikiUnvisited">More info about sub-webs ...</span></a></span><span id="infoOnSubWebshide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><img border="0" alt="" src="DocumentGraphics.attachments/toggleclose.png"><span class="foswikiLinkLabel foswikiUnvisited">Close info</span></a></span></span>
+    <div class="twistyPlugin"><div id="infoOnSubWebstoggle" style="" class="twistyContent twistyInited"><div class="foswikiHelp">
+     <h4>About sub-webs</h4>
+     <p>
+      You can only create (Hierarchical) sub-webs if the <code>{EnableHierarchicalWebs}</code> <em>expert</em> setting under the
+      <a href="../.html">configure -&gt; <code>Store</code> Tab</a> is enabled.
+      <span class='foswikiGreenFG'> sub-webs are currently enabled (default) </span>.
+     </p>
+     <p>
+      You might not need sub-webs. Foswiki topics already have a parent/child relationship within a web,
+      which is shown in the breadcrumb. Try to keep the number of webs to a minimum in order to keep search and
+      cross-referencing simple.
+     </p>
+    </div></div></div>
+   </div><!--//col2-->
+   <div class="foswikiClear"></div>
+  </div><!--//foswikiFormStep-->
+  <div class="foswikiFormStep">
+   <h3>Summary</h3>
+   <div class="col1">
+    <p>
+     <input type="text" class="foswikiInputField" name="WEBSUMMARY" value="" size="40" />
+    </p>
+   </div><!--//col1-->
+   <div class="col2">
+    <p>
+     Enter a short description of the web. This description will be used in the <a href="SiteMap.html">SiteMap</a>. If you are using links: write <code>Web.TopicName</code> instead of just <code>TopicName</code> for correct linking.
+    </p>
+   </div><!--//col2-->
+   <div class="foswikiClear"></div>
+  </div><!--//foswikiFormStep-->
+  <div class="foswikiFormStep">
+            <h3>Additional Settings</h3>Leave these settings as default if you do not understand what they mean.
+   <div class="additionalSettings">
+    <div class="foswikiFormSteps">
+     <div class="foswikiFormStep">
+      <h3>Template web</h3>
+      <div class="col1">
+       <p>
+        <select name="baseweb" class="foswikiSelect"> <option selected="selected">_default</option> <option >_empty</option> <option >CTSpedia</option> <option >GraphicsWorkingGroup</option> <option >Main</option> <option >ResearchEthics</option> <option >ReviewsBERD</option> <option >Sandbox</option> <option >System</option> <option >Trash</option> <option >Trash/TestWeb</option></select>
+       </p>
+      </div><!--//col1-->
+      <div class="col2">
+       <p>
+        Base the new web on an existing web.
+       </p>
+       <span class="twistyPlugin foswikiMakeVisible"><span id="infoOnTemplatesshow" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><img src="DocumentGraphics.attachments/toggleopen.png" alt="" border="0"><span class="foswikiLinkLabel foswikiUnvisited">More info about template webs ...</span></a></span><span id="infoOnTemplateshide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><img border="0" alt="" src="DocumentGraphics.attachments/toggleclose.png"><span class="foswikiLinkLabel foswikiUnvisited">Close info</span></a></span></span>
+       <div class="twistyPlugin"><div id="infoOnTemplatestoggle" style="" class="twistyContent twistyInited"><div class="foswikiHelp">
+       <h4>About template webs</h4>
+       <p>
+        There are two methods used to create a new web. <br /> First you can use a specially designed TemplateWeb. This is an invisible web that begins with an underscore &quot;_&quot; character (for example <code>_default</code>). All topics in the template web will be copied into your new web. <br />
+        The second method is to use an existing web as a template web. This may be useful <strong>if you already have a web that you would like to use as a starting point.</strong> Only topics that have names beginning with "Web..." (like "WebHome" or "WebNotify") are copied. In either case you will want to be sure to verify that your new web has all the custom modifications that you desire. <!-- Any <a href="Macros.html">macros</a> defined in the form below will automatically be set in the WebPreferences of the new web. -->
+       </p>
+<strong>Notes:</strong> <ul>
+<li> You must have <code>ROOTCHANGE</code> access to create a top-level web (one with no parent)
+</li> <li> A new web created using the <code>_default</code> or <code>_empty</code> template webs must have their access controls set before public use
+</li> <li> <code>_empty</code> is really empty (only has a WebPreferences topic); normally you want to choose <code>_default</code>.
+</li> <li> Only the person who created it has permission to change the WebPreferences in the new web
+</li></ul> 
+</div><!--//foswikiHelp--></div></div>
+     </div><!--//col2-->
+     <div class="foswikiClear"></div>
+     </div><!--//foswikiFormStep-->
+     <div class="foswikiFormStep">
+      <h3>List on SiteMap page</h3>
+      <div class="col1">
+       <p>
+        <label><input type="radio" name="SITEMAPLIST" value="on" checked="checked" />show</label> <label><input type="radio" name="SITEMAPLIST" value="" />hide</label>
+       </p>
+      </div><!--//col1-->
+      <div class="col2">
+       <p>
+        Should the new web be listed on SiteMap? Even if hidden, the web will be linkable and accessible to users.
+       </p>
+      </div><!--//col2-->
+      <div class="foswikiClear"></div>
+     </div><!--//foswikiFormStep-->
+     <div class="foswikiFormStep">
+      <h3>Include in global search and <code>%WEBLIST%</code> </h3>
+      <div class="col1">
+       <p class="formOptions">
+        <label><input type="radio" name="NOSEARCHALL" value="" checked="checked" />include</label> <label><input type="radio" name="NOSEARCHALL" value="on" />exclude</label>
+       </p>
+      </div><!--//col1-->
+      <div class="col2">
+       <p>
+        Specify if you want to exclude the web from global search, and from the <code>%WEBLIST%</code> macro used in the WebLeftBarWebsList.
+       </p>
+      </div><!--//col2-->
+      <div class="foswikiClear"></div>
+     </div><!--//foswikiFormStep-->
+     <div class="foswikiFormStep">
+      <h3>Web color</h3>
+      <div class="col1">
+       <p> 
+        <input name="WEBBGCOLOR" class="foswikiInputField jqFarbtastic" type="text" value="#efefef" size="20" />
+       </p>
+      </div><!--//col1-->
+      <div class="col2">
+       <p>
+        Displayed on SiteMap and in the left bar (Pattern Skin). <br />Choose by clicking on the input field, or enter a <a rel="width:600;height:480;scrollbars:1;location:0" class="jqPopUpWindow" href="StandardColors.html">System.StandardColors</a>.
+       </p>
+      </div><!--//col2-->
+      <div class="foswikiClear"></div>
+     </div><!--//foswikiFormStep-->
+    </div><!--//foswikiFormSteps-->
+   </div><!--//additionalSettings-->
+  </div><!--//foswikiFormStep-->
+  <div class="foswikiFormStep">
+   <input type="submit" class="foswikiSubmit" value="Create Web" />
+  </div><!--//foswikiFormStep-->
+ </div><!--//foswikiFormSteps-->
+</form>
+</noautolink>
+<p></p>
+<h2 id="In_45depth_info_on_Webs">  In-depth info on Webs </h2>
+<h3 id="Subweb_preferences_are_inherited">  Subweb preferences are inherited </h3>
+The <a href="PreferenceSettings.html">preference settings</a> of a subweb are inherited from the parent web and overridden locally. Preferences are ultimately inherited from the <a href="DefaultPreferences.html">System.DefaultPreferences</a> topic.
+<p></p>
+<strong>Example Preference Inheritance for <code>Sandbox/TWiki/SubWeb.SubWebTopic</code> topic:</strong> <ol>
+<li> <code>System.DefaultPreferences</code> default settings
+</li> <li> <code>Main.SitePreferences</code> site-wide settings inherits from and overrides settings in <code>System.DefaultPreferences</code>
+</li> <li> <code>Sandbox.WebPreferences</code> inherits from and overrides settings in <code>Main.SitePreferences</code>
+</li> <li> <code>Sandbox/TestWeb.WebPreferences</code> inherits from and overrides settings in <code>Sandbox.WebPreferences</code>
+</li> <li> <code>Sandbox/TWiki/SubWeb.WebPreferences</code> inherits from and overrides settings in <code>Sandbox/TestWeb.WebPreferences</code>
+</li> <li> <code>Sandbox/TWiki/SubWeb.SubWebTopic</code> inherits from and overrides settings in <code>Sandbox/TWiki/SubWeb.WebPreferences</code>
+</li></ol> 
+<p></p>
+<h3 id="Subweb_navigation">  Subweb navigation </h3>
+The default Pattern skin indicates Subwebs by indenting them in the sidebar relative to their level in the hierarchy.
+<p></p>
+<span id="RenameWeb"></span>
+<p></p>
+<h2 id="Renaming_or_Deleting_a_Web">  Renaming or Deleting a Web </h2>
+Rename a web via the Tools section in each <a href="WebPreferences.html">WebPreferences</a> topic. You may delete a web by moving it into a Trash web.
+<p></p>
+<h3 id="Permissions">  Permissions </h3>
+You may only rename a web if you have the following permissions <ul>
+<li> You must be allowed to rename and changes topics in the web you want to rename
+</li> <li> You must be allowed to rename topics in the parent web of the web you want to rename
+</li> <li> If the web is a root web (i.e. it has no parent web) then you must have permission to both create and rename root webs. These permissions are controlled by the ALLOWROOTCHANGE preference, which can be set in <a href="../Main/SitePreferences.html">Main.SitePreferences</a>.
+</li> <li> If you move the web to another parent web you must be allowed to create and change topics in the new parent web. When you rename a web Foswiki will try and update all links that refer to the old web. You should note that links only get updated in topics that you are allowed to edit. If you use access rights in the Foswiki installation it is generally best to let an administrator rename webs to avoid too many broken links.
+</li></ul> 
+<p></p>
+<h3 id="Renaming_the_webs_in_the_distribution">  Renaming the webs in the distribution </h3>
+It is possible, though not recommended, to change the names of the webs in the distribution. If you plan to rename the Main web, remember that Foswiki stores user topics in this web. That means that every <a href="WikiName.html">WikiName</a> signature - <code>Main.SomeUserName</code> - points to it and would need updating (unless the macro style <code>%USERSWEB%.SomeUserName</code>, is used throughout). This potentially large change can be performed automatically if you rename the web from the Tools section of <a href="WebPreferences.html">WebPreferences</a>, as described above.
+<p></p>
+<div class="foswikiHelp"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> If you want to rename the System or Main webs, remember they are referred to in the Foswiki configuration. You will need to change the <code>{SystemWebName}</code>, <code>{UsersWebName}</code> and/or <code>{LocalSitePreferences}</code> settings in the configuration using the <a href="../.html">configure</a> interface.
+<p></p>
+<img src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16" title="ALERT!" width="16"> Renaming the webs in the distribution is not recommended because it makes upgrades much more complicated.</div>
+<p></p>
+<p></p>
+<strong>Related Topics:</strong> <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>, <a href="AdminToolsCategory.html">AdminToolsCategory</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

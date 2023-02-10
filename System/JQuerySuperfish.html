@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQuerySuperfish &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQuerySuperfish/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQuerySuperfish/favicon.ico">
+<link type="application/x-wiki" href="JQuerySuperfish.html" rel="alternate" title="edit JQuerySuperfish">
+<meta name="description" content="JQuerySuperfish" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<link href="JQueryPlugin.attachments/plugins/superfish/jquery.superfish.css" class="head SUPERFISH::DEMO" rel="stylesheet" type="text/css">
+         <link href="JQueryPlugin.attachments/plugins/superfish/jquery.superfish-navbar.css" class="head SUPERFISH::DEMO" rel="stylesheet" type="text/css">
+         <link type="text/css" href="JQueryPlugin.attachments/plugins/superfish/jquery.superfish-vertical.css" rel="stylesheet" class="head SUPERFISH::DEMO"><!--SUPERFISH::DEMO-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQuerySuperfish",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQuerySuperfish.attachments/example.js" class="script SUPERFISH::DEMO"></script><!--SUPERFISH::DEMO: requires= missing ids: JQUERYPLUGIN::SUPERFISH-->
+</head>
+<body>
+<h1 id="JQuerySuperfish">  <a class="foswikiCurrentTopicLink" href="JQuerySuperfish.html">JQuerySuperfish</a> </h1>
+<p></p>
+    Homepage: <a href="https://superfish.joelbirch.co/">https://superfish.joelbirch.co/</a> <br />
+    Author(s): Joel Birch <br />
+    Version: 1.7.7
+<p></p>
+<p></p>
+<p></p>
+Superfish is an enhanced Suckerfish-style menu jQuery plugin that takes an
+existing pure CSS drop-down menu (so it degrades gracefully without JavaScript).
+Features: <ul>
+<li> Suckerfish-style hover support for IE6. The class added is sfHover by default but can be changed via the options object,
+</li> <li> Timed delay on mouseout to be more forgiving of mouse-piloting errors. Default is 800 milliseconds but can be changed via the options object
+</li> <li> Animation of sub-menu reveal. uses a fade-in by default but can be given a custom object to be used in the first argument of the animate function. The animation speed is also customisable but is set to ?normal? by default
+</li> <li> Keyboard accessibility. Tab through the links and the relevant sub-menus are revealed and hidden as needed
+</li> <li> Supports the hoverIntent plugin. Superfish automatically detects the presence of Brian Cherne?s hoverIntent plugin and uses its advanced hover behaviour for the mouseovers (mouseout delays are handled by Superfish regardless of the presence of hoverIntent). Using this is only an option, but a nice one. The examples on this page are using hoverIntent. If for some reason you want to use hoverIntent on your page for other plugins but do not want Superfish to use it you can set the option disableHI to true.
+</li> <li> Indicates the presence of sub-menus by automatically adding arrow images to relevant anchors. Arrows are fully customisable via CSS. You can turn off auto-generation of the arrow mark-up via the ?autoArrows? option if required.
+</li> <li> drop shadows for capable browsers ? degrades gracefully for Internet Explorer 6. Can disable shadows completely via options object.
+</li> <li> Can show the path to your current page while the menu is idle. The easiest way to understand this is to view the nav-bar example.
+</li> <li> Optional callback functions. The 'this' keyword within the handlers you attach will refer to the animated ul sub-menu. From version 1.4 there are now three other optional callbacks allowing for further enhancements and functionality to be added without needing to alter the core Superfish code.
+</li></ul> 
+<p></p>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="Using_TreePlugin">  Using TreePlugin </h3>
+Requires <a href="https://foswiki.org/Extensions.TreePlugin" class="interwikiLink" title="'Extensions.TreePlugin' on foswiki.org"><noautolink>Foswiki:Extensions.TreePlugin</noautolink></a>
+<p></p>
+<pre class="foswikiHidden">
+&#37;STARTSECTION{&#34;treeplugin&#95;example&#34;}&#37;
+&#60;ul id&#61;&#34;tree-demo&#34; class&#61;&#34;sf-menu&#34;&#62;&#60;li&#62;&#60;a name&#61;&#34;topiclist&#34; class&#61;&#34;sf-with-ul&#34;&#62;Topics...&#60;/a&#62;&#60;span class&#61;&#34;sf-sub-indicator&#34;&#62;&#38;#187;&#60;/span&#62;
+&#37;TREE{
+  web&#61;&#34;&#37;URLPARAM{&#34;qweb&#34; default&#61;&#34;&#37;BASEWEB&#37;&#34;}&#37;&#34;
+  formatting&#61;&#34;ullist&#34;
+  nodiv&#61;&#34;1&#34;
+}&#37;&#60;/li&#62;
+&#60;/ul&#62;&#60;!-- close the sf-menu --&#62;
+&#37;CLEAR&#37;
+&#37;ENDSECTION{&#34;treeplugin&#95;example&#34;}&#37;
+</pre>
+<span class='foswikiRedFG'> TreePlugin not enabled </span>
+<p></p>
+<h3 id="Basic_style">  Basic style </h3>
+<ul id="sample-menu-1" class="sf-menu">
+ <li class="current">
+   <a href="#a">menu item</a>
+   <ul>
+     <li>
+       <a href="#aa">menu item</a>
+     </li>
+     <li class="current">
+       <a href="#ab">menu item</a>
+       <ul>
+         <li class="current"><a href="..">menu item</a></li>
+         <li><a href="#aba">menu item</a></li>
+         <li><a href="#abb">menu item</a></li>
+         <li><a href="#abc">menu item</a></li>
+         <li><a href="#abd">menu item</a></li>
+       </ul>
+     </li>
+     <li>
+       <a href="..">menu item</a>
+       <ul>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+       </ul>
+     </li>
+     <li>
+       <a href="..">menu item </a>
+       <ul>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+       </ul>
+     </li>
+   </ul>
+ </li>
+ <li>
+   <a href="..">menu item</a>
+ </li>
+ <li>
+   <a href="..">menu item</a>
+   <ul>
+     <li>
+       <a href="..">menu item</a>
+       <ul>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+       </ul>
+     </li>
+     <li>
+       <a href="..">menu item</a>
+       <ul>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+       </ul>
+     </li>
+     <li>
+       <a href="..">menu item</a>
+       <ul>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+       </ul>
+     </li>
+     <li>
+       <a href="..">menu item</a>
+       <ul>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+       </ul>
+     </li>
+     <li>
+       <a href="..">menu item</a>
+       <ul>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+         <li><a href="..">menu item</a></li>
+       </ul>
+     </li>
+   </ul>
+ </li>
+</ul>
+<span class='foswikiClear'></span>
+<p></p>
+<h3 id="Vertical_Style">  Vertical Style </h3>
+<p></p>
+<ul id="sample-menu-3" class="sf-menu sf-vertical">
+    <li class="current">
+      <a href="#a">menu item</a>
+      <ul>
+        <li>
+          <a href="#aa">menu item</a>
+        </li>
+        <li class="current">
+          <a href="#ab">menu item</a>
+          <ul>
+            <li class="current"><a href="..">menu item</a></li>
+            <li><a href="#aba">menu item</a></li>
+            <li><a href="#abb">menu item</a></li>
+            <li><a href="#abc">menu item</a></li>
+            <li><a href="#abd">menu item</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="..">menu item</a>
+          <ul>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="..">menu item</a>
+          <ul>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="..">menu item</a>
+    </li>
+    <li>
+      <a href="..">menu item</a>
+      <ul>
+        <li>
+          <a href="..">menu item</a>
+          <ul>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="..">menu item</a>
+          <ul>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="..">menu item</a>
+          <ul>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="..">menu item</a>
+          <ul>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="..">menu item</a>
+          <ul>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+            <li><a href="..">menu item</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="..">menu item</a>
+    </li> 
+</ul>
+<span class='foswikiClear'></span>
+<p></p>
+<h3 id="Nav_45bar_Style">  Nav-bar Style </h3>
+<p></p>
+<ul id="sample-menu-4" class="sf-menu sf-navbar">
+  <li>
+    <a href="..">long menu item</a>
+    <ul>
+      <li><a href="..">subitem 1a</a></li>
+      <li><a href="..">subitem 1b</a></li>
+      <li><a href="..">subitem 1c</a></li>
+      <li><a href="..">subitem 1d</a></li>
+    </ul>
+  </li>
+  <li class="current">
+    <a href="..">menu item</a>
+    <ul>
+      <li>
+        <a href="..">subitem 2a</a>
+        <ul>
+          <li><a href="..">menu item</a></li>
+          <li><a href="#aba">menu item</a></li>
+          <li><a href="#abb">menu item</a></li>
+          <li><a href="#abc">menu item</a></li>
+          <li><a href="#abd">menu item</a></li>
+        </ul>
+      </li>
+      <li class="current">
+        <a href="..">path to current</a>
+        <ul>
+          <li><a href="..">menu item</a></li>
+          <li><a href="#aba">menu item</a></li>
+          <li><a href="#abb">menu item</a></li>
+          <li class="current"><a href="#abc">current page</a></li>
+          <li><a href="#abd">menu item</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="..">subitem 2c</a>
+        <ul>
+          <li><a href="..">menu item</a></li>
+          <li><a href="#aba">menu item</a></li>
+          <li><a href="#abb">menu item</a></li>
+          <li><a href="#abc">menu item</a></li>
+          <li><a href="#abd">menu item</a></li>
+        </ul>
+      </li>
+      <li><a href="..">subitem 2d</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="..">menu item</a>
+    <ul>
+      <li><a href="..">if no subitems, duplicate parent item href and use this as descriptive label</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="..">menu item</a>
+    <ul>
+      <li><a href="..">subitem 4a</a></li>
+      <li><a href="..">subitem 4b</a></li>
+      <li><a href="..">subitem 4c</a></li>
+      <li><a href="..">subitem 4d</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="..">menu item</a>
+    <ul>
+      <li><a href="..">subitem 5a</a></li>
+      <li><a href="..">subitem 5b</a></li>
+      <li><a href="..">subitem 5c</a></li>
+      <li><a href="..">subitem 5d</a></li>
+    </ul>
+  </li>
+</ul>
+<span class='foswikiClear'></span>
+<p></p>
+<p></p>
+<!-- <ul>
+<li> Set NOWYSIWYG = 1
+</li></ul> 
+-->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryWikiWord &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQueryWikiWord/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE System/JQueryWikiWord/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="JQueryWikiWord.html" title="edit JQueryWikiWord">
+<meta name="description" content="JQueryWikiWord" />
+<link media="all" class="head JQUERYPLUGIN::BUTTON" rel="stylesheet" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" type="text/css"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "JQueryWikiWord",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::WIKIWORD" src="JQueryPlugin.attachments/plugins/wikiword/wikiword.js?version=3.30"></script><!--JQUERYPLUGIN::WIKIWORD-->
+</head>
+<body>
+<h1 id="JQueryWikiWord">  <a class="foswikiCurrentTopicLink" href="JQueryWikiWord.html">JQueryWikiWord</a> </h1>
+<p></p>
+    Homepage: <a href="http://foswiki.org/Extensions/JQueryPlugin">http://foswiki.org/Extensions/JQueryPlugin</a> <br />
+    Author(s): Michael Daum <br />
+    Version: 3.30
+<p></p>
+<p></p>
+<p></p>
+This plugin allows to create a WikiWord on the base of a set of
+input elements. The value of these are concatenated and the result is
+normalized to be a valid WikiWord. For example, this can be used
+to derive a topic name from a free-form topic title text.
+<p></p>
+<p></p>
+<h2 id="Foswiki_integration">  Foswiki integration </h2>
+<p></p>
+Add the <code>jqWikiWord</code> to an html input field and specify the source from which
+to derive the WikiWord using HTML5 meta data:
+<pre class="js">
+{
+  source:&#39;selector&#39;, /&#42; e.g. &#39;#projectTitle&#39; &#42;/
+  initial:&#39;initial value&#39;, /&#42; e.g. &#39;Project...&#39; &#42;/
+  prefix:&#39;string to be prefixed to the wiki word&#39;, /&#42; e.g. &#39;Project&#39; &#42;/
+  suffix:&#39;string to be appended to the wiki word&#39;, /&#42; e.g. &#39;AUTOINC0&#39; &#42;/
+  transliterate: true,
+  allowedRegex:&#39;characters that are allowed in a wiki word&#39;, /&#42; e.g. &#39;a-zA-Z\\d&#39; &#42;/
+  forbiddenRegex:&#39;characters that are not allowed in a wiki word&#39; /&#42; e.g. &#39;&#91;^a-zA-Z\\d&#93;&#39; &#42;/
+}
+</pre>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<div class="foswikiFormSteps">
+  <h2>New Project</h2>
+  <form action="/foswiki/bin/edit/System" />
+  <div class="foswikiFormStep">
+    <h3>Title:</h3>
+    <input type="text" id="prjTitle" size="60" name="TopicTitle" class="foswikiInputField" />
+  </div>
+  <div class="foswikiFormStep">
+    <h3>Year:</h3>
+    <select class="foswikiSelect" id="prjYear" name="prjYear">
+      <option></option>
+      <option>2005</option>
+      <option>2006</option>
+      <option>2007</option>
+      <option>2008</option>
+      <option>2009</option>
+      <option>2010</option>
+      <option>2011</option>
+    </select>
+  </div>
+  <div class="foswikiFormStep">
+    <h3>Project topic:</h3>
+    <input type="text" id="prjTopic" size="60" name="topic" class="foswikiInputField jqWikiWord" data-source="#prjTitle, #prjYear" data-prefix="Project" data-initial="Project..." data-suffix="AUTOINC0" data-transliterate="true" />
+  </div>
+  <div class="foswikiFormStep foswikiFormLast">
+    <a class="jqButton  jqSubmitButton" href=".."><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/tick.png)'></span><span class='jqButtonText'>Submit</span></a><input type='submit' style='display:none' />
+    <span class='foswikiClear'></span>
+  </div>
+</div>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

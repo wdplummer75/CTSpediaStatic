@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarSET &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/VarSET/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE System/VarSET/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" href="VarSET.html" rel="alternate" title="edit VarSET">
+<meta name="description" content="VarSET" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarSET",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="SET_45_45_set_a_preference_setting_during_runtime">  SET -- set a preference setting during runtime </h1>
+A preference setting created via a <code>%SET</code> macro is usable by the topic containing the <code>%SET</code> statement, and in any other topics <code>%INCLUDing</code> or <code>%INCLUDEd</code> when
+rendering the topic TML. This is unlike list or META style <a href="PreferenceSettings.html">preference settings</a> which are only set when the base topic is loaded, and never set during macro expension when
+an <code>%INCLUDEd</code> topic is processed.
+<p></p>
+A <code>TMPL:DEF</code> template definition containing <code>%SET</code> macros will also add those values to the current scope as if these settings have been
+parsed as part of the base topic's text.
+<p></p>
+Setting a preference setting in a list like in
+<p></p>
+<pre class="tml">
+   &#42; Set foo &#61; &#37;SEARCH{...
+</pre>
+<p></p>
+or in META settings will store the <em>text</em> of the TML expression.
+<p></p>
+The equivalent %SET statement:
+<p></p>
+<pre class="tml">
+&#37;SET{&#34;foo&#34; value&#61;&#34;&#37;SEARCH{...&#34;}&#37;
+</pre>
+<p></p>
+will store the <em>result</em> of the TML expression as a consequence of the parser processing
+macros inside-out-left-to-right.
+<h2 id="Parameters">  Parameters </h2>
+         <table class="foswikiTable" id="tableVarSET1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"name"</code> </td>
+			<td class="foswikiTableCol1"> Name of preference to set </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>value</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Value to set it to </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody>     </table>
+<h2 id="Examples">  Examples </h2>
+To cache the result of another macro use <code>%SET{"search_result" value="%SEARCH{...}%"}%</code>. The result of the <code>value</code> expression will be temporarily bound to the variable
+<code>%search_result%</code> and might be used within the scope of the current topic being processed, or in <code>%INCLUDing</code> or other <code>%INCLUDEd</code> topics.
+<p></p>
+Note that this macro does NOT expand <a href="FormatTokens.html">format tokens</a> that are used to alter the macro processing sequence. ($percent, $dollar, ...).
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="PreferenceSettings.html">PreferenceSettings</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

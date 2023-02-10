@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>InterwikiPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/InterwikiPlugin/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/InterwikiPlugin/favicon.ico">
+<link type="application/x-wiki" title="edit InterwikiPlugin" rel="alternate" href="InterwikiPlugin.html">
+<meta name="description" content="InterwikiPlugin" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "InterwikiPlugin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Interwiki_Plugin">  Interwiki Plugin </h1>
+<!-- <ul>
+<li> Set SHORTDESCRIPTION = Link ExternalSite:Page text to external sites based on aliases defined in a rules topic
+</li></ul> 
+-->
+<p></p>
+The InterwikiPlugin links <code><b>ExternalSite:Page</b></code> text to external sites based on aliases defined in the <a href="InterWikis.html">InterWikis</a> topic. This plugin is inspired by UseMod Wiki's inter-wiki links, <a href="http://www.usemod.com/cgi-bin/wiki.pl?InterWiki">http://www.usemod.com/cgi-bin/wiki.pl?InterWiki</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Link_Syntax_Rules"> Link Syntax Rules </a>
+</li> <li> <a href="#Definition_Syntax_Rules"> Definition Syntax Rules </a>
+</li> <li> <a href="#InterwikiPlugin_Settings"> InterwikiPlugin Settings </a>
+</li> <li> <a href="#Plugin_Installation_Instructions"> Plugin Installation Instructions </a>
+</li> <li> <a href="#Plugin_Info"> Plugin Info </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Link_Syntax_Rules">  Link Syntax Rules </h2>
+<p></p> <ul>
+<li> Enter <code><b>ExternalSite:Page</b></code> to create a link that points to the <code><b>Page</b></code> on the <code><b>ExternalSite</b></code> server. <ul>
+<li> If <code><b>Page</b></code> contains spaces, it can be enclosed in single or double quotes. Example: <code><b>MySite:'My Photo.jpg'</b></code>.  Special characters contained within the quotes are URL encoded.
+</li></ul> 
+</li> <li> Enter <code><b>[[ExternalSite:Page][any label]]</b></code> to specify a custom label.
+</li> <li> All <code><b>ExternalSite</b></code> aliases are defined in the <a href="InterWikis.html">InterWikis</a> topic or as specified by the <code>INTERWIKIPLUGIN_RULESTOPIC</code> topic list.
+</li></ul> 
+<p></p>
+<h2 id="Definition_Syntax_Rules">  Definition Syntax Rules </h2>
+<p></p>
+Add and edit aliases in <a href="InterWikis.html">InterWikis</a>. <ul>
+<li> Each entry must be three or four columns, using the following format: <br /> <code><b>| External site alias | URL | Tooltip help text | Optional INTERLINKFORMAT override |</b></code>.
+</li> <li> The Alias must start with an upper case letter and may contain alphanumeric characters.
+</li> <li> The URL and Tooltip Text may contain optional <code><b>$page</b></code> formatting tokens; the token gets expanded to the page name.
+</li> <li> The URL may contain Foswiki macros.  They are expanded when the URL is rendered.
+</li> <li> The Tooltip Text must <strong><em>not</em></strong> contain: <ul>
+<li> any HTML tags (including <code><b>&lt;nop&gt;</b></code> escape code)
+</li> <li> any internal <a href="WikiWord.html">WikiWord</a> links
+</li> <li> any external links
+</li> <li> Hint: Escape <code><b>'WikiWords'</b></code> and <code><b>'$page'</b></code>.
+</li> <li> If the link format override is provided, it overrides the <code>INTERWIKIPLUGIN_INTERLINKFORMAT</code> for just that entry.
+</li></ul> 
+</li></ul> 
+<p></p>
+<div class="foswikiHelp"><img title="HELP" width="16" src="DocumentGraphics.attachments/help.png" alt="HELP" height="16"> Note that Interwiki links do not properly resolve when part of an INCLUDEd page name.  e.g. <code>%INCLUDE{"Interwiki:link"}%</code> </div>
+<p></p>
+<div class="foswikiHelp"><img width="16" title="HELP" alt="HELP" height="16" src="DocumentGraphics.attachments/help.png"> For Foswiki and TWiki sites, both the <strong>web</strong> and the <strong>topic</strong> have to be specified: <code><b>Foswiki:Webname/SomePage</b></code>
+<a title="'Extensions/InterwikiPlugin' on foswiki.org" href="https://foswiki.org/Extensions/InterwikiPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions/InterwikiPlugin</noautolink></a> or <a href="https://foswiki.org/Extensions.InterwikiPlugin" class="interwikiLink" title="'Extensions.InterwikiPlugin' on foswiki.org"><noautolink>Foswiki:Extensions.InterwikiPlugin</noautolink></a>
+</div>
+<p></p>
+<div class="foswikiHelp">
+<img title="HELP" width="16" src="DocumentGraphics.attachments/help.png" height="16" alt="HELP"> For links with parentheses you will need to write as <code><b>[[Wikipedia:Fork_(software_development)]]</b></code>, or quoted, as <code><b>Wikipedia:'Fork_(software_development)'</b></code>
+as the plugin will not include the closing parenthesis as part of the link. 
+</div>
+<p></p>
+<p></p>
+<h2 id="InterwikiPlugin_Settings"> InterwikiPlugin Settings </h2>
+<p></p>
+You can override the default settings using <a href="PreferenceSettings.html">preferences</a>. These preferences can be set in your <a href="../Main/SitePreferences.html">SitePreferences</a>, or in any WebPreferences, or in individual topics.
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Preference</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Use to</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Default</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>INTERWIKIPLUGIN_RULESTOPIC</code> </td>
+			<td class="foswikiTableCol1"> The topic(s) containing the inter-wiki rules. Can be a comma separated list. See <a href="InterWikis.html">InterWikis#AddingYourOwn</a> for more details </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <a href="InterWikis.html">InterWikis</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>INTERWIKIPLUGIN_INTERLINKFORMAT</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Set the interlink format </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>&lt;a class="interwikiLink" href="$url" title="$tooltip" class="interwikiLink"&gt;&lt;noautolink&gt;$label&lt;/noautolink&gt;&lt;/a&gt;</code> </td>
+		</tr>
+	</tbody></table>
+The <code>INTERWIKIPLUGIN_INTERLINKFORMAT</code> supports a number of formatting tokens:
+           <table class="foswikiTable" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Token</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Meaning</a> </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $site </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Site alias </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $page </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Page (part after colon) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $url </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Site URL (might contain $page) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> $label </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Equal to $site:$page </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> $tooltip </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Tooltip message </td>
+		</tr>
+	</tbody>     </table>
+<p></p>
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions </h2>
+<p></p>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p> <ul>
+<li> <strong>Test:</strong> If the Plugin is correctly installed, this <a title="'InterWiki' on the original 'WikiWikiWeb' site" class="interwikiLink" href="http://c2.com/cgi/wiki?InterWiki"><noautolink>Wiki:InterWiki</noautolink></a> link should point to <a href="http://c2.com/cgi/wiki?InterWiki">http://c2.com/cgi/wiki?InterWiki</a> topic - try it out.
+</li></ul> 
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 3 May 2018: (1.26) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14688' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14688" class="interwikiLink"><noautolink>Foswikitask:Item14688</noautolink></a>: Correct tyops and poor grammar in documentation. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 8 Dec 2017: (1.25) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item14395" class="interwikiLink" title="'Item14395' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14395</noautolink></a>: Failure to check result from readTopic causes error. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 8 Feb 2071: (1.24) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14321" title="'Item14321' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14321</noautolink></a>: Fix some stale default Interwiki links. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 8 Apr 2016: (1.23) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14022' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14022" class="interwikiLink"><noautolink>Foswikitask:Item14022</noautolink></a>: Change foswiki.org links to https. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 14 Jun 2014: (1.22) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13287' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13287"><noautolink>Foswikitask:Item13287</noautolink></a>: <a title="'Item13387' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13387"><noautolink>Foswikitask:Item13387</noautolink></a>: Regular expression enhancements, better UTF-8 support. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 03 Oct 2014: (1.21) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13045' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13045"><noautolink>Foswikitask:Item13045</noautolink></a>: Add per-link override of INTERLINKFORMAT </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 24 May 2014: (1.20) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12819' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12819" class="interwikiLink"><noautolink>Foswikitask:Item12819</noautolink></a>: Expand variables defined in InterWiki links<br />                           <a title="'Item11587' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item11587"><noautolink>Foswikitask:Item11587</noautolink></a>: Replace call to deprecated <code>Foswiki::Func::readTopicText()</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Oct 2013: (1.1.7) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12555' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12555"><noautolink>Foswikitask:Item12555</noautolink></a>: Documentation updates </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Nov 1012: (1.1.6) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> update CPAN link to goto metacpan and remove some ancient links that have been broken for years. Convert to perl version strings </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Dec 2011: (1.1.2) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Release with Foswiki 1.1.4 - Minor code and documentation cleanup </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 30 Oct 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Main.GeorgeClark" title="'Main.GeorgeClark' on foswiki.org"><noautolink>Foswiki:Main.GeorgeClark</noautolink></a> - Add support for quoted page references from <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="TimotheLitt.html">TimotheLitt</a> (<a title="'Item10872' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10872"><noautolink>Foswikitask:Item10872</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Apr 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Main.AndrewJones" class="interwikiLink" title="'Main.AndrewJones' on foswiki.org"><noautolink>Foswiki:Main.AndrewJones</noautolink></a> - Links can now be formatted (<a title="'Item10619' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item10619" class="interwikiLink"><noautolink>Foswikitask:Item10619</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 13 Dec 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Main.AndrewJones' on foswiki.org" href="https://foswiki.org/Main.AndrewJones" class="interwikiLink"><noautolink>Foswiki:Main.AndrewJones</noautolink></a> - Fix inter-wiki's with parentheses (<a class="interwikiLink" href="https://foswiki.org/Tasks/Item10151" title="'Item10151' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10151</noautolink></a>). Note, you will need to write as <code><b>[[Wikipedia:Fork_(software_development)]]</b></code>, as we assume the closing parenthesis is not part of the link. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Dec 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Main.AndrewJones" class="interwikiLink" title="'Main.AndrewJones' on foswiki.org"><noautolink>Foswiki:Main.AndrewJones</noautolink></a> - Allow the <code>INTERWIKIPLUGIN_RULESTOPIC</code> to be a comma separated list. Implements <a title="'Development/InheritWikiLinksTopics' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Development/InheritWikiLinksTopics"><noautolink>Foswiki:Development/InheritWikiLinksTopics</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Jul 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Main.AndrewJones" title="'Main.AndrewJones' on foswiki.org"><noautolink>Foswiki:Main.AndrewJones</noautolink></a> - Check access controls on InterWikis topic </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Jul 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <code>mod_perl</code> and <code>FastCGI</code> compatible </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Sep 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version from 15 Apr now included with Foswiki 1.0.7 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Apr 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Main.CrawfordCurrie' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Main.CrawfordCurrie"><noautolink>Foswiki:Main.CrawfordCurrie</noautolink></a> - removed plugin preferences from this topic </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Dec 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Main.KennethLavrsen" class="interwikiLink" title="'Main.KennethLavrsen' on foswiki.org"><noautolink>Foswiki:Main.KennethLavrsen</noautolink></a> - Foswiki version - no features changed </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Aug 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> TWiki 4.2.1 release version </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 22 Jan 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> TWiki 4.2.0 release version </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 25 Nov 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 15752 - <a class="interwikiLink" href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item5006" title="'Item5006' on the TWiki issue tracking site"><noautolink>TWikibug:Item5006</noautolink></a> - Renamed Bugs rule to TWikibug rule (PTh) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 13 Aug 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 14545 - <a href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item4451" class="interwikiLink" title="'Item4451' on the TWiki issue tracking site"><noautolink>TWikibug:Item4451</noautolink></a> - Added Bugs: rule (<a href="https://foswiki.org/Main.CrawfordCurrie" class="interwikiLink" title="'Main.CrawfordCurrie' on foswiki.org"><noautolink>Foswiki:Main.CrawfordCurrie</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 11 Aug 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 14538 - Fixed broken ISBN link (<a title="'Main.PeterThoeny' on TWiki.org" href="http://twiki.org/cgi-bin/view/Main.PeterThoeny" class="interwikiLink"><noautolink>TWiki:Main.PeterThoeny</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Nov 2006: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 11935 - Added css <code>class="interwikiLink"</code> (<a class="interwikiLink" href="http://twiki.org/cgi-bin/view/Main.PeterThoeny" title="'Main.PeterThoeny' on TWiki.org"><noautolink>TWiki:Main.PeterThoeny</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 07 Nov 2006: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 11924 - Added INTERLINKFORMAT; removed redundant SUPPRESSTOOLTIP; allow @ signs in page part of interwiki link; support single digit page part (<a href="http://twiki.org/cgi-bin/view/Main.PeterThoeny" class="interwikiLink" title="'Main.PeterThoeny' on TWiki.org"><noautolink>TWiki:Main.PeterThoeny</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 26 Feb 2005: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 1.008 <a title="'Main.CrawfordCurrie' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Main.CrawfordCurrie"><noautolink>Foswiki:Main.CrawfordCurrie</noautolink></a> cleaned up code and made Dakar-ready </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 25 Aug 2004: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 1.005 <a class="interwikiLink" href="http://twiki.org/cgi-bin/view/Main.PeterThoeny" title="'Main.PeterThoeny' on TWiki.org"><noautolink>TWiki:Main.PeterThoeny</noautolink></a> updated <a href="InterWikis.html">InterWikis</a> link rules (no code change) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 09 Mar 2004: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Internal changes: Use only official TWiki::Func Plugin API; for increased speed, moved Interwiki link handling from outsidePREHandler to startRenderingHandler </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Feb 2004: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Support <code>[[Site:Page][label]]</code> Interwiki links (PTh); use TWiki::Func interface for I18N regular expressions (Walter Mundt) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Jan 2003: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Allow number sign <code>#</code> in Page name (PTh) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 31 Aug 2002: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Allow percent sign <code>%</code> in page name (PTh) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 27 Jul 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Allow numbers <code>0-9</code> in site name </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 26 Jul 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Fixed alternating missed link bug due to greedy $postfixPattern (fix by Richard Donkin) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Jul 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Changed to plug &amp; play </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Jun 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Made tooltips optional; prevent <code><b>Module::Sub</b></code> type of link </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Jun 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Added optional tool tips (IE only); added the link rules topic name variable; added flexible link patterns; optional <code><b>$page</b></code> in URL </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Jun 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Changed rules topic to table-based syntax </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> 20 Feb 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <a title="'Main.AndreaSterbini' on TWiki.org" href="http://twiki.org/cgi-bin/view/Main.AndreaSterbini" class="interwikiLink"><noautolink>TWiki:Main.AndreaSterbini</noautolink></a>, <a title="'Main.PeterThoeny' on TWiki.org" href="http://twiki.org/cgi-bin/view/Main.PeterThoeny" class="interwikiLink"><noautolink>TWiki:Main.PeterThoeny</noautolink></a> - Initial version </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

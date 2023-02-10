@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryView &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/JQueryView/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE System/JQueryView/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="JQueryView.html" title="edit JQueryView">
+<meta name="description" content="JQueryView" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "JQueryView",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/render/jquery.render.js?version=1.0.7" class="script JQUERYPLUGIN::RENDER"></script>
+<script src="JQueryPlugin.attachments/plugins/render/jquery.template-loader.js?version=1.0.7" class="script JQUERYPLUGIN::RENDER"></script><!--JQUERYPLUGIN::RENDER-->
+<script src="JQueryPlugin.attachments/plugins/view/jquery.observable.uncompressed.js?version=1.0.7" class="script JQUERYPLUGIN::VIEW"></script>
+<script src="JQueryPlugin.attachments/plugins/view/jquery.views.uncompressed.js?version=1.0.7" class="script JQUERYPLUGIN::VIEW"></script><!--JQUERYPLUGIN::VIEW-->
+</head>
+<body>
+<h1 id="JQueryView">  <a class="foswikiCurrentTopicLink" href="JQueryView.html">JQueryView</a> </h1>
+<p></p>
+<p></p>
+    Homepage: <a href="http://www.jsviews.com/">http://www.jsviews.com</a> <br />
+    Author(s): Boris Moore <br />
+    Version: 1.0.7
+<p></p>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Usage"> Usage </a> <ul>
+<li> <a href="#In_the_SCRIPT_head"> In the SCRIPT head </a>
+</li> <li> <a href="#In_the_BODY"> In the BODY </a>
+</li> <li> <a href="#See_the_demo"> See the demo </a>
+</li></ul> 
+</li> <li> <a href="#Further_reading"> Further reading </a>
+</li> <li> <a href="#Syntax"> Syntax </a>
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+This plugin adds JsViews functionality to the JsRender plugin. JsViews builds off of standard JsRender templates, but adds
+two-way declarative data-binding, MVVM, and MVP.
+<p></p>
+See <a href="JQueryRender.html">JQueryRender</a> and <a href="https://www.jsviews.com/#jsviews">https://www.jsviews.com/#jsviews</a> for more details.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="In_the_SCRIPT_head">  In the SCRIPT head </h3>
+<pre class="js">
+var data &#61; &#91;
+  {
+    &#34;name&#34;: &#34;Robert&#34;,
+    &#34;nickname&#34;: &#34;Bob&#34;,
+    &#34;showNickname&#34;: true
+  },
+  {
+    &#34;name&#34;: &#34;Susan&#34;,
+    &#34;nickname&#34;: &#34;Sue&#34;,
+    &#34;showNickname&#34;: false
+  }
+&#93;;
+
+var template &#61; &#36;.templates(&#34;#theTmpl&#34;);
+
+template.link(&#34;#result&#34;, data);
+</pre>
+<p></p>
+<h3 id="In_the_BODY">  In the BODY </h3>
+<pre class="html">
+&#60;div id&#61;&#34;result&#34;&#62;&#60;/div&#62;
+
+&#60;script id&#61;&#34;theTmpl&#34; type&#61;&#34;text/x-jsrender&#34;&#62;
+&#60;div&#62;
+  Edit: &#60;input type&#61;&#34;checkbox&#34; data-link&#61;&#34;editable&#34;/&#62;
+  &#60;em&#62;Name:&#60;/em&#62; {^{:name}}
+  {^{if showNickname &#38;&#38; nickname}}
+    (Goes by &#60;em data-link&#61;&#34;nickname&#34;&#62;&#60;/em&#62;)
+  {{/if}}
+  {^{if editable}}
+    &#60;div&#62;
+      &#60;input data-link&#61;&#34;name&#34;/&#62;
+      &#60;input data-link&#61;&#34;nickname&#34;/&#62;
+      Show nickname: &#60;input type&#61;&#34;checkbox&#34; data-link&#61;&#34;showNickname&#34;/&#62;
+    &#60;/div&#62;
+  {{/if}}
+&#60;/div&#62;
+&#60;/script&#62;
+</pre>
+<p></p>
+<h3 id="See_the_demo">  See the demo </h3>
+<div id="result"></div>
+<p></p>
+<script id="theTmpl" type="text/x-jsrender">
+<div>
+  Edit: <input type="checkbox" data-link="editable"/>
+  <em>Name:</em> {^{:name}}
+  {^{if showNickname && nickname}}
+    (Goes by <em data-link="nickname"></em>)
+  {{/if}}
+  {^{if editable}}
+    <div>
+      <input data-link="name"/>
+      <input data-link="nickname"/>
+      Show nickname: <input type="checkbox" data-link="showNickname"/>
+    </div>
+  {{/if}}
+</div>
+</script>
+<p></p>
+<script>
+(function($) {
+  var data = [
+    {
+      "name": "Robert",
+      "nickname": "Bob",
+      "showNickname": true
+    },
+    {
+      "name": "Susan",
+      "nickname": "Sue",
+      "showNickname": false
+    }
+  ];
+
+  $(function() {
+    var template = $.templates("#theTmpl");
+    template.link("#result", data);
+  });
+})(jQuery);
+</script>
+<p></p>
+Pretty cool!
+<p></p>
+<h2 id="Further_reading">  Further reading </h2> <ul>
+<li> <a href="http://www.jsviews.com/">http://www.jsviews.com</a>
+</li> <li> <a href="http://borismoore.github.io/jsviews/demos/">JsViews Demos</a>
+</li></ul> 
+<p></p>
+<h2 id="Syntax">  Syntax  </h2>
+<p></p>
+JsViews templates are very similar to JsRender templates, but with minor changes to the tag structure. <ul>
+<li> For data-dependent linking, <code>{{:name}}</code> becomes this <code>{^{:name}}</code>
+</li> <li> Tag attributes can also be data-linked: <code>&lt;button data-link="disabled{:disableButton} title{:theTitle} data-myvalue{:myVal} class{:disableButton ? 'class2' : 'class1'}"&gt;</code>
+</li> <li> If you are data-linking tags, you might be interested in two-way binding: <code>&lt;input data-link="{:name}" /&gt;</code> becomes this <code>&lt;input data-link="{:name:}" /&gt;</code> <ul>
+<li> (Actually, the default for &lt;input&gt; elements is two-way binding, so you can just use the shorthand <code>&lt;input data-link="name" /&gt;</code>. The more explicit form is only necessary if you want to force it to one-way binding.)
+</li></ul> 
+</li> <li> You can also use this for contenteditable elements: <code>&lt;span data-link="name" contenteditable="true"&gt;&lt;/span&gt;</code>
+</li> <li> As with JsRender, there is support for converters and helpers as well.
+</li></ul> 
+<p></p>
+ Other functionality includes the <code>$.observe()</code> method for assigning callback functions to respond to observable 
+ changes, and the <code>$.view()</code> method for retrieving the data slice associated with a particular View object.
+<p></p>
+ (see <a href="http://www.jsviews.com/#jsvapi">http://www.jsviews.com/#jsvapi</a> for lots of details and examples)
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

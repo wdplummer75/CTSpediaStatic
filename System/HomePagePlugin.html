@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>HomePagePlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/HomePagePlugin/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/HomePagePlugin/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit HomePagePlugin" rel="alternate" href="HomePagePlugin.html">
+<meta name="description" content="HomePagePlugin" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "HomePagePlugin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="HomePagePlugin"> HomePagePlugin </h1>
+<!--
+One line description, required for extensions repository catalog. <ul>
+<li> Set SHORTDESCRIPTION = Allow sitewide, user or hostname specified default pages
+</li></ul> 
+-->
+Allow sitewide, user or hostname specified default pages
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Usage"> Usage </a>
+</li> <li> <a href="#TemplateLogin_individual_configurable_HomePage_on_login"> TemplateLogin individual configurable HomePage on login </a>
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions </a>
+</li> <li> <a href="#Info"> Info </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+This plugin makes the Default frontpage configurable - <ol>
+<li> any time a user goes to <a href="../.html">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view</a> they will be shown the topic <code>configured</code> 
+</li></ol> 
+by the Foswiki administrator in <code>{HomePagePlugin}{SiteDefaultTopic}</code> in the Extensions section of <code>configure</code>. <ol>
+<li> if <code>{HomePagePlugin}{GotoHomePageOnLogin}</code> is set, when a user logs in, they will be shown the topic specificed in their <a href="UserForm.html">UserForm</a>
+</li></ol> 
+<p></p>
+Additionally, there is now a ={HomePagePlugin}{HostnameMapping} <strong><em>EXPERT</em></strong> setting that allows you to set different frontpages for each domain or protocol,
+which means you <em>could</em> define a hostname per web
+<p></p>
+eg
+<pre>
+    &#39;http://home.org&#39; &#61;&#62; &#39;Home&#39;,
+    &#39;http://www.home.org&#39; &#61;&#62; &#39;Home.Www&#39;,
+    &#39;http://blog.org&#39; &#61;&#62; &#39;Blog&#39;,
+    &#39;http://www.blog.org&#39; &#61;&#62; &#39;Blog.Www&#39;
+</pre>
+<p></p>
+or
+<pre>
+    &#39;http://download.foswiki.org&#39; &#61;&#62; &#39;Download&#39;,
+    &#39;http://tasks.foswiki.org&#39; &#61;&#62; &#39;Tasks&#39;,
+    &#39;http://development.foswiki.org&#39; &#61;&#62; &#39;Development&#39;,
+    &#39;http://extensions.foswiki.org&#39; &#61;&#62; &#39;Extensions&#39;,
+    &#39;http://community.foswiki.org&#39; &#61;&#62; &#39;Community&#39;,
+    &#39;http://support.foswiki.org&#39; &#61;&#62; &#39;Support&#39;,
+    &#39;http://CarlSagan.foswiki.org&#39; &#61;&#62; &#39;Main.CarlSagan,
+</pre>
+<p></p>
+<h2 id="TemplateLogin_individual_configurable_HomePage_on_login"> TemplateLogin individual configurable HomePage on login </h2>
+The Admin can also <code>configure</code> <code>{HomePagePlugin}{GotoHomePageOnLogin}</code>, to default
+to an individual HomePage defined in a <a href="UserForm.html">UserForm</a> field in the users personal topic.
+(the current user - <a href="../Main/WikiAdmin.html">WikiAdmin</a> - has HomePage set to : )
+<p></p>
+<strong><em>Note</em></strong> that this means that any URLs emailed to them will only be useful after login.
+<p></p>
+<h2 id="Installation_Instructions">  Installation Instructions </h2>
+<p></p>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+<h2 id="Info">  Info </h2>
+<p></p>
+Many thanks to the following sponsors for supporting this work: <ul>
+<li> Created for Blackfin inc.
+</li></ul> 
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1.23 (18 Mar 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13312" class="interwikiLink" title="'Item13312' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13312</noautolink></a>: Don't override URL params topic and defaultweb </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1.22 (18 Dec 2014) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12583" title="'Item12583' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12583</noautolink></a>: Use simple decimal version strings for better compatibility </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1.2.1 (16 Dec 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item12297" class="interwikiLink" title="'Item12297' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12297</noautolink></a>: Address perlcritic recommendation.<br />                        <a href="https://foswiki.org/Tasks/Item11960" class="interwikiLink" title="'Item11960' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11960</noautolink></a>: Don't redirect cli scripts <br />                        <a href="https://foswiki.org/Tasks/Item11866" class="interwikiLink" title="'Item11866' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11866</noautolink></a>: Don't redirect to malformed targets </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1.2.0 (16 Apr 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11761" class="interwikiLink" title="'Item11761' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11761</noautolink></a>: Include in core release </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1.1.1 (1 Aug 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fix bug in login screen usage </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1.1.0 (July 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> add Expert hash allowing domain name based frontpage setting </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1.0.0 (Feb 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> initial version </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> None </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<!-- Do <em>not</em> attempt to edit this topic; it is auto-generated. -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

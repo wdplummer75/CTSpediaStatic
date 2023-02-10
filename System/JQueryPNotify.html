@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryPNotify &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryPNotify/favicon.ico"> <link href="../MISSING RESOURCE System/JQueryPNotify/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit JQueryPNotify" rel="alternate" href="JQueryPNotify.html">
+<meta name="description" content="JQueryPNotify" />
+<link type="text/css" media="all" class="head JQUERYPLUGIN::PNOTIFY" rel="stylesheet" href="JQueryPlugin.attachments/plugins/pnotify/jquery.pnotify.default.css?version=1.2.0"><!--JQUERYPLUGIN::PNOTIFY-->
+<link type="text/css" href="JQueryPlugin.attachments/plugins/ui/themes/foswiki/jquery-ui.css" class="head JQUERYPLUGIN::THEME" media="all" rel="stylesheet"><!--JQUERYPLUGIN::THEME-->
+<style>
+.ui-pnotify.stack-topleft {
+   top: 15px;
+   left: 15px;
+   right: auto;
+}
+</style><!--JQueryPNotify-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::EASING" src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryPNotify",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::UI" src="JQueryPlugin.attachments/plugins/ui/jquery-ui.js?version=1.13.1"></script><!--JQUERYPLUGIN::UI-->
+<script class="script JQUERYPLUGIN::PNOTIFY" src="JQueryPlugin.attachments/plugins/pnotify/jquery.pnotify.js?version=1.2.0"></script><!--JQUERYPLUGIN::PNOTIFY-->
+<script>
+var showMessage
+jQuery(function($) {
+
+  $('.pnotifyExample1').click(function() {
+    $.pnotify({
+       text: $(this).text(),
+       closer: false
+    });
+    return false;
+  });
+
+  $('.pnotifyExample2').click(function() {
+    $.pnotify({
+       text: $(this).text(),
+       closer: false,
+       type: 'info'
+    });
+    return false;
+  });
+
+  $('.pnotifyExample3').click(function() {
+    $.pnotify({
+       text: $(this).text(),
+       closer: false,
+       type: 'success'
+    });
+    return false;
+  });
+
+  $('.pnotifyExample4').click(function() {
+    $.pnotify({
+       text: $(this).text(),
+       closer: false,
+       type: 'error'
+    });
+    return false;
+  });
+
+  $('.pnotifyExample5').click(function() {
+    $.pnotify({
+       text: $(this).text(),
+       type: 'info',
+       animation: {
+         effect_in: 'drop',
+         options_in: {easing: 'easeOutBounce'},
+         effect_out: 'drop',
+         options_out: {easing: 'easeOutCubic'}
+       },
+       animation_speed: 700
+    });
+    return false;
+  });
+
+   // example with a message stack
+   var stack_topleft = {'dir1': 'down', 'dir2': 'right', 'push': 'top'};
+   showMessage = function(title, text, err) {
+     var err = Math.round(Math.random()),
+         opts = {
+           title: title,
+           text: text,
+           addclass: 'stack-topleft',
+           stack: stack_topleft,
+           closer: false,
+           delay: 4000,
+           nonblock: true,
+           opacity: 0.9
+         };
+     if (err) {
+       opts.pnotify_type = 'error';
+     }
+     $.pnotify(opts);
+   };
+});
+</script><!--JQueryPNotify-->
+</head>
+<body>
+<h1 id="JQueryPNotify">  <a class="foswikiCurrentTopicLink" href="JQueryPNotify.html">JQueryPNotify</a> </h1>
+<p></p>
+    Homepage: <a href="http://sciactive.com/pnotify/">http://sciactive.com/pnotify/</a> <br />
+    Author(s): Hunter Perrin <br />
+    Version: 1.2.0 
+<p></p>
+<p></p>
+<p></p>
+Full featured plugin to show temporary floating messages for status updates, actions and errors.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+Call <code>$.pnotify(options)</code> to show a notification.
+<p></p>
+Most common options:
+<p></p> <ul>
+<li> <code>title</code>: the title
+</li> <li> <code>text</code>: the message text
+</li> <li> <code>delay</code>: milliseconds to show the message
+</li> <li> <code>opacity</code>: value from <code>0</code> (fully transparent) to <code>1</code> (opaque)
+</li> <li> <code>nonblock</code>: <code>true</code> if items below the message should be clickable
+</li> <li> <code>type</code>: <code>'error'</code> if an error message
+</li></ul> 
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Option</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Comment</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Default value</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>title</code> </td>
+			<td class="foswikiTableCol1"> The notice's title </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>title_escape</code> </td>
+			<td class="foswikiTableCol1"> Whether to escape the content of the title. (Not allow HTML.) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>text</code> </td>
+			<td class="foswikiTableCol1"> The notice's text </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>text_escape</code> </td>
+			<td class="foswikiTableCol1"> Whether to escape the content of the text. (Not allow HTML.) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>styling</code> </td>
+			<td class="foswikiTableCol1"> What styling classes to use. (Can be either jqueryui or bootstrap.) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>jqueryui</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>addclass</code> </td>
+			<td class="foswikiTableCol1"> Additional classes to be added to the notice (for custom styling) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> "" </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>cornerclass</code> </td>
+			<td class="foswikiTableCol1"> Class to be added to the notice for corner styling. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> "" </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>nonblock</code> </td>
+			<td class="foswikiTableCol1"> Create a non-blocking notice; it lets the user click elements underneath it </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>nonblock_opacity</code> </td>
+			<td class="foswikiTableCol1"> The opacity of the notice (if it's non-blocking) when the mouse is over it </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>0.2</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>history</code> </td>
+			<td class="foswikiTableCol1"> Display a pull down menu to redisplay previous notices, and place the notice in the history </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>width</code> </td>
+			<td class="foswikiTableCol1"> Width of the notice </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"300px"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>min_height</code> </td>
+			<td class="foswikiTableCol1"> Minimum height of the notice; it will expand to fit content </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"16px"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>type</code> </td>
+			<td class="foswikiTableCol1"> Type of the notice. "notice", "info", "success", or "error" </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"notice"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>icon</code> </td>
+			<td class="foswikiTableCol1"> Set icon to true to use the default icon for the selected style/type, false for no icon, or a string for your own icon class. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>animation</code> </td>
+			<td class="foswikiTableCol1"> The animation to use when displaying and hiding the notice. "none", "show", "fade", and "slide" are built in to jQuery. Others require jQuery UI. Use an object with effect_in and effect_out to use different effects. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"fade"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>animate_speed</code> </td>
+			<td class="foswikiTableCol1"> Speed at which the notice animates in and out; <code>"slow"</code>, <code>"def"</code> or <code>"normal"</code>, <code>"fast"</code> or number of milliseconds </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"slow"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>opacity</code> </td>
+			<td class="foswikiTableCol1"> Opacity of the notice </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>1</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>shadow</code> </td>
+			<td class="foswikiTableCol1"> Display a drop shadow </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>false</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>closer</code> </td>
+			<td class="foswikiTableCol1"> Provide a button for the user to manually close the notice </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>closer_hover</code> </td>
+			<td class="foswikiTableCol1"> Only show the closer button on hover. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>sticker</code> </td>
+			<td class="foswikiTableCol1"> Provide a button for the user to manually stick the notice. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>sticker_hover</code> </td>
+			<td class="foswikiTableCol1"> Only show the sticker button on hover. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>hide</code> </td>
+			<td class="foswikiTableCol1"> After a delay, remove the notice </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>delay</code> </td>
+			<td class="foswikiTableCol1"> Delay in milliseconds before the notice is removed </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>8000</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>mouse_reset</code> </td>
+			<td class="foswikiTableCol1"> Reset the hide timer if the mouse moves over the notice </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>remove</code> </td>
+			<td class="foswikiTableCol1"> Remove the notice's elements from the DOM after it is removed </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>insert_brs</code> </td>
+			<td class="foswikiTableCol1"> Change newlines to <code>br</code> tags </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>true</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>stack</code> </td>
+			<td class="foswikiTableCol1"> The stack on which the notices will be placed. Also controls the direction the notices stack. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>{"dir1": "down", "dir2": "left", "push": "bottom", "spacing1": 25, "spacing2": 25}</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>before_init</code> </td>
+			<td class="foswikiTableCol1"> function called when the message is being initialized </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>after_init</code> </td>
+			<td class="foswikiTableCol1"> function called when the message has been initialized </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>before_open</code> </td>
+			<td class="foswikiTableCol1"> called when a message is about to be closed </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>after_open</code> </td>
+			<td class="foswikiTableCol1"> called when the message has been displayed </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>before_close</code> </td>
+			<td class="foswikiTableCol1"> called before a message is closed </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>after_close</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> called when a message has been closed </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+See for examples the <a href="http://pines.sourceforge.net/pnotify/">plugin example page</a>.
+<p></p>
+The plugin uses the jQuery UI CSS library for styling, which means it is fully and easily themeable.
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p> <ul>
+<li> <a href=".." class="pnotifyExample1">a simple notice</a>
+</li> <li> <a class="pnotifyExample2" href="..">a simple info</a>
+</li> <li> <a class="pnotifyExample3" href="..">a success message</a>
+</li> <li> <a href=".." class="pnotifyExample4">an error message</a>
+</li> <li> <a href=".." onclick="showMessage('Note', 'This is a notification. Click again to see more.');return false;">a customized one</a>
+</li> <li> <a href=".." class="pnotifyExample5">an animated info message</a>
+</li></ul> 
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

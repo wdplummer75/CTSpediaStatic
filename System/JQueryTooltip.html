@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryTooltip &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryTooltip/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryTooltip/favicon.ico">
+<link type="application/x-wiki" rel="alternate" href="JQueryTooltip.html" title="edit JQueryTooltip">
+<meta name="description" content="JQueryTooltip" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "JQueryTooltip",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryTooltip">  <a href="JQueryTooltip.html" class="foswikiCurrentTopicLink">JQueryTooltip</a> </h1>
+<p></p>
+<p></p>
+<p></p>
+Display a customized tooltip instead of the default one for every selected
+element. Tooltips can be added automatically to any element that has got
+at <code>title</code> attribute thus replacing the standard tooltip as displayed by
+the browsers with a customizable one.
+<p></p>
+Content can be reloaded using AJAX. For example, this can be used to
+display an image preview in a tooltip. Have a look at the thumbnail REST
+service of <a class="interwikiLink" href="https://foswiki.org/Extensions/ImagePlugin" title="'Extensions/ImagePlugin' on foswiki.org"><noautolink>Foswiki:Extensions/ImagePlugin</noautolink></a> how to load the thumnail from the
+backend dynamically.
+<p></p>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<div class='foswikiAlert'>No such plugin tooltip</div>
+<div class="jqTooltip">
+All elements with a <i title="I've got a title">title attribute</i> in here get a tooltip. Options can be given using metadata inside the class attribute like this:
+<p></p>
+<pre class="html {extraClass:'bubble', fade:'true'}" title="Help: How to pass arguments to the jquery.tooltip plugin">
+&#60;div class&#61;&#34;{extraClass:&#39;bubble&#39;}&#34; title&#61;&#34;Help: How to pass arguments to the jquery.tooltip plugin&#34;&#62;
+  Hover me.
+&#60;/div&#62;
+</pre>
+<p></p>
+</div>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

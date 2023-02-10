@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebRssBase &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/WebRssBase/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE System/WebRssBase/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="WebRssBase.html" rel="alternate" title="edit WebRssBase" type="application/x-wiki">
+<meta name="description" content="WebRssBase" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "WebRssBase",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="RSS_News_Feeds">  RSS News Feeds </h1>
+<p></p>
+<p></p>
+<h2 id="Find_out_What_39s_New">  Find out What's New </h2>
+<p></p>
+There are several ways to find out what's new in each web: <ol>
+<li> Visit <a href="WebChanges.html">WebChanges</a> to see recent changes
+</li> <li> Subscribe in <a href="WebNotify.html">WebNotify</a> to get notified of recent changes by e-mail
+</li> <li> Use a news reader such as <a title="'Extensions/HeadlinesPlugin' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions/HeadlinesPlugin"><noautolink>Foswiki:Extensions/HeadlinesPlugin</noautolink></a> to display the recent changes <ul>
+<li> The source can be an RSS 1.0 feed (<a href="WebRss.html">WebRss</a>) or ATOM 1.0 feed (<a href="WebAtom.html">WebAtom</a>)
+</li></ul> 
+</li></ol> 
+<p></p>
+<h2 id="RSS_Feed_Usage">  RSS Feed Usage </h2>
+<p></p> <ul>
+<li> The URL for an RSS feed is <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/&lt;web&gt;/WebRss</code>
+</li> <li> For this System web it is <a href="WebRss.html">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/WebRss</a>
+</li> <li> You can also create a custom feed based on a search. Add a <code>search=value</code> parameter to the URL, e.g. <a href="WebRss.html">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/WebRss?search=plugin</a> is a what's new feed about Plugins.
+</li></ul> 
+<p></p>
+<h2 id="RSS_Feed_Internals">  RSS Feed Internals </h2>
+<p></p>
+Each web has a <a href="WebRss.html">WebRss</a> topic which includes part of this WebRssBase topic. This topic is the base for the RSS feed and generates an RSS 1.0 feed.
+<p></p>
+The <a href="WebRss.html">WebRss</a> topic in each web contains the following text:
+<p></p>
+<hr />
+<pre>
+&lt;channel rdf:about="%SCRIPTURL{"view"}%/%BASEWEB%">
+  &lt;title>%WIKITOOLNAME%'s &lt;nop>%BASEWEB% web&lt;/title>
+  &lt;link>%SCRIPTURL{"view"}%/%BASEWEB%&lt;/link>
+  &lt;description>&lt;literal>%MAKETEXT{"The [_1] web of [_2]." args="%WEB%,%WIKITOOLNAME%"}% %WEBSUMMARY%&lt;/literal>&lt;/description>
+%INCLUDE{"System.WebRssBase"}% &lt;!--
+   * Set SKIN = rss
+   * Set COVER = rss
+-->
+</pre>
+<hr />
+<strong>Note:</strong> The description is expanded from the %WEB%, %WIKITOOLNAME% and %WEBSUMMARY% macros.  These <strong>must</strong> expand to plain text with no links or html markup. &lt;literal&gt; is used to avoid links if the web name or any of the macros expand to include <a href="WikiWord.html">WikiWords</a> or other markup.
+<p></p>
+The part below is included by each WebRss topic:
+<p></p>
+<p></p>
+<hr />
+<pre class="tml">
+&#37;STARTINCLUDE&#37;&#60;image rdf:resource&#61;&#34;&#37;WIKILOGOIMG&#37;&#34; /&#62;
+  &#60;dc:language&#62;en-us&#60;/dc:language&#62;
+  &#60;dc:rights&#62;&#37;WEBRSSCOPYRIGHT&#37;&#60;/dc:rights&#62;
+  &#60;dc:publisher&#62;&#37;WIKIWEBMASTERNAME&#37; &#91;&#37;WIKIWEBMASTER&#37;&#93;&#60;/dc:publisher&#62;
+  &#60;dc:creator&#62;The contributing authors of &#37;WIKITOOLNAME&#37;&#60;/dc:creator&#62;
+  &#60;dc:source&#62;&#37;WIKITOOLNAME&#37;&#60;/dc:source&#62;
+  &#60;items&#62;
+    &#60;rdf:Seq&#62;
+&#37;SEARCH{
+  &#34;&#37;URLPARAM{&#34;search&#34; encode&#61;&#34;entities, quote&#34; default&#61;&#34;.&#42;&#34; }&#37;&#34;
+  decode&#61;&#34;entities&#34;
+  web&#61;&#34;&#37;URLPARAM{&#34;web&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#37;BASEWEB&#37;&#34; }&#37;&#34;
+  excludetopic&#61;&#34;&#37;URLPARAM{&#34;excludetopic&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#37;STATISTICSTOPIC&#37;&#34; }&#37;&#34;
+  type&#61;&#34;&#37;URLPARAM{&#34;type&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;regex&#34; }&#37;&#34;
+  nosearch&#61;&#34;on&#34;
+  order&#61;&#34;modified&#34;
+  reverse&#61;&#34;on&#34;
+  nototal&#61;&#34;on&#34;
+  limit&#61;&#34;&#37;URLPARAM{&#34;limit&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;16&#34; }&#37;&#34;
+  scope&#61;&#34;&#37;URLPARAM{&#34;scope&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;text&#34; }&#37;&#34;
+  casesensitive&#61;&#34;&#37;URLPARAM{&#34;casesensitive&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;on&#34; }&#37;&#34;
+  date&#61;&#34;&#37;URLPARAM{&#34;date&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#34; }&#37;&#34;
+  format&#61;&#34;      &#60;rdf:li rdf:resource&#61;\&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#36;web/&#36;topic\&#34; /&#62;&#34;
+ }&#37;
+    &#60;/rdf:Seq&#62;
+  &#60;/items&#62;
+&#60;/channel&#62;
+&#60;image rdf:about&#61;&#34;&#37;WIKILOGOIMG&#37;&#34;&#62;
+  &#60;title&#62;&#37;WIKILOGOALT&#37;.&#37;BASEWEB&#37;&#60;/title&#62;
+  &#60;link&#62;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#37;BASEWEB&#37;&#60;/link&#62;
+  &#60;url&#62;&#37;WIKILOGOIMG&#37;&#60;/url&#62;
+&#60;/image&#62;
+&#37;SEARCH{
+  &#34;&#37;URLPARAM{&#34;search&#34; encode&#61;&#34;entities, quote&#34; default&#61;&#34;.&#42;&#34; }&#37;&#34;
+  decode&#61;&#34;entities&#34;
+  web&#61;&#34;&#37;URLPARAM{&#34;web&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#37;BASEWEB&#37;&#34; }&#37;&#34;
+  excludetopic&#61;&#34;&#37;URLPARAM{&#34;excludetopic&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#37;STATISTICSTOPIC&#37;&#34; }&#37;&#34;
+  type&#61;&#34;&#37;URLPARAM{&#34;type&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;regex&#34; }&#37;&#34;
+  nosearch&#61;&#34;on&#34;
+  order&#61;&#34;modified&#34;
+  reverse&#61;&#34;on&#34;
+  nototal&#61;&#34;on&#34;
+  limit&#61;&#34;&#37;URLPARAM{&#34;limit&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;16&#34; }&#37;&#34;
+  scope&#61;&#34;&#37;URLPARAM{&#34;scope&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;text&#34; }&#37;&#34;
+  casesensitive&#61;&#34;&#37;URLPARAM{&#34;casesensitive&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;on&#34; }&#37;&#34;
+  date&#61;&#34;&#37;URLPARAM{&#34;date&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#34; }&#37;&#34;
+  format&#61;&#34;&#60;item rdf:about&#61;\&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#36;web/&#36;topic\&#34;&#62;&#36;n  &#60;title&#62;&#36;topic&#60;/title&#62;&#36;n  &#60;link&#62;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#36;web/&#36;topic&#60;/link&#62;&#36;n  &#60;description&#62;&#36;summary (last changed by &#60;nop&#62;&#36;wikiname)&#60;/description&#62;&#36;n  &#60;dc:date&#62;&#36;isodate&#60;/dc:date&#62;&#36;n  &#60;dc:contributor&#62;&#36;n    &#60;rdf:Description link&#61;\&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;?topic&#61;&#36;wikiusername\&#34;&#62;&#36;n      &#60;rdf:value&#62;&#36;username&#60;/rdf:value&#62;&#36;n    &#60;/rdf:Description&#62;&#36;n  &#60;/dc:contributor&#62;&#36;n&#60;/item&#62;&#34;
+}&#37;
+&#37;STOPINCLUDE&#37;
+</pre>
+<hr />
+<p></p>
+<strong>See also</strong>: <a href="WebAtomBase.html">WebAtomBase</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

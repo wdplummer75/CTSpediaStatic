@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>TopicsAndWebs &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/TopicsAndWebs/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/TopicsAndWebs/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit TopicsAndWebs" href="TopicsAndWebs.html" rel="alternate">
+<meta name="description" content="TopicsAndWebs" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "TopicsAndWebs",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Topics">  Topics </h1>
+<p></p>
+What are Topics and Webs?
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Anatomy_of_a_Topic"> Anatomy of a Topic </a> <ul>
+<li> <a href="#Creating_and_editing_topics"> Creating and editing topics </a>
+</li> <li> <a href="#Topic_Names"> Topic Names </a>
+</li> <li> <a href="#Revision_numbers"> Revision numbers </a>
+</li> <li> <a href="#Reverting_44_renaming_44_moving_and_deleting_topics"> Reverting, renaming, moving and deleting topics </a>
+</li></ul> 
+</li> <li> <a href="#Anatomy_of_a_web"> Anatomy of a web </a> <ul>
+<li> <a href="#Renaming_44_moving_and_deleting_webs"> Renaming, moving and deleting webs </a>
+</li></ul> 
+</li></ul> 
+</div>
+<div style='float: right; width: 307px; padding-left: 1em;'>
+<span id="SystemWebFigure"></span> <div style='padding-bottom: 1em;'> <strong>Figure:</strong> depiction of <a href="WebHome.html" class="foswikiCurrentWebHomeLink">WebHome</a>, <a href="ReferenceManual.html">ReferenceManual</a>, <a href="ManagingTopics.html">ManagingTopics</a>, <a href="ManagingWebs.html">ManagingWebs</a>, <a href="MainFeatures.html">MainFeatures</a> topics contained in the System web</div>
+  <img width="307px" src="TopicsAndWebs.attachments/diagram.png" height="438px" alt="">
+</div>
+<p></p>
+<span id="TopicDefinition"></span>
+<strong><em>Topics</em></strong> are the basic building block of a Foswiki site. You may be more familiar with the term <em>pages</em>, <em>documents</em> or <em>articles</em> in other software; however, Foswiki's <em>topics</em> traditionally serve more purposes than the equivalent in other systems. Topics can only exist inside a <em>web</em>. The topic you're reading now is <a class="foswikiCurrentTopicLink" href="TopicsAndWebs.html">TopicsAndWebs</a>.
+<p></p>
+<span id="WebDefinition"></span>
+A <strong><em>Web</em></strong> is a collection of topics (and other webs, known as <em>subwebs</em>). Webs are containers and by themselves cannot store information; only topics can do that. You may be more familiar with the term <em>Namespaces</em> in other wiki software, but Foswiki's <em>webs</em> are more like <em>directories</em> and <em>folders</em> in your computer's operating system. There is no common "root" web. The <a class="foswikiCurrentTopicLink" href="TopicsAndWebs.html">TopicsAndWebs</a> topic you're reading now is contained in the <a href="WebHome.html" class="foswikiCurrentWebHomeLink">System</a> web (its complete, <em>fully qualified</em> name is <a class="foswikiCurrentTopicLink" href="TopicsAndWebs.html">System.TopicsAndWebs</a>).
+<p></p>
+<h2 id="Anatomy_of_a_Topic">  Anatomy of a Topic </h2>
+<p></p>
+Each topic has: <ul>
+<li> name <ul>
+<li> topics in a given web have unique names to identify them
+</li> <li> topics with a <a href="WikiWord.html">WikiWord</a> name are automatically linked (as opposed to <code>[[forced bracketed links]]</code> - see <a href="EditingShorthand.html">EditingShorthand</a> to learn more)
+</li> <li> there are restrictions on topic names; see <a class="foswikiCurrentTopicLink" href="#TopicNames">topic naming rules</a>
+</li> <li> a topic's <em>fully qualified</em> name is prefixed with the <em>web</em> it is contained in, for example the topic you're reading now may be referred to as <a href="TopicsAndWebs.html" class="foswikiCurrentTopicLink">System.TopicsAndWebs</a> <ul>
+<li> <em>fully qualified</em> names are used when a link is being made to a topic in another web
+</li></ul> 
+</li></ul> 
+</li> <li> content <ul>
+<li> you're reading the topic text of <a class="foswikiCurrentTopicLink" href="TopicsAndWebs.html">TopicsAndWebs</a> right now
+</li> <li> use <a href="WYSIWYG.html">WYSIWYG</a> or <a href="TopicMarkupLanguage.html">TML</a> and <a href="Macros.html">macros</a> to write rich topic content
+</li></ul> 
+</li> <li> <a href="FileAttachment.html">attachments</a> <ul>
+<li> topics may have one or more file attachments
+</li> <li> changes to attachments are automatically recorded
+</li></ul> 
+</li> <li> <a href="DataForms.html">DataForm</a> <ul>
+<li> topics may have a <a href="DataForms.html">DataForm</a> attached to them, which specifies <a href="MetaData.html">metadata</a> fields that users may fill. This data may be <a href="QuerySearch.html">queried</a> and <a href="FormattedSearch.html">reported</a> (see the <a href="FrequentlyAskedQuestions.html">FrequentlyAskedQuestions</a> application as an example)
+</li></ul> 
+</li> <li> <a href="AccessControl.html">access controls</a> <ul>
+<li> control who can view, edit, rename, move or delete topics
+</li> <li> set permissions for individual users or user groups
+</li> <li> override default permissions inherited by the web or site
+</li></ul> 
+</li> <li> <a href="CompareRevisionsAddOn.html">revisions</a> <ul>
+<li> changes are automically recorded
+</li> <li> change history shows authors, dates, and allows comparison between any two versions
+</li> <li> <a href="ManagingTopics.html">revert to older versions</a>
+</li></ul> 
+</li> <li> containing web <ul>
+<li> every topic must be contained within a web
+</li> <li> list of webs at <a href="SiteMap.html">SiteMap</a>
+</li></ul> 
+</li> <li> <a href="MetaData.html">meta-data</a> <ul>
+<li> hidden contextual data stored within each topic
+</li> <li> Example: parent topic <ul>
+<li> new topics are automatically made a "child" of the topic it was created from
+</li> <li> parent relationship allows hierarchical, parent-child navigation
+</li> <li> See <a href="#SystemWebFigure" class="foswikiCurrentTopicLink">Figure of System web</a>
+</li></ul> 
+</li></ul> 
+</li> <li> <a class="foswikiCurrentTopicLink" href="TopicsAndWebs.html">backlinks</a> <ul>
+<li> a list of all topics that reference a given topic (see <a class="foswikiLink" href="#topic-actions">"More topic actions"</a>)
+</li></ul> 
+</li></ul> 
+<p></p>
+<span id="EditingPages"></span>
+<h3 id="Creating_and_editing_topics">  Creating and editing topics </h3>
+<p></p>
+Foswiki makes it easy to add and edit topics or link between them.
+<p></p>
+<strong>To edit:</strong> click <code><b>Edit</b></code> in the toolbar which should be present at the top and bottom of each page (assuming default <a href="PatternSkin.html">PatternSkin</a>). An edit screen appears. Use the <code>Edit Help</code> button if you need it. <ul>
+<li> Click <code><b>Preview</b></code> to see how your edit looks.
+</li> <li> Click <code><b>Save</b></code> to save.
+</li></ul> 
+<p></p>
+<strong>To add a new topic</strong> there are three ways in the default <a href="PatternSkin.html">PatternSkin</a>: <ol>
+<li> Create a link to the topic which doesn't exist yet, e.g. by editing a topic and typing a <a href="WikiName.html">WikiName</a>. When the topic is saved, the link will be shown with a <strong>?</strong>: click the <strong>?</strong> and a new edit window appears.
+</li> <li> Navigate to the topic which doesn't exist yet, e.g. by typing the name of topic in the <a href="GoBox.html">JumpBox</a>. Foswiki should display a screen which invites you to create the topic.
+</li> <li> Click the <code><b>Create New Topic</b></code> link in the <a title="Create this topic" href="WebLeftBar.html" class="foswikiNewLink" rel="nofollow">WebLeftBar</a> links down the left side of the page (assuming default <a href="PatternSkin.html">PatternSkin</a>). Foswiki should display a screen which invites you to create the topic.
+</li></ol> 
+<p></p>
+<span id="TopicNames"></span>
+<h3 id="Topic_Names">  Topic Names </h3>
+<p></p>
+The best strategy is to use <a href="WikiWord.html">WikiWords</a> for your topic names. In this way, linking is automatic. However, if non- <a href="WikiWord.html">WikiWord</a> names are required, you can use <code>[[bracketed links]]</code> to force a link to a non-standard topic name (see <a href="EditingShorthand.html">EditingShorthand</a>). Forced links are subject to some restrictions and the actual topic name may not be identical to what was entered into the forced link.
+<p></p> <ul>
+<li> The first letter of each "word" will be automatically capitalized
+</li> <li> Spaces are compressed out of the topic name
+</li> <li> The following special characters are removed: <em>(May be different in your installation)</em> <ul>
+<li> Any other "whitespace" characters
+</li> <li> <code><b>*</b></code> (Asterisk)
+</li> <li> <code><b>?</b></code> (Question mark)
+</li> <li> <code><b>~</b></code> (Tilde)
+</li> <li> <code><b>^</b></code> (Caret / Circumflex)
+</li> <li> <code><b>\</b></code> (Backslash)
+</li> <li> <code><b>$</b></code> (Dollar-sign)
+</li> <li> <code><b>@</b></code> (At-sign)
+</li> <li> <code><b>%</b></code> (Percent-sign)
+</li> <li> <code><b>'"</b></code> Quotes (Open-quote, Close-quote/Apostrophe, and Double-quote)
+</li> <li> <code><b>&amp;</b></code> (Ampersand)
+</li> <li> <code><b>;</b></code> (Semicolon)
+</li> <li> <code><b>|</b></code> (Vertical line)
+</li> <li> <code><b>&lt;&gt;</b></code> (Less and Greater signs)
+</li> <li> <code><b>[]</b></code> (Open and close square brackets)
+</li> <li> And any ASCII control characters (Hex x00-x1f)
+</li></ul> 
+</li></ul> 
+<strong>Example:</strong> If you enter <code><b>[[my special-topic @here]]</b></code>, you will see <code><b><a title="Create this topic" href="MySpecial-topicHere.html" class="foswikiNewLink" rel="nofollow">my special-topic @here</a></b></code>, but the actual topic created will be <code><b>MySpecial-topicHere</b></code>.   
+<p></p>
+Note that if you use the <a href="WebCreateNewTopic.html">Topic Creator</a>, <a href="WikiWord.html">WikiWord</a> rules are strictly enforced and the resulting topic name would be <code><b>MySpecialTopicHere</b></code> For more details on forced links, see <a href="EditingShorthand.html">EditingShorthand</a>
+<p></p>
+<div class='foswikiHelp'><img width="16" title="IDEA!" alt="IDEA!" height="16" src="DocumentGraphics.attachments/tip.png"> The naming rules may be different for your installation; ask the <a href="mailto&#58;">wiki administrator</a> who may have customised the <code>{NameFilter}</code> expert option under <code>Security and Authentication</code> in <a href="../.html">configure -&gt; Security and Authentication tab, -&gt; Environment sub-tab</a></div>
+<p></p>
+<h3 id="Revision_numbers">  Revision numbers </h3>
+<p></p>
+Topic and attachment versions are identified by positive, non-zero, integer numbers. Versions start with 1 and are sequencial.
+<p></p>
+<span id="RenamingTopics"></span>
+<span id="RevisionRollback"></span>
+<h3 id="Reverting_44_renaming_44_moving_and_deleting_topics">  Reverting, renaming, moving and deleting topics </h3>
+<p></p>
+See <a href="FAQDeleteOrRenameATopic.html">FAQDeleteOrRenameATopic</a> and <a href="ManagingTopics.html">ManagingTopics</a>
+<p></p>
+<h2 id="Anatomy_of_a_web">  Anatomy of a web </h2>
+<p></p>
+If a user navigates to a Foswiki site without specifying a web, the default <a href="../Main/WebHome.html">Main</a> will be displayed.
+<p></p>
+Each web has: <ul>
+<li> name <ul>
+<li> <a class="foswikiCurrentTopicLink" href="#TopicNames">topic naming rules</a> apply to web names
+</li> <li> there is no ability to refer to <em>subwebs</em> with a <em>relative</em> path, i.e. they must always be <em>fully qualified</em> - referred to in full, with the parent web(s) prefixed <ul>
+<li> the '.' and '/' characters serve as <em>path delimiters</em> to a web or topic
+</li> <li> example: <a href="../Sandbox/MySubWeb/MySubSubWeb/MyTopic.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">Sandbox/MySubWeb/MySubSubWeb.MyTopic</a>
+</li> <li> it is possible in Foswiki to have a subweb which is the same name as a topic. For this reason, if there is a web named <code>Sandbox/MySubWeb</code>, navigating to it must be done so using a trailing slash, i.e. <code>[[Sandbox/MySubWeb/]]</code>. Without the trailing slash, Foswiki tries to display the <em>topic</em> named <code>[[Sandbox.MySubWeb]]</code>. <ul>
+<li> Disambiguation of identical web and topic names using the trailing slash is only active within <code>[[Square bracket links]]</code>.
+</li></ul> 
+</li></ul> 
+</li></ul> 
+</li> <li> <a href="WebPreferences.html">WebPreferences</a> topic <ul>
+<li> sets <a href="PreferenceSettings.html">PreferenceSettings</a> to be inherited by all contained topics, e.g. <a href="AccessControl.html">access controls</a>, and: <ul>
+<li> <code>FINALPREFERENCES</code> to prevent subwebs and topics from overriding inherited <a href="PreferenceSettings.html">PreferenceSettings</a>
+</li> <li> <code>WEBFORMS</code> to specify a list of <a href="DataForms.html">DataForms</a> that users should be able to attach to contained topics
+</li> <li> <code>WEBCOPYRIGHT</code> to customise copyright message for all contained topics
+</li></ul> 
+</li> <li> provides a link to the <a href="ManagingWebs.html">rename and delete web</a> utility
+</li></ul> 
+</li> <li> <a class="foswikiCurrentWebHomeLink" href="WebHome.html">WebHome</a> topic <ul>
+<li> the home topic for the container web. It is also the default topic Foswiki will display if a user navigates to a web without specifying a topic name.
+</li></ul> 
+</li> <li> Utility topics (from the <a href="../_default/WebHome.html">_default</a> template web): <ul>
+<li> _default.WebAtom
+</li> <li> _default.WebChanges
+</li> <li> _default.WebCreateNewTopic
+</li> <li> _default.WebIndex
+</li> <li> _default.WebLeftBar
+</li> <li> _default.WebNotify
+</li> <li> _default.WebPreferences
+</li> <li> _default.WebRss
+</li> <li> _default.WebSearch
+</li> <li> _default.WebSearchAdvanced
+</li> <li> _default.WebTopicList
+</li></ul> 
+</li></ul> 
+<p></p>
+<h3 id="Renaming_44_moving_and_deleting_webs">  Renaming, moving and deleting webs </h3>
+<p></p>
+See <a href="ManagingWebs.html">ManagingWebs</a>
+<!--  -->
+<p></p>
+<hr />
+<p></p>
+<strong>Related Topics:</strong> <a href="UserDocumentationCategory.html">UserDocumentationCategory</a>, <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>, <a href="ManagingTopics.html">ManagingTopics</a>, <a href="ManagingWebs.html">ManagingWebs</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

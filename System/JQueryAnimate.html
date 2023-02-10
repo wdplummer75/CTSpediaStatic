@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryAnimate &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryAnimate/favicon.ico"> <link href="../MISSING RESOURCE System/JQueryAnimate/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="JQueryAnimate.html" title="edit JQueryAnimate">
+<meta name="description" content="JQueryAnimate" />
+<link type="text/css" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" rel="stylesheet" media="all" class="head JQUERYPLUGIN::BUTTON"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "JQueryAnimate",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryAnimate">  <a class="foswikiCurrentTopicLink" href="JQueryAnimate.html">JQueryAnimate</a> </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Summary"> Summary </a>
+</li> <li> <a href="#Usage"> Usage </a> <ul>
+<li> <a href="#Direct_use_of_animate.css"> Direct use of animate.css </a>
+</li> <li> <a href="#Use_via_jqAnimateCSS"> Use via jqAnimateCSS </a>
+</li></ul> 
+</li> <li> <a href="#Javascript_API"> Javascript API </a>
+</li> <li> <a href="#Events"> Events </a>
+</li> <li> <a href="#Effects"> Effects </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Summary">  Summary </h2>
+<p></p>
+    Homepage: <a href="http://daneden.me/animate">http://daneden.me/animate</a> <br />
+    Author(s): Daniel Eden <br />
+    Version: 3.7.0
+<p></p>
+<p></p>
+<p></p>
+A cross-browser library of CSS animations.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+To start using animate.css you need to load it into the page using <code>%JQREQUIRE{"animate"}%</code>. There are two ways to make use of this library.
+<p></p>
+<h3 id="Direct_use_of_animate.css">  Direct use of animate.css </h3>
+The only thing required to animate a DOM node is to add css classes to it:
+<p></p> <ul>
+<li> Add the class <code>animated</code> to the element you want to animate
+</li> <li> Add the class <code>infinite</code> in case that you also want it to be aninated in an infinite loop
+</li> <li> Add the class of the animation as listed below
+</li></ul> 
+<p></p>
+<h3 id="Use_via_jqAnimateCSS">  Use via jqAnimateCSS </h3>
+<p></p>
+This is a small convenience wrapper that adds a bit more control over the kind of animation, i.e. in addition to the direct name of the effect
+you may also choose a random effect or one of a group of effects:
+<p></p> <ul>
+<li> Add the class <code>jqAnimateCSS</code> to the element to animate
+</li> <li> Add HTML5 data parameters
+</li></ul> 
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Parameter</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Description</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Default</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>data-effect="..."</code> </td>
+			<td class="foswikiTableCol1"> either an effect name as listed below, or the name of an effect group to chose a random effect from, or the string <code>random</code> for a random effect among all known ones, or a comma separated list of effects </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>data-infinite="true/false</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> switch on/off an infinite effect loop </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>false</code> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+Whenever sending the element a <code>refresh</code> signal will the effect be repeated, or another one will be chosen among the set of effects configured.
+<p></p>
+<strong>You type:</strong>
+<p></p>
+<pre class="tml">
+&#60;h3 id&#61;&#34;myElem&#34; class&#61;&#34;jqAnimateCSS foswikiCenter&#34; data-effect&#61;&#34;attentionSeekers&#34;&#62;Hello World&#60;/h3&#62;
+
+&#37;BUTTON{&#34;Refresh&#34; onclick&#61;&#34;jQuery(&#39;#myElem&#39;).trigger(&#39;refresh&#39;)&#34;}&#37;
+</pre>
+<p></p>
+<strong>You get:</strong>
+<p></p>
+<h3 id="myElem" class="jqAnimateCSS foswikiCenter" data-effect="attentionSeekers">Hello World</h3>
+<p></p>
+<a class="jqButton " href=".." onclick="jQuery('#myElem').trigger('refresh');return false;"><span class='jqButtonText'>Refresh</span></a>
+<p></p>
+<h2 id="Javascript_API">  Javascript API </h2>
+<p></p>
+A <code>jqAnimateCSS</code> element will be initialized by an <code>animateCSS</code> javascript object which takes over control of the animation as well as offers a few methods that come in handy when dealing with animations.
+You may access the <code>animateCSS</code> instance of a <code>jqAnimateCSS</code> element using <code>jQuery.data()</code> method:
+<p></p>
+<pre class="js">
+jQuery(function(&#36;) {
+   var elemCtrl &#61; &#36;(&#34;#myElem&#34;).data(&#34;animateCSS&#34;);
+
+   elemCtrl.animate().then(function() {
+      console.log(&#34;animation finished&#34;);
+   });
+
+   &#36;(&#34;#myElem&#34;).on(&#34;start&#34;, function() {
+      console.log(&#34;the animation started&#34;);
+   });
+
+   &#36;(&#34;#myElem&#34;).on(&#34;stop&#34;, function() {
+      console.log(&#34;the animation ended&#34;);
+   });
+});
+</pre>
+<p></p>
+The <code>.animate()</code> method may be used to start the animation. It returns a promise that will be resolved once the animation finished. 
+<p></p>
+<h2 id="Events">  Events </h2>
+<p></p>
+The element controller fires two events:
+<p></p> <ul>
+<li> <code>start</code>: fired right before the animation starts
+</li> <li> <code>stop</code>:  triggered once the animation finished
+</li></ul> 
+<p></p>
+The <code>stop</code> event is provided in addition to the different browser events fired when a css animation stopped.
+<p></p>
+So listening on an <code>animateCSS</code> element via <code>$("#myElem").on("finish", function() {...})</code> is equivalent to the much more complicated standard way 
+<p></p>
+<pre class="js">
+&#36;(&#34;#myElem&#34;).on(&#34;animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd mozAnimationEnd oanimationend&#34;, function() {
+   ...
+});
+</pre>
+<p></p>
+to cover all browsers.
+<p></p>
+<h2 id="Effects">  Effects </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Group</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Effects</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> attentionSeekers </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> bounce, flash, headShake, jello, pulse, rubberBand, shake, swing, tada, wobble </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> bouncingEntrances </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> bounceIn, bounceInDown, bounceInLeft, bounceInRight, bounceInUp </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> bouncingExits </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> bounceOut, bounceOutDown, bounceOutLeft, bounceOutRight, bounceOutUp </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> fadingEntrances </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fadeIn, fadeInDown, fadeInDownBig, fadeInLeft, fadeInLeftBig, fadeInRight, fadeInRightBig, fadeInUp, fadeInUpBig </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> fadingExits </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fadeOut, fadeOutDown, fadeOutDownBig, fadeOutLeft, fadeOutLeftBig, fadeOutRight, fadeOutRightBig, fadeOutUp, fadeOutUpBig </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> flippers </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> flip, flipInX, flipInY, flipOutX, flipOutY </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> lightspeed </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> lightSpeedIn, lightSpeedOut </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> rotatingEntrances </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> rotateIn, rotateInDownLeft, rotateInDownRight, rotateInUpLeft, rotateInUpRight </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> rotatingExits </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> rotateOut, rotateOutDownLeft, rotateOutDownRight, rotateOutUpLeft, rotateOutUpRight </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> slidingEntrances </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> slideInDown, slideInLeft, slideInRight, slideInUp </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> slidingExits </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> slideOutDown, slideOutLeft, slideOutRight, slideOutUp </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> specials </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> hinge, jackInTheBox, rollIn, rollOut </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> zoomingEntrances </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> zoomIn, zoomInDown, zoomInLeft, zoomInRight, zoomInUp </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> zoomingExits </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> zoomOut, zoomOutDown, zoomOutLeft, zoomOutRight, zoomOutUp </td>
+		</tr>
+	</tbody></table>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

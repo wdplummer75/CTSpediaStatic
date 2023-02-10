@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarSUBSCRIBE &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarSUBSCRIBE/favicon.ico"> <link href="../MISSING RESOURCE System/VarSUBSCRIBE/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit VarSUBSCRIBE" rel="alternate" href="VarSUBSCRIBE.html" type="application/x-wiki">
+<meta name="description" content="VarSUBSCRIBE" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarSUBSCRIBE"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="SUBSCRIBE_123_attributes__125_45_subscribe_the_current_user_for_notification_of_changes_to_the_current_topic">  SUBSCRIBE{ <em>attributes</em> } - subscribe the current user for notification of changes to the current topic </h1>
+<p></p>
+Anywhere in a topic or template: <ul>
+<li> <code>%SUBSCRIBE{...}%</code> or simply <code>%SUBSCRIBE%</code>          <table class="foswikiTable" id="tableVarSUBSCRIBE1" rules="none">     	<thead>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>			<th class="foswikiTableCol1"> Default </th>			<th class="foswikiTableCol2 foswikiLastCol"> Meaning </th>		</tr>	</thead>     	<tbody>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code>who</code> </td>			<td class="foswikiTableCol1"> Logged-in user </td>			<td class="foswikiTableCol2 foswikiLastCol"> Who to subscribe (wikiname, no web) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code>topic</code> </td>			<td class="foswikiTableCol1"> Current topic </td>			<td class="foswikiTableCol2 foswikiLastCol"> Topic to subscribe to. Wildcards may be used e.g. <code>topic="Item*"</code> will subscribe to all topics starting with <code>Item</code>. Use <code>topic="Main.*"</code> to subscribe to the WebNotify for the Main web. </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>unsubscribe</code> </td>			<td class="foswikiTableCol1 foswikiLast"> Not set </td>			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> If set to "on", will <strong>unsubscribe</strong> the user </td>		</tr>	</tbody>     </table>
+</li></ul> 
+<p></p>
+The format of the Subscribe/Unsubscribe button is defined in a template file <code>templates/subscribe.tmpl</code>. The normal skin mechanisms can be used to override this with your own local definitions. The default template works with Javascript to provide a smooth interactive experience.
+<p></p>
+<img height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> The <code>format</code>  and <code>formatunsubscribe</code> parameters have been removed and will
+be ignored. The version of PatternSkin shipped with Foswiki 1.1.9 used these
+parameters.
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

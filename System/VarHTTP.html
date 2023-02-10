@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarHTTP &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarHTTP/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/VarHTTP/favicon.ico">
+<link href="VarHTTP.html" rel="alternate" title="edit VarHTTP" type="application/x-wiki">
+<meta name="description" content="VarHTTP" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "VarHTTP",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="HTTP_45_45_get_HTTP_headers">  HTTP -- get HTTP headers </h1> <ul>
+<li> Called with the name of an HTTP request header field, returns its value. Capitalization and the use of hyphens versus underscores are not significant.
+</li> <li> Request headers are sent by the browser to the server. It is not possible to access the Response headers returned to the browser.
+</li> <li> Only returns headers permitted by site configuration. Returns '' if the header is not allowed.
+</li> <li> When called without a parameter, nothing is returned.  See <a href="VarHTTPS.html">VarHTTPS</a> for other options.
+</li></ul> 
+<div class="foswikiHelp"><img height="16" alt="ALERT!" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> The HTTP and HTTPS macros are deprecated as of Foswiki release 2.1. and will be removed in a future release.</div>
+<h2 id="Parameters">  Parameters </h2>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Name</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Description</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>"name"</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Name of the header to get </td>
+		</tr>
+	</tbody></table>
+<h2 id="Examples">  Examples </h2>
+          <table class="foswikiTable" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Write</a> </th>
+			<th class="foswikiTableCol1"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Returns</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Notes</a> </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%HTTP%</code> </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Always returns '' </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%HTTP{"Accept-language"}%</code> </td>
+			<td class="foswikiTableCol1"> en-US,en;q=0.9 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>%HTTP{"User-Agent"}%</code> </td>
+			<td class="foswikiTableCol1"> Mozilla/5.0 (X11; Linux x86_64) <a class="foswikiNewLink" rel="nofollow" href="AppleWebKit.html" title="Create this topic">AppleWebKit</a>/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>%HTTP{"Cookie"}%</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> Not allowed by default. </td>
+		</tr>
+	</tbody>     </table>
+   <div class="foswikiHelp"><img src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!" title="ALERT!" width="16"> You can see the HTTP headers your browser sends to the server on a number of sites e.g. <a href="http://www.ericgiguere.com/tools/http-header-viewer.html">http://www.ericgiguere.com/tools/http-header-viewer.html</a></div>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarHTTPS.html">HTTPS</a>, <a href="VarREMOTEADDR.html">REMOTE_ADDR</a>, <a href="VarREMOTEPORT.html">REMOTE_PORT</a>, <a href="VarREMOTEUSER.html">REMOTE_USER</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

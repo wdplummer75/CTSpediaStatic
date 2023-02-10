@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BulkRegistration &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/BulkRegistration/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/BulkRegistration/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit BulkRegistration" rel="alternate" href="BulkRegistration.html">
+<meta name="description" content="BulkRegistration" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "BulkRegistration",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Bulk_Registration">  Bulk Registration </h1>
+<p></p>
+Administrators can use this topic to register (i.e. create logins and user topics) for a group of people in one batch.
+<p></p>
+Unlike normal registration the administrator is assumed to have correct e-mail addresses for the users, so <strong>no verification is required.</strong>
+Note that the new users are not notified that they have an account. This is so you can prepare and verify the accounts before announcing them.
+To announce them use the <a href="BulkResetPassword.html">BulkResetPassword</a> feature: this will assign a new random password and notify users.
+<p></p>
+<h2 id="Bulk_Registration_usage">  Bulk Registration usage </h2>
+<p></p>
+Note: this is an administrator job - only admistrators can run this.
+<p></p>
+If you are administrator, you will take these actions: <ol>
+<li> (First time use) Create new bulk registration topics (see <a href="#Settings" class="foswikiCurrentTopicLink">Settings</a> below).
+</li> <li> In the REGISTERTOPIC (<a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/UnprocessedRegistrations.html">UnprocessedRegistrations</a>) topic: create a table of new users. An example table is provided below to copy.
+</li> <li> Return to this topic and press the <a class="foswikiCurrentTopicLink" href="#RegisterForm">"Bulk Register" button</a> to create the new topics.
+</li> <li> Read <a href="../Main/UnprocessedRegistrationsLog.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">UnprocessedRegistrationsLog</a> to verify if all has gone well.
+</li> <li> Visit <a href="../Main/WikiGroups.html">WikiGroups</a> if the new users need to be added to any groups.
+</li> <li> When you are ready, use the <a href="BulkResetPassword.html">BulkResetPassword</a> page to assign passwords and notify the users of their new accounts.
+</li></ol> 
+<p></p>
+Below are the details.
+<p></p>
+<h2 id="Settings">  Settings </h2> <ul>
+<li> Define where to pick up the table of users to register. It can be in any web, but defaults to the Main web. <ul>
+<li> Set REGISTERTOPIC = <a title="Create this topic" href="../Main/UnprocessedRegistrations.html" class="foswikiNewLink" rel="nofollow">UnprocessedRegistrations</a>
+</li></ul> 
+</li> <li> Use this to define where to log the bulk registration process. It will be saved to the Main web. <ul>
+<li> Set LOGTOPIC = <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/UnprocessedRegistrationsLog.html">UnprocessedRegistrationsLog</a>
+</li></ul> 
+</li> <li> Set this to 1 to make the bulk registration overwrite any existing user     topics. By default, existing user topics are left alone. <ul>
+<li> Set OVERWRITEHOMETOPICS = 0
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="The_user_table">  The user table </h2>
+<p></p>
+This table is a template for user data that will be written to the new user topics. If you stick to these basic fields you can just use the first example below.
+If you want to write more data (like phone number or country) read the section <a class="foswikiCurrentTopicLink" href="#CustomizingUserData">Customizing user data</a> as well.
+<p></p>
+If the <code>Password</code> field is not included, then use the <a href="BulkResetPassword.html">BulkResetPassword</a> topic to assign new passwords.
+If a password is included, it must be a valid password (&gt; minimum length, etc.)
+<p></p>
+<p></p>
+<p></p>
+<h3 id="Example_format">  Example format </h3>
+<p></p>
+The following should be inserted into your <a class="foswikiNewLink" rel="nofollow" href="../Main/UnprocessedRegistrations.html" title="Create this topic">UnprocessedRegistrations</a> as a table. This is the most simple format:
+<p></p>
+<pre class='tml'>
+&#60;noautolink&#62;
+&#37;EDITTABLE{}&#37;
+&#124; FirstName &#124; LastName &#124; Email &#124; WikiName &#124;
+&#124; Test &#124; User &#124; you&#64;your.domain &#124; TestUser &#124;
+&#60;/noautolink&#62;</pre>
+<p></p>
+<strong>Usage:</strong> <ol>
+<li> Copy this text to your clipboard
+</li> <li> Click through and paste this on <a href="../Main/UnprocessedRegistrations.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">UnprocessedRegistrations</a>.
+</li> <li> Add and customize entries, save table. Note that the first row must not contain bolded entries, so don't apply any formatting.
+</li> <li> Return here
+</li></ol> 
+<p></p>
+<span id="CustomizingUserData"></span>
+<h3 id="Customizing_user_data">  Customizing user data </h3>
+<p></p>
+You can write additional data to the new user topics. Do this by enhancing the user table with additional field names as table headers.
+<p></p>
+Any fields you define in this table will end up in the User's topic. If a form (such as <a href="UserForm.html">UserForm</a>) is attached to <a href="NewUserTemplate.html">NewUserTemplate</a> then the data will go in as META:FIELDS, meaning that you can use SEARCH formfield constructs to search.
+<p></p>
+If you use the <a href="UserForm.html">UserForm</a> then ensure that it contains all the fields you define here. Otherwise they will disappear when the user edits their home topic!
+<p></p>
+<h4 id="Mandatory_fields">  Mandatory fields </h4> <ul>
+<li> <code>WikiName</code>
+</li> <li> <code>FirstName</code>
+</li> <li> <code>LastName</code>
+</li></ul> 
+<p></p>
+<h4 id="Optional_fields">  Optional fields </h4> <ul>
+<li> <code>LoginName</code> - <strong><em>Required if the system is configured to</em></strong> <code><b>AllowLoginName</b></code> (Commonly referred to as the <a href="UserName.html">UserName</a>).
+</li> <li> <code>Email</code> - If not provided, you must set a password, or password reset will not be possible.
+</li> <li> <code>Password</code> - If not provided, set passwords later using <a href="BulkResetPassword.html">BulkResetPassword</a>.
+</li> <li> <code>Confirm</code> - If provided, it must match the <code>Password</code> field. If missing, it will not be checked.
+</li> <li> <code>templatetopic</code> - Template used when creating the User topic. If not provided, defaults to <a href="../Main/NewUserTemplate.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">Main.NewUserTemplate</a>, or <a href="NewUserTemplate.html">System.NewUserTemplate</a>.
+</li> <li> <code>AddToGroups</code> - A comma-separated list of groups. When user is registered, they will be added to the listed groups. The groups must exist.
+</li></ul> 
+<p></p>
+<h4 id="Customized_table_example">  Customized table example </h4>
+<p></p>
+Make sure that the extra fields also appear on the <a href="UserForm.html">UserForm</a>.
+<p></p>
+<pre class='tml'>
+&#60;noautolink&#62;
+&#37;EDITTABLE{}&#37;
+&#124; FirstName &#124; LastName &#124; Email &#124; WikiName &#124; AddToGroups &#124; CustomFieldThis &#124; SomeOtherRandomField &#124; WhateverYouLike &#124;
+&#124; Test &#124; User &#124; you&#64;example.com &#124; TestUser &#124; MyGroup, DocGroup &#124; A &#124; B &#124; C &#124;
+&#60;/noautolink&#62;</pre>
+<p></p>
+<hr />
+<p></p>
+<p></p>
+<!--
+<p></p>
+-->
+<span id="RegisterForm"></span>
+<form name="bulkRegister" action="/foswiki/bin/manage/Main.UnprocessedRegistrations" method="post">
+<input type="hidden" name="action" value="bulkRegister" />&nbsp;
+<input type="submit" class="foswikiSubmit" value="Bulk Register these people" />
+<input type="hidden" name="LogTopic" value="Main.UnprocessedRegistrationsLog" />
+<input type="hidden" name="OverwriteHomeTopics" value="0" />
+</form>
+<p></p>
+<h2 id="Main.UnprocessedRegistrations"> Main.UnprocessedRegistrations </h2>
+<p></p>
+Topic does not exist
+<p></p>
+<h2 id="Main.UnprocessedRegistrationsLog"> Main.UnprocessedRegistrationsLog </h2>
+<p></p>
+Topic will be created during registration run.
+<p></p>
+<hr />
+<p></p>
+<strong>Related topics:</strong> <a href="AdminToolsCategory.html">AdminToolsCategory</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

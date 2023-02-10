@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryMaskedInput &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/JQueryMaskedInput/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryMaskedInput/favicon.ico">
+<link title="edit JQueryMaskedInput" rel="alternate" href="JQueryMaskedInput.html" type="application/x-wiki">
+<meta name="description" content="JQueryMaskedInput" />
+<link type="text/css" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" rel="stylesheet" media="all" class="head JQUERYPLUGIN::BUTTON"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "JQueryMaskedInput",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/maskedinput/jquery.maskedinput.js?version=1.4.1" class="script JQUERYPLUGIN::MASKEDINPUT"></script>
+<script class="script JQUERYPLUGIN::MASKEDINPUT" src="JQueryPlugin.attachments/plugins/maskedinput/jquery.maskedinput.init.js?version=1.4.1"></script><!--JQUERYPLUGIN::MASKEDINPUT-->
+</head>
+<body>
+<h1 id="JQueryMaskedInput">  <a class="foswikiCurrentTopicLink" href="JQueryMaskedInput.html">JQueryMaskedInput</a> </h1>
+<p></p>
+    Homepage: <a href="http://digitalbush.com/projects/masked-input-plugin">http://digitalbush.com/projects/masked-input-plugin</a> <br />
+    Author(s): Josh Bush <br />
+    Version: 1.4.1
+<p></p>
+<p></p>
+<p></p>
+This is a masked input plugin for the jQuery javascript library. It allows a user to more easily enter fixed width input where you would like them to enter the data in a certain format (dates,phone numbers, etc). It has been tested on Internet Explorer, Firefox, Safari, Opera, and Chrome. A mask is defined by a format made up of mask literals and mask definitions. Any character not in the definitions list below is considered a mask literal. Mask literals will be automatically entered for the user as they type and will not be able to be removed by the user.The following mask definitions are predefined:
+<p></p> <ul>
+<li> a - Represents an alpha character (A-Z,a-z)
+</li> <li> 9 - Represents a numeric character (0-9)
+</li> <li> * - Represents an alphanumeric character (A-Z,a-z,0-9)
+</li></ul> 
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+The following mask definitions are
+predefined: <ul>
+<li> a - Represents an alpha character (A-Z,a-z)
+</li> <li> 9 - Represents a numeric character (0-9)
+</li> <li> * - Represents an alphanumeric character (A-Z,a-z,0-9)
+</li></ul> 
+<p></p>
+<h2 id="JavaScript_API"> JavaScript API </h2>
+<pre class="js">
+&#36;(&#34;#date&#34;).mask(&#34;99/99/9999&#34;);
+&#36;(&#34;#phone&#34;).mask(&#34;(999) 999-9999&#34;);
+&#36;(&#34;#tin&#34;).mask(&#34;99-9999999&#34;);
+&#36;(&#34;#ssn&#34;).mask(&#34;999-99-9999&#34;);
+</pre>
+<p></p>
+Use a space instead of an underscore "_" character as a placeholder
+<pre class="js">
+&#36;(&#34;#product&#34;).mask(&#34;99/99/9999&#34;,{
+  placeholder:&#34; &#34;
+});
+</pre>
+<p></p>
+Adda "completed" callback:
+<pre class="js">
+&#36;(&#34;#product&#34;).mask(&#34;99/99/9999&#34;,{
+  completed: function() {
+    alert(&#34;You typed the following: &#34;+this.val());
+  }
+});
+</pre>
+<p></p>
+Define an own mask:
+<pre class="js">
+&#36;.mask.definitions&#91;&#39;~&#39;&#93;&#61;&#39;&#91;+-&#93;&#39;;
+&#36;(&#34;#eyescript&#34;).mask(&#34;~9.99 ~9.99 999&#34;);
+</pre>
+<p></p>
+<h2 id="Foswiki_integration">  Foswiki integration </h2>
+<p></p>
+Use the <code><b>jqMaskedInput</b></code> class name to enable masked input on an input element. The mask itself is specified
+in the <code><b>mask</b></code> attribute.
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+<div class="foswikiFormSteps">
+  <form>
+  <div class="foswikiFormStep">
+    <h3>Date:</h3>
+    <input type="text" size="10" class="jqMaskedInput" mask="99/99/9999" />
+  </div>
+  <div class="foswikiFormStep">
+    <h3>Phone:</h3>
+    <input type="text" size="10" class="jqMaskedInput" mask="(999) 999-9999" />
+  </div>
+  <div class="foswikiFormStep">
+    <h3>Product Key:</h3>
+    <input type="text" size="10" class="jqMaskedInput" mask="a*-999-a999" />
+    <div class="foswikiFormDescription">
+     Enter your product key of the form <code>a*-999-a999</code>.
+    </div>
+  </div>
+  <div class="foswikiFormStep foswikiFormLast">
+    <a class="jqButton  jqSubmitButton" href=".."><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/tick.png)'></span><span class='jqButtonText'>Submit</span></a><input type='submit' style='display:none' />
+    <span class='foswikiClear'></span>
+  </div>
+  </form>
+</div>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

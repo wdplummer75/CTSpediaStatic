@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryBlockUI &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/JQueryBlockUI/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE System/JQueryBlockUI/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit JQueryBlockUI" href="JQueryBlockUI.html" rel="alternate">
+<meta name="description" content="JQueryBlockUI" />
+<link type="text/css" media="all" rel="stylesheet" class="head JQUERYPLUGIN::BLOCKUI" href="JQueryPlugin.attachments/plugins/blockui/jquery.blockUI.css?version=2.70"><!--JQUERYPLUGIN::BLOCKUI-->
+<link media="all" class="head JQUERYPLUGIN::BUTTON" rel="stylesheet" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" type="text/css"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/blockui/jquery.blockUI.js?version=2.70" class="script JQUERYPLUGIN::BLOCKUI"></script>
+<script class="script JQUERYPLUGIN::BLOCKUI" src="JQueryPlugin.attachments/plugins/blockui/jquery.blockUI.init.js?version=2.70"></script><!--JQUERYPLUGIN::BLOCKUI-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryBlockUI",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryBlockUI">  <a class="foswikiCurrentTopicLink" href="JQueryBlockUI.html">JQueryBlockUI</a> </h1>
+<p></p>
+    Homepage: <a href="http://malsup.com/jquery/block/">http://malsup.com/jquery/block/</a> <br />
+    Author(s): M. Alsup <br />
+    Version: 2.70
+<p></p>
+<p></p>
+<p></p>
+The jQuery BlockUI Plugin lets you simulate synchronous behavior when using
+AJAX, without locking the browser. When activated, it will prevent user
+activity with the page (or part of the page) until it is deactivated. BlockUI
+adds elements to the DOM to give it both the appearance and behavior of
+blocking user interaction.
+<p></p>
+<p></p>
+<h2 id="Demo">  Demo </h2>
+<p></p>
+<p></p>
+<a href=".." id="demo1">Click here</a>
+<span class='foswikiClear'></span>
+<p></p>
+<div id="loginForm" style="display:none; text-align:left;">
+<h2 >Hey there ... </h2>
+<input type="text" name="username" class="foswikiInputField" size="20" placeholder="username" />
+<input type="password" name="password" class="foswikiInputField" size="20" placeholder="password" />
+<p></p>
+<a id="signin" class="jqButton jqButtonCenter" href=".."><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/tick.png)'></span><span class='jqButtonText'>Sign in</span></a>
+<span class='foswikiClear'></span>
+</div> 
+<p></p>
+
+<script>
+jQuery(function($) {
+  $('#demo1').click(function() { 
+
+    $.blockUI({ 
+      message: $('#loginForm'),
+      css: { width:'auto' },
+      //timeout: 20000, 
+      focusInput: false,
+      onBlock: function() { 
+         //alert('Page is now blocked.'); 
+      }
+    });
+
+    $('.blockOverlay').click(function() {
+      $.unblockUI({ 
+        onUnblock: function(){ alert('Aborted.'); } 
+      }); 
+      return false;
+    });
+
+    return false;
+  }); 
+
+  $("#signin").click(function() {
+    $.unblockUI({
+      onUnblock: function() { alert('Welcome to Foswiki.'); }
+    });
+  });
+});
+</script>
+
+<style>
+.blockUI { background:#fff; font-size:110%; }
+.blockUI h2 { color:#9C3063; margin-top:0; }
+</style>
+
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

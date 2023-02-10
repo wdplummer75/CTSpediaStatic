@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CompareRevisionsAddonPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/CompareRevisionsAddonPlugin/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/CompareRevisionsAddonPlugin/favicon.ico">
+<link href="CompareRevisionsAddonPlugin.html" rel="alternate" title="edit CompareRevisionsAddonPlugin" type="application/x-wiki">
+<meta name="description" content="CompareRevisionsAddonPlugin" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "CompareRevisionsAddonPlugin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<h1 id="CompareRevisionsAddOn_Plugin"> CompareRevisionsAddOn Plugin </h1>
+<p></p>
+This is an helper plugin for the <a href="CompareRevisionsAddOn.html">CompareRevisionsAddOn</a> on Foswiki
+<p></p>
+It has two purposes: <ol>
+<li> It sets the <code>CompareRevisionAddonPluginEnabled</code> flag, which can be used by templates (e.g. used by the <a href="HistoryPlugin.html">HistoryPlugin</a>)
+</li> <li> It provides an easy way to replace links to the original <code>rdiff</code> script by links to the new <code>compare</code> script.
+</li></ol> 
+<p></p>
+<h2 id="Syntax_Rules">  Syntax Rules </h2>
+<p></p>
+<code>%RDIFF2COMPARE{"text"}%</code> - Replaces links to the <code>rdiff</code> script with links to the <code>compare</code> script
+<p></p>
+<h2 id="Plugin_Settings">  Plugin Settings </h2>
+<p></p>
+(none)
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions  </h2>
+<p></p>
+This plugin is installed together with the <a href="CompareRevisionsAddOn.html">CompareRevisionsAddOn</a>, see the instructions there.
+It should be enabled (if necessary) with the configure script.
+<p></p>
+Test: CompareRevisionsAddOnPlugin is <strong>not</strong> installed and enabled.
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Plugin Author: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Main.KennethLavrsen' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Main.KennethLavrsen"><noautolink>Foswiki:Main.KennethLavrsen</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Copyright &copy;: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 2006, JChristophFuchs; 2008-2014 Kenneth Lavrsen and Foswiki Contributors </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> License: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> GPL (<a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Version: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 1.115 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Release: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 08 Apr 2017 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 08 Apr 2017 (1.115) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14366' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14366"><noautolink>Foswikitask:Item14366</noautolink></a>: Reorder initialization to allow local CGI::Carp. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 01 May 2014 (1.112) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12407" title="'Item12407' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12407</noautolink></a>: Don't decode entities during comparson. Convert to simple decimal version. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> 10 Feb 2014 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12741' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12741"><noautolink>Foswikitask:Item12741</noautolink></a>: Formatting parameters not passed on the referenced scripts </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Oct 2013 (1.1.11) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12423' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12423"><noautolink>Foswikitask:Item12423</noautolink></a>: fix double encoding in header on UTF-8 sites </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Feb 2013 (1.1.10) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item12408" class="interwikiLink" title="'Item12408' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12408</noautolink></a>: use correct template names in docs </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 31 Jan 2013 (1.1.9) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12337" title="'Item12337' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12337</noautolink></a>: Remove undocumented dependency on <a href="https://metacpan.org/module/HTML::TreeBuilder" class="interwikiLink" title="CPAN perl repository"><noautolink>CPAN:HTML::TreeBuilder</noautolink></a> &gt;= 4.0 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Nov 2012 (1.1.8) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11267" class="interwikiLink" title="'Item11267' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11267</noautolink></a>: Convert to perl version strings, <br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11755" title="'Item11755' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11755</noautolink></a>: Compare breaks characterset encoding. <br />                         <a title="'Item11930' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11930" class="interwikiLink"><noautolink>Foswikitask:Item11930</noautolink></a>: Read settings from <a href="../Main/SitePreferences.html">SitePreferences</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Apr 2012 (1.1.7) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item11445' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item11445" class="interwikiLink"><noautolink>Foswikitask:Item11445</noautolink></a>: References to Sandbos should use %SANDBOXWEB% macro. Release with Foswiki 1.1.5. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Dec 2011 (1.1.6) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Release with Foswiki 1.1.4 - minor code and documentation cleanup. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 May 2011 (1.1.6) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item10803" class="interwikiLink" title="'Item10803' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10803</noautolink></a> - Fix invalid Foswiki configuration affecting ApacheLogin users introduced in <code>1.1.4</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 May 2011 (1.1.5) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10677" title="'Item10677' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10677</noautolink></a> - Speed optimization by avoiding doing pointless lookup for settings in plugin topic </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 30 Apr 2011 (1.1.4) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10566" title="'Item10566' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10566</noautolink></a> - Add <code>compareauth</code> script for ApacheLogin users <br />                         - Switch to x.y.z version numbering <br />                         - Moved dependency list from documentation into DEPENDENCIES manifest                          - Modernize system topic for BuildContrib </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Apr 2011 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item10401' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10401"><noautolink>Foswikitask:Item10401</noautolink></a> - Call logEvent in compare <br /> <a title="'Item10402' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10402"><noautolink>Foswikitask:Item10402</noautolink></a> - Don't use obsolete template for missing web/topic. <br /> Version shipping with 1.1.3 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Oct 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version shipping with 1.1.1 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Sep 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Kenneth Lavrsen: Fixed problem with tables always showing up as changed even when they were not </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 09 Aug 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Plugin is now a default plugin shipped with Foswiki. It will later have its function integrated in core in a future Foswiki version so its life as default plugin is temporary. Changed its switchboard setting to EXPERT so it is hidden in configure. You should never need to change this anyway. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 22 Mar 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Gilmar Santos Jr: ported to <a title="'Development/FoswikiStandAlone' on foswiki.org" href="https://foswiki.org/Development/FoswikiStandAlone" class="interwikiLink"><noautolink>FSA architecture</noautolink></a> (<a title="'Tasks/Item1352' on foswiki.org" href="https://foswiki.org/Tasks/Item1352" class="interwikiLink"><noautolink>Foswiki:Tasks/Item1352</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 09 Jan 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Gilmar Santos Jr: fixed ambigous print (<a title="'Tasks.Item716' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks.Item716"><noautolink>Foswiki:Tasks.Item716</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Dec 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Kenneth Lavrsen: Changed the author to myself. JChristophFuchs is the original author but announced in 2006 that he no longer maintains this plugin. So now I officially take the task as maintainer. Plugin is changed to Foswiki namespace and tested and works under Foswiki 1.0.0. Policy is now feel free to modify but please do not break compatibility. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 07 Nov 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Updated for TWiki 4.2.0. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 26 Feb 2006 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Initial version </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> CPAN Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> none </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Other Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> none </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Perl Version: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 5.008 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Plugin Home: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="http://foswiki.org/Extensions/CompareRevisionsAddOn">http://foswiki.org/Extensions/CompareRevisionsAddOn</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Support: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <a href="http://foswiki.org/Support/CompareRevisionsAddOn">http://foswiki.org/Support/CompareRevisionsAddOn</a> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<strong><em>Related Topics:</em></strong> <a href="DeveloperDocumentationCategory.html">DeveloperDocumentationCategory</a>, <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>, <a href="DefaultPreferences.html">DefaultPreferences</a>, <a href="../Main/SitePreferences.html">SitePreferences</a>, <a href="Plugins.html">Plugins</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

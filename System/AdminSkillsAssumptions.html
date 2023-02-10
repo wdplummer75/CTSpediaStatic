@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>AdminSkillsAssumptions &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/AdminSkillsAssumptions/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/AdminSkillsAssumptions/favicon.ico" type="image/x-icon">
+<link title="edit AdminSkillsAssumptions" rel="alternate" href="AdminSkillsAssumptions.html" type="application/x-wiki">
+<meta name="description" content="AdminSkillsAssumptions" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "AdminSkillsAssumptions",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Administrator_Skills_Assumptions">  Administrator Skills Assumptions </h1>
+<p></p>
+Several skills (i.e. knowing how to do something) are needed to set up and maintenance of a Foswiki installation.
+Remember that several layers of technology are used for delivering one web page: Operating system, web server, CGI (or Fast CGI), internal Foswiki functions, templates,
+jQuery, HTML, etc, so general web computing knowledge is needed for Foswiki administration. The most important are the following:
+<p></p> <ol>
+<li> At an <strong>Operating System level</strong>, you should know how to: <ul>
+<li> use command line tools (even in Windows)
+</li> <li> work on files, specially: <ul>
+<li> move/copy/delete
+</li> <li> change permission
+</li></ul> 
+</li> <li> view logs
+</li> <li> set environment variables
+</li> <li> use a text editor
+</li> <li> install system updates and software packages
+</li> <li> [Only for Windows] know the mapping between Unix commands and Windows equivalent
+</li></ul> 
+</li> <li> At the <strong>Web server level</strong>, you should know how to: <ul>
+<li> find the web server directory, and which system user runs the web server
+</li> <li> make a basic setup, specifically: <ul>
+<li> editing configuration files
+</li> <li> enabling CGI scripts in a directory
+</li> <li> allowing or denying access to specific directories
+</li></ul> 
+</li> <li> debug/understand web server errors, by accessing and understanding the server logs
+</li></ul> 
+</li> <li> at the <strong>Perl level</strong>, you should know how to: <ul>
+<li> install/upgrade Perl
+</li> <li> launch Perl scripts
+</li> <li> install Perl CPAN modules
+</li></ul> 
+</li> <li> Depending of your context: your own server (with full access) or web hosting, you could need to know: <ul>
+<li> for own server, how to obtain root access; login passwords or the <code>sudo</code> command
+</li> <li> for web hosting/shared server, you need to know how to investigate the configuration and/or be able to contact/discuss with the technical support for your web hosting service. Be careful, web hosting sites are sometimes challenging even for those with good OS and web server skills.
+</li></ul> 
+</li> <li> For solving problems, you should know how to: <ul>
+<li> test and describe a problem by identifying which component failed
+</li> <li> inspect error logs
+</li> <li> talk to technical support (whether in an IT department or web hosting provider)
+</li> <li> read documentation in order to help with diagnosing problems
+</li></ul> 
+</li> <li> [rarely] Program compilation, you need to know how to: <ul>
+<li> compile a program (configure, make, ...)
+</li> <li> install the program
+</li></ul> 
+</li></ol> 
+<p></p>
+<span class='foswikiRedFG'>Knowing HTML and web design are insufficient to install Foswiki. Unless you learn the above skills or team up with someone who can handle the
+installation, please consider the other solutions, listed below.</span>
+<p></p>
+<h2 id="I_don_39t_know_all_of_that_44_what_can_I_do_63">  I don't know all of that, what can I do ? </h2>
+<p></p>
+<h3 id="Using_Virtual_Machine">  Using Virtual Machine </h3>
+<p></p>
+If you don't know all of these administration skills, the Foswiki team provides a ready to use installation of Foswiki in a Virtual Machine (VM). Basically, this
+can be installed on Windows or Linux, and makes it possible to get a working Foswiki system within 5 minutes (after a fairly big download). See
+<a title="'Download.OtherFoswikiInstallers' on foswiki.org" href="https://foswiki.org/Download.OtherFoswikiInstallers" class="interwikiLink"><noautolink>Foswiki:Download.OtherFoswikiInstallers</noautolink></a> for downloading the VM. This VM works well for personal installations, or for testing, but is not recommended for
+production environments.
+<p></p>
+<h2 id="Learn_it_33">  Learn it! </h2>
+If you don't know all of these skills, you can learn it! The Internet provides many sources of information about all these skills
+<p></p>
+There are many excellent resources for learning how to administer your OS and web server, including books, web sites, web forums, IM and e-mail lists.   The
+<a title="'Support' on foswiki.org" href="https://foswiki.org/Support" class="interwikiLink"><noautolink>Foswiki:Support</noautolink></a> web should not be depended on as a resource for this purpose - in other words, it is not there to answer basic questions about operating
+system and web server administration.  Asking and answering questions is time consuming for all concerned and is best used for specific <em>Foswiki related</em>
+issues, rather than helping you learn the OS and web server.
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebCreateNewTopicTemplate &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/WebCreateNewTopicTemplate/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/WebCreateNewTopicTemplate/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="WebCreateNewTopicTemplate.html" title="edit WebCreateNewTopicTemplate" type="application/x-wiki">
+<meta name="description" content="WebCreateNewTopicTemplate" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "WebCreateNewTopicTemplate",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+%{<pre class="tml">
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+ Create new topic template
+ This template uses parts from &#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents.
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+}&#37;&#37;TMPL:INCLUDE{&#34;view&#34;}&#37;&#37;{
+---------------------------------------------------
+ content
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;content&#34;}&#37;&#60;div class&#61;&#34;foswikiTopicText&#34;&#62;
+---+ &#37;MAKETEXT{&#34;Create New Topic in &#91;&#95;1&#93; Web&#34; args&#61;&#34;&#60;nop&#62;&#37;BASEWEB&#37;&#34;}&#37;
+&#37;TMPL:P{&#34;createform&#34;}&#37;
+&#60;/div&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ do not show the following elements
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;topicaction&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;topicinfo&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;toolbar&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;topicpathinfo&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;breadcrumb&#34;}&#37;&#37;TMPL:END&#37;
+&#37;TMPL:DEF{&#34;top:toolbarbuttons&#34;}&#37;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ script:topictemplate
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;script:topictemplate&#34;}&#37;&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;js&#34;
+}&#37;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ createform
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;createform&#34;}&#37;&#37;TMPL:P{&#34;formstartstep&#34;}&#37;
+&#37;TMPL:P{&#34;topicnamestep&#34;}&#37;
+&#37;TMPL:P{&#34;topicparentstep&#34;}&#37;
+&#37;TMPL:P{&#34;topictemplatestep&#34;}&#37;
+&#37;TMPL:P{&#34;submitstep&#34;}&#37;
+&#37;TMPL:P{&#34;formendstep&#34;}&#37;
+&#37;TMPL:P{&#34;script:topictemplate&#34;}&#37;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ formstartstep
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;formstartstep&#34;}&#37;&#37;TMPL:P{&#34;formstart&#34;}&#37;&#60;div class&#61;&#34;foswikiFormSteps&#34;&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ formendstep
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;formendstep&#34;}&#37;&#60;/div&#62;&#37;TMPL:P{&#34;formend&#34;}&#37;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ topicnamestep
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;topicnamestep&#34;}&#37;&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+---+++ &#37;MAKETEXT{&#34;Topic name:&#34;}&#37;
+&#37;TMPL:P{&#34;topicname&#34;}&#37;
+&#37;TMPL:P{&#34;onlywikiname&#34;}&#37;
+&#60;/div&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ topicparentstep
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;topicparentstep&#34;}&#37;&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+---+++ &#37;MAKETEXT{&#34;Topic parent:&#34;}&#37;
+&#37;TMPL:P{&#34;topicparent&#34;}&#37;
+&#60;/div&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ topictemplatestep
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;topictemplatestep&#34;}&#37;&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+---+++ &#37;MAKETEXT{&#34;Use template:&#34;}&#37;
+&#37;TMPL:P{&#34;topictemplate&#34;}&#37;
+&#60;/div&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ submitstep
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;submitstep&#34;}&#37;&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+&#37;TMPL:P{&#34;submit&#34;}&#37;
+&#60;/div&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ formstart
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;formstart&#34;}&#37;#NewTopic
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;formstart&#34;
+}&#37;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ topicname
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;topicname&#34;}&#37;&#60;p&#62;&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;topicname&#34;
+}&#37; &#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;topicnamefeedback&#34;
+}&#37;&#60;/p&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ topicparent
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;topicparent&#34;}&#37;&#60;p&#62;&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;topicparent&#34;
+}&#37;&#60;/p&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ topictemplate
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;topictemplate&#34;}&#37;&#60;p&#62;&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;templatetopic&#34;
+}&#37;&#60;/p&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ errorfeedback
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;errorfeedback&#34;}&#37;&#60;p&#62;&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;errorfeedback&#34;
+}&#37;&#60;/p&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ submit
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;submit&#34;}&#37;&#37;TMPL:P{&#34;errorfeedback&#34;}&#37;
+&#60;p&#62;&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;submit&#34;
+}&#37;&#60;/p&#62;&#37;TMPL:END&#37;&#37;{
+---------------------------------------------------
+ formend
+---------------------------------------------------
+}&#37;&#37;TMPL:DEF{&#34;formend&#34;}&#37;&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.WebCreateNewTopicComponents&#34;
+    section&#61;&#34;formend&#34;
+}&#37;&#37;TMPL:END&#37;&#37;{
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+</pre>}%
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

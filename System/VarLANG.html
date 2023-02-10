@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarLANG &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/VarLANG/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/VarLANG/favicon.ico" type="image/x-icon">
+<link title="edit VarLANG" rel="alternate" href="VarLANG.html" type="application/x-wiki">
+<meta name="description" content="VarLANG" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "VarLANG",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="LANG_45_45_the_language_specified_by_the_server_locale">  LANG -- the language specified by the server locale </h1>
+This macro is used to generate the <code>lang</code> (and <code>xml:lang</code>) attribute in generated HTML pages. If <code>{UseLocale}</code> is enabled, it is calculated from the <a href="../.html">configure Internationalization tab -&gt; Locale sub-tab</a> setting of <code>{Site}{Locale}</code>. Otherwise it defaults to <code>en</code> (English). <ul>
+<li> In templates the <code>lang</code> attribute is defined like this:   <pre>&#60;html xmlns&#61;&#34;http://www.w3.org/1999/xhtml&#34; xml:lang&#61;&#34;&#37;LANG&#37;&#34; lang&#61;&#34;&#37;LANG&#37;&#34;&#62;</pre>
+</li> <li> Do not confuse <code>LANG</code> with <a href="VarLANGUAGE.html">LANGUAGE</a>
+</li></ul> 
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%LANG%</code> expands to <code>en</code> 
+</li></ul> 
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

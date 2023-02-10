@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryCodingStandards &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQueryCodingStandards/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryCodingStandards/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" href="JQueryCodingStandards.html" rel="alternate" title="edit JQueryCodingStandards">
+<meta name="description" content="JQueryCodingStandards" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryCodingStandards",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryCodingStandards">  <a href="JQueryCodingStandards.html" class="foswikiCurrentTopicLink">JQueryCodingStandards</a> </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Wrap_61_36_61"> Wrap $ </a>
+</li> <li> <a href="#Shorthands"> Shorthands </a>
+</li> <li> <a href="#Global_variables"> Global variables </a>
+</li> <li> <a href="#Propagating_perl_settings_to_javascript"> Propagating perl settings to javascript </a>
+</li> <li> <a href="#Avoid_Internet_Explorer_errors"> Avoid Internet Explorer errors </a>
+</li> <li> <a href="#Metadata"> Metadata </a>
+</li> <li> <a href="#LiveQuery"> LiveQuery </a>
+</li></ul> 
+</div>
+<p></p>
+<!---->
+<p></p>
+Follow <a href="http://drupal.org/node/172169">Drupal&#8217;s JavaScript coding standards</a>
+<p></p>
+See also <a title="'Development/UsingJQueryWithFoswiki' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Development/UsingJQueryWithFoswiki"><noautolink>Foswiki:Development/UsingJQueryWithFoswiki</noautolink></a> for more information, tips and tricks.
+<p></p>
+<h2 id="Wrap_61_36_61">  Wrap <code>$</code> </h2>
+<p></p>
+When writing a jQuery plugin, if you want to use the jQuery <code>$</code> variable, you have to wrap
+your code like this:
+<p></p>
+<pre class="js">
+(function(&#36;) {
+
+  // code using &#36; variable
+
+})(jQuery);
+</pre>
+<p></p>
+If you fail to wrap your code, you will end up with <code>$</code> being reported as an undefined
+variable, or even some other more obscure and hard to debug error if other libraries
+are also loaded.
+<p></p>
+JQueryPlugin itself does not use the <code>$</code> variable, so will not conflict
+with other javascript libraries that may be loaded.
+<p></p>
+Scripts that use <code>$</code> that are pasted by users into topics (inside <code>&lt;script&gt;</code> tags)
+will work as written, so long as the plugin configuration setting <code>{JQueryPlugin}{NoConflict}</code>
+is set to 0 (the default). If it is set to 1, scripts using <code>$</code> that are pasted into topics will
+have to be wrapped as described here.
+<p></p>
+We recommend that scripts using <code>$</code> are <em>always</em> wrapped.
+<p></p>
+<h2 id="Shorthands">  Shorthands </h2>
+Use the jQuery shorthand <code>$</code> where possible:
+<p></p>
+<pre class="js">
+&#36;(function() { ... });
+</pre>
+<p></p>
+instead of 
+<p></p>
+<pre class="js">
+&#36;(document).ready(function() { ... });
+</pre>
+<p></p>
+<h2 id="Global_variables">  Global variables </h2>
+<p></p>
+If you want to use global variables within the scope of your code, wrap your code like this:
+<p></p>
+<pre class="js">
+(function() {
+
+  var foo &#61; &#39;bar&#39;; // yay, it&#39;s almost like I&#39;m global
+
+})();
+</pre>
+<p></p>
+If you want to use global variables in the global scope, put the variable in the <code>foswiki</code> namespace:
+<p></p>
+<pre class="js">
+foswiki.foo &#61; &#39;bar&#39;;
+</pre>
+<p></p>
+Mind the predefined global variables. See next section.
+<p></p>
+<h2 id="Propagating_perl_settings_to_javascript">  Propagating perl settings to javascript </h2>
+<p></p>
+The standard foswiki library initializes the global <code>foswiki</code> object with
+a subset of preference settings from foswiki, <code>SCRIPTURLPATH</code>, <code>SCRIPTSUFFIX</code>, and <code>PUBURLPATH</code>. These are sufficient to call scripts on the server and build attachment URLs. They are accessed using the <code>foswiki.getPreference</code> method:
+<pre>
+var pubUrlPath &#61; foswiki.getPreference(&#39;PUBURLPATH&#39;);
+</pre>
+<p></p>
+In addition, the JQuery <code>foswiki</code> plugin adds the macros specified by the
+global <code>EXPORTEDPREFERENCES</code> preference (currently PUBURL, PUBURLPATH, SCRIPTSUFFIX, SCRIPTURL, SCRIPTURLPATH, SERVERTIME, SKIN, SYSTEMWEB, TOPIC, USERNAME, USERSWEB, WEB, WIKINAME, WIKIUSERNAME, NAMEFILTER).
+<p></p>
+<h2 id="Avoid_Internet_Explorer_errors">  Avoid Internet Explorer errors </h2>
+<p></p> <ul>
+<li> Use an object if you need an associative array, not an array. <a href="http://ajaxian.com/archives/javascript-associative-arrays-considered-harmful"> [source&#93; </a>
+</li> <li> Declare all local variables with <code>var</code> before they are used.
+</li> <li> Remove trailing commas from array and object definitions, i.e.:     <pre class="js">var object &#61; { foo: &#39;bar&#39; }</pre> not      <pre class="js">var object &#61; { foo: &#39;bar&#39;, }</pre>
+</li></ul> 
+<p></p>
+<h2 id="Metadata">  Metadata </h2>
+<p></p>
+Use <a href="JQueryMetadata.html">JQueryMetadata</a> to integrate jQuery plugins into Foswiki.
+<p></p>
+<h2 id="LiveQuery"> LiveQuery </h2>
+<p></p>
+Normally when using jQuery you initialise plugins on HTML elements in a <code>$(document).ready()</code> call,
+using the jQuery <code>each</code> method to iterate over elements matching a selector. This works fine so long
+as all HTML elements are loaded when the page is loaded. Any elements that are loaded later - for
+example, as the result of an AJAX call, won't be initialised. In this case, you should use
+<a href="JQueryLiveQuery.html">JQueryLiveQuery</a>, which will take care of initialising dynamically loaded elements automatically.
+<p></p>
+Instead of:
+<p></p>
+<pre class="js">
+&#36;(&#34;.jqPluginName&#34;).each(function() {
+  // initializer
+});
+</pre>
+<p></p>
+use
+<p></p>
+<pre class="js">
+&#36;(&#34;.jqPluginName&#34;).livequery(function() {
+  // initializer
+});
+</pre>
+<p></p>
+Bear in mind that a page containing your script might end up being loaded <em>by another page</em> using a dynamic AJAX request. So ideally, you would use <code>livequery</code> on <strong>all</strong> elements all of the time. However be warned that <code>livequery</code> can be very slow on very large pages, especially on internet explorer.
+<p></p>
+See <a href="JQueryMetadata.html">JQueryMetadata</a> for a more thorough example of using metadata and livequery
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

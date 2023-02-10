@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryMasonry &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryMasonry/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/JQueryMasonry/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit JQueryMasonry" rel="alternate" href="JQueryMasonry.html">
+<meta name="description" content="JQueryMasonry" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "JQueryMasonry",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/imagesloaded/imagesloaded.js?version=4.1.4" class="script JQUERYPLUGIN::IMAGESLOADED"></script><!--JQUERYPLUGIN::IMAGESLOADED-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::MASONRY" src="JQueryPlugin.attachments/plugins/masonry/jquery.masonry.js?version=4.2.2"></script><!--JQUERYPLUGIN::MASONRY-->
+</head>
+<body>
+<h1 id="JQueryMasonry">  <a class="foswikiCurrentTopicLink" href="JQueryMasonry.html">JQueryMasonry</a> </h1>
+<p></p>
+    Homepage: <a href="https://masonry.desandro.com/">https://masonry.desandro.com</a> <br />
+    Author(s): David DeSandro <br />
+    Version: 4.2.2
+<p></p>
+<p></p>
+<p></p>
+Masonry is a JavaScript grid layout library. It works by placing elements in optimal 
+position based on available vertical space, sort of like a mason fitting stones in a wall. 
+You've probably seen it in use all over the Internet.
+<p></p>
+<p></p>
+<h2 id="Screenshot">  Screenshot </h2>
+<p></p>
+<img width="547" alt="jQuery-Masonry.jpg" height="351" src="JQueryMasonry.attachments/jQuery-Masonry.jpg">
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<h3 id="JavaScript_API"> JavaScript API </h3>
+<p></p>
+Configuring Masonry is fairly easy. Simply attach the <code>.masonry()</code> method 
+to the wrapping container element in your jQuery script. Depending on the layout,
+you&#8217;ll most likely need to specify one option.
+<p></p>
+For layouts with elements that span multiple widths:
+<p></p>
+<pre class="js">
+&#36;(&#39;#wrapper&#39;).masonry({ columnWidth: 200 });
+</pre>
+<p></p>
+<h3 id="Foswiki_integration">  Foswiki integration </h3>
+<p></p>
+All containers classified as <code>jqMasonry</code> will be processed by this plugin. Options can be specified
+using HTML5 data attributes.
+<p></p>
+<pre class="tml">
+&#60;div class&#61;&#34;jqMasonry&#34; data-item-selector&#61;&#34;.grid-item&#34;&#62;
+   &#60;div class&#61;&#34;grid-item&#34;&#62;...&#60;/div&#62;
+   &#60;div class&#61;&#34;grid-item&#34;&#62;...&#60;/div&#62;
+   &#60;div class&#61;&#34;grid-item&#34;&#62;...&#60;/div&#62;
+...
+&#60;/div&#62;
+</pre>
+<p></p>
+<h2 id="Options">  Options </h2>
+<p></p>
+All options are optional, but columnWidth and itemSelector are recommended.
+<p></p> <ul>
+<li> <code>columnWidth: 240</code> <br />     Width of a column of your grid, specified as an integer, an element selector, or a dom node.     default: outer width of the first element of the grid
+</li> <li> <code>itemSelector: '.grid-item'</code> <br />     selector to specify which elements inside     the wrapping element will be rearranged.
+</li> <li> <code>gutter: 0</code> <br />     Adds horizontal between item elements (to set vertical space between elements use css margin), specified as an integer or an element selector
+</li> <li> <code>percentPosition: false</code> <br />     if set to <code>true</code> integer values in <code>columnWidth</code> and <code>gutter</code> will be in percentage instead of in pixel
+</li> <li> <code>stamp: 'item selector'</code> <br />     Specifies which elements are stamped within the layout. Masonry will layout items below stamped elements.
+</li> <li> <code>isFitWidth: false</code> <br />     If enabled, Masonry will size the width of the container to the nearest column.      When enabled, Masonry will measure the width of the container's parent element,      not the width of the container. This option is ideal for centering Masonry layouts.
+</li> <li> <code>isOriginLeft: true</code> <br />     Controls the horizontal flow of the layout. By default, item elements start positioning at the left, with <code>isOriginLeft: true</code>. Set <code>isOriginLeft: false</code> for right-to-left layouts.
+</li> <li> <code>isOriginTop: true</code> <br />     Controls the vertical flow of the layout. By default, item elements start positioning at the top, with <code>isOriginTop: true</code>. Set <code>isOriginTop: false</code> for bottom-up layouts. It's like Tetris!
+</li> <li> <code>containerStyle: {position:relative}</code> <br />     CSS styles that are applied to the container element, set to <code>null</code> to disable any css
+</li> <li> <code>transitionDuration: '0.4s'</code>     Duration of the transition when items change position or appearance, set in a CSS time format.
+</li> <li> <code>isResizeBound: true</code> <br />     Adjusts sizes and positions when window is resized.
+</li> <li> <code>isInitLayout: true</code> <br />     Set isInitLayout: false to disable layout on initialization, so you can use methods or add events before the initial layout.
+</li></ul> 
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+See more demos at <a href="http://masonry.desandro.com/">http://masonry.desandro.com/</a>
+<p></p>
+<div class="jqMasonry" data-percent-position="true" data-gutter="2" data-column-width="23">
+  <div class="box">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+    Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna
+    nibh, viverra non, semper suscipit, posuere a, pede.
+  </div>
+  <div class="box">
+     Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris
+     sit amet orci.
+  </div>
+  <div class="box">
+    Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper
+    vehicula
+  </div>
+  <div class="box">
+    Sit amet mi ullamcorper vehicula
+  </div>
+  <div class="box">
+    adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque
+    mauris ut lectus.
+  </div>
+  <div class="box">
+    Sit amet mi ullamcorper vehicula
+  </div>
+  <div class="box">
+    Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+  </div>
+  <div class="box">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+    Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna
+    nibh, viverra non, semper suscipit, posuere a, pede.
+  </div>
+  <div class="box">
+     Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris
+     sit amet orci.
+  </div>
+  <div class="box">
+    Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper
+    vehicula
+  </div>
+  <div class="box">
+    Sit amet mi ullamcorper vehicula
+  </div>
+  <div class="box">
+    adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque
+    mauris ut lectus.
+  </div>
+  <div class="box">
+    Sit amet mi ullamcorper vehicula
+  </div>
+  <div class="box">
+    Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.
+  </div>
+</div>
+<p></p>
+
+<style>
+.box {
+   margin-bottom:1em;
+   padding: 0.5em;
+   box-sizing:border-box;
+   width:23%;
+   background: #D8D5D2;
+   -moz-border-radius: 0.5em;
+   -webkit-border-radius: 0.5em;
+   border-radius: 0.5em;
+}
+</style>
+
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

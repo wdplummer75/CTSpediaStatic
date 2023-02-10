@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FAQRebuildingWikiUsersTopic &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/FAQRebuildingWikiUsersTopic/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/FAQRebuildingWikiUsersTopic/favicon.ico">
+<link href="FAQRebuildingWikiUsersTopic.html" rel="alternate" title="edit FAQRebuildingWikiUsersTopic" type="application/x-wiki">
+<meta name="description" content="FAQRebuildingWikiUsersTopic" />
+<link type="text/css" media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="TwistyPlugin.attachments/twisty.css?version=1.6.0"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "FAQRebuildingWikiUsersTopic",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<div class="foswikiHelp"><img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!"> Under normal circumstances, there should be no need to rebuild your <a href="../Main/WikiUsers.html">WikiUsers</a> topic.</div>
+<p></p>
+Sometimes, the <a href="../Main/WikiUsers.html">WikiUsers</a> topic maintained by <a href="TopicUserMappingContrib.html">TopicUserMappingContrib</a> may not reflect the true list of users registered on your Foswiki installation. This most commonly happens when: <ul>
+<li> You deleted or renamed users and forgot to edit the <a href="../Main/WikiUsers.html">WikiUsers</a> topic, or
+</li> <li> You migrated a TWiki installation and accumulated new registrations on the new <a href="../Main/WikiUsers.html">WikiUsers</a> topic before you had a chance to initialise it with the old list from the old TWikiUsers topic.
+</li></ul> 
+<p></p>
+Assuming your wiki is configured to use <a href="TopicUserMappingContrib.html">TopicUserMappingContrib</a>, the script below should refresh your <a href="../Main/WikiUsers.html">WikiUsers</a> topic with an accurate list of users. It uses the <a href="VarUSERINFO.html">USERINFO</a> macro, which protects user information from ordinary users - so this topic needs to be viewed with <a href="AccessControl.html">admin privileges</a> in order for it to be useful.
+<p></p>
+Usage Notes: <ul>
+<li> The data is populated by searching for topics in Main containing a <a href="UserForm.html">UserForm</a>.
+</li> <li> "User Topics" that are unknown to the password manager will be added, appearing as a line with the WikiName but no username.  These lines can be deleted. <ul>
+<li> Ex: <code>BadRegistration - - 02 Mar 2012 - 23:50</code>
+</li></ul> 
+</li> <li> There must not be any embedded blank lines in the list.  The Mapper will detect the first blank line as the end of the list, adding entries after that line.
+</li></ul> 
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemFAQRebuildingWikiUsersTopic2895show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Show code...</span></a></span><span id="twistyIdSystemFAQRebuildingWikiUsersTopic2895hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a class="" href=".."><span class="foswikiLinkLabel foswikiUnvisited">Close</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemFAQRebuildingWikiUsersTopic2895toggle" style="" class="twistyContent twistyInited">
+<!---->
+<pre class="tml">
+&#37;STARTSECTION{&#34;WIKIUSERS&#34;}&#37;
+&#37;FORMAT{&#34;A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z&#34; 
+    type&#61;&#34;string&#34; 
+    format&#61;&#34;   &#42; &#36;item - &#38;lt;a name&#61;&#39;&#36;item&#39;&#38;gt;- - - -&#38;lt;/a&#38;gt; &#36;percentINCLUDE{
+        \&#34;&#37;TOPIC&#37;\&#34;
+        section&#61;\&#34;USERS\&#34;
+        letter&#61;\&#34;&#36;item\&#34;
+    }&#36;percent&#34; 
+}&#37; 
+&#37;ENDSECTION{&#34;WIKIUSERS&#34;}&#37;
+
+&#37;STARTSECTION{&#34;USERS&#34;}&#37;&#37;SEARCH{
+    &#34;name&#61;~&#39;^&#37;letter&#37;.&#42;&#39; AND (form.name~&#39;&#42;UserForm&#39;)&#34;
+    type&#61;&#34;query&#34;
+    web&#61;&#34;&#37;USERSWEB&#37;&#34;
+    nonoise&#61;&#34;on&#34;
+    separator&#61;&#34;&#36;n&#34;
+    header&#61;&#34;&#36;n&#34;
+    format&#61;&#34;   &#42; &#36;topic - &#36;percentUSERINFO{
+        \&#34;&#36;topic\&#34;
+        format&#61;\&#34;&#36;dollarusername\&#34;
+    }&#36;percent - &#36;createdate&#34;
+}&#37;&#37;ENDSECTION{&#34;USERS&#34;}&#37; 
+</pre>
+<p></p>
+</div></div>
+<p></p>
+<p></p>
+<form action="/foswiki/bin/save/Main/WikiUsers" method="post">
+<textarea name="text" rows="20" cols="80">
+
+---+ List of Foswiki users
+
+Below is a list of users with accounts. If you want to edit topics or see protected areas of the site then you can get added to the list by registering: fill out the form in System.UserRegistration. 
+
+If you forget your password, System.ResetPassword will get a new one sent to you.
+
+
+
+----
+#ListStart
+[[#A][A]] [[#B][B]] [[#C][C]] [[#D][D]] [[#E][E]] [[#F][F]] [[#G][G]] [[#H][H]] [[#I][I]] [[#J][J]] [[#K][K]] [[#L][L]] [[#M][M]] [[#N][N]] [[#O][O]] [[#P][P]] [[#Q][Q]] [[#R][R]] [[#S][S]] [[#T][T]] [[#U][U]] [[#V][V]] [[#W][W]] [[#X][X]] [[#Y][Y]] [[#Z][Z]]
+
+
+   * A - &lt;a name='A'&gt;- - - -&lt;/a&gt; 
+   * B - &lt;a name='B'&gt;- - - -&lt;/a&gt; 
+   * C - &lt;a name='C'&gt;- - - -&lt;/a&gt; 
+   * D - &lt;a name='D'&gt;- - - -&lt;/a&gt; 
+   * DalePlummer - DalePlummer - 07 Sep 2022 - 19:41
+   * E - &lt;a name='E'&gt;- - - -&lt;/a&gt; 
+   * F - &lt;a name='F'&gt;- - - -&lt;/a&gt; 
+   * G - &lt;a name='G'&gt;- - - -&lt;/a&gt; 
+   * H - &lt;a name='H'&gt;- - - -&lt;/a&gt; 
+   * I - &lt;a name='I'&gt;- - - -&lt;/a&gt; 
+   * J - &lt;a name='J'&gt;- - - -&lt;/a&gt; 
+   * K - &lt;a name='K'&gt;- - - -&lt;/a&gt; 
+   * L - &lt;a name='L'&gt;- - - -&lt;/a&gt; 
+   * M - &lt;a name='M'&gt;- - - -&lt;/a&gt; 
+   * N - &lt;a name='N'&gt;- - - -&lt;/a&gt; 
+   * O - &lt;a name='O'&gt;- - - -&lt;/a&gt; 
+   * P - &lt;a name='P'&gt;- - - -&lt;/a&gt; 
+   * Q - &lt;a name='Q'&gt;- - - -&lt;/a&gt; 
+   * R - &lt;a name='R'&gt;- - - -&lt;/a&gt; 
+   * S - &lt;a name='S'&gt;- - - -&lt;/a&gt; 
+   * T - &lt;a name='T'&gt;- - - -&lt;/a&gt; 
+   * TestUserUnpriv - TestUserUnpriv - 14 Jan 2022 - 21:25
+   * U - &lt;a name='U'&gt;- - - -&lt;/a&gt; 
+   * V - &lt;a name='V'&gt;- - - -&lt;/a&gt; 
+   * W - &lt;a name='W'&gt;- - - -&lt;/a&gt; 
+   * WikiAdmin - WikiAdmin - 11 Jan 2022 - 20:07
+   * X - &lt;a name='X'&gt;- - - -&lt;/a&gt; 
+   * Y - &lt;a name='Y'&gt;- - - -&lt;/a&gt; 
+   * Z - &lt;a name='Z'&gt;- - - -&lt;/a&gt;  
+
+<div class="foswikiHelp">
+<img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> There are four default system users:
+   * *ProjectContributor* - placeholder for a Foswiki developer, and is used in documentation
+   * *WikiGuest* - guest user, used as a fallback if the user can't be identified
+   * *RegistrationAgent* - special user used during the new user registration process
+   * *UnknownUser* - used where the author of a previously stored piece of data can't be determined
+</div>
+---
+*Access Control:*
+   * Set ALLOWTOPICCHANGE = RegistrationAgent
+
+</textarea>
+<p></p>
+<input type="submit" value="Update Main.WikiUsers"/> </form>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

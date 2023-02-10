@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarUSERINFO &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarUSERINFO/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE System/VarUSERINFO/favicon.ico" type="image/x-icon">
+<link href="VarUSERINFO.html" rel="alternate" title="edit VarUSERINFO" type="application/x-wiki">
+<meta name="description" content="VarUSERINFO" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarUSERINFO",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="USERINFO_45_45_retrieve_details_about_a_user">  USERINFO -- retrieve details about a user </h1>
+<h2 id="Parameters">  Parameters </h2>
+      <table class="foswikiTable" rules="none">   
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Parameter</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description</a> </th>
+		</tr>
+	</thead>   
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"name"</code> </td>
+			<td class="foswikiTableCol1"> <a href="WikiName.html">WikiName</a> or <a href="UserName.html">login username</a>. May be a group. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> current user </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>format</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Format string; see below for supported formatting tokens. </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>$username, $wikiusername, $emails</code> </td>
+		</tr>
+	</tbody>   </table>
+Format tokens that can be used in <code>format</code>:
+          <table class="foswikiTable" rules="none">   
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Token</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Description</a> </th>
+		</tr>
+	</thead>   
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$emails</code> (*) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Comma separated list of email addresses known to the user mapper (this would normally be <a href="TopicUserMappingContrib.html">TopicUserMappingContrib</a>). If expanding for a group, then this will be the email addresses of all members. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$username</code> (*) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="UserName.html">Login username</a>. If expanding for a group, this should expand as <code>unknown</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$wikiname</code>, <code>$wikiusername</code> </td>
+			<td class="foswikiTableCol1"> The user's <code>WikiName</code> and <code>Main.WikiName</code>, respectively </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$groups</code> (*) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Comma separated list of group membership. Currently only expands for users </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>$isadmin</code> (*) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Has admin privileges (expands to <code>true</code> or <code>false</code>) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>$isgroup</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Is a group (expands to <code>true</code> or <code>false</code>) </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody>   </table>
+<img alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> Tokens flagged '(*)' are considered private and are hidden from other users by default.<br />
+The <a href="FormatTokens.html">standard format tokens</a> are also supported.
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%USERINFO{"name" format="..."}%</code> expands to <code>WikiAdmin, Main.WikiAdmin, dale.plummer@vumc.org</code> (lists <code>$username, $wikiusername, $emails</code>)
+</li></ul> 
+With formatted output, using tokens:
+         <pre class="tml">&#37;USERINFO{ format&#61;&#34;&#36;username is really &#36;wikiname&#34; }&#37;</pre>
+         Expands to: <code>WikiAdmin is really WikiAdmin</code>
+<p></p>
+Retrieve information about another user. You can use either a wikiname or a username to identify the user. You can only see the restricted information about another user if you are an admin, or the <code>{AntiSpam}{HideUserDetails}</code> configuration option is not enabled.  <em>(User details are hidden on this site)</em> :
+         <pre class="tml">&#37;USERINFO{ &#34;WikiGuest&#34; format&#61;&#34;&#36;username is really &#36;wikiname&#34; }&#37;</pre>
+         Expands to: <code>guest is really WikiGuest</code>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarUSERNAME.html">USERNAME</a>, <a href="VarWIKINAME.html">WIKINAME</a>, <a href="VarWIKIUSERNAME.html">WIKIUSERNAME</a>, <a href="VarGROUPINFO.html">GROUPINFO</a>, <a href="UserAuthentication.html">UserAuthentication</a>, <a href="ChangeEmailAddress.html">ChangeEmailAddress</a>
+<!---->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

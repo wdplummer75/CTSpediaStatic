@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PatternSkinThemeFatWillyNavigation &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/PatternSkinThemeFatWillyNavigation/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/PatternSkinThemeFatWillyNavigation/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit PatternSkinThemeFatWillyNavigation" href="PatternSkinThemeFatWillyNavigation.html" rel="alternate">
+<meta name="description" content="PatternSkinThemeFatWillyNavigation" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PatternSkinThemeFatWillyNavigation",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="PatternSkin_theme:_Foswiki_34Fat_Willy_34_Site_Skin_45_Navigation"> PatternSkin theme: Foswiki "Fat Willy" Site Skin - Navigation </h1>
+<p></p>
+Include main navigation with:
+<pre class="tml">
+&#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.PatternSkinThemeFatWillyNavigation&#34; section&#61;&#34;main&#34;}&#37;
+</pre>
+This is done automatically in the templates by setting in the <a href="../Main/SitePreferences.html">SitePreferences</a>: <ul>
+<li> #Set PATTERNSKIN_NAVIGATION_TOPIC = <a href="PatternSkinThemeFatWillyNavigation.html" class="foswikiCurrentTopicLink">PatternSkinThemeFatWillyNavigation</a>
+</li></ul> 
+<p></p>
+Include meta navigation with:
+<pre class="tml">
+&#37;INCLUDE{&#34;PatternSkinThemeFatWillyNavigation&#34; section&#61;&#34;meta&#34;}&#37;
+</pre>
+<p></p>
+<p></p>
+<h2 id="Include_sections">  Include sections </h2>
+<pre class="tml">
+&#37;STARTSECTION{&#34;main&#34;}&#37;&#60;div id&#61;&#34;patternTopBarButtons&#34; class&#61;&#34;clear&#34;&#62;&#60;ul&#62;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;About&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;About&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;Blog&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Blog&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;Extensions&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Extensions&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;&#37;SYSTEMWEB&#37;&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Documentation&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;Community&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Community&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;Development&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Development&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;Tasks&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Tasks&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;Download&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Download&#34;
+}&#37;
+&#37;INCLUDE{
+    &#34;&#37;SYSTEMWEB&#37;.PatternSkinNavigation&#34; section&#61;&#34;topbarbutton&#34;
+    ID&#61;&#34;&#34; DESTWEB&#61;&#34;Support&#34; DESTTOPIC&#61;&#34;&#37;HOMETOPIC&#37;&#34; LABEL&#61;&#34;Support&#34;
+}&#37;
+&#60;/ul&#62;&#60;/div&#62;&#37;ENDSECTION{&#34;main&#34;}&#37;
+
+
+&#37;STARTSECTION{&#34;meta&#34;}&#37;&#60;div id&#61;&#34;foswikisiteUserBar&#34;&#62;&#60;ul&#62;&#37;IF{
+    &#34;context authenticated&#34;
+    then&#61;&#39;&#60;li&#62;&#37;MAKETEXT{
+        &#34;Hello &#91;&#95;1&#93;&#34;
+        args&#61;&#34;&#91;&#91;&#37;WIKIUSERNAME&#37;&#93;&#91;&#37;SPACEOUT{&#37;WIKINAME&#37;}&#37;&#93;&#93;&#34;
+    }&#37;&#60;/li&#62;&#39;
+}&#37;&#37;IF{
+    &#34;&#36; LOGOUT !&#61; &#39;&#39;&#34;
+    then&#61;&#39;&#60;li&#62;&#37;LOGOUT&#37;&#60;/li&#62;&#39;
+}&#37;&#37;IF{
+    &#34;&#36; LOGIN !&#61; &#39;&#39; and not context authenticated&#34;
+    then&#61;&#39;&#60;li&#62;Hello &#91;&#91;&#37;WIKIUSERNAME&#37;&#93;&#91;&#37;WIKINAME&#37;&#93;&#93;&#60;/li&#62;
+        &#60;li&#62;&#37;LOGIN&#37; &#37;IF{
+            &#34;context registration&#95;supported AND context registration&#95;enabled&#34;
+            then&#61;&#34;&#37;MAKETEXT{&#34;or&#34;}&#37; &#91;&#91;&#37;SYSTEMWEB&#37;.UserRegistration&#93;&#91;&#37;MAKETEXT{&#34;Register&#34;}&#37;&#93;&#93;&#34;
+        }&#37;&#60;/li&#62;&#39;
+}&#37;&#60;li&#62;&#91;&#91;&#37;USERSWEB&#37;.&#37;WIKIUSERSTOPIC&#37;&#93;&#91;Users&#93;&#93;&#60;/li&#62;&#60;/ul&#62;&#60;/div&#62;&#37;ENDSECTION{&#34;meta&#34;}&#37;
+</pre>
+<!--  -->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,1 @@
+jQuery((function(t){t(".jqFocus, .foswikiFocus").livequery((function(){var i=t(this),o=t.extend({},{timeout:100},i.data());window.setTimeout((function(){try{i.trigger("focus")}catch(t){}}),o.timeout)}))}));

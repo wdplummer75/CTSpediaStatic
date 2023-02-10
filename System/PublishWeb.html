@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PublishWeb &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/PublishWeb/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/PublishWeb/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="PublishWeb.html" title="edit PublishWeb">
+<meta name="description" content="PublishWeb" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "PublishWeb",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+This is a template topic for use with <a href="PublishPlugin.html">PublishPlugin</a>. It illustrates how
+to set up a topic in a web to simplify publishing.
+<p></p>
+To use it, take a copy of the raw text of this topic, and paste it into a new topic in your own web.
+<p></p>
+<h1 id="Publish_topics">  Publish topics </h1>
+Each of the options below provides a value for a corresponding URL parameter. For example, setting PUBLISH_INCLUSIONS will define the <code>inclusions</code> parameter. See <a href="PublishPlugin.html">PublishPlugin</a> for a full description of the URL parameters. Note that not all parameters can be controlled from this file, just the ones listed below.
+<p></p> <ul>
+<li> Set PUBLISH_WEB = System
+</li> <li> Set PUBLISH_TOPICLIST =
+</li> <li> Set PUBLISH_INCLUSIONS = *
+</li> <li> Set PUBLISH_EXCLUSIONS = Web*,Publish*
+</li> <li> Set PUBLISH_VERSIONS =    
+</li> <li> Set PUBLISH_TOPICSEARCH =
+</li> <li> Set PUBLISH_ENABLEPLUGINS =
+</li> <li> Set PUBLISH_FORMAT = file
+</li> <li> Set PUBLISH_PUBLISHSKIN = basic_publish
+</li> <li> Set PUBLISH_HISTORY =
+</li> <li> Set PUBLISH_RELATIVEDIR =
+</li> <li> Set PUBLISH_EXTRAS =
+</li> <li> Set TEMPLATES =
+</li></ul> 
+<p></p>
+<form method="POST" name="rename" action="/foswiki/bin/rest/PublishPlugin/publish">
+<input type="hidden" name="topic" value="System.PublishWeb" />
+<input type="hidden" name="configtopic" value="System.PublishWeb" />
+<input type="hidden" name="ping" value="08 Feb 2023 - 15:51" />
+<input type="submit" class="foswikiSubmit" value="Publish using this topic" />
+</form>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

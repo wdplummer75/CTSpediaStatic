@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>UserForm &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/UserForm/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/UserForm/favicon.ico" type="image/x-icon">
+<link title="edit UserForm" rel="alternate" href="UserForm.html" type="application/x-wiki">
+<meta name="description" content="UserForm" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "UserForm",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="User_Form">  User Form </h1>
+<p></p>
+This is a maintenance topic, used by the Wiki administrator.
+<p></p>
+<h2 id="Data_form_definition_of_user_topics">  Data form definition of user topics </h2>
+Before changing this form, please read the guidelines at <a href="#CustomForm" class="foswikiCurrentTopicLink">Customizing the User Form</a> below.
+<p></p>
+<p></p>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Name</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Type</a> </th>
+			<th class="foswikiTableCol2"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Size</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Values</a> </th>
+			<th class="foswikiTableCol4"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Tooltip message</a> </th>
+			<th class="foswikiTableCol5 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Attributes</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> FirstName </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> LastName </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> OrganisationName </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> OrganisationURL </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Profession </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="CountryList.html">Country</a> </td>
+			<td class="foswikiTableCol1"> select </td>
+			<td class="foswikiTableCol2"> 1 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> State </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Address </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Location </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Telephone </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> VoIP </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> InstantMessaging (IM) </td>
+			<td class="foswikiTableCol1"> textarea </td>
+			<td class="foswikiTableCol2"> 50x4 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> (One account per line, if several) </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Email </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HomePage </td>
+			<td class="foswikiTableCol1"> text </td>
+			<td class="foswikiTableCol2"> 40 </td>
+			<td class="foswikiTableCol3"> &nbsp; </td>
+			<td class="foswikiTableCol4"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Comment </td>
+			<td class="foswikiTableCol1 foswikiLast"> textarea </td>
+			<td class="foswikiTableCol2 foswikiLast"> 50x6 </td>
+			<td class="foswikiTableCol3 foswikiLast"> &nbsp; </td>
+			<td class="foswikiTableCol4 foswikiLast"> &nbsp; </td>
+			<td class="foswikiTableCol5 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+<span id="CustomForm"></span>
+<h2 id="Customizing_the_User_Form">  Customizing the User Form </h2>
+If you want to change the user form, you would first want to make a copy of this form to the Main Web. That ensures your changes stay intact after a Foswiki update.
+<p></p>
+To create a custom user form, do this: <ul>
+<li> <form action='http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/manage/System/' method='post'><input type='hidden' name='topic' value='Main.UserForm' ><input type='submit' class='foswikiButton' value='Create a copy for me now' /><input type='hidden' name='action' value='create' /><input type='hidden' name='onlynewtopic' value='on' /><input type='hidden' name='templatetopic' value='System.UserForm' /><input type='hidden' name='section' value='definition' /><input type='hidden' name='redirectto' value='System.UserForm#CustomForm' /><input type='hidden' name='nowysiwyg' value='1' /></form> <br />   <span class='foswikiGrayText'>you will return here after saving</span>
+</li></ul> 
+<p></p> <ul>
+<li> Or create a copy by hand: <ol>
+<li> Take a copy of this topic and save it to Main.UserForm
+</li> <li> When editing your new UserForm topic, change the entries in the data form definition. You may remove all explanation around the table.
+</li></ol> 
+</li></ul> 
+<p></p>
+<p></p>
+<p></p>
+<div class="foswikiHelp"><img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> Your form changes will only be visible in a user topic after it has been saved.
+<p></p>
+<img alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> Please keep the <a href="UserRegistration.html">UserRegistration</a> form and the user form definition in sync. When you update the user form you need to edit/save the <a href="NewUserTemplate.html">System.NewUserTemplate</a> (not recommended, see below). This ensures that the fields are in the right order.</div>
+<p></p>
+<span id="CreateNewUserForm"></span>
+<h3 id="A_form_for_new_users">  A form for new users </h3>
+If a new user registers, the new user page is prefilled with the contents of <a href="NewUserTemplate.html">System.NewUserTemplate</a>. That template also contains a user form, based on the form definition in <a class="foswikiCurrentTopicLink" href="UserForm.html">System.UserForm</a>.
+<p></p>
+If you use a custom user form, you ought to use a custom 'new user' template as well. This will make your changes safe to future Foswiki upgrades.
+<p></p>
+To create your custom new user template, do this: <ul>
+<li> <form action='http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/manage/System/' method='post'><input type='hidden' name='topic' value='Main.NewUserTemplate' ><input type='submit' class='foswikiButton' value='Create a copy for me now' /><input type='hidden' name='action' value='create' /><input type='hidden' name='onlynewtopic' value='on' /><input type='hidden' name='templatetopic' value='System.NewUserTemplate' /><input type='hidden' name='formtemplate' value='Main.UserForm' /><input type='hidden' name='redirectto' value='System.UserForm#CreateNewUserForm' /><input type='hidden' name='nowysiwyg' value='1' /></form> <br />   <span class='foswikiGrayText'>you will return here after saving</span>
+</li></ul> 
+<p></p> <ul>
+<li> Or create a copy by hand: <ol>
+<li> Take a copy of <a href="NewUserTemplate.html">System.NewUserTemplate</a> and save it to Main.NewUserTemplate
+</li> <li> Set the topic form to your custom Main.UserForm topic
+</li></ol> 
+</li></ul> 
+<p></p>
+<p></p>
+<hr />
+<strong>Related topics:</strong> <a href="../Main/WikiUsers.html">WikiUsers</a>, <a href="../Main/PatternSkinUserViewTemplate.html">PatternSkinUserViewTemplate</a>, <a href="NewUserTemplate.html">NewUserTemplate</a>, <a href="../Main/UserHomepageHeader.html">UserHomepageHeader</a>, <a href="DataForms.html">DataForms</a>, <a href="UserRegistration.html">UserRegistration</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

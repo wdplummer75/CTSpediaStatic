@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>AdminToggle &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/AdminToggle/favicon.ico"> <link href="../MISSING RESOURCE System/AdminToggle/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="AdminToggle.html" rel="alternate" title="edit AdminToggle" type="application/x-wiki">
+<meta name="description" content="AdminToggle" />
+<link type="text/css" media="all" rel="stylesheet" class="head JQUERYPLUGIN::BUTTON" href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::BUTTON" src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "AdminToggle",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Group_Member_Toggle">  Group Member Toggle </h1>
+<p></p>
+This topic implements a button that will turn Admin status on or off for the
+current user (WikiAdmin), by adding or removing the user from the
+AdminGroup.  This new function is recommended to replace <em>internal admin</em> login when
+possible.  It provides better security and allows changes to be tracked to the
+user making the change instead of the anonymous AdminUser.
+<p></p>
+<img alt="TIP" height="16" src="DocumentGraphics.attachments/tip.png" width="16" title="TIP"> This is actually a generic capability.  Any group membership can be toggled using this function.
+<p></p>
+<div class='foswikiHelp'>
+  <img title="TIP" width="16" src="DocumentGraphics.attachments/tip.png" alt="TIP" height="16"> Note: This feature is only usable if your User Mapper allows group membership to be modified from the Wiki.
+</div>
+<p></p>
+<h2 id="Configuration">  Configuration </h2> <ul>
+<li> Edit the settings for <a href="../Main/AdminGroup.html">AdminGroup</a> <ul>
+<li> Allow the users who are permitted to gain "Admin Rights" to modify the topic.
+</li> <li> Ex. <code>* ALLOWTOPICCHANGE = AdminGroup, JoeTheAdmin, AnotherAdmin</code>
+</li></ul> 
+</li> <li> Remove those users from the AdminGroup. They can add themselves using the below button.
+</li> <li> Notify the potential administrators that they can either use this topic, or <code>%INCLUDE{"AdminToggle"}%</code> in their custom sidebar topic, or somewhere else convenient.
+</li></ul> 
+<p></p>
+<h2 id="Operation">  Operation </h2>
+<p></p>
+<em>If you (WikiAdmin) has permission to change the <a href="../Main/AdminGroup.html">AdminGroup</a> topic,  a button to add or remove yourself from the AdminGroup will appear below:</em>
+Be sure that you have explicit CHANGE authority on the AdminGroup or removing yourself from the group will be permanent.
+<p></p>
+<p></p>
+<p></p>
+  <form name='delme' action='/foswiki/bin/manage/Main/AdminGroup' method='post'>
+    <input type='hidden' name='groupname' value='AdminGroup'/>
+    <input type='hidden' name='action' value='removeUserFromGroup'/>
+    <input type='hidden' name='redirectto' value='System.AdminToggle'/>
+    <input type='hidden' name='username' value='WikiAdmin' />
+    <a class="jqButton red jqSubmitButton" href=".."><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/delete.png)'></span><span class='jqButtonText'>Leave AdminGroup</span></a><input type='submit' style='display:none' />
+    <span class='foswikiClear'></span>
+  </form>
+<p></p>
+<p></p>
+<p></p>
+<h3 id="More_enhancements">  More enhancements </h3>
+<p></p>
+You can add this button to your custom sidebar for any group, by using the following include macro:
+<pre>
+&#37;INCLUDE{&#34;&#37;USERSWEB&#37;.GroupViewTemplate&#34; section&#61;&#34;manageself&#34; groupname&#61;&#34;AdminGroup&#34;}&#37;</pre>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

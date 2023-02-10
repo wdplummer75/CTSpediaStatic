@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>AutoViewTemplatePlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/AutoViewTemplatePlugin/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE System/AutoViewTemplatePlugin/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit AutoViewTemplatePlugin" href="AutoViewTemplatePlugin.html" rel="alternate">
+<meta name="description" content="AutoViewTemplatePlugin" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "AutoViewTemplatePlugin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="AutoViewTemplatePlugin"> AutoViewTemplatePlugin </h1>
+Automatically sets VIEW_TEMPLATE and EDIT_TEMPLATE
+<p></p>
+<h2 id="Description">  Description </h2>
+This plugin sets the VIEW_TEMPLATE and EDIT_TEMPLATE variables according to a
+corresponding form definition. So when you attach a new form to a topic, this
+plugin will enable the corresponding view/edit template automatically.  This
+comes in very handy for applications where users create new topics
+without the help of a topic creator wizard, e.g. creating a new topic for a yet
+non-existing WikiWord. Together with the appropriate application
+settings, this plugin will then assure that the data the user enters is handled
+appropriately during view and edit.
+<p></p>
+<div class="foswikiHelp"> <strong>Note:</strong> On Foswiki versions prior to Foswiki 2.1, Template names
+containing non-ASCII characters are silently ignored. This plugin will display
+a FLASHNOTE if the Form name results in an illegal template name.</div>
+<p></p>
+There are two modes on how the name of the template is derived: <ol>
+<li> <code>exist</code> (default) and
+</li> <li> <code>section</code>.
+</li></ol> 
+<p></p>
+<h3 id="Mode_34exist_34">  Mode "exist" </h3>
+A topic that has a <code>MyForm</code> WikiForm attached to it, will be displayed
+using the view template <code>MyView</code> and editted using the <code>MyEdit</code>
+if they exist. The template name is derived by stripping off the suffix
+<code>...Form</code> from the form name and appending <code>...View</code>. The Wiki engine will
+then use the template name <code>MyView</code> to search for the correct template along
+the template search path, for example using a topic <code>MyView</code>.
+<p></p>
+Examples:
+<p></p>
+You have a form called <code>PurchaseRequestForm</code>. The plugin will now search for 
+<code>PurchaseRequestViewTemplate</code>, and <code>PurchaseRequestEditTemplate</code>.
+<p></p>
+<h3 id="Mode_34section_34">  Mode "section" </h3>
+A topic with a <code>MyForm</code> will be displayed/editted using the template name
+stored in the named section <code>viewtemplate/edittemplate</code> . For example given the
+<code>MyForm</code> form definition topic contains a section <code>viewtemplate</code> whose only
+content is <code>MyOtherView</code>, then this will be used to view the topic. Likewise,
+the content of the <code>edittemplate</code> section in <code>MyForm</code> will read to find the
+edit template.
+<p></p>
+By default existing values for VIEW_TEMPLATE and EDIT_TEMPLATE have priority.
+You can change this behaviour in <code>configure</code> so that the form defined templates
+have priority.
+<p></p>
+Examples:
+<p></p>
+We have a form called <code>PurchaseRequestForm</code> which contains the usual table that defined the form fields.
+<p></p>
+We want this form to define that the topics are viewed with <code>ViewFormAtTopTemplate</code> and edited with <code>EditPurchaseRequestTemplate</code>.
+<p></p>
+Below this we place the two sections that defines the templates to be used. Note that you must omit the ...Template from the template names.
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;viewtemplate&#34;}&#37;ViewFormAtTopTemplate&#37;ENDSECTION{&#34;viewtemplate&#34;}&#37;
+
+&#37;STARTSECTION{&#34;edittemplate&#34;}&#37;EditPurchaseRequest&#37;ENDSECTION{&#34;edittemplate&#34;}&#37; 
+</pre>
+<p></p>
+<h2 id="Configuration_Settings">  Configuration Settings </h2>
+The following settings can be defined in configure
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Setting</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Description</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Default</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> {Plugins}{AutoViewTemplatePlugin}{Debug} </td>
+			<td class="foswikiTableCol1"> Turn on debugging by turning this on </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Default: On </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> {Plugins}{AutoViewTemplatePlugin}{Override} </td>
+			<td class="foswikiTableCol1"> Form defined templates override VIEW_TEMPLATE and EDIT_TEMPLATE settings </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> Default: Off </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> {Plugins}{AutoViewTemplatePlugin}{Mode} </td>
+			<td class="foswikiTableCol1 foswikiLast"> The mode the plugin uses for defining templates. <br /> <code>exist</code> for deriving the template name from the form name <br /> <code>section</code> for defining the template in a section of the form definition topic </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> Default: <code>exist</code> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions </h2>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<!-- <ul>
+<li> Set SHORTDESCRIPTION = Automatically sets VIEW_TEMPLATE and EDIT_TEMPLATE
+</li></ul> 
+<p></p>
+-->
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 8  Apr 2016: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.1.1. <a title="'Item14014' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14014"><noautolink>Foswikitask:Item14014</noautolink></a>: Template files not working in hierarchical webs. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 7  Dec 2015: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.1. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13554" title="'Item13554' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13554</noautolink></a>: Enable non-ascii template names. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Aug 2015: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13625" class="interwikiLink" title="'Item13625' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13625</noautolink></a>: <a class="foswikiCurrentTopicLink" href="AutoViewTemplatePlugin.html">AutoViewTemplatePlugin</a>: reports Invalid template name ( Warning: Can't find named section viewtemplate in topic...) when used in "section" mode and no section exists. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 24 Jul 2015: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0.1. <a title="'Item13554' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13554" class="interwikiLink"><noautolink>Foswikitask:Item13554</noautolink></a>: Warn if invalid template name generated. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Dec 2012: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.7. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12297" title="'Item12297' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12297</noautolink></a>: Minor perllcritic change. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Apr 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.3. Only a minor change related to how the plugin is being upgraded </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Dec 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item10144" class="interwikiLink" title="'Item10144' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item10144</noautolink></a>: Fixed mistake in example in documentation </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 31 Jul 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item9415' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item9415"><noautolink>Foswikitask:Item9415</noautolink></a>: Documentation updates </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Oct 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item2213" class="interwikiLink" title="'Item2213' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2213</noautolink></a>: Plugin got better documentation. No change in behaviour. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Aug 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item8248" title="'Item8248' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8248</noautolink></a>: added forward-compatibility for newer Foswikis (MD) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 27 Dec 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item196" class="interwikiLink" title="'Item196' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item196</noautolink></a>: moved to Foswiki namespace </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Nov 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item196" class="interwikiLink" title="'Item196' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item196</noautolink></a>: minor doc changes </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 11 Jul 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item5770' on the TWiki issue tracking site" href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item5770" class="interwikiLink"><noautolink>TWikibug:Item5770</noautolink></a>: try to derive the EDIT_TEMPLATE of a new topic using the WebTopicEditTemplate (MD) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Jul 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item5747" title="'Item5747' on the TWiki issue tracking site"><noautolink>TWikibug:Item5747</noautolink></a>: fixed normalizing web part of form names (MD) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 13 Nov 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added EDIT_TEMPLATE, speed improvements, docu (MD) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Oct 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item4904' on the TWiki issue tracking site" class="interwikiLink" href="http://develop.twiki.org/~twiki4/cgi-bin/view/Bugs/Item4904"><noautolink>TWikibug:Item4904</noautolink></a>: made specification of view template skin agnostic,                   fixed view templates in subwebs (MD) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Sep 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Added build script and installer, minor doc changes </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Jun 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Initial version </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Foswiki Dependency: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> $Foswiki::Plugins::VERSION 1.026 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> CPAN Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> none </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Other Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> none </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

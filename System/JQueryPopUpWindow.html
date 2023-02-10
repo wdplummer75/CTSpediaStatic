@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryPopUpWindow &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryPopUpWindow/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/JQueryPopUpWindow/favicon.ico">
+<link type="application/x-wiki" title="edit JQueryPopUpWindow" rel="alternate" href="JQueryPopUpWindow.html">
+<meta name="description" content="JQueryPopUpWindow" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryPopUpWindow",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::POPUPWINDOW" src="JQueryPlugin.attachments/plugins/popupwindow/jquery.popupwindow.js?version=1.0.1"></script>
+<script src="JQueryPlugin.attachments/plugins/popupwindow/jquery.popupwindow.init.js?version=1.0.1" class="script JQUERYPLUGIN::POPUPWINDOW"></script><!--JQUERYPLUGIN::POPUPWINDOW-->
+</head>
+<body>
+<h1 id="JQueryPopUpWindow">  <a href="JQueryPopUpWindow.html" class="foswikiCurrentTopicLink">JQueryPopUpWindow</a> </h1>
+<p></p>
+    Homepage: <a href="http://foswiki.org/Extensions/JQueryPopUpWindow">http://foswiki.org/Extensions/JQueryPopUpWindow</a> <br />
+    Author(s): Arthur Clemens <br />
+    Version: 1.0.1
+<p></p>
+<p></p>
+<p></p>
+Open a page in a new window.
+<p></p>
+<p></p>
+<h2 id="Macros">  Macros </h2>
+<p></p>
+<h1 id="POPUPWINDOW_45_45_opens_a_topic_or_url_in_a_new_window">  POPUPWINDOW -- opens a topic or url in a new window </h1>
+<h2 id="Parameters">  Parameters </h2>
+                       <table class="foswikiTable" id="tableJQueryPopUpWindow1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"topic"</code> <br> <code>topic="topic"</code> <br> <code>topic="web.topic"</code> </td>
+			<td class="foswikiTableCol1"> Topic to open </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>url</code> </td>
+			<td class="foswikiTableCol1"> URL to open (if topic is not used) </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>label</code> </td>
+			<td class="foswikiTableCol1"> Link label </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> the topic or the url </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>template</code> </td>
+			<td class="foswikiTableCol1"> View template to call when viewing a topic; not used for URLs </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"viewplain"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>width</code> </td>
+			<td class="foswikiTableCol1"> Width of window </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"600"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>height</code> </td>
+			<td class="foswikiTableCol1"> Height of window </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"480"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>toolbar</code> </td>
+			<td class="foswikiTableCol1"> Show toolbars? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"0"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>scrollbars</code> </td>
+			<td class="foswikiTableCol1"> Show scrollbars? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"1"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>status</code> </td>
+			<td class="foswikiTableCol1"> Show status? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"1"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>location</code> </td>
+			<td class="foswikiTableCol1"> Show location bar? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"0"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>resizable</code> </td>
+			<td class="foswikiTableCol1"> Is the window resizable? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"1"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>left</code> </td>
+			<td class="foswikiTableCol1"> Left position </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"0"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>top</code> </td>
+			<td class="foswikiTableCol1"> Top position </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"0"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>center</code> </td>
+			<td class="foswikiTableCol1"> Center the window? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"0"</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>menubar</code> </td>
+			<td class="foswikiTableCol1"> Show menubar? </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>"0"</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>createnew</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Create a new window for each popup? </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>"1"</code> </td>
+		</tr>
+	</tbody>     </table>
+<h2 id="Examples">  Examples </h2> <ul>
+<li> Example with topic link: <pre class="tml">%POPUPWINDOW{"JQueryPopUpWindow" label="Open this topic in a new window"}%</pre> Generates: <a rel="width:600;height:480;scrollbars:1;location:0" class="jqPopUpWindow" href="JQueryPopUpWindow.html">Open this topic in a new window</a>
+</li> <li> Example with URL: <pre class="tml">%POPUPWINDOW{url="https://foswiki.org"}%</pre> Generates: <a href="https://foswiki.org/" class="jqPopUpWindow" rel="width:600;height:480;scrollbars:1;location:0">https://foswiki.org</a>
+</li> <li> Enable <code>POPUPWINDOW</code> by writing <code>%JQREQUIRE{"popupwindow"}%</code> on the page
+</li></ul> 
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

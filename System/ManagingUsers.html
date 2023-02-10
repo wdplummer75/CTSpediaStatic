@@ -1,0 +1,428 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ManagingUsers &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/ManagingUsers/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/ManagingUsers/favicon.ico" rel="shortcut icon">
+<link title="edit ManagingUsers" href="ManagingUsers.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="ManagingUsers" />
+<link media="all" rel="stylesheet" class="head JQUERYPLUGIN::THEME" href="JQueryPlugin.attachments/plugins/ui/themes/foswiki/jquery-ui.css" type="text/css"><!--JQUERYPLUGIN::THEME-->
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class="script JQUERYPLUGIN::EASING" src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "ManagingUsers",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/ui/jquery-ui.js?version=1.13.1" class="script JQUERYPLUGIN::UI"></script><!--JQUERYPLUGIN::UI-->
+<script class="script JQUERYPLUGIN::UI::AUTOCOMPLETE" src="JQueryPlugin.attachments/plugins/ui/jquery.ui.autocomplete.init.js?version=1.13.1"></script><!--JQUERYPLUGIN::UI::AUTOCOMPLETE-->
+
+<script>
+jQuery(function($){
+  $(".jqUserSelector").data("ui-autocomplete")._renderItem = function(ul, item) {
+    if (typeof(item.label) !== 'undefined') {
+      return $("<li></li>")
+        .data("item.autocomplete", item)
+        .append("<a><table width='100%'><tr><td width='60px'><img width="50" src="+item.img+"></td><td>"+item.label+"<br />"+item.email+"</td></tr></table></a>")
+        .appendTo(ul);
+    }
+  };
+});
+</script>
+<!--userselector::js-->
+</head>
+<body>
+<p></p>
+<h1 id="Manage_Users">  Manage Users </h1>
+<p></p>
+Register users on your Foswiki site; change/reset/install passwords; remove user accounts
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Authentication_and_Access_Control"> Authentication and Access Control </a>
+</li> <li> <a href="#Register_User"> Register User </a>
+</li> <li> <a href="#Change_44_Reset_and_Install_Passwords"> Change, Reset and Install Passwords </a>
+</li> <li> <a href="#Changing_User_Account_Names"> Changing User Account Names </a>
+</li> <li> <a href="#Removing_User_Accounts"> Removing User Accounts </a>
+</li> <li> <a href="#Configuring_User_Registration"> Configuring User Registration </a> <ul>
+<li> <a href="#Verification_of_the_new_registration_email_address"> Verification of the new registration email address </a>
+</li> <li> <a href="#Administrative_approval_of_new_registrations"> Administrative approval of new registrations </a>
+</li> <li> <a href="#Registration_Email_Requirements"> Registration Email Requirements </a>
+</li> <li> <a href="#Expiration_of_pending_registrations_and_approvals"> Expiration of pending registrations and approvals </a>
+</li></ul> 
+</li> <li> <a href="#Customizing_the_User_Registration_pages"> Customizing the User Registration pages </a> <ul>
+<li> <a href="#Creating_a_custom_User_Registration_page"> Creating a custom User Registration page </a>
+</li> <li> <a href="#Creating_a_custom_System.NewUserTemplate_and_System.UserForm"> Creating a custom NewUserTemplate and UserForm </a>
+</li> <li> <a href="#Creating_multiple_categories_of_users"> Creating multiple categories of users </a>
+</li></ul> 
+</li> <li> <a href="#Customizing_registration_Emails."> Customizing registration Emails. </a>
+</li></ul> 
+</div>
+<p></p>
+<div class="foswikiHelp"> <img title="ALERT!" width="16" src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> Some of the features below may be disabled, depending on your Foswiki
+configuration.</div>
+<p></p>
+<h2 id="Authentication_and_Access_Control">  Authentication and Access Control </h2>
+<p></p> <ul>
+<li> <a href="UserAuthentication.html">UserAuthentication</a> describes your options for user authentication
+</li> <li> <a href="AccessControl.html">AccessControl</a> describes how to define groups and how to restrict     access to content
+</li></ul> 
+<p></p>
+<h2 id="Register_User">  Register User </h2>
+<p></p>
+You don't have to have user home pages in Foswiki for Authentication to
+work - see <a href="UserAuthentication.html">UserAuthentication</a> for details.
+<p></p> <ul>
+<li> <a href="UserRegistration.html">UserRegistration</a> is used when you want new users to individually     register with Foswiki by filling out a form
+</li> <li> <a href="BulkRegistration.html">BulkRegistration</a> is used by administrators to register multiple users at     the same time
+</li></ul> 
+<p></p>
+<h2 id="Change_44_Reset_and_Install_Passwords">  Change, Reset and Install Passwords </h2>
+<p></p>
+<em>Note that the below features are only relevant when you use an internal password manager where Foswiki can set and reset passwords.</em>
+<p></p> <ul>
+<li> <a href="ChangePassword.html">ChangePassword</a> is for users who <em>can</em> remember their password and want to     change it
+</li> <li> <a href="ResetPassword.html">ResetPassword</a> is for users who <em>cannot</em> remember their password; a system     generated password is e-mailed to them
+</li> <li> <a href="BulkResetPassword.html">BulkResetPassword</a> is for administrators who want to reset many passwords     at once
+</li> <li> <a href="ChangeEmailAddress.html">ChangeEmailAddress</a> changes the hidden email address stored in the password     file
+</li></ul> 
+<p></p>
+<h2 id="Changing_User_Account_Names">  Changing User Account Names </h2>
+<p></p>
+To change the user's <a href="WikiName.html">WikiName</a>: <ul>
+<li> Rename the user's Foswiki homepage in the Main web, such as     from <code>JaneSmith</code> to <code>JaneMiller</code>. <ul>
+<li> Fix backlinks in the Main web only
+</li> <li> Make sure the group topics are updated (if any.)
+</li></ul> 
+</li> <li> Edit the <a href="../Main/WikiUsers.html">Main.WikiUsers</a> topic and move the user's entry so     that the list is in proper alphabetical order.
+</li> <li> Recreate the old topic with a pointer to the new topic, so that links     in other webs work properly. Example content:<br />     <pre class="tml">&#37;M&#37; Jane Smith is now known as JaneMiller</pre>
+</li></ul> 
+<p></p>
+If external authentication is used and you want to change the login username: <ul>
+<li> The login username needs to be changed in the authentication server (e.g.     Active Directory)
+</li> <li> In Foswiki's <a href="../Main/WikiUsers.html">Main.WikiUsers</a> topic, fix the mapping from     username to <a href="WikiName.html">WikiName</a>:<br />     <code>&nbsp;&nbsp; * JaneSmith - jsmith - 13 Sep 2006</code> <br />     to: <br />     <code>&nbsp;&nbsp; * JaneMiller - jmiller - 13 Sep 2006</code>
+</li></ul> 
+<p></p>
+<h2 id="Removing_User_Accounts">  Removing User Accounts </h2>
+<p></p>
+<p></p>
+The following form can be used by administrators to delete a user's account: <ul>
+<li> The user is removed from the user database.
+</li> <li> The user's topic is moved to the trash web.
+</li> <li> The user is removed from any groups.
+</li> <li> Other topics like the users LeftBar are <em>not</em> removed.
+</li></ul> 
+<p></p>
+<strong>Note:</strong> Consider leaving the user topic file in place so their past signatures and revision author entries don't end up looking like <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="AnUncreatedTopic.html">AnUncreatedTopic</a>.
+If you want to make it clear the user is no longer around, replace the topic content with a note to that effect.
+The existence of the UserName topic should also prevent that username from being re-used, sealing the potential security hole regarding inherited permissions.
+<p></p>
+<p></p>
+<!--  -->
+<form name="admin" action="/foswiki/bin/manage/System/ManagingUsers" method="post">
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+<h4 id="Enter_user_to_be_removed">  Enter user to be removed </h4>
+<!-- userselector -->
+<input type="text" class="foswikiInputField jqUserSelector" name="user" id="user"  autocomplete="http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/JQueryAjaxHelper?section=user;skin=text;contenttype=application/json" size="60" value="" />
+<p></p>
+<!-- //userselector -->
+<hr />
+<h4 id="Remove_user_topic_63">  Remove user topic? </h4>
+<input type="checkbox" id="removeTopic" name="removeTopic" checked="checked" class="foswikiCheckbox" /> <em>(Check to remove topic)</em> 
+Prefix for deleted topic: <input type="text" name="topicPrefix" class="foswikiInputField" value="DeletedUser" /> <em>(Follow topic naming rules)</em>
+<hr />
+<input type="hidden" name="action" value="deleteUserAccount" />
+<input type="submit" class="foswikiSubmit" value="Remove User" />
+</form>
+</div>
+</div>
+<p></p>
+<p></p>
+<!--
+<pre class="foswikiHidden">
+
+&#60;!-- &#37;JQREQUIRE{&#34;ui, ui::autocomplete&#34;}&#37; --&#62;
+&#60;form name&#61;&#34;admin&#34; action&#61;&#34;&#37;SCRIPTURLPATH{manage}&#37;/&#37;BASEWEB&#37;/&#37;BASETOPIC&#37;&#34; method&#61;&#34;post&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormSteps&#34;&#62;
+&#60;div class&#61;&#34;foswikiFormStep&#34;&#62;
+---++++!! Enter user to be removed
+&#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.JQueryAjaxHelper&#34; section&#61;&#34;userselector&#34; INPUT&#95;NAME&#61;&#34;user&#34; MULTI&#61;&#34;false&#34;}&#37;
+&#60;hr /&#62;
+---++++!! Remove user topic?
+&#60;input type&#61;&#34;checkbox&#34; id&#61;&#34;removeTopic&#34; name&#61;&#34;removeTopic&#34; checked&#61;&#34;checked&#34; class&#61;&#34;foswikiCheckbox&#34; /&#62; &#95;(Check to remove topic)&#95; 
+Prefix for deleted topic: &#60;input type&#61;&#34;text&#34; name&#61;&#34;topicPrefix&#34; class&#61;&#34;foswikiInputField&#34; value&#61;&#34;DeletedUser&#34; /&#62; &#95;(Follow topic naming rules)&#95;
+&#60;hr /&#62;
+&#60;input type&#61;&#34;hidden&#34; name&#61;&#34;action&#34; value&#61;&#34;deleteUserAccount&#34; /&#62;
+&#60;input type&#61;&#34;submit&#34; class&#61;&#34;foswikiSubmit&#34; value&#61;&#34;Remove User&#34; /&#62;
+&#60;/form&#62;
+&#60;/div&#62;
+&#60;/div&#62;
+
+</pre>
+-->
+<p></p>
+<p></p>
+<div class="foswikiHelp">
+<img src="DocumentGraphics.attachments/tip.png" height="16" alt="TIP" title="TIP" width="16"> For Foswiki versions prior to Foswiki 2.0, see the <a href="http://foswiki.org/Extensions/AntiWikiSpamPlugin">AntiWikiSpamPlugin</a> extension for another method of removing users.  It provides a <code>rest</code> handler to: <ul>
+<li> Move the user topic to the Trash web.
+</li> <li> Remove the user from the password / mapper
+</li> <li> Remove the user from any groups.
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<h2 id="Configuring_User_Registration">  Configuring User Registration </h2>
+<p></p>
+The registration process is configured at <a href="../.html">configure</a> <code>Security and Authentication</code> tab, <code>Registration</code> sub-tab. <ul>
+<li> Registration is enabled with <code>{Register}{EnableNewUserRegistration}</code> (This is the default)
+</li></ul> 
+<p></p>
+<h3 id="Verification_of_the_new_registration_email_address">  Verification of the new registration email address </h3>
+<p></p>
+Registration can be configured to require a verification via the registered email address: <code>{Register}{NeedVerification}</code> <ul>
+<li> An email is sent to the email address entered by the new user with a confirmation code.
+</li> <li> The user must enter the confirmation code into a dialog on the wiki to confirm the registration.
+</li> <li> The pending registration lifetime defaults to 6 hours.  If the user does not confirm within that time, the pending registration will be removed.
+</li> <li> Registration requests pending verification can be viewed by visiting the <a title="Create this topic" href="PendingRegistrationsReport.html" class="foswikiNewLink" rel="nofollow">PendingRegistrationsReport</a>
+</li></ul> 
+<p></p>
+<h3 id="Administrative_approval_of_new_registrations">  Administrative approval of new registrations </h3>
+<p></p>
+Registration can be configured to require approval. <code>{Register}{NeedApproval}</code> <ul>
+<li> If confirmation is enabled, the email address is verified per the steps in the prior paragraph
+</li> <li> An email is then set to the list of Approvers - <code>{Register}{Approvers}</code>
+</li> <li> The approver can then Approve or Deny the registration by following a link in the email.
+</li> <li> Registrations awaiting approval can be viewed and approved from the <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="PendingRegistrationsReport.html">PendingRegistrationsReport</a>
+</li></ul> 
+<p></p>
+<h3 id="Registration_Email_Requirements">  Registration Email Requirements </h3>
+<p></p>
+By default, Foswiki does not require unique email addresses. Multiple users can register using the same email address.   Enable the setting <code>{Register}{UniqueEmail}</code>  to prevent use of the same email by multiple users.
+<p></p>
+By default, any email domain can be used for registration.  Set the <em>expert</em> setting <code>{Register}{EmailFilter}</code> to restrict the domains usable for registration.  See the configure help for more details.
+<p></p>
+See the configure help at <a href="../.html">configure</a> <code>Security and Authentication</code> tab, <code>Registration</code> sub-tab, for more details.
+<p></p>
+<h3 id="Expiration_of_pending_registrations_and_approvals">  Expiration of pending registrations and approvals </h3>
+<p></p>
+By default, expiration of pending registrations and approvals is done "on the fly" during the registration process. For best performance, you can set
+<code>{Register}{ExpireAfter}</code> to a negative number, which will mean that Foswiki won't try to clean up expired registrations durning registration. Instead you
+should use a cron job to clean up expired sessions. The standard maintenance cron script <code>tools/tick_foswiki.pl</code> includes this function.
+<p></p>
+Note that if you are using registration approval by 3rd party reviewers, this timer should most likely be significantly increased. 24 hours = 86400, 3 days = 259200.
+<p></p>
+Pending registration requests are stored in the <code>{WorkingDir}/registration_approvals</code> directory, but are no longer in plain text format.  To view the pending registrations see the new <a href="PendingRegistrations.html">PendingRegistrations</a> report.
+<p></p>
+<h2 id="Customizing_the_User_Registration_pages">  Customizing the User Registration pages </h2>
+If you modify any of the topic related to User Registration, you should put the modified versions into the Main web.  This will make it easier to
+upgrade to new versions of Foswiki.
+<p></p>
+<h3 id="Creating_a_custom_User_Registration_page">  Creating a custom User Registration page </h3>
+Three topics make up the user registration page: <ul>
+<li> <a href="UserRegistration.html">System.UserRegistration</a>:  A "shim" landing page which will display the Main web version if it exists, otherwise it displays <a href="DefaultUserRegistration.html">System.DefaultUserRegistration</a> <em>You should never have to change this page!</em>
+</li> <li> <a href="DefaultUserRegistration.html">System.DefaultUserRegistration</a>: The actual registration page.  This is what you copy to <a href="../Main/UserRegistration.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">Main.UserRegistration</a> for customization.
+</li> <li> <a href="UserRegistrationParts.html">System.UserRegistrationParts</a>: The components that make up the page.  More advanced modifications might also have to copy this topic to the Main.
+</li></ul> 
+<p></p>
+The actual customization steps are documented in comments internal to <a href="DefaultUserRegistration.html">System.DefaultUserRegistration</a>. The general steps are: <ol>
+<li> Copy  <a href="DefaultUserRegistration.html">System.DefaultUserRegistration</a> to <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/UserRegistration.html">Main.UserRegistration</a>.  (Use the "More topic actions" option on <a href="DefaultUserRegistration.html">System.DefaultUserRegistration</a>)
+</li> <li> Edit <a class="foswikiNewLink" rel="nofollow" href="../Main/UserRegistration.html" title="Create this topic">Main.UserRegistration</a> that you just created and follow the instructions on that page.
+</li></ol> 
+<p></p>
+Using these two steps, you can: <ul>
+<li> Enable/disable entry of existing <a href="UserForm.html">UserForm</a> fields in registration. 
+</li> <li> Enable automatic group membership during registration.
+</li></ul> 
+<p></p>
+Note that while it may be interesing to enable fields like OrganizationURL, Comments, etc. they are often used by registration SPAM-Bots to generate
+topics with links.
+<p></p>
+<h3 id="Creating_a_custom_System.NewUserTemplate_and_System.UserForm">  Creating a custom <a href="NewUserTemplate.html">NewUserTemplate</a> and <a href="UserForm.html">UserForm</a> </h3>
+<p></p>
+If you want to modify the contents of the user page that is created during
+user registration.
+<p></p> <ol>
+<li> Copy <a href="NewUserTemplate.html">System.NewUserTemplate</a> to <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/NewUserTemplate.html">Main.NewUserTemplate</a>
+</li> <li> Modify the page as desired.
+</li></ol> 
+<p></p>
+The Registration process will automatically find and use the Main
+version of the template if it exists.
+<p></p>
+If you want to customize the contents of the <a href="UserForm.html">UserForm</a>, for example, to remove
+or add field: <ol>
+<li> Copy <a href="NewUserTemplate.html">System.NewUserTemplate</a> to <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/UserTemplate.html">Main.UserTemplate</a>
+</li> <li> Copy <a href="UserForm.html">System.UserForm</a> to <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/UserForm.html">Main.UserForm</a>
+</li> <li> Make your desired changes.
+</li> <li> Edit <a href="NewUserTemplate.html">System.NewUserTemplate</a>, delete the <a href="UserForm.html">UserForm</a>, and add your new Main form.
+</li></ol> 
+See <a href="UserForm.html">System.UserForm#CustomForm</a> for more details.
+<p></p>
+<h3 id="Creating_multiple_categories_of_users">  Creating multiple categories of users </h3>
+<p></p>
+By combining all the above concepts, it's possible to have multiple categories
+of users,  for example "Customers", "Vendors", "Employees", each with a
+custom Template topic, a custom User form and a custom Registration form.
+<p></p>
+Multiple categories of users can be supported by: <ul>
+<li> Creating an alternate version of the <a href="DefaultUserRegistration.html">DefaultUserRegistration</a> page
+</li> <li> Creating an alternate version of the <a href="NewUserTemplate.html">NewUserTemplate</a> and <a href="UserForm.html">UserForm</a>
+</li> <li> And configuring the new registration page to use the new user template.
+</li></ul> 
+<p></p>
+<h2 id="Customizing_registration_Emails.">  Customizing registration Emails. </h2>
+Foswiki's Registration can send 7 emails whose output is governed by templates:
+          <table class="foswikiTable" rules="none">   
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> User registration confirmation. (Awaiting email verification). </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <code>templates/registerconfirm.tmpl</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> User registration failed notification, cleanup was successful. </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <code>templates/registerfailedremoved.tmpl</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> User registration failed notification, cleanup of partial registration also failed. </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <code>templates/registerfailednotremoved.tmpl</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> User registration denied notification. </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <code>templates/registerdenied.tmpl</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Approver registration pending notification. </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <code>templates/registerapprove.tmpl</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> User notification of sucessful registraiton. </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <code>templates/registernotify.tmpl</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Administrator notification of successful registration. </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <code>templates/registernotifyadmin.tmpl</code> </td>
+		</tr>
+	</tbody>   </table>
+<p></p>
+As these are <a href="SkinTemplates.html">SkinTemplates</a>, they can be customized and selected using the SKIN path setting.
+Because there are default <code>.tmpl</code> files in the <code>templates</code> dir, this cannot use Template topics.
+<p></p>
+Note: As of Foswiki 2.1.3, the email <code>From:</code> address can be different from the WIKIWEBMASTER address, and is configurable using the <code>bin/configure</code> tool.
+See the "Expert" <code>{WikiAgentName}</code> and <code>{WikiAgentEmail}</code> settings on the "Mail" section, "Basic Settings and Autoconfiguration" tab.
+If these fields are not set, then the WIKIWEBMASTER setting will be used as the <code>From:</code> address.
+<p></p>
+These template files have a specific format that matches the raw format of emails sent via SMTP,
+so be careful and test your changes. It is easiest to start by copying the default templates that you
+wish to change.:  (You don't need to copy every template).
+<p></p>
+<pre class="bash">
+cd templates
+cp registernotify.tmpl registernotify.myskin.tmpl
+cp registerconfirm.tmpl registerconfirm.myskin.tmpl
+cp registernotifyadmin.tmpl registernotifyadmin.myskin.tmpl
+</pre>
+then add <code>myskin</code> to the beginning of the <code>SKIN</code> setting in <a href="../Main/SitePreferences.html">SitePreferences</a>.
+<p></p>
+From this point on, your myskin templates will be used for the registration emails.
+<p></p>
+To make it possible for users to modify the email contents, you could use a parameterized <code>%INCLUDE%</code>
+statement in your customized version, eg:
+<p></p>
+<pre class="tml">
+From: &#37;WIKIAGENTNAME&#37; &#60;&#37;WIKIAGENTEMAIL&#37;&#62;
+To: &#37;FIRSTLASTNAME&#37; &#60;&#37;EMAILADDRESS&#37;&#62;
+Subject: &#37;MAKETEXT{
+   &#34;&#91;&#95;1&#93; - Registration for &#91;&#95;2&#93; (&#91;&#95;3&#93;)&#34;
+   args&#61;&#34;&#37;WIKITOOLNAME&#37;, &#37;WIKINAME&#37;, &#37;EMAILADDRESS&#37;&#34;
+}&#37;
+Auto-Submitted: auto-generated
+MIME-Version: 1.0
+Content-Type: text/plain; charset&#61;&#37;CHARSET&#37;
+Content-Transfer-Encoding: 8bit
+
+&#37;INCLUDE{
+    &#34;&#37;USERSWEB&#37;.RegisterNotifyEmail&#34;
+    WIKINAME&#61;&#34;&#37;WIKINAME&#37;&#34;
+    FIRSTLASTNAME&#61;&#34;&#37;FIRSTLASTNAME&#37;&#34;
+    EMAILADDRESS&#61;&#34;&#37;EMAILADDRESS&#37;&#34;
+    TEMPLATETOPIC&#61;&#34;&#37;TEMPLATETOPIC&#37;&#34;
+}&#37;
+</pre>
+<div class="foswikiHelp"> <img alt="HELP" height="16" src="DocumentGraphics.attachments/help.png" width="16" title="HELP"> <strong>Note</strong> the use of %WIKINAME%, %FIRSTLASTNAME%, %EMAILADDRESS%, passed in from the INCLUDE so that the topic below is similar to the original template.
+The %TEMPLATETOPIC% variable is also available.  It could be used as a "section" name in the include, or directly in the email for tailoring messages for specific types of users.</div>
+<p></p>
+and then create a topic Main.RegisterNotifyEmail:
+<pre class="tml">
+Welcome to &#37;WIKITOOLNAME&#37;.
+
+&#37;MAKETEXT{&#34;Your personal &#91;&#95;1&#93; topic is located at &#91;&#95;2&#93;. You can customize it as you like:&#34; args&#61;&#34;&#37;WIKITOOLNAME&#37;, &#37;SCRIPTURL{&#34;view&#34;}&#37;/&#37;USERSWEB&#37;/&#37;WIKINAME&#37;&#34;}&#37;
+
+   &#42; &#37;MAKETEXT{&#34;Some people turn it into a personal portal with favorite links, what they work on, what help they&#39;d like, etc.&#34;}&#37;
+   &#42; &#37;MAKETEXT{&#34;Some add schedule information and vacation notice.&#34;}&#37;
+
+Regards
+&#37;WIKIWEBMASTERNAME&#37;
+Your Wiki Admin
+
+
+&#37;MAKETEXT{&#34;Note:&#34;}&#37;
+   2 &#37;MAKETEXT{&#34;You can change your password at via &#91;&#95;1&#93;&#34; args&#61;&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#37;SYSTEMWEB&#37;/ChangePassword&#34;}&#37;
+   3 &#37;MAKETEXT{&#34;If you haven&#39;t set a password yet or you want to reset it, go to: &#91;&#95;1&#93;&#34; args&#61;&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#37;SYSTEMWEB&#37;/ResetPassword&#34;}&#37;
+
+&#37;MAKETEXT{&#34;Submitted content:&#34;}&#37;
+&#37;FORMDATA&#37;
+
+</pre>
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>
+<!--  -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

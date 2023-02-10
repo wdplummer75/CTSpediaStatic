@@ -1,0 +1,1153 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SmiliesPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/SmiliesPlugin/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE System/SmiliesPlugin/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit SmiliesPlugin" href="SmiliesPlugin.html" rel="alternate">
+<meta name="description" content="SmiliesPlugin" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "SmiliesPlugin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="The_Smilies_Plugin_:_45_41">  The Smilies Plugin :-) </h1>
+<p></p>
+Smilies are common in e-mail messages and bulletin board posts.
+They are used to convey an emotion, such as a smile :-) or a frown :-( .
+This plugin automatically converts certain smilies to a nice small icon.
+<p></p>
+Here is the list of smilies supported by this plugin.
+To add others, attach new icons to this topic and tweak the table below.
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Notation</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Image</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Description</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :) :-) :smile: </td>
+			<td class="foswikiTableCol1"> <img title="smile" class="smily" src="SmiliesPlugin.attachments/emoticon-0100-smile.gif" alt="smile"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> smile </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :( :-( :frown: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="frown, sad smile" alt="frown, sad smile" src="SmiliesPlugin.attachments/emoticon-0101-sadsmile.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> frown, sad smile </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :D :-D :biggrin: </td>
+			<td class="foswikiTableCol1"> <img title="big grin" class="smily" src="SmiliesPlugin.attachments/emoticon-0102-bigsmile.gif" alt="big grin"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> big grin </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 8-) :cool: </td>
+			<td class="foswikiTableCol1"> <img alt="cool" src="SmiliesPlugin.attachments/emoticon-0103-cool.gif" class="smily" title="cool"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cool </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ;) ;-) :wink: </td>
+			<td class="foswikiTableCol1"> <img alt="wink" src="SmiliesPlugin.attachments/emoticon-0105-wink.gif" class="smily" title="wink"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> wink </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ;( ;-( :cry: </td>
+			<td class="foswikiTableCol1"> <img title="cry" class="smily" src="SmiliesPlugin.attachments/emoticon-0106-crying.gif" alt="cry"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cry </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> (:I :sweat: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0107-sweating.gif" alt="sweating" title="sweating" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> sweating </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :I :-I :speechless: </td>
+			<td class="foswikiTableCol1"> <img alt="indifferent, speechless" src="SmiliesPlugin.attachments/emoticon-0108-speechless.gif" class="smily" title="indifferent, speechless"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> indifferent, speechless </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :* :-* :kiss: </td>
+			<td class="foswikiTableCol1"> <img alt="kiss" src="SmiliesPlugin.attachments/emoticon-0109-kiss.gif" class="smily" title="kiss"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> kiss </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :P :-P :p :-p :tongue: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="stick out tongue" alt="stick out tongue" src="SmiliesPlugin.attachments/emoticon-0110-tongueout.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> stick out tongue </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :o :-o :blush: </td>
+			<td class="foswikiTableCol1"> <img alt="embarrassment, blush" src="SmiliesPlugin.attachments/emoticon-0111-blush.gif" class="smily" title="embarrassment, blush"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> embarrassment, blush </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :^) :wonder: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0112-wondering.gif" alt="wondering" title="wondering" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> wondering </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I-) :snooze: </td>
+			<td class="foswikiTableCol1"> <img title="sleepy, snooze" class="smily" src="SmiliesPlugin.attachments/emoticon-0113-sleepy.gif" alt="sleepy, snooze"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> sleepy, snooze </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I-( :dull: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="dull" alt="dull" src="SmiliesPlugin.attachments/emoticon-0114-dull.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> dull </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :love: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="I love it!" alt="I love it!" src="SmiliesPlugin.attachments/emoticon-0115-inlove.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> I love it! </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ]:) ]:-) &gt;;-) :evilgrin: :devilish: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0116-evilgrin.gif" alt="evil grin" title="evil grin" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> evil grin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :talk: </td>
+			<td class="foswikiTableCol1"> <img title="talking" class="smily" src="SmiliesPlugin.attachments/emoticon-0117-talking.gif" alt="talking"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> talking </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I() I-() :yawn: </td>
+			<td class="foswikiTableCol1"> <img alt="yawn" src="SmiliesPlugin.attachments/emoticon-0118-yawn.gif" class="smily" title="yawn"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> yawn </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :&amp; :-&amp; :puke: </td>
+			<td class="foswikiTableCol1"> <img alt="puke" src="SmiliesPlugin.attachments/emoticon-0119-puke.gif" class="smily" title="puke"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> puke </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :doh: :eek: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0120-doh.gif" alt="doh" title="doh" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> doh </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :@ :-@ :angry: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0121-angry.gif" alt="angry" title="angry" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> angry </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :wasntme: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0122-itwasntme.gif" alt="oops, wasn" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> oops, wasn't me </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :party: </td>
+			<td class="foswikiTableCol1"> <img title="party" class="smily" src="SmiliesPlugin.attachments/emoticon-0123-party.gif" alt="party"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> party </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :S :-S :s :-s :confused: :worried: </td>
+			<td class="foswikiTableCol1"> <img title="worried, confused" class="smily" src="SmiliesPlugin.attachments/emoticon-0124-worried.gif" alt="worried, confused"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> worried, confused </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :mmm: </td>
+			<td class="foswikiTableCol1"> <img alt="joy" src="SmiliesPlugin.attachments/emoticon-0125-mmm.gif" class="smily" title="joy"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> joy </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 8-I B-I :nerd: </td>
+			<td class="foswikiTableCol1"> <img alt="nerd" src="SmiliesPlugin.attachments/emoticon-0126-nerd.gif" class="smily" title="nerd"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> nerd </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :-X :lipssealed: </td>
+			<td class="foswikiTableCol1"> <img title="my lips are sealed" class="smily" src="SmiliesPlugin.attachments/emoticon-0127-lipssealed.gif" alt="my lips are sealed"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> my lips are sealed </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :hi: </td>
+			<td class="foswikiTableCol1"> <img alt="me waving" src="SmiliesPlugin.attachments/emoticon-0128-hi.gif" class="smily" title="me waving"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> me waving </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :call: </td>
+			<td class="foswikiTableCol1"> <img alt="call me back" src="SmiliesPlugin.attachments/emoticon-0129-call.gif" class="smily" title="call me back"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> call me back </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> &gt;:-) :devil: </td>
+			<td class="foswikiTableCol1"> <img alt="evil" src="SmiliesPlugin.attachments/emoticon-0130-devil.gif" class="smily" title="evil"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> evil </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :angel: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0131-angel.gif" alt="angel" title="angel" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> angel </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :envy: </td>
+			<td class="foswikiTableCol1"> <img alt="envy" src="SmiliesPlugin.attachments/emoticon-0132-envy.gif" class="smily" title="envy"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> envy </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :wait: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0133-wait.gif" alt="hey, wait a sec" title="hey, wait a sec" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> hey, wait a sec </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bear: </td>
+			<td class="foswikiTableCol1"> <img title="bear, hug" class="smily" src="SmiliesPlugin.attachments/emoticon-0134-bear.gif" alt="bear, hug"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bear, hug </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :hug: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="bear, hug" alt="bear, hug" src="SmiliesPlugin.attachments/emoticon-0134-bear.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bear, hug </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :makeup: </td>
+			<td class="foswikiTableCol1"> <img title="makeup, lips" class="smily" src="SmiliesPlugin.attachments/emoticon-0135-makeup.gif" alt="makeup, lips"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> makeup, lips </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :giggle: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0136-giggle.gif" alt="covered laugh" title="covered laugh" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> covered laugh </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :clap: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="clapping hands" alt="clapping hands" src="SmiliesPlugin.attachments/emoticon-0137-clapping.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> clapping hands </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :? :-? :think: </td>
+			<td class="foswikiTableCol1"> <img title="thinking" class="smily" src="SmiliesPlugin.attachments/emoticon-0138-thinking.gif" alt="thinking"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> thinking </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bow: </td>
+			<td class="foswikiTableCol1"> <img alt="bow" src="SmiliesPlugin.attachments/emoticon-0139-bow.gif" class="smily" title="bow"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bow </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :rofl: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0140-rofl.gif" alt="rolling on the floor laughing" title="rolling on the floor laughing" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> rolling on the floor laughing </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :wew: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="whew" alt="whew" src="SmiliesPlugin.attachments/emoticon-0141-whew.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> whew </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :whew: </td>
+			<td class="foswikiTableCol1"> <img alt="whew" src="SmiliesPlugin.attachments/emoticon-0141-whew.gif" class="smily" title="whew"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> whew </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :happy: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="happy" alt="happy" src="SmiliesPlugin.attachments/emoticon-0142-happy.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> happy </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :smirk: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0143-smirk.gif" alt="smirk" title="smirk" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> smirk </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :nod: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="nod" alt="nod" src="SmiliesPlugin.attachments/emoticon-0144-nod.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> nod </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :shake: </td>
+			<td class="foswikiTableCol1"> <img alt="shake" src="SmiliesPlugin.attachments/emoticon-0145-shake.gif" class="smily" title="shake"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> shake </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :punch: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="punch" alt="punch" src="SmiliesPlugin.attachments/emoticon-0146-punch.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> punch </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :emo: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0147-emo.gif" alt="emo" title="emo" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> emo </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :yes: :ok: </td>
+			<td class="foswikiTableCol1"> <img alt="yes" src="SmiliesPlugin.attachments/emoticon-0148-yes.gif" class="smily" title="yes"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> yes </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :no: </td>
+			<td class="foswikiTableCol1"> <img alt="no" src="SmiliesPlugin.attachments/emoticon-0149-no.gif" class="smily" title="no"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> no </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :handshake: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="handshake" alt="handshake" src="SmiliesPlugin.attachments/emoticon-0150-handshake.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> handshake </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :heart: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="heart" alt="heart" src="SmiliesPlugin.attachments/emoticon-0152-heart.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> heart </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :brokenheart: </td>
+			<td class="foswikiTableCol1"> <img title="broken heart" class="smily" src="SmiliesPlugin.attachments/emoticon-0153-brokenheart.gif" alt="broken heart"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> broken heart </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :mail: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0154-mail.gif" alt="mail" title="mail" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> mail </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :flower: </td>
+			<td class="foswikiTableCol1"> <img title="flower" class="smily" src="SmiliesPlugin.attachments/emoticon-0155-flower.gif" alt="flower"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> flower </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :rain: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0156-rain.gif" alt="rain" title="rain" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> rain </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :sun: </td>
+			<td class="foswikiTableCol1"> <img title="sun" class="smily" src="SmiliesPlugin.attachments/emoticon-0157-sun.gif" alt="sun"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> sun </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :time: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="time" alt="time" src="SmiliesPlugin.attachments/emoticon-0158-time.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> time </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :music: </td>
+			<td class="foswikiTableCol1"> <img alt="music" src="SmiliesPlugin.attachments/emoticon-0159-music.gif" class="smily" title="music"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> music </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :movie: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="movie, film" alt="movie, film" src="SmiliesPlugin.attachments/emoticon-0160-movie.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> movie, film </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :phone: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="phone" alt="phone" src="SmiliesPlugin.attachments/emoticon-0161-phone.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> phone </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :coffee: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0162-coffee.gif" alt="coffee" title="coffee" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> coffee </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :pizza: </td>
+			<td class="foswikiTableCol1"> <img alt="pizza" src="SmiliesPlugin.attachments/emoticon-0163-pizza.gif" class="smily" title="pizza"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> pizza </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :cash: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0164-cash.gif" alt="cash" title="cash" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cash </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :muscle: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0165-muscle.gif" alt="muscle" title="muscle" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> muscle </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :cake: </td>
+			<td class="foswikiTableCol1"> <img title="cake" class="smily" src="SmiliesPlugin.attachments/emoticon-0166-cake.gif" alt="cake"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cake </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :beer: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="beer" alt="beer" src="SmiliesPlugin.attachments/emoticon-0167-beer.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> beer </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :drink: </td>
+			<td class="foswikiTableCol1"> <img title="drink" class="smily" src="SmiliesPlugin.attachments/emoticon-0168-drink.gif" alt="drink"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> drink </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :dance: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0169-dance.gif" alt="dance" title="dance" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> dance </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :ninja: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="ninja" alt="ninja" src="SmiliesPlugin.attachments/emoticon-0170-ninja.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> ninja </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :star: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="star" alt="star" src="SmiliesPlugin.attachments/emoticon-0171-star.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> star </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :morning: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0172-mooning.gif" alt="morning" title="morning" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> morning </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :finger: </td>
+			<td class="foswikiTableCol1"> <img title="finger" class="smily" src="SmiliesPlugin.attachments/emoticon-0173-middlefinger.gif" alt="finger"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> finger </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bandit: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0174-bandit.gif" alt="bandit" title="bandit" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bandit </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :drunk: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="drunk" alt="drunk" src="SmiliesPlugin.attachments/emoticon-0175-drunk.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> drunk </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :smoke: </td>
+			<td class="foswikiTableCol1"> <img title="smoke" class="smily" src="SmiliesPlugin.attachments/emoticon-0176-smoke.gif" alt="smoke"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> smoke </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :toivo: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="tovio" alt="tovio" src="SmiliesPlugin.attachments/emoticon-0177-toivo.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> tovio </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :rock: </td>
+			<td class="foswikiTableCol1"> <img title="rock" class="smily" src="SmiliesPlugin.attachments/emoticon-0178-rock.gif" alt="rock"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> rock </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :headbang: :mad: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="head bang, getting mad" alt="head bang, getting mad" src="SmiliesPlugin.attachments/emoticon-0179-headbang.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> head bang, getting mad </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bug: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0180-bug.gif" alt="bug" title="bug" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bug </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :foobar: </td>
+			<td class="foswikiTableCol1"> <img alt="foobar" src="SmiliesPlugin.attachments/emoticon-0181-fubar.gif" class="smily" title="foobar"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> foobar </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :poolparty: </td>
+			<td class="foswikiTableCol1"> <img title="pool party" class="smily" src="SmiliesPlugin.attachments/emoticon-0182-poolparty.gif" alt="pool party"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> pool party </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :swear: </td>
+			<td class="foswikiTableCol1"> <img src="SmiliesPlugin.attachments/emoticon-0183-swear.gif" alt="swear" title="swear" class="smily"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> swear </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :tmi: </td>
+			<td class="foswikiTableCol1"> <img title="tmi" class="smily" src="SmiliesPlugin.attachments/emoticon-0184-tmi.gif" alt="tmi"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> tmi </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :heidy: </td>
+			<td class="foswikiTableCol1"> <img title="heidy" class="smily" src="SmiliesPlugin.attachments/emoticon-0185-heidy.gif" alt="heidy"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> heidy </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :malthe: </td>
+			<td class="foswikiTableCol1"> <img class="smily" title="malthe" alt="malthe" src="SmiliesPlugin.attachments/emoticon-0187-malthe.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> malthe </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :tauri: :rolleyes: </td>
+			<td class="foswikiTableCol1"> <img title="tauri" class="smily" src="SmiliesPlugin.attachments/emoticon-0188-tauri.gif" alt="tauri"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> tauri </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :priidu: </td>
+			<td class="foswikiTableCol1"> <img alt="priidu" src="SmiliesPlugin.attachments/emoticon-0189-priidu.gif" class="smily" title="priidu"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> priidu </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> :skull: </td>
+			<td class="foswikiTableCol1 foswikiLast"> <img class="smily" title="dead, deadly, doom" alt="dead, deadly, doom" src="SmiliesPlugin.attachments/skull.gif"> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> dead, deadly, doom </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<!--
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Notation</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Image</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Description</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :) :-) :smile: </td>
+			<td class="foswikiTableCol1"> emoticon-0100-smile.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> smile </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ;) ;-) :wink: </td>
+			<td class="foswikiTableCol1"> emoticon-0105-wink.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> "wink" </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :( :-( :frown: </td>
+			<td class="foswikiTableCol1"> emoticon-0101-sadsmile.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> frown, sad smile </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :D :-D :biggrin: </td>
+			<td class="foswikiTableCol1"> emoticon-0102-bigsmile.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> big grin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 8-) :cool: </td>
+			<td class="foswikiTableCol1"> emoticon-0103-cool.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cool </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :o :-o :blush: </td>
+			<td class="foswikiTableCol1"> emoticon-0111-blush.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> embarrassment, blush </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ;( ;-( :cry: </td>
+			<td class="foswikiTableCol1"> emoticon-0106-crying.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cry </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> (:I :sweat: </td>
+			<td class="foswikiTableCol1"> emoticon-0107-sweating.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> sweating </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :I :-I :speechless: </td>
+			<td class="foswikiTableCol1"> emoticon-0108-speechless.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> indifferent, speechless </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :* :-* :kiss: </td>
+			<td class="foswikiTableCol1"> emoticon-0109-kiss.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> kiss </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :P :-P :p :-p :tongue: </td>
+			<td class="foswikiTableCol1"> emoticon-0110-tongueout.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> stick out tongue </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :^) :wonder: </td>
+			<td class="foswikiTableCol1"> emoticon-0112-wondering.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> wondering </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I-) :snooze: </td>
+			<td class="foswikiTableCol1"> emoticon-0113-sleepy.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> sleepy, snooze </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I-( :dull: </td>
+			<td class="foswikiTableCol1"> emoticon-0114-dull.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> dull </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :love: </td>
+			<td class="foswikiTableCol1"> emoticon-0115-inlove.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> I love it! </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ]:) ]:-) &gt;;-) :evilgrin: :devilish: </td>
+			<td class="foswikiTableCol1"> emoticon-0116-evilgrin.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> evil grin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :talk: </td>
+			<td class="foswikiTableCol1"> emoticon-0117-talking.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> talking </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I() I-() :yawn: </td>
+			<td class="foswikiTableCol1"> emoticon-0118-yawn.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> yawn </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :&amp; :-&amp; :puke: </td>
+			<td class="foswikiTableCol1"> emoticon-0119-puke.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> puke </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :doh: :eek: </td>
+			<td class="foswikiTableCol1"> emoticon-0120-doh.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> doh </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :@ :-@ :angry: </td>
+			<td class="foswikiTableCol1"> emoticon-0121-angry.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> angry </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :wasntme: </td>
+			<td class="foswikiTableCol1"> emoticon-0122-itwasntme.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> oops, wasn't me </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :party: </td>
+			<td class="foswikiTableCol1"> emoticon-0123-party.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> party </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :S :-S :s :-s :confused: :worried: </td>
+			<td class="foswikiTableCol1"> emoticon-0124-worried.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> worried, confused </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :mmm: </td>
+			<td class="foswikiTableCol1"> emoticon-0125-mmm.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> joy </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 8-I B-I :nerd: </td>
+			<td class="foswikiTableCol1"> emoticon-0126-nerd.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> nerd </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :-X :lipssealed: </td>
+			<td class="foswikiTableCol1"> emoticon-0127-lipssealed.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> my lips are sealed </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :hi: </td>
+			<td class="foswikiTableCol1"> emoticon-0128-hi.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> me waving </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :call: </td>
+			<td class="foswikiTableCol1"> emoticon-0129-call.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> call me back </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> &gt;:-) :devil: </td>
+			<td class="foswikiTableCol1"> emoticon-0130-devil.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> evil </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :angel: </td>
+			<td class="foswikiTableCol1"> emoticon-0131-angel.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> angel </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :envy: </td>
+			<td class="foswikiTableCol1"> emoticon-0132-envy.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> envy </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :wait: </td>
+			<td class="foswikiTableCol1"> emoticon-0133-wait.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> hey, wait a sec </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bear: </td>
+			<td class="foswikiTableCol1"> emoticon-0134-bear.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bear, hug </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :hug: </td>
+			<td class="foswikiTableCol1"> emoticon-0134-bear.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bear, hug </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :makeup: </td>
+			<td class="foswikiTableCol1"> emoticon-0135-makeup.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> makeup, lips </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :giggle: </td>
+			<td class="foswikiTableCol1"> emoticon-0136-giggle.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> covered laugh </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :clap: </td>
+			<td class="foswikiTableCol1"> emoticon-0137-clapping.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> clapping hands </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :? :-? :think: </td>
+			<td class="foswikiTableCol1"> emoticon-0138-thinking.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> thinking </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bow: </td>
+			<td class="foswikiTableCol1"> emoticon-0139-bow.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bow </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :rofl: </td>
+			<td class="foswikiTableCol1"> emoticon-0140-rofl.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> rolling on the floor laughing </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :wew: </td>
+			<td class="foswikiTableCol1"> emoticon-0141-whew.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> whew </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :whew: </td>
+			<td class="foswikiTableCol1"> emoticon-0141-whew.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> whew </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :happy: </td>
+			<td class="foswikiTableCol1"> emoticon-0142-happy.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> happy </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :smirk: </td>
+			<td class="foswikiTableCol1"> emoticon-0143-smirk.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> smirk </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :nod: </td>
+			<td class="foswikiTableCol1"> emoticon-0144-nod.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> nod </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :shake: </td>
+			<td class="foswikiTableCol1"> emoticon-0145-shake.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> shake </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :punch: </td>
+			<td class="foswikiTableCol1"> emoticon-0146-punch.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> punch </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :emo: </td>
+			<td class="foswikiTableCol1"> emoticon-0147-emo.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> emo </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :yes: :ok: </td>
+			<td class="foswikiTableCol1"> emoticon-0148-yes.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> yes </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :no: </td>
+			<td class="foswikiTableCol1"> emoticon-0149-no.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> no </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :handshake: </td>
+			<td class="foswikiTableCol1"> emoticon-0150-handshake.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> handshake </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :heart: </td>
+			<td class="foswikiTableCol1"> emoticon-0152-heart.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> heart </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :brokenheart: </td>
+			<td class="foswikiTableCol1"> emoticon-0153-brokenheart.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> broken heart </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :mail: </td>
+			<td class="foswikiTableCol1"> emoticon-0154-mail.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> mail </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :flower: </td>
+			<td class="foswikiTableCol1"> emoticon-0155-flower.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> flower </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :rain: </td>
+			<td class="foswikiTableCol1"> emoticon-0156-rain.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> rain </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :sun: </td>
+			<td class="foswikiTableCol1"> emoticon-0157-sun.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> sun </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :time: </td>
+			<td class="foswikiTableCol1"> emoticon-0158-time.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> time </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :music: </td>
+			<td class="foswikiTableCol1"> emoticon-0159-music.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> music </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :movie: </td>
+			<td class="foswikiTableCol1"> emoticon-0160-movie.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> movie, film </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :phone: </td>
+			<td class="foswikiTableCol1"> emoticon-0161-phone.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> phone </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :coffee: </td>
+			<td class="foswikiTableCol1"> emoticon-0162-coffee.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> coffee </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :pizza: </td>
+			<td class="foswikiTableCol1"> emoticon-0163-pizza.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> pizza </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :cash: </td>
+			<td class="foswikiTableCol1"> emoticon-0164-cash.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cash </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :muscle: </td>
+			<td class="foswikiTableCol1"> emoticon-0165-muscle.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> muscle </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :cake: </td>
+			<td class="foswikiTableCol1"> emoticon-0166-cake.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> cake </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :beer: </td>
+			<td class="foswikiTableCol1"> emoticon-0167-beer.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> beer </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :drink: </td>
+			<td class="foswikiTableCol1"> emoticon-0168-drink.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> drink </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :dance: </td>
+			<td class="foswikiTableCol1"> emoticon-0169-dance.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> dance </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :ninja: </td>
+			<td class="foswikiTableCol1"> emoticon-0170-ninja.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> ninja </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :star: </td>
+			<td class="foswikiTableCol1"> emoticon-0171-star.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> star </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :morning: </td>
+			<td class="foswikiTableCol1"> emoticon-0172-mooning.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> morning </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :finger: </td>
+			<td class="foswikiTableCol1"> emoticon-0173-middlefinger.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> finger </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bandit: </td>
+			<td class="foswikiTableCol1"> emoticon-0174-bandit.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bandit </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :drunk: </td>
+			<td class="foswikiTableCol1"> emoticon-0175-drunk.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> drunk </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :smoke: </td>
+			<td class="foswikiTableCol1"> emoticon-0176-smoke.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> smoke </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :toivo: </td>
+			<td class="foswikiTableCol1"> emoticon-0177-toivo.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> tovio </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :rock: </td>
+			<td class="foswikiTableCol1"> emoticon-0178-rock.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> rock </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :headbang: :mad: </td>
+			<td class="foswikiTableCol1"> emoticon-0179-headbang.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> head bang, getting mad </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :bug: </td>
+			<td class="foswikiTableCol1"> emoticon-0180-bug.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> bug </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :foobar: </td>
+			<td class="foswikiTableCol1"> emoticon-0181-fubar.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> foobar </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :poolparty: </td>
+			<td class="foswikiTableCol1"> emoticon-0182-poolparty.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> pool party </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :swear: </td>
+			<td class="foswikiTableCol1"> emoticon-0183-swear.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> swear </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :tmi: </td>
+			<td class="foswikiTableCol1"> emoticon-0184-tmi.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> tmi </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :heidy: </td>
+			<td class="foswikiTableCol1"> emoticon-0185-heidy.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> heidy </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :malthe: </td>
+			<td class="foswikiTableCol1"> emoticon-0187-malthe.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> malthe </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :tauri: :rolleyes: </td>
+			<td class="foswikiTableCol1"> emoticon-0188-tauri.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> tauri </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> :priidu: </td>
+			<td class="foswikiTableCol1"> emoticon-0189-priidu.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> priidu </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> :skull: </td>
+			<td class="foswikiTableCol1 foswikiLast"> skull.gif </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> dead, deadly, doom </td>
+		</tr>
+	</tbody></table>
+-->
+<p></p>
+<h2 id="SmiliesPlugin_Global_Settings"> SmiliesPlugin Global Settings </h2>
+<p></p>
+You can override the default settings for the plugin by defining the following <a href="PreferenceSettings.html">preferences</a>.
+<!-- <ul>
+<li> Set SHORTDESCRIPTION = Render smilies like <img alt="smile" src="SmiliesPlugin.attachments/emoticon-0100-smile.gif" class="smily" title="smile"> as icons
+</li></ul> 
+-->
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Preference</a> </th>
+			<th class="foswikiTableCol1"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Meaning</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Default</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>SMILIESPLUGIN_TOPIC</code> </td>
+			<td class="foswikiTableCol1"> The name of the topic containing your Smilies. Use format <code>web.topic</code>. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <a href="SmiliesPlugin.html" class="foswikiCurrentTopicLink">SmiliesPlugin</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>SMILIESPLUGIN_FORMAT</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> The way the <em>emoticon</em> is displayed. You can use <code><b>$emoticon</b></code> (e.g. <code>:D</code>), <code><b>$url</b></code> (e.g. <code>%ATTACHURL%/biggrin.gif</code>) and <code><b>$tooltip</b></code> (e.g. <code>"big grin"</code>). </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <pre class="tml">&#60;img
+    class&#61;&#39;smily&#39;
+    src&#61;&#39;&#36;url&#39;
+    alt&#61;&#39;&#36;tooltip&#39;
+    title&#61;&#39;&#36;tooltip&#39;
+     /&#62;</pre> If possible, use single quotes for html attributes </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions </h2>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- specify latest version first -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Sep 2015: (2.03) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13725" class="interwikiLink" title="'Item13725' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13725</noautolink></a>: Remove height from css for better compatibilty.<br/>                         <a href="https://foswiki.org/Tasks/Item13726" class="interwikiLink" title="'Item13726' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13726</noautolink></a>: Restore legacy icons to avoid broken links. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 25 Jun 2015: (2.02) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13475' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13475"><noautolink>Foswikitask:Item13475</noautolink></a>: Restore skull markup.  Released with Foswiki 2.0. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 27 Feb 2014: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> modernized code and icon set </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Oct 2012: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> use single quotes to enable use of smilies within Macros </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Dec 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.4. Minor code cleanup. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 11 Apr 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.3. Only a minor change related to how the plugin is being upgraded </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Aug 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item9415' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9415" class="interwikiLink"><noautolink>Foswikitask:Item9415</noautolink></a> - Minor documentation updates </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Sep 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Small documentation update. Included with Foswiki 1.0.7 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 13 Jan 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Removed default preferences from this topic </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Jan 2009: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Foswiki version - Fixed the use of SMILIESPLUGIN_TOPIC so you can create your own smily collection that does not get overwritten when upgrading Foswiki </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Nov 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Doc improvements </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Mar 2005: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Fixed typo "scull" </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 5 Mar 2005: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 1.004 Crawford Currie prepared for Dakar </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Nov 2004: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Added benchmarks (no code changes) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Aug 2004: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Fixed tooltip for Netscape; added "sealed lips", "thumbs up", "yes" "no", "in love", "skull" </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Feb 2004: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Added "devil" and "devilwink" smilies (by <a title="'Main.CrawfordCurrie' on TWiki.org" href="http://twiki.org/cgi-bin/view/Main.CrawfordCurrie" class="interwikiLink"><noautolink>TWiki:Main.CrawfordCurrie</noautolink></a>) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 26 Feb 2003: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Added "indifferent" smilie </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Oct 2002: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Fixed STDERR warning for non-initialized Plugin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Apr 2002: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Improved performance; removed non-standard Plugin API dependencies; added standard plugin topic content -- <a title="'Main.PeterThoeny' on TWiki.org" href="http://twiki.org/cgi-bin/view/Main.PeterThoeny" class="interwikiLink"><noautolink>TWiki:Main.PeterThoeny</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Nov 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Added TOPIC and FORMAT setting </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Jun 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Packaged into ZIP </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Feb 2001: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Initial version </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> None </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="DefaultPreferences.html">DefaultPreferences</a>, <a href="../Main/SitePreferences.html">SitePreferences</a>, <a href="Plugins.html">Plugins</a>
+<!--  -->
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

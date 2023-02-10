@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarFORMAT &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/VarFORMAT/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/VarFORMAT/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit VarFORMAT" href="VarFORMAT.html" rel="alternate">
+<meta name="description" content="VarFORMAT" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarFORMAT"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="FORMAT_45_45_format_a_list_of_objects">  FORMAT -- format a list of objects </h1>
+<h2 id="Parameters">  Parameters </h2>
+             <table class="foswikiTable" id="tableVarFORMAT1" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Parameter </th>
+			<th class="foswikiTableCol1"> Description </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Default </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"one, two, three"</code> </td>
+			<td class="foswikiTableCol1"> The list to be expanded into the format. Required. Currently only two types of list data are supported; topic names (<code>type="topic"</code>) and plain strings (<code>type="string"</code>). </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>format</code> </td>
+			<td class="foswikiTableCol1"> Format string; see <a href="#FormatFormattingTokens" class="foswikiCurrentTopicLink">Supported formatting tokens</a> for possible values. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>header</code> </td>
+			<td class="foswikiTableCol1"> Text to come before the formatted output </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>footer</code> </td>
+			<td class="foswikiTableCol1"> Text to come after the formatted output </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>separator</code> </td>
+			<td class="foswikiTableCol1"> Separator between formatted elements </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>$n</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>type</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Treat input list as either <code>topic</code> or <code>string</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>topic</code> </td>
+		</tr>
+	</tbody>     </table>
+<h2 id="Examples">  Examples </h2>
+   <pre class="tml">
+   &#37;FORMAT{&#34;one,two,three&#34; type&#61;&#34;string&#34; format&#61;&#34;   &#42; &#36;item&#34;}&#37;
+   &#37;FORMAT{&#34;&#37;SKIN&#37;&#34;
+      header&#61;&#34;the Skin setting is evaluated in this order:&#34;
+      format&#61;&#34;   1 &#61;&#36;topic&#61;&#34;
+      footer&#61;&#34;   1 &#61;default&#61;&#34;
+   }&#37;</pre>
+<h2 id="Supported_formatting_tokens">  Supported formatting tokens </h2>
+If <code>type="topic"</code> (the default) the format string can contain <em>any</em> of the
+topic-specific format tokens
+specified in <a href="FormattedSearch.html">FormattedSearch</a> (<code>$web</code>, <code>$topic</code>, <code>$parent</code>, <code>$text</code>, <code>$locked</code>,
+<code>$date</code>, <code>$isodate</code>, <code>$index</code>, <code>$item</code>, <code>$rev</code>, <code>$username</code>, <code>$wikiname</code>, <code>$wikiusername</code>,
+<code>$createdate</code>, <code>$createusername</code>, <code>$createwikiname</code>, <code>$createwikiusername</code>,
+<code>$summary</code>, <code>$changes</code>, <code>$formname</code>, <code>$formfield</code>, <code>$pattern</code>, <code>$count</code>,
+<code>$ntopics</code>, <code>$nhits</code>, <code>$pager</code>).
+In addition, the macro supports all the standard <a href="FormatTokens.html">format tokens</a>.
+<p></p>
+If <code>type="string"</code> then the comma separated list is treated as a list of
+strings. In this case, the format tokens <code>$index</code> and <code>$item</code> will return
+the position of the item in the list (1-based), and the item itself,
+respectively. Note that a comma can be embedded in the data using the standard
+formatting token <code>$comma</code>.
+<p></p>
+The FORMAT macro is currently only of use in formatting lists of topics,
+or of simple strings. It will be extended in future releases to add the
+capability to render other object types.
+<p></p>
+<div class="foswikiHelp"><img src="DocumentGraphics.attachments/tip.png" alt="IDEA!" height="16" title="IDEA!" width="16"> For more sophisticated handling of string lists, consider installing <a class="interwikiLink" href="https://foswiki.org/Extensions.FilterPlugin" title="'Extensions.FilterPlugin' on foswiki.org"><noautolink>Foswiki:Extensions.FilterPlugin</noautolink></a> </div>
+<p></p>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarSEARCH.html">SEARCH</a>, <a href="VarENCODE.html">ENCODE</a>, <a href="FormattedSearch.html">FormattedSearch</a>
+<!---->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

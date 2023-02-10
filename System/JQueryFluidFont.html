@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryFluidFont &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryFluidFont/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE System/JQueryFluidFont/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="JQueryFluidFont.html" title="edit JQueryFluidFont">
+<meta name="description" content="JQueryFluidFont" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::FLUIDFONT" src="JQueryPlugin.attachments/plugins/fluidfont/jquery.fluidfont.js?version=1.0"></script><!--JQUERYPLUGIN::FLUIDFONT-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "JQueryFluidFont",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryFluidFont">  <a class="foswikiCurrentTopicLink" href="JQueryFluidFont.html">JQueryFluidFont</a> </h1>
+<p></p>
+    Homepage: <a href="http://foswiki.org/Extensions/JQueryPlugin">http://foswiki.org/Extensions/JQueryPlugin</a> <br />
+    Author(s): Michael Daum <br />
+    Version: 1.0
+<p></p>
+<p></p>
+<p></p>
+Recompute the font size of an element based on its width. 
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<h3 id="JavaScript_API"> JavaScript API </h3>
+The <code>fluidfont()</code> plugin attaches to a jQuery object and recomputes its font-size based on its width.
+You can specify a width at which the original font size should be used. When the element is resized
+the ratio between width and font-size is maintained continuously.
+<p></p>
+<strong>Parameters</strong>:
+<p></p> <ul>
+<li> width: standard width that will show the original font-size 
+</li> <li> min: minimal font size in px 
+</li> <li> max: maximal font size in px
+</li></ul> 
+<p></p>
+<h3 id="Foswiki_integration">  Foswiki integration </h3>
+FluidFont is activated for any html element that has got the <code><b>jqFluidFont</b></code> class. Options can be specified
+using <a href="JQueryMetadata.html">JQueryMetadata</a>.
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+<div class="jqFluidFont {width:960, min:7, max:20}" style="border:1px solid #ddd;padding:10px">
+<span class='foswikiRedFG'>This area uses fluid typography.</span>
+<p></p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam facilisis neque id ipsum imperdiet at ornare magna auctor. Nunc condimentum enim vitae libero placerat scelerisque. Nunc eu neque orci, in hendrerit tortor. Vestibulum quis arcu sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh est, consectetur quis commodo scelerisque, laoreet ac nulla. Mauris feugiat elit non ante hendrerit ut ultricies nisl aliquam. Pellentesque fermentum tortor a nunc vulputate laoreet. Nulla at odio ut magna bibendum dignissim. Duis eget lorem ut erat blandit accumsan in quis dolor. 
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol2"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol3"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol4"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol5"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">head</a> </th>
+			<th class="foswikiTableCol6"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol7"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol8"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol9"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol10"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol11"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">head</a> </th>
+			<th class="foswikiTableCol12"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">head</a> </th>
+			<th class="foswikiTableCol13"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol14"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol15"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol16"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol17"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">head</a> </th>
+			<th class="foswikiTableCol18"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">head</a> </th>
+			<th class="foswikiTableCol19 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">head</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> data </td>
+			<td class="foswikiTableCol1"> data </td>
+			<td class="foswikiTableCol2"> data </td>
+			<td class="foswikiTableCol3"> data </td>
+			<td class="foswikiTableCol4"> data </td>
+			<td class="foswikiTableCol5"> data </td>
+			<td class="foswikiTableCol6"> data </td>
+			<td class="foswikiTableCol7"> data </td>
+			<td class="foswikiTableCol8"> data </td>
+			<td class="foswikiTableCol9"> data </td>
+			<td class="foswikiTableCol10"> data </td>
+			<td class="foswikiTableCol11"> data </td>
+			<td class="foswikiTableCol12"> data </td>
+			<td class="foswikiTableCol13"> data </td>
+			<td class="foswikiTableCol14"> data </td>
+			<td class="foswikiTableCol15"> data </td>
+			<td class="foswikiTableCol16"> data </td>
+			<td class="foswikiTableCol17"> data </td>
+			<td class="foswikiTableCol18"> data </td>
+			<td class="foswikiTableCol19 foswikiLastCol"> data </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> data </td>
+			<td class="foswikiTableCol1"> data </td>
+			<td class="foswikiTableCol2"> data </td>
+			<td class="foswikiTableCol3"> data </td>
+			<td class="foswikiTableCol4"> data </td>
+			<td class="foswikiTableCol5"> data </td>
+			<td class="foswikiTableCol6"> data </td>
+			<td class="foswikiTableCol7"> data </td>
+			<td class="foswikiTableCol8"> data </td>
+			<td class="foswikiTableCol9"> data </td>
+			<td class="foswikiTableCol10"> data </td>
+			<td class="foswikiTableCol11"> data </td>
+			<td class="foswikiTableCol12"> data </td>
+			<td class="foswikiTableCol13"> data </td>
+			<td class="foswikiTableCol14"> data </td>
+			<td class="foswikiTableCol15"> data </td>
+			<td class="foswikiTableCol16"> data </td>
+			<td class="foswikiTableCol17"> data </td>
+			<td class="foswikiTableCol18"> data </td>
+			<td class="foswikiTableCol19 foswikiLastCol"> data </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> data </td>
+			<td class="foswikiTableCol1"> data </td>
+			<td class="foswikiTableCol2"> data </td>
+			<td class="foswikiTableCol3"> data </td>
+			<td class="foswikiTableCol4"> data </td>
+			<td class="foswikiTableCol5"> data </td>
+			<td class="foswikiTableCol6"> data </td>
+			<td class="foswikiTableCol7"> data </td>
+			<td class="foswikiTableCol8"> data </td>
+			<td class="foswikiTableCol9"> data </td>
+			<td class="foswikiTableCol10"> data </td>
+			<td class="foswikiTableCol11"> data </td>
+			<td class="foswikiTableCol12"> data </td>
+			<td class="foswikiTableCol13"> data </td>
+			<td class="foswikiTableCol14"> data </td>
+			<td class="foswikiTableCol15"> data </td>
+			<td class="foswikiTableCol16"> data </td>
+			<td class="foswikiTableCol17"> data </td>
+			<td class="foswikiTableCol18"> data </td>
+			<td class="foswikiTableCol19 foswikiLastCol"> data </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> data </td>
+			<td class="foswikiTableCol1 foswikiLast"> data </td>
+			<td class="foswikiTableCol2 foswikiLast"> data </td>
+			<td class="foswikiTableCol3 foswikiLast"> data </td>
+			<td class="foswikiTableCol4 foswikiLast"> data </td>
+			<td class="foswikiTableCol5 foswikiLast"> data </td>
+			<td class="foswikiTableCol6 foswikiLast"> data </td>
+			<td class="foswikiTableCol7 foswikiLast"> data </td>
+			<td class="foswikiTableCol8 foswikiLast"> data </td>
+			<td class="foswikiTableCol9 foswikiLast"> data </td>
+			<td class="foswikiTableCol10 foswikiLast"> data </td>
+			<td class="foswikiTableCol11 foswikiLast"> data </td>
+			<td class="foswikiTableCol12 foswikiLast"> data </td>
+			<td class="foswikiTableCol13 foswikiLast"> data </td>
+			<td class="foswikiTableCol14 foswikiLast"> data </td>
+			<td class="foswikiTableCol15 foswikiLast"> data </td>
+			<td class="foswikiTableCol16 foswikiLast"> data </td>
+			<td class="foswikiTableCol17 foswikiLast"> data </td>
+			<td class="foswikiTableCol18 foswikiLast"> data </td>
+			<td class="foswikiTableCol19 foswikiLastCol foswikiLast"> data </td>
+		</tr>
+	</tbody></table>
+</div>
+<p></p>
+<a href="JQueryFluidFont.html">Click here</a> 
+        to activate fluid font for all of this page.
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;fluidfont&#34;}&#37;
+&#60;script&#62;
+jQuery(function(&#36;) {
+  alert(&#34;Switching on fluid font for the body element. 
+ Resize the browser window to see the effect.&#34;);
+  &#36;(&#34;body&#34;).fluidfont({
+    width: 1024, 
+    min: 11,
+    max: 20
+  });
+});
+&#60;/script&#62;
+&#37;ENDSECTION{&#34;fluidfont&#34;}&#37;
+</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

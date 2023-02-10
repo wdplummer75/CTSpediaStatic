@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarQUERY &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/VarQUERY/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/VarQUERY/favicon.ico" type="image/x-icon">
+<link href="VarQUERY.html" rel="alternate" title="edit VarQUERY" type="application/x-wiki">
+<meta name="description" content="VarQUERY" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "VarQUERY",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="QUERY_45_45_get_the_value_of_meta_45data">  QUERY -- get the value of meta-data </h1>
+Uses the query syntax described in <a href="QuerySearch.html">QuerySearch</a> to get information about meta-data from one specified topic. <ul>
+<li> supports formatted access to formfields and other meta-data in  topics using the same syntax as is used in <code>IF</code> and <code>SEARCH</code> statements,
+</li> <li> gives access to <strong>all</strong> meta-data, including that added by extensions,
+</li> <li> supports reporting values using JSON and other standards, simplifying the retrieval of meta-data for REST applications,
+</li> <li> replaces the <code><a href="VarFORMFIELD.html">FORMFIELD</a></code> macro for most applications.
+</li></ul> 
+See QuerySearch for more details of how to write queries
+<h2 id="Parameters">  Parameters </h2>
+       <table class="foswikiTable" rules="none">   
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Parameter</a> </th>
+			<th class="foswikiTableCol1"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Description</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Default</a> </th>
+		</tr>
+	</thead>   
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"item"</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> The meta-data to query </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>style</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> set the output format (see below) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>rev</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> operate on the given version of the current topic. Note that this will <em>only</em> affect simple queries that refer to the current topic, such as <code>form.name</code>. More complex queries that use searches or indirection to refer to other topics always use the <strong>latest</strong> version of those topics. </td>
+		</tr>
+	</tbody>   </table>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<pre class="tml">
+      Get the name of the form in the current topic:
+      %QUERY{"form.name"}%
+
+      Get the value of the 'Firstname' form field in
+        the current topic:
+      %QUERY{"fields[name='Firstname'].value"}%
+
+      Get the value of the 'Firstname' form field in
+        the current topic (shorthand version):
+      %QUERY{"Firstname"}%
+
+      Get a list of all the names of attachments on
+        the topic 'System.DocumentGraphics':
+      %QUERY{"'System.DocumentGraphics'/attachments.name"}%
+
+      Get configuration setting {NameFilter}:
+      %QUERY{"{NameFilter}"}%
+</pre>
+Plain strings (such as field values) are returned <em>without</em> quotes. Simple arrays of scalars are also returned without quotes, in a comma-separated list (beware of values that contain commas!).
+<p></p>
+More complex data structures (e.g. arrays of hashes) will only be returned if <code>style="perl"</code> or <code>style="json"</code> are set - else will return a string containing 'undef'.
+<p></p>
+You can make the macro generate different output formats using the <code>style</code> parameter: <ul>
+<li> <code>style="perl"</code> - generates values as Perl code strings generated by running through <a class="interwikiLink" href="https://metacpan.org/module/Data::Dumper" title="CPAN perl repository"><noautolink>CPAN:Data::Dumper</noautolink></a>
+</li> <li> <code>style="json"</code> - generates values as JSON strings, suitable for reading by browsers.
+</li></ul> 
+<p></p>
+Only some configuration settings are available via QUERY: <code>{AccessControlACL}{EnableDeprecatedEmptyDeny}</code>, <code>{AccessibleCFG}</code>, <code>{AdminUserLogin}</code>, <code>{AdminUserWikiName}</code>, <code>{AntiSpam}{EmailPadding}</code>, <code>{AntiSpam}{EntityEncode}</code>, <code>{AntiSpam}{HideUserDetails}</code>, <code>{AntiSpam}{RobotsAreWelcome}</code>, <code>{AttachmentNameFilter}</code>, <code>{AuthRealm}</code>, <code>{AuthScripts}</code>, <code>{Cache}{Enabled}</code>, <code>{DefaultDateFormat}</code>, <code>{DefaultUrlHost}</code>, <code>{DenyDotDotInclude}</code>, <code>{DisplayTimeValues}</code>, <code>{EnableEmail}</code>, <code>{EnableHierarchicalWebs}</code>, <code>{FormTypes}</code>, <code>{HomeTopicName}</code>, <code>{LeaseLength}</code>, <code>{LeaseLengthLessForceful}</code>, <code>{LinkProtocolPattern}</code>, <code>{LocalSitePreferences}</code>, <code>{LoginNameFilterIn}</code>, <code>{MaxRevisionsInADiff}</code>, <code>{MinPasswordLength}</code>, <code>{NameFilter}</code>, <code>{NotifyTopicName}</code>, <code>{NumberOfRevisions}</code>, <code>{PluginsOrder}</code>, <code>{Plugins}{WebSearchPath}</code>, <code>{PluralToSingular}</code>, <code>{Register}{AllowLoginName}</code>, <code>{Register}{Approvers}</code>, <code>{Register}{DisablePasswordConfirmation}</code>, <code>{Register}{EnableNewUserRegistration}</code>, <code>{Register}{NeedApproval}</code>, <code>{Register}{NeedVerification}</code>, <code>{Register}{RegistrationAgentWikiName}</code>, <code>{ReplaceIfEditedAgainWithin}</code>, <code>{SandboxWebName}</code>, <code>{ScriptSuffix}</code>, <code>{ScriptUrlPath}</code>, <code>{Site}{Locale}</code>, <code>{SitePrefsTopicName}</code>, <code>{Stats}{TopContrib}</code>, <code>{Stats}{TopicName}</code>, <code>{Stats}{TopViews}</code>, <code>{SuperAdminGroup}</code>, <code>{SystemWebName}</code>, <code>{TemplateLogin}{AllowLoginUsingEmailAddress}</code>, <code>{TemplatePath}</code>, <code>{TrashWebName}</code>, <code>{UploadFilter}</code>, <code>{UseLocale}</code>, <code>{UserInterfaceInternationalisation}</code>, <code>{UsersTopicName}</code>, <code>{UsersWebName}</code>, <code>{Validation}{Method}</code>, <code>{WebMasterEmail}</code>, <code>{WebMasterName}</code>, <code>{WebPrefsTopicName}</code>
+<p></p>
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarMETA.html">META</a> <a href="QuerySearch.html">QuerySearch</a>
+<!---->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

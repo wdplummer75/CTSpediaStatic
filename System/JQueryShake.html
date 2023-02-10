@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryShake &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/JQueryShake/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryShake/favicon.ico" rel="shortcut icon">
+<link href="JQueryShake.html" rel="alternate" title="edit JQueryShake" type="application/x-wiki">
+<meta name="description" content="JQueryShake" />
+<link href="JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" class="head JQUERYPLUGIN::BUTTON" media="all" rel="stylesheet" type="text/css"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryShake"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryShake">  <a href="JQueryShake.html" class="foswikiCurrentTopicLink">JQueryShake</a> </h1>
+<p></p>
+<p></p>
+<p></p>
+<div class="foswikiWarningMessage">
+Warning: This plugin is deprecated. The shake effect is now part of the latest <a href="JQueryUI.html">JQueryUI</a>. So use 
+<p></p>
+<pre class="js">
+jQuery(&#34;#id&#34;).effect(&#34;shake&#34;, {times: 3}, 100);
+</pre>
+<p></p>
+instead.
+</div>
+jQuery plugin to emulate &#8220;shake&#8221; on login failure in OSX login box.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+Call <code>$("&lt;selector&gt;").shake(shakes, distance, duration)</code> to shake the selected elements.
+<p></p>
+Options:
+<p></p> <ul>
+<li> shake: amount of shakes
+</li> <li> distance: shake distance
+</li> <li> duration: duration of the effect
+</li></ul> 
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<div class='foswikiAlert'>No such plugin shake</div>
+<a class="jqButton " href=".." onclick="jQuery('#lorem').shake(3, 10, 180);return false;"><span class='jqButtonIcon img' style='background-image:url(/foswiki/pub/System/FamFamFamSilkIcons/bomb.png)'></span><span class='jqButtonText'>Shake it, baby</span></a>
+<span class='foswikiClear'></span>
+<p></p>
+<div id="lorem" style="width:300px;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ornare fringilla est, eget condimentum quam auctor quis. Curabitur vitae nibh eu nisl scelerisque facilisis. Vestibulum posuere pretium magna, eu pulvinar libero cursus in. Phasellus tortor dui, viverra vitae molestie a, aliquam quis risus. Mauris fringilla mattis ligula, et laoreet dui rhoncus vel. Aliquam bibendum, nisi nec pellentesque convallis, augue elit rutrum sapien, nec molestie augue mauris et tellus. </div>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

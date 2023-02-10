@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>LanguageSelector &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/LanguageSelector/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE System/LanguageSelector/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit LanguageSelector" href="LanguageSelector.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="LanguageSelector" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "LanguageSelector",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Language_selection_dropdown">  Language selection dropdown </h1>
+<p></p>
+<strong>To be included where a language selection is needed, for instance in the top bar or left bar.</strong>
+<p></p>
+Note: this dropdown is only shown if localization is enabled.<br />
+Test: <span style="color:red; font-weight:bold;">localization is not enabled</span> <br />
+<p></p>
+Usage:
+<pre class="tml">
+&#37;INCLUDE{&#34;&#37;SYSTEMWEB&#37;.LanguageSelector&#34;}&#37;
+</pre>
+<p></p>
+Result:
+<p></p>
+<p></p>
+<pre class="foswikiHidden">
+&#37;STARTSECTION{&#34;selector&#34;}&#37;&#60;form action&#61;&#34;&#37;SCRIPTURLPATH{&#34;oops&#34;}&#37;/&#37;BASEWEB&#37;/&#37;BASETOPIC&#37;&#34; method&#61;&#34;get&#34;&#62;
+    &#60;input type&#61;&#34;hidden&#34; name&#61;&#34;redirectto&#34; value&#61;&#34;&#37;SCRIPTURLPATH{&#34;view&#34;}&#37;/&#37;BASEWEB&#37;/&#37;BASETOPIC&#37;?&#37;QUERYPARAMS{encoding&#61;&#34;url&#34; separator&#61;&#34;;&#34;}&#37;&#34; /&#62;
+    &#60;select name&#61;&#34;language&#34; class&#61;&#34;foswikiSelect&#34; onchange&#61;&#34;this.form.submit()&#34;&#62;
+      &#60;option value&#61;&#39;default&#39;&#62;&#37;MAKETEXT{&#34;Default&#34;}&#37;&#60;/option&#62;
+    &#37;LANGUAGES{
+         format&#61;&#34;&#60;option &#36;marker value&#61;&#39;&#36;langtag&#39;&#62;&#36;langname&#60;/option&#62;&#34;
+         selection&#61;&#34;&#37;LANGUAGE&#37;&#34;
+         separator&#61;&#34; &#34;
+         marker&#61;&#34;selected&#61;&#39;selected&#39;&#34;
+    }&#37;&#60;/select&#62;
+    &#60;input type&#61;&#34;hidden&#34; name&#61;&#34;template&#34; value&#61;&#34;oopslanguagechanged&#34; /&#62;
+    &#60;noscript&#62;
+        &#60;input class&#61;&#34;foswikiButton&#34; type&#61;&#34;submit&#34; value&#61;&#34;&#37;MAKETEXT{&#34;Change language&#34;}&#37;&#34; /&#62;
+    &#60;/noscript&#62;
+ &#60;/form&#62;&#37;ENDSECTION{&#34;selector&#34;}&#37;
+</pre>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

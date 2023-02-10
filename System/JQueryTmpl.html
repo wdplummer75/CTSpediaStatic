@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryTmpl &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryTmpl/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE System/JQueryTmpl/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit JQueryTmpl" href="JQueryTmpl.html" rel="alternate">
+<meta name="description" content="JQueryTmpl" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "JQueryTmpl",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryTmpl">  <a href="JQueryTmpl.html" class="foswikiCurrentTopicLink">JQueryTmpl</a> </h1>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+jQuery templates contain markup with binding expressions ('Template tags'). Templates are applied to data objects or arrays, and rendered into the HTML DOM
+<p></p>
+<p></p>
+<h2 id="Example">  Example </h2>
+<div class='foswikiAlert'>No such plugin tmpl</div>
+<p></p>
+This is a template stored in a script section of type <code>text/x-jquery-tmpl</code>. This is going to be used
+by jquery.tmpl in a loop over all data provided and render a list item for each by inserting the data
+from the array into this template and append it to the movie list
+<p></p>
+<pre class="js">
+&#60;script id&#61;&#34;movieTemplate&#34; type&#61;&#34;text/x-jquery-tmpl&#34;&#62; 
+&#60;li&#62;
+  &#60;b&#62;&#36;{Name}&#60;/b&#62; (&#36;{ReleaseYear})
+&#60;/li&#62;
+&#60;/script&#62; 
+</pre>
+<p></p>
+
+<script id="movieTemplate" type="text/x-jquery-tmpl"> 
+<li>
+  <b>${Name}</b> (${ReleaseYear})
+</li>
+</script>
+ 
+<p></p>
+This is example stores data locally in a javascript array. You may also fetch this data using remote data. See the second example.
+<p></p>
+<pre class="js">
+&#60;script&#62; 
+jQuery(function(&#36;) {
+  var movies &#61; &#91;
+    { Name: &#34;The Red Violin&#34;, ReleaseYear: &#34;1998&#34; },
+    { Name: &#34;Eyes Wide Shut&#34;, ReleaseYear: &#34;1999&#34; },
+    { Name: &#34;The Inheritance&#34;, ReleaseYear: &#34;1976&#34; }
+  &#93;;
+
+  &#36;(&#34;#movieTemplate&#34;).tmpl(movies).appendTo( &#34;#movieList&#34;);
+});
+&#60;/script&#62; 
+</pre>
+<p></p>
+
+<script> 
+jQuery(function($) {
+  var movies = [
+    { Name: "The Red Violin", ReleaseYear: "1998" },
+    { Name: "Eyes Wide Shut", ReleaseYear: "1999" },
+    { Name: "The Inheritance", ReleaseYear: "1976" }
+  ];
+
+  $("#movieTemplate").tmpl(movies).appendTo( "#movieList");
+});
+</script> 
+
+<p></p>
+The result will be appended to the <code>movieList</code> element:
+<p></p>
+<pre class="html">
+&#60;ul id&#61;&#34;movieList&#34;&#62;&#60;/ul&#62; 
+</pre>
+<p></p>
+<ul id="movieList"></ul> 
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

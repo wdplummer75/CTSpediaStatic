@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryShrinkUrls &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryShrinkUrls/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE System/JQueryShrinkUrls/favicon.ico" type="image/x-icon">
+<link href="JQueryShrinkUrls.html" rel="alternate" title="edit JQueryShrinkUrls" type="application/x-wiki">
+<meta name="description" content="JQueryShrinkUrls" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "JQueryShrinkUrls",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::SHRINKURLS" src="JQueryPlugin.attachments/plugins/shrinkurls/jquery.shrinkurls.js?version=2.0"></script><!--JQUERYPLUGIN::SHRINKURLS-->
+</head>
+<body>
+<h1 id="JQueryShrinkUrls">  <a href="JQueryShrinkUrls.html" class="foswikiCurrentTopicLink">JQueryShrinkUrls</a> </h1>
+<p></p>
+    Homepage: <a href="http://foswiki.org/Extensions/JQueryPlugin">http://foswiki.org/Extensions/JQueryPlugin</a> <br />
+    Author(s): Michael Daum <br />
+    Version: 2.0
+<p></p>
+<p></p>
+<p></p>
+Shrinks all urls in a given container whose link text exceeds
+a given size and have no white spaces in it, that is don't
+wrap around nicely. If the text is skrunk, the original text
+is appended to the title attribute of the anchor.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+<h3 id="JavaScript_API"> JavaScript API </h3>
+<p></p>
+<pre class="js">
+ &#36;(&#34;#container a&#34;).shrinkUrls({
+   size:&#60;number&#62;,           // max size (default 25)
+   include:&#39;&#60;regex&#62;&#39;       // regular expression a link text must
+                           // match to be considered
+   exclude:&#39;&#60;regex&#62;&#39;       // regular expression a link text must
+                           // not match to be considered
+   whitespace:&#60;boolean&#62;,   // true: even shrink if there&#39;s whitespace
+                           // in the link text (default false)
+   trunc:&#60;head&#124;middle&#124;tail&#62; // position where to insert the ellipsis
+ });
+</pre>
+<p></p>
+<h3 id="Foswiki_integration">  Foswiki integration </h3>
+<p></p>
+Add the class name <code><b>jqShrinkUrls</b></code> to a container to process all anchors inside.
+<p></p>
+<pre class="tml">
+&#37;JQREQUIRE{&#34;shrinkurls&#34;}&#37;
+&#60;div class&#61;&#34;jqShrinkUrls&#34; data-size&#61;&#34;25&#34; data-whitespace&#61;&#34;true&#34;&#62;
+   &#60;a href&#61;&#34;#&#34;&#62;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula est et felis imperdi&#60;/a&#62;
+&#60;/div&#62;
+</pre>
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<p></p>
+<p></p>
+<div class="jqShrinkUrls" data-size="25"  data-whitespace="true">
+   <a href="..">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula est et felis imperdi</a>
+</div>
+<p></p>
+<div class="jqShrinkUrls" data-size="25" data-whitespace="true" data-trunc="middle">
+   <a href="..">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula est et felis imperdi</a>
+</div>
+<p></p>
+<div class="jqShrinkUrls" data-size="25" data-whitespace="true" data-trunc="head">
+   <a href="..">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula est et felis imperdi</a>
+</div>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

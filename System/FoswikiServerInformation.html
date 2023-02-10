@@ -1,0 +1,2117 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FoswikiServerInformation &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/FoswikiServerInformation/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE System/FoswikiServerInformation/favicon.ico" type="image/x-icon">
+<link href="FoswikiServerInformation.html" rel="alternate" title="edit FoswikiServerInformation" type="application/x-wiki">
+<meta name="description" content="FoswikiServerInformation" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "FoswikiServerInformation",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<h1 id="Foswiki_Server_Information">  Foswiki Server Information </h1>
+<p></p>
+This topic lists the detailed server execution environment.  As this is
+sensitive information, it is only available to users with access to Configure.
+<p></p>
+<h2 id="Foswiki_information">  Foswiki information </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki Version </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> v2.1.6 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki Release </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Foswiki-2.1.6 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Foswiki Plugin API </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> 2.4 </td>
+		</tr>
+	</tbody></table>
+<p></p>
+See Also:  <a href="PerlDependencyReport.html">PerlDependencyReport</a> for details on the installed Perl CPAN modules and <a href="InstalledPlugins.html">InstalledPlugins</a> for diagnostics on the installed plugins.
+<p></p>
+<h2 id="General_execution_environment">  General execution environment </h2>
+<noautolink>
+<table class="foswikiTable" id="tableFoswikiServerInformation2" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Area </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> Details </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> @INC Library Path </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /var/www/foswiki/lib<br />/etc/perl<br />/usr/local/lib/x86_64-linux-gnu/perl/5.30.0<br />/usr/local/share/perl/5.30.0<br />/usr/lib/x86_64-linux-gnu/perl5/5.30<br />/usr/share/perl5<br />/usr/lib/x86_64-linux-gnu/perl/5.30<br />/usr/share/perl/5.30<br />/usr/local/lib/site_perl<br />/usr/lib/x86_64-linux-gnu/perl-base<br />/var/www/foswiki/lib/CPAN/lib </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> UMASK </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 022 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> User </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> userid: <strong>www-data</strong>  <em>Your scripts are executing as this user</em> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Groups </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> www-data,www-data </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Operating system </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Linux 4.19.0 (x86_64-linux-gnu-thread-multi) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Perl version </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 5.30.0 (linux) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File System </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Case Sensitive </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> Engine </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <code>Foswiki::Engine::CGI</code> </td>
+		</tr>
+	</tbody></table>
+</noautolink>
+<p></p>
+<h2 id="Environment_variables">  Environment variables </h2>
+<noautolink>
+<table class="foswikiTable" id="tableFoswikiServerInformation3" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Key </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> Value </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> AUTH_TYPE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CONTENT_LENGTH </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 964 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CONTENT_TYPE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> application/x-www-form-urlencoded </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CONTEXT_DOCUMENT_ROOT </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /var/www/foswiki/bin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CONTEXT_PREFIX </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /foswiki/bin </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> DOCUMENT_ROOT </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /var/www/html </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> FOSWIKI_ACTION </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> rest </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> GATEWAY_INTERFACE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> CGI/1.1 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_ACCEPT </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> text/html,application/xhtml+xml,application/xml;q&#61;0.9,image/avif,image/webp,image/apng,&#42;/&#42;;q&#61;0.8,application/signed-exchange;v&#61;b3;q&#61;0.7 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_ACCEPT_ENCODING </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> gzip, deflate </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_ACCEPT_LANGUAGE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> en-US,en;q&#61;0.9 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_CACHE_CONTROL </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> max-age&#61;0 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_CONNECTION </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> keep-alive </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_COOKIE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> FOSWIKIPREF&#61;&#37;7CTwistyPlugin&#95;topicattachmentslist2&#61;0; FOSWIKISTRIKEONE&#61;8b3b111499c8c6d26a0813fd8902ba52; FOSWIKISID&#61;cf509db0a0e655d5c6cdd1b38de32773 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_HOST </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> biostat1478.dhcp.mc.vanderbilt.edu </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_ORIGIN </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="http://biostat1478.dhcp.mc.vanderbilt.edu/">http://biostat1478.dhcp.mc.vanderbilt.edu</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_REFERER </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="PublishPlugin.html">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/PublishPlugin</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_UPGRADE_INSECURE_REQUESTS </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 1 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTTP_USER_AGENT </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Mozilla/5.0 (X11; Linux x86&#95;64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> MOD_PERL </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> MOD_PERL_API_VERSION </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> PATH </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> PATH_INFO </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /PublishPlugin/publish </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> PATH_TRANSLATED </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /var/www/html/PublishPlugin/publish </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> QUERY_STRING </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REMOTE_ADDR </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 10.151.20.86 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REMOTE_HOST </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REMOTE_IDENT </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REMOTE_PORT </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 34876 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REMOTE_USER </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REQUEST_METHOD </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> POST </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REQUEST_SCHEME </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> http </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> REQUEST_URI </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /foswiki/bin/rest/PublishPlugin/publish </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SCRIPT_FILENAME </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /var/www/foswiki/bin/rest </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SCRIPT_NAME </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /foswiki/bin/rest </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SCRIPT_URI </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SCRIPT_URL </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <em>undef</em> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_ADDR </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 10.151.20.51 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_ADMIN </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> webmaster&#64;localhost </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_NAME </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> biostat1478.dhcp.mc.vanderbilt.edu </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_PORT </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 80 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_PROTOCOL </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> HTTP/1.1 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_SIGNATURE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> &#60;address&#62;Apache/2.4.41 (Ubuntu) Server at biostat1478.dhcp.mc.vanderbilt.edu Port 80&#60;/address&#62;\n </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SERVER_SOFTWARE </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Apache/2.4.41 (Ubuntu) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> TEMP </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /tmp </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> TMP </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /tmp </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> TMPDIR </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> /tmp </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> UNIQUE_ID </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <em>undef</em> </td>
+		</tr>
+	</tbody></table>
+</noautolink>
+<p></p>
+<h2 id="Loaded_modules">  Loaded modules </h2>
+<noautolink>
+<table class="foswikiTable" id="tableFoswikiServerInformation4" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> Module </th>
+			<th class="foswikiTableCol1"> Version </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> Location </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> ::var::www::foswiki::bin::setlib.cfg </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/bin/setlib.cfg</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Assert </td>
+			<td class="foswikiTableCol1"> 1.2 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Assert.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> AssertOff </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/AssertOff.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI </td>
+			<td class="foswikiTableCol1"> 4.46 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Carp </td>
+			<td class="foswikiTableCol1"> 4.46 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Carp.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Cookie </td>
+			<td class="foswikiTableCol1"> 4.46 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Cookie.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Session </td>
+			<td class="foswikiTableCol1"> 4.48 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Session.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Session::Driver </td>
+			<td class="foswikiTableCol1"> 4.43 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Session/Driver.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Session::Driver::file </td>
+			<td class="foswikiTableCol1"> 4.43 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Session/Driver/file.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Session::ErrorHandler </td>
+			<td class="foswikiTableCol1"> 4.43 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Session/ErrorHandler.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Session::ID::md5 </td>
+			<td class="foswikiTableCol1"> 4.43 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Session/ID/md5.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Session::Serialize::storable </td>
+			<td class="foswikiTableCol1"> 4.43 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Session/Serialize/storable.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> CGI::Util </td>
+			<td class="foswikiTableCol1"> 4.46 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/CGI/Util.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Carp </td>
+			<td class="foswikiTableCol1"> 1.50 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Carp.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Carp::Heavy </td>
+			<td class="foswikiTableCol1"> 1.50 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Carp/Heavy.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Config </td>
+			<td class="foswikiTableCol1"> 5.030000 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Config.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Crypt::PasswdMD5 </td>
+			<td class="foswikiTableCol1"> 1.40 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/Crypt/PasswdMD5.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Cwd </td>
+			<td class="foswikiTableCol1"> 3.78 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Cwd.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Data::Dumper </td>
+			<td class="foswikiTableCol1"> 2.174 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Data/Dumper.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Digest::MD5 </td>
+			<td class="foswikiTableCol1"> 2.55 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Digest/MD5.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Digest::SHA </td>
+			<td class="foswikiTableCol1"> 6.02 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/Digest/SHA.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Digest::base </td>
+			<td class="foswikiTableCol1"> 1.16 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Digest/base.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Encode </td>
+			<td class="foswikiTableCol1"> 3.02 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/Encode.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Encode::Alias </td>
+			<td class="foswikiTableCol1"> 2.24 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/Encode/Alias.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Encode::Config </td>
+			<td class="foswikiTableCol1"> 2.05 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/Encode/Config.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Encode::Encoding </td>
+			<td class="foswikiTableCol1"> 2.08 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/Encode/Encoding.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Encode::MIME::Name </td>
+			<td class="foswikiTableCol1"> 1.03 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/Encode/MIME/Name.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Errno </td>
+			<td class="foswikiTableCol1"> 1.3 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Errno.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Error </td>
+			<td class="foswikiTableCol1"> 0.17029 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/Error.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Exporter </td>
+			<td class="foswikiTableCol1"> 5.73 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Exporter.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Exporter::Heavy </td>
+			<td class="foswikiTableCol1"> 5.73 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Exporter/Heavy.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Fcntl </td>
+			<td class="foswikiTableCol1"> 1.13 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Fcntl.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Basename </td>
+			<td class="foswikiTableCol1"> 2.85 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/File/Basename.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Copy </td>
+			<td class="foswikiTableCol1"> 2.34 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/File/Copy.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Copy::Recursive </td>
+			<td class="foswikiTableCol1"> 0.45 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/File/Copy/Recursive.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Glob </td>
+			<td class="foswikiTableCol1"> 1.32 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/File/Glob.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Path </td>
+			<td class="foswikiTableCol1"> 2.16 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/File/Path.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Spec </td>
+			<td class="foswikiTableCol1"> 3.78 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/File/Spec.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Spec::Unix </td>
+			<td class="foswikiTableCol1"> 3.78 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/File/Spec/Unix.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> File::Temp </td>
+			<td class="foswikiTableCol1"> 0.2309 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/File/Temp.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki </td>
+			<td class="foswikiTableCol1"> v2.1.6 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Access </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Access.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Access::TopicACLAccess </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Access/TopicACLAccess.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::AccessControlException </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/AccessControlException.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Address </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Address.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::AggregateIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/AggregateIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Attach </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Attach.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Attrs </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Attrs.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Compatibility </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Compatibility.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Auth </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Auth.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Checker </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Checker.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Dependency </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Dependency.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::FileUtil </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/FileUtil.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Item </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Item.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Load </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Load.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::LoadSpec </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/LoadSpec.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Pluggable </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Pluggable.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Query </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Query.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Reporter </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Reporter.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Root </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Root.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Section </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Section.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Value </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Value.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Configure::Wizard </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Configure/Wizard.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Contrib::JSCalendarContrib </td>
+			<td class="foswikiTableCol1"> 1.60 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Contrib/JSCalendarContrib.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Contrib::JsonRpcContrib </td>
+			<td class="foswikiTableCol1"> 2.30 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Contrib/JsonRpcContrib.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Contrib::JsonRpcContrib::Error </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Contrib/JsonRpcContrib/Error.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Contrib::JsonRpcContrib::Request </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Contrib/JsonRpcContrib/Request.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Contrib::JsonRpcContrib::Response </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Contrib/JsonRpcContrib/Response.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Contrib::JsonRpcContrib::Server </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Contrib/JsonRpcContrib/Server.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Engine </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Engine.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Engine::CGI </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Engine/CGI.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::EngineException </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/EngineException.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::Checkbox </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/Checkbox.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::Date </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/Date.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::FieldDefinition </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/FieldDefinition.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::Label </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/Label.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::ListFieldDefinition </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/ListFieldDefinition.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::Radio </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/Radio.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::Select </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/Select.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::Text </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/Text.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Form::Textarea </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Form/Textarea.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Func </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Func.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::I18N </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/I18N.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::I18N::Fallback </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/I18N/Fallback.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::Node </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/Node.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_allows </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_allows.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_context </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_context.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_defined </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_defined.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_dollar </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_dollar.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_ingroup </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_ingroup.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_isempty </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_isempty.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_istopic </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_istopic.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::OP_isweb </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/OP_isweb.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::If::Parser </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/If/Parser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Infix::Error </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Infix/Error.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Infix::Node </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Infix/Node.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Infix::Parser </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Infix/Parser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator::AggregateEventIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator/AggregateEventIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator::EventIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator/EventIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator::FilterIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator/FilterIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator::MergeEventIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator/MergeEventIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator::NumberRangeIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator/NumberRangeIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator::PagerIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator/PagerIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Iterator::ProcessIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Iterator/ProcessIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::LineIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/LineIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::ListIterator </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/ListIterator.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Logger </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Logger.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Logger::PlainFile </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Logger/PlainFile.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::LoginManager </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/LoginManager.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::LoginManager::Session </td>
+			<td class="foswikiTableCol1"> 4.48 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/LoginManager/Session.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::LoginManager::TemplateLogin </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/LoginManager/TemplateLogin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::ADDTOZONE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/ADDTOZONE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::ATTACHURL </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/ATTACHURL.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::ATTACHURLPATH </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/ATTACHURLPATH.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::ENCODE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/ENCODE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::FORMAT </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/FORMAT.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::FORMFIELD </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/FORMFIELD.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::GROUPINFO </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/GROUPINFO.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::ICON </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/ICON.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::ICONURL </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/ICONURL.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::ICONURLPATH </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/ICONURLPATH.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::IF </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/IF.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::INCLUDE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/INCLUDE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::MAKETEXT </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/MAKETEXT.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::META </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/META.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::METASEARCH </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/METASEARCH.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::PUBURL </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/PUBURL.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::PUBURLPATH </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/PUBURLPATH.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::QUERY </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/QUERY.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::SCRIPTURL </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/SCRIPTURL.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::SCRIPTURLPATH </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/SCRIPTURLPATH.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::SEARCH </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/SEARCH.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::SERVERINFORMATION </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/SERVERINFORMATION.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::SET </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/SET.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::SHOWPREFERENCE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/SHOWPREFERENCE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::SPACEOUT </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/SPACEOUT.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::TOC </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/TOC.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::TOPICLIST </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/TOPICLIST.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::URLPARAM </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/URLPARAM.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::USERINFO </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/USERINFO.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::USERNAME </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/USERNAME.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::VAR </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/VAR.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::WEBLIST </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/WEBLIST.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::WIKINAME </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/WIKINAME.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Macros::WIKIUSERNAME </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Macros/WIKIUSERNAME.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Meta </td>
+			<td class="foswikiTableCol1"> 1.2 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Meta.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::MetaCache </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/MetaCache.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::OopsException </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/OopsException.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::PageCache </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/PageCache.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugin </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins </td>
+			<td class="foswikiTableCol1"> 2.4 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::AutoViewTemplatePlugin </td>
+			<td class="foswikiTableCol1"> 1.24 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/AutoViewTemplatePlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::CommentPlugin </td>
+			<td class="foswikiTableCol1"> 2.94 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/CommentPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::CompareRevisionsAddonPlugin </td>
+			<td class="foswikiTableCol1"> 1.114 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/CompareRevisionsAddonPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::ConfigurePlugin </td>
+			<td class="foswikiTableCol1"> 1.11 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/ConfigurePlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::EditRowPlugin </td>
+			<td class="foswikiTableCol1"> 3.330 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/EditRowPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::EditRowPlugin::View </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/EditRowPlugin/View.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::HistoryPlugin </td>
+			<td class="foswikiTableCol1"> 1.20 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/HistoryPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::HomePagePlugin </td>
+			<td class="foswikiTableCol1"> 1.23 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/HomePagePlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::InterwikiPlugin </td>
+			<td class="foswikiTableCol1"> 1.26 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/InterwikiPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin </td>
+			<td class="foswikiTableCol1"> 10.20 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::ANIMATE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/ANIMATE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::BROWSER </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/BROWSER.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::BUTTON </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/BUTTON.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::CHILI </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/CHILI.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::COOKIE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/COOKIE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::EASING </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/EASING.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::FARBTASTIC </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/FARBTASTIC.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::FOCUS </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/FOCUS.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::FONTAWESOME </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/FONTAWESOME.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::FORM </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/FORM.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::FOSWIKI </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/FOSWIKI.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::IconService </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/IconService.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::LOADER </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/LOADER.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::METADATA </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/METADATA.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::MIGRATE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/MIGRATE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::OBSERVER </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/OBSERVER.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::POPUPWINDOW </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/POPUPWINDOW.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::Plugin </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/Plugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::Plugins </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/Plugins.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::TABPANE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/TABPANE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::TEXTBOXLIST </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/TEXTBOXLIST.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::UI </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/UI.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::UI::DIALOG </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/UI/DIALOG.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::VALIDATE </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/VALIDATE.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::JQueryPlugin::WIKIWORD </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/JQueryPlugin/WIKIWORD.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::MailerContribPlugin </td>
+			<td class="foswikiTableCol1"> 2.84 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/MailerContribPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::NatEditPlugin </td>
+			<td class="foswikiTableCol1"> 9.40 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/NatEditPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::PreferencesPlugin </td>
+			<td class="foswikiTableCol1"> 1.16 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/PreferencesPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::PublishPlugin </td>
+			<td class="foswikiTableCol1"> 3.6 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/PublishPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::PublishPlugin::BackEnd </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/PublishPlugin/BackEnd.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::PublishPlugin::BackEnd::file </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/PublishPlugin/BackEnd/file.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::PublishPlugin::Publisher </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/PublishPlugin/Publisher.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::RenderListPlugin </td>
+			<td class="foswikiTableCol1"> 2.28 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/RenderListPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::SlideShowPlugin </td>
+			<td class="foswikiTableCol1"> 2.40 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/SlideShowPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::SlideShowPlugin::SlideShow </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/SlideShowPlugin/SlideShow.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::SmiliesPlugin </td>
+			<td class="foswikiTableCol1"> 2.03 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/SmiliesPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::SpreadSheetPlugin </td>
+			<td class="foswikiTableCol1"> 1.24 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/SpreadSheetPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::SpreadSheetPlugin::Calc </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/SpreadSheetPlugin/Calc.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::SubscribePlugin </td>
+			<td class="foswikiTableCol1"> 3.6 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/SubscribePlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::TablePlugin </td>
+			<td class="foswikiTableCol1"> 1.160 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/TablePlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::TablePlugin::Core </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/TablePlugin/Core.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::TinyMCEPlugin </td>
+			<td class="foswikiTableCol1"> 1.32 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/TinyMCEPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::TwistyPlugin </td>
+			<td class="foswikiTableCol1"> 1.64 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/TwistyPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::TwistyPlugin::TWISTY </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/TwistyPlugin/TWISTY.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::UpdatesPlugin </td>
+			<td class="foswikiTableCol1"> 2.00 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/UpdatesPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plugins::WysiwygPlugin </td>
+			<td class="foswikiTableCol1"> 1.38 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plugins/WysiwygPlugin.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Plurals </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Plurals.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Prefs </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Prefs.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Prefs::BaseBackend </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Prefs/BaseBackend.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Prefs::HASH </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Prefs/HASH.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Prefs::Parser </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Prefs/Parser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Prefs::Stack </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Prefs/Stack.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Prefs::TopicRAM </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Prefs/TopicRAM.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Prefs::Web </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Prefs/Web.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::ConditionalOP </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/ConditionalOP.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::HoistREs </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/HoistREs.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::Node </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/Node.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_and </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_and.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_comma </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_comma.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_d2n </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_d2n.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_div </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_div.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_dot </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_dot.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_empty </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_empty.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_eq </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_eq.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_gt </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_gt.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_gte </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_gte.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_in </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_in.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_int </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_int.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_lc </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_lc.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_length </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_length.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_like </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_like.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_lt </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_lt.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_lte </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_lte.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_match </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_match.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_minus </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_minus.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_ne </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_ne.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_neg </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_neg.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_not </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_not.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_ob </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_ob.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_or </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_or.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_plus </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_plus.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_ref </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_ref.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_times </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_times.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_uc </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_uc.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::OP_where </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/OP_where.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::Parser </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/Parser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Query::UnaryOP </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Query/UnaryOP.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Render </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Render.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Render::Anchors </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Render/Anchors.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Render::IconImage </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Render/IconImage.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Render::Zones </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Render/Zones.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Request </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Request.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Request::Upload </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Request/Upload.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Response </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Response.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Sandbox </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Sandbox.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Search </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Search.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Search::InfoCache </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Search/InfoCache.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Search::Node </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Search/Node.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Search::Parser </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Search/Parser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Search::ResultSet </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Search/ResultSet.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Serialise </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Serialise.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Serialise::Embedded </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Serialise/Embedded.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Serialise::Simplified </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Serialise/Simplified.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::Interfaces::QueryAlgorithm </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/Interfaces/QueryAlgorithm.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::Interfaces::SearchAlgorithm </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/Interfaces/SearchAlgorithm.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::QueryAlgorithms::BruteForce </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/QueryAlgorithms/BruteForce.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::Rcs::Handler </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/Rcs/Handler.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::Rcs::RcsLiteHandler </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/Rcs/RcsLiteHandler.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::Rcs::Store </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/Rcs/Store.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::RcsLite </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/RcsLite.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Store::SearchAlgorithms::Forking </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Store/SearchAlgorithms/Forking.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Tables::Parser </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Tables/Parser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Templates </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Templates.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Time </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Time.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::UI </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/UI.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::UI::Rest </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/UI/Rest.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::UserMapping </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/UserMapping.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Users </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Users.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Users::BaseUserMapping </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Users/BaseUserMapping.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Users::HtPasswdUser </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Users/HtPasswdUser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Users::Password </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Users/Password.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Users::TopicUserMapping </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Users/TopicUserMapping.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::Validation </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/Validation.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::ValidationException </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/ValidationException.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Foswiki::WebFilter </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Foswiki/WebFilter.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTML::Entities </td>
+			<td class="foswikiTableCol1"> 3.69 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/HTML/Entities.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> HTML::Parser </td>
+			<td class="foswikiTableCol1"> 3.72 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/HTML/Parser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I18N::LangTags </td>
+			<td class="foswikiTableCol1"> 0.43 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/I18N/LangTags.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> I18N::LangTags::Detect </td>
+			<td class="foswikiTableCol1"> 1.07 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/I18N/LangTags/Detect.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> IO </td>
+			<td class="foswikiTableCol1"> 1.40 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/IO.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> IO::File </td>
+			<td class="foswikiTableCol1"> 1.40 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/IO/File.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> IO::Handle </td>
+			<td class="foswikiTableCol1"> 1.40 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/IO/Handle.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> IO::Seekable </td>
+			<td class="foswikiTableCol1"> 1.40 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/IO/Seekable.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> JSON </td>
+			<td class="foswikiTableCol1"> 4.02 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/JSON.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> JSON::XS </td>
+			<td class="foswikiTableCol1"> 4.02 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/JSON/XS.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> List::Util </td>
+			<td class="foswikiTableCol1"> 1.5 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/List/Util.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> LocalSite.cfg </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/LocalSite.cfg</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Locale::Maketext </td>
+			<td class="foswikiTableCol1"> 1.29 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Locale/Maketext.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Monitor </td>
+			<td class="foswikiTableCol1"> &nbsp; </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/var/www/foswiki/lib/Monitor.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> POSIX </td>
+			<td class="foswikiTableCol1"> 1.88 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/POSIX.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> PerlIO </td>
+			<td class="foswikiTableCol1"> 1.10 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/PerlIO.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> PerlIO::encoding </td>
+			<td class="foswikiTableCol1"> 0.27 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/PerlIO/encoding.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Scalar::Util </td>
+			<td class="foswikiTableCol1"> 1.5 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Scalar/Util.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> SelectSaver </td>
+			<td class="foswikiTableCol1"> 1.02 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/SelectSaver.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Storable </td>
+			<td class="foswikiTableCol1"> 3.15 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Storable.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Symbol </td>
+			<td class="foswikiTableCol1"> 1.08 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Symbol.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Text::Abbrev </td>
+			<td class="foswikiTableCol1"> 1.02 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Text/Abbrev.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Tie::Hash </td>
+			<td class="foswikiTableCol1"> 1.05 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Tie/Hash.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Time::HiRes </td>
+			<td class="foswikiTableCol1"> 1.976 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Time/HiRes.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Time::Local </td>
+			<td class="foswikiTableCol1"> 1.28 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/Time/Local.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Types::Serialiser </td>
+			<td class="foswikiTableCol1"> 1.0 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/Types/Serialiser.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::Escape </td>
+			<td class="foswikiTableCol1"> 3.31 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/Escape.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::_foreign </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/_foreign.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::_generic </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/_generic.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::_login </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/_login.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::_query </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/_query.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::_server </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/_server.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::_userpass </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/_userpass.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::file </td>
+			<td class="foswikiTableCol1"> 4.21 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/file.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::ftp </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/ftp.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::http </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/http.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::https </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/https.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::mailto </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/mailto.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::news </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/news.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::nntp </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/nntp.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> URI::telnet </td>
+			<td class="foswikiTableCol1"> 1.76 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl5/URI/telnet.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Unicode::Normalize </td>
+			<td class="foswikiTableCol1"> 1.26 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/Unicode/Normalize.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> XSLoader </td>
+			<td class="foswikiTableCol1"> 0.30 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/XSLoader.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> attributes </td>
+			<td class="foswikiTableCol1"> 0.33 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl/5.30/attributes.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> bytes </td>
+			<td class="foswikiTableCol1"> 1.07 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/bytes.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> common::sense </td>
+			<td class="foswikiTableCol1"> 3.74 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/common/sense.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> constant </td>
+			<td class="foswikiTableCol1"> 1.33 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/constant.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> deprecate </td>
+			<td class="foswikiTableCol1"> 0.04 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/deprecate.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> filetest </td>
+			<td class="foswikiTableCol1"> 1.03 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/filetest.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> if </td>
+			<td class="foswikiTableCol1"> 0.0608 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/if.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> integer </td>
+			<td class="foswikiTableCol1"> 1.01 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/integer.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> overload </td>
+			<td class="foswikiTableCol1"> 1.30 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/overload.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> overloading </td>
+			<td class="foswikiTableCol1"> 0.02 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/overloading.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> parent </td>
+			<td class="foswikiTableCol1"> 0.237 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/parent.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> strict </td>
+			<td class="foswikiTableCol1"> 1.11 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/strict.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> utf8 </td>
+			<td class="foswikiTableCol1"> 1.22 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/utf8.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> vars </td>
+			<td class="foswikiTableCol1"> 1.05 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/vars.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> version </td>
+			<td class="foswikiTableCol1"> 0.9924 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/version.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> version::regex </td>
+			<td class="foswikiTableCol1"> 0.9924 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/version/regex.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> version::vxs </td>
+			<td class="foswikiTableCol1"> 0.9924 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/lib/x86_64-linux-gnu/perl5/5.30/version/vxs.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> warnings </td>
+			<td class="foswikiTableCol1"> 1.44 </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>/usr/share/perl/5.30/warnings.pm</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> warnings::register </td>
+			<td class="foswikiTableCol1 foswikiLast"> 1.04 </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <code>/usr/share/perl/5.30/warnings/register.pm</code> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>
+</noautolink>

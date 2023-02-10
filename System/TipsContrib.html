@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>TipsContrib &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/TipsContrib/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/TipsContrib/favicon.ico">
+<link rel="alternate" href="TipsContrib.html" title="edit TipsContrib" type="application/x-wiki">
+<meta name="description" content="TipsContrib" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "TipsContrib",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Tips_Contrib_Package">  Tips Contrib Package </h1>
+<p></p>
+Displays a rotating "Tip of the Day" to help familiarize new users with Foswiki features. Includes an application for creating custom tips for local installation.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Summary_of_Contents"> Summary of Contents </a>
+</li> <li> <a href="#Detailed_Documentation"> Detailed Documentation </a>
+</li> <li> <a href="#CSS_used_by_TipsContrib"> CSS used by TipsContrib </a>
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions </a>
+</li> <li> <a href="#Contrib_Info"> Contrib Info </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Summary_of_Contents">  Summary of Contents </h2> <ul>
+<li> Set on <code>TipTopic</code> topics providing brief lessons on Foswiki features. See <a href="TipsTopics.html">TipsTopics</a>.
+</li> <li> Set of topics for creating and managing <code>TipTopicXXX</code> topics. See <a href="TipsOfTheDayAdmin.html">TipsOfTheDayAdmin</a>.
+</li></ul> 
+<p></p>
+<h2 id="Detailed_Documentation">  Detailed Documentation </h2> <ul>
+<li> See <a href="TipsOfTheDayAdmin.html">TipsOfTheDayAdmin</a> for instructions on managing and displaying tips.
+</li> <li> See <a href="TipsOfTheDayAddNew.html">TipsOfTheDayAddNew</a> for instructions for adding new custom tips.
+</li></ul> 
+<p></p>
+<!-- <ul>
+<li> Set SHORTDESCRIPTION = Displays rotating list of "Tip-of-the-day"
+</li></ul> 
+-->
+<p></p>
+<h2 id="CSS_used_by_TipsContrib">  CSS used by TipsContrib </h2>
+<p></p> <ul>
+<li> .tipsOfTheDay - overall container
+</li> <li> .tipsOfTheDayContents - container for tipsOfTheDayHeader and tipsOfTheDayText
+</li> <li> strong.tipsOfTheDayHeader - header that says "Tip of the Day"
+</li> <li> .tipsOfTheDayText - the tip; contains title and tip summary and link "Read on"
+</li> <li> .tipsOfTheDayTitle - title of the tip; the link to the tip topic
+</li></ul> 
+<p></p>
+<h2 id="Installation_Instructions">  Installation Instructions </h2>
+<p></p>
+<strong>Note:</strong> You do not need to install anything on the browser to use this contrib package. The following instructions are for the administrator who installs the package on the server where Foswiki is running.
+<p></p> <ul>
+<li> Download the ZIP file from the Plugin web (see below)
+</li> <li> Unzip <code><b>TipsContrib.zip</b></code> in your Foswiki installation directory. Content:                                          <table class="foswikiTable" rules="none">   	<thead>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">File:</a> </th>			<th class="foswikiTableCol1 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Description:</a> </th>		</tr>	</thead>   	<tbody>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Contrib/TipsContrib.pm</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>lib/Foswiki/Contrib/TipsContrib/DEPENDENCIES</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipsContrib.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic001.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic002.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic003.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic004.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic005.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic006.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic007.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic008.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic009.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic010.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic011.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic012.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic013.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic014.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic015.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic016.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic017.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic018.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic019.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic020.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic021.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic022.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic023.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic024.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic025.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic026.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic027.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic028.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipTopic029.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipsTopics.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipsOfTheDay.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipsOfTheDayAddNew.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipsOfTheDayAdmin.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">			<td class="foswikiTableCol0 foswikiFirstCol"> <code><b>data/System/TipsOfTheDayInclude.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol" style="text-align:right"> (noci) </td>		</tr>		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code><b>data/System/TipsOfTheDayTemplate.txt</b></code> </td>			<td class="foswikiTableCol1 foswikiLastCol foswikiLast" style="text-align:right"> (noci) </td>		</tr>	</tbody>   </table>
+</li></ul> 
+<p></p>
+<p></p>
+<h2 id="Contrib_Info">  Contrib Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Nov 2015: (1.26) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13796' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13796"><noautolink>Foswikitask:Item13796</noautolink></a>: Rewrite <a href="TipsOfTheDayInclude.html">TipsOfTheDayInclude</a> to avoid generating HTML from the CALCULATE macro. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 02 Oct 2015: (1.25) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13781' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13781"><noautolink>Foswikitask:Item13781</noautolink></a>: Update dependency on <a href="SpreadSheetPlugin.html">SpreadSheetPlugin</a> version for better Foswiki 1.1 compatibility </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Sep 2015: (1.24) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0.2 <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13741" title="'Item13741' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13741</noautolink></a>: Encode search strings </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Jul 2015: (1.22) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0.1 <a title="'Item13526' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13526"><noautolink>Foswikitask:Item13526</noautolink></a>: Improve search performance. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Jun 2015: (1.21) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Released with Foswiki 2.0. <a title="'Item12864' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item12864" class="interwikiLink"><noautolink>Foswikitask:Item12864</noautolink></a>: use simple decimal version strings.<br />                  <a href="https://foswiki.org/Tasks/Item9693" class="interwikiLink" title="'Item9693' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item9693</noautolink></a>: Documentation improvements. <br />                  <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12888" title="'Item12888' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12888</noautolink></a>: Use preference variables, not topic explicit topic names. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Nov 2012: (1.2.0) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.6. Convert to perl version strings. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Apr 2012: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.5. Minor html cleanup and modernization. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Dec 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.4. Minor code cleanup and documentation updates. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 11 Apr 2011: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Version released with Foswiki 1.1.3. Only a minor change related to how the contrib is being upgraded </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Nov 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item9963' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item9963"><noautolink>Foswikitask:Item9963</noautolink></a> - Revert usage of <code>$percent</code> back to <code>$percnt</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 31 Jul 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item9415' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item9415" class="interwikiLink"><noautolink>Foswikitask:Item9415</noautolink></a> - Documentation updates </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Apr 2010: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Fix the "Add tip for plugin" form; Fix styles; Set correct parent on a new custom tip </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Dec 2008: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Foswiki version </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Jan 2007: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Performance improvement </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Oct 2005: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Initial version - Packaging by <a class="interwikiLink" href="http://twiki.org/cgi-bin/view/Main.LynnwoodBrown" title="'Main.LynnwoodBrown' on TWiki.org"><noautolink>TWiki:Main.LynnwoodBrown</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <a class="interwikiLink" href="https://foswiki.org/Extensions.SpreadSheetPlugin" title="'Extensions.SpreadSheetPlugin' on foswiki.org"><noautolink>Foswiki:Extensions.SpreadSheetPlugin</noautolink></a> 18 Dec 2006 (r12315) </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="../Main/SitePreferences.html">SitePreferences</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

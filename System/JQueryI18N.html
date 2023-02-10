@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryI18N &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/JQueryI18N/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryI18N/favicon.ico" rel="shortcut icon">
+<link title="edit JQueryI18N" rel="alternate" href="JQueryI18N.html" type="application/x-wiki">
+<meta name="description" content="JQueryI18N" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "JQueryI18N",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryI18N">  <a href="JQueryI18N.html" class="foswikiCurrentTopicLink">JQueryI18N</a> </h1>
+<p></p>
+    Homepage: <a href="https://foswiki.org/Extensions/JQueryPlugin">https://foswiki.org/Extensions/JQueryPlugin</a> <br />
+    Author(s): Michael Daum <br />
+    Version: 1.2
+<p></p>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Summary"> Summary </a>
+</li> <li> <a href="#Translations"> Translations </a>
+</li> <li> <a href="#Language_detection"> Language detection </a>
+</li> <li> <a href="#Loading_translations"> Loading translations </a>
+</li> <li> <a href="#Format_of_translation_files"> Format of translation files </a>
+</li> <li> <a href="#Inline_translations"> Inline translations </a>
+</li> <li> <a href="#Translating_a_string"> Translating a string </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Summary">  Summary </h2>
+<p></p>
+<p></p>
+This plugin tries to be the simplest possible solution to add internationalization to javascript. It <em>only</em> does message translation
+reading translations from the backend. It does <em>not</em> cover dates, numbers, gender or pluralization.
+<p></p>
+<p></p>
+<h2 id="Translations">  Translations </h2>
+<p></p>
+jQuery plugins may provide translations in an <code>i18n/</code> subdirectory on the backend and let <a href="JQueryPlugin.html">JQueryPlugin</a> take care of loading the appropriate
+language file for the current web page. This is done by specifying the path to the <code>i18n/</code> subdirectory in the plugin definition. 
+<p></p>
+Here's an example definition as specified in an <code>lib/Foswiki/Plugins/SomePlugin/EXAMPLE.pm</code> 
+<p></p>
+<pre class="perl">
+sub new {
+    my &#36;class &#61; shift;
+
+    my &#36;this &#61; bless(
+        &#36;class-&#62;SUPER::new(
+            name       &#61;&#62; &#39;Example&#39;,
+            version    &#61;&#62; &#39;1.0&#39;,
+            author     &#61;&#62; &#39;First Last&#39;,
+            homepage   &#61;&#62; &#39;http://...&#39;,
+            i18n       &#61;&#62; &#36;Foswiki::cfg{SystemWebName} . &#34;/SomePlugin/i18n&#34;,
+            css        &#61;&#62; &#91;&#39;example.css&#39;&#93;,
+            javascript &#61;&#62; &#91;&#39;example.js&#39;&#93;,
+            dependencies &#61;&#62; &#91;&#39;some other plugin&#39;&#93;,
+        ),
+        &#36;class
+    );
+
+    return &#36;this;
+}
+</pre>
+<p></p>
+See also the <code>lib/Foswiki/Plugins/JQueryPlugin/EMPTY.pm</code> template as shipped with <a href="JQueryPlugin.html">JQueryPlugin</a>.
+<p></p>
+The <code>i18n</code> attribute in the plugin definition specifies the path component starting from the <code>pub/</code> root of the server. This directory may hold translations for each language:
+<p></p>
+<pre>
+pub/System/SomePlugin/i18n/de.js
+pub/System/SomePlugin/i18n/en.js
+...
+pub/System/SomePlugin/i18n/uk.js
+</pre>
+<p></p>
+<h2 id="Language_detection">  Language detection </h2>
+<p></p>
+The actual language of the user's browser is detected by Foswiki already and flagged appropriately in the HTML dom element <code>&amp;lt<html lang="code"></code>.
+So JQueryI18N will only have to read this attribute and pick translations from the appropriate namespace of the dictionary.
+<p></p>
+The language can be changed dynamically on the client side by changing the <code>lang</code> attribute of the HTML dom element and then firing a <code>change</code> element
+on it to inform the <code>I18N</code> component to re-translate all strings again.
+<p></p>
+<pre class="js">
+&#36;(&#34;html&#34;).attr(&#34;lang&#34;, &#34;uk&#34;).trigger(&#34;change&#34;);
+</pre>
+<p></p>
+<h2 id="Loading_translations">  Loading translations </h2>
+When Foswiki renders a page, only the translations for the current language will be loaded automatically. This is done by adding a special <code>&lt;script&gt;</code> element to the page. For our example
+plugin this would then be
+<p></p>
+<pre class="html">
+&#60;script type&#61;&#34;application/l10n&#34; data-i18n-language&#61;&#34;en&#34; data-i18n-namespace&#61;&#34;SOMEPLUGIN&#34; data-src&#61;&#34;pub/System/SomePlugin/i18n/en.js&#34;&#62;&#60;/script&#62;
+</pre>
+<p></p>
+This file will then be loaded by the <code>I18N</code> component and will translate all elements on the page flagged to be translatable.
+<p></p>
+Note that not all translations have to be specified in one single file. Instead translations are added incrementally to the dictionary.
+New <code>%&lt;script type="application/l10n" ...&gt;</code> elements might even be loaded dynamically (like when using AngularSkin).
+<p></p>
+<h2 id="Format_of_translation_files">  Format of translation files </h2>
+Translation files have a very simple format holding a single json object of this form:
+<p></p>
+<pre class="js">
+{
+   &#34;message-key&#34;: &#34;translation&#34;,
+   &#34;Hello World&#34;: &#34;Hallo Welt&#34;,
+   &#34;Hello &#37;name&#37;&#34;: &#34;Hallo &#37;name&#37;&#34;,
+...
+}
+</pre>
+<p></p>
+Note that when a <code>message-key</code> was not found in the dictionary will the translation default to the message key itself.
+<p></p>
+<h2 id="Inline_translations">  Inline translations </h2>
+<p></p>
+Translations could also be inlined to the current page this way:
+<p></p>
+<pre class="js">
+&#60;script type&#61;&#34;application/l10n&#34; data-i18n-language&#61;&#34;en&#34;&#62;
+{
+   &#34;message-key&#34;: &#34;translation&#34;,
+...
+   &#34;message-key&#34;: &#34;translation&#34;
+}
+&#60;/script&#62;
+</pre>
+<p></p>
+Actual key-value pairs in this dictionary follow the same format as if it was loaded asynchronously from the backend.
+<p></p>
+<h2 id="Translating_a_string">  Translating a string </h2>
+<p></p>
+There are two ways of translating strings:
+<p></p> <ul>
+<li> via the javascript API
+</li> <li> using declarative HTML
+</li></ul> 
+<p></p>
+This is how to translate a string using the javascript API: <code>$.i18n(string, params)</code>. For example:
+<p></p>
+<pre class="js">
+var translation &#61; &#36;.i18n(&#34;Hello &#37;name&#37;, time to get up. It&#39;s already &#37;time&#37;&#34;, {
+   name: &#34;Fred&#34;,
+   time: (new Date()).toLocaleString()
+});
+</pre>
+<p></p>
+This will take the message key and parameters and replace all occurrences of <code>%name%</code> and <code>%time%</code> with values as specified in the <code>params</code> object.
+<p></p>
+DOM elements holding strings could also be translated automatically without explicitly calling the javascript API. 
+<p></p>
+<pre class="html">
+&#60;span class&#61;&#34;i18n&#34; data-i18n-message&#61;&#34;Hello &#37;wikiname&#37;&#34; data-i18n-wikiname&#61;&#34;&#37;WIKINAME&#37;&#34;&#62;foo bar&#60;/span&#62;
+</pre>
+<p></p>
+As soon as a dictionary has been loaded will all elements of <code>class="i18n"</code> be processed. The message key specified in the =data-i18n-message=" attribute will
+be processed and replaces the inner html if the element: "foo bar" will be replaced with "Hello WikiAdmin".
+<p></p>
+Whenever the current language changes or a the dictionary has been updated incrementally will all <code>i18n</code> dom elements be re-translated again.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

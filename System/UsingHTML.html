@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>UsingHTML &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/UsingHTML/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/UsingHTML/favicon.ico" rel="shortcut icon">
+<link title="edit UsingHTML" rel="alternate" href="UsingHTML.html" type="application/x-wiki">
+<meta name="description" content="UsingHTML" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "UsingHTML",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h2 id="Using_HTML">  Using HTML </h2>
+<p></p>
+When, and how, to use HTML in topics.
+<p></p>
+<p></p>
+You can use most HTML tags in topics without a problem. This is useful where you want to
+add some content that is formatted in a way that is not supported using <a class="foswikiNewLink" rel="nofollow" href="WikiSyntax.html" title="Create this topic">wiki syntax</a>, for example,
+you can write <code>&lt;strike&gt;deleted text&lt;/strike&gt;</code> to get <strike>deleted text</strike>.
+<p></p>
+There are a few usability and technical considerations to keep in mind: <ul>
+<li> On collaboration pages, it's better <strong>not</strong> to use HTML, but to use <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="WikiSyntax.html">wiki syntax</a> instead -     this keeps the text uncluttered and easy to edit using the plaintext editor.
+</li> <li> If you <em>must</em> use HTML, use <a href="http://www.w3.org/TR/xhtml1/">XHTML 1.0 Transitional</a> syntax.
+</li> <li> Use <code>&lt;literal&gt;..&lt;/literal&gt;</code> tags around blocks of HTML to avoid accidental interpretation of     <a title="Create this topic" href="WikiSyntax.html" class="foswikiNewLink" rel="nofollow">Wiki syntax</a> within the HTML.
+</li></ul> 
+<div class="foswikiHelp"><img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> Script tags may be filtered out, at the discretion of your Wiki administrator.</div>
+<p></p>
+Recommendations when pasting HTML from other sources (using the plain-text editor): <ul>
+<li> Copy only text between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> tags.
+</li> <li> Remove all empty lines. Foswiki inserts <code>&lt;p /&gt;</code> paragraph tags on empty lines, which causes problems if done between HTML tags that do not allow paragraph tags, like for example between table tags.
+</li> <li> Remove leading spaces. Foswiki might interpret some text as lists.
+</li> <li> Do not span a tag over more than one line. Foswiki requires that the opening and closing angle brackets - <code><b>&lt;...&gt;</b></code> - of a HTML tag are on the same line, or the tag will be broken.
+</li> <li> In your HTML editing program, save without hard line breaks on text wrap.
+</li></ul> 
+<p></p>
+When using a <a href="WYSIWYG.html">WYSIWYG</a> editor, you can just copy-paste directly into the editor, and the content will
+be converted to <a href="WikiSyntax.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">wiki syntax</a> automatically when you save.
+<p></p>
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="TopicMarkupLanguage.html">TopicMarkupLanguage</a>, <a href="UsingHTML.html" class="foswikiCurrentTopicLink">UsingHTML</a>, <a href="WYSIWYG.html">WYSIWYG</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,560 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>NatEditPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/NatEditPlugin/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE System/NatEditPlugin/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit NatEditPlugin" rel="alternate" href="NatEditPlugin.html">
+<meta name="description" content="NatEditPlugin" />
+<link href="TwistyPlugin.attachments/twisty.css?version=1.6.0" class="head JQUERYPLUGIN::TWISTY" media="all" rel="stylesheet" type="text/css"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tableNatEditPlugin2 td {vertical-align:middle; vertical-align:top}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol0 {text-align:left}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol1 {text-align:left}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol2 {text-align:left}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol3 {text-align:right}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol4 {text-align:left}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol5 {text-align:left}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol6 {text-align:left}
+body .foswikiTable#tableNatEditPlugin2 td.foswikiTableCol7 {text-align:left}
+body .foswikiTable#tableNatEditPlugin2 th {vertical-align:middle; background-color:#ffffff; color:#0066cc; text-align:left}
+body .foswikiTable#tableNatEditPlugin2 th a:link {color:#0066cc}
+body .foswikiTable#tableNatEditPlugin2 th a:visited {color:#0066cc}
+body .foswikiTable#tableNatEditPlugin2 th a:hover {color:#0066cc; background-color:#ffffff}
+body .foswikiTable#tableNatEditPlugin2 th.foswikiSortedCol {background-color:#eeeeee}
+body .foswikiTable#tableNatEditPlugin2 tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable#tableNatEditPlugin2 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f5f5f5}
+</style><!--TABLEPLUGIN_specific-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "NatEditPlugin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::TWISTY" src="TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="Natural_Edit_Plugin">  Natural Edit Plugin </h1>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Description"> Description </a>
+</li> <li> <a href="#Documentation"> Documentation </a>
+</li> <li> <a href="#Screenshot"> Screenshot </a>
+</li> <li> <a href="#Configuration"> Configuration </a> <ul>
+<li> <a href="#PatternSkin"> PatternSkin </a>
+</li> <li> <a href="#NatSkin"> NatSkin </a>
+</li></ul> 
+</li> <li> <a href="#Plugin_Installation_Instructions"> Plugin Installation Instructions </a>
+</li> <li> <a href="#Change_History"> Change History </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Description">  Description </h2>
+<p></p>
+The NatEdit is an wiki editor that helps in learning the TML
+Language by providing a GUI. By design, this is not a wysiwyg editor that tries
+to generate the correct TML in the background. Instead, the user is still in
+charge of writing correct wiki markup but with a bit more of assistance as a
+plain browser textarea. Therefor this editor helps to lower the learning curve
+but will not get in your way once you are aware of wiki markup. 
+<p></p>
+<p></p>
+NatEdit is implemented as a jquery plugin, called <code>jquery.natedit</code>,
+and thus heavily depends on javascript. Hence browsers without javascript are not supported. 
+You will need to install the JQueryPlugin to use NatEdit.
+<p></p>
+Caution:
+Unlikely previous versions (pre 2.0), 
+theming has been disabled in the current version. So you are "stuck" with one and the
+same button layout for now. 
+<p></p>
+<h2 id="Documentation">  Documentation </h2>
+jquery.natedit docu
+<p></p>
+<h2 id="Screenshot">  Screenshot </h2>
+<a title="screenshot" href="NatEditPlugin.attachments/screenshot1.png"><img border="0" alt="screenshot" src="NatEditPlugin.attachments/screenshot1.png"></a>
+<p></p>
+<h2 id="Configuration">  Configuration </h2>
+<p></p>
+<h3 id="PatternSkin">  <a href="PatternSkin.html">PatternSkin</a> </h3>
+To enable the NatEditPlugin add the identifier <code>natedit</code> to the <code>SKIN</code> 
+variable in <a href="../Main/SitePreferences.html">SitePreferences</a> or <a href="WebPreferences.html">WebPreferences</a>, e.g.
+<p></p>
+<pre>
+   * <!-- -->Set SKIN = natedit,pattern
+</pre>
+<p></p>
+<h3 id="NatSkin">  <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="NatSkin.html">NatSkin</a> </h3>
+No extra configuration steps are needed in case you are using NatSkin.
+NatEditPlugin is the default editor for NatSkin, that is the normal
+<p></p>
+<pre>
+   * <!-- -->Set SKIN = nat
+</pre>
+<p></p>
+is sufficient.
+<p></p>
+<!-- <ul>
+<li> Set STUB = %$STUB%
+</li> <li> Set SHORTDESCRIPTION = A Wikiwyg Editor
+</li></ul> 
+-->
+<p></p>
+<h2 id="Plugin_Installation_Instructions">  Plugin Installation Instructions </h2>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+<h2 id="Change_History">   Change History </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Jan 2021 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item15008' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item15008" class="interwikiLink"><noautolink>Foswikitask:Item15008</noautolink></a>: bring back support for "dontnotify" in natedit; bring back support for RevCommentPlugin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Sep 2020 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item14897" class="interwikiLink" title="'Item14897' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14897</noautolink></a>: rationalized edit template for better customization <br />                  <a title="'Item14685' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14685" class="interwikiLink"><noautolink>Foswikitask:Item14685</noautolink></a>: fixed initialization of defaults in permissions tab </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 25 Feb 2018 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14630' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14630"><noautolink>Foswikitask:Item14630</noautolink></a>: Topic ACLs are lost when copying to a new topic, and when editing some topics.<br/>                 <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14632" title="'Item14632' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14632</noautolink></a>: Topic autocompletion not functional.<br/>                 <a title="'Item14634' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14634" class="interwikiLink"><noautolink>Foswikitask:Item14634</noautolink></a>: Use jquery.i18n for translations in jquery.natedit </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Dec 2017 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14586" title="'Item14586' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14586</noautolink></a>: fixed height computation of natedit textarea </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Dec 2017 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13835' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13835"><noautolink>Foswikitask:Item13835</noautolink></a>: enable TopicTitle field when feature available </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 May 2017 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14388' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14388" class="interwikiLink"><noautolink>Foswikitask:Item14388</noautolink></a>: <a class="foswikiCurrentTopicLink" href="NatEditPlugin.html">NatEditPlugin</a> does not honor the ScriptSuffix setting, and doesn't accommodate short URLs.<br/>                 <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14404" title="'Item14404' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14404</noautolink></a>: NatEdit Save and Continue action fails on mod_perl systems. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Jan 2017 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item14265" class="interwikiLink" title="'Item14265' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14265</noautolink></a>: NatEdit plugin leaves UI blocked after some save errors<br/>                 <a href="https://foswiki.org/Tasks/Item14285" class="interwikiLink" title="'Item14285' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14285</noautolink></a>: fixed error clicking on disabled toolbar buttons </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Jan 2016 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Add helper to insert a data form table header. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Sep 2015 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Remove RevCommentPlugin hooks from templates,  Hide TopicTitle when unused. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 30 Aug 2015 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed default implementation for <code>topictitle</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Jul 2015 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added missing image in documentation </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Mar 2015 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed permissions editor </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 25 Sep 2014 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> move templating to new jsrender replacing deprecated jquery.tmpl </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Dec 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> rewrite all of the js code; make it themable using jquery-ui </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 01 Nov 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> working around IE10 incompatibility of its own proprietary edit api for textareas </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 07 Aug 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed generation of a new validation key in a save+continue </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Jul 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added support for CaptchaPlugin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Jun 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> removed dependency on SetVariablePlugin </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 28 Mar 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed storing the TopicTitle changing during a rename action only to the topic being renamed </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 27 Feb 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> re-fixed strikeone-protected save+continue; improved error handling dealing with AntiWikiSpamPlugin-alike error messages </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Feb 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed character encoding when previewing a topic on a non-utf8 site </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 25 Jan 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed auto-start feature </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Jan 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> improved compatibility with PatternSkin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Jan 2013 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added work-around for an IE8 bug in textareas </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Dec 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added in-edit upload support using <a title="'Extensions/TopicInteractionPlugin' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions/TopicInteractionPlugin"><noautolink>Foswiki:Extensions/TopicInteractionPlugin</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Oct 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> removed local button styles to allow theming via jquery-ui; use of NATEDIT_THEME is deprecated from now on </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 22 Oct 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> implemented improved list editing; rewrite of modal dialogs to use jquery-ui-dialog instead of the old simplemodal library </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Jul 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed character encoding when saving a topic on a non-utf8 site using a REST handler </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 Feb 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> only add one strikeone nonce to the http header </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Feb 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> moved missing javascript code over from NatSkin to NatEditPlugin;                 fixed save+continue on a strikeone-protected foswiki;                  added compatibility wrapper for older APIs to Foswiki::Validate </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Feb 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added interface to set permissions from within edit (only with <a title="'Extensions/SetVariablePlugin' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions/SetVariablePlugin"><noautolink>Foswiki:Extensions/SetVariablePlugin</noautolink></a> installed) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 11 Jan 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added support for <a href="https://foswiki.org/Extensions/WorkflowPlugin" class="interwikiLink" title="'Extensions/WorkflowPlugin' on foswiki.org"><noautolink>Foswiki:Extensions/WorkflowPlugin</noautolink></a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 10 Jan 2012 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added german translation; fixed css when used with PatternSkin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 30 Sep 2011 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed autoresize of wysiwyg editor;                  improved toggle button switching between raw and wysiwyg editor;                  improved integration of validation code;                  using ui::autocomplete instead of deprecated jquery.autocomplete plugin now </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Apr 2011 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> using a modal dialog for preview; save+continue is done in the background async'ly now </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 24 Mar 2011 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added specific css classes for each button box </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Feb 2011 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed insert table in IE7+8 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 22 Dec 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed some errors reported by jslint; improved the way forms are submitted to be more jquery-friendly </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 06 Dec 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item2304" class="interwikiLink" title="'Item2304' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2304</noautolink></a>: fixes for Google Chrome </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 01 Dec 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed compatibility with newest foswiki;                  improved TopicTitle feature not to set a title under certain conditions;                  <a title="'Item9006' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item9006"><noautolink>Foswikitask:Item9006</noautolink></a>: disabling preview button on IE6,7,8;                  shipping compressed and minified css+js </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Feb 2010 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item8486" title="'Item8486' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8486</noautolink></a>, <a href="https://foswiki.org/Tasks/Item8385" class="interwikiLink" title="'Item8385' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item8385</noautolink></a>: fixing edit and settings screen on PatternSkin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Dec 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item2453" title="'Item2453' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item2453</noautolink></a>: Form data not saved when edit is invoked                  with ?action=form ('Edit data form of this topic' link) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Nov 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item2373' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item2373"><noautolink>Foswikitask:Item2373</noautolink></a>: improve XHTML validation </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Nov 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item2368' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item2368" class="interwikiLink"><noautolink>Foswikitask:Item2368</noautolink></a> toolbar not always hidden (PH);                  improved usability of upload and insert-link dialog </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 02 Nov 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item2281' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item2281"><noautolink>Foswikitask:Item2281</noautolink></a>: attempt to make TinyMCE resize                  automatically as NatEdit does </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 14 Sep 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> yet another attempt to support TinyMCEPlugin;                  don't take over raw edit automatically;                  added PatternSkin css fixes for edit dialogs </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 20 Aug 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added support for ImagePlugin when inserting attachments </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Jul 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> IE fixes, PatternSkin related fixes </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Jun 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> converted to foswiki, lots of feature enhancements </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Feb 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed preview+save on Foswiki/PatternSkin;                  fixed force new revision;                  added a workaround to bind the submit event to the return key in input fields                  (gets hijacked by jscalendar popup otherwise) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 15 Jan 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed buttons in preview screen </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 07 Jan 2009 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> support for TinyMCEPlugin wysiwyg editor;                  removed non-maintained "word" style;                  fixes for foswiki/compat;                  added settings template;                  distinguishing <em>restore revision</em> from a normal <em>edit</em>;                  made DBCachePlugin's topic title feature optional;                  added "Show on screen" settings to easily switch off form, attachment or meta:comments (forthcoming);                  fixed action=text;                  removing TopicTitle formfield from the "Form" tab if it is already on the "Text" tab </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 18 Nov 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixing form data being nulled on preview;                  using jquery to submit the data </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 13 Nov 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> using new BUTTONs from JQueryPlugin </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 12 Nov 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixing calculation of bottom bar, using new automaxexpand feature of tabpane widget </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 11 Nov 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> usability improvements on topic forms </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 16 Jul 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed calculation of tab height; removed <code>topicinfo</code> makro as it is in conflict with PatternSkin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Jul 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> improved skin to ease integration into WikiApplication </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 29 Apr 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added workaround for regression error in IE6+7's textarea;                  be backwards compatible to legacy pattern skins </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 17 Jan 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> reimplemented as jquery.natedit plugin;                  using a tabbed interface now;                  new default button design </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Jan 2008 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added <code>beforeSubmitHandler</code> to give EditChapterPlugin a chance to hook in </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 13 Nov 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed calculation of textarea offset while autoresizing it to window height,                  fixed initialization not to use Behaviour anymore,                  fixed autohide/showing of word toolbar together with tinymce </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 08 Oct 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed word toolbar together with TinyMCEPlugin;                  fixed launching a popup by not relying on standard javascript;                  using css sprites instead of individual buttons </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 02 Oct 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> be compatible with TinyMCEPlugin </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Aug 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> bug fixes for IE6&amp;7 - Item4430 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Aug 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added Word theme                  added bullet and numbered lists buttons &amp; Javascript                  added create Table button and Javascript                  work done by Sven Dowideit <a href="http://DistributedINFORMATION.com/">DistributedINFORMATION</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 21 May 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed display of toolbar buttons </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 01 May 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> made natedit themable </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 27 Apr 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> made all button output configurable;                  standardized their defaults;                  fixed javascript in preview mode;                  added support for RevCommentPlugin;                  added monospace button; reworked some of the icons </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 23 Apr 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> fixed IE freezing on resizing the edit window </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 05 Apr 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added support for EditContrib and <code>editform</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 04 Apr 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added css file;                    added monospace &lt;-&gt; propotional font toggles;                    made signature text customizable;                    minor refactoring of the javascript;                    removed non-standard tags FORMATLIST and IFDEFINED </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 03 Apr 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> added NATEDIT_HELPTEXT variable;                   be backwards compatible to PatternSkin </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 31 Mar 2007 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Initial version </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <table border="1" class="foswikiTable"><tr><th>Name</th><th>Version</th><th>Description</th></tr><tr><td align="left">Foswiki::Plugins::JQueryPlugin</td><td align="left">&gt;=6.00</td><td align="left">Required.</td></tr><tr><td align="left">JSON</td><td align="left">&gt;=2.59</td><td align="left">Required. </td></tr><tr><td align="left">Foswiki::Plugins::SetVariablePlugin</td><td align="left">&gt;=2.33</td><td align="left">Required. required for Foswiki &lt; 1.2</td></tr><tr><td align="left">Foswiki::Plugins::ZonePlugin</td><td align="left">&gt;=3.1</td><td align="left">Required. required for Foswiki &lt; 1.1</td></tr></table> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Perl Version: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> - </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<div class="foswikiAttachments foswikiFormStep" style="overflow:auto">
+<div class="twistyPlugin foswikiMakeVisible"><span id="topicattachmentslist1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class="patternTwistyButton"><img src="DocumentGraphics.attachments/toggleopen.png" alt="" border="0"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>8</span></span></a></span><span id="topicattachmentslist1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="patternTwistyButton" href=".."><img src="DocumentGraphics.attachments/toggleclose.png" border="0" alt=""><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>8</span></span></a></span></div><div class="twistyPlugin"><div id="topicattachmentslist1toggle" style="" class="twistyRememberSetting twistyContent twistyInited">
+<table class="foswikiTable" id="tableNatEditPlugin2" rules="none" summary="Topic attachments"><caption>Topic attachments</caption>
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">I</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Attachment</a> </th>
+			<th class="foswikiTableCol2"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Action</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Size</a> </th>
+			<th class="foswikiTableCol4"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Date</a> </th>
+			<th class="foswikiTableCol5"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Who</a> </th>
+			<th class="foswikiTableCol6 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img width="16" height="16" alt="Makefile" src="DocumentGraphics.attachments/else.png"></span><span class="foswikiHidden">EXT</span> </td>
+			<td class="foswikiTableCol1"> <a href="NatEditPlugin.attachments/Makefile"><noautolink>Makefile</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a rel="nofollow" href="NatEditPlugin.html" title="change, update, previous revisions, move, delete...">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 139 bytes </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img height="16" alt="jquery.natedit.js" src="DocumentGraphics.attachments/js.png" width="16"></span><span class="foswikiHidden">js</span> </td>
+			<td class="foswikiTableCol1"> <a href="NatEditPlugin.attachments/jquery.natedit.js"><noautolink>jquery.natedit.js</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a href="NatEditPlugin.html" rel="nofollow" title="change, update, previous revisions, move, delete...">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 35 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img width="16" height="16" alt="jquery.natedit.js.gz" src="DocumentGraphics.attachments/else.png"></span><span class="foswikiHidden">gz</span> </td>
+			<td class="foswikiTableCol1"> <a href="NatEditPlugin.attachments/jquery.natedit.js.gz"><noautolink>jquery.natedit.js.gz</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a title="change, update, previous revisions, move, delete..." rel="nofollow" href="NatEditPlugin.html">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 10 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src="DocumentGraphics.attachments/js.png" alt="jquery.natedit.uncompressed.js" height="16" width="16"></span><span class="foswikiHidden">js</span> </td>
+			<td class="foswikiTableCol1"> <a href="NatEditPlugin.attachments/jquery.natedit.uncompressed.js"><noautolink>jquery.natedit.uncompressed.js</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a title="change, update, previous revisions, move, delete..." rel="nofollow" href="NatEditPlugin.html">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 73 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img src="DocumentGraphics.attachments/png.png" alt="screenshot1.png" height="16" width="16"></span><span class="foswikiHidden">png</span> </td>
+			<td class="foswikiTableCol1"> <a href="NatEditPlugin.attachments/screenshot1.png"><noautolink>screenshot1.png</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a title="change, update, previous revisions, move, delete..." href="NatEditPlugin.html" rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 102 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img width="16" src="DocumentGraphics.attachments/css.png" alt="styles.css" height="16"></span><span class="foswikiHidden">css</span> </td>
+			<td class="foswikiTableCol1"> <a href="NatEditPlugin.attachments/styles.css"><noautolink>styles.css</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a href="NatEditPlugin.html" rel="nofollow" title="change, update, previous revisions, move, delete...">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 4 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img width="16" src="DocumentGraphics.attachments/else.png" height="16" alt="styles.css.gz"></span><span class="foswikiHidden">gz</span> </td>
+			<td class="foswikiTableCol1"> <a href="NatEditPlugin.attachments/styles.css.gz"><noautolink>styles.css.gz</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a title="change, update, previous revisions, move, delete..." rel="nofollow" href="NatEditPlugin.html">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 1 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <span class='foswikiIcon'><img width="16" height="16" alt="styles.uncompressed.css" src="DocumentGraphics.attachments/css.png"></span><span class="foswikiHidden">css</span> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="NatEditPlugin.attachments/styles.uncompressed.css"><noautolink>styles.uncompressed.css</noautolink></a> </td>
+			<td class="foswikiTableCol2 foswikiLast"> <a title="change, update, previous revisions, move, delete..." href="NatEditPlugin.html" rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3 foswikiLast" style="text-align:right"> 6 K </td>
+			<td class="foswikiTableCol4 foswikiLast"> <span class="foswikiNoBreak">28 Mar 2022 - 12:23</span> </td>
+			<td class="foswikiTableCol5 foswikiLast"> <a href="../Main/AdminUser.html">AdminUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody></table>
+</div></div></div>
+</body>

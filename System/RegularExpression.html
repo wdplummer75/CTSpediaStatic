@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>RegularExpression &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/RegularExpression/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE System/RegularExpression/favicon.ico">
+<link rel="alternate" href="RegularExpression.html" title="edit RegularExpression" type="application/x-wiki">
+<meta name="description" content="RegularExpression" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "RegularExpression",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Regular_Expressions">  Regular Expressions </h1>
+<p></p>
+Regular expressions (REs), unlike simple text queries, allow you to search for text which matches a particular pattern.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Introduction"> Introduction </a>
+</li> <li> <a href="#Examples"> Examples </a>
+</li> <li> <a href="#Use_of_Advanced_Regular_Expressions"> Use of Advanced Regular Expressions </a>
+</li></ul> 
+</div>
+<h2 id="Introduction">  Introduction </h2>
+<p></p>
+REs are similar to (but much more powerful than) the "wildcards" used in the command-line interfaces found in operating systems such as Unix and MS-DOS. REs are supported by sophisticated search engines, as well as by many Unix-based languages and tools ( e.g., <code>awk</code>, <code>grep</code>, <code>lex</code>, <code>perl</code>, and <code>sed</code> ).
+<p></p>
+<h2 id="Examples">  Examples </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>compan(y&#124;ies)</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Search for <strong>company</strong> <em>or</em> <strong>companies</strong> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>(peter&#124;paul)</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Search for <strong>peter</strong> <em>or</em> <strong>paul</strong> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>bug*</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Search for <strong>bug</strong>, <strong>bugg</strong>, <strong>buggg</strong> or simply <strong>bu</strong> (a star matches <strong>zero</strong> or more instances of the previous character) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>bug.*</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Search for <strong>bug</strong>, <strong>bugs</strong>, <strong>bugfix</strong> (a dot-star matches zero or more instances of <strong>any</strong> character) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>[Bb]ag</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Search for <strong>Bag</strong>, <strong>bag</strong> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>b[aiueo]g</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Second letter is a vowel. Matches <strong>bag</strong>, <strong>bug</strong>, <strong>big</strong> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>b.g</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Second letter is any letter. Matches also <strong>b&amp;g</strong> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>[a-zA-Z]</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Matches any one letter (but not a number or a symbol) </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>[^0-9a-zA-Z]</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Matches any symbol (but not a number or a letter) </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>[A-Z][A-Z]*</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Matches one or more uppercase letters </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>[0-9]{3}-[0-9]{2}-[0-9]{4}</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> US social security number, e.g. <strong>123-45-6789</strong> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<code>%SEARCH{type="regex"}%</code> also supports the <code>;</code> and <code>!</code> operators in regular expression searches. <ul>
+<li> <code>;</code> is used to indicate an "and" search. For example, <code>Peace;War</code> to search for topics matching the regular expressions <code>Peace</code> <em>and</em> <code>War</code>.
+</li> <li> <code>!</code> is used to negate the sense of the following regular expression. For example, <code>Peace;!War</code> will find topics that match the expression <code>Peace</code>, but do <em>not</em> match the expression <code>War</code>.
+</li></ul> 
+The <code>";"</code> and <code>"!"</code> operators are <code>%SEARCH</code> -specific and are not part of the standard regular expression syntax.
+<p></p>
+<h2 id="Use_of_Advanced_Regular_Expressions">  Use of Advanced Regular Expressions </h2>
+<p></p>
+Foswiki strives to support as much as possible of the Perl syntax for regular
+expressions. Be warned, though, that Foswiki only guarantees to support a
+subset of regular expression syntax, as documented in
+<a href="https://foswiki.org/Development.RegularExpressions" class="interwikiLink" title="'Development.RegularExpressions' on foswiki.org"><noautolink>Foswiki:Development.RegularExpressions</noautolink></a>. This limitation is imposed by the
+third-party tools that Foswiki integrates with.
+<p></p>
+You can use more advanced features of Perl regular expressions, but your
+searches are not guaranteed to be supported on all Foswiki configurations,
+for example where a database store is in use and the database doesn't support
+the full Perl syntax for REs.
+<p></p>
+<strong>Related Links:</strong>  <ul>
+<li> <a href="http://perldoc.perl.org/perlretut.html">http://perldoc.perl.org/perlretut.html</a> - Regular expressions tutorial
+</li> <li> <a href="http://www.perl.com/doc/manual/html/pod/perlre.html">http://www.perl.com/doc/manual/html/pod/perlre.html</a> - Perl regular expressions
+</li></ul> 
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="UserDocumentationCategory.html">UserDocumentationCategory</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,527 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EditRowPlugin &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/EditRowPlugin/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/EditRowPlugin/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="EditRowPlugin.html" title="edit EditRowPlugin" type="application/x-wiki">
+<meta name="description" content="EditRowPlugin" />
+<link type="text/css" href="JQueryPlugin.attachments/plugins/ui/themes/foswiki/jquery-ui.css" class="head JQUERYPLUGIN::THEME" media="all" rel="stylesheet"><!--JQUERYPLUGIN::THEME-->
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::EASING" src="JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "EditRowPlugin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::UI" src="JQueryPlugin.attachments/plugins/ui/jquery-ui.js?version=1.13.1"></script><!--JQUERYPLUGIN::UI-->
+</head>
+<body>
+<h1 id="EditRowPlugin"> EditRowPlugin </h1>
+<!--
+One line description, required for extensions repository catalog. <ul>
+<li> Set SHORTDESCRIPTION = Replacement for some of EditTablePlugin, some of EditTablerowPlugin and some of TablePlugin.
+</li></ul> 
+<p></p> <ul>
+<li> Set UICON = &lt;button type="button" class="ui-icon erp-button ui-icon-
+</li> <li> Set NOCIU = " &gt;</button>
+</li></ul> 
+-->
+
+<style type="text/css">
+@import url(http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System/EditRowPlugin/erp.uncompressed.css);
+</style>
+
+<p></p>
+Replacement for some of EditTablePlugin, some of EditTablerowPlugin and some of TablePlugin.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Usage"> Usage </a>
+</li> <li> <a href="#Per_Cell_Settings"> Per Cell Settings </a>
+</li> <li> <a href="#Examples"> Examples </a> <ul>
+<li> <a href="#Example_1"> Example 1 </a>
+</li> <li> <a href="#Example_2"> Example 2 </a>
+</li> <li> <a href="#Example_3"> Example 3 </a>
+</li> <li> <a href="#Example_4"> Example 4 </a>
+</li> <li> <a href="#Javascript_Editing"> Javascript Editing </a>
+</li></ul> 
+</li> <li> <a href="#Preferences"> Preferences </a>
+</li> <li> <a href="#Installation_Instructions"> Installation Instructions </a>
+</li> <li> <a href="#Using_the_REST_API"> Using the REST API </a>
+</li> <li> <a href="#Relationship_to_other_plugins"> Relationship to other plugins </a> <ul>
+<li> <a href="#EditTablePlugin"> EditTablePlugin </a>
+</li> <li> <a href="#TablePlugin"> TablePlugin </a>
+</li> <li> <a href="#EditTablerowPlugin"> EditTablerowPlugin </a>
+</li></ul> 
+</li> <li> <a href="#Plugin_Info"> Plugin Info </a>
+</li></ul> 
+</div>
+<p></p>
+<img alt="screenshot" src="EditRowPlugin.attachments/screenshot1.png">
+<p></p>
+Features: <ol>
+<li> You can edit one row, or even one cell at a time, instead of having to edit the entire     table.
+</li> <li> Supports footer rows.
+</li> <li> Supports sorting columns in tables using Javascript, avoiding the     round-trip to the server required by TablePlugin.
+</li> <li> Simple interface to moving rows around in the table, deleting and     adding rows.
+</li> <li> Gets row numbering right (takes account of headers).
+</li> <li> It's <em>much</em> faster than the individual plugins it replaces.
+</li> <li> (geeky) Coded using a clean object-oriented architecture, which     makes it easily extensible.
+</li> <li> (geeky) Uses a simple REST interface for saving changes, which allows     Javascript table editors to use the same interface to save.
+</li> <li> (geeky) Tolerant to Javascript being disabled in the browser
+</li></ol> 
+<p></p>
+Note that this plugin is designed for use with tables of up to ~1000 rows. Tables
+larger than this will work, but they put considerable stress on the browser
+and the server. For manipulating larger tables, you are recommended to investigate
+<a class="interwikiLink" href="https://foswiki.org/Extensions.JQGridPlugin" title="'Extensions.JQGridPlugin' on foswiki.org"><noautolink>Foswiki:Extensions.JQGridPlugin</noautolink></a> or <a title="'Extensions.JQDataTablesPlugin' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Extensions.JQDataTablesPlugin"><noautolink>Foswiki:Extensions.JQDataTablesPlugin</noautolink></a>
+<p></p>
+<div class='foswikiHelp'><img src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16" title="ALERT!" width="16"> This plugin makes some changes on the server immediately,
+such as add and delete rows.  <strong>Cancel does not roll back server side changes.</strong>
+If necessary, roll back changes using the More topic actions "revert".</div>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+Works like the EditTablePlugin (it uses exactly the same <code>%EDITTABLE</code> macro)
+and you can use it to edit the entire table, or just one row at a time.
+<p></p>
+An <code>%EDITTABLE{...}%</code> in the topic will be associated with the next table
+in the topic. If there is no existing table, or another
+<code>%EDITTABLE{...}%</code> is seen before the next table, then a new table will
+be created.
+<p></p>
+Parameters:
+<p></p> <ul>
+<li> <code><b>format</b></code> - The format of the cells in a row of the table. The format is     defined like a table row, where the cell data specify the type for each     cell. For example, <code>format="| text,16 | label |"</code>. Cells can be any of     the following types: <ul>
+<li> <code>text, &lt;size&gt;, &lt;initial value&gt;</code> Simple text field. Initial value is optional.
+</li> <li> <code>textarea, &lt;rows&gt;x&lt;columns&gt;, &lt;initial value&gt;</code>        Multirow text box. Initial value is optional.
+</li> <li> <code>select, &lt;size&gt;, &lt;option 1&gt;, &lt;option 2&gt;, etc</code>        Select one from a list of choices.
+</li> <li> <code>radio, &lt;size&gt;, &lt;option 1&gt;, &lt;option 2&gt;,</code> etc.        Radio buttons. <code>size</code>        indicates the number of buttons per line in edit mode.
+</li> <li> <code>checkbox, &lt;size&gt;, &lt;option 1&gt;, &lt;option 2&gt;, etc</code>        Checkboxes. <code>size</code>        indicates the number of buttons per line in edit mode.
+</li> <li> <code>label, 0, &lt;label text&gt;</code> Fixed label.
+</li> <li> <code>row</code> The row number, automatically worked out.
+</li> <li> <code>date, &lt;size&gt;, &lt;initial value&gt;, &lt;DHTML date format&gt;</code> Date. Initial value and date format are both optional.
+</li></ul> 
+</li> <li> <code><b>changerows</b></code> - Rows can be added and removed if <code>"on"</code>. Rows can be     added but not removed if <code>"add"</code>. Defaults to the value of the     <a href="Macros.html">preference</a> <code>CHANGEROWS</code>, or <code>"on"</code> if it isn't set.
+</li> <li> <code><b>disable</b></code> - By default, the plugin shows both full table and individual row editing controls.     You can choose to disable one or both of these modes using the <code>disable</code> parameter, by setting it to <code>row</code> or <code>full</code>     (or <code>row,full</code> to disable all editing and just leave sorting). If full table editing is disabled, but <code>changerows</code> is <code>on</code>,     then the <button type="button" class="erp-edittable"></button> (edit table) button will be replaced with a     <button type="button" class="erp-addrow""></button> (add row) button. Defaults to the value of the     <a href="Macros.html">preference</a> <code>EDITROWPLUGIN_DISABLE</code>, or <code>none</code> if it isn't set.
+</li> <li> <code><b>buttons</b></code> - set to <code>left</code> or <code>right</code> (the default) to position edit controls in the first or last columns in the table. <code>buttons="right"</code> may be required if you are using other plugins that expect a certain column order, such as <a href="TablePlugin.html">TablePlugin</a>.
+</li> <li> <code><b>quietsave</b></code> - Quiet Save button is shown if <code>"on"</code>. Defaults to the     value of the <a href="Macros.html">preference</a> <code>QUIETSAVE</code>, or <code>off</code> if it     isn't set.
+</li> <li> <code><b>include</b></code> -     Name of another topic defining the EDITTABLE parameters. The first     %EDITTABLE% in the topic is used. This is useful if you have many     topics with the same table format and you want to update the format in     one place.
+</li> <li> <code><b>headerrows</b></code> -     Number of rows to treat as headers. Header rows are not      editable, and will not be sorted. <code>headerislabel</code> is also      supported for <a href="EditTablePlugin.html">EditTablePlugin</a> compatibility (equivalent      to <code>headerrows="1"</code>)
+</li> <li> <code><b>header</b></code> -     Specify the single-row header format of a new table. For example,     <code>"&#124;*Food*&#124;*Drink*&#124;"</code>. Provided to allow you to create a new table in a document, and to have a header that is truly readonly. If <code>header</code>     is defined on an empty table then a header row will be automatically     created.<br />     NOTE: if neither <code>header</code> nor <code>headerrows</code> is given, but there are     existing headers in the table (rows in which every column is bold)     then those rows will automatically be taken as the table header.
+</li> <li> <code><b>footerrows</b></code> -     Number of rows to treat as footers. Footer rows are not      editable and will not be sorted.
+</li> <li> <code><b>orientrowedit</b></code> -     unique to EditRowPlugin, this parameter controls the      orientation of a row when it is being edited. It can be     set to <code>horizontal</code> (the default) or <code>vertical</code>, which     will present the columns of the row as rows in the editor. This makes     editing very wide tables much easier. Has no effect in whole table     editing mode.
+</li> <li> <code><b>helptopic</b></code> Topic name containing help text shown when editing a table. The <a href="VarSTARTINCLUDE.html">%STARTINCLUDE%</a> and <a href="VarSTOPINCLUDE.html">%STOPINCLUDE%</a> markers can be used in the topic to specify what is shown. Note that newlines are removed from the included text so the that text can be used inside a table.
+</li> <li> <code><b>js</b></code> gives local, per-table control over the <code>EDITROWPLUGIN_JS</code> preference <a href="#js">described below</a>.
+</li></ul> 
+Table rows are shown with a row edit button <button type="button" class="ui-icon erp-button ui-icon-pencil" ></button> in the first column,
+and a table edit button <button type="button" class="erp-edittable"></button> after the
+table. When the table is
+edited, then a number of buttons may be shown depending on the
+settings of <code>changerows</code> and <code>quietsave</code>. <ul>
+<li> <button type="button" class="ui-icon erp-button ui-icon-disk" ></button> saves the changes
+</li> <li> <button type="button" class="erp-button erp-quietsave"></button> saves without notification.
+</li> <li> <button type="button" class="ui-icon erp-button ui-icon-cancel" ></button> cancels the open edit
+</li> <li> The following actions are applied to the topic on the server immediately and are not reverted by the Cancel action, <ul>
+<li> <button type="button" class="ui-icon erp-button ui-icon-plusthick" ></button> adds a new row after the current row, taking for its contents the initial values specified in the EDITTABLE macro.
+</li> <li> <button type="button" class="ui-icon erp-button ui-icon-minusthick" ></button> deletes the row.
+</li> <li> <button type="button" class="ui-icon erp-button ui-icon-arrow-1-n" ></button> Move this row up one row in the table
+</li> <li> <button type="button" class="ui-icon erp-button ui-icon-arrow-1-s" ></button> Move this row down one row in the table
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="Per_Cell_Settings">  Per Cell Settings </h2>
+<p></p>
+An individual edit field type can be defined for each individual table cell. Place an <code>%EDITCELL{ "type, ..." }%</code> macro at the end of the cell content. This is useful to override the per column <code>%EDITTABLE{ format="..." }%</code> settings, or to create tables with key/value rows. All edit field types of the <code>format="..."</code> parameter are supported. For example, to define a text field, type: <code>| cell content %EDITCELL{ "text, 20" }% |</code>
+<p></p>
+<strong><em>Note:</em></strong> The <code>%EDITCELL{}%</code> macro cannot be used by itself; place an <code>%EDITTABLE{ }%</code> macro at the beginning of a table where you want to use <code>%EDITCELL{ }%</code> macros.
+<p></p>
+<h2 id="Examples">  Examples </h2>
+Copy the following examples and paste them into a topic in the Sandbox web
+(or another web where you have write access). The EditRowPlugin is
+ <strong>not</strong> enabled on this site, so the examples will be disabled.
+<p></p>
+<h3 id="Example_1">  Example 1 </h3>
+<pre>
+&#37;EDITTABLE{ format&#61;&#34;&#124; row, -1 &#124; text, 20, init &#124; select, 1, not started, starting, ongoing, completed &#124; radio, 3,:-),:-I,:-( &#124; date, 20 &#124;&#34; changerows&#61;&#34;on&#34; quietsave&#61;&#34;on&#34;}&#37;
+&#124; &#42;Nr&#42; &#124; &#42;Project&#42; &#124; &#42;State&#42; &#124; &#42;Progress&#42; &#124; &#42;Timestamp&#42; &#124;
+&#124; 1 &#124; Sliced yoghourt &#124; completed &#124; :-) &#124; 26 Jun 2002 &#124;
+&#124; 2 &#124; Cubical turkeys &#124; not started &#124; :-( &#124; 27 Oct 2007 &#124;
+&#124; 3 &#124; Self-eating burritos &#124; ongoing &#124; :-D &#124; 1 Apr 2008 &#124; 
+&#124; 4 &#124; Unified field theory &#124; completed &#124; :-) &#124; 1 Apr 2012 &#124;
+</pre>
+<img alt="Example 1" src="EditRowPlugin.attachments/screenshot1.png">
+<p></p>
+<h3 id="Example_2">  Example 2 </h3>
+<pre>
+&#37;EDITTABLE{ format&#61;&#34;&#124; label,12 &#124; textarea, 3x30 &#124;&#34; }&#37;
+&#124; &#42;Model&#42; &#124; &#42;Description&#42; &#124;
+&#124; 345TG66 &#124; Short, with sightly concave upper surface, and devilish nuts &#124;
+&#124; 9A-11 &#124; A new model for 2007, but not quite as pretty as the 9A-10 &#124;
+&#124; RR717-D &#124; Solid performer, dependable in vacuum grinders &#124;
+</pre>
+<img alt="Example 1" src="EditRowPlugin.attachments/example3.png">
+<p></p>
+<h3 id="Example_3">  Example 3 </h3>
+<pre>
+&#37;EDITTABLE{ format&#61;&#34;&#124; text,100 &#124; text,100 &#124;&#34; orientrowedit&#61;&#34;vertical&#34; headerislabel&#61;&#34;on&#34;}&#37;
+&#124; &#42;Line&#42; &#124; &#42;Explanation&#42; &#124;
+&#124; He took his &#95;vorpal&#95; sword in hand &#124; A vorpal sword is made from broken bits of Commodore 64 disk-drives &#124;
+&#124; Long time the &#95;manxome&#95; foe he sought &#124; manxome: possibly from &#39;manky&#39;; or from the Isle of Man &#124;
+&#124; So rested he by the &#95;Tumtum&#95; tree, &#124; Tumtum is a Nilo-Saharan language and people &#124;
+&#124; And stood awhile in &#95;thought&#95; &#124; &#95;thought&#95; a process not often employed by example writers &#124;
+</pre>
+<img alt="Example 3" src="EditRowPlugin.attachments/example4.png">
+<p></p>
+<h3 id="Example_4">  Example 4 </h3>
+<pre>
+&#37;EDITTABLE{ format&#61;&#34;&#124; label &#124; text, 40 &#124;&#34; }&#37;
+&#124;&#42;Key&#42;&#124;&#42;Value&#42;&#124;
+&#124; Name: &#124; John Smith &#124;
+&#124; Gender: &#124; M &#37;EDITCELL{select, 1, , F, M}&#37; &#124;
+&#124; DOB: &#124; 18 October 2007 &#37;EDITCELL{date, 10}&#37; &#124;
+&#124; City: &#124; New York &#124;
+</pre>
+<img src="EditRowPlugin.attachments/example5.png" alt="Example 4">
+<p></p>
+<h3 id="Javascript_Editing">  Javascript Editing </h3>
+<div style="float:right">
+<code>%EDITTABLE{ format="| text,12 | textarea, 3x30 |" js="assumed"}%</code> <br />
+<img src="EditRowPlugin.attachments/screenshot2.png"></div>
+When a table is editable and Javascript is enabled, then when the user rolls the mouse over a table row: <ul>
+<li> individual table cells have a yellow stain <button type="button" class="erp-editbutton"></button> on the corner that can be clicked to open an in-place editor,
+</li> <li> table rows <strong>that contain at least one editable cell</strong> can be manually sorted using drag-and-drop, by dragging the <button type="button" class="ui-icon erp-button ui-icon-arrowthick-2-n-s" ></button> (though beware that a <code>TABLE</code> tag with an <code>initsort</code> will override this, which can be confusing),
+</li></ul> 
+Table columns can be sorted in the browser, by clicking the heading above the row.
+<p></p>
+Note that javascript editing is automatically disabled if: <ul>
+<li> The current user does not have CHANGE access to the topic
+</li> <li> No user is logged in, but the <code>rest</code> script is listed in the <code>{AuthScripts}</code> admin setting.
+</li></ul> 
+<p></p>
+<a name="js"></a>
+<h2 id="Preferences">  Preferences </h2>
+The plugin interprets a couple of <a href="Macros.html">preferences</a>, in common with the EditTablePlugin.
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>QUIETSAVE</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Gives a default value for the <code>quietsave</code> parameter. Default is <code>off</code>. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>CHANGEROWS</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Gives a default value for the <code>changerows</code> parameter. Default is <code>on</code>. </td>
+		</tr>
+	</tbody></table>
+Also, the plugin has a couple of its own settings:
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>EDITROWPLUGIN_JS</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Usually the plugin expects to be able to use Javascript to generate controls. However sometimes users disable Javascript in the browser, so the plugin also generates a minimal set of fallback controls to give non-JS access to the main features, even if Javascript is disabled. You can use this preference to control whether Javascript is preferred, ignored, or assumed when generating the controls.<ul><li> <code>preferred</code> means "use JS if it's available, but keep the non-JS fallback controls visible", </li><li> <code>ignored</code> means "never use JS, only display the non-JS controls", </li><li> <code>assumed</code> means "assume that JS will be available in the browser, and don't display the fallback controls". </li></ul> You can control the setting on a per-table basis using the <code>js</code> parameter to the <code>EDITTABLE</code> macro. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>EDITROWPLUGIN_DISABLE</code> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Set to <code>on</code> to disable the plugin. Default is <code>off</code>. </td>
+		</tr>
+	</tbody></table>
+These preferences can be defined in <a href="../Main/SitePreferences.html">SitePreferences</a>, in WebPreferences for an individual web, or in the topic.
+<p></p>
+There is also a <code>configure</code> (expert) setting that allows you to change the name of the macro used to carry table editor parameters. This is usually <code>EDITTABLE</code> but can be changed to help work around problems with other plugins.
+<p></p>
+<h2 id="Installation_Instructions">  Installation Instructions </h2>
+<p></p>
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+<p></p>
+Open configure, and open the "Extensions" section. "Extensions Operation and Maintenance" Tab -&gt; "Install, Update or Remove extensions" Tab.  Click the "Search for Extensions" button.  
+Enter part of the extension name or description and press search.   Select the desired extension(s) and click install. If an extension is already installed, it will <strong>not</strong> show up in the
+search results.
+<p></p>
+You can also install from the shell by running the extension installer as the web server user: (Be sure to run as the webserver user, not as root!)
+<pre>
+cd /path/to/foswiki
+perl tools/extension&#95;installer &#60;NameOfExtension&#62; install
+</pre>
+<p></p>
+If you have any problems, or if the extension isn't available in <code>configure</code>, then you can still install manually from the command-line. See <a href="https://foswiki.org/Support/ManuallyInstallingExtensions">https://foswiki.org/Support/ManuallyInstallingExtensions</a> for more help.
+<p></p>
+<p></p>
+<h2 id="Using_the_REST_API">  Using the REST API </h2>
+The plugin provides a couple of useful <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a> handlers. Javascript developers may find
+this API useful when developing their own tools that
+manipulate tables.
+<p></p>
+There are two entry points, <code>get</code> and <code>save</code>. The <code>get</code> handler can be used to retrieve the contents of
+a table. Parameters are: <ul>
+<li> <code>erp_topic</code> the web.wikiname of the topic
+</li> <li> <code>erp_table</code> the table (numbered from 1)
+</li> <li> <code>erp_row</code> - the row (numbered from 1)
+</li> <li> <code>erp_col</code> - the column (numbered from 1)
+</li></ul> 
+The handler returns a row, a column, or the entire table depending on the presence of the <code>erp_row</code>
+and <code>erp_col</code> parameters. If neither is given, the entire table is returned. If only <code>erp_row</code> is given, just that row will be returned, etc. The data is returned in JSON format.
+<p></p>
+For example, a URI to retrieve column 2 from the table <code>EDITTABLE_1</code> from this topic would look like this:
+<p></p>
+<a href="../EditRowPlugin/get.html">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/rest/EditRowPlugin/get?erp_topic=System.EditRowPlugin;erp_table=EDITTABLE_1;erp_col=2</a>
+<p></p>
+The <code>save</code> handler is used to save cells, and accepts the following parameters: <ul>
+<li> <code>erp_topic</code> the web.wikiname of the topic to be changed
+</li> <li> <code>erp_table</code> the table to be changed (numbered from 1)
+</li> <li> <code>erp_row</code> - the row to be changed (numbered from 1, or -1 for the whole table)
+</li> <li> <code>saveRowCmd.x</code> - if nonzero, this is a save
+</li> <li> <code>saveRowQuietlyCmd.x</code> - if nonzero, this is a quietsave
+</li> <li> <code>upRowCmd.x</code> - if nonzero, this is a row move
+</li> <li> <code>downRowCmd.x</code> - if nonzero, this is a  row move
+</li> <li> <code>deleteRowCmd.x</code> - if nonzero, this is a row deletion
+</li> <li> <code>cancelCmd.x</code> - if nonzero, this is a cancel
+</li> <li> <code>noredirect</code> - if set, suppresses the redirect and gets a status code instead
+</li></ul> 
+The value of each individual cell is stored in a parameter called <code>erp_&lt;table&gt;_&lt;row&gt;_&lt;column&gt;</code>
+<p></p>
+<h2 id="Relationship_to_other_plugins">  Relationship to other plugins </h2>
+<h3 id="EditTablePlugin"> EditTablePlugin </h3>
+At this time most features of EditTablePlugin are supported. Known exceptions
+are: <ul>
+<li> the <code>editbutton</code> parameter,
+</li> <li> Plugin preferences (though global preferences are compatible)
+</li></ul> 
+<h3 id="TablePlugin"> TablePlugin </h3>
+Javascript sorting in EditRowPlugin is much faster than TablePlugin. However
+TablePlugin has many features this plugin does not support. For the most part,
+the two plugins can safely be used together. <strong>However</strong> if you use a TABLE statement with
+an <code>initsort</code> parameter, it is likely to cause great confusion, as the table will be
+re-sorted each time a row is opened for edit, and when the table is edited in full table
+mode.
+<p></p>
+All parameters to an applicable <code>%TABLE</code> macro are respected. If the same setting is repeated in the EDITTABLE tag, then that takes precedence <strong>even if the TABLE tag is later in the text</strong>.
+<p></p>
+<h3 id="EditTablerowPlugin"> EditTablerowPlugin </h3>
+Provides the vertical row editing interface like
+EditTablerowPlugin, with the row being edited shown in context in the table.
+<p></p>
+<h2 id="Plugin_Info">  Plugin Info </h2>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> Change History: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <!-- versions below in reverse order -->&nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.330 (29 Sep 2020) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14929" title="'Item14929' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14929</noautolink></a>: fixed single zero char not rendered in table cell </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.321 (05 Feb 2018) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14537' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14537" class="interwikiLink"><noautolink>Foswikitask:Item14537</noautolink></a>: The plugin makes tables "shaky". </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.320 (12 Dec 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14490' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14490" class="interwikiLink"><noautolink>Foswikitask:Item14490</noautolink></a>: missing css for the "edit table" button </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.319 (08 Dec 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14554' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14554"><noautolink>Foswikitask:Item14554</noautolink></a>: remove link to unused wikiring.com domain. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.318 (15 May 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item14351" class="interwikiLink" title="'Item14351' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14351</noautolink></a>: Uninitialized value warning when changerows is used with <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a>. <br/>                         <a title="'Item13766' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13766"><noautolink>Foswikitask:Item13766</noautolink></a>: <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> columns widths are jumping to wider size when you hoover the mouse over the table. <br/>                         <a title="'Item14234' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14234"><noautolink>Foswikitask:Item14234</noautolink></a>: Clicking pencil for first row (erp_row=0) opens editor on entire table. <br/>                         <a title="'Item14349' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14349" class="interwikiLink"><noautolink>Foswikitask:Item14349</noautolink></a>: Edit Table button not functional on IE 11. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.317 (21 Jan 2017) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item14107' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14107" class="interwikiLink"><noautolink>Foswikitask:Item14107</noautolink></a> Document that move, add &amp; delete row actions are immediate, not subject to cancel. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.316 (26 Nov 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14174" title="'Item14174' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14174</noautolink></a> css.gz and js.gz files missing from MANIFEST<br/>                          <a href="https://foswiki.org/Tasks/Item14213" class="interwikiLink" title="'Item14213' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14213</noautolink></a> Warning logged about uninitialized values <br/>                         <a href="https://foswiki.org/Tasks/Item14218" class="interwikiLink" title="'Item14218' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14218</noautolink></a> Not fuctional on recent versions of IE. <br/>                         <a title="'Item14258' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item14258" class="interwikiLink"><noautolink>Foswikitask:Item14258</noautolink></a> Crash with empty column format. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.315 (19 Mar 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13941" title="'Item13941' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13941</noautolink></a> Remove EDITTABLE macro in static context.<br/>                          <a title="'Item14000' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item14000"><noautolink>Foswikitask:Item14000</noautolink></a> Delete row removes next to last row.<br/>                          <a class="interwikiLink" href="https://foswiki.org/Tasks/Item14004" title="'Item14004' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item14004</noautolink></a> Textarea fields rendered with incorrect size. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.314 (02 Feb 2016) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item10916' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item10916"><noautolink>Foswikitask:Item10916</noautolink></a> Pencils disappear after row move when both js and non-js controls are present. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.313 (26 Oct 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item13834' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13834"><noautolink>Foswikitask:Item13834</noautolink></a> Unable to edit cells containing utf-8 data.<br/>                          <a title="'Item13815' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13815"><noautolink>Foswikitask:Item13815</noautolink></a> Typo in regular expression.<br/>                          <a title="'Item13817' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13817"><noautolink>Foswikitask:Item13817</noautolink></a> Performance issues with large tables. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.312 (02 Oct 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13781" class="interwikiLink" title="'Item13781' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13781</noautolink></a> Update dependency on <a href="TablesContrib.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">TablesContrib</a> version for Foswiki 1.1 compatibility. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.311 (30 Sep 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13672" title="'Item13672' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13672</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> doesn't save under mod_perl<br/>                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13570" title="'Item13570' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13570</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> does not work on page with TABLE macro.<br/>                         <a href="https://foswiki.org/Tasks/Item13662" class="interwikiLink" title="'Item13662' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13662</noautolink></a> <a class="foswikiCurrentTopicLink" href="EditRowPlugin.html">EditRowPlugin</a> does not leave at least one space in an empty cell.<br/>                         <a href="https://foswiki.org/Tasks/Item13672" class="interwikiLink" title="'Item13672' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13672</noautolink></a> <a class="foswikiCurrentTopicLink" href="EditRowPlugin.html">EditRowPlugin</a> not working on mod_perl systems.<br/>                         <a href="https://foswiki.org/Tasks/Item13692" class="interwikiLink" title="'Item13692' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13692</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> puts the edit button the wrong place when EDITTABLE comes before TABLE.<br/>                         <a href="https://foswiki.org/Tasks/Item13693" class="interwikiLink" title="'Item13693' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13693</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> deletes macros from text area fields.<br/>                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13711" title="'Item13711' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13711</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> makes <a href="TablePlugin.html">TablePlugin</a> apply its formatting to the wrong column.<br/>                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13714" title="'Item13714' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13714</noautolink></a> <a class="foswikiCurrentTopicLink" href="EditRowPlugin.html">EditRowPlugin</a> adding and deleting rows fails in <a title="Create this topic" href="TestCases.html" class="foswikiNewLink" rel="nofollow">TestCases</a>/TestCaseEditTableJavaScript.<br/>                         <a href="https://foswiki.org/Tasks/Item13715" class="interwikiLink" title="'Item13715' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13715</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> does not always handle the EDITTABLE macro correctly case 2.<br/>                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13717" title="'Item13717' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13717</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> creates massive copies of macros when you edit tables.<br/>                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13720" title="'Item13720' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13720</noautolink></a> <a class="foswikiCurrentTopicLink" href="EditRowPlugin.html">EditRowPlugin</a> make the headline sort mark up the wrong column as the sorted.<br/>                         <a title="'Item13765' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item13765" class="interwikiLink"><noautolink>Foswikitask:Item13765</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="TestCaseEditTableMacrosInSettings.html">TestCaseEditTableMacrosInSettings</a> removes content of footer and label type cells.<br/>                         <a title="'Item13767' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13767"><noautolink>Foswikitask:Item13767</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> does not completely turn off sorting by clicking header when TABLE has sort="off".<br/>                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13769" title="'Item13769' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13769</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> sorting only works the first time you click a header and will not reverse sort when clicking same again.<br/>                         <a title="'Item13770' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13770"><noautolink>Foswikitask:Item13770</noautolink></a> <a class="foswikiCurrentTopicLink" href="EditRowPlugin.html">EditRowPlugin</a> treats bold text in footer row as something related to sort but without function.<br/>                         <a title="'Item13771' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13771"><noautolink>Foswikitask:Item13771</noautolink></a> <a href="EditRowPlugin.html" class="foswikiCurrentTopicLink">EditRowPlugin</a> has hardcoded its Macro in <a href="TableParser.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">TableParser</a>.pm. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.200 (30 Mar 2015) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item13309" class="interwikiLink" title="'Item13309' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13309</noautolink></a>: fixed for compatibility with TablePlugin </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.100 (18 Dec 2014) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item12855' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12855"><noautolink>Foswikitask:Item12855</noautolink></a>: Core extensions should require <a href="JQueryPlugin.html">JQueryPlugin</a> 6.00<br />                         <a title="'Item13125' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item13125"><noautolink>Foswikitask:Item13125</noautolink></a>: Support Request multi_param<br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item13115" title="'Item13115' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item13115</noautolink></a>: Don't require JQuery theme<br />                         <a title="'Item12953' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12953"><noautolink>Foswikitask:Item12953</noautolink></a>: an empty table with a header row was crashing<br />                         <a href="https://foswiki.org/Tasks/Item12952" class="interwikiLink" title="'Item12952' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item12952</noautolink></a>: Spec changes for new configure<br />                         <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11737" title="'Item11737' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item11737</noautolink></a>: Replace Sandbox with <code>%SANDBOXWEB%</code> <br />                         <a title="'Item12839' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item12839"><noautolink>Foswikitask:Item12839</noautolink></a>: Update rest authority for <a class="foswikiCurrentTopicLink" href="EditRowPlugin.html">EditRowPlugin</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.7 (28 Apr 2014) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12814" title="'Tasks/Item12814' on foswiki.org"><noautolink>Foswiki:Tasks/Item12814</noautolink></a> disable edit on tables with no macro<br />                         <a title="'Tasks/Item128120' on foswiki.org" href="https://foswiki.org/Tasks/Item128120" class="interwikiLink"><noautolink>Foswiki:Tasks/Item128120</noautolink></a> fix row moving, zero-width edit boxes on Chromium, and header clearing on table edit close.<br />                         <a href="https://foswiki.org/Tasks/Item12871" class="interwikiLink" title="'Tasks/Item12871' on foswiki.org"><noautolink>Foswiki:Tasks/Item12871</noautolink></a>: support <a title="Create this topic" href="StrikeOne.html" class="foswikiNewLink" rel="nofollow">StrikeOne</a> validation and clean REST authentication checking </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.6 (13 Nov 2013) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11920" title="'Tasks/Item11920' on foswiki.org"><noautolink>Foswiki:Tasks/Item11920</noautolink></a> syntax error in JS was causing failure on IE 7 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.5 (12 Nov 2013) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item12654" title="'Tasks/Item12654' on foswiki.org"><noautolink>Foswiki:Tasks/Item12654</noautolink></a>: Fixed interactive row moving, add wait cursor during REST request </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.4 (11 Nov 2013) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item12132' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item12132"><noautolink>Foswiki:Tasks/Item12132</noautolink></a>: Workaround for CSS problem in <a href="PatternSkin.html">PatternSkin</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.3 (8 Jan 2013) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item12144' on foswiki.org" href="https://foswiki.org/Tasks/Item12144" class="interwikiLink"><noautolink>Foswiki:Tasks/Item12144</noautolink></a>: add foswikiIcon to icons <a title="'Tasks/Item12148' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item12148"><noautolink>Foswiki:Tasks/Item12148</noautolink></a>: added missing tooltips, changed stain cursor to match button behaviour </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.2 (19 Aug 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10770" title="'Tasks/Item10770' on foswiki.org"><noautolink>Foswiki:Tasks/Item10770</noautolink></a>: Don't expand macros in select values </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.1 (28 Jan 2012) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item11381" class="interwikiLink" title="'Tasks/Item11381' on foswiki.org"><noautolink>Foswiki:Tasks/Item11381</noautolink></a>: automatically disable JS if rest script is in {AuthScripts} and no-one is logged in </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 3.0.0 (8 Dec 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11140" title="'Tasks/Item11140' on foswiki.org"><noautolink>Foswiki:Tasks/Item11140</noautolink></a>: recoded to only instrument the table when the rows are actually rolled over. Reduced the amount of HTML generated by the server enormously. Added REST API. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.9 (7 Oct 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item11140' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item11140"><noautolink>Foswiki:Tasks/Item11140</noautolink></a>: optimisations for use with very large tables <a title="'Tasks/Item11342' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item11342"><noautolink>Foswiki:Tasks/Item11342</noautolink></a>: added REST handler to get cell contents for editing </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.8 (8 Aug 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item11028' on foswiki.org" href="https://foswiki.org/Tasks/Item11028" class="interwikiLink"><noautolink>Foswiki:Tasks/Item11028</noautolink></a>: JS date editor now picks up existing value <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11029" title="'Tasks/Item11029' on foswiki.org"><noautolink>Foswiki:Tasks/Item11029</noautolink></a>: JS date editor now uses consistent date formats </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.7 (03 Aug 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item11010' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item11010"><noautolink>Foswiki:Tasks/Item11010</noautolink></a>: better default for editable cell width <a class="interwikiLink" href="https://foswiki.org/Tasks/Item11018" title="'Tasks/Item11018' on foswiki.org"><noautolink>Foswiki:Tasks/Item11018</noautolink></a>: fixed date format in non-JS edit mode </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.6 (18 Jul 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10982" title="'Tasks/Item10982' on foswiki.org"><noautolink>Foswiki:Tasks/Item10982</noautolink></a>: fix crash when adding rows with date fields that have no default value </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.5 (27 Jun 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10915" title="'Tasks/Item10915' on foswiki.org"><noautolink>Foswiki:Tasks/Item10915</noautolink></a>: fix EDITCELL handling on save. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10922" title="'Tasks/Item10922' on foswiki.org"><noautolink>Foswiki:Tasks/Item10922</noautolink></a>: abort save on clash with a synchronous edit by another user </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.4 (14 Jun 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item10876' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10876"><noautolink>Foswiki:Tasks/Item10876</noautolink></a>: return to non-edit mode after row move invokes authentication. <a title="'Tasks/Item10876' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10876"><noautolink>Foswiki:Tasks/Item10876</noautolink></a>: fix textarea. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.3 (10 Jun 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item10862' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10862"><noautolink>Foswiki:Tasks/Item10862</noautolink></a>: pick up initial values for all field types. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10864" title="'Tasks/Item10864' on foswiki.org"><noautolink>Foswiki:Tasks/Item10864</noautolink></a>: protect full-table edits when adding and removing rows. <a title="'Tasks/Item10865' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10865"><noautolink>Foswiki:Tasks/Item10865</noautolink></a>: remove edit stain from label cells. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.2 (7 Jun 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item10853' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10853"><noautolink>Foswiki:Tasks/Item10853</noautolink></a>: Remove <code>REQUIRE_JS and =require_js</code>, add <code>js</code> and <code>EDITROWPLUGIN_JS</code> to improve support of non-JS environments </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.1 (3 Jun 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item10821' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10821"><noautolink>Foswiki:Tasks/Item10821</noautolink></a>: stop yellow stain from overlaying pop-up calendar. <a href="https://foswiki.org/Tasks/Item10822" class="interwikiLink" title="'Tasks/Item10822' on foswiki.org"><noautolink>Foswiki:Tasks/Item10822</noautolink></a>: fix auth of single-cell edit </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.2.0 (25 May 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item2016" title="'Tasks/Item2016' on foswiki.org"><noautolink>Foswiki:Tasks/Item2016</noautolink></a>: work around core code limitations when cell content is 0; <a title="'Tasks/Item10591' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10591"><noautolink>Foswiki:Tasks/Item10591</noautolink></a>: silence noisy "Click to edit" statements; change to a control for editing cells, due to the "wikiword selection" problem <a title="'Tasks/Item10592' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10592"><noautolink>Foswiki:Tasks/Item10592</noautolink></a>: row move now uses an external handle, to allow for cursor select of table contents. Add feedback for saves. <a title="'Tasks/Item10768' on foswiki.org" href="https://foswiki.org/Tasks/Item10768" class="interwikiLink"><noautolink>Foswiki:Tasks/Item10768</noautolink></a>: fix edit/save buttons in IE 7; <a title="'Tasks/Item10777' on foswiki.org" href="https://foswiki.org/Tasks/Item10777" class="interwikiLink"><noautolink>Foswiki:Tasks/Item10777</noautolink></a>: make sure full table edit is working, and there is no risk of data loss when adding/removing rows </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.4 (18 May 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item10752' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10752"><noautolink>Foswiki:Tasks/Item10752</noautolink></a>: fix HTML comments in cells <a class="interwikiLink" href="https://foswiki.org/Tasks/Item10753" title="'Tasks/Item10753' on foswiki.org"><noautolink>Foswiki:Tasks/Item10753</noautolink></a>: correct interpretation of changerows="add" </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.3 (19 Apr 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item10583' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10583"><noautolink>Foswiki:Tasks/Item10583</noautolink></a>: support for sort order in select cells <a title="'Tasks/Item10583' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10583"><noautolink>Foswiki:Tasks/Item10583</noautolink></a>: fixes for EDITCELL </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.2 (14 Mar 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item2016' on foswiki.org" href="https://foswiki.org/Tasks/Item2016" class="interwikiLink"><noautolink>Foswiki:Tasks/Item2016</noautolink></a>: editor was not handling a table cell that contained only "0" correctly </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.1 (25 Feb 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Some minor tweaks </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.1.0 (21 Feb 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Tasks/Item5618' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item5618"><noautolink>Foswiki:Tasks/Item5618</noautolink></a>: <a title="'Tasks/Item5714' on foswiki.org" href="https://foswiki.org/Tasks/Item5714" class="interwikiLink"><noautolink>Foswiki:Tasks/Item5714</noautolink></a>: <a href="https://foswiki.org/Tasks/Item5715" class="interwikiLink" title="'Tasks/Item5715' on foswiki.org"><noautolink>Foswiki:Tasks/Item5715</noautolink></a>: row moves and single-cell edits are now done client-side as much as possible. Row moves are drag and drop. Using JS lets us maintain the column numbering so that other plugins still work (e.g. table plugin init sort) as well as being a lot faster. <a href="https://foswiki.org/Tasks/Item10363" class="interwikiLink" title="'Tasks/Item10363' on foswiki.org"><noautolink>Foswiki:Tasks/Item10363</noautolink></a>: Support button placement at the ends of table rows. <a title="'Tasks/Item10388' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item10388"><noautolink>Foswiki:Tasks/Item10388</noautolink></a>: broke out JEditable into a separate package </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.0.2 (2 Feb 2011) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a class="interwikiLink" href="https://foswiki.org/Tasks/Item2016" title="'Tasks/Item2016' on foswiki.org"><noautolink>Foswiki:Tasks/Item2016</noautolink></a>: doesn't save "0" in table cells; fixed.Foswiki:Tasks/Item2229: needs better headings support; fixed. <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1186" title="'Tasks/Item1186' on foswiki.org"><noautolink>Foswiki:Tasks/Item1186</noautolink></a>: textarea newlines are not saved with whitespace around br; fixed. <a title="'Tasks/Item9091' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item9091"><noautolink>Foswiki:Tasks/Item9091</noautolink></a>: orientrowedit=vertical does not show the header labels; fixed. <a title="'Tasks/Item9775' on foswiki.org" class="interwikiLink" href="https://foswiki.org/Tasks/Item9775"><noautolink>Foswiki:Tasks/Item9775</noautolink></a>: missing section headings from Config.spec; fixed. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.0.1 (24 Feb 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a title="'Item1139' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1139" class="interwikiLink"><noautolink>Foswikitask:Item1139</noautolink></a>: fixed restoration of labels after an edit <a title="'Item1140' on the 'Foswiki' issue tracking site" href="https://foswiki.org/Tasks/Item1140" class="interwikiLink"><noautolink>Foswikitask:Item1140</noautolink></a>: fixed loading of multi-valued parameters </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol" style="text-align:right"> 2.0.0 (15 Feb 2009) </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <a href="https://foswiki.org/Tasks/Item451" class="interwikiLink" title="'Item451' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item451</noautolink></a>: ported to foswiki <a href="https://foswiki.org/Tasks/Item5757" class="interwikiLink" title="'Item5757' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item5757</noautolink></a>: not respecting footer rows when saving <a title="'Item5681' on the 'Foswiki' issue tracking site" class="interwikiLink" href="https://foswiki.org/Tasks/Item5681"><noautolink>Foswikitask:Item5681</noautolink></a>: help not fully rendered before inclusion in a TML table <a class="interwikiLink" href="https://foswiki.org/Tasks/Item1086" title="'Item1086' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item1086</noautolink></a>: Macros were being expanded before editing <a href="https://foswiki.org/Tasks/Item5924" class="interwikiLink" title="'Item5924' on the 'Foswiki' issue tracking site"><noautolink>Foswikitask:Item5924</noautolink></a>: refactor for reusability </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLastCol" style="text-align:right"> Earlier version history can be found in the Subversion repository </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast" style="text-align:right"> Dependencies: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <table border="1" class="foswikiTable"><tr><th>Name</th><th>Version</th><th>Description</th></tr><tr><td align="left">Foswiki::Contrib::JSCalendarContrib</td><td align="left">&gt;0</td><td align="left">Javascript calendar module</td></tr><tr><td align="left">Foswiki::Plugins::JQueryPlugin</td><td align="left">&gt;=6.00</td><td align="left">JQuery</td></tr><tr><td align="left">Foswiki::Contrib::JEditableContrib</td><td align="left">&gt;0</td><td align="left">Required, JQuery plugin</td></tr><tr><td align="left">JSON</td><td align="left">&gt;=0</td><td align="left">Required, for REST</td></tr><tr><td align="left">Foswiki::Contrib::TablesContrib</td><td align="left">&gt;=1.05</td><td align="left">Required for Foswiki &lt; 2.0</td></tr></table> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<!-- Do <em>not</em> attempt to edit this topic; it is auto-generated. Please use the Foswiki support pages to ask questions and report problems instead. -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

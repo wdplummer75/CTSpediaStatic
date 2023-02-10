@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>IconService &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/IconService/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/IconService/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" rel="alternate" href="IconService.html" title="edit IconService">
+<meta name="description" content="IconService" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "IconService",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="IconService">  <a href="IconService.html" class="foswikiCurrentTopicLink">IconService</a> </h1>
+<p></p>
+The <a class="foswikiCurrentTopicLink" href="IconService.html">IconService</a> functions as a central definition and delivery method for all sorts of icons: image icons as well as font icons.
+<p></p>
+<h2 id="Different_kinds_of_icons">  Different kinds of icons </h2>
+<p></p>
+Image icons are those that display a small icon using an image file. Each individual icon of that kind refers to exactly one file on the disk.
+Font icons are bundled into a single web font file that holds all icons available via a this specific font. Web fonts are normally used to
+change typographical aspects of the web with well known fonts such as Arial, Times New Roman and the like. Each glyph in a web font represents
+one character of text. Icon fonts are a specific kind of web fonts where glyphs don't represent a character but an icon. 
+<p></p>
+Image icons are very colorful most of the time, whereas font icons are always monochrome. The color of an image icons cannot be changed; the 
+color of a font icon can be adjusted by changing their text color. Icon fonts may be manipulated in many ways, most notably they can be scaled
+to any size possible without losing their rendering quality. This is the main advantage over image icons that can only be delivered in a single
+scale and a predefined coloring.
+<p></p>
+The <a href="IconService.html" class="foswikiCurrentTopicLink">IconService</a> is able to make both kinds of icons available to the system likewise as far as possible with regards to their different nature (see above).
+All icons are addressible by their unique <em>identifier</em>. All icons fall into at least one <em>category</em> that describe their origin and nature.
+<p></p>
+<h2 id="Definition_image_icons">  Definition image icons </h2>
+<p></p>
+Image icons are defined by being available on an "icon search path". This is a list of locations (on disk), where image files are looked up for a specific identifier.
+The icon search path is <a href="../.html">configured</a> by the <code>{JQueryPlugin}{IconSearchPath}</code> and
+defaults to <a href="FamFamFamSilkIcons.html">FamFamFamSilkIcons</a>, <a href="FamFamFamSilkCompanion1Icons.html">FamFamFamSilkCompanion1Icons</a>, <a href="FamFamFamFlagIcons.html">FamFamFamFlagIcons</a>, <a href="FamFamFamMiniIcons.html">FamFamFamMiniIcons</a>, <a href="FamFamFamMintIcons.html">FamFamFamMintIcons</a>. 
+The named icon will be picked found first on this path of topics where icons are attached to. 
+<p></p>
+<h2 id="Definition_of_font_icons">  Definition of font icons </h2>
+<p></p>
+Font icons are defined by the <code>{JQueryPlugin}{IconFonts}</code> setting. This is a list of icon font definitions, i.e. how they are named, and which css file 
+must be loaded into a web page to make them available. The default setting is:
+<p></p>
+<pre>
+&#36;Foswiki::cfg{JQueryPlugin}{IconFonts} &#61; {
+  &#39;fontawesome&#39; &#61;&#62; {
+    &#39;prefix&#39; &#61;&#62; &#39;fa&#39;,
+    &#39;definition&#39; &#61;&#62; &#39;&#36;Foswiki::cfg{PubDir}/&#36;Foswiki::cfg{SystemWebName}/JQueryPlugin/plugins/fontawesome/fontawesome.json&#39;,
+    &#39;plugin&#39; &#61;&#62; &#39;fontawesome&#39;,
+  },
+  &#39;material&#39; &#61;&#62; {
+    &#39;prefix&#39; &#61;&#62; &#39;ma&#39;,
+    &#39;definition&#39; &#61;&#62; &#39;&#36;Foswiki::cfg{PubDir}/&#36;Foswiki::cfg{SystemWebName}/WebFontsContrib/material-icons/material.json&#39;,
+    &#39;css&#39; &#61;&#62; &#39;&#36;Foswiki::cfg{PubUrlPath}/&#36;Foswiki::cfg{SystemWebName}/WebFontsContrib/material-icons/font-face.css&#39;, 
+  },
+};
+</pre>
+<p></p>
+Note that Foswiki does only ship Fontawesome icons by default. Material icons are part of the <a class="interwikiLink" href="https://foswiki.org/Extensions/WebFontsContrib" title="'Extensions/WebFontsContrib' on foswiki.org"><noautolink>WebFontsContrib</noautolink></a> extension that you might want to install in addition.
+Its definition section in the <code>{JQueryPlugin}{IconFonts}</code> setting is ignored in case of the definition file not being present.
+<p></p>
+Each entry is of the following format:
+<p></p>
+<pre>
+   &#39;&#60;fontName&#62;&#39; &#61;&#62; {
+      &#39;prefix&#39; &#61;&#62; &#39;&#60;string&#62;&#39;,
+      &#39;definition&#39; &#61;&#62; &#39;&#60;definitionFile&#62;&#39;,   
+      &#39;plugin&#39; &#61;&#62; &#39;&#60;jQueryModule&#62;&#39;,
+      &#39;css&#39; &#61;&#62; &#39;&#60;cssUrl&#62;&#39;
+   }
+</pre>
+<p></p> <ul>
+<li> <code>fontName</code>: unique identifier
+</li> <li> <code>definitionFile</code>: file path to a file holding a font definition (more about it below)
+</li> <li> <code>plugin</code> or <code>css</code>: either an icon font is loaded by means of a jquery module being loaded; this module then holds any further means to load the required assets into a web page; or the <code>css</code> url that is to be added to the page.
+</li></ul> 
+<p></p>
+A <code>definitionFile</code> itself defines the individual icons themselves, i.e. it mapps icon identifier to the actual glyph in the icon font. The <code>definitionFille</code> lists all identifiers that might be used in a <a href="VarJQICON.html">VarJQICON</a> macro:
+<p></p>
+<pre>
+&#37;JQICON{&#34;&#60;prefix&#62;-&#60;identifier&#62;&#34;}&#37;
+</pre>
+<p></p>
+The <code>&lt;prefix&gt;</code> part specifies which of the available icon fonts the <code>&lt;identifier&gt;</code> relates to. For instance <code>fa-pagelines</code> load the <code>fontawesome</code> jQuery module and then generate the according markup to display the icon.
+<p></p>
+<h2 id="Definition_file_for_an_icon_font">  Definition file for an icon font </h2>
+<p></p>
+A <code>definitionFile</code> refered to in an <code>fontName</code> entry of the <code>{JQueryPlugin}{IconFonts}</code> setting lists all available icon identifiers. It may also list aliases and categories that icons belong to grouping them into meaningful partitions.
+<a href="JQueryFontAwesome.html">JQueryFontAwesome</a> comes with a certan set of categories such as:
+<p></p> <ul>
+<li> Accessibility Icons
+</li> <li> Brand Icons
+</li> <li> Chart Icons
+</li> <li> Currency Icons
+</li> <li> Directional Icons
+</li> <li> File Type Icons
+</li> <li> Form Control Icons
+</li> <li> Gender Icons
+</li> <li> Hand Icons
+</li> <li> Medical Icons
+</li> <li> Payment Icons
+</li> <li> Spinner Icons
+</li> <li> Text Editor Icons
+</li> <li> Transportation Icons
+</li> <li> Video Player Icons
+</li> <li> Web Application Icons
+</li></ul> 
+<p></p>
+A definition file has got the format:
+<p></p>
+<pre class="js">
+{
+   &#34;icons&#34;: &#91;
+      {
+         &#34;id&#34;: &#34;&#60;string&#62;&#34;,
+         &#34;name&#34;: &#34;&#60;string&#62;&#34;,
+         &#34;unicode&#34;: &#34;&#60;codepoint&#62;&#34;,
+         &#34;categories&#34;: &#91;
+            &#34;&#60;string&#62;&#34;,
+            &#34;&#60;string&#62;&#34;,
+            ...
+         &#93;,
+      },
+   &#93;
+}
+</pre>
+<p></p> <ul>
+<li> <code>id</code> (mandatory) defines the icon id unique among all icons of this font
+</li> <li> <code>name</code>: icon name in human readable form, defaults to <code>id</code> if not present
+</li> <li> <code>unicode</code>: codepoint as defined in the web font
+</li> <li> <code>categories</code> list of categories that the icon belongs to
+</li></ul> 
+<p></p>
+Each icon in an icon font automatically is in the <code>fonticon</code> category as well as in the <code>fontName</code> category (e.g. <code>fonticon, fontawesome, Payment Icons</code>).
+<p></p>
+Each icon of an image icon automatically is added to the category naming the topic it is attached to, e.g. <code>FamFamFamSilkIcons</code>.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

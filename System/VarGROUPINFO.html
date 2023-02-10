@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarGROUPINFO &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/VarGROUPINFO/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE System/VarGROUPINFO/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit VarGROUPINFO" href="VarGROUPINFO.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="VarGROUPINFO" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "VarGROUPINFO",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="GROUPINFO_45_45_retrieve_details_about_a_group">  GROUPINFO -- retrieve details about a group </h1>
+<h2 id="Parameters">  Parameters </h2>
+                <table class="foswikiTable" rules="none">     
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Parameter</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Description</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Default</a> </th>
+		</tr>
+	</thead>     
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>"groupname"</code> </td>
+			<td class="foswikiTableCol1"> Optional name of group </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>format</code> </td>
+			<td class="foswikiTableCol1"> Format of a single user or group in the list. <ul> <li> <code>$name</code> expands to the group name, and (for users list only) </li> <li> <code>$wikiname</code>, <code>$username</code> and <code>$wikiusername</code> to the relevant strings. </li> <li> <code>$allowschange</code> returns 0 (false) or 1 (true) if the group can be modified by the group member being processed. </li> <li> The standard <a href="FormatTokens.html">FormatTokens</a> are also supported. </li> </ul> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>separator</code> </td>
+			<td class="foswikiTableCol1"> separator between items in the list </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>,</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>header</code> </td>
+			<td class="foswikiTableCol1"> Header for the list </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>footer</code> </td>
+			<td class="foswikiTableCol1"> Footer for the list </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &nbsp; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>zeroresults</code> </td>
+			<td class="foswikiTableCol1"> If set, and there are no Groups or Members that can be shown, the <code>header</code> and <code>footer</code> are suppressed, and this text is output </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>undefined</code> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>show</code> </td>
+			<td class="foswikiTableCol1"> filter the output list of Groups - can be set to <code>all</code>, <code>allowschange</code>, <code>denychange</code>, <code>allowschange(UserWikiName)</code>, <code>denychange(UserWikiName)</code> </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <code>all</code> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>expand</code> </td>
+			<td class="foswikiTableCol1"> Set false if users should not be expanded from nested groups.  Default behavior is to expand all nested groups into a flat list of users. </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> 1 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <code>limit</code> </td>
+			<td class="foswikiTableCol1"> If set, limits the number of results to this </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> &infin; </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <code>limited</code> </td>
+			<td class="foswikiTableCol1 foswikiLast"> If limit is set, and the list is truncated, this text will be added at the end of the list </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody>     </table>
+<p></p>
+<div class="foswikiHelp"><img src="DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16" title="ALERT!" width="16"> Note: GROUPINFO will not list members that are hidden from the current authenticated user. If the current user does not have VIEW authority for a user's topic, then the user will not be shown as a group member.</div> 
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%GROUPINFO%</code> expands to <code>BaseGroup, <a class="foswikiNewLink" rel="nofollow" href="AdminGroup.html" title="Create this topic">AdminGroup</a>, <a href="NobodyGroup.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">NobodyGroup</a></code> (comma-separated list of all groups)
+</li> <li> <code>%GROUPINFO{AdminGroup"}%</code> expands to <code>Main.AdminUser, <a href="../Main/WikiAdmin.html">WikiAdmin</a></code> (comma-separated list of users in the requested group)
+</li> <li> <code>groupname</code> can optionally be qualified with the <code>Main</code> prefix, any other web prefix will return an empty list.
+</li></ul> 
+<p></p>
+<h2 id="Related">  Related </h2>
+<a href="VarUSERINFO.html">USERINFO</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

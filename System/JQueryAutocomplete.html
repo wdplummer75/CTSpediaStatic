@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryAutocomplete &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/JQueryAutocomplete/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryAutocomplete/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit JQueryAutocomplete" rel="alternate" href="JQueryAutocomplete.html">
+<meta name="description" content="JQueryAutocomplete" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryAutocomplete",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryAutocomplete">  <a href="JQueryAutocomplete.html" class="foswikiCurrentTopicLink">JQueryAutocomplete</a> </h1>
+<p></p>
+<p></p>
+<p></p>
+<div class="foswikiWarningMessage">
+Warning: This plugin is deprecated. Please use the autocomplete library as part of <a href="JQueryUI.html">JQueryUI</a>.
+</div>
+<p></p>
+Autocomplete an input field to enable users quickly finding and selecting some
+value from a set provided by the server.
+By giving an autocompleted field focus or entering something into it, the
+plugin starts searching for matching entries and displays a list of values to
+choose from. By entering more characters, the user can filter down the list to
+better matches.
+This can be used to enter previous selected values, eg. for tags, to complete
+an address, eg. enter a city name and get the zip code, or maybe enter email
+addresses from an addressbook.
+<p></p>
+See also <a href="JQueryAjaxHelper.html">JQueryjaxHelper</a> for examples on how to integrate autocompletion
+into Foswiki.
+<p></p>
+<img width="16" title="ALERT!" alt="ALERT!" height="16" src="DocumentGraphics.attachments/warning.png"> <strong>Caution</strong>: the original author of this plugin discontinued to support this plugin. A replacement has been added to
+the <a href="JQueryUI.html">JQueryUI</a> package. Here is a <a href="http://www.learningjquery.com/2010/06/autocomplete-migration-guide">Migration Guide</a> for the autocompletion plugin.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+<p></p>
+Autocompletion is activated for HTML input elements whose <code><b>autocomplete</b></code> attribute value does not equal <code>off</code>.
+It can either be list of candidate values, or an URL, in which case candidate values are queried from an AJAX backend.
+The current input prefix is provided via the <code>q</code> URL parameter. The backend must return a list of matching values
+separated by newlines.
+<p></p>
+<h2 id="Example">  Example </h2>
+<div class='foswikiAlert'>No such plugin autocomplete</div>
+<p></p>
+This example queries candidate values from a simple AJAX backend using the
+wiki application in the <code>data</code> section of this topic.
+<p></p>
+See also <a href="JQueryTextboxList.html">JQueryTextboxList</a>
+<p></p>
+First, here's the set of values we want to pick from: <ul>
+<li> backup
+</li> <li> bash
+</li> <li> emulation
+</li> <li> games
+</li> <li> irc
+</li> <li> linux
+</li> <li> mercurial
+</li> <li> patches
+</li> <li> perl
+</li> <li> php
+</li> <li> python
+</li> <li> site
+</li> <li> surfing
+</li> <li> tag
+</li> <li> test
+</li> <li> foswiki
+</li> <li> web
+</li> <li> wiki
+</li> <li> windows
+</li> <li> windsurfing
+</li> <li> wine
+</li></ul> 
+<p></p>
+Here's the code that the client browser runs:
+<p></p>
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+    <h3>Enter tags:</h3>
+    <input class="foswikiInputField {multiple:true, matchCase:false, matchSubset:true, minChars:1}" size='42' autocomplete="http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/JQueryAutocomplete?section=data;skin=text" />
+    <div class="foswikiFormDescription">
+      Tags are suggested as you type. Separate multiple tags using a comma (,).
+    </div>
+  </div>
+</div>
+<p></p>
+And here's the section of this topic that provides the data:
+' backup 
+ bash 
+ emulation 
+ games 
+ irc 
+ linux 
+ mercurial 
+ patches 
+ perl 
+ php 
+ python 
+ site 
+ surfing 
+ tag 
+ test 
+ foswiki 
+ web 
+ wiki 
+ windows 
+ windsurfing 
+ wine '
+<pre class="tml">
+&#37;STARTSECTION{&#34;data&#34;}&#37;&#37;SEARCH{
+ &#34;^   \&#42; (&#37;ENCODE{&#34;&#37;URLPARAM{&#34;q&#34;}&#37;&#34; old&#61;&#34;&#36;comma, &#34; new&#61;&#34;&#124;,&#34;}&#37;).&#42;&#36;&#34;
+ web&#61;&#34;&#37;WEB&#37;&#34;
+ topic&#61;&#34;&#37;TOPIC&#37;&#34;
+ type&#61;&#34;regex&#34;
+ multiple&#61;&#34;on&#34;
+ nonoise&#61;&#34;on&#34;
+ format&#61;&#34; &#36;pattern(.&#42;?\&#42; (&#91;^ &#93;&#42;).&#42;) &#34;
+ separator&#61;&#34;&#36;n&#34;
+}&#37;
+&#37;ENDSECTION{&#34;data&#34;}&#37;
+</pre>
+<p></p>
+<h2 id="Alternative_implementation_using_FilterPlugin">  Alternative implementation using FilterPlugin </h2>
+<p></p>
+If you don't have Foswiki 1.1, you can use the
+<a title="'Extensions.FilterPlugin' on foswiki.org" href="https://foswiki.org/Extensions.FilterPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions.FilterPlugin</noautolink></a> which has the capability to filter a list
+based on a regular expression passed from Javascript.
+<p></p>
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+    <h3>Enter tags:</h3>
+    <input class="foswikiInputField {multiple:true, matchCase:false, matchSubset:true, minChars:1}" size='42' autocomplete="http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/JQueryAutocomplete?section=data_fp;skin=text" />
+    <div class="foswikiFormDescription">
+      Tags are suggested as you type. Separate multiple tags using a comma (,).
+    </div>
+  </div>
+</div>
+<p></p>
+<pre class="tml">
+&#37;STARTSECTION{&#34;data&#95;fp&#34;}&#37;&#37;FORMATLIST{
+&#34; 
+  backup
+  bash
+  emulation
+  games
+  irc
+  linux
+  mercurial
+  patches
+  perl
+  php
+  python
+  site
+  surfing
+  tag
+  test
+  foswiki
+  web
+  wiki
+  windows
+  windsurfing
+  wine
+&#34;
+ include&#61;&#34;.&#42;&#37;URLPARAM{&#34;q&#34;}&#37;.&#42;&#34;
+ split&#61;&#34;
+&#34;
+ format&#61;&#34; &#36;1 &#34;
+ separator&#61;&#34;&#36;n&#34;
+}&#37;&#37;ENDSECTION{&#34;data&#95;fp&#34;}&#37;
+</pre>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

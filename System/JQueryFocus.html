@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>JQueryFocus &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/JQueryFocus/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/JQueryFocus/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" rel="alternate" href="JQueryFocus.html" title="edit JQueryFocus">
+<meta name="description" content="JQueryFocus" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::FOCUS" src="JQueryPlugin.attachments/plugins/focus/jquery.focus.js?version=1.0.1"></script><!--JQUERYPLUGIN::FOCUS-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "JQueryFocus",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="JQueryFocus">  <a href="JQueryFocus.html" class="foswikiCurrentTopicLink">JQueryFocus</a> </h1>
+<p></p>
+    Homepage: <a href="http://foswiki.org/Extensions/JQueryPlugin">http://foswiki.org/Extensions/JQueryPlugin</a> <br />
+    Author(s): Michael Daum <br />
+    Version: 1.0.1
+<p></p>
+<p></p>
+<p></p>
+This plugin sets the focus on a form input field
+or textarea of a form when the page is loaded.
+<p></p>
+<p></p>
+<h2 id="Usage">  Usage </h2>
+Add the css class <code><b>jqFocus</b></code> (or <code><b>foswikiFocus</b></code>) to the input field you'd like to focus.
+<p></p>
+<h2 id="Example">  Example </h2>
+<pre class="tml">
+&#37;JQREQUIRE{&#34;focus&#34;}&#37;
+&#60;input type&#61;&#34;text&#34; class&#61;&#34;foswikiInputField jqFocus&#34; size&#61;&#34;40&#34; /&#62;
+
+&#60;style&#62;
+input&#91;type&#61;&#34;text&#34;&#93;:focus {
+ background-color:#FFFFC0;
+ color:black;
+}
+&#60;/style&#62;
+</pre>
+<p></p>
+creates:
+<p></p>
+<p></p>
+<input type="text" class="foswikiInputField foswikiFocus" size="40" />
+<p></p>
+<style>
+input[type="text"]:focus {
+ background-color:#FFFFC0;
+ color:black;
+}
+</style>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

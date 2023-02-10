@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FAQHiddenUsersAndGroups &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE System/FAQHiddenUsersAndGroups/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/FAQHiddenUsersAndGroups/favicon.ico" rel="shortcut icon">
+<link title="edit FAQHiddenUsersAndGroups" rel="alternate" href="FAQHiddenUsersAndGroups.html" type="application/x-wiki">
+<meta name="description" content="FAQHiddenUsersAndGroups" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "FAQHiddenUsersAndGroups",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+Both users and groups can be hidden from common view and made visible only to the admin or to selected users and groups.
+<p></p>
+You do this the same way as you access control normal topics. You use the ALLOWTOPICVIEW setting.
+<p></p>
+See <a href="AccessControl.html">AccessControl</a> for information about how access controls function.
+<p></p>
+Hiding a user means hiding the users hometopic in the Main web. You set an ALLOWTOPICVIEW setting in the users topic. Only the admin and the users granted access can see the content of the users topic.
+<p></p>
+<img src="DocumentGraphics.attachments/warning.png" height="16" alt="ALERT!" title="ALERT!" width="16"> This does not hide the users name from appearing in topic that the user has edited.
+<p></p>
+When you do not have view access to a users home topic ....
+<p></p> <ul>
+<li> The users topic will not show up in searches
+</li> <li> The user will not be shown as a member of a group with GROUPINFO or GROUPS
+</li></ul> 
+<p></p>
+You can also hide a Group topic from view. Then the group is not listed with GROUPINFO or GROUPS.
+<p></p>
+There is a subtle difference in operation when using "Hidden" groups, especially when nested in other groups.  Consider the following group structure. <ul>
+<li> SomeGroup <ul>
+<li> UserOne
+</li> <li> SomeHiddenGroup (VIEW is denied to guest) <ul>
+<li> UserTwo
+</li> <li> SecretUser (VIEW is denied to guest)
+</li></ul> 
+</li></ul> 
+</li></ul> 
+<p></p>
+If the Guest uses %GROUPINFO% or %GROUPS% to list SomeGroup,  they will see UserOne and UserTwo.   The SecretUser will not be revealed,  but SomeHiddenGroup will be expanded.
+<p></p>
+If the Guest uses %GROUPINFO% to list groups without expanding nested groups (or visits the <a href="../Main/WikiGroups.html">WikiGroups</a> topic),  then SomeHiddenGroup will not be revealed, either directly or as a member of SomeGroup.
+<p></p>
+By comparing the expanded list of users of SomeGroup with the un-expanded list, it is possible to infer by the presence of UserTwo that there is a hidden group,  but the hidden group name or the hidden users are not revealed.
+<p></p>
+The important thing to remember:  <strong>If you need to hide the existance of users, protect their user topics.</strong>  It is not enough to protect the group topic.
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

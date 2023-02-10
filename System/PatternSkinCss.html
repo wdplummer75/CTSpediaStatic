@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PatternSkinCss &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/PatternSkinCss/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE System/PatternSkinCss/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit PatternSkinCss" rel="alternate" href="PatternSkinCss.html">
+<meta name="description" content="PatternSkinCss" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PatternSkinCss",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="CSS_elements_in_PatternSkin">  CSS elements in PatternSkin </h1>
+<p></p>
+This page is a reference for all CSS classes used in <a href="PatternSkin.html">PatternSkin</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">Page contents:</span> <ul>
+<li> <a href="#Naming_conventions"> Naming conventions </a>
+</li> <li> <a href="#Namespaces"> Namespaces </a> <ul>
+<li> <a href="#Page_type_classes"> Page type classes </a>
+</li></ul> 
+</li> <li> <a href="#Layout_classes"> Layout classes </a>
+</li> <li> <a href="#Style_classes"> Style classes </a>
+</li></ul> 
+</div>
+<p></p>
+PatternSkin uses 4 stylesheets: <ul>
+<li> <a href="PatternSkinTheme.attachments/layout.css">layout.css</a>: positioning of block elements on the page
+</li> <li> <a href="PatternSkinTheme.attachments/style.css">style.css</a>: margins, paddings, borders, font sizes
+</li> <li> <a href="PatternSkinTheme.attachments/colors.css">colors.css</a>: text colors, background colors, border colors
+</li> <li> <a href="PatternSkin.attachments/print.css">print.css</a>: optimalizations for printed page
+</li></ul> 
+<p></p>
+If you want to learn how to create your own look or skin based on PatternSkin, read further in <a href="PatternSkin.html">PatternSkin</a>.
+<p></p>
+<h2 id="Naming_conventions">  Naming conventions </h2>
+<p></p> <ul>
+<li> All PatternSkin specific classes have the prefix <code>pattern</code>: patternEditPage, patternTopicAction, etcetera. 
+</li> <li> Foswiki specific classes (emitted by the Foswiki engine) have the prefix <code>foswiki</code>: foswikiButton, foswikiToc, etcetera. See <a href="AppendixCascadingStyleSheets.html">AppendixCascadingStyleSheets</a> for a complete list.
+</li> <li> Positional containers are referred by id, for instance <code>#patternSideBar</code>.
+</li></ul> 
+<p></p>
+<h2 id="Namespaces">  Namespaces </h2>
+<p></p>
+PatternSkin uses namespaces for templates, by adding one (sometimes two - multiple) class names to the template's body tag. 
+<p></p> <ul>
+<li> The body tag in view.pattern.tmpl for instance has the class name "patternViewPage": <code>&lt;body class="patternViewPage"&gt;</code>. All CSS elements specific to the view template thus can be defined as <code>.patternViewPage .someClassName</code>.
+</li> <li> All templates that are <em>not</em> the view template have the body class name "patternNoViewPage". That makes it easy to give all of these pages a different layout (smaller or wider margins for instance) in one sweep. Template edit.pattern.tmpl uses <code>&lt;body class="patternNoViewPage patternEditPage"&gt;</code>.
+</li></ul> 
+<p></p>
+<h3 id="Page_type_classes">  Page type classes </h3>
+<p></p> <ul>
+<li> .patternViewPage
+</li> <li> .patternViewPage .patternPrintPage
+</li> <li> .patternNoViewPage
+</li> <li> .patternNoViewPage .patternEditPage
+</li> <li> .patternNoViewPage .patternAttachPage
+</li> <li> .patternNoViewPage .patternChangeFormPage
+</li> <li> .patternNoViewPage .patternDiffPage
+</li> <li> .patternNoViewPage .patternRenamePage
+</li> <li> .patternSearchResultsPage
+</li> <li> .patternPlainPage (<code>viewplain.pattern.tmpl</code>)
+</li></ul> 
+<p></p>
+<h2 id="Layout_classes">  Layout classes </h2>
+<p></p> <ul>
+<li> Main layout elements (in order of appearance in <code>body.pattern.tmpl</code>) <ul>
+<li> #patternScreen - outer container, used when centering the page (see <a href="PatternSkinCssCookbookCenterPage.html">PatternSkinCssCookbookCenterPage</a>)
+</li> <li> #patternPageShadow - shadow border around patternPage; default not used (see <a href="PatternSkinCssCookbookCenterPageBorder.html">PatternSkinCssCookbookCenterPageBorder</a>)
+</li> <li> #patternPage - html content container
+</li> <li> Left bar: <ul>
+<li> #patternWrapper
+</li> <li> #patternSideBar - left bar area
+</li> <li> #patternSideBarContents - used for left menu
+</li></ul> 
+</li> <li> #patternOuter - wrapper container
+</li> <li> #patternFloatWrap - wrapper container
+</li> <li> #patternMain - center area
+</li> <li> #patternMainContents - holder of patternTop, foswikiTopic, foswikiForm, foswikiAttachments, etc.
+</li> <li> #patternTopBar - top bar area
+</li> <li> #patternTopBarContents - header art / logo; contains topic <a href="WebTopBar.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">WebTopBar</a>
+</li> <li> #patternBottomBar - bottom bar area
+</li> <li> #patternBottomBarContents - copyright
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="Style_classes">  Style classes </h2>
+<p></p> <ul>
+<li> View <ul>
+<li> .patternContent - container around .foswikiTopic in <code>view.pattern.tmpl</code> only; to be able to give .foswikiAttachments and .foswikiForm a different appearance when they are not enclosed by it, for example the personal data form on the user pages (where the user form is positioned outside, above the topic text)
+</li> <li> .patternTopBarLogo - logo position in patternTopBar (topic <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="WebTopBar.html">WebTopBar</a>)
+</li> <li> .patternTopBarOverlay - striped white image background
+</li> <li> .foswikiTopic - Foswiki topic text
+</li> <li> .patternTop - area at top of topic text, with patternHomePath, revision and action buttons
+</li> <li> .patternTopicActions - container for multiple .patternTopicAction rows
+</li> <li> .patternTopicAction - container for .patternActionButtons
+</li> <li> .patternActionButtons - action buttons at bottom of page
+</li> <li> .patternMoved - topic moved info (only visible when the topic has changed name or web)
+</li> <li> .patternWebIndicator - colored block at the top of the left bar to indicate the current web
+</li> <li> .patternFormHolder - container around form to manage the size of form elements
+</li> <li> .patternLeftBarPersonal - block of personal links (included topic %USERSWEB%.%USERNAME%LeftBar)
+</li> <li> .patternHomePath - breadcrumb at top
+</li> <li> .patternHomePathTitle - "You are here" text
+</li> <li> .patternRevInfo - revision info and author name
+</li> <li> .patternToolBar - holder for .patternToolBarButtons
+</li> <li> .patternToolBarButtons - action buttons at top of page
+</li> <li> .patternToolBarBottom - seperator
+</li> <li> .patternSimpleLogo - logo used on 'simple' pages like the login screen
+</li> <li> .patternButton - tab button Edit, Attach, Printable at top of topic
+</li> <li> .patternMetaMenu - search box, jump box, language selector
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Edit <ul>
+<li> .patternSig - signature copy box
+</li> <li> .patternSaveOptions - holder for .patternSaveOptionsContents
+</li> <li> .patternSaveOptionsContents - checkboxes that change the state of a topic save; for instance "Force revision" checkbox
+</li> <li> .patternSaveHelp - info block with help on save options (access keys and potentially other info)
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Preview page <ul>
+<li> .patternPreviewArea - container around preview of .foswikiTopic
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Attach page <ul>
+<li> .patternPrevious - attachment table of previous versions
+</li> <li> .patternMoveAttachment - container for "Move or Delete attachment"
+</li> <li> .patternAttachForm
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Rename (rename, move, delete) <ul>
+<li> patternRenameOptionsList - list of topics that can be updated
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> More <ul>
+<li> patternDiffOptions - row of revision options under "Compare revisions"
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Search results <ul>
+<li> .patternSearchResults - container on rename pages (no longer used on actual search results 'view' pages)
+</li> <li> .patternSearchResultsHeader - horizontal bar with the web color
+</li> <li> .patternSearchResults - block of one result
+</li> <li> .patternSearchResultCount - the number of results
+</li> <li> .patternSearched - feedback on the string used to search
+</li></ul> 
+</li></ul> 
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="Skins.html">Skins</a>, <a href="AdminDocumentationCategory.html">AdminDocumentationCategory</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

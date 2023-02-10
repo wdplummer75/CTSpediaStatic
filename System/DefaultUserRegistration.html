@@ -1,0 +1,449 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>DefaultUserRegistration &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/DefaultUserRegistration/favicon.ico"> <link href="../MISSING RESOURCE System/DefaultUserRegistration/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit DefaultUserRegistration" href="DefaultUserRegistration.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="DefaultUserRegistration" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<link rel="stylesheet" media="all" class="head UserRegistrationFormStyle" href="UserRegistrationParts.attachments/formstyle.css" type="text/css"><!--UserRegistrationFormStyle-->
+<link type="text/css" href="UserRegistrationParts.attachments/requiredstyle.css" rel="stylesheet" media="all" class="head UserRegistrationRequiredStyle"><!--UserRegistrationRequiredStyle-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="JQueryPlugin.attachments/plugins/cookie/jquery.cookie.js?version=20100921_1" class="script JQUERYPLUGIN::COOKIE"></script><!--JQUERYPLUGIN::COOKIE-->
+<script src="JQueryPlugin.attachments/plugins/form/jquery.form.js?version=4.3.0" class="script JQUERYPLUGIN::FORM"></script><!--JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "DefaultUserRegistration",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55" class="script JQUERYPLUGIN::METADATA"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::POPUPWINDOW" src="JQueryPlugin.attachments/plugins/popupwindow/jquery.popupwindow.js?version=1.0.1"></script>
+<script src="JQueryPlugin.attachments/plugins/popupwindow/jquery.popupwindow.init.js?version=1.0.1" class="script JQUERYPLUGIN::POPUPWINDOW"></script><!--JQUERYPLUGIN::POPUPWINDOW-->
+<script src="JQueryPlugin.attachments/plugins/validate/pkg.js?version=1.19.4_1" class="script JQUERYPLUGIN::VALIDATE"></script><!--JQUERYPLUGIN::VALIDATE-->
+<script class="script JQUERYPLUGIN::WIKIWORD" src="JQueryPlugin.attachments/plugins/wikiword/wikiword.js?version=3.30"></script><!--JQUERYPLUGIN::WIKIWORD-->
+<script src="UserRegistrationParts.attachments/validate.js" type="text/javascript" class="script UserRegistrationValidation"></script><!--UserRegistrationValidation-->
+</head>
+<body>
+<noautolink>
+<!--
+   Read general customisation instructions in System.UserAuthentication (System.UserRegistration)
+<p></p>
+   DO NOT EDIT THIS TOPIC DIRECTLY!
+   To create a custom UserRegistration page, copy this topic to Main.UserRegistration. (Main.UserRegistration)
+<p></p>
+   Override the template used for new user topics here: <ul>
+ <li>
+ <ul>
+<li> !
+</li></ul> 
+</li></ul> 
+<p></p>
+    The registration page is composed of sections included from System.UserRegistrationParts.
+    For major changes, copy System.UserRegistrationParts  and change this to point to the edited topic: <ul>
+ <li>
+ <ul>
+<li> 
+</li></ul> 
+</li></ul> 
+<p></p>
+    The CSS and javascript is included from System.UserRegistrationParts by default. To change the CSS or
+    js files, attach them to an alternate topic and set the location here: <ul>
+ <li>
+ <ul>
+<li> 
+</li></ul> 
+</li></ul> 
+<p></p>
+   Optional form fields.    Possible field names:
+      extraField_groups     (Also enable REGISTRATION* settings below:)
+      extraField_organisationName
+      extraField_organisationUrl
+      extraField_country
+<p></p>
+    Enable optional fields by adding / removing to the comma-separated list and remove the ! in the next statement:.
+      !
+<p></p>
+   The following setting apply if extraField_groups is enabled: <ul>
+<li> Group type settings during registration: <ul>
+<li> <code>automatic</code>: users will be automatically added to eligible groups
+</li> <li> <code>one</code>: users can select one of the groups
+</li> <li> <code>multiple</code>: users can select from multiple groups to join
+</li> <li> <code>none</code>: user cannot be added to groups while registering
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> !
+</li></ul> 
+<p></p> <ul>
+<li> If REGISTRATIONGROUPS is set to a comma separated list of groups, only those listed groups will be shown in the UserRegistration form.   If it is unset, then group change permissions will be used to create the list of groups eligible for selection during registration. (When using "self-registration" by guest users, the RegistrationAgent's permissions are used. If the registration is entered by another logged in user, that user's permissions are used). <ul>
+<li> !
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Implementation Notes: <ul>
+<li> If the RegistrationAgent or logged in user does not have permission to change one of the listed groups,  then that group will be silently skipped.  The user will not be added to the group.
+</li> <li> Group permissions are stored in Topic Settings, <strong>not</strong> inline in the group topic.  Edit the Group Topic Settings to change permissions.
+</li></ul> 
+</li></ul> 
+<p></p>
+<p></p>
+-->
+<p></p>
+<h1 id="Registration">  Registration </h1>
+<p></p>
+<p></p>
+<p></p>
+    <strong>Create your account to edit pages on this site.</strong><div class='registerMakeHidden foswikiNotification foswikiAlert'>We noticed you have disabled JavaScript. Please switch on JavaScript if you wish to register.</div><div class='foswikiNotification foswikiAlert registerMakeVisible showIfNoCookies'>We noticed you have disabled cookies. Please enable cookies if you wish to register.</div> <!-- Required: conditional notes &amp; warnings -->
+<p> <strong>Important:</strong> the information provided in this form will be stored in a database on the web server. This database is accessible to anyone who can access the server through the web (though passwords will be encrypted, and e-mail addresses will be obfuscated to help prevent spamming). Your country, or the country where the server is hosted, may have Data Protection laws governing the maintenance of such databases. If you are in doubt, you should contact [[mailto:?subject=Data%20Protection%20Policy][]] for details of the Data Protection Policy of this web server before registering.</p> <!-- Optional -->
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<div id="FwkVD" class="foswikiHidden">
+{
+  "url":"http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System.UserRegistrationParts",
+  "MinPasswordLength":7,
+  "messages": {
+    "Fwk1FirstName":"Please enter your first name.",
+    "Fwk1LastName":"Please enter your last name.",
+    "Fwk1WikiName": {
+      "required": "Please enter a WikiName.",
+      "wikiword": "This is not a valid WikiName.",
+      "remote": "This WikiName is already in use."
+    },
+    "Fwk1Email": "Please enter a valid email address.",
+    "Fwk1LoginName": {
+      "required": "Please enter a login username.",
+      "remote": "This username is already in use."
+    },
+    "Fwk1Password": {
+      "required": "Please enter a password.",
+      "minlength": "Your password must be at least 7 characters long."
+    },
+    "Fwk1Confirm": {
+      "required": "Please confirm your password.",
+      "equalTo": "Please enter the same password as above.",
+      "minlength": "Your password must be at least 7 characters long."
+    }
+  }
+}
+</div>
+
+<p></p>
+ <!-- Required: JavaScript and CSS components -->
+<p></p>
+<p></p>
+<div class="registerMakeVisible hideIfNoCookies registration"><form name="registration" action="/foswiki/bin/register/Main/WebHome" method="post">
+   <div class="foswikiFormSteps">
+      <div class="foswikiFormStep">
+         <p class="required"><em>Fields marked <span class='required'>*</span> are required.</em></p>
+         <ul><li><label class="desc" for="Fwk1FirstName"><span class="required">*</span>First name:</label>
+<div><input type="text" id="Fwk1FirstName" name="Fwk1FirstName" size="40" class="foswikiInputField foswikiFocus" value="" tabindex="1" /></div></li>
+<li><label class="desc" for="Fwk1LastName"><span class="required">*</span>Last name:</label>
+<div><input type="text" id="Fwk1LastName" name="Fwk1LastName" size="40" class="foswikiInputField" value="" tabindex="2" /></div></li>
+<li><label class="desc" for="Fwk1WikiName"><span class="required">*</span>WikiName:</label>
+<div><input type="text" id="Fwk1WikiName" name="Fwk1WikiName" size="40" class="foswikiInputField" value="" tabindex="3" /><label class="expl">Your name as displayed by Foswiki. <a href="WikiName.html" class="jqPopUpWindow" rel="width:600;height:480;scrollbars:1;location:0">This must be a unique WikiName.</a></label></div></li>
+<li><label class="desc" for="Fwk1Email"><span class="required">*</span>Email address:</label>
+<div><input type="text" id="Fwk1Email" name="Fwk1Email" size="40" class="foswikiInputField" value="" tabindex="5" /><label class="expl">Your email address will be kept confidential.</label></div></li>
+<li><label class="desc" for="Fwk1Password"><span class="required">*</span>Your password:</label>
+<div><input type="password" id="Fwk1Password" name="Fwk1Password" size="40" class="foswikiInputField" value="" tabindex="6" /></div></li><li><label class="desc" for="Fwk1Confirm"><span class="required">*</span>Confirm password:</label>
+<div><input type="password" id="Fwk1Confirm" name="Fwk1Confirm" size="40" class="foswikiInputField" value="" tabindex="7" /></div></li><li><label class="desc" for="Fwk0OrganisationName">Organisation name:</label>
+<div><input type="text" id="Fwk0OrganisationName" name="Fwk0OrganisationName" size="40" class="foswikiInputField" value="" tabindex="8" /></div></li>
+<li><label class="desc" for="Fwk0Country">Country:</label>
+<div><select class="foswikiSelect" id="Fwk0Country" name="Fwk0Country" size="1" tabindex="10"><option></option>
+<option>Afghanistan</option>
+<option>&Aring;land Islands</option>
+<option>Albania</option>
+<option>Algeria</option>
+<option>American Samoa</option>
+<option>Andorra</option>
+<option>Angola</option>
+<option>Anguilla</option>
+<option>Antarctica</option>
+<option>Antigua and Barbuda</option>
+<option>Argentina</option>
+<option>Armenia</option>
+<option>Aruba</option>
+<option>Australia</option>
+<option>Austria</option>
+<option>Azerbaijan</option>
+<option>Bahamas</option>
+<option>Bahrain</option>
+<option>Bangladesh</option>
+<option>Barbados</option>
+<option>Belarus</option>
+<option>Belgium</option>
+<option>Belize</option>
+<option>Benin</option>
+<option>Bermuda</option>
+<option>Bhutan</option>
+<option>Bolivia, Plurinational State of</option>
+<option>Bonaire, Sint Eustatius and Saba</option>
+<option>Bosnia and Herzegovina</option>
+<option>Botswana</option>
+<option>Bouvet Island</option>
+<option>Brazil</option>
+<option>British Indian Ocean Territory</option>
+<option>Brunei Darussalam</option>
+<option>Bulgaria</option>
+<option>Burkina Faso</option>
+<option>Burundi</option>
+<option>Cambodia</option>
+<option>Cameroon</option>
+<option>Canada</option>
+<option>Cape Verde</option>
+<option>Cayman Islands</option>
+<option>Central African Republic</option>
+<option>Chad</option>
+<option>Chile</option>
+<option>China</option>
+<option>Christmas Island</option>
+<option>Cocos (Keeling) Islands</option>
+<option>Colombia</option>
+<option>Comoros</option>
+<option>Congo</option>
+<option>Congo, the Democratic Republic of the</option>
+<option>Cook Islands</option>
+<option>Costa Rica</option>
+<option>C&ocirc;te d'Ivoire</option>
+<option>Croatia</option>
+<option>Cuba</option>
+<option>Cura&ccedil;ao</option>
+<option>Cyprus</option>
+<option>Czech Republic</option>
+<option>Denmark</option>
+<option>Djibouti</option>
+<option>Dominica</option>
+<option>Dominican Republic</option>
+<option>Ecuador</option>
+<option>Egypt</option>
+<option>El Salvador</option>
+<option>Equatorial Guinea</option>
+<option>Eritrea</option>
+<option>Estonia</option>
+<option>Ethiopia</option>
+<option>Falkland Islands (Malvinas)</option>
+<option>Faroe Islands</option>
+<option>Fiji</option>
+<option>Finland</option>
+<option>France</option>
+<option>French Guiana</option>
+<option>French Polynesia</option>
+<option>French Southern Territories</option>
+<option>Gabon</option>
+<option>Gambia</option>
+<option>Georgia</option>
+<option>Germany</option>
+<option>Ghana</option>
+<option>Gibraltar</option>
+<option>Greece</option>
+<option>Greenland</option>
+<option>Grenada</option>
+<option>Guadeloupe</option>
+<option>Guam</option>
+<option>Guatemala</option>
+<option>Guernsey</option>
+<option>Guinea</option>
+<option>Guinea-Bissau</option>
+<option>Guyana</option>
+<option>Haiti</option>
+<option>Heard Island and McDonald Islands</option>
+<option>Holy See (Vatican City State)</option>
+<option>Honduras</option>
+<option>Hong Kong</option>
+<option>Hungary</option>
+<option>Iceland</option>
+<option>India</option>
+<option>Indonesia</option>
+<option>Iran, Islamic Republic of</option>
+<option>Iraq</option>
+<option>Ireland</option>
+<option>Isle of Man</option>
+<option>Israel</option>
+<option>Italy</option>
+<option>Jamaica</option>
+<option>Japan</option>
+<option>Jersey</option>
+<option>Jordan</option>
+<option>Kazakhstan</option>
+<option>Kenya</option>
+<option>Kiribati</option>
+<option>Korea, Democratic People's Republic of</option>
+<option>Korea, Republic of</option>
+<option>Kuwait</option>
+<option>Kyrgyzstan</option>
+<option>Lao People's Democratic Republic</option>
+<option>Latvia</option>
+<option>Lebanon</option>
+<option>Lesotho</option>
+<option>Liberia</option>
+<option>Libya</option>
+<option>Liechtenstein</option>
+<option>Lithuania</option>
+<option>Luxembourg</option>
+<option>Macao</option>
+<option>Macedonia, the Former Yugoslav Republic of</option>
+<option>Madagascar</option>
+<option>Malawi</option>
+<option>Malaysia</option>
+<option>Maldives</option>
+<option>Mali</option>
+<option>Malta</option>
+<option>Marshall Islands</option>
+<option>Martinique</option>
+<option>Mauritania</option>
+<option>Mauritius</option>
+<option>Mayotte</option>
+<option>Mexico</option>
+<option>Micronesia, Federated States of</option>
+<option>Moldova, Republic of</option>
+<option>Monaco</option>
+<option>Mongolia</option>
+<option>Montenegro</option>
+<option>Montserrat</option>
+<option>Morocco</option>
+<option>Mozambique</option>
+<option>Myanmar</option>
+<option>Namibia</option>
+<option>Nauru</option>
+<option>Nepal</option>
+<option>Netherlands</option>
+<option>New Caledonia</option>
+<option>New Zealand</option>
+<option>Nicaragua</option>
+<option>Niger</option>
+<option>Nigeria</option>
+<option>Niue</option>
+<option>Norfolk Island</option>
+<option>Northern Mariana Islands</option>
+<option>Norway</option>
+<option>Oman</option>
+<option>Pakistan</option>
+<option>Palau</option>
+<option>Palestine, State of</option>
+<option>Panama</option>
+<option>Papua New Guinea</option>
+<option>Paraguay</option>
+<option>Peru</option>
+<option>Philippines</option>
+<option>Pitcairn</option>
+<option>Poland</option>
+<option>Portugal</option>
+<option>Puerto Rico</option>
+<option>Qatar</option>
+<option>R&eacute;union</option>
+<option>Romania</option>
+<option>Russian Federation</option>
+<option>Rwanda</option>
+<option>Saint Barth&eacute;lemy</option>
+<option>Saint Helena, Ascension and Tristan da Cunha</option>
+<option>Saint Kitts and Nevis</option>
+<option>Saint Lucia</option>
+<option>Saint Martin (French part)</option>
+<option>Saint Pierre and Miquelon</option>
+<option>Saint Vincent and the Grenadines</option>
+<option>Samoa</option>
+<option>San Marino</option>
+<option>Sao Tome and Principe</option>
+<option>Saudi Arabia</option>
+<option>Senegal</option>
+<option>Serbia</option>
+<option>Seychelles</option>
+<option>Sierra Leone</option>
+<option>Singapore</option>
+<option>Sint Maarten (Dutch part)</option>
+<option>Slovakia</option>
+<option>Slovenia</option>
+<option>Solomon Islands</option>
+<option>Somalia</option>
+<option>South Africa</option>
+<option>South Georgia and the South Sandwich Islands</option>
+<option>South Sudan</option>
+<option>Spain</option>
+<option>Sri Lanka</option>
+<option>Sudan</option>
+<option>Suriname</option>
+<option>Svalbard and Jan Mayen</option>
+<option>Swaziland</option>
+<option>Sweden</option>
+<option>Switzerland</option>
+<option>Syrian Arab Republic</option>
+<option>Taiwan, Province of China</option>
+<option>Tajikistan</option>
+<option>Tanzania, United Republic of</option>
+<option>Thailand</option>
+<option>Timor-Leste</option>
+<option>Togo</option>
+<option>Tokelau</option>
+<option>Tonga</option>
+<option>Trinidad and Tobago</option>
+<option>Tunisia</option>
+<option>Turkey</option>
+<option>Turkmenistan</option>
+<option>Turks and Caicos Islands</option>
+<option>Tuvalu</option>
+<option>Uganda</option>
+<option>Ukraine</option>
+<option>United Arab Emirates</option>
+<option>United Kingdom</option>
+<option>United States</option>
+<option>United States Minor Outlying Islands</option>
+<option>Uruguay</option>
+<option>Uzbekistan</option>
+<option>Vanuatu</option>
+<option>Venezuela, Bolivarian Republic of</option>
+<option>Viet Nam</option>
+<option>Virgin Islands, British</option>
+<option>Virgin Islands, U.S.</option>
+<option>Wallis and Futuna</option>
+<option>Western Sahara</option>
+<option>Yemen</option>
+<option>Zambia</option>
+<option>Zimbabwe</option></select></div></li><li><label class="desc">&nbsp;</label><div><input type="submit" tabindex="99" class="foswikiSubmit" value="Register" /><span class="expl tml">Please correct the entered data before you continue.</span></div></li></ul>
+         <div class='foswikiClear'></div>
+      </div>
+   </div>
+<!-- -->
+<input type="hidden" name="topic" value="DefaultUserRegistration" />
+<input type="hidden" name="action" value="register" />
+<input type="hidden" name="templatetopic" value="NewUserTemplate" />
+</form>
+</div>
+ <!-- Required: The actual registration form -->
+<p>
+If you have any questions about registration, send an e-mail to <a href="mailto:?subject=DefaultUserRegistration&#32;Question"></a>.</p> <!-- Optional: Help text -->
+<p></p>
+</noautolink>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

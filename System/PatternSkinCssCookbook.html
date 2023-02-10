@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PatternSkinCssCookbook &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE System/PatternSkinCssCookbook/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/PatternSkinCssCookbook/favicon.ico" rel="shortcut icon">
+<link title="edit PatternSkinCssCookbook" href="PatternSkinCssCookbook.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="PatternSkinCssCookbook" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::CHILI" src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "PatternSkinCssCookbook"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="System.PatternSkin_CSS_Cookbook">  <a href="PatternSkin.html">PatternSkin</a> CSS Cookbook </h1>
+<p></p>
+<strong>Questions and answers on how to customize the default look of Foswiki for your own needs, using style sheets.</strong> For configuring page elements, see <a href="PatternSkinCustomization.html">PatternSkinCustomization</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#First_Read:_How_to_modify_PatternSkin_styles"> First Read: How to modify PatternSkin styles </a> <ul>
+<li> <a href="#When_you_need_lots_of_graphic_changes:_Rewriting_CSS"> When you need lots of graphic changes: Rewriting CSS </a>
+</li> <li> <a href="#When_you_need_to_make_small_adjustments:_Adding_to_existing_CSS"> When you need to make small adjustments: Adding to existing CSS </a>
+</li></ul> 
+</li> <li> <a href="#Recipes"> Recipes </a> <ul>
+<li> <a href="#Hide_the_left_bar"> Hide the left bar </a>
+</li> <li> <a href="#Toggle_the_left_bar_on_small_screen"> Toggle the left bar on small screen </a>
+</li> <li> <a href="#Use_different_fonts"> Use different fonts </a>
+</li> <li> <a href="#I_want_to_change_the_height_of_the_top_bar"> I want to change the height of the top bar </a>
+</li> <li> <a href="#No_top_bar"> No top bar </a>
+</li> <li> <a href="#Centered_page"> Centered page </a>
+</li> <li> <a href="#Centered_page_40with_a_border_around_the_page_41"> Centered page (with a border around the page) </a>
+</li> <li> <a href="#Sidebar_background_color"> Sidebar background color </a>
+</li> <li> <a href="#Setting_EditTablePlugin_styles"> Setting EditTablePlugin styles </a>
+</li> <li> <a href="#Hide_Edit_action_buttons_for_unauthorized_and_47or_guest_users"> Hide Edit action buttons for unauthorized and/or guest users </a>
+</li></ul> 
+</li> <li> <a href="#Style_sheet_documentation"> Style sheet documentation </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="First_Read:_How_to_modify_PatternSkin_styles">  First Read: How to modify PatternSkin styles </h2>
+<p></p>
+PatternSkin uses 3 style sheets (attached to <a href="PatternSkinTheme.html">PatternSkinTheme</a>): <ul>
+<li> <a href="PatternSkinTheme.attachments/layout.css">layout.css</a> - the positioning of main page elements (blocks), widths and heights
+</li> <li> <a href="PatternSkinTheme.attachments/style.css">style.css</a> - fonts, sizes, margins and paddings
+</li> <li> <a href="PatternSkinTheme.attachments/colors.css">colors.css</a> - border colors, text colors and background colors
+</li></ul> 
+<p></p>
+When customizing your Foswiki installation, you can either choose to completely rewrite all css styles, or to selectively override some styles. The latter option is by far less time consuming, but all depends on your graphical wishes.
+<p></p>
+<h3 id="When_you_need_lots_of_graphic_changes:_Rewriting_CSS">  When you need lots of graphic changes: Rewriting CSS </h3> <ul>
+<li> Create a new topic that will contain your new CSS files
+</li> <li> Attach 3 new style sheets to the topic
+</li> <li> Point the CSS <a href="PreferenceSettings.html">preference settings</a> in <a href="DefaultPreferences.html">System.DefaultPreferences</a> or <a href="../Main/SitePreferences.html">Main.SitePreferences</a> to your new files:
+</li></ul> 
+<p></p>
+<pre class="tml">
+   * Set FOSWIKI_LAYOUT_URL = %PUBURLPATH%/%SYSTEMWEB%/YourNewTopic/layout.css
+   * Set FOSWIKI_STYLE_URL = %PUBURLPATH%/%SYSTEMWEB%/YourNewTopic/style.css
+   * Set FOSWIKI_COLORS_URL = %PUBURLPATH%/%SYSTEMWEB%/YourNewTopic/colors.css
+</pre>
+<p></p>
+<h3 id="When_you_need_to_make_small_adjustments:_Adding_to_existing_CSS">  When you need to make small adjustments: Adding to existing CSS </h3>
+<p></p>
+With CSS you cannot remove already defined classes, you can only add to it, or override existing styles. <br />
+Overriding default CSS is done with 3 <a href="PreferenceSettings.html">preference settings</a>: <code>USERLAYOUTURL</code>, <code>USERSTYLEURL</code>, <code>USERCOLORSURL</code>. <ul>
+<li> Create a new topic that will contain your new CSS files
+</li> <li> Attach 1, 2 or 3 new style sheets to the topic, dependent on your CSS setup (if you don't change much, you might as well put everything in one CSS file, layout, margins and colors)
+</li> <li> Point the CSS <a href="PreferenceSettings.html">preference settings</a> in <a href="DefaultPreferences.html">System.DefaultPreferences</a> or <a href="../Main/SitePreferences.html">Main.SitePreferences</a> to your new files (below the <code>USERXXXURL</code> preferences):
+</li></ul> 
+<pre class="tml">
+   * Set USERLAYOUTURL = %PUBURLPATH%/%SYSTEMWEB%/YourNewTopic/layout.css
+   * Set USERSTYLEURL = %PUBURLPATH%/%SYSTEMWEB%/YourNewTopic/style.css
+   * Set USERCOLORSURL = %PUBURLPATH%/%SYSTEMWEB%/YourNewTopic/colors.css
+</pre> <ul>
+<li> If you use only little CSS and you've only attached one file, write:
+</li></ul> 
+<pre class="tml">
+   * Set USERSTYLEURL = %PUBURLPATH%/%SYSTEMWEB%/YourNewTopic/style.css
+</pre>
+<p></p>
+Instead of setting these preferences in <a href="DefaultPreferences.html">System.DefaultPreferences</a> or <a href="../Main/SitePreferences.html">Main.SitePreferences</a>, you can set these in your home topic, or in any other topic. Setting style URL preferences in: <ul>
+<li> <a href="DefaultPreferences.html">System.DefaultPreferences</a> or <a href="../Main/SitePreferences.html">Main.SitePreferences</a>: the style is visible for all users, site-wide
+</li> <li> <a href="WebPreferences.html">WebPreferences</a>: the style is visible for all users in one web
+</li> <li> Home topic: the style is visible for that one user when viewing the site
+</li> <li> Some other topic: the style is only visible in that one topic
+</li></ul> 
+<p></p>
+User styles are always loaded after Foswiki styles.
+<p></p>
+The rest of this topic shows examples of small CSS changes.
+<p></p>
+<h2 id="Recipes">  Recipes </h2>
+<p></p>
+<h3 id="Hide_the_left_bar">  Hide the left bar </h3>
+<p></p>
+See example at: <a href="PatternSkinCssCookbookNoLeftBar.html">PatternSkinCssCookbookNoLeftBar</a>
+<p></p>
+<h3 id="Toggle_the_left_bar_on_small_screen">  Toggle the left bar on small screen </h3>
+<p></p>
+See example at: <a href="PatternSkinCssCookbookSidebarToggle.html">PatternSkinCssCookbookSidebarToggle</a>
+<p></p>
+<h3 id="Use_different_fonts">  Use different fonts </h3>
+<p></p>
+See example at: <a href="PatternSkinCssCookbookFonts.html">PatternSkinCssCookbookFonts</a>
+<p></p>
+<span id="HeightTopBar"></span>
+<h3 id="I_want_to_change_the_height_of_the_top_bar">  I want to change the height of the top bar </h3>
+<p></p>
+This is the complete style definition to set the height of the top bar:
+<p></p>
+<pre class='css'>
+#patternTopBar,
+#patternTopBarContents {
+ height:75px; /&#42; top bar height; make room for header columns &#42;/
+ overflow:hidden;
+}</pre>
+<p></p>
+Change the number from 75px to your value.
+<p></p> <ol>
+<li> Create a new stylesheet (preferably a 'theme variant' file (see for instance <a href="PatternSkinTheme.attachments/variant_foswiki_noframe.css">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/System/PatternSkinTheme/variant_foswiki_noframe.css</a> with above definition in it)
+</li> <li> Attach the file to a topic
+</li> <li> Set the value of macro <code>PATTERNSKIN_THEME_VARIANT</code> to that topic attachment url using <code>%PUBURL%/YourWebName/YourTopicName/your_theme_variant_file.css</code>
+</li></ol> 
+<p></p>
+Note: If using %WEBHEADERART% to customize the top bar, some <code>#patternTopBarContents</code> CSS is expanded inline from <code>templates/css.pattern.tmpl</code>. Override of some attributes, such as background color and repeat are not possible from the CSS files.
+<p></p>
+<h3 id="No_top_bar">  No top bar </h3>
+<p></p>
+<a href="PatternSkinCssCookbookNoTopBar.html">See example</a>
+<p></p>
+<h3 id="Centered_page">  Centered page </h3>
+<p></p>
+<a href="PatternSkinCssCookbookCenterPage.html">See example</a>
+<p></p>
+<h3 id="Centered_page_40with_a_border_around_the_page_41">  Centered page (with a border around the page) </h3>
+<p></p>
+<a href="PatternSkinCssCookbookCenterPageBorder.html">See example</a>
+<p></p>
+<h3 id="Sidebar_background_color">  Sidebar background color </h3>
+<p></p>
+<a href="PatternSkinCssCookbookSidebarBackground.html">See example</a>
+<p></p>
+<h3 id="Setting_EditTablePlugin_styles">  Setting EditTablePlugin styles </h3>
+<p></p>
+<a href="PatternSkinCssCookbookEditTableStyle.html">See example</a>
+<p></p>
+<h3 id="Hide_Edit_action_buttons_for_unauthorized_and_47or_guest_users">  Hide Edit action buttons for unauthorized and/or guest users </h3>
+<p></p>
+<a href="PatternSkinCssCookbookHideActions.html">See example</a>
+<p></p>
+<h2 id="Style_sheet_documentation">  Style sheet documentation </h2> <ul>
+<li> See <a href="PatternSkinCss.html">PatternSkinCss</a> for documentation of PatternSkin CSS classes
+</li> <li> See <a href="AppendixCascadingStyleSheets.html">AppendixCascadingStyleSheets</a> for documentation of Foswiki CSS classes
+</li></ul> 
+<!--  -->
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

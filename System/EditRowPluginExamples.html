@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EditRowPluginExamples &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/EditRowPluginExamples/favicon.ico"> <link href="../MISSING RESOURCE System/EditRowPluginExamples/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit EditRowPluginExamples" href="EditRowPluginExamples.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="EditRowPluginExamples" />
+<link type="text/css" href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "EditRowPluginExamples"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+%EDITTABLE{ format="| row, -1 | text, 20, init | select, 1, not started, starting, ongoing, completed | radio, 3,:-),:-I,:-( | date, 20 |" changerows="on" quietsave="on"}%
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Nr</a> </th>
+			<th class="foswikiTableCol1"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Project</a> </th>
+			<th class="foswikiTableCol2"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">State</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Progress</a> </th>
+			<th class="foswikiTableCol4 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Timestamp</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 1 </td>
+			<td class="foswikiTableCol1"> Sliced yoghourt </td>
+			<td class="foswikiTableCol2"> completed </td>
+			<td class="foswikiTableCol3"> <img src="SmiliesPlugin.attachments/emoticon-0100-smile.gif" alt="smile" title="smile" class="smily"> </td>
+			<td class="foswikiTableCol4 foswikiLastCol"> 26 Jun 2002 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 2 </td>
+			<td class="foswikiTableCol1"> Cubical turkeys </td>
+			<td class="foswikiTableCol2"> not started </td>
+			<td class="foswikiTableCol3"> <img class="smily" title="frown, sad smile" alt="frown, sad smile" src="SmiliesPlugin.attachments/emoticon-0101-sadsmile.gif"> </td>
+			<td class="foswikiTableCol4 foswikiLastCol"> 27 Oct 2007 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 3 </td>
+			<td class="foswikiTableCol1"> Self-eating burritos </td>
+			<td class="foswikiTableCol2"> ongoing </td>
+			<td class="foswikiTableCol3"> <img title="big grin" class="smily" src="SmiliesPlugin.attachments/emoticon-0102-bigsmile.gif" alt="big grin"> </td>
+			<td class="foswikiTableCol4 foswikiLastCol"> 1 Apr 2008 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> 4 </td>
+			<td class="foswikiTableCol1 foswikiLast"> Unified field theory </td>
+			<td class="foswikiTableCol2 foswikiLast"> completed </td>
+			<td class="foswikiTableCol3 foswikiLast"> <img class="smily" title="smile" alt="smile" src="SmiliesPlugin.attachments/emoticon-0100-smile.gif"> </td>
+			<td class="foswikiTableCol4 foswikiLastCol foswikiLast"> 1 Apr 2012 </td>
+		</tr>
+	</tbody></table>
+<p></p>
+(used to create attachments: screenshot1.png, example5.png)
+<p></p>
+<hr />
+<p></p>
+%EDITTABLE{ format="| label,12 | textarea, 3x30 |" }%
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Model</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 345TG66 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Short, with sightly concave upper surface, and devilish nuts </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 9A-11 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> A new model for 2007, but not quite as pretty as the 9A-10 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> RR717-D </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Solid performer, dependable in vacuum grinders </td>
+		</tr>
+	</tbody></table>
+<p></p>
+(used to create attachment: example3.png)
+<p></p>
+<hr />
+%EDITTABLE{ format="| text,12 | textarea, 3x30 |" js="assumed"}%
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Model</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Description</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 345TG66 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Short, with sightly concave upper surface, and devilish nuts </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> 9A-11 </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> A new model for 2007, but not quite as pretty as the 9A-10 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> RR717-D </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Solid performer, dependable in vacuum grinders </td>
+		</tr>
+	</tbody></table>
+<p></p>
+(used to create attachment: screenshot2,png)
+<p></p>
+<hr />
+<p></p>
+%EDITTABLE{ format="| text,100 | text,100 |" orientrowedit="vertical" headerislabel="on"}%
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Line</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Explanation</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> He took his <em>vorpal</em> sword in hand </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> A vorpal sword is made from broken bits of Commodore 64 disk-drives </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Long time the <em>manxome</em> foe he sought </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> manxome: possibly from 'manky'; or from the Isle of Man </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> So rested he by the <em>Tumtum</em> tree, </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Tumtum is a Nilo-Saharan language and people </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> And stood awhile in <em>thought</em> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <em>thought</em> a process not often employed by example writers </td>
+		</tr>
+	</tbody></table>
+<p></p>
+(used to create attachment: example4.png)
+<p></p>
+<hr />
+<p></p>
+%EDITTABLE{
+    format="| label | text, 40 |"
+    header="|*Key*|*Value*|"
+}%
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Name: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> John Smith </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> Gender: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> M %EDITCELL{select, 1, , F, M}% </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> DOB: </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> 18 October 2007 %EDITCELL{date, 10}% </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> City: </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> New York </td>
+		</tr>
+	</tbody></table>
+<p></p>
+(used to create attachment: example5.png)
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

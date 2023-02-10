@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>MetaData &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/MetaData/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE System/MetaData/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="alternate" href="MetaData.html" title="edit MetaData" type="application/x-wiki">
+<meta name="description" content="MetaData" />
+<link href="SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script>
+<script src="JQueryPlugin.attachments/plugins/chili/jquery.chili.init.js?version=2.2_1" class="script JQUERYPLUGIN::CHILI"></script><!--JQUERYPLUGIN::CHILI-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "MetaData",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<span id="MetaData"></span>
+<h1 id="Meta_data">  Meta data </h1>
+<p></p>
+Additional data, Foswiki-generated or from <a href="DataForms.html">forms</a>, may be embedded in the topic text using <code>META:</code> macros
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"><span class="foswikiTocTitle">On this page:</span> <ul>
+<li> <a href="#Overview"> Overview </a>
+</li> <li> <a href="#Meta_data_syntax"> Meta data syntax </a>
+</li> <li> <a href="#Core_meta_45data"> Core meta-data </a> <ul>
+<li> <a href="#META:TOPICINFO"> META:TOPICINFO </a>
+</li> <li> <a href="#META:TOPICMOVED"> META:TOPICMOVED </a>
+</li> <li> <a href="#META:TOPICPARENT"> META:TOPICPARENT </a>
+</li> <li> <a href="#META:FILEATTACHMENT"> META:FILEATTACHMENT </a>
+</li> <li> <a href="#META:FORM"> META:FORM </a>
+</li> <li> <a href="#META:FIELD"> META:FIELD </a>
+</li> <li> <a href="#META:PREFERENCE"> META:PREFERENCE </a>
+</li> <li> <a href="#Recommended_sequence"> Recommended sequence </a>
+</li></ul> 
+</li> <li> <a href="#Viewing_meta_45data_embedded_in_page_source"> Viewing meta-data embedded in page source </a>
+</li> <li> <a href="#Including_meta_data_in_viewed_topics"> Including meta data in viewed topics </a> <ul>
+<li> <a href="#A_61_37META_61"> %META </a>
+</li> <li> <a href="#A_61_37FORMFIELD_61"> %FORMFIELD </a>
+</li> <li> <a href="#A_61_37SEARCH_61"> %SEARCH </a>
+</li></ul> 
+</li> <li> <a href="#Extending_meta_45data_in_Extensions"> Extending meta-data in Extensions </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Overview">  Overview </h2>
+<p></p>
+The default store engines store topics in plain-text files on disk, in a simple and obvious directory structure. The big advantage of this approach is that it makes it very easy to manipulate topics from outside Foswiki, and it is also very robust; there are no complex binary indexes to maintain, and moving a topic from one installation to another is as simple as copying a couple of text files.
+<p></p>
+To keep everything together in one place, meta-data (Foswiki-generated or from <a href="DataForms.html">forms</a>) is embedded directly in topics, using special macros. These macros are easy to spot, as they all start with the reserved <code>META:</code> prefix.
+<p></p>
+<code>META:</code> data includes information such as file attachments, topic movement history, and <a href="DataForms.html">form field</a> values. For efficiency reasons, the topic history is <strong>not</strong> stored in this meta-data, but is expected to be implemented elsewhere by the store engine.
+<p></p>
+<h2 id="Meta_data_syntax">  Meta data syntax </h2> <ul>
+<li> Format is the same as for any other <a href="Macros.html">macros</a> <strong>except</strong> that each meta-data macro <strong>must</strong> be on a line on its own. <ul>
+<li> <code>%META:&lt;type&gt;{key1="value1" key2="value2" ...}%</code>
+</li></ul> 
+</li> <li> The characters =%"\r
+</li></ul> 
+{}= are encoded in argument values, using the standard URL encoding. <ul>
+<li> Meta-data is divided into <em>core</em> meta-data, described below, and <em>extension</em> meta-data, which shares the same syntax but is used by extensions.
+</li> <li> Dates are stored as "epoch times" i.e. the integer number of seconds since 1st January 1970.
+</li></ul> 
+<p></p>
+<strong>Example of core meta-data</strong>
+<pre class="tml">
+%META:TOPICINFO{version="6" date="1416592876" author="LastEditor" format="1.0"}%
+   text of the topic
+%META:TOPICMOVED{from="Real.SecretAgents" to="Hollywood.SecretAgents"
+   by="CoverUp" date="1416592876"}%
+%META:TOPICPARENT{name="MilitaryIntelligence5"}%
+%META:FILEATTACHMENT{name="CV.txt" version="3" ... }%
+%META:FILEATTACHMENT{name="Photo.gif" version="1" ... }%
+%META:FORM{name="SecretAgentForm"}%
+%META:FIELD{name="ChosenWeapon" value="Beretta"}%
+%META:FIELD{name="Paramour" value="PussyGalore"}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" value="JamesBond"}%
+%META:PREFERENCE{name="DENYTOPICVIEW" value="ErnstBlofeld"}%
+</pre>
+<p></p>
+<h2 id="Core_meta_45data">  Core meta-data </h2>
+<p></p>
+The following meta-data macros are supported by the Foswiki core. Other macros may be used by extensions; see the extension documentation for more details. The core will read and write these extension macros, but will otherwise ignore them.
+<p></p>
+Some fields are required by macros, while others are optional. Required fields are marked with a <span style='color:green'>&reg;</span> symbol. The <span style='color:green'>&reg;</span> character is <strong>not</strong> part of the attribute name.
+<p></p>
+<h3 id="META:TOPICINFO">  META:TOPICINFO </h3>
+<p></p>
+This macro caches some of the information that would normally be derived from the underlying store engine. It does this for efficiency reasons. 
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol" style="text-align:center"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> author<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Canonical user identifier of last user to change the topic. The exact format of this depends on the user mapping manager. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> version </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Topic version; a plain integer. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> date </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> epoch time </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> format </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Format of this topic, will be used for automatic format conversion </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> reprev </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Set when a revision is overwritten by the same author within the {ReplaceIfEditedAgainWithin} window (set in <a href="../.html"> <code>configure</code> </a>). If <code>reprev</code> is the same as <code>version</code>, it prevents Foswiki from attempting to do a 3-way merge when merging overlapping edits by two different users. </td>
+		</tr>
+	</tbody></table>
+<p></p>
+Note that the <strong>version and date fields are advisory only</strong> and cannot be trusted. This is because processes outside of Foswiki's control may write topic files without maintaining these fields.
+<p></p>
+<h3 id="META:TOPICMOVED">  META:TOPICMOVED </h3>
+<p></p>
+This only exists if the topic has been moved. If a topic is moved more than once, only the most recent META:TOPICMOVED meta datum exists in the topic. Older ones can to be found in the topic history.
+<p></p>
+<pre class="tml">%META:TOPICMOVED{from="Real.SecretAgents" to="Hollywood.SecretAgents" by="CoverUp" date="1416592876"}%</pre>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol" style="text-align:center"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol" style="text-align:center"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> from<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Full name, i.e., web.topic </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> to<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Full name, i.e., web.topic </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> by<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Canonical user identifier of who moved the topic. The exact format of this depends on the user mapping manager. </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> date<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> epoch time </td>
+		</tr>
+	</tbody></table>
+<p></p>
+Notes:  <ul>
+<li> the moved version numbers can be deduced from the topic history.
+</li></ul> 
+<p></p>
+<h3 id="META:TOPICPARENT">  META:TOPICPARENT </h3>
+<p></p>
+The topic from which this topic was created, typically when clicking on a <code>?</code> question mark link, or by filling out a form. The topic parent may also be manipulated in the user interface.
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> name<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Normally just <code>TopicName</code>, but it can be a full <code>Web.TopicName</code> format if the parent is in a different Web. </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h3 id="META:FILEATTACHMENT">  META:FILEATTACHMENT </h3>
+<p></p>
+Reference to a file attached to this topic.
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> name<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Name of file, no path.  Must be unique within topic </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> version </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> An integer </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> path </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Full path file was loaded from </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> size </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> In bytes </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> date </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> epoch time when the file was attached </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> user </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Canonical user identifier of user who uploaded the attachment. The exact format of this depends on the user mapping manager. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> comment </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> As supplied when file uploaded </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> attr </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <code>h</code> if hidden, optional </td>
+		</tr>
+	</tbody></table>
+<p></p>
+Extra fields that are added if an attachment is moved:
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> movedfrom </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> full topic name - web.topic.filename </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> movedby </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Canonical user identifier of user who moved the attachment. The exact format of this depends on the user mapping manager. </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> movedto </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> full topic name - web.topic.filename </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> movedwhen </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> epoch time </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h3 id="META:FORM">  META:FORM </h3>
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> name<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> The name of the topic containing the <a href="DataForms.html">form definition</a>.  Can optionally include the web name (i.e., web.topic), but doesn't normally </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h3 id="META:FIELD">  META:FIELD </h3>
+<p></p>
+Should only be present if there is a <code>META:FORM</code> entry.
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Name</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> name<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Ties to entry in the <a href="DataForms.html">form definition</a>. This is the title with all characters except alphanumerics and . removed </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> value<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Value user has supplied via form </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> title </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> Full text from the <a href="DataForms.html">form definition</a> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h3 id="META:PREFERENCE">  META:PREFERENCE </h3>
+Out-of-band <a href="PreferenceSettings.html">preference</a>.
+<p></p>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Key</a> </th>
+			<th class="foswikiTableCol1 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Name</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> name<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Preference name </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> value<span style='color:green'>&reg;</span> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> Preference value </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> type </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <code>Set</code> or <code>Local</code> (Set is the default) </td>
+		</tr>
+	</tbody></table>
+<p></p>
+<h3 id="Recommended_sequence">  Recommended sequence </h3>
+<p></p>
+There is no absolute need for meta-data macros to be listed in a specific order within a topic, but it makes sense to do so, because form fields are displayed in the order they are defined when the topic is viewed.
+<p></p>
+The recommended sequence is:
+<p></p> <ul>
+<li> <code>META:TOPICINFO</code>
+</li> <li> <code>META:TOPICPARENT</code> (optional)
+</li> <li> text of topic
+</li> <li> <code>META:TOPICMOVED</code> (optional)
+</li> <li> <code>META:FILEATTACHMENT</code> (0 or more entries)
+</li> <li> <code>META:FORM</code> (optional)
+</li> <li> <code>META:FIELD</code> (0 or more entries; FORM required)
+</li> <li> <code>META:PREFERENCE</code> (0 or more entries)
+</li></ul> 
+<p></p>
+<h2 id="Viewing_meta_45data_embedded_in_page_source">  Viewing meta-data embedded in page source </h2>
+<p></p>
+You can append the <code>raw=debug</code> parameter to the URL to view the topic text with embedded meta-data, e.g: <a href="MetaData.html">debug view for this topic</a>. <code>raw=all</code> lets you view the topic source as plain text, e.g: <a href="MetaData.html">plain text view for this topic</a>.
+<p></p>
+<span id="MetaDataRendering"></span>
+<h2 id="Including_meta_data_in_viewed_topics">  Including meta data in viewed topics </h2>
+<p></p>
+<h3 id="A_61_37META_61">  <code>%META</code> </h3>
+Meta-data belonging to the viewed topic can be included in the view using the <code>%META</code> macro. See <a href="VarMETA.html">VarMETA</a> for details.
+<p></p>
+<h3 id="A_61_37FORMFIELD_61">  <code>%FORMFIELD</code> </h3>
+The <code>%FORMFIELD</code> macro lets you inspect the values of form field meta-data in other topics. See <a href="VarFORMFIELD.html">VarFORMFIELD</a> for details.
+<p></p>
+<h3 id="A_61_37SEARCH_61">  <code>%SEARCH</code> </h3>
+<code>%SEARCH</code> can also be used to extract meta data. See <a href="VarSEARCH.html">VarSEARCH</a> and the examples in <a href="FormattedSearch.html">FormattedSearch</a> and <a href="SearchPatternCookbook.html">SearchPatternCookbook</a>.
+<p></p>
+<h2 id="Extending_meta_45data_in_Extensions">  Extending meta-data in Extensions </h2>
+Extensions can extend meta-data with information of their own. See 
+<a href="PerlDoc.html">Foswiki::Func</a> for more information.
+<p></p>
+<hr />
+<strong>Related Topics:</strong> <a href="DeveloperDocumentationCategory.html">DeveloperDocumentationCategory</a>
+<!--  -->
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

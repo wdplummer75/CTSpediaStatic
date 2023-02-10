@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarCALC &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE System/VarCALC/favicon.ico"> <link href="../MISSING RESOURCE System/VarCALC/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" href="VarCALC.html" rel="alternate" title="edit VarCALC">
+<meta name="description" content="VarCALC" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "VarCALC",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="CALC_45_45_add_spreadsheet_calculations_to_tables_and_outside_tables">  CALC -- add spreadsheet calculations to tables and outside tables </h1>
+The <code>%CALC{"formula"}%</code> macro is handled by the <a href="SpreadSheetPlugin.html">SpreadSheetPlugin</a>. There are around 90 formulae, such as <code>$ABS()</code>, <code>$EXACT()</code>, <code>$EXISTS()</code>, <code>$GET()/$SET()</code>, <code>$IF()</code>, <code>$LOG()</code>, <code>$LOWER()</code>, <code>$PERCENTILE()</code>, <code>$TIME()</code>, <code>$VALUE()</code>. <ul>
+<li> This macro is specifically for manipulating data in tables, and so is evaluated after the normal Macro expansion order. If you need a standard ordered evaluation see <a href="VarCALCULATE.html">CALCULATE</a>
+</li></ul> 
+<h2 id="Examples">  Examples </h2> <ul>
+<li> <code>%CALC{"$SUM($ABOVE())"}%</code> returns the sum of all cells above the current cell
+</li> <li> <code>%CALC{"$EXISTS(Web.SomeTopic)"}%</code> returns <code>1</code> if the topic exists
+</li> <li> <code>%CALC{"$UPPER(Collaboration)"}%</code> returns <code>COLLABORATION</code>
+</li></ul> 
+<p></p>
+<h2 id="Related">  Related </h2>
+ <a href="VarCALCULATE.html">CALCULATE</a>, <a href="VarIF.html">IF</a>, <a href="SpreadSheetPlugin.html">SpreadSheetPlugin</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

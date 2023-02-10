@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebAtomBase &lt; System &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE System/WebAtomBase/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE System/WebAtomBase/favicon.ico" rel="shortcut icon">
+<link href="WebAtomBase.html" rel="alternate" title="edit WebAtomBase" type="application/x-wiki">
+<meta name="description" content="WebAtomBase" />
+<link href="SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "System",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "WebAtomBase",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="ATOM_News_Feeds">  ATOM News Feeds </h1>
+<p></p>
+<h2 id="Find_out_What_39s_New">  Find out What's New </h2>
+<p></p>
+There are several ways to find out what's new in each web: <ol>
+<li> Visit <a href="WebChanges.html">WebChanges</a> to see recent changes
+</li> <li> Subscribe in <a href="WebNotify.html">WebNotify</a> to get notified of recent changes by e-mail
+</li> <li> Use a news reader such as <a title="'Extensions/HeadlinesPlugin' on foswiki.org" href="https://foswiki.org/Extensions/HeadlinesPlugin" class="interwikiLink"><noautolink>Foswiki:Extensions/HeadlinesPlugin</noautolink></a> to display the recent changes <ul>
+<li> The source can be a RSS 1.0 feed (<a href="WebRss.html">WebRss</a>) or ATOM 1.0 feed (<a href="WebAtom.html">WebAtom</a>)
+</li></ul> 
+</li></ol> 
+<p></p>
+<h2 id="ATOM_Feed_Usage">  ATOM Feed Usage </h2>
+<p></p> <ul>
+<li> The URL for an Atom feed is <code>http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/&lt;web&gt;/WebAtom</code>
+</li> <li> For this System web it is <a href="WebAtom.html">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/WebAtom</a>
+</li> <li> You can also create a custom feed based on a search. Add a <code>search=value</code> parameter to the URL, e.g. <a href="WebAtom.html">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin/view/System/WebAtom?search=plugin</a> is a what's new feed about Plugins.
+</li></ul> 
+<p></p>
+<h2 id="ATOM_Feed_Internals">  ATOM Feed Internals </h2>
+<p></p>
+Each web has a <a href="WebAtom.html">WebAtom</a> topic which includes part of this WebAtomBase topic. This topic is the base for the ATOM feed and generates an <a href="WebAtom.html">WebAtom</a> 1.0 feed.
+<p></p>
+The <a href="WebAtom.html">WebAtom</a> topic in each web contains the following text:
+<p></p>
+<hr />
+<pre>
+&lt;title>&lt;nop>%WIKITOOLNAME%'s &lt;nop>%BASEWEB% web&lt;/title>
+&lt;subtitle>&lt;literal>The %WEB% web of %WIKITOOLNAME%. %WEBSUMMARY%&lt;/literal>&lt;/subtitle>
+%INCLUDE{"%SYSTEMWEB%.WebAtomBase"}% &lt;!--
+   * Set SKIN = rssatom
+   * Set COVER = rssatom
+--&gt;
+</pre>
+<hr />
+<strong>Note:</strong> The subtitle is expanded from the %WEB%, %WIKITOOLNAME% and %WEBSUMMARY% macros.  These <strong>must</strong> expand to plain text with no links or html markup. &lt;literal&gt; is used to avoid links if the web name or any of the macros expand to include <a href="WikiWord.html">WikiWords</a> or other markup.
+<p></p>
+Below part is included by each WebAtom topic:
+<p></p>
+<hr />
+<pre>
+&#37;STARTINCLUDE&#37;&#60;link rel&#61;&#34;self&#34; type&#61;&#34;application/atom+xml&#34; href&#61;&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#37;BASEWEB&#37;/&#37;BASETOPIC&#37;&#34;/&#62;
+&#60;id&#62;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#37;BASEWEB&#37;&#60;/id&#62;
+&#60;rights&#62;&#37;WEBRSSCOPYRIGHT&#37;&#60;/rights&#62;&#37;CALC{&#36;SET(c,0)}&#37;
+&#37;SEARCH{
+  &#34;&#37;URLPARAM{&#34;search&#34; encode&#61;&#34;entities, quote&#34; default&#61;&#34;.&#42;&#34; }&#37;&#34;
+  decode&#61;&#34;entities&#34;
+  web&#61;&#34;&#37;URLPARAM{&#34;web&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#37;BASEWEB&#37;&#34; }&#37;&#34;
+  excludetopic&#61;&#34;&#37;URLPARAM{&#34;excludetopic&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#37;STATISTICSTOPIC&#37;&#34; }&#37;&#34;
+  type&#61;&#34;&#37;URLPARAM{&#34;type&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;regex&#34; }&#37;&#34;
+  nosearch&#61;&#34;on&#34;
+  order&#61;&#34;modified&#34;
+  reverse&#61;&#34;on&#34;
+  nototal&#61;&#34;on&#34;
+  limit&#61;&#34;&#37;URLPARAM{&#34;limit&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;16&#34; }&#37;&#34;
+  scope&#61;&#34;&#37;URLPARAM{&#34;scope&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;text&#34; }&#37;&#34;
+  casesensitive&#61;&#34;&#37;URLPARAM{&#34;casesensitive&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;on&#34; }&#37;&#34;
+  date&#61;&#34;&#37;URLPARAM{&#34;date&#34; encode&#61;&#34;safe, quote&#34; default&#61;&#34;&#34; }&#37;&#34;
+  format&#61;&#34;&#36;percentCALC{&#36;IF(&#36;GET(c)&#62;0, , &#60;updated&#62;&#36;isodate&#60;/updated&#62;&#36;CHAR(10))&#36;SETM(c, +1)}&#36;percent&#60;entry&#62;&#36;n &#60;title&#62;&#36;topic&#60;/title&#62;&#36;n &#60;link rel&#61;\&#34;alternate\&#34; type&#61;\&#34;text/html\&#34; href&#61;\&#34;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#36;web/&#36;topic?t&#61;&#36;isodate\&#34;/&#62;&#36;n &#60;id&#62;&#37;SCRIPTURL{&#34;view&#34;}&#37;/&#36;web/&#36;topic&#60;/id&#62;&#36;n &#60;updated&#62;&#36;isodate&#60;/updated&#62;&#36;n &#60;summary&#62;&#36;summary (last changed by &#60;nop&#62;&#36;wikiname)&#60;/summary&#62;&#36;n &#60;author&#62;&#36;n  &#60;name&#62;&#60;nop&#62;&#36;wikiname&#60;/name&#62;&#60;/author&#62;&#36;n&#60;/entry&#62;&#34;
+}&#37;
+&#37;STOPINCLUDE&#37;
+</pre>
+<hr />
+<p></p>
+<strong>See also</strong>: <a href="WebRssBase.html">WebRssBase</a>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>
