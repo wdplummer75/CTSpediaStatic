@@ -1,0 +1,258 @@
+The SAS System                                                                           1
+
+The LOGISTIC Procedure
+
+              Model Information
+
+Data Set                      WORK.TEMP
+Response Variable             outcome
+Number of Response Levels     2
+Model                         binary logit
+Optimization Technique        Fisher's scoring
+
+
+Number of Observations Read          40
+Number of Observations Used          40
+
+
+          Response Profile
+
+ Ordered                      Total
+   Value      outcome     Frequency
+
+       1            1            30
+       2            0            10
+
+Probability modeled is outcome=1.
+
+
+                    Model Convergence Status
+
+       Quasi-complete separation of data points detected.
+
+WARNING: The maximum likelihood estimate may not exist.
+WARNING: The LOGISTIC procedure continues in spite of the above warning. Results shown
+         are based on the last maximum likelihood iteration. Validity of the model fit is
+         questionable.
+
+
+         Model Fit Statistics
+
+                             Intercept
+              Intercept            and
+Criterion          Only     Covariates
+
+AIC              46.987         31.726
+SC               48.676         35.104
+-2 Log L         44.987         27.726
+
+
+The SAS System                                                                           2
+
+The LOGISTIC Procedure
+WARNING: The validity of the model fit is questionable.
+
+        Testing Global Null Hypothesis: BETA=0
+
+Test                 Chi-Square       DF     Pr > ChiSq
+
+Likelihood Ratio        17.2609        1         <.0001
+Score                   13.3333        1         0.0003
+Wald                     0.0047        1         0.9452
+
+
+             Analysis of Maximum Likelihood Estimates
+
+                               Standard          Wald
+Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+Intercept     1    -336E-19      0.4472        0.0000        1.0000
+pred          1     13.5661       197.4        0.0047        0.9452
+
+
+           Odds Ratio Estimates
+
+             Point          95% Wald
+Effect    Estimate      Confidence Limits
+
+pred      >999.999      <0.001    >999.999
+
+
+Association of Predicted Probabilities and Observed Responses
+
+Percent Concordant     66.7    Somers' D    0.667
+Percent Discordant      0.0    Gamma        1.000
+Percent Tied           33.3    Tau-a        0.256
+Pairs                   300    c            0.833
+
+
+  Profile Likelihood Confidence Interval for Odds Ratios
+
+Effect         Unit     Estimate     95% Confidence Limits
+
+pred         1.0000     >999.999        8.360         .
+
+
+         Wald Confidence Interval for Odds Ratios
+
+Effect         Unit     Estimate     95% Confidence Limits
+
+pred         1.0000     >999.999       <0.001     >999.999
+The SAS System                                                                           3
+
+The LOGISTIC Procedure
+
+                  Model Information
+
+Data Set                      WORK.TEMP
+Response Variable             outcome
+Number of Response Levels     2
+Model                         binary logit
+Optimization Technique        Fisher's scoring
+Likelihood Penalty            Firth's bias correction
+
+
+Number of Observations Read          40
+Number of Observations Used          40
+
+
+          Response Profile
+
+ Ordered                      Total
+   Value      outcome     Frequency
+
+       1            1            30
+       2            0            10
+
+Probability modeled is outcome=1.
+
+
+             Intercept-Only Model Convergence Status
+
+         Convergence criterion (GCONV=1E-8) satisfied.
+
+
+                    Model Convergence Status
+
+         Convergence criterion (GCONV=1E-8) satisfied.
+
+
+         Model Fit Statistics
+
+                             Intercept
+              Intercept            and
+Criterion          Only     Covariates
+
+AIC              44.312         31.846
+SC               46.001         35.224
+-2 Log L         42.312         27.846
+
+
+The SAS System                                                                           4
+
+The LOGISTIC Procedure
+
+        Testing Global Null Hypothesis: BETA=0
+
+Test                 Chi-Square       DF     Pr > ChiSq
+
+Likelihood Ratio        14.4655        1         0.0001
+Score                   12.9325        1         0.0003
+Wald                     5.8644        1         0.0154
+
+
+             Analysis of Maximum Likelihood Estimates
+
+                               Standard          Wald
+Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+Intercept     1    0.000040      0.4472        0.0000        0.9999
+pred          1      3.7139      1.5336        5.8644        0.0154
+
+
+           Odds Ratio Estimates
+
+             Point          95% Wald
+Effect    Estimate      Confidence Limits
+
+pred        41.014       2.030     828.636
+
+
+Association of Predicted Probabilities and Observed Responses
+
+Percent Concordant     66.7    Somers' D    0.667
+Percent Discordant      0.0    Gamma        1.000
+Percent Tied           33.3    Tau-a        0.256
+Pairs                   300    c            0.833
+
+
+         Profile Likelihood Confidence
+            Interval for Parameters
+
+Parameter     Estimate     95% Confidence Limits
+
+Intercept     0.000040      -0.8685       0.8685
+pred            3.7139       1.5041       8.6063
+
+
+  Profile Likelihood Confidence Interval for Odds Ratios
+
+Effect         Unit     Estimate     95% Confidence Limits
+
+pred         1.0000       41.014        4.500     >999.999
+The SAS System                                                                           5
+
+The LOGISTIC Procedure
+
+         Wald Confidence Interval for Odds Ratios
+
+Effect         Unit     Estimate     95% Confidence Limits
+
+pred         1.0000       41.014        2.030      828.636
+The SAS System                                                                           6
+
+The LOGISTIC Procedure
+
+            Model Information
+
+Data Set                      WORK.TEMP
+Response Variable             outcome
+Number of Response Levels     2
+Model                         binary logit
+
+
+Number of Observations Read          40
+Number of Observations Used          40
+
+
+          Response Profile
+
+ Ordered                      Total
+   Value      outcome     Frequency
+
+       1            1            30
+       2            0            10
+
+Probability modeled is outcome=1.
+
+
+Exact Conditional Analysis
+
+
+             Conditional Exact Tests
+
+                                   --- p-Value ---
+Effect   Test          Statistic    Exact      Mid
+
+pred     Score           13.0000   0.0004   0.0003
+         Probability    0.000218   0.0004   0.0003
+
+
+                  Exact Odds Ratios
+
+                           95% Confidence
+Parameter   Estimate           Limits          p-Value
+
+pred          24.375*      3.429   Infinity     0.0004
+
+NOTE: * indicates a median unbiased estimate.
