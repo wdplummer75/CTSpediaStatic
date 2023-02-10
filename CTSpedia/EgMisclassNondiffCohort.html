@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgMisclassNondiffCohort &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/EgMisclassNondiffCohort/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgMisclassNondiffCohort/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="EgMisclassNondiffCohort.html" title="edit EgMisclassNondiffCohort" type="application/x-wiki">
+<meta name="description" content="EgMisclassNondiffCohort" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgMisclassNondiffCohort",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example_of_Misclassification_Bias">  Example of Misclassification Bias </h1>
+<h2 id="Non_45Differential_Exposure_45_Cohort_Study">  Non-Differential Exposure - Cohort Study </h2>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Figure_45_Misclassification_of_Exposure_Variable"> Figure - Misclassification of Exposure Variable </a>
+</li> <li> <a href="#Discussion_of_Figure"> Discussion of Figure </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Figure_45_Misclassification_of_Exposure_Variable">  Figure - Misclassification of Exposure Variable </h2>
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#FlegalMisclass">Flegal</a> (1986) plots the effect of non-differential misclassification of <a href="PredictorVariable.html">exposure</a> in a <a href="CohortStudy.html">cohort study</a>. <ul>
+<li> Here, the true risk ratio is 10.
+</li> <li> U is equal to the <a href="ValiditySensit.html">sensitivity</a> of the exposure measurement.
+</li> <li> V is equal to the <a href="ValiditySpecif.html">specificity</a> of the exposure measurement.
+</li> <li> The 5 lines show some representative combinations of sensitivity and specificity.
+</li></ul> 
+<p></p>
+<blockquote>
+<p></p>
+<img src="BiasInfor.attachments/0120_flegal.JPG" width="351" height="272" alt="0120_flegal.JPG">
+</blockquote>
+<p></p>
+<h2 id="Discussion_of_Figure">  Discussion of Figure </h2>
+ The figure points out a few things:
+<p></p>
+1. Even with these seemingly reassuring combinations of sensitivity and specificity, the highest <a href="RiskRatio.html">risk ratio</a> we can get is 8 or a 20% decline.
+<p></p>
+2. For most overall prevalences of exposure, say from .25 and higher, you see a bigger influence of sensitivity than specificity. <ul>
+<li> At a prevalence of overall exposure of 50%, near perfect sensitivity but 80% specificity gives you an apparent risk ratio of about 7.63
+</li> <li> A situation with near perfect specificity but 80% sensitivity gives a risk ratio of about 4.
+</li> <li> This changes, however, when you have overall prevalence of exposure below about 0.25.
+</li></ul> 
+3. Illustrating the important dependence of the prevalence of the exposure. As you get to the extremes of imbalance between exposed and unexposed, you see that the apparent (or observed) risk ratio starts to plummet.
+<p></p>
+<br />Is it theoretically possible to have differential misclassification of exposure in a cohort study? No, because at the beginning of a cohort when measurements of exposure are made the <a href="OutcomeVariable.html">outcome</a> has not yet occurred.
+<p></p>
+<h2 id="References">  References </h2>
+<span id="FlegalMisclass"></span>
+<p></p>
+Flegal, K. M., Brownie, C., &amp; Haas, J. D. (1986). The effects of exposure misclassification on estimates of relative risk. <em>Am J Epidemiol, 123</em> (4), 736-751.
+<p></p>
+<hr />
+<p></p>
+<strong><em><br /></em></strong>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

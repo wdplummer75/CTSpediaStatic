@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisBackwards &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisBackwards/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisBackwards/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit StudyAnalysisBackwards" href="StudyAnalysisBackwards.html" rel="alternate">
+<meta name="description" content="StudyAnalysisBackwards" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "StudyAnalysisBackwards",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Backwards_Strategy">  Backwards Strategy </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Backwards_Strategy_for_Potential_Confounders"> Backwards Strategy for Potential Confounders </a>
+</li> <li> <a href="#Procedure_for_Backwards_Strategy_for_Potential_Confounders"> Procedure for Backwards Strategy for Potential Confounders </a> <ul>
+<li> <a href="#First_45_Dropping_Variables"> First - Dropping Variables </a>
+</li> <li> <a href="#Second_45_Checking_for_Meaningful_Change"> Second - Checking for Meaningful Change </a>
+</li> <li> <a href="#Third_45_Improving_Precision"> Third - Improving Precision </a>
+</li></ul> 
+</li> <li> <a href="#Problem_with_Many_Potential_Confounders"> Problem with Many Potential Confounders </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Backwards_Strategy_for_Potential_Confounders">  Backwards Strategy for Potential Confounders </h2>
+ In the Backwards Strategy we initially evaluate all potential <a href="BiasConfound.html">confounders</a> together:  <ul>
+<li> <strong>Looking for joint confounding</strong>
+</li></ul> 
+This is conceptually preferred because in nature variables are all present and act together.
+<p></p>
+This is relevant not only for <a href="StratificationTerm.html">stratification</a>, but also for when you do <strong><a href="StudyAnalysisMultivariate.html">multivariable regression</a></strong> modeling. <ul>
+<li> In fact, this gets at the heart of the most difficult aspect of multivariable modeling, that what is called <strong><a href="StudyAnalysisModel.html">model selection</a></strong>.
+</li></ul> 
+<p></p>
+<h2 id="Procedure_for_Backwards_Strategy_for_Potential_Confounders">  Procedure for Backwards Strategy for Potential Confounders </h2>
+ <strong>Procedure</strong>: Consider all potential confounders by forming an <a href="StudyAnalysisAdjustment.html">adjusted estimate</a>.  <ul>
+<li> This is called the <strong><a href="GoldStandard.html">gold standard</a>.</strong>
+</li></ul> 
+An example of these steps can be found in <a href="EgBackwardsMRSA.html">Kleinbaum's MRSA</a> study report. 
+<h3 id="First_45_Dropping_Variables">  First - Dropping Variables </h3>
+ THEN:  <ol>
+<li> One variable can then be dropped and the adjusted estimate is re-calculated (adjusted for remaining variables)
+</li> <li> If the dropping of the first variable results in a non-meaningful (eg &lt;10%) change compared to the gold standard, it can be eliminated
+</li> <li> The procedure continues until no more variables can be dropped (i.e. are remaining variables are relevant)
+</li></ol> 
+<h3 id="Second_45_Checking_for_Meaningful_Change">  Second - Checking for Meaningful Change </h3>
+ If the dropping of the variable results in no consequential change in the measure of <a href="StudyAssoc.html">association</a> then it can be eliminated from further consideration.  <ul>
+<li> If dropping the variable does result in a meaningful change, then it cannot be dropped.
+</li> <li> Instead, another variable is dropped and you recalculate.
+</li> <li> The procedure continues until no more variables can be dropped
+</li></ul> 
+<h3 id="Third_45_Improving_Precision">  Third - Improving Precision </h3>
+ Often the elimination of factors whose absence results in a non-meaningful change in the adjusted measure of association will result in a gain in <a href="PrecisionStudy.html">precision</a>.  <ul>
+<li> In other words, without that factor the confidence interval for the newly calculated adjusted measure of association will be narrower.
+</li></ul> 
+<p></p>
+<h2 id="Problem_with_Many_Potential_Confounders">  Problem with Many Potential Confounders </h2>
+ <strong>Problem</strong>: With many potential confounders,  <ul>
+<li> cells become very sparse and some strata provide no information
+</li></ul> 
+The problem, however, with this is depending upon how many potential confounders there are and how many levels there are for each confounder the number of strata you&rsquo;d need could be very large, and the cells in the strata very small rendering the weighting procedures unusable.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

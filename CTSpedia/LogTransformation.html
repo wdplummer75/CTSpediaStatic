@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>LogTransformation &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/LogTransformation/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/LogTransformation/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit LogTransformation" href="LogTransformation.html" rel="alternate">
+<meta name="description" content="LogTransformation" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "LogTransformation",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Logarithmic_Transformation">  Logarithmic Transformation </h1>
+ <strong><em>Lead Author(s):</em></strong> Peter Bacchetti, PhD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Outcome_Variables"> Outcome Variables </a> <ul>
+<li> <a href="#Reporting_Results_45_45_Back_45transformation"> Reporting Results -- Back-transformation </a>
+</li> <li> <a href="#Modifications"> Modifications </a>
+</li></ul> 
+</li> <li> <a href="#Predictor_Variables"> Predictor Variables </a>
+</li> <li> <a href="#Transforming_Both_Outcome_and_Predictor_Variables"> Transforming Both Outcome and Predictor Variables </a>
+</li> <li> <a href="#Summary"> Summary </a>
+</li></ul> 
+</div>
+<p></p>
+Statistical models are sometimes more meaningful and accurate if outcome or predictor variables are transformed, and a common choice for transforming variables is to apply logarithmic transformation. This may be appropriate when the variable only takes on positive values, and results are easier to interpret than with most other types of transformations. Considerations for whether and how to transform differ for outcome and predictor variables.
+<h2 id="Outcome_Variables">  Outcome Variables </h2>
+ The primary issue regarding whether and how to transform an outcome variable in a regression model is to reflect what is most meaningful about the outcome. The raw variable may not do a good job of this, and logarithmic transformation may do better. An advantage of logarithmic transformation is that regression coefficients still have a simple interpretation, in terms of multiplicative effects (i.e., percent or fold; see <a href="https://www.ctspedia.org/do/view/CTSpedia/LogTransformation#Reporting_Results_Back_transform">below</a>).
+<p></p>
+For example, CD4 count among persons with HIV infection does not reflect health implications accurately without transformation, because a 100 cell difference between 10 and 110 cells/mm3 is much more important than a 100 cell difference between 700 and 800 cells/mm3--110 is bad but 10 is dire, while both 700 and 800 are good and have very similar prognostic implications. After logarithmic transformation, the difference between 10 and 110 is 18 times larger than the difference between 700 and 800, which may better reflect the importance of the differences. This is true regardless of what base is used for the logarithm (e.g., natural log or log base 10), and the base generally does not matter for outcome variables, because results will be back-transformed.
+<p></p>
+Secondary issues for transforming outcome variables are 1) more closely approximating the assumption for linear regression modeling that the residuals are normally distributed, and 2) preventing a few observations from being extremely influential. Issue 1) is secondary because linear regression may still work reasonably well for some departures from normality and bootstrapping or robust standard errors can be used to obtain valid confidence intervals despite non-normal residuals. Issue 2) is secondary because the influence of a few large values can be assessed by performing sensitivity analyses with them deleted or by resetting them to smaller values (sometimes known as "Winsorizing"). Moreover, it may be appropriate for some observations to be very influential. For example, in studies of costs of medical care, patients' total costs are often highly skewed and a few patients who experience complications may have much higher costs. Logarithmically transforming costs, however, is often inappropriate, because very expensive patients really do have a large influence on total health care expenditures and downweighting their influence is inaccurate. Regression modeling of the untransformed costs will estimate the additive effects of predictors on mean costs, which will accurately reflect impact. In contrast, logarithmically transforming costs would estimate the multiplicative effects of predictors on the geometric mean, which is not directly relevant for total expenditures--the total cost for a group of N patients is the raw mean times N, not the geometric mean times N, so the bottom line for hospitals and ultimately for society as a whole is better reflected by a focus on the raw mean.
+<h3 id="Reporting_Results_45_45_Back_45transformation">  Reporting Results -- Back-transformation </h3>
+<p></p>
+When the outcome has been logarithmically transformed, the coefficients from a regression model should usually be back-transformed to show either percentage effects or fold-effect (these are two different ways of describing multiplicative effects. The percentage effect is calculated from the regression coefficient as
+<p></p>
+pctEstimate = 100*(antilog(coefficient) - 1).
+<p></p>
+This is interpreted as: each 1 unit increase in the predictor is estimated to be associated with a pct% change in the outcome variable. The fold-effect is calculated as:
+<p></p>
+fldEstimate = antilog(coefficient).
+<p></p>
+This is interpreted as: each 1 unit increase in the predictor is estimated to be associated with a fldEstimate-fold change in the outcome variable.
+<p></p>
+Because very large percentages can be confusing to some readers, such as a 200% increase being mistakenly interpreted as doubling, a reasonable practice is to report percentage effects when all are &lt;100% (2-fold), and to report fold-effects when some are &gt;=100%. With either approach, the antilog used should match the base of the logarithm used to transform the outcome variable: if natural logs were used, then the antilog is exp(coefficient); if log base 10 was used, then the antilog is 10^coefficient.
+<h3 id="Modifications">  Modifications </h3>
+<p></p>
+Logarithmic transformation makes differences between large values less important and differences between small values more important. Sometimes, the importance of differences between very small values may be exaggerated by logarithmic transformation. In the case of CD4 counts of CD4 counts, the difference between counts of 1 and 4 cells/mm3 is not very important because both are very dire, but logarithmic transformation would treat this as being comparable to the difference between counts of 100 and 400, which is a very substantial difference. To prevent this, one can modify the transformation by first adding a small amount. For example, log(10 + CD4) is a more reasonable transformation when some counts are very small. This treats the difference between 1 and 4 cells/mm3 as being comparable to the difference between 100 and 130 cells, which is more reasonable than treating it as comparable to the difference between 100 and 400 cells.
+<p></p>
+Exactly what amount to add before taking logarithms is an important decision, and the best choice will differ for different variables. As with the choice of whether to transform or not, the primary consideration is to best reflect what is important about the outcome. The added amount should be large enough that differences between very small values are not given exaggerated importance. A secondary consideration is that interpretation is easier if the amount is small enough that the percentage or fold-effect interpretation of the back-transformed coefficients is still approximately correct over most of the range of the outcome's values. In the CD4 count example, the differences between transformed counts of 100 versus 200 or 300 versus 600 still correspond fairly well to the logarithm of 2, reflecting a 2-fold difference, so the simple interpretation of back-transformed coefficients remains about correct for most CD4 counts. (Note that the back-transformation remains <a href="https://www.ctspedia.org/do/view/CTSpedia/LogTransformation#Reporting_Results_Back_transform">as above</a>; do not subtract 10 after taking antilogs.) For situations where 1 is a small value of the outcome, the transformation log(1 + outcome) is a common choice.
+<p></p>
+Adding a small amount also makes it possible to apply logarithmic transformation to a variable that is zero for some observations.
+<h2 id="Predictor_Variables">  Predictor Variables </h2>
+<p></p>
+For predictor variables, the main purpose of transformation is to more accurately model the association of the predictor with the outcome. In regression models, numeric predictors are assumed to have a <a href="LinearityAssumption.html">linear relationship</a> with the outcome, and this assumption may be more accurate for a logarithmically transformed predictor than for the raw untransformed predictor. For example, a Cox proportional hazards model of mortality risk among persons with HIV infection with a predictor being the untransformed CD4 count will assume that each 100 cell difference in CD4 is associated with a reduction in the hazard by the same factor, whether it is a difference between 10 and 110 cells or between 700 and 800 cells. This is unlikely to be accurate. With logarithmic transformation of CD4, the assumption would be that a 2-fold difference in CD4 is associated with a reduction in the hazard by the same factor, whether it is a difference between 100 and 200 cells or between 500 and 1000 cells. This may be more accurate, and whether it is can be assessed empirically by seeing whether logarithmic transformation improves the fit to the data. As with outcome transformation, modification by adding a small amount may be desirable.
+<p></p>
+Unlike for outcome transformation, the base of the logarithm used does make some difference. Although the fitted model will be identical regardless of what base is used, the scaling of the estimated regression coefficients is altered by the base. If log base 2 is used, then estimated effects are per 2-fold increase in the predictor, and if log base 10 is used, then estimated effects are per 10-fold increase in the predictor. The base should therefore be chosen so that estimates will correspond to understandable amounts and be easy to interpret. In general, natural logarithms are a poor choice, because the estimated effect per 2.718-fold increase is an odd amount to try to interpret.
+<p></p>
+Alternatives for modeling non-linear relationships include <a href="LinearSplines.html">linear splines</a> and adding quadratic or higher order <a href="PolynomialModel.html">polynomial terms</a>. These require estimating more parameters and result in more complicated models, but they are also more flexible and can sometimes provide enough improvement in the fit to the data to justify the extra complexity.
+<h2 id="Transforming_Both_Outcome_and_Predictor_Variables">  Transforming Both Outcome and Predictor Variables </h2>
+ Applying logarithmic transformation to both the outcome variable and to one or more of the predictor variables results in no special complications, and the same considerations described above still apply to the predictor and the outcome. Usually, you will first decide if logarithmic transformation is the most meaningful way to model the outcome. Once that is decided, you can examine for each predictor whether logarithmic transformation improves the modeling of its association with the outcome. If the outcome is transformed, then coefficients should be back-transformed to percent or fold-effects, regardless of any predictor transformations. Similarly, if the outcome is not transformed, then coefficients should not be back-transformed, even when some of the predictors have been transformed. for example, if a predictor is log2 transformed and the outcome is transformed, then you will obtain a multiplicative effect (fold or percent) on the outcome per 2-fold increase in the predictor.
+<p></p>
+<h2 id="Summary">  Summary </h2>
+ The table below summarizes the main considerations for logarithmic transformation of outcome variables and predictor variables. <table align="left" border="0"><tbody><tr valign="middle" style="height: 6px"><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr><tr valign="middle" style="height: 10px"><td> </td><td> </td><td> </td><td> Outcome</td><td> </td><td> </td><td> Predictor</td></tr><tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr><tr valign="middle" style="height: 60px"><td>Purpose </td><td> </td><td> </td><td>Reflect what is most meaningful<br />about the outcome measure</td><td> </td><td> </td><td>Accurately model the association with the outcome</td></tr><tr valign="middle" style="height: 60px"><td>How to decide?</td><td> </td><td> </td><td>A priori</td><td> </td><td> </td><td>Empirically</td></tr><tr valign="middle" style="height: 60px"><td>What base<br />for logarithm?</td><td> </td><td> </td><td>Irrelevant, because results will <br />be back-transformed</td><td> </td><td> </td><td>Choose to be an interpretable amount, e.g.,<br />log base 2 -- effect per 2-fold increase in predictor<br />log base 10 -- effect per 10-fold increase</td></tr><tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr><tr valign="middle" style="height: 60px"><td>Back-transform<br />results?</td><td> </td><td> </td><td>Yes, to obtain multiplicative <br />effects, percent or fold</td><td> </td><td> </td><td>Not because of predictor transformation. Back-<br />transformation determined by outcome<br />transformation, regardless of predictor transformation</td></tr><tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr></tbody></table>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

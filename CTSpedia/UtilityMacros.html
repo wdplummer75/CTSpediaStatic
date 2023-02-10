@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>UtilityMacros &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/UtilityMacros/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE CTSpedia/UtilityMacros/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="UtilityMacros.html" title="edit UtilityMacros">
+<meta name="description" content="UtilityMacros" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "UtilityMacros",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Utility_Macros">  Utility Macros </h1>
+ These are macros that are often used within higher level macros.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Utilities_for_data_manipulation"> Utilities for data manipulation </a>
+</li> <li> <a href="#Macro_Tools_47Utilities"> Macro Tools/Utilities </a>
+</li> <li> <a href="#Variable_or_parameter_checking_macros"> Variable or parameter checking macros </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Utilities_for_data_manipulation">  Utilities for data manipulation </h2>
+<p></p> <ul>
+<li> <a href="UtilityMacros.attachments/Univariate.sas">Univariate.sas</a> (rev=3): Calculates summary statistics for specified variables. Updated 3/26/08.
+</li> <li> <a href="UtilityMacros.attachments/quartiles.sas">quartiles.sas</a> (rev=3): Creates quartile versions of continuous variables. Updated 3/26/08.
+</li> <li> <a href="UtilityMacros.attachments/residsqr.sas">residsqr.sas</a> (rev=1): Calculate the average studentized residuals within each 10-percentile. Updated 4/22/08.
+</li> <li> <a href="UtilityMacros.attachments/NPar1way.sas">NPar1way.sas</a>: (rev 2) Combines output from Univariate with non-parametric p-values and organizes results.
+</li> <li> <a href="UtilityMacros.attachments/TransposeMany.sas">TransposeMany.sas</a> (rev=1): Contains a long2wide and wide2long macro for transposing many variables at once.
+</li> <li> <a href="UtilityMacros.attachments/delta.sas">delta.sas</a> : Creates a dataset with the changes from baseline or time=T. (More <a href="UtilityMacros.attachments/Deltas.doc">Deltas.doc</a>)
+</li></ul> 
+<p></p>
+<h2 id="Macro_Tools_47Utilities">  Macro Tools/Utilities </h2>
+<p></p> <ul>
+<li> <a href="UtilityMacros.attachments/words.sas">words.sas</a> (rev=1): Counts the words in a string (used only for byvars where shortcut lists not allowed). This is taken directly from p256 of the SAS Macro manual.
+</li> <li> <a href="UtilityMacros.attachments/Varlist.sas">Varlist.sas</a> (rev=2): takes a shortcut list of SAS variables as input and returns the expanded list of variable names.
+</li> <li> <a href="UtilityMacros.attachments/RefDummy.sas">RefDummy.sas</a> (rev=1): Finds the reference values for categorical variables and creates dummy variables. Updated 4/22/08.
+</li> <li> <a href="UtilityMacros.attachments/dummy.sas">dummy.sas</a> (rev=1): Creates dummy variables for categorical variables. Updated 4/22/08.
+</li> <li> <a href="UtilityMacros.attachments/NextWord.sas">NextWord.sas</a> Function that returns the first word from a list. (More <a href="UtilityMacros.attachments/nextword.doc">NextWord.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/runprograms.sas">RunPrograms.sas</a> Executes a list of SAS programs. (More <a href="UtilityMacros.attachments/runprograms.doc">RunPrograms.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/getvarlist.sas">GetVarList.sas</a> Returns a list of all the Numeric or Character variables in a dataset. (More <a href="UtilityMacros.attachments/getvarlist.doc">GetVarList.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/replaygraphs.sas">ReplayGraphs.sas</a> Replay graphs from a catalog to put several on one page. (More <a href="UtilityMacros.attachments/replaygraphs.doc">ReplayGraphs.doc</a>)
+</li></ul> 
+<p></p>
+<h2 id="Variable_or_parameter_checking_macros">  Variable or parameter checking macros </h2>
+<p></p> <ul>
+<li> <a href="UtilityMacros.attachments/CheckVar.sas">CheckVar.sas</a> (rev=1): Checks that needed variables exist in a particular data set.
+</li> <li> <a href="UtilityMacros.attachments/CheckData.sas">CheckData.sas</a>: Function that checks the existence of a dataset. (More <a href="UtilityMacros.attachments/CheckData.doc">CheckData.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/CheckVariab.sas">CheckVariab.sas</a>: Function that checks the existence of a variable. (More <a href="UtilityMacros.attachments/checkvariab.doc">CheckVariab.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/CheckVariabs.sas">CheckVariabs.sas</a>: Function that checks the existence of a list of variables. (More <a href="UtilityMacros.attachments/checkvariabs.doc">CheckVariabs.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/CheckNumVar.sas">CheckNumVar.sas</a>: Function that checks the existence of a numeric variable. (More <a href="UtilityMacros.attachments/checknumvar.doc">CheckNumVar.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/CheckNumVars.sas">CheckNumVars.sas</a>: Function that checks the existence of a list of numeric variables. (More <a href="UtilityMacros.attachments/checknumvars.doc">CheckNumVars.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/CheckStr.sas">CheckStr.sas</a>: Function that checks if a parameter is in a specified list. (More <a href="UtilityMacros.attachments/checkstr.doc">CheckStr.doc</a>)
+</li> <li> <a href="UtilityMacros.attachments/CheckNumber.sas">CheckNumber.sas</a>: Function that checks if a parameter is numeric. (More <a href="UtilityMacros.attachments/checknumber.doc">CheckNumber.doc</a>)
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

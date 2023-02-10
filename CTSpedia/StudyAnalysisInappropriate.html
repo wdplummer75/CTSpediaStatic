@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisInappropriate &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/StudyAnalysisInappropriate/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisInappropriate/favicon.ico">
+<link type="application/x-wiki" href="StudyAnalysisInappropriate.html" rel="alternate" title="edit StudyAnalysisInappropriate">
+<meta name="description" content="StudyAnalysisInappropriate" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "StudyAnalysisInappropriate",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Inappropriate_Statistical_Testing_for_Confounding">  Inappropriate Statistical Testing for Confounding </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<br /><div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Examining_a_Known_Confounder"> Examining a Known Confounder </a>
+</li> <li> <a href="#Small_Sample_Size"> Small Sample Size </a>
+</li> <li> <a href="#Issue_of_Confounding_Is_Bias"> Issue of Confounding Is Bias </a>
+</li> <li> <a href="#Do_Not_Adjust"> Do Not Adjust </a>
+</li> <li> <a href="#Bias_45Variance_Tradeoff"> Bias-Variance Tradeoff </a>
+</li></ul> 
+</div> 
+<h2 id="Examining_a_Known_Confounder">  Examining a Known Confounder </h2>
+ Testing for statistically significant differences (<a href="StudyAnalysisAdjustment.html">adjustment</a>) between crude and adjusted measures is inappropriate when:
+<p></p>
+<strong>Factor is a known confounder</strong>. <ul>
+<li> e.g., examining an association for which a factor is a known confounder
+</li> <li> age in the association between hypertension (HTN) and coronary artery disease (CAD)
+</li></ul> 
+Why don&rsquo;t we just apply a statistical test to see if the difference between the crude and adjusted measure of <a href="StudyAssoc.html">association</a> is significant? <strong>This is a bad idea</strong>. Even if you wanted to perform a statistical test, they are actually not available in software packages. 
+<h2 id="Small_Sample_Size">  Small Sample Size </h2>
+<p></p>
+Testing for statistically significant differences (<a href="StudyAnalysisAdjustment.html">adjustment</a>) between crude and adjusted measures is inappropriate when:
+<p></p>
+The study has a small sample size, even large differences between crude and adjusted measures may not be statistically different. <ul>
+<li> Yet, we know confounding is present.
+</li> <li> Therefore, the difference between crude and adjusted measures cannot be ignored as merely chance.
+</li> <li> <strong><a href="BiasConfound.html">Bias</a> must be prevented:</strong> the difference must be reported as confounding.
+</li></ul> 
+Why is statistical testing for confounding inappropriate?  <ul>
+<li> Say you are working with a variable that you know is a confounder in every prior instance it was examined, like age in the evaluation of the relationship between hypertension and coronary artery disease.
+</li></ul> 
+What if you happened to have a small sample size in your study?  <ul>
+<li> Then even large differences between the crude and adjusted measures of association might not be statistically significant.
+</li> <li> What are you going to do?
+</li> <li> Throw out age and just go with crude estimate of the relationship between hypertension and CAD?
+</li> <li> Of course, you won&rsquo;t do this because you know that confounding is present!
+</li></ul> 
+You cannot ignore differences between crude and adjusted measures just because they are not statistically significant.  <ul>
+<li> In other words, when protecting against bias, you have to do whatever you can regardless of statistical significance.
+</li> <li> We have to live with what we see as differences between crude and adjusted regardless of the statistics.
+</li></ul> 
+<h2 id="Issue_of_Confounding_Is_Bias">  Issue of Confounding Is Bias </h2>
+<p></p>
+<strong>The issue of confounding is one of <a href="BiasConfound.html">bias</a>, not of sampling error.</strong> <ul>
+<li> We must live with whatever effects we see after <a href="StudyAnalysisAdjustment.html">adjustment</a> for a factor for which there is a strong <em>a priori</em> belief about confounding.
+</li> <li> We&rsquo;re not concerned that sampling error is causing confounding and therefore we don&rsquo;t have to worry about testing for role of chance
+</li> <li> The exception to this are variables for which we are not sure <em>a priori</em> are confounders. For such variables, we need to weigh bias versus <a href="StudyAnalysisVariance.html">variance</a> tradeoffs.
+</li></ul> 
+Caveat: there may be a penalty in statistical <a href="PrecisionStudy.html">precision</a> when controlling for potential confounders. See the <a href="EgBiasDown.html">study of spermicide</a> use and Down Syndrome. 
+<h2 id="Do_Not_Adjust">  Do Not Adjust </h2>
+ If you <a href="StudyAnalysisAdjustment.html">adjust</a> for a factor that you don't need to adjust for, you will end up with much larger confidence intervals and a loss in <a href="PrecisionStudy.html">precision</a>. See <a href="EgNoAdjustMatches.html">Lung Cancer</a> and Matches Study.
+<p></p>
+<h2 id="Bias_45Variance_Tradeoff">  Bias-Variance Tradeoff </h2> <ul>
+<li> What is a <strong><a href="StudyAnalysisVariance.html">meaningful difference</a></strong> between the crude and adjusted measure of <a href="StudyAssoc.html">association</a>?
+</li> <li> Should you accept the <strong><a href="StratificationTerm.html">adjusted summary estimate</a></strong> as your final answer or the <strong><a href="StratificationTerm.html">crude estimate</a></strong>?
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

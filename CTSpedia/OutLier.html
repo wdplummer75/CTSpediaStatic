@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>OutLier &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/OutLier/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/OutLier/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit OutLier" rel="alternate" href="OutLier.html">
+<meta name="description" content="OutLier" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "OutLier",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="I_Have_An_Outlier_33">  I Have An Outlier! </h1>
+ <strong><em>Lead Author(s): </em></strong>Erin Dienes
+<p></p>
+James is a biologist who is currently researching beluga whales. Currently he is interested in the relationship between the velocity at which the beluga whale swims and the tail-beat frequency of the whale. James took a sample of 20 whales and measured the swimming velocity, in units of body-lengths per second, and tail-beat frequency, in units of hertz. The following table shows the observed values for each variable.
+<p></p>
+<img width="613" src="OutLier.attachments/WhaleTable.JPG" alt="WhaleTable.JPG" height="502">
+<p></p>
+James wants to visually determine what type of relationship (if any) exists between the swimming velocity and the tail-beat frequency. A scatter plot, which is simply a plot of the predictor variable on the x-axis and the response variable on the y-axis, is typically used for this purpose. James believes that the more tail-beats a whale has the faster that whale will swim. Thus the predictor variable in James' study is the tail-beat frequency and the response variable is the swimming velocity. A scatter plot of the relationship between the two variables is provided below.<img src="OutLier.attachments/WhaleScatterNoline.jpeg" alt="WhaleScatterNoline.jpeg" height="449" width="450">
+<p></p>
+From the above scatter plot, James noticed that there is an observation with an unusually large velocity compared to the others. He wants to know if this observation is an <a href="DefOutlier.html">outlier</a> and, if so, what his options are for dealing with it.
+<h2 id="Detecting_an_Outlier">  Detecting an Outlier </h2>
+ There are two ways in which to determine if an observation is an outlier. One method (z-score) only applies to data sets with frequency distributions that are mound shaped and symmetric. The other method has no such assumptions. 
+<h3 id="Calculate_the_Z_45Score">  Calculate the Z-Score </h3>
+ In this procedure we calculate the <a href="ZScore.html">z-score</a> for each observation (fix this). Any z-score greater than 3 or less than -3 is considered to be an outlier. This rule of thumb is based on the <a href="EmpiricalRule.html">empirical rule</a>. From this rule we see that almost all of the data (99.7%) should be within three standard deviations from the mean. By calculating the z-score we are standardizing the observation, meaning the standard deviation is now 1. Thus from the empirical rule we expect 99.7% of the z-scores to be within -3 and 3.
+<p></p>
+James thinks that his observed velocity of 2.0 may be an outlier. In order to calculate the z-score, James first needs to calculate the mean and standard deviation of the observed velocities. He calculates the mean as 0.6549541 and the standard deviation as 0.4165770. Thus the z-score when x = 2.0 is z = (2 - 0.6549541)/0.4165770 = 3.228805. Since this value is greater than 3 James will consider this observation an outlier.
+<h3 id="Calculate_the_Inner_and_Outer_Fences">  Calculate the Inner and Outer Fences </h3>
+ This procedure stems from the construction of a <a href="CaseStudyPlot.html">box plot</a>. An observation is considered an outlier if it exceeds a distance of 1.5 times the interquartile range (IQR) below the lower quartile or above the upper quartile. The values of the lower quartile - 1.5 x IQR and upper quartile + 1.5 x IQR are known as the inner fences. Furthermore if the observation exceeds the lower quartile - 3 x IQR or the upper quartile + 3 x IQR then it is considered an extreme outlier. These values are known as the outer fences.
+<p></p>
+In order to determine whether his observation is an outlier by this criteria, James will need to calculate the quartiles, the interquartile range, and the fences.
+<p></p>
+Lower Quartile = 0.3984<br />Upper Quartile = 0.7647<br />IQR = 0.7647 - 0.3984 = 0.3663
+<p></p>
+Inner Fences = 0.3984 - 1.5(0.3663) = -0.15105<br /> = 0.7647 + 1.5(0.3663) = 1.31415
+<p></p>
+Outer Fences = 0.3984 - 3(0.3663) = -0.7005<br /> = 0.7647 + 3(0.3663) = 1.8636
+<p></p>
+From these values, James notices that not only is the velocity of 2.0 outside of the inner fences, implying its an outlier, but is also outside of the outer fences. Hence he concludes that his observation is an extreme outlier.
+<p></p>
+<h2 id="Dealing_with_an_Outlier">  Dealing with an Outlier </h2>
+ Now that James has determined that the observation is indeed an outlier he needs to know what he can do with it. An outlier could be an observation that resulted from a mistake or other extraneous effect, or it could simply be a rare observation from the target population. James wants to be careful when considering removing the outlier from the analysis as it may convey significant information. A safe rule is to discard an outlier only if there is direct evidence that it represents an error in recording, a miscalculation, a malfunctioning of equipment, or a similar type of circumstance.
+<p></p>
+James has no such evidence and thus he will keep the observation for his analysis.
+<p></p>
+<h2 id="Outliers_in_Regression">  Outliers in Regression </h2>
+ Recall that James is interested in modelling the relationship between the swimming velocity of the beluga whales and the tail-beat frequency. Based on the scatterplot we can see that there appears to be a positive linear relationship between these two variables. Thus in order to model this relationship we will use <a href="LinearRegression.html">simple linear regression</a>. Fitting a line to this data yields the following fitted model
+<p></p>
+<img height="27" alt="WhaleRegression.JPG" src="OutLier.attachments/WhaleRegression.JPG" width="298">
+<p></p>
+To interpret this model we say that as the number of tail-beats increases by one, then on average the velocity will increase by 1.27341 body-lengths per second. The above fitted model can be highly distorted by outliers hence James is interested in seeing how much his outlier is affecting the fit of the model. An observation is considered influential if its exclusion causes major changes in the fitted regression function. James will use two different measures to determine if his outlier is infuential. <ol>
+<li> Influence on Single Fitted Value -- DFITS
+</li> <li> Influence on All Fitted Values -- Cook's Distance
+</li></ol> 
+<h3 id="DFITS">  DFITS </h3>
+ DFITS is a useful measure of the influence that observation i has on the fitted value. The formula is given by
+<p></p>
+<img src="OutLier.attachments/DFITS.JPG" alt="DFITS.JPG" height="268" width="650">
+<p></p>
+<img src="OutLier.attachments/DFITSExample.JPG" alt="DFITSExample.JPG" height="554" width="650">
+<h3 id="Cook_39s_Distance">  Cook's Distance </h3>
+ <img width="650" src="OutLier.attachments/CooksDistance.JPG" height="134" alt="CooksDistance.JPG">
+<p></p>
+In order to measure the influence of the observation (1.9, 2.0) on all the fitted values James calculates Cook's Distance. This calculation is a bit more computationally intense and thus we will simply give the calculated value. James finds the Cook's Distance of the above observation to be 3.789618 which is greater than 1. Hence the observation (1.9, 2.0) has high influence.
+<p></p>
+Based on the two measures of influence, James has concluded that the outlier has a high influence on his regression model. Because of this, and since James is unsure as to whether or not the observation is a mistake or from a different population, any inference he makes may be highly inaccurate.
+<p></p>
+A possible alternative approach would be to use a nonparametric method to model the relationship between the number of tail-beats and the swimming velocity of the beluga whale.
+<p></p>
+-- <a href="../Main/ErinEsp.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">ErinEsp</a> - 01 May 2010
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

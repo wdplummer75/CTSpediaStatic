@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>LogRegChecklist &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/LogRegChecklist/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/LogRegChecklist/favicon.ico">
+<link type="application/x-wiki" rel="alternate" href="LogRegChecklist.html" title="edit LogRegChecklist">
+<meta name="description" content="LogRegChecklist" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "LogRegChecklist",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h5 id="Logistic_Macro_Output_Checklist">  Logistic Macro Output Checklist </h5> <ol>
+<li> Are all predictors that you expected in the models?
+</li> <li> Does each predictor have the categories that you expected? Are the reference categories correct?
+</li> <li> Is the odds ratio in the direction that you expected, ie less than 1 or greater than 1? If not, double-check for reversed coding (of outcome or predictor) or use of the wrong reference category.
+</li> <li> Are any odds ratios extremely small or extremely large or blank? Blanks indicate detected cases of degenerate estimates, where p-values and confidence limits are not accurate. More valid P-values can be obtained by likelihood ratio tests or exact methods. CI's can be obtained by exact methods or profile likelihood (not currently implemented in SAS). There is a user-written macro called FL that uses an alternative approach for degenerate estimates; this is more convenient but not commonly used in clinical research.
+</li> <li> Do estimates of the odds ratio for a particular variable of interest vary a lot depending on what other variables are in the model? If so, check whether this is due to deletion of observations with missing values or due to potential confounding. To assess this, run models with and without the other variable of interest, but restricted in both cases to observations where the variables is not missing.
+</li> <li> Are there any small p-values for linearity checking? If so, consider modeling the predictor in categories, logarithmically transforming it, or adding additional terms. If the potentially non-linear term is not of primary interest, then additional terms can be quadratic, cubic, etc. (i.e., polynomial terms). If the variable is of primary interest, then linear spline terms may be more interpretable. If polynomial terms are used, graphical summaries of the fitted effect of the variable will be needed, as the individual coefficients are not readily interpretable.
+</li> <li> Is the H-L p-value small? If so, this suggests non-linearity of one or more predictor or existence of one or more interactions among the predictors. Address non-linearity as for point 6 and/or add in plausible interaction terms. If the H-L p-value cannot be raised above 0.05, then consider adjusting the SE's, CI's, and p-values for overdispersion (the Genmod procedure can do this automatically).
+</li></ol> 
+-- <a class="foswikiNewLink" rel="nofollow" href="../Main/PeterBacchetti.html" title="Create this topic">PeterBacchetti</a> - 23 Mar 2009
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

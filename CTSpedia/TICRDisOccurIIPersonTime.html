@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>TICRDisOccurIIPersonTime &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/TICRDisOccurIIPersonTime/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/TICRDisOccurIIPersonTime/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit TICRDisOccurIIPersonTime" rel="alternate" href="TICRDisOccurIIPersonTime.html">
+<meta name="description" content="TICRDisOccurIIPersonTime" />
+<link media="all" rel="stylesheet" class="head JQUERYPLUGIN::BUTTON" href="../System/JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" type="text/css"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="../System/JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="../System/JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2" class="script JQUERYPLUGIN::BUTTON"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "TICRDisOccurIIPersonTime",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Calculating_a_Person_45Time_Rate">  Calculating a Person-Time Rate </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Slide_1:_How_to_Calculate_a_Person_45Time_Rate:_Obtaining_the_Denominator"> Slide 1: How to Calculate a Person-Time Rate: Obtaining the Denominator </a> <ul>
+<li> <a href="#Person_45Time_Calculations"> Person-Time Calculations<br /> </a>
+</li></ul> 
+</li> <li> <a href="#Slide_2:_Person_45time_incidence_based_on_grouped_vs._individual_data"> Slide 2: Person-time incidence based on grouped vs. individual data </a>
+</li> <li> <a href="#Slide_3:_Waiting_Time_Property_of_CTSpedia.IncidenceMove_Rates"> Slide 3: Waiting Time Property of IncidenceMove Rates </a>
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<span id="StartPresentation"></span>
+<span class='slideShowControls'><a class="jqButton slideShowStart" href="TICRDisOccurIIPersonTime.html"><i class='jqButtonIcon fa fa-fw fa-television'></i><span class='jqButtonText'>Start presentation</span></a></span>
+<p></p>
+<p></p>
+<h2 id="Slide_1:_How_to_Calculate_a_Person_45Time_Rate:_Obtaining_the_Denominator">  Slide 1: How to Calculate a Person-Time Rate: Obtaining the Denominator </h2> <ul>
+<li> <strong>Method 1:</strong> If you have exact entry, censoring, and event times for each person, you can sum person-time for each person for denominator 
+</li> <li> <strong>Method 2:</strong> If you do not have individual data but have the time interval and average population size, you can take their product as denominator (Some datasets may only have the average population size at risk) 
+</li></ul> 
+<p></p>
+<font color="darkmagenta">In a cohort study, even a very large cohort study, the investigators record individual level data on when each person was enrolled and each date seen or each date when the person%u2019s outcome status was checked (such as doing a check of the National Death Index for mortality in a cohort). In a cohort study, therefore, both cumulative incidence and incidence rates can be calculated using individual data, and there is no reason to use grouped data. One of the reasons rates are attractive is that in other settings this kind of individual level information is not available. </font>
+<p></p>
+<font color="darkmagenta">Since the rate is assumed to be constant during the period for which the data are collected (say, one year), using the average population size assumes that additions and losses are approximately equal during the year. If losses and additions occur uniformly throughout the year, the total amount of person-time will be the same whether it is calculated by summing each person%u2019s individual time in the population or by multiplying the average size of the population during the year by one year. Since E remains the same for both methods and NT will be equal if the uniformity assumption is valid, the same rate is obtained by either method.</font>
+<p></p> <ul>
+<li> Person-time concept may seem unfamiliar because often described as annual rate per 100,000 persons (i.e., person-time denominator is not made explicit) 
+</li> <li> Example: %u201CThe incidence of Pediatric Cardiomyopathy in two regions of the United States%u201C ( <em>NEJM</em>, 2003) 
+</li> <li> 467 cases of cardiomyopathy in registry of 38 centers (<st1:place w:st="on">New England</st1:place>, Southwest) 1996 - 1999 
+</li> <li> denominator %u201Cpopulation estimates%u20261990 census with an in- and out-migration algorithm%u201D ages 1 - 18 
+</li> <li> "overall annual incidence of 1.13 per 100,000 children%u201D 
+</li> <li> 1.44 per 100,000 in New England vs. 0.98 in Southwest 
+</li></ul> 
+<p></p>
+<font color="darkmagenta">Calculating %u201Cannual%u201D rates is a common practice as many statistics are gathered annually. The way these rates are often reported might lead you to think they are proportions as they are frequently described as per some number of persons without making explicit that it is really per some number of person-years. The years are buried in the word annual. Some investigators are more precise and will specify rates as per person-years.</font>
+<p></p>
+<font color="darkmagenta">The choice of the denominator is usually determined by a desire to have at least one integer to the left of the decimal point. So events that are relatively rare, such as the example of pediatric cardiomyopathy above, are often reported per 100,000 person-years. For the same reason cancer rates are usually reported per 100,000 person-years.</font>
+<p></p>
+<h3 id="Person_45Time_Calculations">  Person-Time Calculations<br /> </h3>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIIPersonTime?rev=1;filename=Figure22.JPG">http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIIPersonTime?rev=1;filename=Figure22.JPG</a></A> <ul>
+<li> <strong>Example Method 1</strong> 
+</li></ul> 
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIIPersonTime?rev=1;filename=Method1.JPG">http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIIPersonTime?rev=1;filename=Method1.JPG</a></A>
+<p></p>
+<font color="darkmagenta">Here are the calculations for using individual level data to calculate the person-time rate. Note that the person time in months is just the sum of the number of months from the previous graphic showing how long each person was observed in the study. Since they want to present the rate in the more conventional units of 100 person-years, the total months are converted to years. The numerator is, as always, just the number of events; here, 6 deaths. The decimal point is then moved for the fraction 6/9.583 to give the rate per 100 person-years.</font>
+<p></p> <ul>
+<li> <strong>Example Method 2: Using average number of persons at risk during time interval</strong>  <ul>
+<li> 10 persons at baseline; 1 person at end of 2 years (6 deaths + 3 censored before 2 years = 9 losses) 
+</li> <li> Formula: Average number of persons at risk = N baseline + N end / 2 = 11 / 2 = 5.5 
+</li> <li> Rate = 6/5.5 over 2 years = 0.545 per person-year or 54.5 per 100 person-years 
+</li></ul> 
+</li></ul> 
+<p></p>
+<font color="darkmagenta">For the second method using the average population size at risk during the time interval, all that is required is to know how many started at baseline and how many were left at the end. The average number at risk is then calculated by adding the two numbers and dividing by 2. Or, alternatively, the number lost during the interval can be divided by 2 and subtracted from the baseline number: 9 lost/ 2 = 4.5 10-4.5=5.5.</font>
+<p></p>
+<font color="darkmagenta">The numerator is still 6 and the rate calculated this way is 54.5 per 100 person-years. In this example with only 10 persons the rate calculated by the average population method differs more from the rate calculated from individual data (62.6 per 100 person-years) than it will in larger datasets where the methods are usually very close.</font>
+<p></p>
+<font color="darkmagenta">Note that this method is described as using %u201Cgrouped data.%u201D That phrase should not be confused here with an ecological study.</font>
+<p></p>
+<h2 id="Slide_2:_Person_45time_incidence_based_on_grouped_vs._individual_data">  Slide 2: Person-time incidence based on grouped vs. individual data </h2> <ul>
+<li> Szklo and Nieto use <strong>incidence rate</strong> when based on <strong>group data</strong> (average population at risk) and <strong>incidence density</strong> when based on <b>individual data<o:p></o:p></b> 
+</li> <li> This terminology distinction is not followed by most 
+</li> <li> Average population method assumes uniform occurrence of events and of censoring during the interval (like life table) 
+</li></ul> 
+<p></p>
+<font color="darkmagenta">This distinction is a refinement that we do not think is necessary. It is sufficient to know the difference between an incidence rate (for which we consider incidence density an equivalent term) and a cumulative incidence and to know that the rate can be calculated using individual level data or the average size of the population at risk during a time period.</font>
+<p></p>
+<font color="darkmagenta">You should also note that the example uses very small numbers of persons for which they do have individual level data in order to make showing the calculations simple. It has the effect, however, of making the method appear not very good as the assumption of uniform censoring during the interval clearly doesn%u2019t hold. In very large data sets, such as census data for large geographical areas, it is usually a perfectly good assumption.</font>
+<p></p>
+<h2 id="Slide_3:_Waiting_Time_Property_of_CTSpedia.IncidenceMove_Rates">  Slide 3: Waiting Time Property of <a title="Create this topic" href="IncidenceMove.html" class="foswikiNewLink" rel="nofollow">IncidenceMove</a> Rates </h2>
+Waiting time to an event is reciprocal of the incidence rate (1/rate)
+<p></p>
+<ul style="margin-top: 0in;" type="disc"> <li>For example, if rate 300 per 100 person-years, reciprocal is 1/ 300/100 person-years = 1/3 person-year</li> <li>Average waiting time between events is 1/3 year = 4 months</li></ul><font color="darkmagenta">
+<p></p>
+This property of incidence rates is useful in quantifying the time until a new occurrence of the outcome. It follows from the assumption that the incidence rate is constant during the time interval under consideration. If there are 3 events per year and the events are occurring at a constant rate, then a new event must occur on average, depending on how exactly the constant rate assumption is met, every 4 months. So waiting time = 1/ person-time rate, a property to keep in mind.
+</font>
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

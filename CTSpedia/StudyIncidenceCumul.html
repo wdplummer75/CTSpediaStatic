@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyIncidenceCumul &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyIncidenceCumul/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyIncidenceCumul/favicon.ico" rel="shortcut icon">
+<link title="edit StudyIncidenceCumul" rel="alternate" href="StudyIncidenceCumul.html" type="application/x-wiki">
+<meta name="description" content="StudyIncidenceCumul" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyIncidenceCumul",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Cumulative_Incidence_45_Person_45Time">  Cumulative Incidence - Person-Time </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Cumulative_Incidence"> Definition of Cumulative Incidence </a>
+</li> <li> <a href="#Time_Period_for_Cumulative_Incidence"> Time Period for Cumulative Incidence </a>
+</li> <li> <a href="#Cumulative_Incidence_Measure"> Cumulative Incidence Measure </a>
+</li> <li> <a href="#Calculating_Cumulative_Incidence"> Calculating Cumulative Incidence </a>
+</li> <li> <a href="#Clinical_Trial_Denominator"> Clinical Trial Denominator </a>
+</li> <li> <a href="#Specifying_Time_Period_for_Cumulative_Incidence"> Specifying Time Period for Cumulative Incidence </a>
+</li> <li> <a href="#Temporal_Trends"> Temporal Trends </a>
+</li></ul> 
+</div> 
+<h2 id="Definition_of_Cumulative_Incidence">  Definition of Cumulative Incidence </h2>
+ The <strong>proportion</strong> of individuals who experience the event in a defined time period <strong>(E/N during some time T) = cumulative incidence</strong>
+<p></p>
+<strong>OR</strong>
+<p></p>
+<strong><a href="StudyIncidence.html">E(vent)/N(umber) during some time T(ime)</a> = cumulative incidence</strong>
+<p></p>
+<h2 id="Time_Period_for_Cumulative_Incidence">  Time Period for Cumulative Incidence </h2>
+ If the measure is a proportion of persons, it is unitless since it has to vary between 0 and 1. In other words it is a probability.  <ul>
+<li> But because it is unitless, the time element T has to be explicitly added; for example, the proportion of persons diagnosed during a one-year period. This is a common error in the literature. The time period for cumulative incidence is often missing.
+</li></ul> 
+<p></p>
+<h2 id="Cumulative_Incidence_Measure">  Cumulative Incidence Measure </h2>
+ Perhaps <strong>most intuitive measure of incidence</strong> since it is just proportion of those observed who got the disease
+<p></p> <ul>
+<li> Proportion = probability = <strong>risk</strong>
+</li></ul> 
+<p></p> <ul>
+<li> Basis for <strong>Survival Analysis</strong>
+</li></ul> 
+Two primary methods for calculating cumulative incidence:  <ul>
+<li> <a href="KaplanMeier.html">Kaplan-Meier method</a>
+</li> <li> <a href="StudyAnalysisLife.html">Life table method</a>
+</li></ul> 
+Of the two methods for calculating cumulative incidence, the life table method is older but is now seldom used except in actuarial tables of life expectancy and a few similar settings with large numbers of persons. The Kaplan-Meier method is very similar and has become the usual method for estimating cumulative incidence.
+<p></p>
+<h2 id="Calculating_Cumulative_Incidence">  Calculating Cumulative Incidence </h2>
+ <strong>With complete follow-up cumulative incidence is just number of <a href="StudyIncidence.html">events (E)</a> divided by the number of persons (N) = E/N</strong>
+<p></p>
+The simplest situation in which to calculate cumulative incidence is if all of the persons are followed for the same length of time. <ul>
+<li> In that case the cumulative incidence is simply the total number of events divided by the total number of persons. <em>All individuals are included in the denominator,</em>
+</li> <li> In long term cohort studies this never happens, but in the time limited outbreak investigations typical of a CDC investigation of gastroenteritis, it may well happen.
+</li> <li> Although technically one still needs to attach a time period to the analysis (at one week, or some such), an outbreak of gastrointestinal illness is usually understood to be a matter of a few days, so even that element will probably be omitted.
+</li></ul> 
+<span id="AttackRate"></span>
+<p></p>
+<strong>Outbreak investigations, such as of gastrointestinal illness, typically calculate <em>attack rates</em> with complete follow-up on a <em><a href="StudyCohort.html">cohort</a></em> of persons who were exposed at the beginning of the epidemic. An example can be found in the <a href="EgCumulIncidenceGI.html">GI illness</a> in Livington County.</strong>
+<p></p>
+<span id="MisuseRate"></span>
+<p></p>
+Unfortunately, the term <em>attack rate</em> has traditionally been used to describe the proportion of persons who develop illness. <ul>
+<li> As we have been arguing, this is an incorrect use of <em>rate</em>, since the denominator is just the number of persons investigated.
+</li> <li> Another example of how terminology in the literature can be confusing.
+</li></ul> 
+<p></p>
+<h2 id="Clinical_Trial_Denominator">  Clinical Trial Denominator </h2>
+<p></p>
+Counting all individuals in the denominator can also be found in a clinical trial, which you will recall is formally a type of <a href="CohortStudy.html">cohort study</a>. <ul>
+<li> A very well run clinical trial of a non-fatal condition with relatively short <a href="FollowUpTime.html">follow-up time</a> might achieve the same amount of follow-up time on everyone enrolled if everyone were enrolled on the same day (as in the <a href="EgCumulIncidenceGI.html">gastroenteritis</a> example everyone was exposed on the same day).
+</li> <li> But it is a rare study that enrolls everyone on one day, yet nearly all studies stop on a given day, resulting in some difference in follow-up time even if no one was lost or dropped out.
+</li></ul> 
+<p></p>
+<h2 id="Specifying_Time_Period_for_Cumulative_Incidence">  Specifying Time Period for Cumulative Incidence </h2>
+ Calculating cumulative incidence with different follow-up times, assumes the probability of the outcome is not changing during the study period = <strong><a href="AssumptionsIncidence.html">no temporal/secular trends</a> affecting the outcome.</strong>
+<p></p>
+<strong>Cumulative incidence cannot be interpreted without specifying the time period.</strong> <ul>
+<li> The cumulative incidence of death for the whole U.S. population at 1 year is about 0.8% but at 100 years it is greater than 99.9%.
+</li></ul> 
+<span id="TemporalTrends"></span>
+<p></p>
+<h2 id="Temporal_Trends">  Temporal Trends </h2>
+ <strong>Temporal trends</strong>, such as improved survival, can lead to changes in cumulative incidence as seen in the Australian children's <a href="EgIncidenceSurvival.html">cancer study</a> and the <a href="EgCumulIncidenceSEER.html">SEER</a> cancer monitoring program.
+<p></p>
+<strong>The longer the follow-up period of an analysis</strong>, the greater the threat that changes in the underlying incidence rate of the outcome may be causing an estimate of cumulative incidence to be invalid.
+<p></p>
+<span id="TemporalTrendBias"></span>
+<p></p>
+Changes in treatment are a common way in which survival analysis may be <a href="BiasDefinition.html">biased</a> by the assumption of no temporal trends.
+<p></p>
+There are other changes that can produce <strong>temporal trend bias</strong> as well, such as: <ul>
+<li> changes in living habits,
+</li> <li> epidemics,
+</li> <li> environmental hazards that apply only during specific periods,
+</li> <li> etc.
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

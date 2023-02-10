@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CaseControlStudy &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/CaseControlStudy/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE CTSpedia/CaseControlStudy/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="CaseControlStudy.html" rel="alternate" type="application/x-wiki" title="edit CaseControlStudy">
+<meta name="description" content="CaseControlStudy" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "CaseControlStudy",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Case_Control_Study">  Case Control Study  </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Case_Control_Design"> Case Control Design </a>
+</li> <li> <a href="#Sampling_Cases_Within_a_Cohort"> Sampling Cases Within a Cohort </a>
+</li> <li> <a href="#Three_Ways_to_Sample_Controls_Within_a_Cohort"> Three Ways to Sample Controls Within a Cohort </a>
+</li> <li> <a href="#Summary_of_Case_45Control_Sampling"> Summary of Case-Control Sampling </a>
+</li> <li> <a href="#Important_Features_of_a_Case_Control_Study"> Important Features of a Case Control Study </a>
+</li> <li> <a href="#Prevalent_Sampling_in_a_Case_45Control_Study"> Prevalent Sampling in a Case-Control Study </a>
+</li> <li> <a href="#Critical_Features_of_Good_Case_45Control_Design"> Critical Features of Good Case-Control Design </a>
+</li> <li> <a href="#Measures_of_Association_in_a_Case_Control_Study"> Measures of Association in a Case Control Study </a>
+</li> <li> <a href="#Common_Misunderstandings_about_Case_Control_Studies"> Common Misunderstandings about Case Control Studies </a>
+</li> <li> <a href="#Reasons_for_Choosing_Case_Control_Study_Design"> Reasons for Choosing Case Control Study Design </a>
+</li> <li> <a href="#Case_Control_Study_Design_Recommendations"> Case Control Study Design Recommendations </a>
+</li></ul> 
+</div>
+<h2 id="Case_Control_Design">  Case Control Design </h2>
+<p></p>
+The main advantage of case-control designs is that it allows you to sample the experience of the <a href="StudyBase.html">study base</a> most efficiently. <ul>
+<li> Stated in other words, case-control designs allow you to make measurements on far fewer subjects than <a href="CohortStudy.html">cohort studies</a> but still get the same answer.
+</li></ul> 
+The reason to do this is to conserve resources, something that is becoming more and more important these days as funding is drying up. A typical example is when expensive testing on stored biological samples are required for an analysis. It is often prohibitively costly to test everyone in the cohort.
+<p></p>
+<h2 id="Sampling_Cases_Within_a_Cohort">  Sampling Cases Within a Cohort </h2>
+ Given that all the <a href="StudyCase.html">cases</a> are diagnosed, how would you sample <a href="StudyControl.html">controls</a> from this <a href="StudyCohort.html">cohort</a> for a case-control study?
+<p></p>
+Think of the selection of cases and controls as occurring from a cohort as in the diagram below.
+<blockquote> <img src="CaseControlStudy.attachments/0528_1_casecontrol.JPG" width="295" height="182" alt="0528_1_casecontrol.JPG"> </blockquote>
+<p></p>
+<h2 id="Three_Ways_to_Sample_Controls_Within_a_Cohort">  Three Ways to Sample Controls Within a Cohort </h2> <ul>
+<li> <strong>A random sample of the cohort baseline</strong> = <strong>case-cohort design</strong>  <ul>
+<li> (Discussed in <a href="SampleBaseline.html">Sampling Controls - Random Sample at Baseline</a>.)
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> <strong>At time each case is diagnosed</strong> = <strong>incidence density sampling</strong>  <ul>
+<li> (Discussed in <a href="SampleIncidence.html">Sampling Controls - Incidence Density Sampling</a>.)
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> <strong>From persons without disease at the end of follow-up</strong> = <strong>prevalent controls design</strong>  <ul>
+<li> (Discussed in <a href="SampleEnd.html">Sampling Controls - Persons with Disease at Follow-up</a>.)
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> A case-control study conducted from within a cohort is called a <strong>nested case-control study</strong>.
+</li></ul> 
+<p></p>
+<h2 id="Summary_of_Case_45Control_Sampling">  Summary of Case-Control Sampling </h2>
+<table class="foswikiTable" rules="none">
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Design</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Sampling</a> </th>
+			<th class="foswikiTableCol2 foswikiLastCol"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Measure of Association</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="SampleBaseline.html">Case-cohort</a> </td>
+			<td class="foswikiTableCol1"> Entire cohort at baseline </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <a href="RiskRatio.html">risk ratio</a> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <a href="SampleIncidence.html">Incidence-density</a> </td>
+			<td class="foswikiTableCol1"> Non-cases at time of diagnosis </td>
+			<td class="foswikiTableCol2 foswikiLastCol"> <a href="RateRatio.html">rate ratio</a> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <a href="SampleEnd.html">Prevalent Case Control</a> </td>
+			<td class="foswikiTableCol1 foswikiLast"> Non-cases at single point in time </td>
+			<td class="foswikiTableCol2 foswikiLastCol foswikiLast"> <a href="OddsTerm.html">odds ratio</a> </td>
+		</tr>
+	</tbody></table>
+<p></p>
+Case-control design obtains <strong>a sample of the denominator rather than entire denominator</strong> <ul>
+<li> Introduces some <strong>sampling error</strong>
+</li> <li> Reduces <strong>precision of the risk ratio or rate ratio or odds ratio estimate</strong> because sample N is smaller than full study base N
+</li> <li> <strong>Loss of precision offset by large gain in cost and time of study</strong>
+</li></ul> 
+<h2 id="Important_Features_of_a_Case_Control_Study">  Important Features of a Case Control Study </h2>
+ (1) Primary versus Secondary Study Base:  <ul>
+<li> It is important to distinguish between <a href="StudyBasePrimary.html">primary study bases</a> and <a href="StudyBaseSecondary.html">secondary study bases</a>.
+</li></ul> 
+(2) Incident versus Prevalent Sampling:  <ul>
+<li> <strong><a href="SamplingTerm.html">Incident sampling</a></strong> of both cases and controls is preferable to prevalent sampling
+</li></ul> 
+<p></p>
+<h2 id="Prevalent_Sampling_in_a_Case_45Control_Study">  Prevalent Sampling in a Case-Control Study </h2>
+<p></p>
+(1) UCSF Study of <a href="StudyBaseSecondary.html">glioma</a> patients is an example of prevalent sampling.
+<p></p>
+The patients are under treatment at UCSF during study period <ul>
+<li> <strong>Poor survival</strong> so patients in treatment will <strong>over-represent</strong> those who live longest
+</li> <li> Nature of <a href="BiasDefinition.html">bias</a> variable and not predictable
+</li></ul> 
+(2) Kaiser Permanente Study of <a href="EgCaseKP.html">Sigmoidoscopy</a> is another example of prevalent sampling.
+<p></p> <ul>
+<li> <a href="StudyCase.html">Cases</a> = colon cancer deaths detectable by sigmoidoscopy: 261
+</li></ul> 
+<p></p> <ul>
+<li> <a href="StudyControl.html">Controls</a> = alive and in Kaiser at time of matched CA death (incidence-density)  <ul>
+<li> 4 controls per case
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> Many important findings have come from well designed case-control studies. This Kaiser study was the first to show strong evidence that screening sigmoidoscopy prevented colon cancer deaths. It had a substantial influence on clinical practice, yet it wasn&rsquo;t a <a href="RandomizedTrial.html">randomized trial</a>, a study that would have required huge numbers and many years of follow-up. The study was feasible because Kaiser has a large membership, has been in existence for a long time, and has an excellent record keeping system.
+</li></ul> 
+<p></p>
+<h2 id="Critical_Features_of_Good_Case_45Control_Design">  Critical Features of Good Case-Control Design </h2>
+ <strong>Clearly identifiable <a href="StudyBase.html">study base</a></strong> (preferably a primary study base)
+<p></p>
+<a href="StudyCase.html"> <strong>Cases:</strong> </a> all, or random sample, of incident diagnoses in the study base
+<p></p>
+<a href="StudyControl.html"> <strong>Controls:</strong> </a> an unbiased sample of study base to estimate <a href="PredictorVariable.html">exposure</a> prevalence in non-cases
+<p></p>
+<a href="StudyMeasure.html"> <strong>Measurements</strong> </a> preferably based on records or stored biological samples rather than recall
+<p></p>
+Case-control studies with all of these design features are a strong and valid study design that can produce results as convincing as any other type of observational study.
+<p></p>
+<h2 id="Measures_of_Association_in_a_Case_Control_Study">  Measures of Association in a Case Control Study </h2>
+<p></p>
+The <a href="OddsTerm.html">odds ratio</a> is the <strong>only measure of association</strong> available in case-control design.
+<p></p>
+The odds ratio of <a href="OutcomeVariable.html">disease</a> in the exposed and unexposed <ul>
+<li> <strong>EQUALS</strong> the odds ratio of <a href="PredictorVariable.html">exposure</a> in the diseased and the not diseased
+</li></ul> 
+The odds ratio of exposure in the diseased and not diseased that is actually measured in a case-control study,  <ul>
+<li> <strong>but it is the odds ratio of disease in the exposed and unexposed that we are interested in</strong>.
+</li> <li> Fortunately, they are mathematically identical. (See <a href="OddsTerm.html">proof</a> of mathematical equivalence.)
+</li></ul> 
+<strong>Fortunately, the</strong> <strong>odds ratio <a href="SampleBaseline.html">approximates the risk ratio</a></strong> and <strong><a href="SampleIncidence.html">approximates the rate ratio</a></strong> in a case control study.
+<p></p>
+<h2 id="Common_Misunderstandings_about_Case_Control_Studies">  Common Misunderstandings about Case Control Studies </h2> <ul>
+<li> They can only study <strong>one disease <a href="OutcomeVariable.html">outcome</a></strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Inference is not as valid</strong> as from a <a href="StudyCohort.html">cohort</a>
+</li></ul> 
+<p></p> <ul>
+<li> <strong><a href="CaseControlOddsRatio.html">Rare disease assumption</a></strong> is required for <a href="OddsTerm.html">OR</a> from case-control to estimate <a href="RiskRatio.html">risk ratio</a>.  <ul>
+<li> The rare disease assumption only looks at the effect of removing potential controls who are diagnosed with the outcome disease.
+</li> <li> Some will have left the study base or died, and these changes in the group of non-cases who are sampled can <a href="BiasDefinition.html">bias the estimate</a> of exposure in the controls.
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Retrospective measurement</strong> is necessary in case-control studies
+</li></ul> 
+<p></p>
+<h2 id="Reasons_for_Choosing_Case_Control_Study_Design">  Reasons for Choosing Case Control Study Design </h2> <ul>
+<li> There are typically more opportunities for <strong><a href="BiasDefinition.html">bias</a> and misclassification</strong> in case-control studies than in <a href="CohortStudy.html">cohort studies</a>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Relative ease</strong> with which they can be done has encouraged a lot of <strong>badly designed studies</strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Low cost and shorter time</strong> should be an incentive to <strong>better, not worse, design</strong>
+</li></ul> 
+<p></p>
+<h2 id="Case_Control_Study_Design_Recommendations">  Case Control Study Design Recommendations </h2> <ul>
+<li> Look for a primary <a href="StudyBase.html">study base</a> that can be clearly defined and has good case ascertainment
+</li> <li> Use <a href="SampleIncidence.html">incidence density</a> or <a href="SampleBaseline.html">case-cohort sampling</a>  <ul>
+<li> whenever possible incidence density more often possible
+</li></ul> 
+</li></ul> 
+Historically the two chief weaknesses of case-control studies have been inappropriate selection of a <a href="StudyControl.html">control group</a> and poor measurement of <a href="OutcomeVariable.html">exposure</a>.  <ul>
+<li> The former has usually occurred in the setting of hospital-based studies with secondary <a href="StudyBase.html">study bases</a> where it is very difficult to determine the study base that gave rise to the cases.
+</li></ul> 
+<p></p>
+<hr />
+<p></p> <ul>
+<li> Use <strong>measurements recorded prior to the diagnosis</strong> when possible (medical records, etc.) or perform biological measurements on stored specimens. (See the <a href="EgCaseBaselineNetherlands.html">example of the study in the Netherlands</a> on vitamins and bladder cancer)
+</li></ul> 
+Poor measurement often occurs from using questionnaire recall of exposures.
+<p></p>
+If those weaknesses can be avoided, case-control can be a solid valid study design.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

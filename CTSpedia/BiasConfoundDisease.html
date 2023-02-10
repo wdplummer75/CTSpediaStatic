@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasConfoundDisease &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundDisease/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundDisease/favicon.ico" rel="shortcut icon">
+<link href="BiasConfoundDisease.html" rel="alternate" type="application/x-wiki" title="edit BiasConfoundDisease">
+<meta name="description" content="BiasConfoundDisease" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "BiasConfoundDisease",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Properties_of_a_Confounder_45_Association_with_Disease">  Properties of a Confounder - Association with Disease </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Refined_Properties_of_a_True_Confounder_45_Association_with_Disease"> Refined Properties of a True Confounder - Association with Disease </a>
+</li> <li> <a href="#Confounder_Causes_the_Disease"> Confounder Causes the Disease </a>
+</li> <li> <a href="#Confounder_as_a_Marker_of_the_Disease"> Confounder as a Marker of the Disease </a> <ul>
+<li> <a href="#Second_DAG_Showing_Confounder_as_Marker_of_Disease"> Second DAG Showing Confounder as Marker of Disease </a>
+</li></ul> 
+</li> <li> <a href="#Confounder_Causes_the_Disease_and_the_Exposure"> Confounder Causes the Disease and the Exposure </a>
+</li> <li> <a href="#Confounder_Associated_with_Disease_in_a_Non_45causal_Manner"> Confounder Associated with Disease in a Non-causal Manner </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Refined_Properties_of_a_True_Confounder_45_Association_with_Disease">  Refined Properties of a True Confounder - Association with Disease </h2>
+<p></p>
+When we say the <a href="BiasConfound.html">confounder</a> has to be "associated with the <a href="OutcomeVariable.html">disease</a>" - what do we mean?
+<p></p>
+A confounding variable can be either:
+<p></p>
+(1) A "cause" or "marker" of the <strong>disease</strong> (arrow pointing from the confounder to the disease):
+<blockquote>
+<p></p>
+(a) <a href="#CauseDisease" class="foswikiCurrentTopicLink">Cause of the disease</a> (arrow pointing from the confounder to the disease)
+</blockquote> <blockquote>
+<p></p>
+(b) <a class="foswikiCurrentTopicLink" href="#MarkerDisease">Marker for the disease</a> (arrow pointing from the confounder through other factors to disease)
+</blockquote> <blockquote> (c) <a class="foswikiCurrentTopicLink" href="#CauseDisExp">Cause of the disease and</a> the <a href="PredictorVariable.html">exposure</a> (one arrow from the confounder to disease and another arrow from confounder to exposure) </blockquote>
+<p></p>
+(2) <a href="#NoncauDis" class="foswikiCurrentTopicLink">Associated in a non-causal manner</a> with the <strong>disease</strong> (double-headed arrow from the confounder to the disease)
+<p></p>
+<span id="CauseDisease"></span>
+<p></p>
+<h2 id="Confounder_Causes_the_Disease">  Confounder Causes the Disease </h2>
+<p></p>
+<strong>DAG Confounder Causes the Disease</strong>
+<blockquote> <img width="237" height="262" alt="0331_1disease_cause.JPG" src="BiasConfoundDisease.attachments/0331_1disease_cause.JPG"> </blockquote>
+<p></p>
+<strong>Given the research question</strong>: Is injection drug use associated with survival independent of effect on hepatitis infections?
+<p></p>
+Consider the diagram above where we are looking at the causal relationship between the confounder and the <a href="OutcomeVariable.html">outcome</a>.
+<p></p>
+Here, the research question is whether injection drug is associated with survival independent of the effect on causing hepatitis infections. <ul>
+<li> We might perhaps hypothesize an effect of IDU on survival working through an increased frequency of bacterial infections.
+</li> <li> To determine this, we wish to know if this is independent of hepatitis B and C virus infection which by themselves can cause cirrhosis and early death.
+</li> <li> This is an example where the <strong>potential confounder causes the outcome (C causes D)</strong>.
+</li></ul> 
+<span id="MarkerDisease"></span>
+<p></p>
+<h2 id="Confounder_as_a_Marker_of_the_Disease">  Confounder as a Marker of the Disease </h2>
+<p></p>
+<strong>DAG Showing Confounder as a Marker of the Disease</strong>
+<blockquote> <img src="BiasConfoundDisease.attachments/0331_2disease_marker.JPG" alt="0331_2disease_marker.JPG" height="233" width="238"> </blockquote>
+<p></p>
+<strong>Given the research question:</strong> Is birth order associated with Down Syndrome independent of maternal age?
+<p></p>
+Consider the diagram above.
+<p></p>
+In the past, there has been a question about whether birth order is associated with Down syndrome. <ul>
+<li> Of course, we need to take into maternal age before considering an independent role for birth order.
+</li> <li> This is because <strong>maternal age is associated with birth order and we also know it is a strong risk factor for Down Syndrome</strong>.
+</li></ul> 
+But age per se is just a statement about passage of time and it itself is not the cause of Down Syndrome.  <ul>
+<li> The <strong>accumulation of time, or age, is undoubtedly associated with some biologic factor</strong> that is the cause of Down Syndrome.
+</li> <li> We don't know yet what this specific biologic factor is, but to ignore age as a potential confounder in the relationship between birth order and Down Syndrome would be a terrible mistake.
+</li></ul> 
+NOTE: Some textbooks are adamant about a factor must be a cause of the outcome to be a confounder; don't get too hung up on what exactly a <em>cause</em> is. 
+<h3 id="Second_DAG_Showing_Confounder_as_Marker_of_Disease">  Second DAG Showing Confounder as Marker of Disease </h3>
+ <strong>Given the research question:</strong> Is anti-retroviral drugs for HIV associated with cardio-vascular disease? <blockquote>
+<p></p>
+<img alt="0401_2HIV.JPG" height="238" width="215" src="BiasConfoundDisease.attachments/0401_2HIV.JPG">
+</blockquote>
+<p></p>
+One thing that the new antiretroviral agents do is to prolong survival, ie people live longer. <ul>
+<li> But with <strong>longer life comes increased risk for many diseases</strong>, including cardiovascular disease.
+</li> <li> This again illustrates how <strong>age is powerful confounding factor for many situations</strong>.
+</li></ul> 
+<span id="CauseDisExp"></span>
+<p></p>
+<h2 id="Confounder_Causes_the_Disease_and_the_Exposure">  Confounder Causes the Disease and the Exposure </h2>
+<p></p>
+<strong>DAG Showing Confounder Causes the Disease and the Exposure</strong>
+<blockquote>
+<p></p>
+<img src="BiasConfoundDisease.attachments/0401_1chn.JPG" alt="0401_1chn.JPG" height="242" width="215">
+</blockquote>
+<p></p>
+<strong>Given the reserach question:</strong> Is anti-depressant use in children associated with suicide independent of depression?
+<p></p>
+As you can see in the diagram below this is easy relationship to visualize.
+<p></p>
+Typically, such kids suffer from <strong>depression (confounder)</strong>: <ul>
+<li> A causal factor in <strong>suicide (<a href="OutcomeVariable.html">disease</a>)</strong> and
+</li> <li> Treated with <strong>anti-depressants (<a href="PredictorVariable.html">exposure</a>)</strong>.
+</li></ul> 
+<span id="NoncauDis"></span>
+<p></p>
+<h2 id="Confounder_Associated_with_Disease_in_a_Non_45causal_Manner">  Confounder Associated with Disease in a Non-causal Manner </h2>
+<p></p>
+<strong>DAG Showing Confounder Associated with Disease in a Non-causal Manner</strong>
+<p></p>
+<img alt="0401_3non.JPG" height="300" width="245" src="BiasConfoundDisease.attachments/0401_3non.JPG">
+<p></p>
+<strong>Given the research question:</strong> Is sexual activity associated with survival independent of general health?
+<p></p>
+Consider the diagram above on the non-causal relationship between the confounder and the <a href="OutcomeVariable.html">disease</a>.
+<p></p>
+Here, it looks like the <strong>confounder is "general health"</strong> that we might measure, for example, on a quality of life survey. <ul>
+<li> Yet, the <strong>real factor to consider is unknown biological factors that causes both good <em>general health</em> and an impact on mortality</strong>.
+</li></ul> 
+This is a bit of a semantical issue.  <ul>
+<li> Most texts do not use this double-headed arrow when describing the possible relationship between the confounder and the disease
+</li> <li> but in many cases the "confounder" is just a marker for the real biologic factor that is associated with the disease.
+</li></ul> 
+Sometimes people get confused by this and <strong>don't consider factors that are markers for true causes to be potential confounders.</strong>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

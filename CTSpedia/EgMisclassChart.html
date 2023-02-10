@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgMisclassChart &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/EgMisclassChart/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/EgMisclassChart/favicon.ico" type="image/x-icon">
+<link title="edit EgMisclassChart" type="application/x-wiki" rel="alternate" href="EgMisclassChart.html">
+<meta name="description" content="EgMisclassChart" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgMisclassChart",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Graphical_Examples_of_Misclassification_Bias">  Graphical Examples of Misclassification Bias </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+The effects of reduced <a href="ValiditySensit.html">sensitivity</a> of the <a href="PredictorVariable.html">exposure measurement</a> and/or reduced <a href="ValiditySpecif.html">specificity</a> of the exposure measurement on <a href="BiasInfor.html">measurement bias</a> can be seen in the following charts.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Graphing_Imperfect_Sensitvity_and_Specifcity_of_Exposure"> Graphing Imperfect Sensitvity and Specifcity of Exposure </a>
+</li> <li> <a href="#Explanation_of_Graph"> Explanation of Graph </a>
+</li> <li> <a href="#Charting_Decreasing_OR"> Charting Decreasing OR </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<h2 id="Graphing_Imperfect_Sensitvity_and_Specifcity_of_Exposure">  Graphing Imperfect Sensitvity and Specifcity of Exposure </h2>
+<p></p>
+As show in the below figure from <a href="#CopelandBias" class="foswikiCurrentTopicLink">Copeland</a> different scenarios for imperfect <a href="ValiditySensit.html">sensitivity</a> and imperfect <a href="ValiditySpecif.html">specificity</a> have been worked out.
+<p></p>
+<img alt="0114_Copeland2.JPG" height="243" width="375" src="http://ctspedia.org/twiki/pub/CTSpedia/BiasInfor/0114_Copeland2.JPG">
+<h2 id="Explanation_of_Graph">  Explanation of Graph </h2>
+<p></p>
+The graph assumes a <a href="CaseControlStudy.html">case-control study</a> where the true <a href="OddsRatioMeasures.html">OR</a> is 2.67, <ul>
+<li> which is a decent size odds ratio today (Now that the many of the odds ratios of 10, like smoking and lung cancer, have already been found.)
+</li> <li> The prevalence of <a href="PredictorVariable.html">exposure</a> in the controls is 0.2.
+</li> <li> On the y axis is the observed or apparent odds ratio and the line shows what happens as specificity is varied from 50% to 100% under 3 different scenarios of sensitivity.
+</li></ul> 
+Note especially how there are some pretty substantial hits on the apparent odds ratio as you move away from 100% specificity and that this is accentuated, noted by the steeper slopes, as sensitivity falls.  <ul>
+<li> Note how the slope is steeper in the sensitivity of 50% curve.
+</li></ul> 
+<p></p>
+<h2 id="Charting_Decreasing_OR">  Charting Decreasing OR </h2>
+ Again using <a class="foswikiCurrentTopicLink" href="#CopelandBias">Copeland</a> we look at the resulting scenarios for odds ratios under 2.0,  <ul>
+<li> which is often the smallest odds ratio that many of our studies can pick up.
+</li></ul> 
+If sensitivity is 90%, then specificity can be no less than about 87% before the OR drops below 2.
+<p></p>
+If sensitivity is 70%, then specificity can be no lower than about 94%.
+<p></p>
+If sensitivity is as low as 50%, then specificity can be no lower than about 98%.
+<p></p>
+<img src="http://ctspedia.org/twiki/pub/CTSpedia/BiasInfor/0114_Copeland3.JPG" alt="0114_Copeland3.JPG" height="247" width="301">
+<h2 id="References">  References </h2>
+<span id="CopelandBias"></span>
+<p></p>
+Copeland, K. T., Checkoway, H., McMichael, A. J., &amp; Holbrook, R. H. (1977). Bias due to misclassification in the estimation of relative risk. <em>Am J Epidemiol, 105</em> (5), 488-495.
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>LinearSplines &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/LinearSplines/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/LinearSplines/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit LinearSplines" rel="alternate" href="LinearSplines.html">
+<meta name="description" content="LinearSplines" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "LinearSplines",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Linear_Splines">  Linear Splines </h1>
+<strong><em>Lead Author(s):</em></strong> Peter Bacchetti, PhD
+<p></p>
+A linear spline is used in regression models to allow a predictor to have a non-linear effect on the outcome. This is useful when there is evidence against the <a href="LinearityAssumption.html">linearity assumption</a> or when high interest in the predictor's effect warrants more flexible modeling of its effect. Instead of a single slope, the model fits a line that is allowed to change direction at specified points, called knots, thereby allowing V-shape, U-shape, S-shape, and other non-linear relationships to be modeled. An advantage of this approach is that there is still an interpretable coefficient within each range of the predictor between knots. To fit the model, we create a new predictor variable for each range of the original predictor between knots, and the fitted regression coefficients then estimate the effect of the predictor within that range.
+<p></p>
+For example, if we are modeling the effect of age on systolic blood pressure in a linear regression model, we can use the three predictors:
+<p></p>
+agePre40 = min(age, 40)<br />age40to60 = max(0, min(age-40, 20))<br />age60up = max(0, age-60)
+<p></p>
+This will fit a linear spline with knots at 40 and 60. The variable agePre40 ranges from the minimum observed age up to 40 and is equal to 40 for anyone who is over 40. Its coefficient estimates the effect per year of age within the under 40 age range. The variable age40to60 ranges from 0 to 20; it is 0 for anyone aged 40 or less, increases from 0 to 20 within the 40 to 60 age range, and is equal to 20 for anyone aged 60 or more. Its coefficient estimates the effect per year of age in the 40 to 60 age range. The variable age60up is equal to 0 for anyone aged 60 or less and is equal to age minus 60 for anyone over age 60. Its coefficient estimates the effect per year within the over 60 age range.
+<p></p>
+Suppose we obtain the following estimated coefficients:<br />0.10 for agePre40<br />0.45 for age40to60<br />0.92 for age60up<br />The interpretation is that predicted systolic blood pressure is estimated to increase by 0.10 for each 1 year increase in age up to age 40, by 0.45 for each 1 year increase in age from 40 to 60, and by 0.92 for each 1 year increase in age after age 60. So the estimated difference between age 30 and 45 would be 10*0.10 + 5*0.45 = 3.25, and the estimated difference between age 25 and age 75 would be 15*0.1 + 20*0.45 + 15*0.92 = 24.3.
+<p></p>
+Using linear splines requires deciding how many knots to have and where to put them. Models with different numbers of knots can be compared in terms of how well they fit the data. Statistical criteria such as the Akaike Information Criterion can be used to decide between simpler (fewer knots) and more complex (more knots) models. Knots are typically placed at natural break points (e.g., decades of age), are evenly spaced in terms of the predictor's values (e.g., 15, 30, 45, 60), or are evenly spaced in terms of quantiles in the data set (e.g., 3 knots at the quartiles of the predictor's distribution).
+<p></p>
+Alternative approaches to modeling non-linear effects of a predictor are <a href="PolynomialModel.html">polynomial models</a> or breaking the predictor into categories.
+<p></p>
+There are also higher order splines, notably cubic splines. These produce smooth fits to the data (no abrupt change of direction), but the coefficients do not have any simple interpretation and the fit usually must be illustrated by graphing.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

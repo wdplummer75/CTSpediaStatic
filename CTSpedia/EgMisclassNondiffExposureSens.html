@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgMisclassNondiffExposureSens &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/EgMisclassNondiffExposureSens/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgMisclassNondiffExposureSens/favicon.ico" rel="shortcut icon">
+<link href="EgMisclassNondiffExposureSens.html" rel="alternate" type="application/x-wiki" title="edit EgMisclassNondiffExposureSens">
+<meta name="description" content="EgMisclassNondiffExposureSens" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "EgMisclassNondiffExposureSens",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example_of_Misclassification_Bias">  Example of Misclassification Bias </h1>
+<h2 id="Non_45Differential_Exposure_45_Imperfect_Sensitivity">  Non-Differential Exposure - Imperfect Sensitivity </h2>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<a href="BiasInfor.html">Measurement bias</a> is affected by imperfect <a href="ValiditySensit.html">sensitivity</a> of <a href="PredictorVariable.html">exposure</a> variables.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Imperfect_Sensitivity_of_Exposure_Variables"> Imperfect Sensitivity of Exposure Variables </a>
+</li> <li> <a href="#Study_45_Alcohol_Abuse"> Study - Alcohol Abuse </a>
+</li> <li> <a href="#Misclassification_of_Exposure"> Misclassification of Exposure </a>
+</li> <li> <a href="#Non_45Differential_Misclassification_of_Exposure"> Non-Differential Misclassification of Exposure </a>
+</li> <li> <a href="#Imperfect_Sensitivity_45_Bias_the_OR_towards_the_Null_Hypothesis"> Imperfect Sensitivity - Bias the OR towards the Null Hypothesis </a>
+</li> <li> <a href="#Bias_Towards_the_Null_Hypothesis"> Bias Towards the Null Hypothesis </a>
+</li></ul> 
+</div>
+<h2 id="Imperfect_Sensitivity_of_Exposure_Variables">  Imperfect Sensitivity of Exposure Variables </h2>
+ <blockquote> <img src="EgMisclassNondiffExposureSens.attachments/0519_non_diff_exp.JPG" alt="0519_non_diff_exp.JPG" height="210" width="322"> </blockquote> In the diagram above the source <a href="StudyBase.html">population</a> is on the top left and our study sample is on the bottom right.  <ul>
+<li> We use our study sample to make inferences about the source population.
+</li></ul> 
+<span id="EgAlcoholAbuse"></span> 
+<h2 id="Study_45_Alcohol_Abuse">  Study - Alcohol Abuse </h2>
+ Consider as an example of a <a href="CaseControlStudy.html">case-control study</a> of some disease and the <a href="PredictorVariable.html">exposure</a> under study is alcohol abuse.  <ul>
+<li> Let's consider that among all true alcohol abusers our measurement, which is self-report, is only able to identify some fraction.
+</li> <li> In other words, we aren't able to get some alcohol abusers to admit that they are abusers.
+</li> <li> Hence, our measurement of alcohol use is insensitive. We depict this by showing an arrow going from the exposure cell to the unexposed cell.
+</li> <li> This is <strong>lack of complete sensitivity</strong>; in other words, we are misclassifying some alcohol users as non-users.
+</li></ul> 
+<h2 id="Misclassification_of_Exposure">  Misclassification of Exposure </h2> <ul>
+<li> This is called <strong>misclassification of exposure</strong>.
+</li> <li> Because the misclassification of exposure is occurring equally among the cases and controls, we call this non-differential with respect to disease.
+</li></ul> 
+<h2 id="Non_45Differential_Misclassification_of_Exposure">  Non-Differential Misclassification of Exposure </h2> <ul>
+<li> Overall, this is called <strong>non-differential misclassification of exposure</strong>.
+</li></ul> 
+Again, some truly exposed persons are misclassified as unexposed.  <ul>
+<li> Because this happens equally among diseased and non-diseased persons, it is called <strong>non-differential misclassification</strong>.
+</li></ul> 
+<p></p>
+<h2 id="Imperfect_Sensitivity_45_Bias_the_OR_towards_the_Null_Hypothesis">  Imperfect Sensitivity - Bias the OR towards the Null Hypothesis </h2>
+ <blockquote>
+<p></p>
+<img src="BiasInfor.attachments/0114_eg_sens.JPG" width="339" height="184" alt="0114_eg_sens.JPG">
+</blockquote>
+<p></p>
+In the top panel above is the truth where there is no misclassification of exposure - <ul>
+<li> in other words 100% <a href="ValiditySensit.html">sensitivity</a> and <a href="ValiditySpecif.html">specificity</a> in the classification of exposure.
+</li> <li> The true <a href="OddsRatioMeasures.html">odds ratio</a> is 4.
+</li></ul> 
+What happens in the presence of <strong>70% sensitivity</strong> in exposure classification?  <ul>
+<li> That means that 30% of truly exposed cases or 15 of 50 are instead classified as unexposed.
+</li> <li> Also, 30% of the 20 exposed controls are falsely classified as unexposed, or 6 persons.
+</li> <li> The bottom panel therefore shows what happens and you can see that the OR is now attenuated to 3.3.
+</li></ul> 
+<h2 id="Bias_Towards_the_Null_Hypothesis">  Bias Towards the Null Hypothesis </h2>
+<p></p>
+This illustrates the effect of non-differential <a href="BiasInfor.html">misclassification</a> of exposure in the presence of 2 exposure categories - <ul>
+<li> the <strong>bias is towards the</strong> <a href="NullHypothesis.html"> <strong>null hypothesis</strong> </a> in other words, towards 1.0
+</li></ul> 
+<p></p>
+<hr />
+<strong><em> </em></strong>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

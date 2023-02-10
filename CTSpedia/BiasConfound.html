@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasConfound &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/BiasConfound/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/BiasConfound/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit BiasConfound" href="BiasConfound.html" rel="alternate">
+<meta name="description" content="BiasConfound" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "BiasConfound"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Confounding_Bias">  Confounding Bias </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Properties_of_a_True_Confounder"> Properties of a True Confounder </a> <ul>
+<li> <a href="#Examples_of_Confounding"> Examples of Confounding </a>
+</li></ul> 
+</li> <li> <a href="#Properties_of_a_True_Confounder_45_Associaton_with_Exposure"> Properties of a True Confounder - Associaton with Exposure </a>
+</li> <li> <a href="#Properties_of_a_True_Confounder_45_Association_with_Disease"> Properties of a True Confounder - Association with Disease </a>
+</li> <li> <a href="#How_Do_You_Adjust_for_Confounding_63"> How Do You Adjust for Confounding? </a>
+</li> <li> <a href="#Factors_to_Consider_in_Study_Planning"> Factors to Consider in Study Planning </a>
+</li> <li> <a href="#Confounder_MUST_Be_Measured"> Confounder MUST Be Measured </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Properties_of_a_True_Confounder">  Properties of a True Confounder </h2>
+<p></p>
+<strong>Is the <a href="PredictorVariable.html">exposure</a> (or predictor variable), marked E, associated with <a href="OutcomesDef.html">disease</a> (or outcome), D?</strong> (See <a href="#BiasDiagram" class="foswikiCurrentTopicLink">diagram</a>)
+<p></p> <ul>
+<li> <strong>Is</strong> <strong>confounding, by some factor C, occurring that might be giving us a wrong answer when we address the association between the exposure and the disease? OR is E associated with D independent of C?</strong>
+</li></ul> 
+A confounding factor or more simply a confounder can create or show an apparent effect even when there is truly no <a href="EffectDef.html">effect</a>.
+<p></p>
+<span id="BiasDiagram"></span>
+<p></p>
+<strong>SCHEMATIC OF CONFOUNDING</strong>
+<p></p>
+<img alt="0325_1confound.JPG" height="167" width="208" src="BiasConfound.attachments/0325_1confound.JPG">
+<p></p>
+This is a general stick figure schematic for confounding based on a <a href="CausalDiagrams.html">causal diagram</a>.
+<p></p>
+This diagram emphasizes the essence of confounding, that is, there is another pathway to disease that is present, that is getting in the way of our ability to investigate our main question - a pathway different from the one you are interested in studying. <ul>
+<li> This is why confounding is also described as a <strong>mixing of effects</strong>.
+</li></ul> 
+<h3 id="Examples_of_Confounding">  Examples of Confounding </h3> <ul>
+<li> In <a href="EgConfoundNight.html">Quinn's Study</a> of night light use with young children, the parents' myopia was a confounding factor.
+</li></ul> 
+<p></p> <ul>
+<li> In <a href="EgConfoundHIV.html">Li's Study</a> of healthcare workser's HIV exposure after needlestick accidents, the severity of the HIV exposure was a confounding factor.
+</li></ul> 
+<p></p>
+<h2 id="Properties_of_a_True_Confounder_45_Associaton_with_Exposure">  Properties of a True Confounder - Associaton with Exposure </h2>
+<p></p>
+A confounding variable can be associated with the <a href="PredictorVariable.html">exposure</a> either:
+<p></p>
+(1) <strong><a href="BiasConfoundExposure.html">Confounder causes the exposure</a></strong>
+<p></p>
+(2) <strong><a href="BiasConfoundExposure.html">Confounder results from the exposure</a></strong>
+<p></p>
+(3) <strong><a href="BiasConfoundExposure.html">Confounder is related to the exposure in a non-causal fashion</a></strong>
+<h2 id="Properties_of_a_True_Confounder_45_Association_with_Disease">  Properties of a True Confounder - Association with Disease </h2>
+<p></p>
+A confounding variable can be associated with the <a href="OutcomeVariable.html">disease</a> either:
+<p></p>
+(1) The confounding variable causes or is a marker of the disease:
+<blockquote>(1a) <strong><a href="BiasConfoundDisease.html">Confounder causes the disease</a></strong> </blockquote> <blockquote> (1b) <strong><a href="BiasConfoundDisease.html">Confounder is a marker of the disease</a></strong> </blockquote><blockquote>(1c) <strong><a href="BiasConfoundDisease.html">Confounder causes the disease and the exposure</a></strong> </blockquote> (2) <strong><a href="BiasConfoundDisease.html">Confounder is related to the disease in a non-causal fashion</a></strong>
+<p></p>
+<h2 id="How_Do_You_Adjust_for_Confounding_63">  How Do You Adjust for Confounding? </h2>
+<p></p>
+To <strong>adjust</strong> or <strong>control</strong> for confounding, we need to <a href="StratificationTerm.html">stratify</a> the variables following methods for <ul>
+<li> Reducing <a href="BiasConfoundDesign.html">confounding during study design</a> or
+</li> <li> Reducing <a href="BiasConfoundAnalysis.html">confounding during study analysis</a>.
+</li></ul> 
+<p></p>
+<h2 id="Factors_to_Consider_in_Study_Planning">  Factors to Consider in Study Planning </h2>
+<p></p>
+When we plan our studies, which factors should we be considering as potential confounders? <ul>
+<li> Certainly, if you are working in an established field,
+</li> <li> you should plan on <strong>measuring any factor that has previously been identified as a confounder</strong>.
+</li></ul> 
+<strong>WELL UNDERSTOOD AREA: Example Smoking</strong>  <ul>
+<li> If you are revisiting the <strong><a href="StudyAssoc.html">association</a> between diet and CAD</strong>, you will want to be concerned, and hence make <strong>measurements on, smoking as a potential confounding factor</strong>.
+</li></ul> 
+<strong>LESS WELL UNDERSTAND AREA:</strong> But often, we are working in less well understood areas.  <ul>
+<li> We are often evaluating new risk factors and there is no prior work describing the potential confounders.
+</li> <li> If this is the case, you should plan on <strong>measuring all factors known to be associated with the disease in question</strong>.
+</li></ul> 
+<h2 id="Confounder_MUST_Be_Measured">  Confounder MUST Be Measured </h2>
+<p></p>
+Confounding can be dealt with in the analysis phase of a study but <strong>CANNOT</strong> be dealt with if the confounder is not measured.
+<blockquote>
+<p></p>
+<img width="284" height="241" alt="0330_9last.JPG" src="BiasConfound.attachments/0330_9last.JPG">
+</blockquote>
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgBackwardsMRSA &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/EgBackwardsMRSA/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/EgBackwardsMRSA/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit EgBackwardsMRSA" href="EgBackwardsMRSA.html" rel="alternate">
+<meta name="description" content="EgBackwardsMRSA" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgBackwardsMRSA",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Backwards_Strategy_45_MRSA">  Example: Backwards Strategy - MRSA </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Research_Question"> Research Question </a>
+</li> <li> <a href="#Crude_Odds_Ratio"> Crude Odds Ratio </a>
+</li> <li> <a href="#Adjust_for_All_Three_Confounders"> Adjust for All Three Confounders </a>
+</li> <li> <a href="#Drop_Age"> Drop Age </a>
+</li> <li> <a href="#Drop_Gender"> Drop Gender </a>
+</li> <li> <a href="#Drop_Antibiotic_Use"> Drop Antibiotic Use </a>
+</li> <li> <a href="#Reporting_Odds_Ratio"> Reporting Odds Ratio </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<a href="#KleinbaumEPI" class="foswikiCurrentTopicLink">Kleinbaum</a> provides an example of using <a href="StudyAnalysisBackwards.html">backwards strategy</a> to adjust for potential <a href="BiasConfound.html">confounders</a>.
+<h2 id="Research_Question">  Research Question </h2>
+ <strong>Research question:</strong> Is prior hospitalization associated with the presence of methicillin-resistant S. aureus (MRSA)? (from <a href="#KleinbaumEPI" class="foswikiCurrentTopicLink">Kleinbaum</a>)
+<p></p>
+<strong><a href="OutcomeVariable.html">Outcome variable</a>:</strong> MRSA (present or absent)
+<p></p>
+<strong>Primary <a href="PredictorVariable.html">predictor</a>:</strong> prior hospitalization (yes/no)
+<p></p>
+<strong>Potential <a href="BiasConfound.html">confounders</a>:</strong> age (&lt;55, &gt;55), gender, prior antibiotic use (atbxuse; yes/no) <ul>
+<li> Assume factors on <a href="StudyAnalysisBiasVariance.html">B list</a> and no <a href="InterConfound.html">interaction</a>
+</li></ul> 
+The potential confounders are age, dichotomized as less than or greater than 55 years old, gender, and prior antibiotic use.
+<p></p>
+The table below shows the various <a href="OddsTerm.html">odds ratios</a>. <ul>
+<li> In the first column, we show the factors that are adjusted for.
+</li> <li> In the middle column we show the odds ratio and its 95% confidence interval for the set of variables adjusted for.
+</li> <li> In the far right column is the width of the <a href="ConfidenceIntervals.html">confidence interval</a>.
+</li></ul> 
+<p></p>
+<blockquote> <img src="StudyAnalysisBackwards.attachments/0423_1mrsa.JPG" width="302" height="172" alt="0423_1mrsa.JPG"> </blockquote>
+<p></p>
+<h2 id="Crude_Odds_Ratio">  Crude Odds Ratio </h2>
+<p></p>
+In the first line is the crude measure of association between prior hospitalization and presence of MRSA. <ul>
+<li> The crude odds ratio is 11.67.
+</li></ul> 
+<h2 id="Adjust_for_All_Three_Confounders">  Adjust for All Three Confounders </h2>
+ In the second line is the odds ratio when we adjust jointly for all three potential confounders.  <ul>
+<li> The odds ratio is 4.66, which is very different than 11.67.
+</li> <li> Hence, we would all conclude that confounding is occurring here.
+</li></ul> 
+<h2 id="Drop_Age">  Drop Age </h2>
+ What happens if we then drop age?  <ul>
+<li> The odds ratio is now 5.04, which is within 10% of the gold standard of 4.66.
+</li> <li> Hence, it might be reasonable to eliminate age.
+</li></ul> 
+<h2 id="Drop_Gender">  Drop Gender </h2>
+ What if we drop gender?  <ul>
+<li> The odds ratio is 4.63, also not different than 4.66, the gold standard.
+</li> <li> It may be reasonable to drop gender.
+</li></ul> 
+<h2 id="Drop_Antibiotic_Use">  Drop Antibiotic Use </h2>
+ What if we drop prior antibiotic use?  <ul>
+<li> You could have guessed that if age and gender did not have much an effect but the gold standard adjustment containing all three factors did, then prior antibiotic use should have an effect.
+</li> <li> Indeed, when antibiotic use is dropped, as shown in the line containing just age and gender, then the odds ratio is 11.59, very different from the gold standard.
+</li></ul> 
+What if you just adjusted for antibiotic use alone? The resulting odds ratio is 5.0, again not very different from the gold standard. 
+<h2 id="Reporting_Odds_Ratio">  Reporting Odds Ratio </h2>
+ Now it is time to report your final result? Which <a href="OddsRatioMeasures.html">odds ratio</a> would you use?
+<p></p>
+From a <a href="BiasDefinition.html">validity</a> perspective, you could choose the <a href="GoldStandard.html">gold standard</a> or any of the lines where the odds ratio is within 10% of 4.66.
+<p></p>
+Examine what has happened to the confidence interval. <ul>
+<li> When we adjusted for all three variables, the width was 8.78.
+</li> <li> However, when we only adjust for the antibiotic use variable the confidence interval is narrower, 8.0.
+</li></ul> 
+A good compromise to the <a href="StudyAnalysisBiasVariance.html">bias-variance</a> tradeoff is to choose the estimate that adjusts for antibiotics only.  <ul>
+<li> There is little lost in bias and little given up in variance.
+</li></ul> 
+<p></p>
+<h2 id="References">  References </h2>
+<span id="KleinbaumEPI"></span>
+<p></p>
+Kleinbaum, D. G., Sullivan, K. M., &amp; Barker, N. D. (2003). ActiveEpi Companion Text: Springer Publishers.
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

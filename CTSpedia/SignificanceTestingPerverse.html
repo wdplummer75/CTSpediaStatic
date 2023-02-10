@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SignificanceTestingPerverse &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/SignificanceTestingPerverse/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/SignificanceTestingPerverse/favicon.ico" rel="shortcut icon">
+<link title="edit SignificanceTestingPerverse" rel="alternate" href="SignificanceTestingPerverse.html" type="application/x-wiki">
+<meta name="description" content="SignificanceTestingPerverse" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "SignificanceTestingPerverse",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<span class='foswikiIcon'><img src="../System/DocumentGraphics.attachments/wip.png" alt="wip" height="16" width="16"></span> Under Construction
+<h1 align="left">Significance Testing as Perverse Probabilistic Reasoning</h1>This is a CTSpedia version of an open access article originally published as:<br />Westover MB, Westover KD, Bianchi MT. Significance Testing as Perverse Probabilistic Reasoning. <em>BMC Medicine</em> 2011, <strong>9</strong>:20. The published PDF version can be found <a href="http://www.biomedcentral.com/content/pdf/1741-7015-9-20.pdf">here</a>. <em><p align="left"><div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Abstract"> Abstract </a>
+</li></ul> 
+</div></p></em>
+<h2 id="Abstract">  Abstract </h2>
+<strong>Background:</strong> Truth claims in the medical literature rely heavily on statistical significance testing. Unfortunately, most physicians misunderstand the underlying probabilistic logic of significance tests and consequently misinterpret their results. This misunderstanding is highlighted by means of a simple quiz which we administered to 246 physicians at two major academic hospitals, on which the proportion of incorrect responses exceeded 90%.<br /><strong>Discussion:</strong> This paper provides an accessible treatment of the concepts needed to avoid misinterpreting significance tests. We begin by thoroughly explaining the basic concepts of probability theory, in particular reviewing the origin and meaning of Bayes' rule. Next, we explain the two essential ingredients of significance testing, binary hypothesis testing and p-values. We then show that significance testing as usually understood represents a perversion of probabilistic reasoning. We show how understanding Bayes' rule can protect against common errors in statistical reasoning, and how physicians can exploit their experience with interpreting diagnostic tests to gain intuitions about probabilistic inference generally. Finally, we review the debate in the cognitive sciences regarding physicians' aptitude for probabilistic inference.<br /><strong>Summary: </strong>Understanding the fundamental concepts of probability theory has become essential to the rational interpretation of medical information. This essay provides a technically sound review of these concepts that is accessible to a medical audience. <h2 align="left">Background</h2><em><blockquote><p align="left">Medicine is a science of uncertainty and an art of probability. -Sir William Osler [1]</p></blockquote></em><p align="left">While probabilistic considerations have always been fundamental to medical reasoning, formal probabilistic arguments have only become ubiquitous in the medical literature in recent decades [2, 3]. Meanwhile, many have voiced concerns that physicians generally misunderstand probabilistic concepts, with potential serious negative implications for the quality of medical science and ultimately public health [3-12]. This problem has been demonstrated previously by surveys similar to the following quiz [13], which we administered to a group of 246 physicians at <a href="SigTestHospitals.html">two major U.S. teaching hospitals</a>. The reader is likewise invited to answer before proceeding.</p><blockquote><p align="left">Consider a typical medical research study, e.g. designed to test the efficacy of a drug, in which a null hypothesis <em>H</em>0 (&lsquo;no effect') is tested against an alternative hypothesis <em>H</em>1 (&lsquo;some effect'). Suppose that the study results pass a test of statistical significance (i.e. p-value <em>&lt; </em>0<em>.</em>05) in favor of <em>H</em>1. What has been shown?</p></blockquote><blockquote><p align="left">1. <em>H</em>0 is false.</p><p align="left">2. <em>H</em>1 is true.</p><p align="left">3. <em>H</em>0 is probably false.</p><p align="left">4. <em>H</em>1 is probably true.</p><p align="left">5. Both 1 &amp; 2.</p><p align="left">6. Both 3 &amp; 4.</p><p align="left">7. None of the above.</p></blockquote><p align="left">The answer profile for our participants is shown in Table 1. This essay is for readers who, like 93% of our respondents, did not confidently select the correct answer, (7), &lsquo;None of the above'. We hasten to assure the reader that this is not a trick question. Rather, it is a matter of elementary probabilistic logic. As will be clear by the end of this essay answers 1-6 involve &lsquo;leaping to conclusions', in violation of the basic law of probabilistic inference, Bayes' rule. We will see that Bayes' rule is an essential principle governing all reasoning in the face of uncertainty. Moreover, understanding Bayes' rule serves as a potent prophylaxis against statistical fallacies such as those underlying the apparent plausibility of the 6 erroneous answers in this little quiz.</p><p align="center">Table 1: Quiz answer profile.</p><strong><p align="left"><table align="center" style="width: 579px; height: 74px" border="1"><tbody><tr><td>Answer</td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td><td>(5)</td><td>(6)</td><td>(7)</td></tr><tr><td>Number</td><td>8</td><td>0</td><td>58</td><td>37</td><td>6</td><td>69</td><td>12</td></tr><tr><td>Percent</td><td>4.2</td><td>0</td><td>30.5</td><td>19.5</td><td>3.2</td><td>36.3</td><td>6.3</td></tr></tbody></table></p></strong><p align="left"> </p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

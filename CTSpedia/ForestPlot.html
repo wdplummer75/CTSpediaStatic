@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ForestPlot &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/ForestPlot/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/ForestPlot/favicon.ico" type="image/x-icon">
+<link href="ForestPlot.html" rel="alternate" type="application/x-wiki" title="edit ForestPlot">
+<meta name="description" content="ForestPlot" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "ForestPlot",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="StatGraphHome.html">Return to Safety Graphics Home</a>
+<p></p>
+<h3 id="Type_of_Graph:_Forest_Plot">  Type of Graph: <font color="#191970">Forest Plot </font> </h3>
+<h3 id="Last_updated_:">  Last updated : </h3>
+Fabrice Bancken on October 7, 2011 <font color="#dc143c"> <strong>(Work in progress)</strong> </font>
+<h3 id="Type_of_data:">  Type of data: </h3>
+Continuous summary data x Categorical data 
+<h3 id="Type_of_analysis:">  Type of analysis: </h3>
+Often used to summarize results of meta-analysis, but can be used in all contexts where a summary measure (point estimate and variability) has to be displayed for different levels of a categorical variable.
+<p></p>
+<h3 id="Description_and_purpose:">  Description and purpose: </h3>
+A <strong>Forest Plot</strong> consists of a dot plot (a.k.a. symbol and error bar plot) surrounded by one or more text columns. Symobl and error bars represent respectively an estimate and a variability measure (often 95% confidence interval) for each level of a categorical Y variable. These surrounding text columns describe the Y-levels and can be used to provide information to contextualize the estimate.
+<p></p>
+For example, if a Forest plot is used to summarize meta-analyis results, the Y categorical variable will represent the source under consideration and will take as levels : Study A, Study XYZ, ... The symbol and error bars may represent - regarding an event of interest - the odds ratio (and its 95% confidence interval) obtained in each of these studies. The surrounding columns in that case can provide the number of subjects experiencing the event in each of the treatment and control groups and the number of suvjects at risk in these groups (see Examples below).
+<p></p>
+While the simple version of the Forest plots will have a unique symbol type and symbol size accross levels of the Y variables, more advanced versions may have - like in bubble plots - the<strong> symbol size made proportional to a specific quantity</strong> (for example, in a meta-analysis - proportional to the number of subjects used to compute the odds ratio). Again, in meta-analysis, the reader may be interested in distinguishing quickly on the Forest plot between the <strong>study-level estimates and the meta-analytic summary</strong>. For that purpose, <strong>one can use different symbols</strong> for these summaries.
+<h3 id="Examples:">  Examples: </h3>
+<img src="ForestPlot.attachments/ForestExample01.png" alt="ForestExample01.png">
+<p></p>
+In this Forest plot, a reference line (corresponding to OR=1) is drawn, separating the graph into two regions, the one where results favor Treatment, and the one where results favor the control group.
+<h3 id="Extensions:">  Extensions: </h3>
+Since the key component of a Forest plot is its dot plot (or symbol and error bar plot), one can think of using extensions of the latter to enhance Forest plots. For example, a grouped dot plot could be considered in order to report meta-analysis results performed within subgroups of interest (males, females), or to report meta-analyses with slight differences in the endpoint (sensitivity analyses).
+<h3 id="Potential_pitfalls:">  Potential pitfalls: </h3>
+<h4 id="Balancing_clarity_and_quantity_of_surrounding_text_columns">  Balancing clarity and quantity of surrounding text columns </h4>
+Even if contextual data is important, one has to balance the quantity of information such as to prevent cluttering the graph. Indeed, an increasing number of text columns around the 'symbol and error bar' plot decreases the amount of space for the latter.
+<p></p>
+For Forest Plot extensions such as the grouped Forest plot (e.g., study-level and meta-analysis results reported on the same graph for males and females), the use of the surrounding text columns becomes very limited, given space limitations.
+<h4 id="Results_not_defined">  Results not defined  </h4>
+As for all other plots in which some results may not be defined (division by zero when considering ratios), the boundary cases should be handled appropriately, for example using specific symbols or annotations on the graph representing cases of 0/0 events, 0/&gt;0 events in log-scale and &gt;0/0 events.
+<h3 id="Reference:">  <strong>Reference</strong>: </h3>
+<p></p>
+<h3 id="Code_40_41:">  Code ( ): </h3>
+%CODE{lang="java"}%
+<p></p>
+%ENDCODE%
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

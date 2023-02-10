@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VersionControlSystemRR &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/VersionControlSystemRR/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/VersionControlSystemRR/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" href="VersionControlSystemRR.html" rel="alternate" title="edit VersionControlSystemRR">
+<meta name="description" content="VersionControlSystemRR" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "VersionControlSystemRR",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<p></p>
+<h1 id="What_is_Version_Control_63">  What is Version Control? </h1>
+<p></p>
+Version control was developed by software engineers to manage the files comprising a software project. Creating and maintaining a software application often involves working with a large number of files, including those containing source code, tests used to verify that the application works as expected, documentation, and additional (possibly binary) resources such as graphical elements and data. A change to one of these files---for example, changing part of the source code to add a new feature or fix a bug---often requires making corresponding changes to other files, all of which must be kept synchronized with each other. A Version Control System (VCS) allows the software developer to track a project through time by permitting him or her to examine and document changes across the entire project, to revert specific changes if necessary, and to restore the entire project to a previous state (e.g., the last release). A VCS also permits managing multiple branches of development simultaneously, as for example when developers are fixing bugs to the current release at the same time as they are preparing a new version of the program.
+<p></p>
+Another important feature of software projects is that they often involve multiple developers working together. This makes it both more difficult and more essential to manage changes to project files effectively. It also creates additional requirements, such as physically sharing project files and the changes being made to them, monitoring what each individual is doing, and identifying and resolving conflicting changes when they arise. Modern VCSs address these collaborative requirements as well.
+<p></p>
+<h1 id="Relevance_for_Reproducible_Research">  Relevance for Reproducible Research </h1>
+<p></p>
+In many ways, a data analysis project is like a software project. Data analysis involves writing code, and this code is often best organized across several, interdependent files. It also involves working with other, related files containing data, existing programs (e.g., to perform a specific analysis), documentation, and one or more reports or manuscripts describing one's findings. Finally, data analysis often involves collaboration among researchers. Just as it does for a software project, a VCS can facilitate the management of files for a data analysis project, including facilitating collaboration.
+<p></p>
+A good VCS not only preserves the entire history of a project, but also provides tools for working with that history. If a researcher follows good reproducible research practices by making sure that all results are generated programmatically (as opposed to interactively via menus or the command line), use of a VCS can ensure that any result obtained previously can be reproduced. Of course, in principle, simply maintaining good backups and/or archiving snapshots of a project directory can also allow one to reproduce previous results. However, a VCS not only provides an easy way to revert to a previous point in time, but also allows you to examine the revision history in powerful ways to determine exactly when and why a result may have changed, and to back out specific changes (e.g., a mistake or inadvertent change).
+<p></p>
+There are many VCSs to choose from. Fortunately, some of the best systems are freely available and run on most major platforms. These are well documented, and several excellent GUI applications are available which can simplify learning and using these systems. Thus, it is easy for any researcher to get started.
+<p></p>
+<h1 id="Centralized_versus_Distributed">  Centralized versus Distributed </h1>
+<p></p>
+Although each VCS differs in terms of its architecture, specific features and interface, the overlap in functionality among the major systems is substantial. Nonetheless, when starting out it is helpful to be aware of the distinction between centralized and distributed systems. A centralized (sometimes referred to as client-server) VCS involves a single repository where a project's files and its history are stored; this is often located on a server to permit multiple users to access it, but may also be located on a personal computer in the case of a researcher working alone. Working with the files requires "checking them out" into one's own working directory, making the desired changes, and then checking those changes back in to the central repository. Although this process may sound complicated, it is largely automated by the software.
+<p></p>
+A distributed VCS does not have a single, central repository. Instead, after an initial repository has been created, other users who want to work on the project "clone" that repository---a process which generates their own complete, fully-functional copy of the repository. Collaborators are then able to "push" or "pull" changes between each other's repositories, operations that again are automated by the software. As with centralized systems, these repositories may also be located on a server to facilitate sharing, though changes may also be pushed or pulled directly between two personal machines. The result is a more flexible and decentralized system that can be integrated into a variety of different workflows.
+<p></p>
+Although it may seem that the differences between centralized and distributed systems are only relevant for projects involving collaboration between multiple individuals, this is not entirely true. In general, distributed systems are a little easier to get started with, since any existing directory on one's computer can be immediately turned into a repository. They also have a smaller footprint, since the repository is located inside the same directory in which you do your work. Finally, because distributed systems have to accommodate more flexible sharing of simultaneous changes, they have more powerful capabilities for managing those changes, and this can be helpful even if you are working alone.
+<p></p>
+For these reasons, and because distributed version control appears to be where the future is headed, we would recommend that a new user select a distributed VCS. However, if one has other reasons to use a centralized system, this can provide the same benefits for conducting reproducible research.
+<p></p>
+<h1 id="Getting_Started">  Getting Started </h1>
+<p></p>
+Researchers new to version control should not be daunted by the many systems available. Most of the basic concepts carry over between different systems, and this is especially true among the distributed systems. Moreover, since software developers often have to work with multiple systems, applications are available to allow systems to interoperate and to translate projects from one system to another. Finally, several of the GUI applications are capable of working with multiple VCSs on the backend. Thus, researchers who start with one system and decide later to move to another should be able to do so relatively efficiently.
+<p></p>
+Below are links to the websites two of the most popular distributed systems and one centralized system, all freely available and cross-platform. Each site provides the links to download the program for each major platform (e.g., Mac OS X, Linux and Windows), documentation and tutorials.
+<p></p>
+<h2 id="Mercurial">  Mercurial </h2>
+<p></p>
+Mercurial is one of the most common distributed VCSs, and is easy to learn.
+<p></p> <ul>
+<li> <a href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a>
+</li></ul> 
+<p></p>
+<h2 id="Git">  Git </h2>
+<p></p>
+Git is perhaps the most well-known of the distributed VCSs; it is used to manage the code for the Linux kernel, and runs <a href="https://github.com/%20GitHub">https://github.com/ <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="GitHub.html">GitHub</a></a>---one of the most popular sites for sharing code. Git is more flexible than Mercurial, but is also harder to learn. Note that much of this flexibility involves the ability to integrate Git into complicated workflows and to create new applications on top of it; these are unlikely to be relevant for most researchers using version control to manage data analysis projects.
+<p></p> <ul>
+<li> <a href="http://git-scm.com/">http://git-scm.com/</a>
+</li></ul> 
+<p></p>
+<h2 id="Subversion">  Subversion </h2>
+<p></p>
+Subversion is perhaps the most well-known centralized VCS, certainly among open-source developers. It is easy to learn.
+<p></p> <ul>
+<li> <a href="http://subversion.apache.org/">http://subversion.apache.org/</a>
+</li></ul> 
+<p></p>
+<h2 id="GUI_Front_45Ends">  GUI Front-Ends </h2>
+<p></p>
+The default user interface for Mercurial, Git and Subversion is the command line. Users who wish to use a menu-driven, graphical interface instead have many options. Note that several of these applications add additional functionality beyond the default CLI, are capable of interacting with multiple VCS backends, or integrate version control commands into the native interface of the OS (e.g., adding commands to contextual menus in the OS X Finder or Windows Explorer). Thus, these may be of interest even to those who also use VCS from the command line.
+<p></p>
+The list of available applications is far too large to list here, and new applications are constantly being released. Here we list only some of the most common applications with which we have some experience.
+<p></p> <ul>
+<li> <a href="http://www.sourcetreeapp.com/%20SourceTree">http://www.sourcetreeapp.com/ <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="SourceTree.html">SourceTree</a></a> is a client for Mercurial, Git and Subversion.  It is available for OS X only.
+</li> <li> <a href="http://tortoisehg.bitbucket.org/%20TortoiseHg">http://tortoisehg.bitbucket.org/ <a title="Create this topic" href="TortoiseHg.html" class="foswikiNewLink" rel="nofollow">TortoiseHg</a></a> is a client for Mercurial. It is developed primarily for Windows, but can also be used under non-Windows platforms.
+</li> <li> <a href="http://tortoisesvn.net/%20TortoiseSVN">http://tortoisesvn.net/ <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="TortoiseSVN.html">TortoiseSVN</a></a> is a client for Subversion. It is available for Windows only.
+</li></ul> 
+<p></p>
+<em>Note: Many of the GUI applications above come bundled with the corresponding VCS software (you don't need to install that separately).</em>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

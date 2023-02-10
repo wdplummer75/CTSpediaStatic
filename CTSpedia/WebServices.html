@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebServices &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/WebServices/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/WebServices/favicon.ico" rel="shortcut icon">
+<link title="edit WebServices" rel="alternate" href="WebServices.html" type="application/x-wiki">
+<meta name="description" content="WebServices" />
+<link media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0" type="text/css"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tableWebServices1 td {vertical-align:middle; vertical-align:top}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol0 {text-align:left}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol1 {text-align:left}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol2 {text-align:left}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol3 {text-align:right}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol4 {text-align:left}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol5 {text-align:left}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol6 {text-align:left}
+body .foswikiTable#tableWebServices1 td.foswikiTableCol7 {text-align:left}
+body .foswikiTable#tableWebServices1 th {vertical-align:middle; background-color:#ffffff; color:#0066cc; text-align:left}
+body .foswikiTable#tableWebServices1 th a:link {color:#0066cc}
+body .foswikiTable#tableWebServices1 th a:visited {color:#0066cc}
+body .foswikiTable#tableWebServices1 th a:hover {color:#0066cc; background-color:#ffffff}
+body .foswikiTable#tableWebServices1 th.foswikiSortedCol {background-color:#eeeeee}
+body .foswikiTable#tableWebServices1 tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable#tableWebServices1 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f5f5f5}
+</style><!--TABLEPLUGIN_specific-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "WebServices"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::TWISTY" src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="Web_Services_for_Tasks_Associated_with_Statistical_Analyses">  Web Services for Tasks Associated with Statistical Analyses </h1>
+ These resources go beyond statistical calculators, but do not require computational skills. 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#A_42MuStat_47ustat_42"> MuStat/ustat </a>
+</li> <li> <a href="#A_42WISDOM_42"> WISDOM </a>
+</li> <li> <a href="#A_42Attachments_42"> Attachments </a>
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<h2 id="A_42MuStat_47ustat_42">  <strong>MuStat/ustat</strong> </h2>
+<p></p>
+<a href="http://muStat.rockefeller.edu/">u-Statistics for multivariate ordinal data</a> (<a href="http://muStat.rockefeller.edu/">grid powered Web server</a>, <a href="https://muStat.rockefeller.edu/muNews.xml">muNews RSS feed</a>, <a href="http://ctspedia.org/do/view/Forum/MuStatServer">discuss</a>)<br />Knut M. Wittkowski, The Rockefeller University, <a href="mailto&#58;kmw&#64;rockefeller&#46;edu">Email</a>; <br />maintained by: Tingting Song, <a href="mailto&#58;ttsong&#64;rockefeller&#46;edu">Email</a><br />Reference: Nonparametric methods for molecular biology (<a href="http://www.ncbi.nlm.nih.gov/pubmed/20652502">Wittkowski 2010</a>)<br />(based on <a href="http://muStat.rockefeller.edu/"> <strong>muStat</strong> package for multivariate ordinal data</a>, see <a href="http://ctspedia.org/do/view/CTSpedia/RScripts">R Packages</a>) <ul>
+<li> scoring complex phenotypes (including recurrent, graded, and censored adverse events with varying attribution (<a href="http://www.bepress.com/sagmb/vol7/iss1/art19/">Morales (2008)</a>)
+</li> <li> screening microarrays for gene expression profiles (sets of collaborating genes)
+</li> <li> screening whole genome scans for epistasis between multipoint ranges (diplotypes)
+</li> <li> sorting hierarchical genotype/expression/phenotype factor structures by information content
+</li> <li> developing metrics for biostatistical and epidemiological collaborations (<a href="http://www.ncbi.nlm.nih.gov/pubmed/21284015">Rubio 2011</a>)
+</li></ul> 
+<p></p>
+<h2 id="A_42WISDOM_42">  <strong><a href="WISDOM.html">WISDOM</a></strong> </h2>
+ <a href="http://wisdom.rockefeller.edu/"> Web-based Interactive Study Design, Organization, and Management</a> (<a href="http://ctspedia.org/do/view/Forum/WISDOM_System">discuss</a>)<br />Knut M. Wittkowski, The Rockefeller University, <a href="mailto&#58;kmw&#64;rockefeller&#46;edu">Email</a> <br />References: <a href="http://en.scientificcommons.org/37659085">Roadmap integration</a>, <a href="WISDOM.html">Progress</a><br />WISDOM provides a GUI and a layered study meta data ontology for:  <ul>
+<li> <span class='foswikiBlackFG'>importing study meta data from previous studies and standardized outcomes ontologies,</span>
+</li> <li> automatically creating an Oracle data base
+</li> <li> exporting CRF definitions (data dictionaries) into <a href="http://www.project-redcap.org/"> <strong>REDCap</strong> </a> (Vanderbilt) and <a href="http://www.cdc.gov/epiinfo/"> <strong>Epi Info&trade;</strong> </a> (CDC)
+</li> <li> copying and pasting data between spreadsheets (MS Excel, OO Calc ...) and statistical programs (SPSS, SAS ...) and a Web-accessible and secure ORACLE data base for sharing with collaborators.
+</li> <li> <span class='foswikiBlackFG'>importing data from various sources (in progress)</span>
+</li> <li> <span class='foswikiBlackFG'>assisting analyses with <a href="http://muStat.rockefeller.edu/"> <strong>\xB5Stat</strong> </a>, R, SAS, ... (in progress)</span>
+</li> <li> <span class='foswikiBlackFG'>setting up interim analyses to report study progress and emerging risks (planned) </span>
+</li> <li> <span class='foswikiBlackFG'>automatically producing analyses for primary objectives (planned)</span>
+</li> <li> <span class='foswikiBlackFG'>conducting bootstrapped power calculations (planned)</span>
+</li> <li> <span class='foswikiBlackFG'>facilitating data sharing by adding study design information (in progress).</span>
+</li></ul> 
+<p></p>
+<h2 id="A_42Attachments_42">  <strong>Attachments</strong> </h2> <ul>
+<li> <a href="WebServices.attachments/J609Shrt.pdf">Slideshow</a>: <em>Integration of Online Resources: <a href="WISDOM.html">WISDOM</a> / REDCap</em>. BERD Online Resources and Education Meeting, 2009-06-09
+</li> <li> <a href="WebServices.attachments/I732BERD.pdf">Handout</a>: <a href="http://www.amstat.org/meetings/JSM/2008/onlineprogram/index.cfm?fuseaction=abstract_details&amp;abstractid=302153"> <em>Responding to New Challenges: Statistics in Clinical and Translational Science</em> </a> <em>.</em> JSM, Denver, CO, 2008-08-04
+</li> <li> <a href="WebServices.attachments/HB10bw.pdf">Handout</a>: <em>An Ontology for Biostatistics.</em> <a href="CTSA.html">CTSA</a> BERD Workgroup meeting, 2007-11-14
+</li> <li> <a href="http://www.ctsaweb.org/uploadedfiles/Rockefeller3.ppt">Slideshow</a>: Research Design and Biostatistics Support at the RU CCTS. 2007-05-11
+</li> <li> <a href="http://mpra.ub.uni-muenchen.de/5902/">Concept Paper</a>: <em>Towards Novel Nonparametric Statistical Methods and Bioinformatics Tools for Clinical and Translational Sciences</em>. <a href="http://www.nih.gov/">NIH</a> <a href="http://nihroadmap.nih.gov/">Roadmap</a> meeting, 2005-05-23
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<div class="foswikiAttachments foswikiFormStep" style="overflow:auto">
+<div class="twistyPlugin foswikiMakeVisible"><span id="topicattachmentslist1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="patternTwistyButton" href=".."><img alt="" border="0" src="../System/DocumentGraphics.attachments/toggleopen.png"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>3</span></span></a></span><span id="topicattachmentslist1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class="patternTwistyButton"><img src="../System/DocumentGraphics.attachments/toggleclose.png" alt="" border="0"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>3</span></span></a></span></div><div class="twistyPlugin"><div id="topicattachmentslist1toggle" style="" class="twistyRememberSetting twistyContent twistyInited">
+<table class="foswikiTable" id="tableWebServices1" rules="none" summary="Topic attachments"><caption>Topic attachments</caption>
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">I</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Attachment</a> </th>
+			<th class="foswikiTableCol2"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Action</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Size</a> </th>
+			<th class="foswikiTableCol4"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Date</a> </th>
+			<th class="foswikiTableCol5"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Who</a> </th>
+			<th class="foswikiTableCol6 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img width="16" src="../System/DocumentGraphics.attachments/pdf.png" alt="HB10bw.pdf" height="16"></span><span class="foswikiHidden">pdf</span> </td>
+			<td class="foswikiTableCol1"> <a href="WebServices.attachments/HB10bw.pdf"><noautolink>HB10bw.pdf</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a rel="nofollow" href="WebServices.html" title="change, update, previous revisions, move, delete...">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 357 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">14 Jun 2009 - 17:25</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/UnknownUser.html">UnknownUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> An Ontology for Biostatistics </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <span class='foswikiIcon'><img alt="I732BERD.pdf" height="16" src="../System/DocumentGraphics.attachments/pdf.png" width="16"></span><span class="foswikiHidden">pdf</span> </td>
+			<td class="foswikiTableCol1"> <a href="WebServices.attachments/I732BERD.pdf"><noautolink>I732BERD.pdf</noautolink></a> </td>
+			<td class="foswikiTableCol2"> <a title="change, update, previous revisions, move, delete..." href="WebServices.html" rel="nofollow">manage</a> </td>
+			<td class="foswikiTableCol3" style="text-align:right"> 687 K </td>
+			<td class="foswikiTableCol4"> <span class="foswikiNoBreak">14 Jun 2009 - 18:23</span> </td>
+			<td class="foswikiTableCol5"> <a href="../Main/UnknownUser.html">UnknownUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol"> xxxx </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <span class='foswikiIcon'><img height="16" alt="J609Shrt.pdf" src="../System/DocumentGraphics.attachments/pdf.png" width="16"></span><span class="foswikiHidden">pdf</span> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="WebServices.attachments/J609Shrt.pdf"><noautolink>J609Shrt.pdf</noautolink></a> </td>
+			<td class="foswikiTableCol2 foswikiLast"> <a title="change, update, previous revisions, move, delete..." rel="nofollow" href="WebServices.html">manage</a> </td>
+			<td class="foswikiTableCol3 foswikiLast" style="text-align:right"> 558 K </td>
+			<td class="foswikiTableCol4 foswikiLast"> <span class="foswikiNoBreak">11 Jun 2009 - 20:37</span> </td>
+			<td class="foswikiTableCol5 foswikiLast"> <a href="../Main/UnknownUser.html">UnknownUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol foswikiLast"> Integration of Online Resources: <a href="WISDOM.html">WISDOM</a> / REDCap Slideshow </td>
+		</tr>
+	</tbody></table>
+</div></div></div>
+</body>

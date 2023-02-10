@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarThird &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/VarThird/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/VarThird/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="VarThird.html" title="edit VarThird">
+<meta name="description" content="VarThird" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "VarThird",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Third_Variable:_Intermediate_44_Effect_Modifier_44_Confounder_or_No_Effect">  Third Variable: Intermediate, Effect Modifier, Confounder or No Effect </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Third_Variable"> Third Variable </a>
+</li> <li> <a href="#Determining_the_Third_Variable"> Determining the Third Variable </a>
+</li> <li> <a href="#Intermediary_Variable"> Intermediary Variable </a>
+</li> <li> <a href="#Effect_Modifier_40interaction_41"> Effect Modifier (interaction) </a>
+</li> <li> <a href="#Confounder"> Confounder </a>
+</li> <li> <a href="#No_Effect"> No Effect </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<h2 id="Third_Variable">  Third Variable </h2>
+<p></p>
+When evaluating association between an <a href="PredictorVariable.html">exposure</a> and an <a href="OutcomeVariable.html">outcome</a>, the possible roles of a third variable are:
+<p></p> <ul>
+<li> <strong><a href="VarIntermed.html">Intermediary Variable</a></strong>  <ul>
+<li> <strong>Intermediary variable on the causal pathway</strong>
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> <strong><a href="StudyTermInter.html">Effect Modifier</a></strong>  <ul>
+<li> <strong>Effect of the exposure on the disease that operates through a pathway other than through the third variable</strong>
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> <strong><a href="BiasConfound.html">Confounder</a></strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>No Effect</strong>
+</li></ul> 
+<blockquote> <img width="264" height="266" alt="0415_2DAG_label.JPG" src="VarThird.attachments/0415_2DAG_label.JPG"></blockquote>
+<p></p>
+<span id="DecisionTree3rd"></span>
+<p></p>
+<h2 id="Determining_the_Third_Variable">  Determining the Third Variable </h2>
+ So, there are four possibilities: the third variable can be <strong>Intermediary</strong>, <strong>Effect Modifier</strong> (interaction), <strong>Confounder</strong>, and <strong>No Effect</strong>. How are you going to determine which of these possibilities is occurring in your sample? The algorithm below is a useful place to start.
+<p></p>
+<blockquote> <img height="240" alt="0415_7roles_noadjust.JPG" src="VarThird.attachments/0415_7roles_noadjust.JPG" width="256"> </blockquote>
+<p></p>
+(1) Depending upon your research question, a third variable could be acting as an <strong>intermediary variable</strong> and if so, we would not want to adjust for it or control for it any way. <ul>
+<li> Hence, this is the first decision to make.
+</li></ul> 
+(2) If you are not conceiving the third variable as an intermediary variable, then you need to assess whether it is an <strong>effect modifier.</strong>
+<p></p>
+(3) If it is not an effect modifier, then you need to assess if it is a <strong>confounder</strong>.
+<p></p>
+(4) If it is none of these, neither an intermediary variable nor an effect modifier nor confounder, then we simply say that is has <strong>no effect</strong>.
+<h2 id="Intermediary_Variable">  Intermediary Variable </h2>
+ The decision you have to make is a conceptual one based upon your knowledge of the biological or behavioral system and the research question at hand.  <ul>
+<li> If you are conceptualizing the <strong>third variable as an <a href="VarIntermed.html">intermediary variable</a></strong>, then you would not control for it.
+</li></ul> 
+<blockquote><img alt="0415_6role_interm.JPG" height="88" src="VarThird.attachments/0415_6role_interm.JPG" width="256"></blockquote>
+<p></p>
+<h2 id="Effect_Modifier_40interaction_41">  Effect Modifier (interaction) </h2>
+ When the third variable is not an intermediary variable, you have to ask whether the third variable is an <strong><br /><a href="StudyTermInter.html">effect modifier</a>?</strong> <blockquote> <img src="VarThird.attachments/0415_6role_effec.JPG" alt="0415_6role_effec.JPG" height="137" width="240"></blockquote>  <ul>
+<li> Assuming that the third variable is not being conceptualized as an intermediary variable, the more typical situation is that you have suspicions that the third variable could be a confounder because, for example, it is known to be associated with the disease in question.
+</li> <li> Before looking at confounding you are interested in whether the third variable is an <strong>effect modifier</strong> because this will give a richer understanding of the system.
+</li></ul> 
+In order to form stratum specifc estimates, you may have to <a href="StudyAnalysisAdjustment.html">adjust</a> form a summary of the unconfounded stratum-specific estimates.
+<p></p>
+<h2 id="Confounder">  Confounder </h2>
+<p></p>
+When the third variable is not an effect modifier, you then look for <strong><a href="BiasConfoundAnalysis.html">evidence of confounding</a></strong>.
+<blockquote> <img src="VarThird.attachments/0415_6role_confound.JPG" height="114" alt="0415_6role_confound.JPG" width="250"> </blockquote>
+<p></p>
+<h2 id="No_Effect">  No Effect </h2>
+<p></p>
+If no confounding is present, you are left with the conclusion that the third variable had <strong>no effect</strong>. <ul>
+<li> In that case, report the crude estimate as the final measure of association between exposure and disease.
+</li></ul> 
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<strong><em><br /></em></strong>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

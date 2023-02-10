@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgIntermediateCAD &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/EgIntermediateCAD/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgIntermediateCAD/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit EgIntermediateCAD" href="EgIntermediateCAD.html" rel="alternate">
+<meta name="description" content="EgIntermediateCAD" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgIntermediateCAD"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Intermediate_Variable_45_CAD">  Example: Intermediate Variable - CAD </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Is_HDL_a_Confounder_or_an_Intermediary_63"> Is HDL a Confounder or an Intermediary? </a>
+</li> <li> <a href="#Intermediary_Variable:_On_Pathway_45_No_Adjustment"> Intermediary Variable: On Pathway - No Adjustment </a>
+</li> <li> <a href="#Confounding_Variable:_Another_Pathway_45_Adjust_for_HDL"> Confounding Variable: Another Pathway - Adjust for HDL </a>
+</li></ul> 
+</div> 
+<h2 id="Is_HDL_a_Confounder_or_an_Intermediary_63">  Is HDL a Confounder or an Intermediary? </h2>
+ We are looking at the relationship between exercise and CAD,  <ul>
+<li> <strong>is HDL a <a href="BiasConfound.html">confounder</a> or an <a href="VarIntermed.html">intermediary</a></strong>?
+</li></ul> 
+<strong>What is the <a href="BiasConfoundIntermed.html">pathway under investigation</a>?</strong> <br /> <img src="VarIntermed.attachments/0402_3HDL.JPG" alt="0402_3HDL.JPG" height="159" width="283">
+<p></p>
+<h2 id="Intermediary_Variable:_On_Pathway_45_No_Adjustment">  Intermediary Variable: On Pathway - No Adjustment </h2>
+ If you <strong>do not care about the exact pathway or you are only thinking about one pathway</strong> by which exercise can influence the development of heart disease, and HDL was right in the middle of this pathway,  <ul>
+<li> then <strong>HDL is an <a href="VarIntermed.html">intermediary variable</a></strong> and we would <strong>not want to control</strong> for it.
+</li></ul> 
+<p></p>
+<blockquote> <img width="159" height="156" alt="0402_5HDL_inter.JPG" src="VarIntermed.attachments/0402_5HDL_inter.JPG"> </blockquote>
+<p></p>
+<span id="ExtraneousConfounder"></span>
+<h2 id="Confounding_Variable:_Another_Pathway_45_Adjust_for_HDL">  Confounding Variable: Another Pathway - Adjust for HDL </h2>
+ If interest is in a <strong>pathway other than through HDL</strong>,  <ul>
+<li> then <strong>HDL is a <a href="BiasConfound.html">confounder</a></strong> and we want to <strong>control</strong> for it.
+</li></ul> 
+<blockquote> <img src="EgIntermediateCAD.attachments/0402_4HDL_conf.JPG" width="167" height="147" alt="0402_4HDL_conf.JPG">
+<p></p>
+</blockquote>
+<p></p> <ul>
+<li> Therefore, <strong>HDL is extraneous to pathway under study</strong>
+</li> <li> Confounding factors are <strong>extraneous factors</strong>
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

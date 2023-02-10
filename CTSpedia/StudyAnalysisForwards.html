@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisForwards &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisForwards/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisForwards/favicon.ico" rel="shortcut icon">
+<link href="StudyAnalysisForwards.html" rel="alternate" title="edit StudyAnalysisForwards" type="application/x-wiki">
+<meta name="description" content="StudyAnalysisForwards" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyAnalysisForwards",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Forwards_Strategy">  Forwards Strategy </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Forwards_Strategy_for_Potential_Confounders"> Forwards Strategy for Potential Confounders </a>
+</li> <li> <a href="#Procedure_for_Forwards_Strategy_for_Potential_Confounders"> Procedure for Forwards Strategy for Potential Confounders </a>
+</li> <li> <a href="#Advantage:_Forwards_Strategy"> Advantage: Forwards Strategy </a>
+</li> <li> <a href="#Problem:_Forwards_Strategy"> Problem: Forwards Strategy </a>
+</li> <li> <a href="#Preference"> Preference </a>
+</li></ul> 
+</div> 
+<h2 id="Forwards_Strategy_for_Potential_Confounders">  Forwards Strategy for Potential Confounders </h2>
+ In contrast to the <a href="StudyAnalysisBackwards.html">backwards strategy</a> for potential condunders this is what is known as a forward strategy. 
+<h2 id="Procedure_for_Forwards_Strategy_for_Potential_Confounders">  Procedure for Forwards Strategy for Potential Confounders </h2>
+ Forward Strategy start with the variable that has the biggest <strong>change-in-estimate</strong> impact when evaluated individually.
+<p></p>
+This is where you start by assessing the effects of the potential confounders one variable at a time. <ul>
+<li> To begin, you identify the variable that has the biggest impact, the biggest difference between <a href="BiasConfoundAnalysis.html">crude and adjusted</a> when looked in isolation of the other potential confounders.
+</li></ul> 
+<em>THEN:</em>  <ul>
+<li> Add the variable with the second biggest impact
+</li> <li> Keep this variable if its presence meaningfully changes the adjusted estimate
+</li> <li> Procedure continues until no other added variable has an important impact
+</li></ul> 
+After you find the variable that has the biggest change in the estimate compared to the crude estimate,  <ul>
+<li> you then jointly adjust for another potential confounder,
+</li> <li> the one with the second biggest change in estimate when evaluated individually.
+</li> <li> If the addition of the this variable results in a meaningfully different change (e.g., 10%) compared to when just the first variable is adjusted for, you would keep this variable.
+</li> <li> If not, drop it and consider the remaining variables.
+</li> <li> This continues until no other added variable has an important impact.
+</li></ul> 
+<h2 id="Advantage:_Forwards_Strategy">  Advantage: Forwards Strategy </h2>
+ <strong>Advantage:</strong> Avoids the initial sparse cell problem of <a href="StudyAnalysisBackwards.html">backwards</a> approach
+<p></p>
+This procedure has some advantages like that it gets away from the problem of having many sparse cells when looking at joint confounding of many variables.
+<h2 id="Problem:_Forwards_Strategy">  Problem: Forwards Strategy </h2>
+ <strong>Problem:</strong> Does not evaluate joint confounding effects of many variables
+<p></p>
+It has a <strong>big disadvantage</strong> in that it really does not fully look at the effects of joint confounding.
+<h2 id="Preference">  Preference </h2>
+<p></p>
+If possible, we always prefer <strong><a href="StudyAnalysisBackwards.html">backward procedures</a></strong> because they formally assess joint confounding.
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

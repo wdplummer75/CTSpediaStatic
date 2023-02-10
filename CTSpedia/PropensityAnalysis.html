@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PropensityAnalysis &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/PropensityAnalysis/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE CTSpedia/PropensityAnalysis/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit PropensityAnalysis" href="PropensityAnalysis.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="PropensityAnalysis" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "PropensityAnalysis",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Dealing_with_Selection_Bias_in_Observational_Studies">  Dealing with Selection Bias in Observational Studies </h1>
+<p></p>
+This site is currently under construction.
+<p></p>
+Karen attended the Drop-In Biostatistics Worskshop seeking some advice on the analysis of her study. Karen collected a sample of 654 youths in the area of East Boston to explore the relationship between smoking and Forced Expiratory Volume (FEV). In this study, Karen measured the FEV (liters), smoking status (no = 0, yes = 1), age, height (inches), and gender (female = 0, male = 1) for each subject.
+<p></p>
+This study is necessarily observational as it would be unethical to randomize people to a smoking group and a nonsmoking group. When we lack the ability to randomize subjects to each treatment group we potentially introduce selection bias into the study. <a href="BiasSelect.html">Selection bias</a> occurs when certain kinds of subjects are differentially assigned to the treatments. For example, most smokers could be men, hence the effect of smoking on FEV would be <a href="BiasConfound.html">confounded</a> by gender. Therefore, it is important to take this possible confounding into account when analysing observational studies. Propensity analysis is one way to account for selection bias.
+<p></p>
+Propensity analysis uses the propensity score to control for confounding variables. "The propensity score is a measure of the likelihood that a person would have been treated using only their covariate scores" (D'Agostino). The propensity score is often calculated using logistic regression or discriminant analysis. In Karen's case the treatment has two levels, smoking and nonsmoking, hence we will perform a logistic regression with treatment as our response and the subject characteristics as our covariates. Since the goal of the propensity score is to obtain the best estimated probability of treatment assignment, we are not concerned with having a parsimonious model. That is, when modeling the treatment against the covariates we can use interaction terms, quadratic terms, etc., even if they aren't statistically significant.
+<p></p>
+To calculate the propensity scores for Karen's study we used the following model.
+<p></p>
+<img src="PropensityAnalysis.attachments/LogisticModel.jpg" alt="LogisticModel.jpg" height="60" width="422" style="border-style: initial; border-color: initial">
+<p></p>
+The propensity score is the probability of receiving a particular treatment given the covariates. Hence in the above model the propensity scores are the p's, i.e., the fitted values.
+<p></p>
+There are four standard approaches for using the propensity score to control for confounding.
+<p></p> <ol>
+<li> Matching
+</li> <li> Stratifying
+</li> <li> Regression Modeling
+</li> <li> Inverse Probability Weighting
+</li></ol> 
+-- <a title="Create this topic" href="../Main/ErinEsp.html" class="foswikiNewLink" rel="nofollow">ErinEsp</a> - 28 Apr 2011
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

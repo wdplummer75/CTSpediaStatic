@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyTermMatch &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/StudyTermMatch/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyTermMatch/favicon.ico">
+<link rel="alternate" href="StudyTermMatch.html" title="edit StudyTermMatch" type="application/x-wiki">
+<meta name="description" content="StudyTermMatch" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyTermMatch",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Matching">  Matching </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Matching"> Definition of Matching </a>
+</li> <li> <a href="#Matching_to_Reduce_Confounding_45_Cohort_Study"> Matching to Reduce Confounding - Cohort Study </a>
+</li> <li> <a href="#Matching_to_Reduce_Confounding_45_Case_45Control_Study"> Matching to Reduce Confounding - Case-Control Study </a>
+</li> <li> <a href="#Advantages_of_Matching"> Advantages of Matching </a> <ul>
+<li> <a href="#Example_of_Matching_by_Neighborhood"> Example of Matching by Neighborhood </a>
+</li> <li> <a href="#Example_of_Matching_in_San_Francisco"> Example of Matching in San Francisco </a>
+</li> <li> <a href="#Example_of_Matching_for_Precision"> Example of Matching for Precision </a>
+</li></ul> 
+</li> <li> <a href="#Disadvantages_of_Matching"> Disadvantages of Matching </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div> 
+<h2 id="Definition_of_Matching">  Definition of Matching </h2>
+<p></p>
+<strong>Definition of Matching</strong>: <ul>
+<li> Match <strong>unexposed or non-case subjects</strong> to those of the comparison group (either <strong>exposed or cases</strong>) in terms of the <a href="BiasConfound.html">confounder</a> in question.
+</li></ul> 
+Matching is another method that can be used in the design phase to reduce confounding.  <ul>
+<li> It is a very complex topic.
+</li> <li> What we do in matching is to choose subjects (either unexposed persons in cohort designs or non-cases in case-control studies)
+</li> <li> who match those of the comparison group (either the exposed or the cases) in terms of the potential confounding factor in question.
+</li></ul> 
+<p></p>
+<h2 id="Matching_to_Reduce_Confounding_45_Cohort_Study">  Matching to Reduce Confounding - Cohort Study </h2>
+ In the following <a href="CausalDiagrams.html">DAG</a>, you see that in a <strong><a href="CohortStudy.html">Cohort Study</a></strong>  <ul>
+<li> unexposed subjects are <strong>matched</strong> to <a href="PredictorVariable.html">exposed subjects</a> according to their values for the potential <a href="BiasConfound.html">confounder</a>.
+</li></ul> 
+Matching results in prohibiting any <strong><a href="StudyAssoc.html">association</a></strong> between the exposure and the confounder. <blockquote> <img height="147" alt="0407_3amatch.JPG" src="StudyTermMatch.attachments/0407_3amatch.JPG" width="203"> </blockquote>
+<p></p>
+For example, in a cohort study, if we were concerned about race as a confounder, you might match on race. <ul>
+<li> For each white exposed person, you would choose one white unexposed person.
+</li> <li> For each Asian exposed person, you would choose one Asian unexposed.
+</li></ul> 
+<h2 id="Matching_to_Reduce_Confounding_45_Case_45Control_Study">  Matching to Reduce Confounding - Case-Control Study </h2>
+ In the following <a href="CausalDiagrams.html">DAG</a>, you see that in a <strong><a href="CaseControlStudy.html">Case Control Study</a></strong>  <ul>
+<li> non-diseased controls are <strong>matched</strong> to <a href="OutcomeVariable.html">diseased</a> cases on the <a href="BiasConfound.html">confounding</a> variable.
+</li></ul> 
+Matching precludes any <strong><a href="StudyAssoc.html">association</a></strong> between the disease and the confounder. <blockquote> <img src="StudyTermMatch.attachments/3bmatch.JPG" alt="3bmatch.JPG" height="147" width="203"> </blockquote>
+<p></p>
+In a case-control study, if, for example, we performed a study of, say, diet and cancer and were worried about age as a potential confounder, we might match on age. <ul>
+<li> For each case who was 50 years old, we would choose one control who was 50 years old.
+</li> <li> For each 70 year old case, we would select one 70 year old control.
+</li></ul> 
+<p></p>
+<h2 id="Advantages_of_Matching">  Advantages of Matching </h2>
+<p></p>
+1. Best way to manage or prevent certain <a href="BiasConfound.html">confounding</a> variables, such as neighborhood <ul>
+<li> <strong>factors which would be nearly impossible to manage in analysis phase</strong>.
+</li></ul> 
+2. By ensuring a <strong>balanced number of <a href="StudyCase.html">cases</a> and <a href="StudyControl.html">controls</a></strong> (in a <a href="CaseControlStudy.html">case-control study</a>) or exposed/unexposed (in a <a href="CohortStudy.html">cohort study</a> ) within the various strata of the confounding variable,  <ul>
+<li> <strong>statistical <a href="PrecisionStudy.html">precision</a> may be increased</strong>.
+</li></ul> 
+Matching brings you increased statistical precision in your inferences (i.e., smaller <a class="foswikiNewLink" rel="nofollow" href="StudyStandError.html" title="Create this topic">standard errors</a> and narrower <a href="ConfidenceIntervals.html">confidence intervals</a>).  <ul>
+<li> This is because matching works towards achieving a balanced number of cases and controls, in the context of a case-control study, or exposed/unexposed in a cohort study within the various strata of the confounder.
+</li> <li> This balance means tighter precision.
+</li></ul> 
+<p></p>
+<h3 id="Example_of_Matching_by_Neighborhood">  Example of Matching by Neighborhood </h3>
+ Here is an example of matching by neighborhood in a <a title="Create this topic" href="CaseControStudyl.html" class="foswikiNewLink" rel="nofollow">case-control study</a> of the effect of a bacille Calmette-Guerin (BCG) vaccine in preventing tuberculosis (TB) (<a class="foswikiCurrentTopicLink" href="#DantasTB">Dantas</a>)  <ul>
+<li> <strong><a href="StudyCase.html">Cases</a></strong>: newly diagnosed TB in Brazil
+</li> <li> <strong><a href="StudyControl.html">Controls</a></strong>: persons without TB
+</li> <li> <strong><a href="PredictorVariable.html">Exposure</a></strong>: receipt of a BCG vaccine
+</li> <li> <strong>Potential <a href="BiasConfound.html">confounder</a></strong>: neighborhood (village) of residence;  <ul>
+<li> related to ambient TB incidence and practices regarding BCG vaccine
+</li></ul> 
+</li></ul> 
+<strong>Control sampling</strong>: Relying upon <a href="StudyTermRandom.html">random sampling</a> without attention to neighborhood may result in choosing no controls from some of the neighborhoods (especially in a small study) seen in the case group (i.e., cases and controls lack overlap)  <ul>
+<li> <strong>Matching on neighborhood ensures overlap</strong>
+</li></ul> 
+In this example the investigators examined the effect of a second BCG vaccine in preventing the occurrence of TB.  <ul>
+<li> In this study, cases were defined as persons with newly diagnosed tuberculosis.
+</li> <li> Controls were individuals without TB. The principal exposure under study was receipt of a second BCG vaccination.
+</li> <li> Here, a potential confounder is neighborhood of residence.  <ul>
+<li> This is because neighborhood is associated with risk for TB and it is also associated with local practices as to whether second vaccination is routinely given.
+</li></ul> 
+</li></ul> 
+<h3 id="Example_of_Matching_in_San_Francisco">  Example of Matching in San Francisco </h3>
+ Think of all the neighborhoods in San Francisco.
+<p></p>
+<strong>Neighborhood</strong> is a <a href="VarNominal.html">nominal variable</a> with multiple values; <ul>
+<li> we call this a complex <a href="VarNominal.html">nominal variable</a>.
+</li></ul> 
+If one had to rely upon random sampling of <a href="StudyControl.html">controls</a>, you might end up choosing no controls from some of the neighborhoods seen in the <a href="StudyCase.html">case</a> group. This is especially true in a small study.  <ul>
+<li> If you have persons in the case group for whom there are no persons in the control group with the same value of the neighborhood, you are not going to be able to use any adjustment techniques to adjust for this confounder in the analysis phase.
+</li> <li> If you have persons in the case group for whom there are no persons in the control group with the same value of the neighborhood, you are not going to be able to use any adjustment techniques to adjust for this confounder in the analysis phase.
+</li> <li> <strong>In other words, the cases and controls will lack complete overlap.</strong>
+</li></ul> 
+By matching on neighborhood (diagram below),  <ul>
+<li> <strong>you are assured that for every case with a given neighborhood there will be at least one control with the same neighborhood</strong>.
+</li></ul> 
+<blockquote> <img width="264" alt="0408_1bcg.JPG" height="254" src="StudyTermMatch.attachments/0408_1bcg.JPG"> </blockquote>
+<p></p>
+<h3 id="Example_of_Matching_for_Precision">  Example of Matching for Precision </h3>
+<p></p>
+Here is an example of the advantage of matching to improve precision.
+<p></p>
+If one performs a <a href="CaseControlStudy.html">case-control study</a> and randomly samples controls from the community, you'll get the following (below - A): a crude or unadjusted odds ratio of 8.8 looking at the association between matches and lung cancer. <ul>
+<li> After adjustment for smoking, the two smoking-specific stratum now feature OR's of 1.0.
+</li> <li> When we pool these 2 strata, we get on OR of 1.0 with the CI of 0.31 to 3.2.
+</li></ul> 
+<blockquote> <img alt="0203_3smoking.JPG" height="209" src="StudyTermMatch.attachments/0203_3smoking.JPG" width="322"> </blockquote>
+<p></p>
+But what if we instead matched on smoking when we sampled the controls. <ul>
+<li> Again, we can choose the controls from the population at large but for every lung cancer case that is a smoker we take a control that is a smoker.
+</li> <li> For every lung cancer case that is a non-smoker, we take a control that is not a smoker.
+</li></ul> 
+We end up with better balance in the smoking strata (see below - B).  <ul>
+<li> Notice, in the smokers, we see 90 cases and 90 controls, in the non-smokers, we see 10 cases and 10 controls.
+</li> <li> When we pool the 2 stratum specific OR's to get the overall adjusted OR, we get the same point estimate as when we sampled controls randomly from the population, but now notice that the CI is narrower (0.40 to 2.5), <strong>ie increased <a href="PrecisionStudy.html">statistical precision</a>, even though the overall sample size is the same.</strong>
+</li> <li> This is all because better balance has been achieved in the comparisons: 90 cases vs 90 controls in this stratum and 10 vs 10 in this stratum.
+</li> <li> This is the point that few realize about matching; it improves statistical precision.
+</li></ul> 
+<blockquote><img height="179" alt="0203_4smoking.JPG" src="StudyTermMatch.attachments/0203_4smoking.JPG" width="360"><br /></blockquote> There exist examples where the benefit of matching in terms of precision is greater than the example shown here.
+<p></p>
+<h2 id="Disadvantages_of_Matching">  Disadvantages of Matching </h2>
+<p></p>
+1. <strong>Finding appropriate matches may be difficult and expensive</strong>. <ul>
+<li> Therefore, the gains in statistical efficiency can be offset by losses in overall efficiency.
+</li></ul> 
+First of all, it may be time-consuming to sift through many individual records to find appropriate matches. As long as you believe you will have overlap in key potential confounders and are not dealing with a complex <a href="VarNominal.html">nominal variable</a>, the inefficiencies of having to find matches may outweigh the benefits gained in <a href="PrecisionStudy.html">statistical precision</a>.
+<p></p>
+2. In a <a href="CaseControlStudy.html">case-control study</a>, <strong>a factor used to match subjects cannot be itself evaluated as a risk factor for the disease.</strong> <ul>
+<li> In general, matching decreases robustness of study to address secondary questions.
+</li></ul> 
+Second, in a case-control study, because you have artificially precluded any association between the potential confounder and the outcome, you cannot directly assess in this study whether this factor is indeed related to the outcome. This illustrates how matching in general works toward reducing the robustness of a study for secondary research questions.
+<p></p>
+3. <strong>Decisions are irrevocable</strong> - <ul>
+<li> if you happened to match on an <strong><a href="VarIntermed.html">intermediary factor</a></strong>, you have lost ability to evaluate role of <a href="PredictorVariable.html">exposure</a> in question via that pathway.
+</li></ul> 
+Third, the decisions you make about matching are irrevocable. For example, say you matched upon an intermediary variable, then you have likely lost the ability to look for an effect of your exposure through that pathway.  <ul>
+<li> An example of this is if you were studying the effect of sexual activity on cervical cancer. If you happened to match on HPV status, you would have precluded your ability to detect an effect of sexual activity and there would be no ability to undo this. In other words, you cannot undo matching that has already occurred.
+</li></ul> 
+4. <strong>If potential confounding factor really is not a confounder,</strong>  <ul>
+<li> <strong>statistical precision can be worse than no matching</strong>.
+</li></ul> 
+Fourth, if the variable you are concerned about producing confounding really is not a confounder, you will actually suffer losses, not gains, in statistical precision compared to the situation where you did not match. Suffice it to say, that the heyday for matching was clearly in the past before the advent of newer mathematical regression modeling techniques and the computers to run them.
+<p></p>
+<strong>Disadvantages can sometimes outweigh advantages in matching.</strong> <strong>ALWAYS Think carefully before you match and seek advice!</strong>
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<span id="DantasTB"></span>
+<p></p>
+Dantas, O. M., Ximenes, R. A., de Albuquerque Mde, F., da Silva, N. L., Montarroyos, U. R., de Souza, W. V., et al. (2006). A case-control study of protection against tuberculosis by BCG revaccination in Recife, Brazil. <em>Int J Tuberc Lung Dis</em>, 10(5), 536-541.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

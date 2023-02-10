@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>IncidenceRateExposure &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/IncidenceRateExposure/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/IncidenceRateExposure/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="IncidenceRateExposure.html" title="edit IncidenceRateExposure" type="application/x-wiki">
+<meta name="description" content="IncidenceRateExposure" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "IncidenceRateExposure",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Compare_Incidence_from_Time_45Varying_Exposure">  Compare Incidence from Time-Varying Exposure </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Advantage_of_Using_Incident_Rates"> Advantage of Using Incident Rates </a>
+</li> <li> <a href="#Need_to_Determine_Time_45Varying_Exposure"> Need to Determine Time-Varying Exposure </a>
+</li> <li> <a href="#Calculating_Stratified_Person_45Time_Incidence_Rates"> Calculating Stratified Person-Time Incidence Rates </a> <ul>
+<li> <a href="#Numerator_and_Denominator"> Numerator and Denominator </a>
+</li> <li> <a href="#Assumptions"> Assumptions </a>
+</li></ul> 
+</li> <li> <a href="#Example:_NSAIDs_and_CHD"> Example: NSAIDs and CHD </a> <ul>
+<li> <a href="#Discussion"> Discussion </a>
+</li></ul> 
+</li></ul> 
+</div>
+<h2 id="Advantage_of_Using_Incident_Rates">  Advantage of Using Incident Rates </h2>
+ There are a number of advantages to using <a href="StudyIncidencePersonTime.html">incident rates</a>. One of them is to look at incidence with time-varying exposures in persons while <a href="PredictorVariable.html">exposed</a> and not exposed..
+<p></p>
+<h2 id="Need_to_Determine_Time_45Varying_Exposure">  Need to Determine Time-Varying Exposure </h2>
+<p></p>
+<strong>Research question:</strong> In a Medicaid database is there an association between use of non-aspirin non-steroidal anti-inflammatory drugs (NSAID) and coronary artery disease (CAD)?
+<p></p>
+<strong>How would you study the relationship between NSAID use and CAD?</strong>
+<p></p>
+This is a common type of problem in <a href="CohortStudy.html">cohort studies</a> that examine <a href="PredictorVariable.html">exposures</a> which can <strong>change over time</strong>, such as smoking, changes in diet, exercise, medications, etc. <ul>
+<li> The database records time periods when medications were being used and time periods when they were not used.
+</li> <li> Some persons will never use the medications and some will use it continuously, but there is a large group who either initiate or discontinue use during the time under study and another group who change in both directions.
+</li> <li> The same person can go on and off the medication multiple times.
+</li></ul> 
+How would you analyze such data using the <a href="StudyIncidenceCumul.html">cumulative incidence</a>approach?
+<p></p>
+<h2 id="Calculating_Stratified_Person_45Time_Incidence_Rates">  Calculating Stratified Person-Time Incidence Rates </h2>
+<p></p>
+For persons followed in a cohort some potential risk factors may be <strong>fixed</strong> but some may be <strong>variable</strong> <ul>
+<li> <strong>Fixed:</strong> gender
+</li> <li> <strong>Variable:</strong> taking medications or getting regular exercise are behaviors that can change over time
+</li></ul> 
+Adding up person-time in an exposure category to get a denominator of time at risk is one way to deal with risk factors that change over time. 
+<h3 id="Numerator_and_Denominator">  Numerator and Denominator </h3>
+ For <a href="PredictorVariable.html">exposures</a> that are time-varying, adding up the total person-time of exposure and non-exposure to form two <strong>denominators</strong> is a very useful way of dealing with the problem of changing exposure groups.
+<p></p>
+The <strong>numerators</strong> for each denominator then become the number of events that occurred among persons at times when they were exposed and similarly for the events among the unexposed.
+<h3 id="Assumptions">  Assumptions </h3>
+<p></p>
+This approach assumes that the exposure&rsquo;s effect on the event is predominately during the time the exposure is occurring. It therefore makes sense for <a href="PredictorVariable.html">exposures</a> whose association with the <a href="OutcomeVariable.html">outcome</a> quickly disappears when the exposure is removed.
+<p></p>
+This <strong>assumption</strong> would not work very well for exposures which have lasting effects long after the actual exposure is removed. For an exposure like smoking with known long-term health risks, linking events to time periods when an individual was and was not smoking would probably assume too close a relationship between the time of exposure and the outcome.
+<h2 id="Example:_NSAIDs_and_CHD">  Example: NSAIDs and CHD </h2>
+<a href="EgTimeVarying.html">Ray</a> (2002) analyzed Medicaid recipients in Tennessee over a ten-year period to determine if there is a relationship between use of steroidal anti-inflammatory drugs (NSAIDs) and coronary heart disease (CHD). 
+<p></p>
+They calculated incidence rates during times of use and non-use that account for time of exposure. (The assumption is that NSAID use will have an immediate effect during usage in lowering the incidence of cardiovascular events.)
+<p></p>
+ <strong>Rate for NSAID use</strong> = 12.02 per 1000 pers-yrs
+<p></p>
+<strong>Rate for non use</strong> = 11.86 per 1000 pers-yrs
+<p></p>
+<strong>Rate ratio</strong> = 1.01
+<p></p>
+Concluded <strong>no evidence</strong> that NSAIDS reduced risk of CHD events.
+<h3 id="Discussion">  Discussion </h3>
+<p></p>
+Ideally, this is a question that should be resolved by a clinical trial, but a clinical trial of this question may never be done. In the absence of a randomized trial, an observational <a href="CohortStudy.html">cohort study</a> is the second best choice.
+<p></p>
+Again, a <a href="CohortStudy.html">prospective cohort</a> with better measurements of all the potential confounders, in particular aspirin use, would be preferable, but to get the numbers required would mean a very large cohort followed for a number of years. Possible but very expensive.
+<p></p>
+Analyzing existing data is less desirable, but it does provide an opportunity to assemble a cohort analysis on a large number over many years at minimal expense.
+<p></p>
+The question that remains is whether they were able to get adequate control of <a href="BiasConfound.html">confounders</a>.
+<p></p>
+<hr />
+<p></p>
+<strong><em>Jeff Martin, MD</em></strong>
+<p></p>
+-- <a href="../Main/MaryB.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">MaryB</a> - 05 Mar 2009
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

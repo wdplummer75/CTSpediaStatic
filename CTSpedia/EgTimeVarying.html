@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgTimeVarying &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/EgTimeVarying/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgTimeVarying/favicon.ico" rel="shortcut icon">
+<link href="EgTimeVarying.html" rel="alternate" type="application/x-wiki" title="edit EgTimeVarying">
+<meta name="description" content="EgTimeVarying" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgTimeVarying",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Incidence_45_Time_45Varying_Exposure">  Example: Incidence - Time-Varying Exposure </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Analysis_of_Changing_Exposure_and_Disease_Incidence"> Analysis of Changing Exposure and Disease Incidence </a>
+</li> <li> <a href="#Option_1:_Cumulative_Incidence"> Option 1: Cumulative Incidence </a> <ul>
+<li> <a href="#Problem_with_Cumulative_Incidence_at_Follow_45up"> Problem with Cumulative Incidence at Follow-up </a>
+</li></ul> 
+</li> <li> <a href="#Option_2:_Use_Incidence_Rates"> Option 2: Use Incidence Rates </a>
+</li> <li> <a href="#Analysis_of_Changing_Exposure"> Analysis of Changing Exposure </a> <ul>
+<li> <a href="#Denominator"> Denominator </a>
+</li></ul> 
+</li> <li> <a href="#Analysis_of_Person_45Time_Rates"> Analysis of Person-Time Rates </a> <ul>
+<li> <a href="#Discussion"> Discussion </a>
+</li></ul> 
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Analysis_of_Changing_Exposure_and_Disease_Incidence">  Analysis of Changing Exposure and Disease Incidence </h2>
+<p></p>
+<a href="#RayExposure" class="foswikiCurrentTopicLink">Ray</a> (2002) analyzed Medicaid recipients in Tennessee over a ten-year period to determine if there is a relationship between use of steroidal anti-inflammatory drugs (NSAIDs) and coronary heart disease (CHD).
+<p></p>
+<strong>Data:</strong> Tennessee Medicaid data base, 1987-1998
+<p></p>
+<strong>Use of NSAIDs</strong> could change over 11 years of study: same person could be in both using and non-using group at different times
+<h2 id="Option_1:_Cumulative_Incidence">  Option 1: Cumulative Incidence </h2>
+<p></p>
+One option was to construct some fixed classification of persons as never, sometime, and frequent users and do <a href="StudyIncidenceCumul.html">cumulative incidence</a> in each group.
+<p></p>
+In a prospective <a href="StudyCohort.html">cohort</a> with an <a href="PredictorVariable.html">exposure</a> that can vary over time, subjects <strong>cannot be classified in groups</strong> by their amount of exposure at baseline because their future medication use cannot be known in advance.
+<p></p>
+In a cohort analysis done retrospectively (such as this example) or at the end of follow-up in a prospective cohort, it is <strong>possible to classify individuals</strong> by some measure of total use.
+<h3 id="Problem_with_Cumulative_Incidence_at_Follow_45up">  Problem with Cumulative Incidence at Follow-up </h3> <ol>
+<li> It would give a rather crude categorization (say, 2 or 3 groups).
+</li> <li> It does not do a good job of distinguishing length of time of use, which may vary from months to years.
+</li></ol> 
+<h2 id="Option_2:_Use_Incidence_Rates">  Option 2: Use Incidence Rates </h2>
+<p></p>
+<strong>BETTER:</strong> <strong>Incidence rates during times of use and non-use that account for time of exposure.</strong> <ul>
+<li> They would be more informative, and they are easily calculated.
+</li></ul> 
+<p></p> <ul>
+<li> <strong>KEY ASSUMPTION:</strong> The assumption is that NSAID use will have an immediate effect during usage in lowering the incidence of cardiovascular events.
+</li></ul> 
+<p></p>
+<h2 id="Analysis_of_Changing_Exposure">  Analysis of Changing Exposure </h2>
+<p></p>
+In the <a href="#RayExposure" class="foswikiCurrentTopicLink">Ray</a> (2002) paper, the following data were given:
+<p></p>
+<strong>Person-time totaled for using and not using NSAIDs; MI or CAD death outcome</strong> <ul>
+<li> The study endpoint event was hospitalization for myocardial infarction or death from coronary artery disease.
+</li></ul> 
+The following were <a href="CensorData.html">censoring</a> variables:  <ul>
+<li> death,
+</li> <li> reaching age 85,
+</li> <li> entry into a nursing home,
+</li> <li> life-threatening illness (other than CAD), or
+</li> <li> end of study.
+</li></ul> 
+181,441 person-years of <strong>use</strong> (persons who were new users of NSAIDS)
+<p></p>
+181,441 person-years of <strong>non-use</strong> (persons, matched by age, sex, and calendar date)
+<p></p>
+Subjects with no history of prior NSAIDS use who began use after having been enrolled in the database for 365 days (in order to have data on prior illnesses) were compared with subjects not using NSAIDS.
+<h3 id="Denominator">  Denominator </h3>
+<p></p>
+A person can contribute to the denominator both for use and non-use <ul>
+<li> but only after a 365 day <strong>wash out</strong> period between use and non-use
+</li></ul> 
+A subject who stopped using was eligible to be in the non-using group later, but to avoid any carryover effect, only after 365 days of non-use had elapsed.
+<p></p>
+<h2 id="Analysis_of_Person_45Time_Rates">  Analysis of Person-Time Rates </h2>
+ <strong>Rate for NSAID use</strong> = 12.02 per 1000 pers-yrs
+<p></p>
+<strong>Rate for non use</strong> = 11.86 per 1000 pers-yrs
+<p></p>
+<strong>Rate ratio</strong> = 1.01
+<p></p>
+Concluded <strong>no evidence</strong> that NSAIDS reduced risk of CHD events.
+<h3 id="Discussion">  Discussion </h3>
+<p></p>
+Ideally, this is a question that should be resolved by a clinical trial, but a clinical trial of this question may never be done. In the absence of a randomized trial, an observational <a href="CohortStudy.html">cohort study</a> is the second best choice.
+<p></p>
+Again, a <a href="CohortStudy.html">prospective cohort</a> with better measurements of all the potential confounders, in particular aspirin use, would be preferable, but to get the numbers required would mean a very large cohort followed for a number of years. Possible but very expensive.
+<p></p>
+Analyzing existing data is less desirable, but it does provide an opportunity to assemble a cohort analysis on a large number over many years at minimal expense.
+<p></p>
+The question that remains is whether they were able to get adequate control of <a href="BiasConfound.html">confounders</a>.
+<h2 id="References">  References </h2>
+<span id="RayExposure"></span>
+<p></p>
+Ray, W. A., Stein, C. M., Daugherty, J. R., Hall, K., Arbogast, P. G., &amp; Griffin, M. R. (2002). COX-2 selective non-steroidal anti-inflammatory drugs and risk of serious coronary heart disease. <em>Lancet</em>, 360(9339), 1071-1073.
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

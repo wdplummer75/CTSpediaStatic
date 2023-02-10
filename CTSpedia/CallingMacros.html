@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CallingMacros &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/CallingMacros/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/CallingMacros/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="CallingMacros.html" title="edit CallingMacros" type="application/x-wiki">
+<meta name="description" content="CallingMacros" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "CallingMacros",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Calling_Macros">  Calling Macros </h1>
+<em><strong>Lead Author(s):</strong></em> Peter Bacchetti, PhD
+<p></p>
+To use one of these macros in your program, or within another macro you create to post here, put statements like the following before you call the macro:
+<p></p>
+/* filename lreg URL "http://CTSpedia.org/do/viewfile/CTSpedia/LogisticRegressionMacro?filename=Logistic.sas;rev=4"; */<br />filename lreg URL "http://ctspedia.org/twiki/pub/CTSpedia/LogisticRegressionMacro/Logistic.sas";<br />%include lreg;
+<p></p>
+These statments make the main logistic regression macro available. The <em>fileref</em> "lreg" in the above is just a word that you can make up, but it should be no more than 8 characters long. (Note that you should be able to copy and paste, rather than type in, the URLs: <a href="PastingURLs.html">Here's how</a>).
+<p></p>
+It will usually be best to use this form, which uses the most current version of the file even if it changes since you first wrote your program. This will incorporate any subsequent error or problem corrections. The commented out statement above it instead finds the specific version of the macro that was current when you wrote your program. You may need this if a later updated version is not called the same way or does not produce the same output as assumed in your program. Switching which statement is commented out will then permit your program to run as originally intended without updating it to work with the later version of the macro it calls.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

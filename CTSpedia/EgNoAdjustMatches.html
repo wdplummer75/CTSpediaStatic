@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgNoAdjustMatches &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/EgNoAdjustMatches/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgNoAdjustMatches/favicon.ico" rel="shortcut icon">
+<link href="EgNoAdjustMatches.html" rel="alternate" type="application/x-wiki" title="edit EgNoAdjustMatches">
+<meta name="description" content="EgNoAdjustMatches" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgNoAdjustMatches",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Do_Not_Adjust_45_Lung_Cancer_and_Matches">  Example: Do Not Adjust - Lung Cancer and Matches </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Crude_and_Adjusted_Data"> Crude and Adjusted Data </a>
+</li> <li> <a href="#Comparing_Results"> Comparing Results </a>
+</li> <li> <a href="#Reporting"> Reporting </a>
+</li> <li> <a href="#Loss_of_Precision"> Loss of Precision </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Crude_and_Adjusted_Data">  Crude and Adjusted Data </h2>
+<p></p>
+Here is an example of what can happen when you adjust for something you don&rsquo;t need to adjust for.
+<blockquote> <img alt="0417_4lung.JPG" height="269" width="320" src="StudyAnalysisInappropriate.attachments/0417_4lung.JPG"></blockquote>
+<p></p>
+<h2 id="Comparing_Results">  Comparing Results </h2>
+ When we look at the effect of matches on the <a href="StudyAssoc.html">association</a> between smoking and lung cancer.
+<p></p> <ul>
+<li> There was no <a href="VarThird.html">interaction</a> and furthermore,
+</li> <li> When we looked at the measure of association in the two matching-using strata,
+</li> <li> we saw the same effect as the unadjusted association.
+</li></ul> 
+In other words, matches had no effect on the association.  <ul>
+<li> There is no <a href="BiasConfound.html">confounding</a> here.
+</li></ul> 
+<h2 id="Reporting">  Reporting </h2>
+ In this case, we would report the <a href="StratificationTerm.html">crude estimate</a>, only right?  <ul>
+<li> Why not report the adjusted estimate -- the average of the stratum-specific estimates?
+</li> <li> One answer is that it is too much work.
+</li> <li> The second answer is that often when you <a href="StratificationTerm.html">stratify</a>, you pay a little price in terms of statistical precision.
+</li></ul> 
+<h2 id="Loss_of_Precision">  Loss of Precision </h2>
+ In other words, the confidence interval of the crude estimate will be narrower than the CI of the adjusted measure - they both will have 21 as their point estimate but the crude association will be more precise.  <ul>
+<li> As you can see, the 95% <a href="ConfidenceIntervals.html">confidence interval</a> for the crude estimate is 16.4 to 26.9 compared to 14.2 to 31.1
+</li></ul> 
+<strong>Hence, this illustrates why you don&rsquo;t want to adjust for things that you don&rsquo;t need to.</strong>
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

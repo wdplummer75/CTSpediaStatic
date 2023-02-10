@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StatisticalTest &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/StatisticalTest/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StatisticalTest/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit StatisticalTest" rel="alternate" href="StatisticalTest.html">
+<meta name="description" content="StatisticalTest" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "StatisticalTest",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Statistical_Test_Needed">  Statistical Test Needed </h1>
+<p></p>
+<h4 id="FORUM_QUESTION:_Julia_St_George_45_22_May_2009_45_12:12">  FORUM QUESTION:  Julia St George - 22 May 2009 - 12:12 </h4>
+<p></p>
+I found that 0 of 63 patients responded to an alternative therapy, but when I submitted the paper for publication, they said I needed a statistical test. Why do I need a statistical test for this, and what is the best way to respond to the reviewers?
+<p></p>
+<h4 id="FORUM_ANSWER:_Main.FrankHarrell_45_22_May_2009_45_15:11">  FORUM ANSWER: <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/FrankHarrell.html">FrankHarrell</a> - 22 May 2009 - 15:11 </h4>
+<p></p>
+The bigger question, if you are meaning to address questions of relative efficacy, is what is your control group?  Data from a single-arm trial are not useful for establishing efficacy or lack thereof unless results from the comparator are known to a high degree of precision and you have faith that the patients entering your study are very similar to those in the comparator studies.  But I sense however that you are only trying to establish that the alternative therapy is not looking good by itself in the types of patients treated.  Then  a statistical test is not called for but a confidence interval is.  Here the 3/N rule comes into play because of the zero.  The upper 95% confidence limit for the probability of response is close to 3/63 = 0.048.  The Wilson (a method that is generally more accurate than the so -called "exact" binomial method) confidence limits are [0, 0.057] which in this case happens to equal the "exact" limits.  You can be, loosely speaking, be 95% confident that the unknown probability of response to alternative therapy in the types of patients you studied is &lt;= than 0.057.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgCumulIncidenceSEER &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/EgCumulIncidenceSEER/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/EgCumulIncidenceSEER/favicon.ico">
+<link href="EgCumulIncidenceSEER.html" rel="alternate" type="application/x-wiki" title="edit EgCumulIncidenceSEER">
+<meta name="description" content="EgCumulIncidenceSEER" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "EgCumulIncidenceSEER",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Cumulative_Incidence_45_SEER_Program">  Example: Cumulative Incidence - SEER Program </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Long_45Term_Survival_45_NCI_SEER_Program"> Long-Term Survival - NCI SEER Program </a>
+</li> <li> <a href="#Analysis_SEER_Data"> Analysis SEER Data </a>
+</li> <li> <a href="#Analyzing_Data_by_Calendar_Time_Cohorts"> Analyzing Data by Calendar Time Cohorts </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div> 
+<h2 id="Long_45Term_Survival_45_NCI_SEER_Program">  Long-Term Survival - NCI SEER Program </h2>
+ In the following example from <a href="#BrennerCumInc" class="foswikiCurrentTopicLink">Brenner</a>, the researchers looked at cancer mortality in the nationwide NCI (National Cancer Institute) SEER (Surveillance, Epidemiology, and End Results) program. <blockquote> <img src="StudyIncidenceCumul.attachments/0305_graph.JPG" alt="0305_graph.JPG" height="270" width="300"> </blockquote> 
+<h2 id="Analysis_SEER_Data">  Analysis SEER Data </h2>
+ <strong>Analysis of data from National Cancer Institute's</strong>  <ul>
+<li> Follow-up of Diagnoses 1978 through 1998 (SEER program):
+</li></ul> 
+Overall survival cohort method = <strong>40% at 20 years</strong>
+<p></p>
+Overall survival with period analysis allowing for <strong>Temporal Trend</strong> <ul>
+<li> Changes in survival in recent calendar periods = <strong>51% at 20 years</strong>
+</li></ul> 
+They estimated that improvements in survival in more recent years would have resulted in a 20-year <a title="Create this topic" href="StudyCumulIncidence.html" class="foswikiNewLink" rel="nofollow">cumulative</a> incidence of 51% survival rather than the 40% that the registry data actually show.
+<p></p>
+<span id="CalendarTimeCohort"></span>
+<p></p>
+<h2 id="Analyzing_Data_by_Calendar_Time_Cohorts">  Analyzing Data by Calendar Time Cohorts </h2>
+ This example shows how the data were analyzed by calendar time <a href="StudyCohort.html">cohorts</a>.
+<p></p>
+The analysis of <a href="BiasDefinition.html">biases</a> in the cumulative incidence rates was performed by dividing the persons into 5-year cohorts based on the time period of their cancer diagnosis. <ul>
+<li> This uses all cancer types in the SEER database.
+</li></ul> 
+Done this way <strong>each more recent 5-year cohort has a 5-year shorter total follow-up time</strong>, but a clear trend toward overall improved survival appears.  <ul>
+<li> The top dotted line for the 1998 cohort is an extrapolation out to 20-years as there was at the time of the analysis no follow-up data on this group.
+</li> <li> So the estimate for the overall improvement in 20-year survival is the difference  <ul>
+<li> between the extrapolation of 1998 to 20 years
+</li> <li> versus the actual 20-year follow-up on the 1978 cohort.
+</li></ul> 
+</li></ul> 
+<h2 id="References">  References </h2>
+<span id="SEERCumInc"></span>
+<p></p>
+Brenner, H. (2002). Long-term survival rates of cancer patients achieved by the end of the 20th century: a period analysis. <em>Lancet, 360</em> (9340), 1131-1135.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

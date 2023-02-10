@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StandAloneData &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/StandAloneData/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/StandAloneData/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="alternate" href="StandAloneData.html" title="edit StandAloneData" type="application/x-wiki">
+<meta name="description" content="StandAloneData" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "StandAloneData",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Stand_Alone_Data_Entry">  Stand Alone Data Entry </h1>
+<p></p>
+<p></p>
+<h4 id="Main.KnutWittkowski_45_26_Jun_2009_45_08:31">  <a class="foswikiNewLink" rel="nofollow" href="../Main/KnutWittkowski.html" title="Create this topic">KnutWittkowski</a> - 26 Jun 2009 - 08:31 </h4>
+<p></p>
+Michael, EpiInfo is using MS Access for both the data and the meta data. Do you have any suggestion how software could automatically create an Access data base?
+<p></p>
+<h4 id="Main.MichaelKohn_45_25_Jun_2009_45_14:54">  <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/MichaelKohn.html">MichaelKohn</a> - 25 Jun 2009 - 14:54 </h4>
+ If you have cell phone capability, one option is IVR (interactive voice response) that allows users to interact with the database through a standard telephone or cell phone. I have heard that OneWorld Health (<a href="http://www.oneworldhealth.org/" title="one world health">www.oneworldhealth.org</a>) uses this in their clinical trials and is working with a private vendor called QuesGen (<a title="quesgen" target="_blank" href="http://www.quesgen.com/">www.quesgen.com</a>) to make their data collection platform available using this technology. If you actually have laptop computers and electricity, but just don't have Internet, you can collect into several different stand-alone systems. We have made Microsoft Access work for distributed data entry with replication and re-synchronization. You split your database into front-end and back-end files, create a single master copy of the back-end and distribute replicas which get returned (e.g. on a USB drive) and re-synchronized. This is probably too complicated for your environment.
+<p></p>
+Sometimes the best approach is the old fashioned one of collecting data onto paper forms and shipping them to a central location for subsequent transcription into the computer database.
+<p></p>
+<h4 id="Main.KnutWittkowski_45_22_Jun_2009_45_19:22_47_23_Jun_2009_45_05:52">  <a href="../Main/KnutWittkowski.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">KnutWittkowski</a> - 22 Jun 2009 - 19:22 / 23 Jun 2009 - 05:52 </h4>
+ I'm currently looking into the format of the EpiInfo (<a href="http://www.cdc.gov/epiinfo/">http://www.cdc.gov/epiinfo/</a>) data dictionary so that <a href="WISDOM.html">WISDOM</a> (<a href="https://www.ctspedia.org/do/view/CTSpedia/WebServices">https://www.ctspedia.org/do/view/CTSpedia/WebServices</a>) would automatically create for you equivalent questionnaires in REDCap (online data entry) and EpiInfo (offline data entry).
+<p></p>
+<h4 id="Main.PhilMiller_45_19_Jun_2009_45_11:17">  <a title="Create this topic" href="../Main/PhilMiller.html" class="foswikiNewLink" rel="nofollow">PhilMiller</a> - 19 Jun 2009 - 11:17 </h4>
+ We are planning an international study where data will be collected in remote locations so web-based data entry solutions are not practical. What software have others found useful for this type of system?
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

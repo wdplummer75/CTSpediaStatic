@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>IntraClassCorrelation &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/IntraClassCorrelation/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/IntraClassCorrelation/favicon.ico">
+<link title="edit IntraClassCorrelation" type="application/x-wiki" rel="alternate" href="IntraClassCorrelation.html">
+<meta name="description" content="IntraClassCorrelation" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "IntraClassCorrelation",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<STYLE TYPE="text/css">
+<!--
+P {text-indent: 30pt;}
+-->
+</STYLE>
+<p></p>
+<p></p>
+<h1 id="Intra_45Class_Correlation_40ICC_41">  Intra-Class Correlation (<a href="ICC.html">ICC</a>) </h1>
+<p></p>
+In planning group-randomized studies, we typically assume that the measurements between any pair of people in the same group have the same correlation, the intra-class correlation or <a href="ICC.html">ICC</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Estimating_ICC"> Estimating ICC </a>
+</li> <li> <a href="#Influence_of_ICC_on_PowerDef"> Influence of ICC on PowerDef </a> <ul>
+<li> <a href="#Calculating_the_influence_of_the_ICC:_the_Variance_Inflation_Factor"> Calculating the influence of the ICC: the Variance Inflation Factor </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Estimating_ICC">  Estimating <a href="ICC.html">ICC</a> </h2>
+ Sometimes you can get an estimate of the <a href="ICC.html">ICC</a> from a previous publication or if you need to estimate it from your preliminary data, there are several possible approaches:  <ol>
+<li> You can use analysis of variance (<a href="ANOVA.html">ANOVA</a>) and estimate the <a href="ICC.html">ICC</a> using the mean squares within and between groups.
+</li> <li> You can also fit a clustered-data model assuming compound symmetry with a generalized estimating equation approach and use the working correlation.
+</li></ol> 
+<p></p>
+<h2 id="Influence_of_ICC_on_PowerDef">  Influence of <a href="ICC.html">ICC</a> on <a href="PowerDef.html">PowerDef</a> </h2>
+ The more correlated the people in a group, the bigger the <a href="ICC.html">ICC</a>. And the less information each new person in the same group will add to the study! We can calculate this effect using the <a href="VarianceInflationFactor.html">variance inflation factor</a> (VIF).
+<p></p>
+<img src="http://twiki.library.ucsf.edu/twiki/pub/CTSpedia/IntraClassCorrelation/influence_of_icc_on_power.png" alt="influence_of_icc_on_power.png">
+<p></p>
+<h3 id="Calculating_the_influence_of_the_ICC:_the_Variance_Inflation_Factor"> Calculating the influence of the <a href="ICC.html">ICC</a>: the <a href="VarianceInflationFactor.html">Variance Inflation Factor</a> </h3>
+The variance inflation factor (VIF) tells how much larger a sample size you will need because of within-group correlation. You have to know how many people per group (call this number m) and the <a href="ICC.html">ICC</a>. The formula for the VIF is:
+<p> <strong>VIF = 1 + (m-1)x(<a href="ICC.html">ICC</a>)</strong> 
+<br/>
+<br/>Suppose that you have a lot of physicians, each of whom sees about 20 patients with Type II diabetes.
+You find an intraclass correlation (<a href="ICC.html">ICC</a>) of 0.05 between outcomes for patients with the same doctor. <p>
+The VIF will then be:<p>
+<p> <strong>VIF = 1 + (20-1)x0.05</strong> 
+<p><ind> <strong>= 1 + 0.95  = 1.95.</strong> <br/>
+<br/>You will need almost twice as many people enrolled in your study as you would have required if they were not clustered and similar in physician practices. 
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

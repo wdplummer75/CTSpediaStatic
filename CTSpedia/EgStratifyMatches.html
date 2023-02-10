@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgStratifyMatches &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgStratifyMatches/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/EgStratifyMatches/favicon.ico" type="image/x-icon">
+<link rel="alternate" href="EgStratifyMatches.html" title="edit EgStratifyMatches" type="application/x-wiki">
+<meta name="description" content="EgStratifyMatches" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgStratifyMatches",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Stratification_45_Matches_44_Smoking_44_and_Lung_Cancer">  Example: Stratification - Matches, Smoking, and Lung Cancer </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Reason_for_Stratification"> Reason for Stratification </a>
+</li> <li> <a href="#New_Strat:_Smoking_and_Non_45smoking"> New Strat: Smoking and Non-smoking </a>
+</li> <li> <a href="#Summary_61_Single_Overall_Unconfounded_Adjusted_Estimate"> Summary = Single Overall Unconfounded Adjusted Estimate </a>
+</li></ul> 
+</div>
+<h2 id="Reason_for_Stratification">  Reason for Stratification </h2>
+<p></p>
+In the example below we are concerned about the confounding effect of smoking on the relationship between matches and lung cancer, we <a href="StratificationTerm.html">stratify</a> on the two values of smoking: <ul>
+<li> smoking present
+</li> <li> smoking absent
+</li></ul> 
+<h2 id="New_Strat:_Smoking_and_Non_45smoking">  New Strat: Smoking and Non-smoking </h2>
+ <strong>Each of these strata is now unconfounded with respect to smoking status.</strong>
+<p></p>
+After we create these strata, we observe that each of the smoking specific-stratum <a href="OddsTerm.html">odds ratios</a> have become one. <ul>
+<li> <strong>The difference between the crude and adjusted measure of <a href="StudyAssoc.html">association</a> represents <a href="BiasConfound.html">bias</a> due to confounding</strong>.
+</li></ul> 
+<blockquote><img src="BiasConfoundAnalysis.attachments/0410_smoking_adjusted.JPG" width="314" height="179" alt="0410_smoking_adjusted.JPG"></blockquote>
+<p></p>
+<span id="CrudeMeasure"></span>
+<p></p>
+<strong>Crude OR = <a href="StudyAnalysis2x2.html">2x2 table</a> - no adjustment for confounder</strong>
+<p></p>
+<span id="StratifiedAdjustedMeasure"></span>
+<p></p>
+<strong>Stratified OR =A 2x2 table for each of the stratified variables - adjusted for confounder</strong>
+<p></p>
+<h2 id="Summary_61_Single_Overall_Unconfounded_Adjusted_Estimate">  Summary = Single Overall Unconfounded Adjusted Estimate </h2>
+<p></p>
+In the smoking, matches, lung cancer example (below), the measures of association from the different strata were identical; they are both equal to 1. <ul>
+<li> Herethe summary is 1 for a single overall unconfounded adjusted estimate.
+</li></ul> 
+<span id="SummaryAdjustedEstimate"></span>
+<p></p>
+<strong>Summary Adjusted Estimate = Summary of all measurements from the stratified variables</strong>
+<blockquote> <img src="BiasConfoundAnalysis.attachments/0410_1smoking_example.JPG" alt="0410_1smoking_example.JPG" height="167" width="294"> </blockquote>
+<p></p>
+<strong>But, in real life it is seldom the case that the estimates from the various strata are identical.</strong>
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

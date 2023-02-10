@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PartialLeastSquares &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/PartialLeastSquares/favicon.ico"> <link href="../MISSING RESOURCE CTSpedia/PartialLeastSquares/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="PartialLeastSquares.html" title="edit PartialLeastSquares">
+<meta name="description" content="PartialLeastSquares" />
+<link type="text/css" media="all" rel="stylesheet" class="head JQUERYPLUGIN::TWISTY" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tablePartialLeastSquares1 td {vertical-align:middle; vertical-align:top}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol0 {text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol1 {text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol2 {text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol3 {text-align:right}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol4 {text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol5 {text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol6 {text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 td.foswikiTableCol7 {text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 th {vertical-align:middle; background-color:#ffffff; color:#0066cc; text-align:left}
+body .foswikiTable#tablePartialLeastSquares1 th a:link {color:#0066cc}
+body .foswikiTable#tablePartialLeastSquares1 th a:visited {color:#0066cc}
+body .foswikiTable#tablePartialLeastSquares1 th a:hover {color:#0066cc; background-color:#ffffff}
+body .foswikiTable#tablePartialLeastSquares1 th.foswikiSortedCol {background-color:#eeeeee}
+body .foswikiTable#tablePartialLeastSquares1 tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable#tablePartialLeastSquares1 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f5f5f5}
+</style><!--TABLEPLUGIN_specific-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "PartialLeastSquares",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::TWISTY" src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="Partial_Least_Squares_40PLS_41">  Partial Least Squares (PLS) </h1>
+<strong><em>Lead Author(s):</em></strong> Danh Nguyen, PhD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Examples_and_Implementation_in_SAS_and_R"> Examples and Implementation in SAS and R </a>
+</li> <li> <a href="#Relation_to_Principal_Components_Analysis"> Relation to Principal Components Analysis </a>
+</li> <li> <a href="#Partial_Least_Squares_Regression_40PLSR_41_and_Principal_Components_Regression_40PCR_41"> Partial Least Squares Regression (PLSR) and Principal Components Regression (PCR) </a>
+</li> <li> <a href="#Partial_Least_Squares_Classification"> Partial Least Squares Classification </a>
+</li> <li> <a href="#Implementation_Considerations"> Implementation Considerations </a>
+</li> <li> <a href="#See_Also"> See Also </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+Partial least squares can be viewed as a dimension reduction method that reduces the dimension of the predictor space by constructing a sequence of linear combinations of the original predictor variables. If we denote the predictors as X1, X2, . . ., Xp, then PLS dimension reduction reduces the p-dimensional predictor space into a lower K-dimensional component space. Depending on the area of application, the constructed linear combinations are called components, factors or latent variables. The PLS components are constructed by maximizing the sample covariance between the response vector <strong>y</strong> and linear combination <strong>Xc</strong>, where X is the <em>n</em> -by- <em>p</em> predictor matrix for <em>n</em> observations and vector <strong>c</strong>. So each PLS components is a linear combination
+<p></p>
+T = w1X1 + w2X2 + . . . + w <em>p</em> X <em>p</em>
+<p></p>
+and each component is orthogonal to every other component.
+<h2 id="Examples_and_Implementation_in_SAS_and_R">  Examples and Implementation in SAS and R </h2>
+<em>Example:</em> <em>Microarray gene expression data</em>. Expression intensity measures for thousands of gene probes are simultaneously measured using microarrays, such as the Affymetrix array. In Golub <em>et al.</em> (1999)[ <strong>LINK to reference</strong> ]thousands of gene expressions are measured on a (training) data set of 38 samples, consisting of 27 acute lymphoblastic leukemia (ALL) samples and 11 acute myeloid leukemia (AML=1) samples. For illustration, a subset data set of <em>p</em> = 3051 gene probes is used here. An example of implementation using the <a href="PartialLeastSquaresR.html">R function PLS.r</a> follows. <pre><pre>&#62;library(multtest) # to get Golub et al. (1999) leukemia data
+&#62;data(golub)
+&#62;X &#60;- t(golub); dim(X) #&#91;1&#93; 38 3051 
+&#62;y &#60;- matrix(golub.cl) # sample labels: 27 ALL (0) and 11 AML (1)
+&#62;pls.fit &#60;- PLS(X, X, y, 3) # fit PLS</pre> </pre>The above PLS fit constructs 3 PLS components. The objects returned from fitting PLS are: <pre>&#62; names(pls.fit)
+&#91;1&#93; &#34;W&#34; &#34;PVEX&#34; &#34;PVEY&#34; &#34;T1&#34; &#34;T2&#34; &#34;B&#34; &#34;V&#34; </pre>T1 consists of the three PLS fitted components. The PLS header function describes in detail the function inputs and outputs. Below are plots of the PLS components with markers for each type of samples (ALL or AML):
+<p></p>
+<img src="http://ctspedia.org/twiki/pub/CTSpedia/PartialLeastSquares/PLS_fig1.PNG" alt="PLS_fig1.PNG">
+<p></p>
+The above PLS function provides the same results as the SAS implementation in PROC PLS[LINK to SAS reference]. Attached is a SAS macro for running a sample PLS<a href="http://ctspedia.org/twiki/pub/CTSpedia/PartialLeastSquaresSAS/samplepls.txt">: samplepls.txt</a>.
+<p></p>
+PLS regression can also be implemented in R (pls [LINK - <a href="http://cran.r-project.org/]">http://cran.r-project.org/]</a> [LINK to section on PLS regression below.]
+<p></p>
+<em>Other examples</em>. PLS is often used in the field of chemometrics, with spectrometric calibration as a classic example. Here, spectrographic readings are taken at <em>p</em> frequencies or wavelengths on <em>n</em> samples of known concentrations. In clinical epidemiology, PLS dimension reduction has been applied to clinical variables such as dietary/nutrient intakes. Additional details can be found in the guide to SAS PROC PLS.
+<p></p>
+<h2 id="Relation_to_Principal_Components_Analysis">  Relation to Principal Components Analysis </h2>
+Like PLS, Principal Components Analysis (PCA) also constructs orthogonal linear combinations of the predictors, but the linear combinations are constructed to maximize the variance of the linear combination of the predictors.
+<p></p>
+<em>PCA Implementation in SAS and R</em>. A standard R function to implement PCA is <em>princomp</em> when <em>n</em> &gt; <em>p</em>. For cases where <em>p</em> &gt; <em>n</em>, like genomics expression data, other functions can be used like <em>eigen</em> and <em>svd</em>. PCA can also be implemented in SAS using PROC PRINCOMP.
+<h2 id="Partial_Least_Squares_Regression_40PLSR_41_and_Principal_Components_Regression_40PCR_41">  Partial Least Squares Regression (PLSR) and Principal Components Regression (PCR) </h2>
+After fitting PLS, we have the <em>K</em> PLS components or linear combinations, say T1, T2, and TK. Partial least squares regression is a linear regression model [LINK to CTSpedia term or article on linear regression] with the <em>K</em> PLS components as predictors/covariates in the linear regression along with other relevant covariates, such as clinical and demographic variables. One can think of PLSR as a two-stage method. The first stage is the PLS dimension reduction. The second stage is the fitting of the linear regression. Here the outcome (response) variable Y is continuous.
+<p></p>
+In principal components regression, the above description is applicable with the PLS components replaced by the principal components in the regression model.
+<h2 id="Partial_Least_Squares_Classification">  Partial Least Squares Classification </h2>
+When the outcome variable is categorical and, for instance, the aim is to predict the diagnostic categories, then the interest is classification. For instance, in the examples section,[LINK back to above example/implementation section] one interest may be to explore the hypothesis of whether global gene expression profiles can predict correctly the acute leukemia subtypes (AML or ALL). Another example might include prediction/classification of controls and different stages of lung cancer based on biomarker data, such as gene expression (mRNA or protein) data obtained from microarray, or mass spectrometry etc.
+<p></p>
+Similar to PLSR, PLS classification involves using the constructed PLS components (possibly along with other clinical or demographic variables) in a classification procedure (second stage). There are many classification methods that can be used for this purpose, including linear or quadratic discriminant analysis, centroid methods, nearest neighbors, neural networks, etc. The book by Hastie et al. (2001)[LINK <a href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/]">http://www-stat.stanford.edu/~tibs/ElemStatLearn/]</a> may be useful to learn more about classification methods. See Nguyen and Rocke (2002)[LINK to reference] for examples of PLS cancer classification with genomic expression data.
+<h2 id="Implementation_Considerations">  Implementation Considerations </h2>
+There are considerations when performing PLS regression or classification:
+<p></p> <ul>
+<li> Standardization: In the PLS dimension reduction step, centering and/or scaling may be needed.
+</li> <li> Generalization and over-fitting: With sufficient data, a training (learning) data set and a test data set should be created to test how well the fitted model performs on new (test) data. For instance, the original data can be divided into 2/3 and 1/3 for training and testing. If this is not feasible, cross-validation (one one out or M-fold CV) is an alternative.
+</li> <li> In fitting the PLS using the PLS.r [LINK] function with training and test data:
+</li></ul> 
+<pre>&#62;pls.fit &#60;- PLS(X.train, X.test, y, 3) # fit 3-component PLS </pre>the outputs T1 and T2 are the training and test components respectively. The PLS() function also can take more than one outcome variables (continuous or <em>G</em> categories/groups), in which case Y is a matrix. When there are <em>G</em> groups for a categorical outcome, then Y is a matrix of indicator variables. See PLS( ) function header for more details. 
+<h2 id="See_Also">  See Also </h2> <ul>
+<li> <a href="StatToolsTopic011.html">Partial Least Squares SAS</a>
+</li> <li> <a href="PartialLeastSquaresR.html">PartialLeastSquaresR</a>
+</li></ul> 
+<p></p>
+<h2 id="References">  References </h2> <ul>
+<li> Danh V. Nguyen: UC Davis \x{2013} CTSpedia article and R functions. (February 14, 2009)
+</li> <li> Golubetal.(1999).Molecularclassificationofcancer:classdiscoveryandclasspredictionbygeneexpressionmonitoring,Science,Vol.286:531-537.http://www-genome.wi.mit.edu/MPR
+</li> <li> Hastie, T., Tibshirani, R., Friedman, J. (2001) The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Springer, New York.
+</li> <li> Nguyen Rocke (2002)Tumor classification by partial least squares using microarray gene expression data. Bioinformatics, 18, 39-50.
+</li> <li> SAS PROC PLS. SAS User\x{2019}s Guide. Cary, N.C.
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<div class="foswikiAttachments foswikiFormStep" style="overflow:auto">
+<div class="twistyPlugin foswikiMakeVisible"><span id="topicattachmentslist1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="patternTwistyButton" href=".."><img alt="" border="0" src="../System/DocumentGraphics.attachments/toggleopen.png"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>1</span></span></a></span><span id="topicattachmentslist1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="patternTwistyButton" href=".."><img src="../System/DocumentGraphics.attachments/toggleclose.png" alt="" border="0"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>1</span></span></a></span></div><div class="twistyPlugin"><div id="topicattachmentslist1toggle" style="" class="twistyRememberSetting twistyContent twistyInited">
+<table class="foswikiTable" id="tablePartialLeastSquares1" rules="none" summary="Topic attachments"><caption>Topic attachments</caption>
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">I</a> </th>
+			<th class="foswikiTableCol1"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Attachment</a> </th>
+			<th class="foswikiTableCol2"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Action</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Size</a> </th>
+			<th class="foswikiTableCol4"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Date</a> </th>
+			<th class="foswikiTableCol5"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Who</a> </th>
+			<th class="foswikiTableCol6 foswikiLastCol"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <span class='foswikiIcon'><img width="16" alt="PLS_fig1.PNG" height="16" src="../System/DocumentGraphics.attachments/else.png"></span><span class="foswikiHidden">PNG</span> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="PartialLeastSquares.attachments/PLS_fig1.PNG"><noautolink>PLS_fig1.PNG</noautolink></a> </td>
+			<td class="foswikiTableCol2 foswikiLast"> <a href="PartialLeastSquares.html" rel="nofollow" title="change, update, previous revisions, move, delete...">manage</a> </td>
+			<td class="foswikiTableCol3 foswikiLast" style="text-align:right"> 43 K </td>
+			<td class="foswikiTableCol4 foswikiLast"> <span class="foswikiNoBreak">17 Mar 2009 - 00:22</span> </td>
+			<td class="foswikiTableCol5 foswikiLast"> <a href="../Main/UnknownUser.html">UnknownUser</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol foswikiLast"> PLS fig 1 </td>
+		</tr>
+	</tbody></table>
+</div></div></div>
+</body>

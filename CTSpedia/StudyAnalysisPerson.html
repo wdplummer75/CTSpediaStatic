@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisPerson &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisPerson/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisPerson/favicon.ico" type="image/x-icon">
+<link rel="alternate" href="StudyAnalysisPerson.html" title="edit StudyAnalysisPerson" type="application/x-wiki">
+<meta name="description" content="StudyAnalysisPerson" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "StudyAnalysisPerson",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Obtaining_the_Denominator_for_Person_45Time_Rates">  Obtaining the Denominator for Person-Time Rates </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Method_1:_Data_for_Each_Person"> Method 1: Data for Each Person </a> <ul>
+<li> <a href="#Method_1:_Example"> Method 1: Example </a>
+</li></ul> 
+</li> <li> <a href="#Method_2:_Only_Population_Data"> Method 2: Only Population Data </a> <ul>
+<li> <a href="#Method_2:_Example"> Method 2: Example </a>
+</li></ul> 
+</li> <li> <a href="#Summary_Both_Methods"> Summary Both Methods </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+There are two methods for obtaining the denominator for <a href="StudyIncidencePersonTime.html">person-time rates</a>.
+<p></p>
+<h2 id="Method_1:_Data_for_Each_Person">  Method 1: Data for Each Person </h2>
+<p></p>
+<strong>If you have exact entry, censoring, and event times for each person, you can sum person-time for each person for denominator.</strong>
+<p></p>
+In a <a href="CohortStudy.html">cohort study</a>, even a very large cohort study, the investigators record individual level data on when each person was enrolled and each date seen or each date when the person's outcome status was checked (such as doing a check of the National Death Index for mortality in a cohort). In a cohort study, therefore, both <a href="StudyIncidenceCumul.html">cumulative incidence</a> and <a href="StudyIncidenceTime.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">incidence rates</a> can be calculated using individual data, and there is no reason to use grouped data. One of the reasons rates are attractive is that in other settings this kind of individual level information is not available.
+<p></p>
+<h3 id="Method_1:_Example">  Method 1: Example </h3>
+<p></p>
+Using the data from <a href="FollowUpTime.html">Follow-up Starting Times</a> <a href="#SzkloEpi" class="foswikiCurrentTopicLink">Szklo and Nieto</a> we produced the following person-year table.
+<p></p>
+<img width="396" src="StudyAnalysisPerson.attachments/0303_calculation.JPG" height="240" alt="0303_calculation.JPG">
+<p></p>
+Here are the calculations from the Szklo and Nieto example for using individual level data to calculate the person-time rate. Note that the person time in months is just the sum of the number of months showing how long each person was observed in the study. Since they want to present the rate in the more conventional units of 100 person-years, the total months are converted to years. The numerator is, as always, just the number of events; here, 6 deaths. The decimal point is then moved for the fraction 6/9.583 to give the rate per 100 person-years.
+<p></p>
+<h2 id="Method_2:_Only_Population_Data">  Method 2: Only Population Data </h2>
+<p></p>
+<strong>If no individual data but you have the time interval and average population size, you can take their product as denominator.</strong>
+<p></p>
+Some datasets may only have the average population size at risk
+<p></p>
+Since the rate is assumed to be constant during the period for which the data are collected (say, one year), using the average population size assumes that additions and losses are approximately equal during the year. If losses and additions occur uniformly throughout the year, the total amount of person-time will be the same whether it is calculated by summing each person&rsquo;s individual time in the population or by multiplying the average size of the population during the year by one year.
+<p></p>
+<h3 id="Method_2:_Example">  Method 2: Example </h3>
+<p></p>
+<strong>10 persons at baseline; 1 person at end of 2 years</strong> <ul>
+<li> (6 deaths + 3 censored before 2 years = 9 losses)
+</li></ul> 
+For the second method using the average population size at risk during the time interval, all that is required is to know how many started at baseline and how many were left at the end.
+<p></p>
+<strong>Formula:</strong> Average number of persons at risk = N baseline + N end / 2 = 11 / 2 = 5.5 <ul>
+<li> The average number at risk is then calculated by adding the two numbers and dividing by 2.
+</li> <li> Or, alternatively, the number lost during the interval can be divided by 2 and subtracted from the baseline number:
+</li> <li> 9 lost/ 2 = 4.5 10-4.5=5.5.
+</li></ul> 
+<strong>Rate</strong> = 6/5.5 over 2 years =  <ul>
+<li> 0.545 per person-year or
+</li> <li> 54.5 per 100 person-years
+</li></ul> 
+The numerator is still 6 and the rate calculated this way is 54.5 per 100 person-years.
+<p></p>
+In this example with only 10 persons the rate calculated by the average population method differs more from the rate calculated from individual data (62.6 per 100 person-years) than it will in larger datasets where the methods are usually very close.
+<p></p>
+NOTE that this method is described as using <strong>grouped data.</strong> That phrase should not be confused here with an <a href="StudyUnit.html">ecological study</a>.
+<p></p>
+<h2 id="Summary_Both_Methods">  Summary Both Methods </h2>
+<p></p>
+Since E(vents) remains the same for both methods and N(umber)T(ime) will be equal if the uniformity assumption is valid, <ul>
+<li> the same rate is obtained by either method.
+</li></ul> 
+<p></p>
+<h2 id="References">  References </h2>
+ #SzkloEpi
+<p></p>
+Szklo, M., &amp; Nieto, F. (2007). Epidemiology: Beyond the Basics (2nd Edition ed.). Boston: Jones and Bartlett Publishers
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

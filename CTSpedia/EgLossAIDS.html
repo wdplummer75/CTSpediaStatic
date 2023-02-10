@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgLossAIDS &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/EgLossAIDS/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgLossAIDS/favicon.ico" rel="shortcut icon">
+<link title="edit EgLossAIDS" type="application/x-wiki" rel="alternate" href="EgLossAIDS.html">
+<meta name="description" content="EgLossAIDS" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgLossAIDS",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Selection_Bias_45_Loss_to_Follow_45Up_45_AIDS">  Example: Selection Bias - Loss to Follow-Up - AIDS </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<a href="LostToFollowUp.html">Losses to follow-up</a> are a grave problem in AIDS studies.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Progression_to_AIDS"> Progression to AIDS </a>
+</li> <li> <a href="#Setting_for_Selection_Bias"> Setting for Selection Bias </a> <ul>
+<li> <a href="#More_IDU_Lost_to_Follow_45Up"> More IDU Lost to Follow-Up </a>
+</li></ul> 
+</li> <li> <a href="#Kaplan_45Meier_Curve"> Kaplan-Meier Curve </a>
+</li> <li> <a href="#Schematic_for_Loss_to_Follow_45Up"> Schematic for Loss to Follow-Up </a>
+</li></ul> 
+</div>
+<h2 id="Progression_to_AIDS">  Progression to AIDS </h2>
+ Consider a <a href="CohortStudy.html">cohort study</a> looking at progression to AIDS (as shown in the <a href="KaplanMeier.html">Kaplan-Meier</a> curves below),  <ul>
+<li> comparing two major HIV-risk groups: injection drug users and homosexual men.
+</li></ul> 
+This is pertinent because there has been a lot of interest in whether the way you got HIV (parenterally or via sex) influences your initial inoculum of virus (and host immune response) and ultimately your disease course.
+<p></p>
+<h2 id="Setting_for_Selection_Bias">  Setting for Selection Bias </h2>
+ In a study like this, all the ingredients are present for <a href="BiasSelect.html">selection bias</a>, the perfect storm.  <ul>
+<li> This is because it is easy to see that getting sick is a reason for becoming lost to follow-up; you just don't feel well enough to come back for study visits. Therefore, you would agree that persons who are lost to follow up have a different AIDS incidence than those that remain. This is <a href="CensorData.html">informative censoring</a>.
+</li></ul> 
+<h3 id="More_IDU_Lost_to_Follow_45Up">  More IDU Lost to Follow-Up </h3>
+<p></p>
+Assume also that injection drug users (IDU) are more likely to become lost to follow up at any given level of feeling sick because of less social support and more chaotic lives. <ul>
+<li> Therefore, this means that the frequency of informative censoring differs across the <a href="PredictorVariable.html">exposure groups</a> (IDU vs homosexual men) and it is more common in the IDU group.
+</li></ul> 
+<p></p> <ul>
+<li> The result of all of this is selection bias: there is an <strong>underestimation of the incidence of AIDS in IDU</strong> relative to homosexual men.
+</li></ul> 
+<h2 id="Kaplan_45Meier_Curve">  Kaplan-Meier Curve </h2>
+<p></p>
+Thus, this is what a <a href="KaplanMeier.html">Kaplan-Meier</a> curve would look like. <ul>
+<li> The dark curve is what we would see if there was no informative censoring going on AND there was no difference between IDU and homosexual men in the incidence of AIDS.
+</li> <li> In other words, there would be superimposable curves.
+</li> <li> But now enter loss to follow-up and informative censoring.  <ul>
+<li> The effect of this informative censoring is to underestimate AIDS incidence. The effect in the homosexual group is slightly above the one with no informative censoring.
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> The end result is the appearance that the IDU group has a slower progression to AIDS - all because of selection bias.
+</li></ul> 
+<blockquote> <img src="EgLossAIDS.attachments/0508_KM_aids.JPG" alt="0508_KM_aids.JPG" height="192" width="346"> </blockquote> 
+<h2 id="Schematic_for_Loss_to_Follow_45Up">  Schematic for Loss to Follow-Up </h2>
+<p></p>
+You can see effect of selection bias schematically in the diagram below. <ul>
+<li> Because of the selective drop out of the IDU group with AIDS, this cell is <strong>underrepresented</strong> in the study sample.
+</li> <li> The end result is spurious <strong>underestimation of AIDS incidence in the IDU group</strong> relative to the homosexual male group.
+</li></ul> 
+<blockquote> <img width="248" height="193" alt="0112_HIV.JPG" src="BiasSelect.attachments/0112_HIV.JPG"> </blockquote>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

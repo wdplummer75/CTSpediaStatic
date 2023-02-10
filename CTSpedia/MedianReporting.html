@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>MedianReporting &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/MedianReporting/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/MedianReporting/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit MedianReporting" href="MedianReporting.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="MedianReporting" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "MedianReporting",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Median_45_Reporting">  Median - Reporting </h1>
+<p></p>
+<h4 id="FORUM_QUESTION:_Main.BarbaraGrimes_45_06_Jul_2009_45_09:53">  FORUM QUESTION: <a href="../Main/BarbaraGrimes.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">BarbaraGrimes</a> - 06 Jul 2009 - 09:53 </h4>
+When the median of a measurement is reported in a manuscript, should the min,max or the interquartile range(IQR) be included?
+<p></p>
+<h4 id="FORUM_ANSWER_1:_Main.KnutWittkowski_45_07_Jul_2009_45_02:27">  FORUM ANSWER 1: <a href="../Main/KnutWittkowski.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">KnutWittkowski</a> - 07 Jul 2009 - 02:27 </h4>
+The IQR is closer to the standard deviation for a Gaussian distribution (the .165-.835 range would be the even closer), so that it fits traditions better than the range. The range also has the disadvantage to grow with sample size and to be highly sensitive to outliers. Hence, ithe IQR is preferable, in general.
+<p></p>
+<h4 id="FORUM_ANSWER_2:_Main.PeterBacchetti_45_07_Jul_2009_45_10:57">  FORUM ANSWER 2: <a class="foswikiNewLink" rel="nofollow" href="../Main/PeterBacchetti.html" title="Create this topic">PeterBacchetti</a> - 07 Jul 2009 - 10:57 </h4>
+Min and max highlight extreme values that might influence results, and they are useful for data checking. They also give some idea of spread, but as noted in the previous entry they do not correspond well to SD's shown for Gaussian distributions. IQR shows &ldquo;typical&rdquo; spread rather than the extremes. Each is used fairly often in papers. They serve somewhat different purposes, so the choice could depend on what the authors want to accomplish.
+<p></p>
+<h4 id="FORUM_ANSWER_3:_Main.KnutWittkowski_45_08_Jul_2009_45_06:18">  FORUM ANSWER 3: <a class="foswikiNewLink" rel="nofollow" href="../Main/KnutWittkowski.html" title="Create this topic">KnutWittkowski</a> - 08 Jul 2009 - 06:18 </h4>
+Another "point to consider": Contrary to what many well-meaning textbooks state, the Wilcoxon/Mann-Whitney and Kruskal-Wallis tests do not compare medians, but average ranks. Thus, if one were to explain the results, rather than display the raw data, one should show the median of the data values whose ranks are closest to the average rank in each group. (This is similar to "quartile-normalization" in microarray analysis.) When ranking censored or multivariate data, more than two data could be "closest", so that one would pick the two with the highest information content (Wittkowski, 2008, SAGMB). I am not aware of any measure of spread that would correspond to the SEM, though.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

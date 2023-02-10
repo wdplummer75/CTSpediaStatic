@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyTermRestrict &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/StudyTermRestrict/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyTermRestrict/favicon.ico">
+<link href="StudyTermRestrict.html" rel="alternate" title="edit StudyTermRestrict" type="application/x-wiki">
+<meta name="description" content="StudyTermRestrict" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyTermRestrict"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Restriction">  Restriction </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Restriction"> Definition of Restriction </a>
+</li> <li> <a href="#Restriction_to_Reduce_Confounding"> Restriction to Reduce Confounding </a> <ul>
+<li> <a href="#Example_Restriction_to_Reduce_Confounding_45_Down_Syndrome"> Example Restriction to Reduce Confounding - Down Syndrome </a>
+</li> <li> <a href="#Example_Restriction_to_Reduce_Confounding_45_HHV"> Example Restriction to Reduce Confounding - HHV </a>
+</li></ul> 
+</li> <li> <a href="#Advantages_and_Disadvantages_of_Restriction"> Advantages and Disadvantages of Restriction </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div> 
+<h2 id="Definition_of_Restriction">  Definition of Restriction </h2>
+<p></p>
+<strong>Definition of Restriction</strong>: Restrict enrollment to only those subjects who have a specific value/range of the <a href="BiasConfound.html">confounding</a> variable
+<p></p>
+<strong>For example</strong>, when age is confounder, like it often is because age is related to many disease states, <ul>
+<li> we would <strong>restrict enrollment</strong> in our study to only those persons with a specific value or range of age.
+</li></ul> 
+<h2 id="Restriction_to_Reduce_Confounding">  Restriction to Reduce Confounding </h2>
+ In the following <a href="CausalDiagrams.html">DAG</a>, you see that restriction:  <ol>
+<li> Eliminates any possible association <strong>between the <a href="PredictorVariable.html">exposure</a></strong> and the <strong><a href="BiasConfound.html">confounder</a></strong>
+</li> <li> Eliminates any possible association <strong>between the</strong> <strong><a href="OutcomeVariable.html">disease</a></strong> and <strong>confounder</strong>
+</li></ol> 
+<blockquote> <img width="258" src="StudyTermRestrict.attachments/0402_4restrict.JPG" alt="0402_4restrict.JPG" height="163"> </blockquote>
+<p></p>
+There is <strong>no variability</strong> in the values of the confounding variable. <ul>
+<li> It is a <strong><a href="VarConstant.html">constant or fixed</a></strong> variable.
+</li></ul> 
+<p></p>
+<h3 id="Example_Restriction_to_Reduce_Confounding_45_Down_Syndrome">  Example Restriction to Reduce Confounding - Down Syndrome </h3>
+<p></p>
+<strong>No variability in the Confounder precludes associaton with Exposure and Disease</strong>
+<p></p>
+<blockquote>
+<p></p>
+<img height="183" alt="0402_5dag_age.JPG" src="StudyTermRestrict.attachments/0402_5dag_age.JPG" width="264">
+</blockquote>
+<p></p>
+In studies looking at the association between birth order and Down Syndrome, <ul>
+<li> we are concerned about <strong>confounding by maternal age</strong>.
+</li></ul> 
+One way to deal with this would be to conduct a study where you <strong>restricted enrollment to women of a certain age</strong> or narrow age range.
+<p></p>
+<h3 id="Example_Restriction_to_Reduce_Confounding_45_HHV">  Example Restriction to Reduce Confounding - HHV </h3>
+ <strong>Research Question</strong>: Is there an association between sexual behavior and acquisition of HHV-8 infection? <blockquote> <img alt="0407_ivdu.JPG" height="208" src="StudyTermRestrict.attachments/0407_ivdu.JPG" width="157"> </blockquote> <strong>Issue</strong>: Is association <a href="BiasConfound.html">confounded</a> by injection drug use?
+<p></p>
+Restriction is particularly useful in situations <ul>
+<li> where the <strong>potential confounder is quantitative (or ordered) in scale but difficult to measure</strong>.
+</li></ul> 
+Consider, for example, the research question of whether there is an association between sexual behavior and the acquisition of HHV-8 infection.  <ul>
+<li> The <strong>issue</strong> when contemplating a study to look at this question is whether any association between sexual behavior and HHV-8 infection is confounded by injection drug use, because injection drug use is associated with both sexual behavior and HHV-8 infection.
+</li> <li> The <strong>problem</strong>, however, is that injection drug use is more than just a yes or no variable in that there is also a magnitude of how much injection drug use a person experiences. Capturing this magnitude is important if you really want to capture the essence of this variable.
+</li> <li> The <strong>solution</strong> is to restrict the study sample to persons who don't report any inject drug use and therefore you don't have to worry about measuring the magnitude of injection drug use in those who d
+</li></ul> 
+<a class="foswikiCurrentTopicLink" href="#CannonHHV">Cannon</a> found that the study sample was restricted to persons denying injection use.  <ul>
+<li> After restricting this sample, the authors showed that persons who were commercial sex workers had 2.2 fold greater <a href="StudyPrevalence.html">prevalence</a> than non-commercial sex workers, suggestive that HHV-8 infection can be spread via sexual contact.
+</li></ul> 
+<blockquote><img src="StudyTermRestrict.attachments/0407_2hhv.JPG" height="69" alt="0407_2hhv.JPG" width="314"></blockquote>
+<p></p>
+<h2 id="Advantages_and_Disadvantages_of_Restriction">  Advantages and Disadvantages of Restriction </h2>
+<p></p>
+<strong>Advantages</strong>:
+<p></p>
+(1) <strong>Conceptually straightforward</strong> - <ul>
+<li> The advantage of restriction is that it is very straightforward and straightforward is good -- especially when you trying to convince people who review your manuscripts.
+</li></ul> 
+(2) <strong>Handles difficult to quantitate variables</strong> -  <ul>
+<li> It is the best approach for difficult to quantitate variables, like injection drug use.
+</li></ul> 
+(3) <strong>Can be used in the analysis phase or the design phase</strong> -  <ul>
+<li> In other words, you can limit an analysis to a restricted subset even if your study subjects had a broader range of values for the <a href="BiasConfound.html">confounding</a> variable.
+</li></ul> 
+<strong>Disadvantages</strong>:
+<p></p>
+(1) <strong>May limit number of eligible subjects</strong> - <ul>
+<li> This restriction reduces the number of persons who are eligible.
+</li></ul> 
+(2) <strong>Inefficient to screen subjects, then not enroll</strong> -  <ul>
+<li> It may take a lot of work to sift through persons to find those with the level of the confounder you are looking for. It is inefficient to have to screen a lot of subjects and only use some of them.
+</li></ul> 
+(3) <strong>Residual confounding may persist if restriction categories not sufficiently narrow</strong> -  <ul>
+<li> If you don't restrict the values of the would-be confounder narrowly enough, you may not accomplish what you thought you did.
+</li> <li> In other words you may have what we call <strong>residual confounding</strong>, in other words, left over confounding.
+</li> <li> For example, say if you are studying the association birth order and Down syndrome and restrict your study population to those 20 to 30 years old.  <ul>
+<li> This may not be enough to preclude confounding because the older persons in this age range (the 30 year olds) may be very different than the youngest persons in terms of relationship with birth order and Down syndrome incidence.
+</li></ul> 
+</li></ul> 
+(4) <strong>Limits <a href="ValidityExternal.html">generalizability</a></strong> -  <ul>
+<li> Another drawback with restriction is that by limiting the study population to only a specific group with a certain value/range of a confounder, you limit the <a href="ValidityExternal.html">generalizability</a> of the study  <ul>
+<li> (for example, if you restrict to younger persons, you will have a tough time generalizing to older persons).
+</li></ul> 
+</li> <li> Sometimes researchers worry a lot about <a href="ValidityExternal.html">external validity or generalizability</a>, but the first order of business in determining associations or causality is <a href="ValidityStudy.html">internal validity</a>.
+</li> <li> In other words, do whatever it takes to determine a valid association in whatever restricted population you need to.
+</li> <li> If you show an <a href="StudyAssoc.html">association</a>, then go on to do the next study looking for the association in other and broader populations.
+</li> <li> All too often the politically driven motivation to include everyone in your studies leaves you with so much heterogeneity that it can be difficult to find effects.
+</li></ul> 
+<strong>The first order of business is <a href="ValidityStudy.html">internal validity</a>. <a href="ValidityExternal.html">Generalizability</a> can follow later.</strong>
+<p></p>
+(5) <strong>Not possible to evaluate the relationship of interest at different levels of the restricted variable</strong> - <ul>
+<li> IF you restrict to only one level of an extraneous variable, you cannot evaluate the relationship of interest at different levels of the extraneous variable (i.e., you cannot assess <a href="StudyTermInter.html">interaction</a>).
+</li> <li> A simple example from the field of HIV is that if you were evaluating in an observational study the association between pre-therapy CD4 count and ultimate CD4 rise in patients who began protease inhibitors, the amount of prior antiretroviral use would be an important effect modifier.  <ul>
+<li> If you limit your study population to just those participants who had never used antiretroviral agents before, you'll be missing a very interesting part of the story.
+</li></ul> 
+</li></ul> 
+<strong>Bottom Line</strong>: <strong>Not used as much as it should be</strong>
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<span id="CannonHHV"></span>
+<p></p>
+Cannon, M. J., Dollard, S. C., Smith, D. K., Klein, R. S., Schuman, P., Rich, J. D., et al. (2001). Blood-borne and sexual transmission of human herpesvirus 8 in women with or at risk for human immunodeficiency virus infection. <em>N Engl J Med</em>, 344(9), 637-643.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

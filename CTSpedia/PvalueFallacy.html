@@ -1,0 +1,604 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PvalueFallacy &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/PvalueFallacy/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/PvalueFallacy/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="PvalueFallacy.html" title="edit PvalueFallacy">
+<meta name="description" content="PvalueFallacy" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "PvalueFallacy",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Common_Biostatistical_Problems_and_the_Best_Practices_that_Prevent_Them">  Common Biostatistical Problems and the Best Practices that Prevent Them </h1>
+ This is based on Peter Bacchetti's lecture on <em>"Common Biostatistical Problems and the Best Practices that Prevent Them."</em>
+<p></p>
+Send any comments to <a href="mailto&#58;peter&#64;biostat&#46;ucsf&#46;edu">peter&#64;biostat.ucsf.edu</a>._
+<p></p>
+The article below was adapted in 2008 by Nancy Hills and may need updating. More recent lecture notes are available at <a href="CommonBiostatisticalProblems.html">the parent page</a>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Common_Biostatistical_Problems_and_the_Best_Practices_that_Prevent_Them"> Common Biostatistical Problems and the Best Practices that Prevent Them </a>
+</li> <li> <a href="#Common_Biostatistical_Problems_and_the_Best_Practices_That_Prevent_Them"> Common Biostatistical Problems and the Best Practices That Prevent Them </a> <ul>
+<li> <a href="#PROBLEM_1._P_45VALUES_FOR_ESTABLISHING_NEGATIVE_RESULTS"> PROBLEM 1. P-VALUES FOR ESTABLISHING NEGATIVE RESULTS </a>
+</li> <li> <a href="#The_P_45value_Fallacy"> The P-value Fallacy </a>
+</li> <li> <a href="#Adding_a_Power_Calculation"> Adding a Power Calculation </a>
+</li> <li> <a href="#Example"> Example </a> <ul>
+<li> <a href="#No_34Significant_34_difference"> No "Significant" difference </a>
+</li> <li> <a href="#No_34Statistical_34_difference"> No "Statistical" difference </a>
+</li></ul> 
+</li> <li> <a href="#Examples_in_Prominent_Places"> Examples in Prominent Places </a> <ul>
+<li> <a href="#Example_1._Vitamins_during_Pregnancy"> Example 1. Vitamins during Pregnancy </a>
+</li> <li> <a href="#Example_2._Fat_Consumption_and_Breast_Cancer"> Example 2. Fat Consumption and Breast Cancer </a>
+</li></ul> 
+</li> <li> <a href="#BEST_PRACTICES"> BEST PRACTICES </a> <ul>
+<li> <a href="#Best_Practice_1._Provide_estimates_with_confidence_intervals_that_directly_address_issues_of_interest."> <span class='foswikiRedFG'>Best Practice 1. </span>Provide estimates with confidence intervals that directly address issues of interest. </a>
+</li> <li> <a href="#Best_Practice_2._Ensure_that_major_conclusions_reflect_the_estimates_and_the_uncertainty_around_them_44"> <span class='foswikiRedFG'>Best Practice 2. </span>Ensure that major conclusions reflect the estimates and the uncertainty around them, </a>
+</li> <li> <a href="#Best_Practice_2a._Never_interpret_large_p_45values_as_establishing_negative_conclusions."> <span class='foswikiRedFG'>Best Practice 2a. </span>Never interpret large p-values as establishing negative conclusions. </a>
+</li> <li> <a href="#Best_Practice_3._Discuss_the_implications_of_your_findings_for_what_may_be_true_in_general."> <span class='foswikiRedFG'>Best Practice 3. </span>Discuss the implications of your findings for what may be true in general. </a>
+</li> <li> <a href="#Avoid_the_p_45value_fallacy_by_checking_negative_interpretations"> Avoid the p-value fallacy by checking negative interpretations </a>
+</li> <li> <a href="#How_to_Interpret_Estimates_and_Confidence_Intervals"> How to Interpret Estimates and Confidence Intervals </a>
+</li> <li> <a href="#Example_from_a_typical_collaboration"> Example from a typical collaboration </a>
+</li> <li> <a href="#Are_large_p_45values_good_for_anything_63"> Are large p-values good for anything? </a>
+</li></ul> 
+</li> <li> <a href="#PROBLEM_2._MISLEADING_AND_VAGUE_PHRASING"> PROBLEM 2. MISLEADING AND VAGUE PHRASING </a> <ul>
+<li> <a href="#Best_Practice_4._State_what_you_did_find_or_learn_44_not_what_you_didn_39t"> <span class='foswikiRedFG'>Best Practice 4. </span>State what you did find or learn, not what you didn't </a>
+</li></ul> 
+</li> <li> <a href="#PROBLEM_3._SPECULATION_ABOUT_LOW_POWER"> PROBLEM 3. SPECULATION ABOUT LOW POWER </a>
+</li> <li> <a href="#PROBLEM_4._EXCLUSIVE_RELIANCE_ON_INTENT_45TO_45TREAT_ANALYSIS"> PROBLEM 4. EXCLUSIVE RELIANCE ON INTENT-TO-TREAT ANALYSIS </a> <ul>
+<li> <a href="#Best_Practice_5._Learn_as_much_as_you_can_from_your_data"> <span class='foswikiRedFG'>Best Practice 5. </span>Learn as much as you can from your data </a>
+</li> <li> <a href="#Best_Practice_5a._Do_per_45protocol_analyses_in_addition_to_ITT_44_especially_if"> <span class='foswikiRedFG'>Best Practice 5a. </span><font color="#5887b7">D</font>o per-protocol analyses in addition to ITT, especially if </a>
+</li> <li> <a href="#Best_Practice_5b._Consider_advanced_methods_to_estimate_causal_effects"> <span class='foswikiRedFG'>Best Practice 5b. </span>Consider advanced methods to estimate causal effects </a>
+</li></ul> 
+</li> <li> <a href="#PROBLEM_5._RELIANCE_ON_OMNIBUS_TESTS_and"> PROBLEM 5. RELIANCE ON OMNIBUS TESTS and </a>
+</li> <li> <a href="#PROBLEM_6._OVERUSE_OF_MULTIPLE_COMPARISONS_ADJUSTMENTS"> PROBLEM 6. OVERUSE OF MULTIPLE COMPARISONS ADJUSTMENTS </a> <ul>
+<li> <a href="#Omnibus_tests"> Omnibus tests </a>
+</li> <li> <a href="#Multiple_comparisons_adjustments"> Multiple comparisons adjustments </a> <ul>
+<li> <a href="#Typical_problems_that_may_be_encountered"> Typical problems that may be encountered </a>
+</li></ul> 
+</li> <li> <a href="#Best_Practice_6._Base_interpretations_on_a_synthesis_of_statistical_results_with_scientific_considerations."> <span class='foswikiRedFG'>Best Practice 6. </span>Base interpretations on a synthesis of statistical results with scientific considerations. </a>
+</li> <li> <a href="#Best_Practice_6a._Rely_on_scientific_considerations_to_guard_against_overinterpretation_of_isolated_findings_with_p_600.05._40This_is_usually_preferable_to_multiple_comparisons_adjustment._41"> <span class='foswikiRedFG'>Best Practice 6a. </span>Rely on scientific considerations to guard against overinterpretation of isolated findings with p&lt;0.05. (This is usually preferable to multiple comparisons adjustment.) </a>
+</li> <li> <a href="#Best_Practice_6b._Acknowledge_the_desirability_of_independent_replication_44_particularly_for_unexpected_findings."> <span class='foswikiRedFG'>Best Practice 6b. </span>Acknowledge the desirability of independent replication, particularly for unexpected findings. </a>
+</li> <li> <a href="#Best_Practice_7._Choose_accuracy_over_conservatism_whenever_possible."> <span class='foswikiRedFG'>Best Practice 7. </span>Choose accuracy over conservatism whenever possible. </a>
+</li></ul> 
+</li> <li> <a href="#PROBLEM_7._ENTANGLED_OUTCOMES_AND_PREDICTORS"> PROBLEM 7. ENTANGLED OUTCOMES AND PREDICTORS </a>
+</li> <li> <a href="#Some_Technical_Problems_and_Ways_to_Avoid_Them"> Some Technical Problems and Ways to Avoid Them </a> <ul>
+<li> <a href="#A_1._No_assessment_of_assumptions."> 1. No assessment of assumptions. </a>
+</li> <li> <a href="#A_2._Ignoring_dependence_and_clustering"> 2. Ignoring dependence and clustering </a>
+</li> <li> <a href="#A_3._Unclear_details_for_time_45to_45event:_operational_definitions_44_early_loss_44_event_ascertainment"> 3. Unclear details for time-to-event: operational definitions, early loss, event ascertainment </a>
+</li> <li> <a href="#A_4._Poor_summaries_40e.g._44_summarizing_skewed_data_with_a_mean_and_standard_deviation_41"> 4. Poor summaries (e.g., summarizing skewed data with a mean and standard deviation) </a>
+</li> <li> <a href="#A_5._Showing_inadequate_or_excessive_precision"> 5. Showing inadequate or excessive precision </a>
+</li> <li> <a href="#A_6._Poorly_scaled_predictors"> 6. Poorly scaled predictors </a>
+</li> <li> <a href="#A_7._Terms_likely_to_be_misread_40_34significant_34_41"> 7. Terms likely to be misread ("significant") </a>
+</li> <li> <a href="#A_8._Missing_data"> 8. Missing data </a>
+</li></ul> 
+</li> <li> <a href="#Summary_of_Problems"> Summary of Problems </a>
+</li> <li> <a href="#Summary_of_Biostatistical_Best_Practices"> Summary of Biostatistical Best Practices </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</li></ul> 
+</div>
+<hr />
+<p></p>
+<h1 id="Common_Biostatistical_Problems_and_the_Best_Practices_That_Prevent_Them">  Common Biostatistical Problems and the Best Practices That Prevent Them </h1>
+ P-values are often the primary focus when researchers interpret statistical analyses of their data, despite the important contributions to interpretation that are made by examining estimates, confidence intervals, and graphical summaries. This over-emphasis (and sometimes exclusive emphasis) on p-values contributes to many problems, including the first, which I aso consider to be the biggest: 
+<h2 id="PROBLEM_1._P_45VALUES_FOR_ESTABLISHING_NEGATIVE_RESULTS">  PROBLEM 1. P-VALUES FOR ESTABLISHING NEGATIVE RESULTS </h2>
+ This is very common in medical research and can lead to terrible misinterpretations. Unfortunately, investigators tend to believe that p-values are much more useful than they really are, and they misunderstand what they can really tell us. 
+<h2 id="The_P_45value_Fallacy">  The P-value Fallacy </h2>
+ The term "p-value fallacy" has been used to describe rather more subtle misinterpretations of the meaning of p-values than what will be discussed here. For example, some believe that the p-value is the probability that the null hypothesis is true, given the observed data. But much more naive misinterpretation of p-values is common.
+<p></p>
+Almost no one would really defend these first two statements:
+<p></p>
+<strong>1. The p-value tells you whether an observed difference, effect or association is real or not.</strong>
+<p></p>
+<strong>2. If the result is not statistically significant, that proves there is no difference.</strong>
+<p></p>
+These are too naive and clearly wrong. We all know that just because a result <em>could have</em> arisen by chance alone does not mean that it <em>must have</em> arisen by chance alone. That would be very bad logic.
+<p></p>
+But how about the following statement:
+<p></p>
+<strong>3. If the result is not statistically significant, you "have to" conclude that there is no difference. (And you certainly can't claim that there is any suggestion of an effect.)</strong>
+<p></p>
+This statement may seem a bit more defensible, because it resembles what people are taught about statistical hypothesis testing and "accepting" the null hypothesis. This may seem only fair: you made an attempt and came up short, so you must admit failure. The problem is that in practice, this has the same operational consequences as the two clearly incorrect statements above. If you are interested in getting at the truth rather than following a notion of "fair play" in a hypothesis testing game, then believing in this will not serve you well. Unfortunately, some reviewers and editors seem to feel that it is very important to enforce such "fair play".
+<h2 id="Adding_a_Power_Calculation">  Adding a Power Calculation </h2>
+ What if we not only get p&lt;0.05 but we also <em>did a power calculation</em>? It is very common to reason that if a power calculation were done and p&gt;0.05, then there is no effect. The logic is that we tried to make the sample size large enough so that if a difference were present, we would have been likely to obtain a p-value&lt;0.05. Because we did not get p&lt;0.05, we therefore believe that a difference is unlikely to be present.
+<p></p>
+This is still a poor approach, because <strong>reasoning via p-values and power is convoluted and unreliable.</strong> One problem is that power calculations are usually inaccurate, since they have to be based on assumptions that are hard to know in advance. Inaccuracy is theoretically inevitable and empirically verified. A study of randomized clinical trials in 4 top medical journals ( <em>NEJM, JAMA, Annals of Internal Medicine,</em> and <em>Lancet</em>) found that more than half used assumed SD's off by enough to produce a &gt;2-fold difference in sample size.[1]
+<p></p>
+Of course, one could do better by re-estimating power after the study is completed. But the assumptions needed for power calculations are still not fully known, and <em>post-hoc</em> power calculations are not considered meaningful. The CONSORT guidelines for reporting randomized clinical trials specifically warn against this practice, stating that, "There is little merit in a post hoc calculation of statistical power using the results of a trial".[2] Why is this not worth doing? Because there is a simpler and better alternative: Confidence intervals show simply and directly what possibilities are reasonably consistent with the observed data, and are widely acknowledged to be superior and sufficient. (Additional references <a href="ReportingPower.html">here</a>.)
+<p></p>
+Here are some other situations that make it tempting to believe that a large p-value must be conclusive:
+<p></p>
+p&gt;0.05 + Large <em>N</em> = No effect
+<p></p>
+p&gt;0.05 + Huge Expense = No effect
+<p></p>
+p&gt;0.05 + Massive Disappointment = No effect
+<p></p>
+<strong>But not if contradicted by the CIs!</strong> Sometimes we want to believe that a study must be conclusive, because it was such a good attempt or because it looks like it should be conclusive or because nothing as good will ever be done again. But these considerations carry no scientific weight and cannot overrule what is shown by the CI. If the CI is wide enough to leave doubt about the conclusion, then we are stuck with that uncertainty.
+<h2 id="Example">  Example </h2>
+ Here is an example of the p-value fallacy: A randomized clinical trial of a fairly serious condition compares two treatments. The observed results are:
+<p></p>
+<strong>Treatment A</strong>: 16 deaths in 100
+<p></p>
+<strong>Treatment B</strong>: 8 deaths in 100
+<p></p>
+These produce the following analyses:
+<p></p>
+<strong>Odds ratio</strong>: 2.2, 95% CI 0.83 to 6.2, p=0.13
+<p></p>
+<strong>Risk difference:</strong> 8.0%, 95% CI -0.9% to 16.9%
+<p></p>
+This was reported as "no difference in death rates", presumably based on the p-value of 0.13. This type of interpretation is alarmingly common, but the difference is not zero, which would really be "no difference"; it is 8%.
+<h3 id="No_34Significant_34_difference">  No "Significant" difference </h3>
+ Sometimes you see reports of "no <strong><span class='foswikiRedFG'> <strong>significant</strong> </span></strong>difference in death rates". This might be intended to simply say that the p-value was not &lt;0.05, but it can easily be read to mean that the study showed that any difference in death rates is too small to be important. Although some journals have the unfortunate stylistic policy that "significant" alone refers to statistical significance, the word has a well-established non-technical meaning, and using it in this way promotes misinterpretation. Certainly the difference was "significant" to the estimated 8 additional people who died with treatment A. 
+<h3 id="No_34Statistical_34_difference">  No "Statistical" difference </h3>
+ The phrase "no <strong><span class='foswikiRedFG'> <strong>statistical</strong> </span></strong>difference in death rates" is newer and also seems to mean that the observed difference easily could have occurred by chance. This term seems to give the impression that some sort of statistical magic has determined that the observed difference is not real. This is exactly the misinterpretation that should be avoided. (See "Statistical Ties, and Why You Shouldn't Wear One", <a href="http://www.medscape.com/viewarticle/550738">http://www.medscape.com/viewarticle/550738</a>).
+<p></p>
+A sensible interpretation would be:
+<p></p>
+"Our study suggests an important benefit of Treatment B, but this did not reach statistical significance."
+<h2 id="Examples_in_Prominent_Places">  Examples in Prominent Places </h2>
+ Finding egregious example of the p-value fallacy in prominent places is all too easy. 
+<h3 id="Example_1._Vitamins_during_Pregnancy">  Example 1. Vitamins during Pregnancy </h3>
+ A study of vitamins C and E and the risks of preeclampsia and perinatal complications published in <em>NEJM</em> concluded that "supplementation with vitamins C and E during pregnancy does not reduce the risk of preeclampsia in nulliparous women, the risk of intrauterine growth restriction, or the risk of death or other serious outcomes in their infants".[7] This very definitive conclusion was based on the following results:
+<p></p>
+<strong>Preeclampsia: RR 1.20 (0.82 - 1.75)</strong> This certainly suggests the the vitamins are not effective, because the estimate is a 20% <em>increase</em> in the outcome. But the CI does include values that would constitute some effectiveness, so the conclusion may be a bit overstated.
+<p></p>
+<strong>Growth restriction: RR 0.87 (0.66 - 1.16)</strong> Here, we have a big problem. The estimate is a 13% reduction in the outcome, so the definitive statement that vitamins do not reduce this outcome is contradicted by the study's own data. Vitamins <em>did</em> appear to reduce this outcome, and the CI extends to a fairly substantial 34% reduction in risk.
+<p></p>
+<strong>Serious outcomes: RR 0.79 (0.61 - 1.02)</strong> The same problem is present here, and it is even more severe. An observed 21% reduction in the most important outcome has been interpreted as definitive evidence against effectiveness. If we knew that this observed estimate were correct, then vitamin supplementation, or at least further study, would probably be worthwhile. In fact, the data in the paper correspond to an estimate of needing to treat 39 women for each serious outcome prevented, a rate that would almost certainly make treatment worthwhile.
+<h3 id="Example_2._Fat_Consumption_and_Breast_Cancer">  Example 2. Fat Consumption and Breast Cancer </h3>
+ A less blatant but even higher-profile example is provided by the report on the Women's Health Initiative study on fat consumption and breast cancer.[8] An article in <em>Newsweek</em> entitled "The New Fight Over Fat" priominently depicted a 12-decker cheeseburger next to the text: "Even diets with only 29% of calories coming from fat didn't reduce the risk of disease." This interpretation was typical of headlines. Deeper in the articles, writers struggled to convey some of the uncertainty about the results, but they were hampered by the poor choice of emphasis and presentation in the original <em>JAMA</em> publication.
+<p></p>
+The primary result was an estimated 9% reduction in risk of invasive breast cancer (Hazard Ratio = 0.91, 95% CI 0.83 - 1.01, p=0.07). An accurate sound bite would have been, "Lowering fat appears to reduce risk, but study not definitive." An interesting additional result was a reduction in the risk of breast cancer mortality (Hazard Ratio = 0.77, 95% CI 0.48 -1.22). The estimate here is a more substantial reduction in risk, but the uncertainty is wider. If this estimate turned out to be true, this would be very important. Unfortunately, the authors chose to primarily emphasize the fact that the p-value was &gt;0.05. This gave the clear (and incorrect) impression that the evidence favors no benefit of a low-fat diet. The primary conclusion in the JAMA abstract was "a low-fat dietary pattern did not result in a statistically significant reduction in invasive breast cancer risk." The overemphasis of the the fact that the p-value was &gt;0.05 promoted considerable misunderstanding.
+<h2 id="BEST_PRACTICES">  BEST PRACTICES </h2>
+<h3 id="Best_Practice_1._Provide_estimates_with_confidence_intervals_that_directly_address_issues_of_interest.">  <span class='foswikiRedFG'>Best Practice 1. </span>Provide estimates with confidence intervals that directly address issues of interest. </h3>
+ This is usually important in clinical research because both the direction and the magnitude of any effect are often important. How to follow this practice will usually be clear, as it was in the above examples. Ideally, this will already have been planned at the beginning of the study. Often, an issue will concern a measure of effect or association, such as a difference in means, an odds ratio, a relative risk, a risk difference, or a hazard ratio. Think of what quantity would best answer the question or address the issue if only you knew it. Then estimate that quantity.
+<p></p>
+This practice is often followed, but then ignored when data is interpreted. The above examples provided estimates and confidence intervals, but these were ignored in the major conclusions, which were based only on the fact that the p-values were &gt;0.05.
+<h3 id="Best_Practice_2._Ensure_that_major_conclusions_reflect_the_estimates_and_the_uncertainty_around_them_44">  <span class='foswikiRedFG'>Best Practice 2. </span>Ensure that major conclusions reflect the estimates and the uncertainty around them, </h3>
+ and, in particular, 
+<h3 id="Best_Practice_2a._Never_interpret_large_p_45values_as_establishing_negative_conclusions.">  <span class='foswikiRedFG'>Best Practice 2a. </span>Never interpret large p-values as establishing negative conclusions. </h3>
+ This is the practice that is too often neglected, particularly for negative studies. The estimates and CIs, <em>not just the p-value,</em> should contribute to the interpretation.Think about these guidelines when interpreting your results:  <ul>
+<li> <strong>The estimate is the value most supported by the data</strong>. This means that a conclusion is inappropriate whenever it would be wrong if the estimate turned out to be the true value.
+</li> <li> <strong>The confidence interval includes values that are not too incompatible with the data.</strong> This means that conclusions are exaggerating the strength of the evidence whenever they imply that some values within the CI are impossible or very unlikely.
+</li> <li> <strong>There is strong evidence against values outside the CI.</strong> If all important effects are outside the CI, then you can claim a strong negative result.
+</li></ul> 
+Here is an example of a strong negative conclusion that is well-supported, from a study of outcomes among newborns with total bilirubin leves of 25 mg per deciliter or more [9]: "Conclusion: When treated with phototherapy or exchange transfusion, total serum bilirubin levels in the range included in this study were not associated with adverse neurodevelopmental outcomes in infants born at or near term." This was supported by a statement in the abstract concerning the CIs: "On most tests, 95 percent confidence intervals excluded a 3-point (0.2 SD) decrease in adjusted scores in the hyperbilirubinemia group."
+<p></p>
+But what if the results are less conclusive, such as those in the vitamin study discussed above? For the following results: <ul>
+<li> Growth restriction: RR 0.87 (0.66 - 1.16)
+</li> <li> Serious outcomes: RR 0.79 (0.61 = 1.02)
+</li></ul> 
+an honest interpretation of what can be concluded from the results would be something like this:
+<p></p>
+"Our results suggest that Vitamin C and E supplementation may substantially reduce the risk of growth restriction and the risk of death or other serious outcomes in the infant, but confidence intervals were too wide to rule out the possibility of no effect."
+<p></p>
+This interpretation reflects the key facts that 1) the estimates indicate big enough protective effects to be important and 2) the uncertainty around them is too large to permit a strong conclusion that any protective effect exists.
+<p></p>
+What would have happened if the vitamin paper had been submitted with this more reasonable interpretation? <strong>The paper probably wouldn't have ended up in NEJM!</strong> Unfortunately, this more accurate interpretation would probably have greatly reduced the paper's chance of acceptance.
+<p></p>
+The tension between fair interpretation and marketability for high-profile journals is the "elephant in the room" when it comes to conflict of interest. We are all under pressure to make our papers seem as interesting as possible. Despite the careful attention to financial conflicts of interest in medical research, the conflict between scientifically accurate interpretation versus maximizing interest, getting into a high prestige journal, and generally attracting attention (and citations) is largely unrecognized. It is always present, can have a strong influence on presentation and interpretation, and yet gets little attention.
+<p></p>
+<strong>The p-value fallacy can help make negative studies seem more conclusive and interesting.</strong> The most prestigious journals tend to prefer results that seem conclusive, perhaps because they are trying to serve clinicians in addition to scientists, and clinicians can make the most use of clear results. Although there is a lot of pressure to make results seem as interesting as possible, this should only go so far. Using the p-value fallacy to make a study seem definitive in one direction instead of suggestive in the other direction would clearly be going too far. In many cases, this is probably not deliberate. In this case, the authors may have felt that p&gt;0.05 was definitive because the study was large and expensive, or perhaps because they had done a power calculation (but their assumptions were wildly off, as usual with power calculations).
+<p></p>
+<strong>Be vigilant and be honest!</strong> The usual safeguards against bias due to conflict of interest are disclosure and correspondingly increased vigilance. Because this conflict is always present, the only obvious response is to always be vigilant.
+<h3 id="Best_Practice_3._Discuss_the_implications_of_your_findings_for_what_may_be_true_in_general.">  <span class='foswikiRedFG'>Best Practice 3. </span>Discuss the implications of your findings for what may be true in general. </h3>
+ <strong>Do not focus on "statistical significance" as if it were an end in itself</strong>. This may seem like a subtle distinction, but it is fundamental. We do research to learn about what is true in general in the real world, and p-values and statistical significance do not exist in the real world. Interpretation should focus clearly on what evidence the study provides about what may be generally true, not treat statistical significance as an end in itself. Statistical significance is only important by virtue of what it conveys about the study's evidence. Because of the extreme emphasis on statistical significance in medical research, this point is often forgotten and we slip into thinking that statistical significance itself is what really matters. Most people understand that statistical significance implies strong evidence for a real effect, but this is usually not all that is important, and the implications of lack of statistical signficance are much less clear.
+<p></p>
+In the case of the Women's Health Initiative, we care about the biological effect of dietary fat and about actual cases of breast cancer that could be prevented.The disconnect between the author's statements and how they were interpreted illustrates why this Best Practice is important.
+<p></p>
+<strong>WHI conclusion:</strong> "a low-fat dietary pattern <span class='foswikiRedFG'> <strong>did not result in a statistically significant reduction</strong> </span>in invasive breast cancer risk...However, the nonsignificant trends...indicate that longer, planned, non-intervention follow-up may yield a <strong><span class='foswikiGreenFG'>more definitive comparison.</span></strong>"
+<p></p>
+The week after the article mentioned above, <em>Newsweek</em> published a follow-up concerning the difficulties that the press and the public have in understanding scientific results, particularly about diet research. (Scientists also have difficulty with these issues.) Despite this focus, the writers still did not understand what the WHI article stated, perhaps because they assumed--quite reasonably, but incorrectly--that the article must be addressing the real-world question.
+<p></p>
+<strong>Newsweek's interpretation of the WIH conclusion:</strong> "The conclusion of the breast-cancer study--that a low-fat diet <strong><span class='foswikiRedFG'> <strong>did not lower</strong> </span></strong>risk--was fairly nuanced. It suggested that if the women were followed for a longer time, there might <strong><span class='foswikiGreenFG'>be more of an effect</span></strong> <strong>.</strong>"
+<p></p>
+Both the major conclusion from the abstract and the caveat that followed it concerned statistical significance rather than what is really true. Although the "nonsignificant trends" were mentioned, their implications for the important issues were not discussed. The <em>Newsweek</em> writers mis-translated these into more relevant--but incorrect--statements. The two phrases highlighted in red in the two statements above are not the same, and the statements highlighted in green also do not match--the authors meant that the difference may reach p&lt;0.05, not that it will get bigger.
+<p></p>
+Because the WIH authors chose to completely neglect any direct assessment of the implications of their findings for what may really be true, they made serious misunderstandings virtually inevitable.
+<p></p>
+<strong>Best Practice 3</strong> and <strong>Best Practice 2</strong> are complementary. Following <strong>Best Practice 2</strong> will usually keep you on track for <strong>Best Practice 3</strong>, and vice versa.
+<h3 id="Avoid_the_p_45value_fallacy_by_checking_negative_interpretations">  Avoid the p-value fallacy by checking negative interpretations </h3>
+ While it may seem easy to understand that the p-value fallacy is not valid, it can be surprisingly hard in practice not to lapse into interpreting large p-values as reliable indications of no effect. It is easy to slip into relying on "p&gt;" reasoning. This may be because:  <ul>
+<li> "Yes" or "No" reasoning is more natural;
+</li> <li> The focus on p-values is engrained in research culture, as we saw in the case of the Women's Health Initiative;
+</li> <li> The real level of uncertainty in research is often inconveniently large, which can make results seem less interesting. The vitamin study discussed above is a good example of this.
+</li></ul> 
+To avoid this problem, you can double-check all negative interpretations and examine estimates and confidence intervals associated with them.
+<p></p>
+Perform searches for the words "no" and "not". Whole word searches on these two terms should find most negative interpretations of statistical analyses. Check each sentence found and ask yourself the following questions: <ul>
+<li> Is there an estimate and CI supporting this?
+</li> <li> What if the point estimate were <em>exactly</em> right? Would the conclusion still make sense?
+</li> <li> What if the upper confidence bound were true? Does the conclusion allow for this possibility?
+</li> <li> What if the lower confidence bound were true? Does the conclusion allow for this possibility?
+</li></ul> 
+To be very thorough, also search for the words "failed", "lack", "absence", "disappeared", "only", "rather", "neither", "none". Negative interpretations sometimes use these words. 
+<h3 id="How_to_Interpret_Estimates_and_Confidence_Intervals">  How to Interpret Estimates and Confidence Intervals </h3>
+ The following figures show some concrete examples of how to interpret estimates and CIs. These assume a somewhat idealized situation where we have exact limits on what is clinically important, but they illustrate the main ideas. Often it will be more practical to first calculate the estimates and CIs and then consider whether the values obtained are large enough to be clinically important. In some cases it may be hard to argue that any effect, if real, would be too small to be important.
+<p></p>
+Many detailed examples of how to word interpretations that reflect estimates and CIs are available <a href="ResultsInterpretation.html">online</a>.
+<p></p>
+Figure 1.
+<p></p>
+<img alt="Figure_1.jpg" src="PvalueFallacy.attachments/Figure_1.jpg">
+<p></p>
+<strong>Interpretation</strong>:"We found strong evidence against any substantial harm or benefit." Because we have strong evidence against any values outside the CI, both these cases argue strongly that any effect is clinically unimportant. Note that this is true even though one is statistically significant.
+<p></p>
+Figure 2.
+<p></p>
+<img alt="Figure_2.jpg" src="PvalueFallacy.attachments/Figure_2.jpg">
+<p></p>
+<strong>Interpretation:</strong> In this figure, there is suggestion of substantial benefit, because the estimate would be an important benefit if true. However, there may be no effect (not statistically significant), because the CI includes no effect.
+<p></p>
+Which of these results would be more exciting? The lower one, even though it has wider uncertainty, because the estimate is so much better.
+<p></p>
+Figure 3.
+<p></p>
+<img alt="Figure_3.jpg" src="PvalueFallacy.attachments/Figure_3.jpg">
+<p></p>
+<strong>Interpretation:</strong> In figure 3, there is strong evidence of a benefit (statistically significant). A substantial benefit appears likely, but the CI is too wide to rule out a clinically unimportant benefit, i.e., the CI includes some benefits that would be too small to be clinically important.
+<p></p>
+Figure 4.
+<p></p>
+<img alt="Figure_4.jpg" src="PvalueFallacy.attachments/Figure_4.jpg">
+<p></p>
+<strong>Interpretation:</strong> In this figure, we see strong evidence of substantial clinical benefit. This is the most satisfying type of result. Even the upper confidence bound is in the substantial benefit range.
+<p></p>
+Figure 5.
+<p></p>
+<img src="PvalueFallacy.attachments/Figure_5.jpg" alt="Figure_5.jpg">
+<p></p>
+<strong>Interpretation:</strong> In this figure, no conclusions are possible due to a very wide CI. This is the least satisfying type of result. There is very little information in the study data.
+<p></p>
+Also see online resource at <a href="ResultsInterpretation.html">https://ctspedia.org/do/view/CTSpedia/ResultsInterpretation</a>
+<h3 id="Example_from_a_typical_collaboration">  Example from a typical collaboration </h3>
+ <strong>First draft text</strong>: "There were no statistically significant effects of DHEA on lean body mass, fat mass or bone density."
+<p></p>
+<strong>Final wording:</strong> "Estimated effects of DHEA on lean body mass, fat mass, and bone density were small, but the confidence intervals around them were too wide to rule out effects large enough to be important."
+<p></p>
+I find that modifications like this are needed in the majority of papers that I am asked to co-author.
+<h3 id="Are_large_p_45values_good_for_anything_63">  Are large p-values good for anything? </h3>
+ We can better understand the limited value of large p-values by noting what they <em>are</em> good for. Perhaps the only time they are directly useful is in "due-diligence" situations, such as assessing model assumptions when they seem reasonable <em>a priori</em>, where you just need to show that you made some reasonable effort and nothing jumped out. In these situations, a large p-value indicates that your effort did not produce strong evidence of a problem, even though it cannot be interpreted as providing strong evidence against a problem.
+<p></p>
+Be sure to use statements like "no interaction terms of treatment with other predictors in the model had p&lt;0.1" rather than "there were no interactions of treatment with other predictors in the model", which would be an instance of the p-value fallacy. Another example is "We checked linearity assumptions by adding quadratic terms for each linear predictor, and none had p&lt;0.05", not "there was no non-linearity", which again would be based on the p-value fallacy.
+<p></p>
+Here is an example from a paper on estimating past hepatitis C infection risk from reported risk factor histories:[10]
+<p></p>
+"We note that the confidence intervals were not narrow enough to rule out potentially important interactions, but in the absence of strong evidence for such interactions we focus on the simpler models without them."
+<h2 id="PROBLEM_2._MISLEADING_AND_VAGUE_PHRASING">  PROBLEM 2. MISLEADING AND VAGUE PHRASING </h2>
+ <em>"We failed to detect..."</em>
+<p></p>
+<em>"Our results do not support..."</em>
+<p></p>
+<em>"We found no evidence for..."</em>
+<p></p>
+<em>"Our data did not confirm..."</em>
+<p></p>
+<em>"There is no scientific evidence that BSE [Mad Cow Disease] can be transmitted to humans or that eating beef causes it in humans."</em> --Prime Minister John Major, 1995
+<p></p>
+Of course, it turned out the BSE <em>was</em> transmitted to humans, and over 150 people died from it. "There is no evidence" is commonly used to give the impression that there is evidence on the other side. Although this and similar phrases sound "scientific", they promote sloppy reasoning.
+<p></p>
+Wording similar to this is popular in politics and advertising, because it gives the misleading impression of a strong case against a conclusion when no such case exists, without being technically incorrect. For the same reasons, the strange popularity of these phrases in scientific writing is disturbing. Whle such phrases may be technically correct, they are bound to be misread as implying evidence against an association or effect. They often involve or promote the p-value fallacy. And when there is strong evidence against an effect, they are too weak.
+<h3 id="Best_Practice_4._State_what_you_did_find_or_learn_44_not_what_you_didn_39t">  <span class='foswikiRedFG'>Best Practice 4. </span>State what you did find or learn, not what you didn't </h3>
+ What a study <em>did</em> find is what is interesting, and any conclusions or interpretation should be based on this. Like <strong>Best Practice 3</strong>, this also helps with following <strong>Best Practice 2</strong>.
+<p></p>
+This no only prevents deception, but also can make statements clearer and stronger. Oddly, investigators often understate their conclusions using weak phrasing. The phrases quoted above seem like safe, conventional ways to state interpretations, despite their drawbacks. I still find that these are the phrases that first pop into my mind when I think about how to state a finding.
+<p></p>
+FRAM, a nationwide study of fat abnormalities in HIV, was a large study that carefully investigated changes in fat in various anatomical sites among persons with HIV. Its results strongly contradicted established thinking in this area, which was that visceral fat (known as "VAT") increased as peripheral fat decreased and the two were causally linked. Among other results supporting its conclusion of no reciprocal change was the following, showing that peripheral fat loss did not have any substantial association with central fat gain (note upper confidence bound of 1.06):
+<p></p>
+Peripheral fat loss association with central fat gain, OR: 0.71, CI: 0.47 to 1.06, p=0.10.
+<p></p>
+Despite the strong results, an early draft stated that "our results do not support the existence of a single syndrome with reciprocal findings". This was revised to read more appropriately: "We found evidence against any reciprocal increase in VAT in HIV-infected persons with peripheral lipoatrophy". [11]
+<p></p>
+Another example comes from a study of the safety of cannabinoids in persons with treated HIV:
+<p></p>
+Marijuana effect on log10 VL: -0.06 (-0.26 to 0.13)
+<p></p>
+Dronabinol: -0.07 (-0.24 to 0.06)
+<p></p>
+These upper confidence bounds were considered too small to be important, so this was strong evidence against any substantial harm.
+<p></p>
+In the first draft, the stated conclusion read, "Overall there was no evidence that cannabinoids increased HIV RNA levels over the 21-day study period".
+<p></p>
+The final draft more appropriately stated that "This study provides evidence that short-term use of cannabinoids, either oral or smoked, does not substantially elevate viral load in individuals with HIV infection".[12]
+<h2 id="PROBLEM_3._SPECULATION_ABOUT_LOW_POWER">  PROBLEM 3. SPECULATION ABOUT LOW POWER </h2>
+ This is the opposite of claiming high power to bolster a negative conclusion based only on a p-value, as discussed above (Problem 1). Sometimes investigators want to argue that their hoped-for results could still be possible, so they mention that power might have been too low and that could be why they didn't see what they expected. This again is too convoluted and unreliable to be worthwhile.
+<p></p>
+A good example is from the WHI study of diet and breast cancer that we have been discussing:
+<p></p>
+"There were departures from the design assumptions that likely reduced study power...If the WHI design assumptions are revised to take into account these departures [less dietary fat reduction], projections are that breast cancer incidence in the intervention group would be 8% to 9% lower than in the comparison group [and] the trial would be somewhat underpowered (projected power of approximately 60%) to detect a statistically significant difference, which is consistent with the observed results."
+<p></p>
+This illustrates the contorted sort of reasoning that speculation about low power requires. What exactly are they trying to say?
+<p></p>
+Their intended meaning seems to boil down to the following: "There might be a 9% reduction in risk. We could have missed it because power was only 60%." This speculation is completely pointless, because the conclusion is better supported, and much clearer, from the examination of the estimate and the confidence interval. <strong>The HR=0.91, so of course a 9% reduction is possible.</strong> It's what they actually saw!
+<p></p>
+Let's be clear on what happened here. World-class researchers reporting a very high-profile (and hugely expensive) study lapsed into convoluted and completely pointless reasoning. This is a dramatic illustration of how exclusive focus on whether p&lt;0.05 leads to easily avoided problems. Had the authors followed <strong>Best Practice 2</strong>, no such speculation would have been required, and the implications of their results would have been much clearer. To repeat:
+<h3 id="Best_Practice_2._Ensure_that_major_conclusions_reflect_the_estimates_and_the_uncertainty_around_them.">  <span class='foswikiRedFG'>Best Practice 2. </span>Ensure that major conclusions reflect the estimates and the uncertainty around them. </h3>
+ (Additional references <a href="ReportingPower.html">here</a>.) 
+<h2 id="PROBLEM_4._EXCLUSIVE_RELIANCE_ON_INTENT_45TO_45TREAT_ANALYSIS">  PROBLEM 4. EXCLUSIVE RELIANCE ON INTENT-TO-TREAT ANALYSIS </h2>
+ "Intent-to-treat" (ITT) analysis refers to analysis of all randomized subjects, regardless of how well they cooperated with treatment, possibly even including those who refused to actually undergo study treatment at all. ITT analysis is useful for preventing post-randomization self-selection from producing spurious positive findings, but it does not ensure the most accurate possible estimates for all purposes.
+<p></p>
+Consider a "negative" study of vitamin E in diabetics that claimed to have proven that vitamin E supplementation does not prevent cancer (this was based on the p-value fallacy, by the way). The study used ITT: "To reduce bias, we included continuing follow-up from those who declined active participation in the study extension and stopped taking the study medication". [13]
+<p></p>
+But ITT produces underestimates of actual biological effects: it is biased toward no effect. Thus, in addition to ignoring their estimates and CIs, they based a negative conclusion on an approach that is biased in that direction. This is very different from still having a positive finding despite some bias in the other direction, which is where ITT analysis works well.
+<p></p>
+This is an area where the WHI study did reasonably well. They used specialized methods to attempt to estimate what effect the fat-lowering intervention would have had if it were followed as recommended. These methods try to avoid the self-selection bias that simple per-protocol analyses (or observational studies) would have, while also avoiding the biases of ITT analysis.
+<p></p>
+The WHI estimate of effect if adherent to a low-fat diet was estimated as a breast cancer Hazard Ratio of 0.85 (0.71 to 1.02). This was a bit lower than the 0.91 from the primary analysis, but it still just misses p&lt;0.05. They went further in trying to account for adherence to the intervention, but balked at going beyond saying that the use of a more stringent adherence definition "leads to even smaller HR estimates and to 95% CIs that exclude 1".
+<h3 id="Best_Practice_5._Learn_as_much_as_you_can_from_your_data">  <span class='foswikiRedFG'>Best Practice 5. </span>Learn as much as you can from your data </h3>
+ It will not always be possible to fulfill this goal if analyses are strictly limited to ITT. Doing ITT analysis is usually important, so designing procedures to allow ITT is a good practice. In particular, it is good to continue to follow subjects who stop study medication. But ITT can be supplemented with additional analyses, notably analysis restricted to those who actually underwent the study treatments as planned, termed "per-protocol" analysis.
+<p></p>
+So a specific Best Practice is to
+<h3 id="Best_Practice_5a._Do_per_45protocol_analyses_in_addition_to_ITT_44_especially_if">  <span class='foswikiRedFG'>Best Practice 5a. </span><font color="#5887b7">D</font>o per-protocol analyses in addition to ITT, especially if </h3> <ol>
+<li> there is interest in biological issues: ITT is not designed to address biological effects and can be poor due to bias toward no effect.
+</li> <li> treatment is double-blinded: this reduces (but does not eliminate) the potential for self-selection biases that ITT protects against. Having results from both ITT and per-protocol analyses can provide a fairer assessment of the uncertainty about a treatment's effect. This is especially important if negative conclusions from ITT analysis are less supported by per-protocol analysis. Also, when treatments are randomized and blinded, stratifying or controlling for the level of adherence or the time of dropout can produce an "in-between" estimate that may be sensible.
+</li></ol> 
+Another possibility is 
+<h3 id="Best_Practice_5b._Consider_advanced_methods_to_estimate_causal_effects">  <span class='foswikiRedFG'>Best Practice 5b. </span>Consider advanced methods to estimate causal effects </h3>
+ There are new and complex "causal inference" methods that seek to avoid both the biases of ITT and those of per-protocol analysis. These are what WHI used. You are very likely to need help from a statistician to carry these out.
+<p></p>
+Two closely related problems are:
+<h2 id="PROBLEM_5._RELIANCE_ON_OMNIBUS_TESTS_and">  PROBLEM 5. RELIANCE ON OMNIBUS TESTS and </h2>
+<h2 id="PROBLEM_6._OVERUSE_OF_MULTIPLE_COMPARISONS_ADJUSTMENTS">  PROBLEM 6. OVERUSE OF MULTIPLE COMPARISONS ADJUSTMENTS </h2>
+<h3 id="Omnibus_tests">  Omnibus tests </h3>
+ (like <a href="ANOVA.html">ANOVA</a>) are methods that  <ul>
+<li> check for any one or more of a large number of possible departures from a global null hypothesis (nothing is happening anywhere). They are
+</li> <li> inherently focused only on p-values (Problem 1) and they are
+</li> <li> diffuse, and so are weaker for specific issues. This makes them generally less useful than analyses focused on specific relationships whose magnitudes can be estimated as well as tested. In particular, when the p-value is large, the main use for omnibus tests is the misuse highlighted in Problem 1.
+</li></ul> 
+One reason that some people like omnibus tests is that they help guard against obtaining spurious positive results due to multiple comparisons. Because omnibus tests look broadly for any one of many possible departures from the null hypothesis, they are not good at finding any specific one. This makes them "conservative" for any specific question, which some people consider desirable or rigorous. 
+<h3 id="Multiple_comparisons_adjustments">  Multiple comparisons adjustments </h3> <ul>
+<li> each result detracts from the other.
+</li></ul> 
+Another way of guarding against chance false positive results is application of multiple comparisons adjustments. These are also inherently focused only on p-values, promoting use of the p-value fallacy. They also have the unfortunate property that the results of each analysis are automatically assumed to detract from all the others, with no consideration of how well the different results fit together conceptually or scientifically. Like omnibus tests, these are also very conservative, which some people like. But accuracy is a much more worthy goal than conservatism, and this is often better achieved by less formal (and more intelligent) ways of guarding against spurious findings.
+<p></p>
+Following are examples of how to justify not using multiple comparisons adjustments, both for papers and in grant proposals:
+<p></p>
+<strong>Example text for responding to a manuscript review or for inclusion in a paper:</strong>
+<p></p>
+"Although we examine many differences and issues, we report nominal p-values, without adjustment for multiple testing. Such adjustment would be focused on avoidance of one or more results with p&lt;0.05 in the case where all differences are truly zero,[14-16] which is an extremely unrealistic hypothesis about the state of nature in our situation. In addition, adjustment would require that each result detract from the others, but there are clear biological relationships among many of the issues that we examine, and these permit coherent sets of findings to reinforce each other rather than detract from one another. Thus, multiple comparison adjustment would do exactly the wrong thing in such cases.[17] We therefore rely on scientific judgment rather than formal adjustment methods to indicate where caution is warranted despite findings with p&lt;0.05."
+<p></p>
+<strong>Example text for inclusion in a grant proposal:</strong>
+<p></p>
+"Although this Aim involves many different measures, we do not plan formal adjustments for multiple comparisons. This is because we expect many measures to show statistically significant differences, and that directions and magnitudes of differences (perhaps including some with p&gt;0.05) will fit a biologically coherent pattern. In this case, each result will reinforce the other, rather than detracting from one another as required by formal multiple comparisons adjustments such as the Bonferroni method. Conversely, if only one or a very few measures reach statistical significance and their directions and/or magnitudes do not coherently fit with &lt;&lt; <em>our substantive theory</em> &gt;&gt;, then we will note that the result(s) with p&lt;0.05 lack biological plausibility and could be due to chance despite meeting the conventional cutoff for statistical significance."
+<h4 id="Typical_problems_that_may_be_encountered">  Typical problems that may be encountered </h4>
+ <strong><font color="#4682b4"> <em>Scenario 1:</em> </font></strong>
+<p></p>
+An investigator who has just concluded an animal experiment is puzzled and worried. The experiment included: <ul>
+<li> a condition that just confirms that the experment was done correctly;
+</li> <li> some places where different conditions should be similar; and
+</li> <li> some conditions that should differ.
+</li></ul> 
+He saw the results he expected in pairwise comparisons, but "ANOVA says that there is nothing happening".
+<p></p>
+Because this had a specific focus on certain pairwise comparisons to address the scientific questions, he had done <em>t-</em> tests and estimated pairwise differences, obtaining positive results that he thought made sense. But he thought that he "had to" perform <a href="ANOVA.html">ANOVA</a>, and this produced a p-value a bit larger than 0.05. So he thought that to be "rigorous" he would have to reach the opposite conclusion of what he found with the focused analyses. In fact, the focused results were what mattered; unfortunately, there is a risk that reviewers may think otherwise.
+<p></p>
+In fact, reviewers often state flatly that omnibus tests and multiple comparisons adjustments <em>must</em> be used when in fact those approaches would be very inappropriate.
+<p></p>
+<strong><font color="#4682b4"> <em>Scenario 2:</em> </font></strong>
+<p></p>
+A primarily descriptive study that examined effects of four different administration routes had many positive results, not a single one that was likely due to chance. However, the reviewer stated:
+<p></p>
+"Repeated measures analysis of variance should be completed. <strong><span class='foswikiRedFG'>*Only if the time-by-treatment interaction is significant </span>*</strong>, should time-specific comparisons be made. Then multiple comparison procedures, such as Tukey's test, should be used rather than repeated <em>t-</em> tests."
+<p></p>
+This would treat p&gt;0.05 on the unfocused omnibus test of time-by-treatment interaction as a reliable indicator that no important differences are present: <strong>Problem 1.</strong>
+<p></p>
+The reviewer's comment, particularly the phrase highlighted in red, may <em>sound</em> rigorous, but it is only "rigorous" in the sense of being rigid or harsh, not in the sense of being exactly precise. It requires extreme conservatism--not accuracy--which could result in missing or understating important findings.
+<p></p>
+<strong><font color="#4682b4"> <em>Scenario 3:</em> </font></strong>
+<p></p>
+Another study of the biology of morphine addiction had a great deal of scientific structure that omnibus tests or multiple comparisons adjustments would not take into account. The design of the study was very complex, involving: <ul>
+<li> two different receptors;
+</li> <li> antagonists;
+</li> <li> different brain regions with and without a certain receptor; and
+</li> <li> systemic vs. local administration.
+</li></ul> 
+The results of many pairwise comparisons fit a biologically coherent pattern. Conditions that should have differed did, while comparisons that should have been similar <em>were</em> similar.
+<p></p>
+A reviewer of the manuscript ignored the consistency of the findings and wrote the following strident comment:
+<p></p>
+"The statistical analyses are naive. The authors compute what appear to be literally dozens of <em>t-</em> tests without any adjustment to the &alpha; level--indeed <strong><span class='foswikiRedFG'>*the probability of obtaining false positives grows with the number of such tests computed </span>*</strong>. The authors should have conducted <a href="ANOVA.html">ANOVAs</a> followed by the appropriate post-hoc tests. Their decision to simple [ <em>sic</em> ] compute <em>t-</em> tests on all possible combinations of means is statistically unacceptable."
+<p></p>
+The statement highlighted in red is incorrect. The chance of obtaining <em>at least one</em> false positive increases <em>if</em> the null hypothesis holds for <em>all</em> comparisons. False positives in general do not become more likely, and the chance of getting many false positives that all fit together in a coherent biological theory is extremely small. This is a clear case where the results of multiple analyses all reinforce each other rather than detracting from each other as required by omnibus tests and multiple comparisons adjustments.The probability of obtaining multiple positive results exactly where expected and negative results exactly where expected does not grow; it becomes vanishingly small.
+<p></p>
+Striving for the following best practices will often lead to much better analyses and interpretations than use of omnibus tests and multiple comparisons adjustments.
+<h3 id="Best_Practice_6._Base_interpretations_on_a_synthesis_of_statistical_results_with_scientific_considerations.">  <span class='foswikiRedFG'>Best Practice 6. </span>Base interpretations on a synthesis of statistical results with scientific considerations. </h3>
+ In clinical research, there is usually outside knowledge that can be used to help with the choice of analyses and their interpretation. Recognizing and explaining whether and how results of different analyses fit together is crucial for obtaining the best understanding of what can be learned from the study. This will usually require consideration of the directions and magnitudes of estimated effects, along with the uncertainty shown by the CIs, rather than consideration of p-values alone. 
+<h3 id="Best_Practice_6a._Rely_on_scientific_considerations_to_guard_against_overinterpretation_of_isolated_findings_with_p_600.05._40This_is_usually_preferable_to_multiple_comparisons_adjustment._41">  <span class='foswikiRedFG'>Best Practice 6a. </span>Rely on scientific considerations to guard against overinterpretation of isolated findings with p&lt;0.05. (This is usually preferable to multiple comparisons adjustment.) </h3>
+ In particular, it is important to realize when one or a few findings reach p&lt;0.05 but the ensemble of results does not have a compelling explanation. If the results with p&lt;0.05 are not especially more plausible than other quantities estimated, and the directions and magnitudes of these and other results do not show patterns that reinforce the findings, then it is reasonable to regard those findings as suggestive (or even potentially spurious) rather than conclusive, despite their small p-values. Given that our publishing environment has substantial disincentives for such cautious interpretation of findings with p&lt;0.05, this requires strong dedication to fair interpretation. 
+<h3 id="Best_Practice_6b._Acknowledge_the_desirability_of_independent_replication_44_particularly_for_unexpected_findings.">  <span class='foswikiRedFG'>Best Practice 6b. </span>Acknowledge the desirability of independent replication, particularly for unexpected findings. </h3>
+ Replication plays a crucial role in solidifying scientific knowledge, but the tendency to focus only on supposedly conclusive "findings" can sometimes cause this to be overlooked. For example, a recent editorial, by a prominent statistician, addressed the topic of subgroup analyses, which is a version of the multiple comparisons issue.[18] It failed to mention any role for replication. 
+<h3 id="Best_Practice_7._Choose_accuracy_over_conservatism_whenever_possible.">  <span class='foswikiRedFG'>Best Practice 7. </span>Choose accuracy over conservatism whenever possible. </h3>
+ Many consider conservatism to be very desirable and rigorous, but this certainly is not so when accuracy is a viable alternative. Conservatism is a type of bias, and bias is bad. Sometimes it is better to know the direction of the bias rather than to be uncertain. Intent-to-treat analysis, omnibus tests, and multiple comparisons adjustments introduce bias with a known direction, but it is still bias. You will often be able to do better by thinking carefully about all your results.
+<p></p>
+<strong>Best Practice 1</strong> and <strong>Best Practice 2</strong>, obtaining estimates and CIs and taking them into account when interpreting results, will often be helpful for achieving accurate interpretation. They will usually steer you away from overly conservative, automatic methods based only on p-values.
+<h2 id="PROBLEM_7._ENTANGLED_OUTCOMES_AND_PREDICTORS">  PROBLEM 7. ENTANGLED OUTCOMES AND PREDICTORS </h2>
+ Predictors and outcomes that have parts of their definitions in common can cause severe problems.
+<p></p>
+<strong>EXAMPLE 1:</strong> Using body mass index (BMI) as a predictor of central fat.
+<p></p>
+In the case of fat abnormalities in HIV infected persons, early studies controlled for BMI when assessing whether peripheral fat loss was associated with central fat gain. Because fat amounts contribute directly to BMI, this caused a spurious association.
+<p></p>
+Those with low peripheral fat were less likely to have high central fat. But the opposite picture emerges if you control for BMI. Those with low values of both peripheral and central fat had their low central fat "explained" by a low BMI, thereby leaving the estimated association to be determined only by the rare cases with low peripheral fat and high central fat. This field of inquiry was seriously misguided for many years because of this seemingly obvious problem.
+<p></p>
+<strong>EXAMPLE 2:</strong> Total time on treatment as a (fixed) predictor of survival time.
+<p></p>
+Patients can only be treated if they are alive. Those who die early will necessarly have their total time on treatment limited by how long they lived. Someone who died after 2 days will have at most 2 days of treatment. Conversely, someone with 5 years of treatment must have lived at least 5 years. Proportion of time on treatment, although less obviously biased, also may depend on survival time and be potentially biased.
+<p></p>
+<strong>EXAMPLE 3:</strong> Number of rejection episodes as a predictor of post-transplant survival.
+<p></p>
+Someone who died on day 1 would have at most 1 rejection episode, while someone with 5 episodes would have to have lived quite a bit longer.
+<p></p>
+<strong>To avoid these problems, either</strong>
+<p></p>
+<strong>1) ensure that the outcome is <em>not</em> part of the definition of a predictor, and vice versa, or</strong>
+<p></p>
+<strong>2) be very careful and clear with interpretation.</strong>
+<p></p>
+In general, it is simplest and safest to make sure that outcome and predictors are fully distinct. For time-to-event analyses, use time-dependent covariates, defined only using measurements up to the present. In general any fixed (non-time-dependent) covariates should be known from information only up to time zero. And even for time-dependent covariates, any use of "look-ahead" information is likely to cause trouble.
+<h2 id="Some_Technical_Problems_and_Ways_to_Avoid_Them">  Some Technical Problems and Ways to Avoid Them </h2>
+<h3 id="A_1._No_assessment_of_assumptions.">  1. No assessment of assumptions. </h3>
+ Be sure to describe what you did to assess assumptions and what you found. As noted <a class="foswikiCurrentTopicLink" href="#Are_large_p_values_good_for_anyt">above</a>, it is not necessary to prove that assumptions are valid, but it is important to perform some due diligence looking for major violations. 
+<h3 id="A_2._Ignoring_dependence_and_clustering">  2. Ignoring dependence and clustering </h3>
+ An extreme case of this is performing unpaired analyses on paired data. Other cases include treating repeated measurements on the same people as if they were independent. 
+<h3 id="A_3._Unclear_details_for_time_45to_45event:_operational_definitions_44_early_loss_44_event_ascertainment">  3. Unclear details for time-to-event: operational definitions, early loss, event ascertainment </h3> <ul>
+<li> Provide operational definitions of starting time, occurrence of event, and censoring time. Any analysis of time to an event needs to be clear about the time from when to when;
+</li> <li> Summarize follow-up among those who were censored <em>because follow-up is complete for anyone who had the event</em>. It does not matter whether the event occurred at 2 days or 5 years--either way, we know all we need to know about that person's outcome. The amount of follow-up matters for those who did not have the event, especially the minimum follow-up and/or the number of subjects with shorter than desired follow-up. Mixing the early events into summaries of follow-up times obscures this information;
+</li> <li> Summarize early loss to follow-up and the reasons for it. Censoring due to loss to follow-up is more likely to violate the assumption of non-informative censoring, so this is a particular concern that should be addressed separately from observations censored just due to the planned end of the study or observation period;
+</li> <li> Describe how events were ascertained. This is important for establishing the completeness of ascertainment, and sometimes for explaining clumps of events (e.g., if many were found at a scheduled 6-month visit).
+</li></ul> 
+<h3 id="A_4._Poor_summaries_40e.g._44_summarizing_skewed_data_with_a_mean_and_standard_deviation_41">  4. Poor summaries (e.g., summarizing skewed data with a mean and standard deviation) </h3>
+ For skewed data, medians are usually better summaries. The CI for the median can be added to show how precisely it is estimated, or the range and/or quartiles (IQR) can be added to show the variation in the population.
+<p></p>
+There is sometimes confusion about whether to show SDs or SEs. Show SEs (or CIs, which are usually better) to indicate the precision of estimates. Show SDs to indicate the variability in the population.
+<h3 id="A_5._Showing_inadequate_or_excessive_precision">  5. Showing inadequate or excessive precision </h3>
+ In general, too little precision may leave the reader wondering about the exact magnitude. For example, p=0.01 could mean anything from 0.005 to 0.015, which is a 3-fold range. Extra precision is not directly harmful, but gives a spurious impression of how precise the results are. It also can look naive, giving an astute reader or reviewer the impression that you do not know what is important and what is not.
+<p></p>
+For odds ratios, relative risks, and hazard ratios, do one of the following: <ul>
+<li> give the value to two decimals if &lt;2.0, one if &gt;2.0, or
+</li> <li> give all values to two decimals. This has the possible advantage of always the same number of decimals, but this can be excessive. ORs like 24.56 look a bit odd.
+</li></ul> 
+Give p-values to two significant digits (leading 0's don't count), to a maximum of three or four. Sometimes, people give a maximum of three digits, and this is what some Stata procedures provide. But giving up to four is sometimes desirable and is usually also fine.
+<p></p>
+Do not use "p&lt;" for values of 0.001 or more; use "=". That is, don't say p&lt;0.01 when you could say p=0.0058.
+<p></p>
+Never use "p=NS" or "p&gt;0.1". This gives needlessly vague information and encourages <strong>Problem 1.</strong>
+<p></p>
+Do not show chi-squared or other statistics that provide the same information as p-values (but are less interpretable). These add no information and clutter presentation of results. They may seem to add some technical cachet, but leaving out unimportant details actually conveys a better impression of technical savvy.
+<h3 id="A_6._Poorly_scaled_predictors">  6. Poorly scaled predictors </h3>
+ Common examples of this problem include using age in years or raw CD4+ cell count. In regression models, the coefficients for numeric predictors are the estimated effects of a 1-unit increase in the predictor. So if the age variable is in years, the estimated effect is for a 1-year increase in age, which is often too small to be readily interpretable. When a 1-unit increase is a very small amount, estimated coefficients will necessarily be very small and results will be hard to interpret.
+<p></p>
+For example, an OR of 1.0051 per 1 cell/mm\xB3 increase in CD3 count is very hard to interpret. It is also hard to rescale this by eye, because the OR for a 100 cell increase is (1.0051)\xB9\xBA\xBA, which most people cannot calculate in their heads (it's 1.66).
+<p></p>
+To avoid this problem, rescale numeric predictors before running regression models (or use lincom, in Stata, afterwards). For eample, make a new variable cd4per100=cd4/100.
+<h3 id="A_7._Terms_likely_to_be_misread_40_34significant_34_41">  7. Terms likely to be misread ("significant") </h3>
+ Don't needlessly give readers and reviewers the opportunity to misunderstand what you mean.
+<p></p>
+Avoid the use of the word "significant" by itself. Use "statistically significant" if meaning p&lt;0.05; use "important", "substantial", or "clinically significant" if that is the intended meaning. As noted under <strong>Problem 1</strong>, some journals reserve the word "significant" used by itself to mean "statistically significant". If they do not allow the full term, just avoid using it at all (this may be a good strategy anyway).
+<p></p>
+Use "Relative Hazard" or "Hazard Ratio" for proportional hazards model results, not "Relative Risk"; this is sometimes used for analysis of a binary outcome.
+<p></p>
+Use "Mann-Whitney" instead of "Wilcoxon" or "Wilcoxon rank-sum" to avoid confusion with "Wilcoxon signed-rank". Both "Mann-Whitney" and "Wilcoxon rank-sum" are used, due to the near simultaneous, independent development of the method.
+<h3 id="A_8._Missing_data">  8. Missing data </h3>
+ Missing data can cause bias, depending on why it is missing. Some causes of missing data can produce severe bias in the data that remain. For example, those with the riskiest behavior may be more inclined to skip questions about risk factors. The more that is missing, the more likely that there is a problem with what remains. Think about why participants may have declined to provide the information.
+<p></p>
+<strong>Prevention of missing data is best. If is is unavoidable, however,</strong> <ul>
+<li> Clearly disclose how much;
+</li> <li> Give reasons when known;
+</li> <li> Assess differences in non-responders (You can compare those who responded to those who didn't on demographics and other variables that are more complete. This can provide clues about why some people didn't respond and what impact that may have on your results.)
+</li> <li> Perform sensitivity analyses (For example, when comparing two treatments, you can make a pessimistic assumption about those with missing outcomes in one arm and an optimistic assumption for the other arm. If the conclusion remains qualitatively the same, then you can have confidence that is was not caused by bias due to missing data.
+</li> <li> Consider advanced methods (For example. there are Stata do-files available to facilitate a method called <em>multiple imputation</em> (see <a href="http://www.ats.ucla.edu/stat/stata/Library/ice.htm">http://www.ats.ucla.edu/stat/stata/Library/ice.htm</a>). You will likely need help from a statistician to use such approaches.
+</li></ul> 
+When comparing univariate and multivariate results, use the same set of observations. For multivariate modeling, the default in Stata and other programs is to delete all observations that have missing values for any predictor or for the outcome. (For stepwise selection, observations missing any <em>candidate</em> predictor are deleted, even if the candidate is never used.) This means that smaller models may have more observations than larger ones. Keep this in mind if you need to compare the results of such models, such as when you are examining how an effect of interest changes when controlled for other predictors. In these cases, you should fit the models to the same set of observations, even though the smaller models could utilize more. 
+<h2 id="Summary_of_Problems">  Summary of Problems </h2>
+ <strong>Problem 1</strong>. P-values for establishing negative conclusions
+<p></p>
+<strong>Problem 2.</strong> Misleading and vague phrasing
+<p></p>
+<strong>Problem 3.</strong> Speculation about low power
+<p></p>
+<strong>Problem 4.</strong> Exclusive reliance on intent-to-treat analysis
+<p></p>
+<strong>Problem 5.</strong> Reliance on omnibus tests
+<p></p>
+<strong>Problem 6.</strong> Overuse of multiple comparisons adjustments
+<h2 id="Summary_of_Biostatistical_Best_Practices">  Summary of Biostatistical Best Practices </h2>
+ Best Practice 1. Provide estimates--with confidence intervals--that directly address the issues of interest
+<p></p>
+<strong>Best Practice 2.</strong> Ensure that major conclusions reflect the estimates and the uncertainty around them.
+<p></p>
+<strong>Best Practice 2a.</strong> Never interpret large p-values as establishing negative conclusions.
+<p></p>
+<strong>Best Practice 3.</strong> Discuss the implications of your findings for what may be true in general. Do not focus on "statistical significance" as if it were an end in itself.
+<p></p>
+<strong>Best Practice 4.</strong> State what you did find or learn, not what you didn't.
+<p></p>
+<strong>Best Practice 5.</strong> Learn as much as you can from your data.
+<p></p>
+<strong>Best Practice 5a.</strong> Also do per-protocol analyses, especially if: <ul>
+<li> There is an interest in biological issues
+</li> <li> There is double-blinded treatment
+</li></ul> 
+Best Practice 6. Base interpretations on a synthesis of statistical results with scientific considerations.
+<p></p>
+<strong>Best Practice 6a.</strong> Rely on scientific considerations to guard against overinterpretation of findings with p&lt;0.05.
+<p></p>
+<strong>Best Practice 6b.</strong> Acknowledge the desirability of independent replication, particularly for unexpected findings.
+<p></p>
+<strong>Best Practice 7.</strong> Choose accuracy over conservatism whenever possible.
+<h2 id="References">  References </h2>
+ 1. Vickers AJ. Underpowering in randomized trials reporting a sample size calculation. <em>Journal of Clinical Epidemiology.</em> 2003 56:717-20.
+<p></p>
+2. Altman DG, Schulz KF, Moher D, Egger M, Davidoff F, Elbourne D, PC, Lang T, for the CONSORT Group. The revised CONSORT statement for reporting randomized trails: explanation and elaboration. <em>Ann Intern Med.</em> 2001 <strong>134</strong>:663-94. Page 670.
+<p></p>
+3. Tukey JW, Tightening the clinical trial. <em>Controlled Clinical Trials.</em> 1993; <strong>14</strong>:266-285. P. 281.
+<p></p>
+4. Goodman SN, Berlin JA. The use of predicted confidence intervals when planning experiments and the misuse of power when interpreting results. <em>Ann Intern Med.</em> 1994; <strong>121</strong>:200-6.
+<p></p>
+5. Hoenig JM, Heisey DM. The abuse of power: the pervasive fallacy of power calculations for data analysis. <em>American Statistician.</em> 2001; <strong>55</strong>:19-34.
+<p></p>
+6. Senn SJ. Power is indeed irrelevant in interpreting completed studies. <em>BMJ.</em> 2002; <strong>325</strong>:1304.
+<p></p>
+7. Rumbold AR, Crowther CA, Haslam RR, Dekker GA, Robinson JS. Vitamins C and E and the risks of preeclampsia and perinatal complications. <em>NEJM.</em> 2006; <strong>354:</strong> 1796-1806.
+<p></p>
+8. Women's Health Initiative. Low-fat dietary pattern and risk of invasive breast cancer. <em>JAMA.</em> 2006; <strong>295</strong>:629-42.
+<p></p>
+[[http://www.ncbi.nlm.nih.gov/pubmed/16467232?ordinalpos=1&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DefaultReportPanel.Pubmed_RVDocSum]<em><u> </u></em>]]
+<p></p>
+9. Newman TB, Liljestrand P, Jeremy RJ; Jaundice and Infant Feeding Study Team. Outcomes among newborns with total serum bilirubin levels of 25 mg per deciliter or more. <em>NEJM.</em> 2006; <strong>354:</strong> 1889-1900. <a href="http://content.nejm.org/cgi/reprint/354/18/1889.pdf">http://content.nejm.org/cgi/reprint/354/18/1889.pdf</a>
+<p></p>
+10. Bacchetti P, Tien PC, Seaberg EC, O'Brien TR, Augenbraun MH, Kral AH, Busch MP, Edlin BR. Estimating past hepatitis C infection risk from reported risk factor histories: implications for imputing age of infection and modeling fibrosis progression. <em>BMC Infectious Diseases,</em> <strong>7:</strong> 145, doi:10.1186/1471-2334-7-145, 2007).
+<p></p>
+11. Bacchetti P, Gripshover B, Grunfeld C, <em>et al.</em> Fat distribution in men with HIV infection. <em>JAIDS,</em> 2005; <strong>40</strong> (2):121-31.
+<p></p>
+12. Abrams DI, Hilton JF, Leiser RJ , Shade SB, <em>et al.</em> Short-term effects of cannabinoids in patients with HIV-1 infection: a randomized, placebo-controlled clinical trial. <em>Ann Intern Med,</em> 2003; <strong>139</strong>:258-66.
+<p></p>
+13. Lonn E, Bosch J, Yusuf S, Sheridan P, <em>et al.</em>, for the HOPE and HOPE-TOO Trial Investigators. Effects of long-term vitamin E supplementation on cardiovascular events and cancer: a randomized controlled trial. <em>JAMA</em>. 2005; <strong>293:</strong> 1338-47.
+<p></p>
+14. Rothman KJ. No adjustments are needed for multiple comparisons. <em>Epidemiology</em>, 1990; <strong>1</strong> (1):43-6.
+<p></p>
+15. Savitz DA, Olshan, AF. Multiple comparisons and related issues in the interpretation of epidemiologic data. <em>Am J Epidemiol,</em> 1995; <strong>142</strong> (9); 904-8.
+<p></p>
+16. Perneger TV. What's wrong with Bonferroni adjustments. <em>Br Med J</em>, 1998; <strong>316</strong> (7139): 1236-8.
+<p></p>
+17. Bacchetti P. Peer review of statistics in medical research: the other problem. <em>Br Med J</em>, 2002; <strong>324</strong>:1271-723.
+<p></p>
+18. Wittes J. On looking at subgroups. <em>Circulation,</em> 2009; <strong>119</strong>:912-15.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

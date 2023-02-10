@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasInfor &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/BiasInfor/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/BiasInfor/favicon.ico" rel="shortcut icon">
+<link href="BiasInfor.html" rel="alternate" type="application/x-wiki" title="edit BiasInfor">
+<meta name="description" content="BiasInfor" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "BiasInfor",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Measurement_Bias">  Measurement Bias </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<strong>Technical Definition:</strong> It is the bias, or deviation from the truth, that it is caused when any measurement collected about or from subjects is not completely valid (i.e., not completely accurate). Inaccuracy in the measurement of any kind of variable, be it an <a href="PredictorVariable.html">exposure variable</a>, an <a href="OutcomeVariable.html">outcome variable</a>, or a <a href="BiasConfound.html">confounder variable</a> can lead to measurement bias.
+<p></p>
+<span id="InformationBias"></span>
+<p></p>
+<strong>AKA:</strong> What are the other terms you might find for measurement bias? Measurement bias is also known as misclassification bias, information bias, or identification bias. Misclassification bias is a good term because misclassification of a variable is the immediate result of an error in measurement.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Non_45Differential_Misclassification_45_Bias_Towards_the_Null_Hypothesis"> Non-Differential Misclassification - Bias Towards the Null Hypothesis </a> <ul>
+<li> <a href="#Non_45Differential_Misclassification_of_Exposure_Variables_45_Sensitivity"> Non-Differential Misclassification of Exposure Variables - Sensitivity </a>
+</li> <li> <a href="#Non_45Differential_Misclassification_of_Exposure_Variables_45_Specificity"> Non-Differential Misclassification of Exposure Variables - Specificity </a>
+</li> <li> <a href="#Non_45Differential_Misclassification_of_Exposure_Variables_45_Imperfect_Sensitivity_and_Specificity"> Non-Differential Misclassification of Exposure Variables - Imperfect Sensitivity and Specificity </a>
+</li></ul> 
+</li> <li> <a href="#Non_45Differential_Misclassification_45_Magnitude_of_Effect_of_Bias_on_OR"> Non-Differential Misclassification - Magnitude of Effect of Bias on OR </a>
+</li> <li> <a href="#Non_45Differential_Misclassification_of_Outcome_Variables"> Non-Differential Misclassification of Outcome Variables </a>
+</li> <li> <a href="#Non_45Differential_Misclassification_of_Outcome_Variables_in_a_Cohort_or_Cross_45Sectional_Study"> Non-Differential Misclassification of Outcome Variables in a Cohort or Cross-Sectional Study </a>
+</li> <li> <a href="#Differential_Misclassification_of_Exposure_and_Outcome_Variables"> Differential Misclassification of Exposure and Outcome Variables </a>
+</li> <li> <a href="#Measurement_Bias_in_Analytic_Studies"> Measurement Bias in Analytic Studies </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Non_45Differential_Misclassification_45_Bias_Towards_the_Null_Hypothesis">  Non-Differential Misclassification - Bias Towards the Null Hypothesis </h2>
+<p></p>
+As shown in the table below, the effect of non-differential misclassification is predictably always towards the <a href="NullHypothesis.html">null hypothesis</a>, in other words an attenuation of the measure of <a href="StudyAssoc.html">association</a>. <ul>
+<li> The exception to this comes when <a href="ValiditySpecif.html">specificity</a> is 100%, there is no bias incurred with imperfect sensitivity of the outcome measurement when risk ratios or prevalence ratios are being estimated.
+</li></ul> 
+<blockquote><img alt="0521_2_sum_misclass.JPG" height="180" width="335" src="BiasInfor.attachments/0521_2_sum_misclass.JPG"></blockquote>
+<p></p>
+The effects of differential misclassification can go in either direction and depend very much on the individual circumstances of the problem. The bias can either be away from or towards the null hypothesis.
+<p></p>
+<h3 id="Non_45Differential_Misclassification_of_Exposure_and_Outcome_Variables">  Non-Differential Misclassification of Exposure and Outcome Variables </h3>
+<p></p>
+When we are using <a href="OddsRatioMeasures.html">odds ratios</a> there is a predictable bias towards the <a href="NullHypothesis.html">null hypothesis</a> for both non-differential misclassification of <a href="PredictorVariable.html">exposure</a> and <a href="OutcomeVariable.html">outcome</a>.
+<p></p>
+How common do you think this is? <ul>
+<li> Whenever you start to measure something with less than 100% sensitivity and 100% specificity you begin to get biased measures of association towards the null.
+</li> <li> In fact, they will always be towards 1.0 unless the <a href="ValiditySensit.html">sensitivity</a> and <a href="ValiditySpecif.html">specificity</a> are absolutely atrocious in which case you will begin to reverse direction.
+</li> <li> Because this bias is typically towards the null, it has been called a conservative bias.
+</li></ul> 
+But what does conservative really mean?  <ul>
+<li> After all, the goal in our work is to get at the truth.
+</li> <li> Consider how much underestimation of effects must be occurring in research.
+</li> <li> Or, how many <em>negative</em> studies are truly <em>positive?</em>
+</li> <li> How much does non-differential misclassification add to the confusion in given fields where some studies have positive results and others are negative?
+</li></ul> 
+<span id="FalseNegative"></span><br /> 
+<h3 id="Non_45Differential_Misclassification_of_Exposure_Variables_45_Sensitivity">  Non-Differential Misclassification of Exposure Variables - Sensitivity </h3>
+ In the <a href="EgMisclassNondiffExposureSens.html">imperfect sensitivity example</a> of non-differential misclassification of <a href="PredictorVariable.html">exposure variables</a> some truly exposed persons are misclassified as unexposed <strong><em>(false negative)</em></strong>. Because this happens equally among diseased and non-diseased persons, it is called <strong>non-differential misclassification</strong>.
+<p></p>
+The illustrates the effect of non-differential misclassification of exposure in the presence of 2 exposure categories and 70% <a href="ValiditySensit.html">sensitivity</a> - the <strong>bias is towards the</strong> <a href="NullHypothesis.html"> <strong>null hypothesis</strong> </a> in other words, towards 1.0
+<p></p>
+<span id="FalsePositive"></span>
+<h3 id="Non_45Differential_Misclassification_of_Exposure_Variables_45_Specificity">  Non-Differential Misclassification of Exposure Variables - Specificity </h3>
+ In the <a href="EgMisclassNondiffExposureSpec.html">imperfect specificity example</a> of non-differential misclassification of <a href="PredictorVariable.html">exposure variables</a> some truly unexposed persons are misclassified as exposed <strong><em>(false positive)</em></strong>. Because this happens equally among diseased and non-diseased persons, it is called <strong>non-differential misclassification</strong>.
+<p></p>
+This illustrates the effect of non-differential misclassification of exposure because of imperfect specificity in the presence of 2 exposure categories - the <strong>bias is towards the</strong> <a href="NullHypothesis.html"> <strong>null hypothesis</strong> </a>, towards 1.0.
+<p></p>
+<h3 id="Non_45Differential_Misclassification_of_Exposure_Variables_45_Imperfect_Sensitivity_and_Specificity">  Non-Differential Misclassification of Exposure Variables - Imperfect Sensitivity and Specificity </h3>
+ Both imperfect <a href="ValiditySensit.html">sensitivity</a> and <a href="ValiditySpecif.html">specificity</a> are far more common than imperfect sensitivity or imperfect specificity alone as illustrated in these <a href="EgMisclassSensSpec.html">examples</a>.
+<p></p>
+A key <a href="EgMisclassSensSpec.html">component</a> affecting the actual sensitivity and specificity of the <a href="PredictorVariable.html">exposure</a> measurement is the extent of the bias.
+<h1 id="A_">   </h1>
+<p></p>
+<h2 id="Non_45Differential_Misclassification_45_Magnitude_of_Effect_of_Bias_on_OR">  Non-Differential Misclassification - Magnitude of Effect of Bias on OR </h2>
+ The table below gives some more examples of what happens with non-differential misclassification of <a href="PredictorVariable.html">exposure</a>. <blockquote><img src="BiasInfor.attachments/0522_table_sens_spec.JPG" width="354" height="185" alt="0522_table_sens_spec.JPG"><br /> </blockquote>
+<p></p>
+In a scenario where the true <a href="OddsRatioMeasures.html">Odds Ratio</a> is 4.0, if <a href="ValiditySensit.html">sensitivity</a> is 90% and <a href="ValiditySpecif.html">specificity</a> is 85% and the prevalence of <a href="PredictorVariable.html">exposure</a> in the controls is 20%, <ul>
+<li> the observed OR is 2.6.
+</li></ul> 
+Keeping specificity fixed but decreasing sensitivity to 60%  <ul>
+<li> results in an OR all the way down to 1.9.
+</li></ul> 
+If you keep sensitivity fixed at 90% but drop specificity from 95% to 60%, again with true prevalence of exposure in the controls of 20%,  <ul>
+<li> then the odds ratio will fall from 3.2 to 1.9.
+</li></ul> 
+These last three rows illustrate how problems of misclassification are magnified when the prevalence of exposure is smaller.  <ul>
+<li> In the presence of 90% sensitivity and specificity (the last three rows), note how the bias increases the true prevalence of exposure in the controls falls.
+</li> <li> The observed OR falls from 3.0 to 2.8 to 2.2.
+</li></ul> 
+Hence, when the prevalence of exposure is about 8%, even a seemingly very respectable 90% sensitivity and specificity <strong>results in an OR of 2.2, much smaller than the true 4.0</strong>.
+<p></p>
+These are <a href="EgMisclassChart.html">graphical examples</a> of bias from <a href="EgMisclassChart.html">Copeland</a>.
+<p></p>
+<a href="EgMisclassNondiffCohort.html">Flegal plots</a> the effect of non-differential misclassification of exposure in a <a href="CohortStudy.html">cohort study</a>.
+<p></p>
+<h2 id="Non_45Differential_Misclassification_of_Outcome_Variables">  Non-Differential Misclassification of Outcome Variables </h2>
+ When the degree of misclassification of <a href="OutcomeVariable.html">outcome</a> is the same in the exposed vs unexposed groups, i.e. independent of exposure, this is called non differential <a href="EgMisclassNondiffOutcome.html">misclassification of outcome</a>.
+<p></p>
+<a href="EgMisclassNondiffOutcome.html">Flegal plots</a> the effect of non-differential misclassification of outcome and the effect of incidence.
+<p></p>
+<h2 id="Non_45Differential_Misclassification_of_Outcome_Variables_in_a_Cohort_or_Cross_45Sectional_Study">  Non-Differential Misclassification of Outcome Variables in a Cohort or Cross-Sectional Study </h2>
+<p></p>
+When we are using odds ratios there is a predictable bias towards the <a href="NullHypothesis.html">null hypothesis</a> for both non-differential misclassification of <a href="PredictorVariable.html">exposure</a> and <a href="OutcomeVariable.html">outcome</a>. <ul>
+<li> There is, however, a special situation when it comes to <strong>misclassification of outcome in a cohort or cross-sectional study</strong>.
+</li> <li> If <strong><a href="ValiditySpecif.html">specificity</a> is 100%</strong>, then any degree of imperfect <strong><a href="ValiditySensit.html">sensitivity</a></strong> will not have any impact on the <a href="RiskRatio.html">risk ratio</a> in a <a href="CohortStudy.html">cohort study</a> or the <a href="PrevalenceRatio.html">prevalence ratio</a> in a <a href="CrossSectionalStudy.html">cross sectional study</a>.
+</li> <li> Here are <a href="EgMisclassOutcomeCohort.html">diagrams of outcome</a> in a cohort study.
+</li> <li> Here is an <a href="EgMisclassPertussis.html">example of 100% specificity</a>.
+</li></ul> 
+<p></p>
+<h2 id="Differential_Misclassification_of_Exposure_and_Outcome_Variables">  Differential Misclassification of Exposure and Outcome Variables </h2>
+ The table below shows some examples of what can happen in the presence of differential misclassification of <a href="PredictorVariable.html">exposure</a>. <blockquote>
+<p></p>
+<img src="BiasInfor.attachments/0121_misclass_table.JPG" alt="0121_misclass_table.JPG" height="189" width="290">
+</blockquote>
+<p></p>
+Assume that we are looking at an <a href="OddsRatioMeasures.html">odds ratio</a> in a <a href="CaseControlStudy.html">case-control study</a> and that the true odds ratio is 3.9 and that the prevalence of exposure in the controls is 10%. <ul>
+<li> If <a href="ValiditySpecif.html">specificity</a> of the exposure measurement is perfect, we will get entirely different patterns of bias depending upon the pattern of differential <a href="ValiditySensit.html">sensitivity</a> in the exposure measurement.
+</li> <li> If measurement of the exposure in controls is less sensitive than in the cases, you can see how this will result in an overestimate of the association under study.
+</li> <li> In contrast, if the exposure measurement is more sensitive in the controls, this will lead to a underestimate of the odds ratio, here 2.2.
+</li></ul> 
+The bottom line is that unlike non-differential misclassification where the bias is predictably towards the <a href="NullHypothesis.html">null hypothesis</a>, in the presence of differential misclassification anything can happen with biases both towards and away from the null hypothesis. It all depends upon the individual situation.
+<p></p>
+An example of differential misclassification of the exposure variables can be seen in the <a href="EgDiffMisclassMelanoma.html">Nurses Health Study</a> of recall bias in retrospective assessment of melanoma risk.
+<p></p>
+Examples of differential exposure during <a href="EgDiffMisclassPregnancy.html">pregnancy and congential malformations</a> also provide further evidence of misclassification bias.
+<h2 id="Measurement_Bias_in_Analytic_Studies">  Measurement Bias in Analytic Studies </h2>
+<p></p>
+In the face of <a href="BiasDefinition.html">systematic error in an interval scale measurement</a> in an <a href="OutcomeVariable.html">outcome variable</a>, whether or not there is bias depends upon the measure of <a href="StudyAssoc.html">association</a> in question.
+<p></p>
+On the other hand, if there are <a href="RandomError.html">problems in reproducibility</a> or the result of <a href="RandomError.html">random error</a>, the measure of association will be smaller by a factor of the reproducibility of the <a href="PredictorVariable.html">exposure measurement</a>.
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

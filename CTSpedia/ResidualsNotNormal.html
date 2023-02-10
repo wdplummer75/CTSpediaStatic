@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ResidualsNotNormal &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/ResidualsNotNormal/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/ResidualsNotNormal/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="ResidualsNotNormal.html" title="edit ResidualsNotNormal">
+<meta name="description" content="ResidualsNotNormal" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "ResidualsNotNormal",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Residuals_Not_Normally_Distributed">  Residuals Not Normally Distributed </h1>
+<p></p>
+<h4 id="FORUM_QUESTION:_Main.ErinMadden1_45_03_Sep_2010_45_16:20">  FORUM QUESTION: <a href="../Main/ErinMadden1.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">ErinMadden1</a> - 03 Sep 2010 - 16:20 </h4>
+<p></p>
+For a linear regression where the residuals are not normally distributed (and not remedied by transformation of outcome), is it better to get bootstrapped confidence intervals or to calculate robust SEs using GEE? And, what reference should be cited for using GEE in this context?
+<p></p>
+<h4 id="FORUM_ANSWER:_Main.FrankHarrell_45_04_Sep_2010_45_09:06">  FORUM ANSWER: <a href="../Main/FrankHarrell.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FrankHarrell</a> - 04 Sep 2010 - 09:06 </h4>
+<p></p>
+In most cases, getting the right SEs for a problematic model does not fix enough of the problem. If a transformation does not stabilize variances and provide a symmetric distribution of residuals, you might consider the proportional odds (PO) or proportional hazards models. The PO model is a generalization of the Wilcoxon and Kruskal-Walllis tests, allowing for covariate adjustment. Predicted values are stated in terms of exceedance probabilities, percentiles, or means. The R rms package's lrm function facilitates this. The PO model works well when there are no ties in Y or when there are arbitrarily many ties.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

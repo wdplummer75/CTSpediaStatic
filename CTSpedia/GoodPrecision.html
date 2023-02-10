@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>GoodPrecision &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/GoodPrecision/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/GoodPrecision/favicon.ico">
+<link href="GoodPrecision.html" rel="alternate" type="application/x-wiki" title="edit GoodPrecision">
+<meta name="description" content="GoodPrecision" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "GoodPrecision",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Avoiding_Insufficient_or_Excessive_Precision">  Avoiding Insufficient or Excessive Precision </h1>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Insufficient_Precision"> Insufficient Precision </a>
+</li> <li> <a href="#Excessive_Precision"> Excessive Precision </a>
+</li> <li> <a href="#Recommendations"> Recommendations </a> <ul>
+<li> <a href="#P_45values"> P-values </a>
+</li> <li> <a href="#Relative_Risks_44_Hazard_Ratios_44_Odds_Ratios"> Relative Risks, Hazard Ratios, Odds Ratios </a>
+</li> <li> <a href="#Linear_Regression_Coefficients"> Linear Regression Coefficients </a>
+</li> <li> <a href="#Correlation_Coefficients"> Correlation Coefficients </a>
+</li></ul> 
+</li> <li> <a href="#Scaling_of_Continuous_Predictors"> Scaling of Continuous Predictors </a>
+</li></ul> 
+</div>
+<p></p>
+How many decimals to give is a common practical issue in reporting the results of statistical analyses in publications. The goal should be to give just enough precision so that the range of possible exact values that are consistent with the given rounded result are all roughly equivalent. Specifically, insufficient and excessive precision should be avoided.
+<h2 id="Insufficient_Precision">  Insufficient Precision </h2>
+This means giving less information than the study provides, resulting in a needlessly imprecise picture of the study&rsquo;s evidence. For example, if a small relative risk is rounded to one decimal and reported as RR=0.1, this could mean anything from an estimated relative risk of 0.05 to just under 0.15, which is a 3-fold range. A P-value rounded to 0.1 or 0.01 is similarly imprecise, and &ldquo;P&lt;0.05&rdquo; or &ldquo;P&gt;0.05&rdquo; give very vague information.
+<p></p>
+<h2 id="Excessive_Precision">  Excessive Precision </h2>
+This means giving a more exact value of the result than is meaningful, and usually also giving an incorrect impression of how well the value is known. For example, giving P=0.3284 does not mean anything different from P=0.33, and it gives an impression that the P-value is known very precisely, even though its calculation probably depended on approximations or assumptions that do not hold exactly. Similarly, a relative risk reported as RR=2.147 means basically the same thing as RR=2.1. For relative risks and other estimated effects, <a href="ConfidenceIntervals.html">confidence intervals</a> will usually be reported, giving an explicit indication of the precision of the estimates and therefore preventing a misleading impression of high precision.<br /><br />Excessive precision is less harmful than insufficient precision, because it does still convey all the information. It can, however, be misleading or distracting. It also looks bad, indicating that the authors did not know what was important.
+<p></p>
+<h2 id="Recommendations">  Recommendations </h2>
+<p></p>
+<h3 id="P_45values">  P-values </h3>
+For P-values, more decimals are needed for smaller values, so a reasonable approach is to report two significant digits. &ldquo;Significant&rdquo; digits are those excluding any leading zeros. For example, in 0.0107, the 1 is the first significant digit, and two significant digits would be 0.011. Although some journals have differing policies, this is a simple approach that provides enough information without being grossly excessive. This is usually done up to a maximum of 3 or 4 decimals, with very small P-values reported as P&lt;0.001 or P&lt;0.0001. In some cases, what constitutes &ldquo;very small&rdquo; may differ, such as in genetic studies examining millions of variables. In such cases, scientific notation can be used to provide two significant digits regardless of how small the P-value is; for example, P=1.3 \xD7 10<sup> -12</sup>.<br /><br />In some cases, one significant digit might be sufficient (e.g., P=0.9), but staying with two is simpler, and the consistency may be less confusing and look better in tables.
+<p></p>
+<h3 id="Relative_Risks_44_Hazard_Ratios_44_Odds_Ratios">  Relative Risks, Hazard Ratios, Odds Ratios </h3>
+These measures are similar to P-values in that smaller values need more decimals, so the two-significant digit approach can apply, but with one needed modification. Because the null value indicating no effect is 1.0, a leading &ldquo;1&rdquo; is in some ways not &ldquo;significant&rdquo;. A simple modification is therefore to give two decimals for values ranging from 1.00 to 1.99. In particular, this will better show evidence against the null value, avoiding a potentially problematic report like &ldquo;RR=1.1 (95% CI 1.0 to 1.2, p=0.03)&rdquo;. When the effect being reported is for a continuous predictor, the appropriate precision to provide can also depend on how the predictor is scaled (<a class="foswikiCurrentTopicLink" href="#Scaling_of_Continuous_Predictors">see below</a>). Very large effects, such as RR&ge;20, can be given as integers but are usually not rounded to the nearest 10, 100, 1000, etc. An upper confidence bound 4386 may have excessive precision, so reporting RR=4400 would usually also be fine, but it does not save any space.
+<p></p>
+<h3 id="Linear_Regression_Coefficients">  Linear Regression Coefficients </h3>
+If the outcome variable is <a href="LogTransformation.html">logarithmically transformed</a>, so that the effects of predictors will be <a href="LogTransformation.html">back-transformed</a> into fold-effects, then the approach <a href="#Relative_Risks_Hazard_Ratios_Odd" class="foswikiCurrentTopicLink">above</a> for relative risks, etc., can be used. If effects are back-transformed to percent effect, then giving them as integers (no decimals) will usually be sufficient. With an untransformed outcome, the amount of precision to give will depend on the scaling of the outcome and the predictor. The goal should be to give enough precision so that the range of possible exact values that are consistent with the given rounded result are all roughly equivalent. Often, this will be accomplished by giving enough precision so that the 95% confidence interval spans between 11 and 100 of the smallest units shown. For example, a confidence interval of 0.11 to 0.14 spans only 3 of the 0.01 units given, while 0.112 to 0.143 spans 31 of the 0.001 units given.
+<p></p>
+<h3 id="Correlation_Coefficients">  Correlation Coefficients </h3>
+Two decimals is usually good precision for reporting correlations. In typical applications, values near zero do not require any greater precision than others.
+<p></p>
+<h2 id="Scaling_of_Continuous_Predictors">  Scaling of Continuous Predictors </h2>
+In regression models with a numeric predictor, the estimated effect is for a 1 unit increase in the predictor. If 1 unit is very small, such as 1 cell per ml in a CD4 T-cell count, then many decimals will be needed to give sufficient precision for the estimated effect and its confidence bounds. To avoid awkward results like an estimated OR of 1.0031 with a 95% confidence interval from 0.9992 to 1.0070, it is usually better to rescale the effects. For example, giving the effect per 100 units would change the OR in the previous sentence to 1.36 with a confidence interval from 0.92 to 2.0. Rescaling can usually make the amounts of precision suggested above work well. This will also usually make the estimated effects more easily interpretable.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

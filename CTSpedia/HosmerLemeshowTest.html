@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>HosmerLemeshowTest &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/HosmerLemeshowTest/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/HosmerLemeshowTest/favicon.ico">
+<link rel="alternate" href="HosmerLemeshowTest.html" title="edit HosmerLemeshowTest" type="application/x-wiki">
+<meta name="description" content="HosmerLemeshowTest" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "HosmerLemeshowTest",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h3 id="Hosmer_45_Lemeshow_Test_40H_45L_Test_41">  Hosmer- Lemeshow Test (H-L Test) </h3>
+<strong><em>Lead Author(s):</em></strong> Peter Bacchetti, PhD
+<p></p>
+This provides a p-value for the <a href="CompositeNullHypothesis.html">composite null hypothesis</a> that a <a href="LogisticRegression.html">logistic regression</a> model has been correctly specified. This is mainly useful for showing some level of "due diligence" in checking model assumptions. This test, however, is not a substitute for specifically checking assumptions that may be suspect, such as checking for presence of a plausible interaction or examining the possibility of a nonlinear effect of an important numeric predictor (see <a href="LimitationsOfOmnibus.html">Limitations of Omnibus Tests</a>). Note that the test only applies to the variables included in the model and so does not address whether the right predictor variables have been chosen or whether additional ones might improve the model. Another limitation of this test is that small p-values provide no indication of what needs to be fixed in the model, and sometimes no simple modification can be found that leads to a more acceptable p-value from this test. In these cases, adjustment for <a href="OverDispersion.html">overdispersion</a> may be useful. Note that the test cannot be performed when there are &lt;3 unique combinations of values of the predictor variable(s) and that the p-value will be 1.0 by definition (and therefore meaningless) for models that include only one categorical variable.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

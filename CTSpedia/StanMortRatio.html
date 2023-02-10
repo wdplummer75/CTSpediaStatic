@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StanMortRatio &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StanMortRatio/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE CTSpedia/StanMortRatio/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit StanMortRatio" rel="alternate" href="StanMortRatio.html">
+<meta name="description" content="StanMortRatio" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "StanMortRatio",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Standardized_Mortality_Ratio">  Standardized Mortality Ratio </h1>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Standardized_Mortality_Ratio"> Standardized Mortality Ratio </a>
+</li> <li> <a href="#Obtaining_an_Expected_Rate_for_Comparison"> Obtaining an Expected Rate for Comparison </a>
+</li> <li> <a href="#Calculating_SMR"> Calculating SMR </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Standardized_Mortality_Ratio_AN1">  Standardized Mortality Ratio </h2>
+<p></p>
+In the <a href="EgAgeAdjustPetro.html">example of petrochemical workers</a>: <ul>
+<li> If U.S. death rates for age-sex-race-calendar period groups applied to the cohort,
+</li> <li> 924 deaths (from the U.S. population data from the National Center for Health Statistics) were expected in the cohort
+</li> <li> versus the 765 observed
+</li></ul> 
+<strong>Ratio of 765 observed/924 expected</strong> =  <ul>
+<li> 0.83 = 83%.
+</li></ul> 
+<strong>This is called a Standardized Mortality Ratio (SMR)</strong>
+<p></p>
+The Standardized Mortality Ratio (SMR) is formed by the ratio of the observed number of events in the cohort and the number of events that would be expected applying age-sex-race-calendar period-specific rates from the U.S. population to the distribution of the cohort by those variables. Applying the U.S. rates gives an overall mortality that would be expected if the U.S. rates were operating in the cohort. So the ratio is an expected compared to an observed rate.
+<p></p>
+<h2 id="Obtaining_an_Expected_Rate_for_Comparison">  Obtaining an Expected Rate for Comparison </h2>
+ The table below illustrates how U.S. population rates are used to produce a comparison rate to the cohort rate for the SMR calculation above.
+<p></p>
+<img alt="0304_table.JPG" height="161" src="IncidenceRateCohortPopn.attachments/0304_table.JPG" width="571">
+<p></p>
+For simplicity only 2 age-sex-race-calendar groups are shown and the person-years in the groups are hypothetical as that detail is not available in the paper. Since the cohort has a different age-sex-race composition from the U.S. population, one cannot just use the overall U.S. mortality rate for comparison. In addition the U.S. mortality rate has changed over time, albeit very slowly.
+<h2 id="Calculating_SMR">  Calculating SMR  </h2>
+<p></p>
+By using U.S. mortality rates specific to groups defined by those variables and applying them to the person-years at risk in each comparable group in the cohort, the <strong>expected number of deaths</strong> that would have been seen if the U.S. rates applied are calculated.
+<p></p>
+The actual cohort deaths gives the <strong>observed rate.</strong>
+<p></p>
+Since both have the same total person-time denominator, it cancels out in division and the <strong>ratio of the rates is just the ratio of the observed and the expected number of deaths.</strong>
+<p></p>
+<strong>This is called a Standardized Mortality Ratio (SMR).</strong>
+<p></p>
+<hr />
+ <strong><em>Jeff Martin, MD</em></strong>
+<p></p>
+-- <a href="../Main/MaryB.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">MaryB</a> - 05 May 2009
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

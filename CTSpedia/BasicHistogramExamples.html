@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BasicHistogramExamples &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/BasicHistogramExamples/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/BasicHistogramExamples/favicon.ico" type="image/x-icon">
+<link rel="alternate" href="BasicHistogramExamples.html" title="edit BasicHistogramExamples" type="application/x-wiki">
+<meta name="description" content="BasicHistogramExamples" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "BasicHistogramExamples",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="StatGraphHome.html">Return to the Safety Graphics Home Page</a>
+<p></p>
+<h1 id="Histograms">  Histograms </h1>
+( Last updated by Richard Forshee on September 17, 2010) 
+<p></p>
+<p></p>
+<p></p>
+<span id="ReturnTop"></span>
+<p></p>
+<h1 id="Basic_Histogram_Examples">  Basic Histogram Examples </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Type_of_data:_continuous"> Type of data: continuous </a>
+</li> <li> <a href="#Type_of_analysis:_univariate"> Type of analysis: univariate </a>
+</li> <li> <a href="#Description_and_purpose:"> Description and purpose: </a>
+</li> <li> <a href="#Examples:"> Examples: </a> <ul>
+<li> <a href="#Stem_45and_45Leaf_Plot_of_Randomly_Generated_Data_Used_for_Examples_plot_in_units_of_0.01"> Stem-and-Leaf Plot of Randomly Generated Data Used for Examples plot in units of 0.01 </a>
+</li> <li> <a href="#Basic_Examples_45_Attached_as_JPEG_files"> Basic Examples - Attached as JPEG files </a>
+</li> <li> <a href="#Complementary_Graphs_45_Attached_as_JPEG_file"> Complementary Graphs - Attached as JPEG file </a>
+</li> <li> <a href="#Potential_pitfalls_45_Attached_as_JPEG_file"> Potential pitfalls - Attached as JPEG file </a>
+</li></ul> 
+</li> <li> <a href="#Code_40Stata_11_41:"> Code (Stata 11): </a> <ul>
+<li> <a href="#Highlighted_Code"> Highlighted Code </a>
+</li> <li> <a href="#Copy_and_Paste_Code_into_Stata"> Copy and Paste Code into Stata </a>
+</li> <li> <a href="#Disclaimer"> Disclaimer </a>
+</li> <li> <a href="#Permission"> Permission </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<h1 id="Type_of_data:_continuous">  Type of data: continuous </h1>
+<h1 id="Type_of_analysis:_univariate">  Type of analysis: univariate </h1>
+<p></p>
+<h1 id="Description_and_purpose:">  Description and purpose: </h1>
+ Histograms are used to represent the distribution of a single continuous variable. A histogram groups individual observations into bins (mouseover to define) of a specified (usually equal) width and counts the number of observations in each bin. Rectangles are drawn so that the height (or width for a horizontal histogram) represents the frequency, percentage, or density of the number of observations in each bin. By convention, the rectangles in a histogram touch one another.
+<p></p>
+Histograms are distinct from bar charts (link). Bar charts are for categorical data and by convention the rectangles in a bar chart do not touch.
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#ReturnTop">Return to Top</a>
+<p></p>
+<h1 id="Examples:">  Examples: </h1>
+All examples use 100 data points that were randomly generated from a Beta(2,5) distribution. The Beta(2,5) is a skewed distribution that is bounded between 0 and 1. The actual data is shown in a stem-and-leaf plot.
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Stem_45and_45Leaf_Plot_of_Randomly_Generated_Data_Used_for_Examples_plot_in_units_of_0.01">  Stem-and-Leaf Plot of Randomly Generated Data Used for Examples plot in units of 0.01 </h2>
+<pre>
+  0&#42; &#124; 334
+  0. &#124; 6778889
+  1&#42; &#124; 011112333344
+  1. &#124; 5555667889
+  2&#42; &#124; 0123333444
+  2. &#124; 55666678999
+  3&#42; &#124; 00122222222334
+  3. &#124; 55566889999
+  4&#42; &#124; 011114
+  4. &#124; 5567789
+  5&#42; &#124; 1223
+  5. &#124; 5788
+  6&#42; &#124; 1</pre>
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#ReturnTop">Return to Top</a>
+<p></p>
+<h2 id="Basic_Examples_45_Attached_as_JPEG_files">  Basic Examples - Attached as JPEG files </h2>
+<p></p>
+<p></p>
+<img src="https://www.ctspedia.org/wiki/pub/CTSpedia/BasicHistogramExamples/pic1.png" alt="pic1.png">
+<p></p>
+<h2 id="Complementary_Graphs_45_Attached_as_JPEG_file">  Complementary Graphs - Attached as JPEG file </h2>
+Kernel density overlays<br /> Theoretical distribution overlays<br /> Rug plots<br /> 
+<p></p>
+<img src="https://www.ctspedia.org/wiki/pub/CTSpedia/BasicHistogramExamples/pic2.png" alt="pic2.png">
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Potential_pitfalls_45_Attached_as_JPEG_file">  Potential pitfalls - Attached as JPEG file </h2>
+ Visual representation is very sensitive to the choice of bin size 
+<p></p>
+<img alt="pic3.png" src="https://www.ctspedia.org/wiki/pub/CTSpedia/BasicHistogramExamples/pic3.png">
+<p></p>
+<p></p>
+<strong>Reference</strong>: These concepts have been discussed by many authors, but <a href="https://www.stata-journal.com/sjpdf.html?articlenum=gr0003">Cox NJ, Speaking Stata: Graphing distributions, The Stata Journal (2004) 4, Number 1, pp. 66&ndash;88</a> was particularly helpful as I prepared this description.
+<p></p>
+<a href="#ReturnTop" class="foswikiCurrentTopicLink">Return to Top</a>
+<p></p>
+<p></p>
+<h1 id="Code_40Stata_11_41:">  Code (Stata 11): </h1>
+<p></p>
+<h2 id="Highlighted_Code">  Highlighted Code </h2>
+<p></p>
+<p></p>
+<p></p>
+| %CODE{lang="java"}% <strong>******************************************************</strong>
+* Histogram Examples for FDA-Industry-Academia Safety Graphics WG
+* Richard Forshee, FDA/CBER/OBE 
+* 
+* Last updated September 17, 2010 
+*
+* This file benefited from Cox NJ, Speaking Stata: 
+* Graphing Distributions. Stata Journal 2004. 
+*
+<strong>*******************************************************</strong>
+<p></p>
+* Generate random data from a beta distribution alpha=2, beta=5 
+* This set of parameters generates highly skewed data between 0 and 1
+<p></p>
+clear set seed 85360497 // serial number from the first dollar bill in my wallet set obs 100 gen x = rbeta(2,5)
+<p></p>
+label var x "Response Variable, arbitrary scale of 0-1"
+<p></p>
+stem x, round(0.01)
+<p></p>
+** Basic histograms twoway histogram x, title("Frequency") freq start(0) saving(basic_freq, replace) twoway histogram x, title("Percentage") percent start(0) saving(basic_perc, replace) twoway histogram x, title("Density") start(0) saving(basic_dens, replace)
+<p></p>
+graph combine basic_freq.gph basic_perc.gph basic_dens.gph, /// row(1) xsize(6) ysize(3) title("Basic Histogram Examples") /// subtitle("Randomly generated data, Beta(2,5) distribution, n=100")
+<p></p>
+** Histograms with overlays
+<p></p>
+** Kernel Density twoway (histogram x, start(0)) (kdensity x), /// title("Kernel Density Overlay") xtitle("Response Variable, arbitrary scale of 0-1") /// legend(order(2) label(2 "Kernel Density")) /// saving(over_kd, replace)
+<p></p>
+** Normal summ x // Generate summary statistics local m=r(mean)' // Place mean into a local macro local sd=r(sd)' // Place standard deviation into a local macro
+<p></p>
+twoway (histogram x, start(0)) (function y=normalden(x,m',sd'), range(0 1)), /// title("Normal Distribution Overlay") xtitle("Response Variable, arbitrary scale of 0-1") /// legend(order(2) label(2 "Normal Distribution")) /// saving(over_normal, replace)
+<p></p>
+** Rug Plot gen pipe = "|" // Create a vertical line symbol gen where=-0.1 // Create a variable for vertical placement of the rug plot
+<p></p>
+** Histogram with a scatter plot underneath to produce rug plot
+<p></p>
+histogram x, start(0) /// title("Rug Plot Overlay") /// saving(over_rug, replace) /// plot(scatter where x, ms(none) mlabel(pipe) mlabpos(0)) /// legend(off) plotregion(margin(medium))
+<p></p>
+graph combine over_kd.gph over_normal.gph over_rug.gph, /// row(1) xsize(6) ysize(3) /// title("Histograms with Kernel Density, Normal Distribution, and Rug Plot Overlays") /// subtitle("Randomly generated data, Beta(2,5) distribution, n=100")
+<p></p>
+<strong>* Pitfalls *</strong> Bin width
+<p></p>
+histogram x, start(0) width(0.1) /// title("0.1 bin width") saving(width_10, replace) histogram x, start(0) width(0.05) /// title("0.05 bin width") saving(width_05, replace) histogram x, start(0) width(0.01) /// title("0.01 bin width") saving(width_01, replace)
+<p></p>
+graph combine width_10.gph width_05.gph width_01.gph, /// title("Bin Width Can Affect the Shape of a Histogram") /// subtitle("Randomly generated data, Beta(2,5) distribution, n=100") /// row(1) xsize(6) ysize(3) 
+%ENDCODE% 
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#ReturnTop">Return to Top</a>
+<p></p>
+<h2 id="Copy_and_Paste_Code_into_Stata">  Copy and Paste Code into Stata </h2>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/BasicHistogramExamples/Forshee_BasicHistogram_code.txt">Click here for code.</a>
+<p></p>
+<p></p>
+<p></p>
+<a href="#ReturnTop" class="foswikiCurrentTopicLink">Return to Top</a>
+<p></p>
+<h2 id="Disclaimer">  Disclaimer </h2>
+<p></p>
+<strong>DISCLAIMER:</strong> The views expressed within CTSpedia are those of the author and must not be taken to represent policy or guidance on the behalf of any organization or institution with which the author is affiliated.
+<p></p>
+<a href="#ReturnTop" class="foswikiCurrentTopicLink">Return to Top</a>
+<p></p>
+<h2 id="Permission">  Permission </h2>
+<p></p>
+<strong>PERMISSION:</strong> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+<p></p>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+<p></p>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#ReturnTop">Return to Top</a>
+<p></p>
+<p></p>
+<a href="ContributeGraphics.html">Return to Contribute Graphics</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

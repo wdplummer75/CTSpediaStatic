@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>SampleIncidence &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/SampleIncidence/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/SampleIncidence/favicon.ico" rel="shortcut icon">
+<link title="edit SampleIncidence" rel="alternate" href="SampleIncidence.html" type="application/x-wiki">
+<meta name="description" content="SampleIncidence" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "SampleIncidence",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Case_45Control_Design_45_Incidence_Density_Sampling_45_CUT">  Case-Control Design - Incidence Density Sampling- CUT </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Summary_of_Case_45Control_Sampling"> Summary of Case-Control Sampling </a>
+</li> <li> <a href="#Definition:_Incidence_Density_Sampling_Within_a_Cohort"> Definition: Incidence Density Sampling Within a Cohort </a> <ul>
+<li> <a href="#Case_45control_Incidence_Density_Sampling"> Case-control Incidence Density Sampling </a>
+</li></ul> 
+</li> <li> <a href="#Diagram:_Incidence_Density_Sampling_Within_a_Cohort"> Diagram: Incidence Density Sampling Within a Cohort </a>
+</li> <li> <a href="#Details_of_Incidence_Density_Sampling_Within_a_Cohort"> Details of Incidence Density Sampling Within a Cohort </a>
+</li> <li> <a href="#Controls_in_Incidence_Density_Sampling_in_a_Fixed_Cohort_Study_Base"> Controls in Incidence Density Sampling in a Fixed Cohort Study Base </a>
+</li> <li> <a href="#Case_45Control_Incidence_Density_Sampling_in_a_Dynamic_Primary_Study_Base"> Case-Control Incidence Density Sampling in a Dynamic Primary Study Base </a>
+</li> <li> <a href="#How_OR_61_Rate_Ratio_in_a_Case_45Control_Study_with_Incidence_Density_Sampling"> How OR = Rate Ratio in a Case-Control Study with Incidence Density Sampling </a> <ul>
+<li> <a href="#Sampling_Using_Estimate_of_Rate_Ratio"> Sampling Using Estimate of Rate Ratio </a>
+</li> <li> <a href="#Estimate_of_Rate_Ratio_Calculation"> Estimate of Rate Ratio Calculation </a>
+</li></ul> 
+</li> <li> <a href="#Examples_of_Incidence_Density_Sampling"> Examples of Incidence Density Sampling </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Summary_of_Case_45Control_Sampling">  Summary of Case-Control Sampling </h2>
+ <table width="581" cellspacing="1" cellpadding="0" height="76" border="1"> <tbody><tr><th>Design</th><th>Sampling</th><th>Measure of Association</th></tr> <tr><td><a href="SampleBaseline.html">Case-cohort</a></td><td style="text-align: left">Entire cohort at baseline</td><td><a href="RiskRatio.html">risk ratio</a></td></tr> <tr><td>Incidence-density</td><td style="text-align: left">Non-cases at time of diagnosis</td><td><a href="RateRatio.html">rate ratio</a></td></tr> <tr><td><a href="SampleEnd.html">Prevalent Case Control</a></td><td style="text-align: left">Non-cases at single point in time</td><td><a href="OddsTerm.html">odds ratio</a></td></tr> </tbody></table>
+<p></p> <ul>
+<li> <strong>A random sample of the cohort baseline</strong> = <strong>case-cohort design</strong>  <ul>
+<li> (<a href="SampleBaseline.html">Sampling Controls - Random Sample at Baseline</a>)
+</li></ul> 
+</li></ul> 
+<p></p> <ul>
+<li> <strong>At time each case is diagnosed</strong> = <strong>incidence density sampling</strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>From persons without disease at the end of follow-up</strong> = <strong>prevalent controls design <br /></strong>  <ul>
+<li> <strong>(<a href="SampleEnd.html">Sampling Controls at Follow-up</a>)</strong>
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="Definition:_Incidence_Density_Sampling_Within_a_Cohort">  Definition: Incidence Density Sampling Within a Cohort </h2>
+<p></p>
+In incidence density sampling the selection of <a href="StudyControl.html">controls</a> is governed by the diagnoses of <a href="StudyCase.html">cases</a>. <ul>
+<li> Every time a case is diagnosed one or more controls are selected
+</li> <li> from other members of the <a href="StudyCohort.html">cohort</a> who, <strong>at that time</strong>, do not have the diagnosis.
+</li></ul> 
+The term <strong>incidence density</strong> comes from  <ul>
+<li> The time of <a href="FollowUpTime.html">follow-up</a> and
+</li> <li> The incidence of new disease are involved in determining eligible controls.
+</li></ul> 
+<p></p>
+<h3 id="Case_45control_Incidence_Density_Sampling">  Case-control Incidence Density Sampling </h3>
+ <strong><a href="StudyControl.html">Controls</a></strong> are sampled from the risk set at the time each case is diagnosed <br />  <ul>
+<li> Samples <a href="StudyIncidence.html">person-time</a> experience of the subjects at risk each time a case is diagnosed
+</li></ul> 
+<strong>Odds ratio estimates the rate ratio</strong>
+<p></p>
+A case-control study with incidence density sampling <ul>
+<li> gives an <a href="OddsTerm.html">odds ratio</a> that <a href="SampleBaseline.html">estimates the</a> rate ratio
+</li> <li> because the sampling method is based on person-time of exposure.
+</li></ul> 
+<strong>Every time a case is diagnosed the person-time of the subjects at risk in the study base (cohort) is sampled randomly.</strong>
+<p></p>
+<h2 id="Diagram:_Incidence_Density_Sampling_Within_a_Cohort">  Diagram: Incidence Density Sampling Within a Cohort </h2>
+<p></p>
+In the diagram below, you can see incidence sampling within a <a href="CohortStudy.html">cohort study</a>. <ul>
+<li> The <a href="StudyBase.html">study base</a> is the <a href="StudyCohort.html">cohort</a>.
+</li> <li> In this example, <a href="StudyControl.html">controls</a> are sampled each time a <a href="StudyCase.html">case</a> is diagnosed.
+</li></ul> 
+<blockquote><img src="SampleIncidence.attachments/0218_diagram_incidence.JPG" height="150" alt="0218_diagram_incidence.JPG" width="314"></blockquote>
+<p></p>
+<h2 id="Details_of_Incidence_Density_Sampling_Within_a_Cohort">  Details of Incidence Density Sampling Within a Cohort </h2> <ul>
+<li> In the above diagram, 4 cases occur at 4 different points in time giving rise to 4 risk sets of cases and controls.
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Controls for each case are selected at random in each risk set</strong> from cohort subjects under follow-up at the time (called incidence density sampling).
+</li></ul> 
+<p></p> <ul>
+<li> It follows from the random selection, that a <strong>control can later become a case.</strong>
+</li></ul> 
+<p></p> <ul>
+<li> Results can be just as <strong>valid</strong> as using entire cohort.
+</li></ul> 
+Because the <a href="StudyControl.html">controls</a> are selected randomly from those still under follow-up at the time a <a href="StudyCase.html">case</a> is diagnosed, the sample of controls provides the same estimate of an association between a <a href="PredictorVariable.html">predictor</a> and the <a href="OutcomeVariable.html">outcome</a> that one would obtain if all of those still under follow-up were used.
+<p></p>
+The schematic illustrates how matching on follow-up time would be sampling the person-time follow-up of the cohort as time progresses. <ul>
+<li> Imagine ending the study after the first event occurs.
+</li> <li> A random sample of those still at risk at that time will give a ratio of exposed and unexposed person-time that is the same as the ratio obtained using everyone in the cohort at that time point (give or take random sampling error).
+</li></ul> 
+The same reasoning applies to each subsequent event. The sum of all those person-time samplings will approximate the total person-time follow-up of the cohort in the exposed and unexposed provided the <strong>control samples were taken independently of <a href="OutcomeVariable.html">exposure</a> (always the key issue).</strong>
+<p></p>
+<h2 id="Controls_in_Incidence_Density_Sampling_in_a_Fixed_Cohort_Study_Base">  Controls in Incidence Density Sampling in a Fixed Cohort Study Base </h2>
+<p></p>
+The key point is that with incidence density sampling in a fixed cohort study base
+<p></p> <ul>
+<li> <strong>The <a href="StudyControl.html">controls</a> are matched to <a href="StudyCase.html">cases</a> on time at risk - on the amount of <a href="FollowUpTime.html">follow-up time</a></strong>
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+You are <strong><a href="SamplingTerm.html">sampling</a> both persons and time when you pick the controls</strong> <ul>
+<li> You can conceptualize it as <strong>sampling the person-time of the cohort each time a diagnosis is made</strong>.
+</li> <li> In other words, you are sampling non-cases (controls) at each time case occurs.
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+As with the <a href="SampleBaseline.html">case-cohort design</a>, <ul>
+<li> Someone who is a <strong>control can later become a case</strong> and /or control again
+</li></ul> 
+<p></p>
+<h2 id="Case_45Control_Incidence_Density_Sampling_in_a_Dynamic_Primary_Study_Base">  Case-Control Incidence Density Sampling in a Dynamic Primary Study Base </h2>
+<p></p>
+In <a href="SampleIncidenceDynamic.html">case-control incidence density sampling in a dynamic primary study base</a> <ul>
+<li> you use a population-based disease registry to identify all new cases of disease during a defined time period.
+</li></ul> 
+<h2 id="How_OR_61_Rate_Ratio_in_a_Case_45Control_Study_with_Incidence_Density_Sampling">  How OR = Rate Ratio in a Case-Control Study with Incidence Density Sampling </h2>
+<p></p>
+So analogously to showing how the OR in a case-cohort design <a href="SampleBaseline.html">estimates the risk ratio</a>, using the graphic below shows how the OR in a case-control design with incidence density sampling estimates the rate ratio because <ul>
+<li> <strong>the controls are providing an estimate of the proportion of exposed to unexposed person-time</strong>.
+</li></ul> 
+<img alt="0320_4risk_incidence.JPG" height="142" src="SampleIncidence.attachments/0320_4risk_incidence.JPG" width="176">  <ul>
+<li> <strong>EXPOSURE ODDS IN CASES = a/c</strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>EXPOSURE ODDS IN CONTROLS = b/d</strong>
+</li></ul> 
+<p></p>
+<h3 id="Sampling_Using_Estimate_of_Rate_Ratio">  Sampling Using Estimate of Rate Ratio </h3>
+<p></p>
+In obtaining a <a href="RiskRatio.html">risk ratio</a>, we <strong>estimated the propotion of exposed and unexposed</strong> <strong>persons.</strong> <ul>
+<li> For calculating a rate ratio in a <a href="CaseControlStudy.html">case control study</a>, we estimate the <strong>proportion of exposed and unexposed person-time</strong>.
+</li></ul> 
+When we talk about rates, we are talking about <strong><a href="StudyIncidence.html">person-time</a></strong>  <ul>
+<li> When we talk about measures of association, we are talking about incidence rates within the groups of exposed and unexposed persons.
+</li></ul> 
+<strong>CALCULATIONS:</strong>  <ul>
+<li> To calculate the risk ratio in a case-control setting we need to get an <a href="BiasDefinition.html">unbiased</a> estimate of the proportion of persons with and without the exposure.
+</li> <li> For the rate ratio we need an analogous estimate of exposed and unexposed person-time.
+</li></ul> 
+<span id="EstimateRate"></span> 
+<h3 id="Estimate_of_Rate_Ratio_Calculation">  Estimate of Rate Ratio Calculation </h3>
+ As you can see in the calculation below if we can estimate the proportion of unexposed person-time to exposed person-time in a case- control study, <strong>we can estimate the rate ratio.</strong>
+<p></p>
+<strong>Rate ratio (person-time) in cohort</strong>
+<p></p> <ul>
+<li> <strong>where exposed =</strong> <img height="23" alt="0529_1b_nt1.JPG" src="SampleIncidence.attachments/0529_1b_nt1.JPG" width="39">
+</li></ul> 
+<p></p> <ul>
+<li> <strong>and unexposed =</strong> <img width="36" src="SampleIncidence.attachments/0529_1c_nt0.JPG" alt="0529_1c_nt0.JPG" height="23">
+</li></ul> 
+<img width="290" src="SampleIncidence.attachments/0529_1a_rateratio.JPG" height="79" alt="0529_1a_rateratio.JPG">
+<p></p>
+<strong>So analogous to estimating risk ratio, we need to estimate the proportion:</strong> <img src="SampleIncidence.attachments/0529_1d_nt0nt1.JPG" height="40" alt="0529_1d_nt0nt1.JPG" width="51">
+<p></p>
+THUS, OR in a case-control design with incidence density sampling estimates the rate ratio because <ul>
+<li> <strong>the controls are providing an estimate of the proportion of exposed to unexposed person-time</strong>.
+</li></ul> 
+<p></p>
+<h2 id="Examples_of_Incidence_Density_Sampling">  Examples of Incidence Density Sampling </h2>
+ These are <a href="EgIncidentDensity.html">examples of incident density</a> in a dynamic primary study base.
+<p></p>
+An additional example of incidence density sampling as well as selection bias can be seen on the Coffee and Pancreatic Cancer Study in <a href="BiasSelect.html">Selection Bias</a>.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

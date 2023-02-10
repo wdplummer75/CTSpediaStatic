@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>PieChartExamples &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/PieChartExamples/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/PieChartExamples/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit PieChartExamples" href="PieChartExamples.html" rel="alternate">
+<meta name="description" content="PieChartExamples" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "PieChartExamples",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="StatGraphHome.html">Return to Safety Graphics Home</a>
+<p></p>
+<p align="center" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal"><strong>Why Not to Use Pie Charts for Communicating Results</strong> </p> <p align="center" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal"> <em>By Mark K Jones, Amadeus Software Ltd (formerly GlaxoSmithKline)</em> </p> <p align="center" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal"> <em>and Susan P. Duke, GlaxoSmithKline</em> </p>
+<p></p>
+Consider the pie chart below. Put the letters A to F in order of the sizes (smallest to largest) of the associated segments in the pie chart below.
+<p></p>
+<img alt="Duke_Piechart_Figure1.jpg" src="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic004/Duke_Piechart_Figure1.jpg">
+<p></p>
+Statisticians and statistical programmers were asked this question. Here are the results:
+<p></p>
+Number of response: 38
+<p></p>
+Number who were <strong>completely correct</strong> (included letter D and order as requested): 2 (5%) !!!
+<p></p>
+Number who got the <strong>right order but missed D: </strong>18 (47%)
+<p></p>
+<strong>Why not to use a pie chart?</strong>
+<p></p>
+\xB7 Computers can easily make pie charts but human brains aren&rsquo;t particularly good at processing angles (Cleveland)
+<p></p>
+\xB7 Some colors trick the eye into looking larger than other colors in a pie chart
+<p></p>
+\xB7 A pie chart relies on the brain&rsquo;s use of table-lookup processing, which is inferior to pattern-recognition processing (Cleveland)
+<p></p>
+<strong>What to use if not a pie chart? Use a <a href="StatGraphClassTopic003.html">dotplot</a></strong>
+<p></p>
+This <a href="StatGraphClassTopic003.html">dotplot</a> has exactly the same data as was in the pie chart, A-F, smallest to largest.
+<p></p>
+If tempted to use a piechart, ask yourself the following questions:
+<p></p>
+<em>Did you get the order right from the pie chart?</em>
+<p></p>
+<em>If you did get the order right from the pie chart was it easier (ie, more efficient) to extract the same information from the dot plot below?</em>
+<p></p>
+Only 53% of people who took this little survey accurately read this pie chart. How many would accurately read the dot plot below?
+<p></p>
+<img alt="Duke_Piechart_Dotplot_Figure2.jpg" src="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic004/Duke_Piechart_Dotplot_Figure2.jpg">
+<p></p>
+There were a few different points to be made with this simple example:
+<p></p>
+Cleveland describes that judging angles is a task the human brain is not particularly proficient with. Some people have a natural aptitude for it, but many will struggle, especially when in this case some of the segments are close in size.
+<p></p>
+Did you miss letter D? 92% of those who responded in the table above did! This may have been slightly unfair, the letter D wasn't even on the pie chart. However, as you can see from the dot plot D was actually in the data, it just had a value of 0. If it was important that the value for D was 0, then most would have missed it from the pie chart.
+<p></p>
+If asked to estimate the actual data values from the pie chart, you'd have done so with percentages, as that's all you could have done. The values in the dot plot suggest that this data is not percentages, with the total adding up to much more than 100. It is vital to include units for accurate interpretation of the data.
+<p align="center" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal"> </p>
+<p></p>
+While on the topic of pie charts, there is one more point to emphasize. If reading pie charts is a challenge is there something even worse? Yes, indeed, our friend the 3-D pie chart! Take a look at this pie chart (drawn in Excel), again with the same data:
+<p></p>
+<img src="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic004/Duke_3D_PieChart_Figure3.png" alt="Duke_3D_PieChart_Figure3.png">
+<p></p>
+Would you agree that C now looks far bigger than A (which we know it's not), simply because of its prominent position? Please, please, please whatever you do don't use a 3-D pie chart ever!
+<p></p>
+Of course there are other alternatives for displaying such data. A bar chart would seem appropriate to name just one.
+<p></p>
+<strong>Further Information</strong>
+<p></p>
+<em>The Elements of Graphing Data</em> by William S. Cleveland (Hobart Press, 1994)
+<p></p>
+<em>Creating More Effective Graphs</em> by Naomi B. Robbins (Wiley, 2005)
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

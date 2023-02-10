@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasConfoundAnalysis &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundAnalysis/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/BiasConfoundAnalysis/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit BiasConfoundAnalysis" href="BiasConfoundAnalysis.html" rel="alternate">
+<meta name="description" content="BiasConfoundAnalysis" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "TOPIC" : "BiasConfoundAnalysis",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {}
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Reducing_Confounding_During_Data_Analysis">  Reducing Confounding During Data Analysis </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Methods_for_Reducing_Confounding_During_Data_Analysis:_Stratification"> Methods for Reducing Confounding During Data Analysis: Stratification </a>
+</li> <li> <a href="#Do_NOT_Adjust_45_Qualitative_Interaction"> Do NOT Adjust - Qualitative Interaction </a>
+</li> <li> <a href="#Third_Variable:_Decision_Tree_45_Confounding"> Third Variable: Decision Tree - Confounding </a>
+</li> <li> <a href="#Underlying_Assumption_for_a_Summary_Estimate"> Underlying Assumption for a Summary Estimate </a>
+</li> <li> <a href="#Inappropriate_Statistical_Testing_for_Confounding"> Inappropriate Statistical Testing for Confounding </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div> 
+<h2 id="Methods_for_Reducing_Confounding_During_Data_Analysis:_Stratification">  Methods for Reducing Confounding During Data Analysis: Stratification </h2>
+<p></p>
+In the data analysis phase, we can <strong><a href="StratificationTerm.html">stratify</a></strong> to reduce <a href="BiasConfound.html">confounding</a>.
+<p></p>
+An example of stratification can be found in the <a href="EgStratifyMatches.html">Matches</a>, Smoking, and Lung Cancer Study. <ul>
+<li> <a href="EgStratifyMatches.html">Crude OR</a> = 8.8
+</li> <li> <a href="EgStratifyMatches.html">Adjusted OR</a> for the matches group = 1.0, Adjusted OR for the non-matches group = 1.0
+</li> <li> <a href="EgStratifyMatches.html">Summary Estimate</a> = Single overall unconfounded adjusted estimate = 1.0
+</li></ul> 
+<p></p>
+<h2 id="Do_NOT_Adjust_45_Qualitative_Interaction">  Do NOT Adjust - Qualitative Interaction </h2>
+<p></p>
+<a href="EgInteractionCoffee.html">Stanton</a> provides an example of a study that looked at the effects of caffeine consumption on delayed conception.
+<p></p> <ul>
+<li> In those women who do not use caffeine, smoking is associated with over a two-fold risk (2.4) of delayed conception.
+</li> <li> In women who use lots of caffeine the risk of smoking is 0.7, if anything a protective effect.
+</li></ul> 
+<strong>This is qualitative interaction. Do NOT summarize these numbers</strong>.
+<p></p>
+<h2 id="Third_Variable:_Decision_Tree_45_Confounding">  Third Variable: Decision Tree - Confounding </h2>
+<p></p>
+Determining the <a href="VarThird.html">third variable</a>: <ul>
+<li> If there is no evidence of interaction or effect modification, you then look for <strong>confounding</strong>.
+</li></ul> 
+To do this, you will form an <strong>adjusted</strong> summary estimate of the two or more stratum-specific estimates and you will compare the adjusted measure of association to the crude measure of association.
+<p></p>
+<blockquote> <img src="BiasConfoundAnalysis.attachments/0415_9yes_confound.JPG" alt="0415_9yes_confound.JPG" height="114" width="250"> </blockquote>
+<p></p> <ul>
+<li> <strong>If you deem that confounding is present, you will want to report the adjusted measure of association</strong>.
+</li></ul> 
+<p></p>
+<h2 id="Underlying_Assumption_for_a_Summary_Estimate">  Underlying Assumption for a Summary Estimate </h2>
+ If the relationship between the <a href="PredictorVariable.html">exposure</a> and the <a href="OutcomeVariable.html">outcome</a> varies meaningfully in a clinical/biologic sense across strata of a third variable:  <ul>
+<li> <strong>it is not appropriate to create a single summary estimate of all of the strata.</strong>
+</li></ul> 
+<strong>When you summarize across strata, the assumption is that no <a href="InterConfound.html"> interaction</a> is present.</strong>
+<p></p>
+<h2 id="Inappropriate_Statistical_Testing_for_Confounding">  Inappropriate Statistical Testing for Confounding </h2>
+ Statistical testing for confounding is <a href="StudyAnalysisInappropriate.html">inappropriate</a> when we know the variable is a known confounder or the study has a small sample size.
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>InteractionGraph &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/InteractionGraph/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/InteractionGraph/favicon.ico">
+<link title="edit InteractionGraph" type="application/x-wiki" rel="alternate" href="InteractionGraph.html">
+<meta name="description" content="InteractionGraph" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "InteractionGraph",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Graphical_Approach_to_Interaction">  Graphical Approach to Interaction </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+Many texts use a graphical approach to depict interaction.
+<p></p>
+To determine interactions we <strong>graphically look at the presence or absence of a <a href="VarThird.html">third variable</strong> </a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#No_Interaction"> No Interaction </a>
+</li> <li> <a href="#Interaction"> Interaction </a>
+</li> <li> <a href="#Qualitative_Interaction"> Qualitative Interaction </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="No_Interaction">  No Interaction </h2>
+<p></p>
+If you look at the graph below, you will see: <ul>
+<li> <strong>Risk of <a href="OutcomeVariable.html">Disease</a></strong> (in a log scale which remember is a multiplicative scale) on the y axis;
+</li> <li> <strong><a href="PredictorVariable.html">Exposure</a></strong> status (Exposed vs Unexposed) is on the x axis.
+</li></ul> 
+<img width="286" height="182" alt="0413_1nointer.JPG" src="InteractionGraph.attachments/0413_1nointer.JPG">
+<p></p>
+<strong>Presence of the third variable</strong>: <ul>
+<li> The line with the red diamonds (0.05 to 0.15) presents the data for persons who have the value of a third variable equal to <strong>present</strong>, <strong>yes</strong>, or <strong>1</strong>.
+</li></ul> 
+In other words in the presence of a third variable, the risk of disease in the unexposed group is 0.05 and it goes up three fold to 0.15 in the exposed group.
+<p></p>
+<strong>Absence of the third variable</strong>: <ul>
+<li> The line with the black squares (0.15 to 0.45) presents the data for persons who have the value of a third variable equal to <strong>absent</strong>, <strong>no</strong>, or <strong>0</strong>.
+</li></ul> 
+In other words in the presence of a third variable, the risk of disease in the unexposed is 0.15 and it goes up three fold to 0.45 in the exposed group.
+<p></p>
+<strong>No interaction</strong>: <ul>
+<li> The <strong><a href="RiskRatio.html">risk ratio</a> does not change according to the third variable</strong>.
+</li></ul> 
+<strong>The lines are parallel</strong>. This means that there is not interaction in terms of the risk ratio.
+<p></p>
+<h2 id="Interaction">  Interaction </h2>
+ If you look at the graph below, you will see:  <ul>
+<li> <strong>Risk of <a href="OutcomeVariable.html">Disease</a></strong> (in a log scale which remember is a multiplicative scale) on the y axis;
+</li> <li> <strong><a href="PredictorVariable.html">Exposure</a></strong> status (Exposed vs Unexposed) is on the x axis.
+</li></ul> 
+<img src="InteractionGraph.attachments/0413_2inter.JPG" alt="0413_2inter.JPG" height="187" width="265">
+<p></p>
+<strong>Presence of the third variable</strong>: <ul>
+<li> The line with the red diamonds (0.05 to 0.15) presents the data for persons who have the value of a third variable equal to <strong>present</strong>, <strong>yes</strong>, or <strong>1</strong>.
+</li></ul> 
+In other words in the presence of a third variable, the risk of disease in the unexposed group is 0.05 and it goes up three fold to 0.15 in the exposed group.
+<p></p>
+<strong>Absence of the third variable</strong>: <ul>
+<li> The line with the black squares (0.08 to 0.9) presents the data for persons who have the value of a third variable equal to <strong>absent</strong>, <strong>no</strong>, or <strong>0</strong>.
+</li></ul> 
+In other words in the presence of a third variable, the risk of disease in the unexposed is 0.08 and <strong>it goes up 11.2 times</strong> to 0.9 in the exposed group.
+<p></p>
+<strong>Interaction</strong>: <ul>
+<li> The <a href="RiskRatio.html">risk ratio</a> <strong>does change</strong> according to the third variable.
+</li></ul> 
+<strong>Non-parallel lines equal interaction</strong>. This means that there is an interaction in terms of the risk ratio.
+<p></p>
+<h2 id="Qualitative_Interaction">  Qualitative Interaction </h2>
+<p></p>
+If you look at the graph below, you will see: <ul>
+<li> <strong>Risk of <a href="OutcomeVariable.html">Disease</a></strong> (in a log scale which remember is a multiplicative scale) on the y axis;
+</li> <li> <strong><a href="PredictorVariable.html">Exposure</a></strong> status (Exposed vs Unexposed) is on the x axis.
+</li></ul> 
+<img alt="0413_3qualinter.JPG" height="250" width="237" src="InteractionGraph.attachments/0413_3qualinter.JPG">
+<p></p>
+<strong>Presence of the third variable</strong>: <ul>
+<li> The line with the red diamonds (0.18 to 0.13) presents the data for persons who have the value of a third variable equal to <strong>present</strong>, <strong>yes</strong>, or <strong>1</strong>.
+</li></ul> 
+In other words in the presence of a third variable, the risk of <a href="OutcomeVariable.html">disease</a> in the unexposed group is 0.18 and it goes down to 0.13 in the exposed group. <strong>Exposed persons appear to be protected relative to exposed.</strong>
+<p></p>
+<strong>Absence of the third variable</strong>: <ul>
+<li> The line with the black squares (0.08 to 0.19) presents the data for persons who have the value of a third variable equal to <strong>absent</strong>, <strong>no</strong>, or <strong>0</strong>.
+</li></ul> 
+In other words in the presence of a third variable, the risk of disease in the unexposed is 0.08 and it goes up two fold two fold to 0.19 in the exposed group. We see this in the <a href="BiasConfoundAnalysis.html">Stanton example</a> of smoking, caffeince use, and delayed conception.
+<p></p>
+<strong>Interaction</strong>: <ul>
+<li> The effects in the two levels of the third variable are on the opposite sides of 1.0.
+</li></ul> 
+<strong>This is what we call qualitative interaction. The interaction is huge!</strong>  <ul>
+<li> An example of qualitative interaction can be found in <a href="EgInteractionCoffee.html">Stanton's Study</a> of coffee use and delayed conception.
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

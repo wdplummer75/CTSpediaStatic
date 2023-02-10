@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>Surv2Arm &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/Surv2Arm/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/Surv2Arm/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="Surv2Arm.html" title="edit Surv2Arm">
+<meta name="description" content="Surv2Arm" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "Surv2Arm",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Survival_Time_:_2_Arm">  <a href="SurvTime.html">Survival Time</a> : 2 Arm </h1>
+ Jill wants to test the efficacy of a treatment versus a control. Thus she wants to use a <a href="2ArmDef.html">2 arm design</a>.
+<p></p>
+So far, we know that Jill is going to use a 2 arm design testing the effect of a treatment versus a control on prolonging the time until recurrence of disease activity. There are several things we need to consider in order to calculate sample size for a survival time response. Typically we are interested in testing equality between treatment groups, which in this case means testing that the ratio of hazards is one. The power of these studies depends on the number of events (recurrences in Jill's study), thus we can calculate the number of events needed to obtain a certain level of power. In order to calculate the sample size necessary for a particular level of power we need to know the expected proportion of events for our study. We may get this information from previous experience or from a pilot study.
+<p></p>
+We also need to know whether the event time distribution has a parametric or nonparametric form. We will provide the two general formulas for each form, however there are more specific formulas if the form is better known. Something else we need to consider when measuring survival time is <a href="CensorData.html">censoring</a>. If we know the expected rate of censoring then we can use this to determine the sample size needed. Below are two sample size formulas, one for the parametric form and the other for the nonparametric form of the event time distributions.
+<h3 id="Sample_Size_Formula_45_Parametric_Form">  <a href="Surv2Parmform.html">Sample Size Formula - Parametric Form</a> </h3>
+<h3 id="Sample_Size_Formula_45_Nonparametric_Form">  <a href="Surv2Nonparform.html">Sample Size Formula - Nonparametric Form</a> </h3>
+<h3 id="Checklist">  <a href="Surv2Checklist.html">Checklist</a>  </h3>
+ -- <a href="../Main/ErinEsp.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">ErinEsp</a> - 31 Jan 2010
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

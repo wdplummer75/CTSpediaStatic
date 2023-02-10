@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyIncidencePersonTime &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/StudyIncidencePersonTime/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyIncidencePersonTime/favicon.ico">
+<link type="application/x-wiki" rel="alternate" href="StudyIncidencePersonTime.html" title="edit StudyIncidencePersonTime">
+<meta name="description" content="StudyIncidencePersonTime" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "StudyIncidencePersonTime",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Incidence_Rate_Using_Person_45Time">  Incidence Rate Using Person-Time </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Incidence_Rate_Using_Person_45Time"> Definition of Incidence Rate Using Person-Time </a>
+</li> <li> <a href="#Denominator_in_Incidence_Rate"> Denominator in Incidence Rate </a>
+</li> <li> <a href="#Why_Use_Incidence_Rates_63"> Why Use Incidence Rates? </a>
+</li> <li> <a href="#Incidence_Rate_of_Disease"> Incidence Rate of Disease </a>
+</li> <li> <a href="#Person_45Time_Incidence_Rates"> Person-Time Incidence Rates </a>
+</li> <li> <a href="#Incidence_Value_Depends_on_the_Time_Units_Used"> Incidence Value Depends on the Time Units Used </a>
+</li> <li> <a href="#Assumption_for_Person_Time:_Rate_is_Constant"> Assumption for Person Time: Rate is Constant </a>
+</li> <li> <a href="#Waiting_Time_Property_of_Incidence_Rates"> Waiting Time Property of Incidence Rates </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div> 
+<h2 id="Definition_of_Incidence_Rate_Using_Person_45Time">  Definition of Incidence Rate Using Person-Time </h2>
+<p></p>
+<strong>The number of events divided by the amount of person-time observed (E/NT) = incidence rate or density</strong> (not a proportion)
+<p></p>
+<strong>OR</strong>
+<p></p>
+<strong><a href="StudyIncidence.html">E(vent)/N(umber)T(ime)</a> = incidence rate or density</strong>
+<p></p>
+<strong>NT = person-time</strong> or <strong>product of persons times time</strong>
+<p></p>
+<h2 id="Denominator_in_Incidence_Rate">  Denominator in Incidence Rate </h2>
+<p></p>
+If the measure is a number of events divided by some number of persons at risk during some period, it is not a proportion (not a probability) because the denominator multiplies persons by time (100 persons followed for 2 years gives the same denominator as 200 persons followed for 1 year). The value of the fraction will change with the denominator and the units of the denominator are arbitrary.
+<p></p>
+If an incidence is presented as events per person-years, those person-years could be converted to person-months, or person-days, or even person-minutes with corresponding changes in the incidence rate (even though they all mean the same thing). And none of those fractions is constrained to be between 0 and 1. They can exceed 1. The concept of an incidence rate is not intuitive to everyone at first glance.
+<p></p>
+<h2 id="Why_Use_Incidence_Rates_63">  Why Use Incidence Rates? </h2> <ol>
+<li> To calculate from <a href="IncidenceRatePopn.html">population</a> based disease registries.
+</li> <li> To compare <a href="IncidenceRateCohortPopn.html">disease incidence in a cohort</a> with rate from a general population.
+</li> <li> To compare <a href="IncidenceRateExposure.html">incidence from time-varying exposure</a> in persons while exposed and not exposed.
+</li></ol> 
+<p></p>
+<h2 id="Incidence_Rate_of_Disease">  Incidence Rate of Disease </h2>
+<p></p>
+Incidence rates are useful in a variety of situations where you are comparing two or more populations where at least one population does not have individual-level data or where <a href="PredictorVariable.html">exposures</a> are changing within subjects over time.
+<p></p>
+<h2 id="Person_45Time_Incidence_Rates">  Person-Time Incidence Rates </h2>
+ <strong>The numerator is the same as incidence based on proportion of persons = events (E)</strong>
+<p></p>
+<strong>The denominator is the sum of the follow-up times for each individual. There are <a href="StudyAnalysisPerson.html">two methods</a> for calculating the denominator.</strong>
+<p></p>
+<strong>The resulting ratio of E/NT is not a proportion</strong> (It may be greater than 1)
+<p></p>
+<strong>Value depends on unit of time used</strong>
+<p></p>
+An example: If the incidence rate of the event was 35 per 100 person-years, you can have anyone of the following combinations <ul>
+<li> 100 person-years could mean 100 persons followed for 1 year <strong>or</strong>
+</li> <li> 50 persons followed for 2 years <strong>or</strong>
+</li> <li> 200 persons followed for 6 months <strong>or</strong>
+</li> <li> Many other combinations of persons and years whose product equals 100.
+</li></ul> 
+NOTE: All 3 give 100 person years of time at risk.
+<p></p>
+In this example the time units are years but years could be replaced by days, months, decades, or any time unit and the rate would change accordingly. So the absolute value of the rate is determined by the units used in the denominator.
+<p></p>
+<h2 id="Incidence_Value_Depends_on_the_Time_Units_Used">  Incidence Value Depends on the Time Units Used </h2>
+<p></p>
+<strong>Incidence Rate Depends on the Time Units Used:</strong> <ul>
+<li> <strong>For Example:</strong> Incidence rate of 8 cases per 100 person-years:
+</li> <li> <strong>Equals:</strong> 0.67 cases per 100 person-months
+</li> <li> <strong>Equals:</strong> 0.15 cases per 100 person-weeks
+</li></ul> 
+Person-years are the most conventionally used person-time denominator and are likely to be familiar, but other time units are possible. Rates are usually presented in units that leave at least one integer to the left of the decimal points. So 9 per 1,000 person-years would usually be preferred over 0.9 per 100 person-years.
+<p></p>
+NOTE: time period during which rate is measured can differ from the units used (use data from 2 years of follow-up but report a rate per person-months)
+<p></p>
+<strong>Person-time concept may seem unfamiliar because often described as annual rate per 100,000 persons</strong> <ul>
+<li> (i.e., person-time denominator is not made explicit)
+</li></ul> 
+<p></p>
+<h2 id="Assumption_for_Person_Time:_Rate_is_Constant">  Assumption for Person Time: Rate is Constant </h2>
+<p></p>
+<strong>A</strong> time units of follow-up on <strong>B</strong> persons is the same as <strong>B</strong> time units on <strong>A</strong> persons <ul>
+<li> Observing 2 deaths in 2 persons followed for 50 years gives the same incidence rate as
+</li> <li> 2 deaths in 100 persons followed 1 year
+</li></ul> 
+<strong>The rate is constant for the time period</strong> during which it is calculated
+<p></p>
+<strong>Rates calculated over long time periods may be less meaningful</strong>
+<p></p>
+The assumption that the denominator of person-time units for a rate does not depend on the proportion of persons and amount of time in the calculation may result in a rate that is hard to interpret if it is based on a long period of follow-up.
+<p></p>
+There is no simple rule about how much time is too long for a period in which to calculate a rate since it depends on how rapidly the outcome being measured may change over time. For something that changes very little year to year, such as the overall mortality rate in the U.S., a period of time of several years might be reasonable. <ul>
+<li> But for this reason one seldom sees rates calculated over, for example, a 20-year period whereas that would not be unusual for a calculation of <a href="StudyIncidenceCumul.html">cumulative incidence</a>.
+</li></ul> 
+An example can be found in pediatric cardiomyopathy <a href="EgPersonTimePeds.html">Lipshultz 2003</a>.
+<p></p>
+<span id="WaitingIncidence"></span>
+<h2 id="Waiting_Time_Property_of_Incidence_Rates">  Waiting Time Property of Incidence Rates </h2>
+<p></p>
+<strong>Waiting time to a event is reciprocal of the incidence rate (1/rate)</strong> <ul>
+<li> For example, if rate 300 per 100 person-years, reciprocal is 1/ 300/100 person-years = 1/3 person-year
+</li> <li> <strong>Average waiting time between events is 1/3 year = 4 months</strong>
+</li></ul> 
+This property of incidence rates is useful in quantifying the time until a new occurrence of the <a href="OutcomeVariable.html">outcome</a>. It follows from the assumption that the incidence rate is constant during the time interval under consideration.
+<p></p>
+If there are 3 events per year and the events are occurring at a constant rate, then a new event must occur on average, depending on how exactly the constant rate assumption is met, every 4 months.
+<p></p>
+So waiting time = 1/ person-time rate, a property to keep in mind.
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

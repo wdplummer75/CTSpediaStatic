@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasSelectCohort &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/BiasSelectCohort/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/BiasSelectCohort/favicon.ico">
+<link title="edit BiasSelectCohort" type="application/x-wiki" rel="alternate" href="BiasSelectCohort.html">
+<meta name="description" content="BiasSelectCohort" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "BiasSelectCohort",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Selection_Bias_45_Cohort_Study_or_Randomized_Clinical_Trial">  Selection Bias - Cohort Study or Randomized Clinical Trial </h1>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Selection_Bias_in_Cohort_Studies_Less_Likely"> Selection Bias in Cohort Studies Less Likely </a> <ul>
+<li> <a href="#Schematic_of_Cohort_Study_Sampling"> Schematic of Cohort Study Sampling </a>
+</li></ul> 
+</li> <li> <a href="#Front_45End_Bias_in_Cohort_Studies"> Front-End Bias in Cohort Studies </a> <ul>
+<li> <a href="#Example_of_Front_45End_Bias_in_Cohort_Studies:_Exercise_and_Survival"> Example of Front-End Bias in Cohort Studies: Exercise and Survival </a>
+</li> <li> <a href="#Schematic_of_Front_45End_Bias"> Schematic of Front-End Bias </a>
+</li></ul> 
+</li> <li> <a href="#Front_45End_Bias_in_Clinical_Trials"> Front-End Bias in Clinical Trials </a>
+</li> <li> <a href="#Loss_to_Follow_45up"> Loss to Follow-up </a>
+</li> <li> <a href="#See_Also"> See Also </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Selection_Bias_in_Cohort_Studies_Less_Likely">  Selection Bias in Cohort Studies Less Likely </h2>
+<p></p>
+Among initially selected subjects, selection bias in a cohort study is less likely to occur compared to <a href="CaseControlStudy.html">case-control</a> or <a href="CrossSectionalStudy.html">CrossSectionalStudy</a> cross-sectional studies.
+<p></p>
+<strong><em>The Reason:</em></strong> study participants (exposed or unexposed; treatment vs placebo) are selected (theoretically) before the outcome occurs.
+<p></p>
+As you can see in the <a href="StudyAnalysis2x2.html">2x2</a> table below, since disease has not occurred yet among initially selected subjects, there is typically no opportunity for disproportionate sampling with respect to <a href="PredictorVariable.html">exposure</a> and <a href="OutcomeVariable.html">disease</a>. (We cannot draw the 4 arrows from the Source Population to the Study Sample.)
+<p></p>
+In other words, among participants in a <a href="CohortStudy.html">cohort study</a> or <a href="RandomizedTrial.html">randomized trial</a> <ul>
+<li> we know who is exposed and unexposed (or who is given an experimental treatment versus a placebo)
+</li></ul> 
+Because disease has, by definition, not yet occurred, there is no opportunity, at the beginning, <strong>to over or under sample</strong> any of the 4 cells in the 2x2 table. <blockquote>
+<p></p>
+<img alt="0112_rct.JPG" height="193" width="322" src="BiasSelect.attachments/0112_rct.JPG">
+</blockquote>
+<p></p>
+<h3 id="Schematic_of_Cohort_Study_Sampling">  Schematic of Cohort Study Sampling </h3>
+ As you can see in the schematic below all that is sampled is <a href="PredictorVariable.html">exposure</a> status. Even if disproportionate sampling of exposed or unexposed groups occurs, it will not result in selection bias when forming measures of association.
+<p></p>
+All you do have at the beginning of a cohort study or RCT is knowledge of who is exposed (or treated) and unexposed (or untreated). We call these the <strong><a href="StudyAnalysis2x2.html">margins</a></strong>. <ul>
+<li> Even if you happen to over or under sample the exposed or unexposed group, it really does not matter when it comes to forming measures of associations, like <a href="RiskRatio.html">risk</a> or <a href="RateRatio.html">rate</a> ratios.
+</li></ul> 
+<blockquote> <img alt="0112_rct2.JPG" height="199" width="279" src="BiasSelect.attachments/0112_rct2.JPG"> </blockquote>
+<p></p>
+<h3 id="A_">   </h3>
+<p></p>
+<h2 id="Front_45End_Bias_in_Cohort_Studies">  Front-End Bias in Cohort Studies </h2>
+<p></p>
+Selection bias can occur in cohort study at the <strong>front end by unknowingly entering diseased individuals</strong> into the study.
+<p></p>
+Cohort studies are not foolproof, however, in terms of <em>no-bias</em> on the front end of choosing the cohort because sometimes truly diseased persons are unknowingly entered into the cohort. <ul>
+<li> In other words, selection bias can occur on the <em>front-end</em> of choosing the cohort if diseased individuals are unknowingly entered into the cohort.
+</li></ul> 
+<p></p>
+<h3 id="Example_of_Front_45End_Bias_in_Cohort_Studies:_Exercise_and_Survival">  Example of Front-End Bias in Cohort Studies: Exercise and Survival </h3>
+ Consider a study of the effects of exercise on all-cause mortality in persons who are thought to be completely healthy at baseline.  <ul>
+<li> Now consider what would happen if some participants with undiagnosed cardiovascular disease (CAD) were indeed enrolled in the study and indeed it turns out that they exercise less (say because they get out of breath more easily).
+</li> <li> What would this inclusion of persons with undiagnosed CAD do, in terms of bias, in regards to the measure of association between exercise and CAD?
+</li></ul> 
+<h3 id="Schematic_of_Front_45End_Bias">  Schematic of Front-End Bias </h3>
+ As shown in the schematic below, <strong>selection bias will lead to spurious protective effect of exercise</strong> (assuming truly no effect).
+<p></p>
+At the end of the study, how well will the study sample represent the source population? <ul>
+<li> The exercise group probably won't have any persons with undiagnosed CAD in it and will indeed likely be completely healthy at baseline.
+</li> <li> Therefore, the study sample in the exercise group is likely a fine representative sample of the source population.
+</li></ul> 
+It is the "no exercise" group where trouble exists.  <ul>
+<li> Because some undiagnosed disease persons have snuck into the study sample of "no exercise" persons, it is no longer representative of the group of completely healthy "no exercise" persons.
+</li> <li> And it is non-representative in such a way where there is now an <strong>overrepresentation</strong> of persons destined to do poorly.
+</li> <li> That is why we show the heavy arrow in this cell.
+</li> <li> The overall effect of this is to lead to <strong>spurious overestimation of the protective effect of exercise</strong>, assuming that there is truly no effect.
+</li></ul> 
+<p></p>
+<blockquote>
+<p></p>
+<img src="BiasSelect.attachments/0112_cad.JPG" alt="0112_cad.JPG" height="167" width="228">
+<p></p>
+</blockquote>
+<p></p>
+<h2 id="Front_45End_Bias_in_Clinical_Trials">  Front-End Bias in Clinical Trials </h2>
+<p></p> <ul>
+<li> To repeat clinical trials are just like cohort studies with the only exception being that the <a href="PredictorVariable.html">exposure</a> is given by the investigator.
+</li> <li> That said, the potential for selection bias is the same as in a cohort study.
+</li></ul> 
+<p></p> <ul>
+<li> However, because of randomization the potential for selection bias on the front-end, i.e. before <a href="OutcomeVariable.html">outcomes</a> occur, is less. This is because if, and I repeat if, randomization is done properly, then differential inclusion between arms of patients with occult disease or who are at high risk for disease development is not possible, short of by chance alone.
+</li></ul> 
+<p></p>
+<h2 id="Loss_to_Follow_45up">  Loss to Follow-up </h2>
+<p></p>
+Selection bias can occur in cohort study at the end in <a href="LostToFollowUp.html">loss-to-follow-up</a>.
+<p></p>
+Selection bias among initially selected subjects in longitudinal studies, however, is not the primary source of selection bias in these cohort studies/ RCTs. <ul>
+<li> Instead, the primary source of selection bias comes in the form of <strong>how long subjects participate</strong>, in other words, how much loss to follow-up occurs which is not <a href="CensorData.html">administrative</a>. Hence, it is not just who you start with; it is also who you end up with.
+</li></ul> 
+Selection bias occurs when those persons lost to follow up have a different probability of the <a href="OutcomeVariable.html">outcome</a> than those persons who remain in the analysis, that is <a href="CensorData.html">informative censoring</a> in at least one of the exposure groups, AND when the degree of informative censoring differs across exposure groups.
+<p></p>
+Note that this all starts with those who are lost having a different incidence of the outcome than those who remain. <ul>
+<li> If losses to follow up are simply by random chance and those persons who are lost have the exact same outcome experience as those who stay, then all you lose is statistical power.
+</li> <li> This won&rsquo;t produce any bias in either the incidence of the outcome in any of the exposure groups or in the measure of association between groups.
+</li></ul> 
+The problem, of course, is that we rarely know the outcome experience of those who leave, other than in studies of all cause mortality where we can use the National Death Index.
+<p></p>
+<h2 id="See_Also">  See Also </h2>
+<a href="BiasSelect.html">Other causes of selection bias</a>
+<p></p>
+<span id="GreenlandBiasCohort"></span>
+<p></p>
+<!--[if gte mso 9]&gt;<xml> <w:WordDocument> <w:View>Normal</w:View> <w:Zoom>0</w:Zoom> <w:PunctuationKerning/> <w:ValidateAgainstSchemas/> <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid> <w:IgnoreMixedContent>false</w:IgnoreMixedContent> <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText> <w:Compatibility> <w:BreakWrappedTables/> <w:SnapToGridInCell/> <w:WrapTextWithPunct/> <w:UseAsianBreakRules/> <w:DontGrowAutofit/> </w:Compatibility> <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel> </w:WordDocument> </xml>&lt;![endif]--><!--[if gte mso 9]&gt;<xml> <w:LatentStyles <a title="Create this topic" href="DefLockedState.html" class="foswikiNewLink" rel="nofollow">DefLockedState</a>="false" <a class="foswikiNewLink" rel="nofollow" href="LatentStyleCount.html" title="Create this topic">LatentStyleCount</a>="156"> </w:LatentStyles> </xml>&lt;![endif]--><!--[if mso]&gt;<object classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object> <style> st1\:*{behavior:url(#ieooui) } </style> &lt;![endif]--> <!-- /* Style Definitions */ p.MsoNormal, li.MsoNormal, div.MsoNormal {mso-style-parent:""; margin:0pt; margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:12.0pt; font-family:"Times New Roman"; mso-fareast-font-family:"Times New Roman";} @page Section1 {size:612.0pt 792.0pt; margin:72.0pt 90.0pt 72.0pt 90.0pt; mso-header-margin:36.0pt; mso-footer-margin:36.0pt; mso-paper-source:0;} div.Section1 {page:Section1;} --> <!--[if gte mso 10]&gt; <style> /* Style Definitions */ table.MsoNormalTable {mso-style-name:"Table Normal"; mso-tstyle-rowband-size:0; mso-tstyle-colband-size:0; mso-style-noshow:yes; mso-style-parent:""; mso-padding-alt:0pt 5.4pt 0pt 5.4pt; mso-para-margin:0pt; mso-para-margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:10.0pt; font-family:"Times New Roman"; mso-ansi-language:#0400; mso-fareast-language:#0400; mso-bidi-language:#0400;} </style> &lt;![endif]-->Greenland, S. (1977). Response and follow-up bias in cohort studies. <em>Am J Epidemiol, 106</em> (3), 184-187. 
+<p></p>
+<hr />
+ <strong><em>Jeff Martin, MD</em></strong>
+<p></p>
+-- <a class="foswikiNewLink" rel="nofollow" href="../Main/MaryB.html" title="Create this topic">MaryB</a> - 08 May 2009
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

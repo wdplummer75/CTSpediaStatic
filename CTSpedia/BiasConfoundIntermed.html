@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasConfoundIntermed &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundIntermed/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundIntermed/favicon.ico">
+<link type="application/x-wiki" title="edit BiasConfoundIntermed" href="BiasConfoundIntermed.html" rel="alternate">
+<meta name="description" content="BiasConfoundIntermed" />
+<link type="text/css" media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "BiasConfoundIntermed",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::TWISTY" src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="Confounder_or_Intermediate_Variable_63">  Confounder or Intermediate Variable? </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#What_Is_Not_A_Confounder_63"> What Is Not A Confounder? </a>
+</li> <li> <a href="#Determine_Confounder:_What_Is_Your_Research_Question_63"> Determine Confounder: What Is Your Research Question? </a>
+</li> <li> <a href="#Adjusting_for_Confounder_to_Answer_Your_Research_Question"> Adjusting for Confounder to Answer Your Research Question </a>
+</li> <li> <a href="#Determine_Confounder:_What_Is_the_Pathway_Under_Investigation_63"> Determine Confounder: What Is the Pathway Under Investigation? </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="What_Is_Not_A_Confounder_63">  What Is Not A Confounder? </h2>
+<p></p>
+A variable that is an <strong><a href="VarIntermed.html">intermediate</a></strong> step in the causal path under study <ul>
+<li> between the <a href="PredictorVariable.html">exposure</a> in question and
+</li> <li> a <a href="OutcomeVariable.html">disease</a> is <strong>not</strong> a confounding variable.
+</li></ul> 
+IF THE VARIABLE IS ON THE PATHWAY UNDER STUDY. IT IS AN <strong>INTERMEDIARY</strong> VARIABLE.
+<p></p>
+<p></p>
+<p></p>
+How do you determine if it is a <a href="BiasConfound.html">confounder</a> or an <a href="VarIntermed.html">intermediary variable</a>?
+<p></p>
+<span id="ResearchQuestion"></span>
+<p></p>
+<h2 id="Determine_Confounder:_What_Is_Your_Research_Question_63">  Determine Confounder: What Is Your Research Question? </h2>
+The following example from HIV research shows how you determine if the variable of interest is a confounder or intermediary variable by looking at the research question.
+<p></p>
+ Recently, the human cellular receptor for HIV was determined.  <ul>
+<li> It is called CCR5 and it is found on CD4 cells.
+</li> <li> Shortly after its discovery, genetic defects in CCR5 were described and there was immediate interest in whether persons who have genetic defects in this receptor have slower disease progression to AIDS.
+</li></ul> 
+We know that <strong>CD4 count is a potent predictor</strong> of time-to-AIDS.
+<p></p>
+How should <strong>CD4 count be handled in assessing the association</strong> <ul>
+<li> between CCR5 defect status and progression in HIV disease to AIDS?
+</li></ul> 
+So, on the surface, it appears that <strong>CD4 count HIV viral load meets the criteria for confounding</strong>;  <ul>
+<li> it is associated with the <a href="PredictorVariable.html">exposure</a> and associated with the <a href="OutcomeVariable.html">disease</a>.
+</li> <li> That said, how should CD4 count be handled in assessing the association between CCR5 defect status and progression in HIV disease to AIDS?
+</li></ul> 
+<p></p>
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdCTSpediaBiasConfoundIntermed1015show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited">DAG: HIV-CD4-CCR5</span><img src="../System/DocumentGraphics.attachments/toggleopen-small.png" border="0" alt=""></a></span><span id="twistyIdCTSpediaBiasConfoundIntermed1015hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited">DAG: HIV-CD4-CCR5</span><img src="../System/DocumentGraphics.attachments/toggleclose-small.png" alt="" border="0"></a></span></div><div class="twistyPlugin"><div id="twistyIdCTSpediaBiasConfoundIntermed1015toggle" style="" class="twistyContent twistyInited">
+<p></p>
+<blockquote>
+<p></p>
+<img src="BiasConfound.attachments/0401_5HIV_con.JPG" width="164" height="130" alt="0401_5HIV_con.JPG">
+</blockquote>
+<p></p>
+</div></div><br/>
+<p></p>
+To determine if CD4 count is a confounding variable we ask: <ul>
+<li> Is CCR5 associated with progression to AIDS, <strong>independent of CD4 count</strong>?
+</li> <li> For intermediary variable, the <a href="VarIntermed.html">the question</a> would ask if CCR5 is associated with progression to AIDS, <strong>irrespective of mechanism</strong>?
+</li></ul> 
+We need to <a href="StratificationTerm.html">stratify</a> to discuss this question:
+<p></p>
+<img src="BiasConfound.attachments/0401_7stratify.JPG" alt="0401_7stratify.JPG" height="135" width="251">
+<p></p>
+To stratify you would form <strong>homogenous strata of low CD4 count and high CD4 count</strong>. <ul>
+<li> If you did this and if turned out that the effect of CCR5 defects are via effects in CD4 count,
+</li> <li> then you have guaranteed that the outcome of AIDS is going to be very similar and perhaps identical in all persons in a given stratum.
+</li></ul> 
+Hence, if this is the mechanism you&rsquo;re proposing and there is no other mechanism, <strong>then you do not want to adjust for it</strong>.  <ul>
+<li> This is because you will <strong>totally attenuate the <a href="StudyAssoc.html">measure of association</a></strong>.
+</li></ul> 
+In other words, if knowing the CD4 count is all you need to know about the effect of CCR5,  <ul>
+<li> then everyone in this stratum will have the same outcome experience, progression to AIDS.
+</li> <li> The same thing will happen with the other stratum.
+</li></ul> 
+<p></p>
+<p></p>
+<h2 id="Adjusting_for_Confounder_to_Answer_Your_Research_Question">  Adjusting for Confounder to Answer Your Research Question </h2>
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#TaylorBias">Taylor</a> published findings on adjusting for the confounder if your research <a class="foswikiCurrentTopicLink" href="#ConfQuest">question</a> is:  <ul>
+<li> "Is CCR5 associated with progression to AIDS, independent of CD4 count?"
+</li></ul> 
+<blockquote>
+<p></p>
+<img width="222" height="156" alt="0402_2adjust.JPG" src="BiasConfound.attachments/0402_2adjust.JPG">
+</blockquote>
+<p></p>
+When the question was asked whether or not a CCR5 defect <strong>was associated with progression to AIDS via another mechanism</strong>, other than CD4 count, <ul>
+<li> there was <strong>no strong evidence of an effect</strong>, relative hazard 0.93.
+</li></ul> 
+If you had <a href="VarIntermed.html">not adjusted for CD4 count</a> first,  <ul>
+<li> <strong>you would not have seen an effect of CCR5</strong>.
+</li></ul> 
+<strong>Hence, you need always need to keep in mind exactly what the research question is and whether or not <a href="StudyAnalysisAdjustment.html">adjustment</a> is needed to answer it.</strong> 
+<p></p>
+<span id="PathwayUnderInvestigation"></span>
+<p></p>
+<h2 id="Determine_Confounder:_What_Is_the_Pathway_Under_Investigation_63">  Determine Confounder: What Is the Pathway Under Investigation? </h2>
+<p></p>
+After looking at your research question to determine whether you have a confounder or an intermediary variable, the next question is <strong>What is the pathway under investigation?</strong>
+<p></p>
+In this example we are looking at the relationship between exercise and CAD,  <ul>
+<li> <strong>is HDL a <a href="BiasConfound.html">confounder</a> or an <a href="VarIntermed.html">intermediary</a></strong>?
+</li></ul> 
+<img alt="0402_3HDL.JPG" height="135" width="194" src="BiasConfound.attachments/0402_3HDL.JPG">
+<p></p>
+We know that exercise influences HDL and HDL is associated with coronary artery disease, but is it a confounder or an intermediary?
+<p></p>
+<strong>The answer is that it depends upon the pathway under investigation</strong>.
+<p></p>
+If interest is in a pathway other than through HDL, then HDL is a confounder <ul>
+<li> Therefore, HDL is extraneous to pathway under study
+</li></ul> 
+<strong>Confounding factors are extraneous factors</strong>
+<p></p>
+<blockquote> <img alt="0402_4HDL_conf.JPG" height="148" width="192" src="BiasConfound.attachments/0402_4HDL_conf.JPG"></blockquote> If you really don&rsquo;t care about the exact pathway or you are only thinking about one pathway by which exercise can influence the development of heart disease, and HDL was right in the middle of this pathway,
+<p></p> <ul>
+<li> then HDL is an intermediary variable and we would not want to control for it.
+</li> <li> <strong>HDL would not be a confounder.</strong>
+</li></ul> 
+<p></p>
+<h2 id="References">  References </h2>
+<span id="TaylorBias"></span>
+<p></p>
+Taylor, J. M., Wang, Y., Ahdieh, L., Chmiel, J. S., Detels, R., Giorgi, J. V., et al. (2000). Causal pathways for CCR5 genotype and HIV progression. <em>J Acquir Immune Defic Syndr</em>, 23(2), 160-171.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>OddsRatioMeasures &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/OddsRatioMeasures/favicon.ico"> <link href="../MISSING RESOURCE CTSpedia/OddsRatioMeasures/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="OddsRatioMeasures.html" rel="alternate" title="edit OddsRatioMeasures" type="application/x-wiki">
+<meta name="description" content="OddsRatioMeasures" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "OddsRatioMeasures",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Odds_Ratio">  Odds Ratio </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Odds_Ratio_61_Four_Probabilities"> Odds Ratio = Four Probabilities </a>
+</li> <li> <a href="#Relationship_Between_Probablity_Ratio_and_Odds_Ratio"> Relationship Between Probablity Ratio and Odds Ratio </a>
+</li> <li> <a href="#Odds_Ratio_of_Disease_in_Exposed_and_Unexposed"> Odds Ratio of Disease in Exposed and Unexposed </a>
+</li> <li> <a href="#Odds_Ratio_of_Exposure_in_Diseased_and_Not_Diseased"> Odds Ratio of Exposure in Diseased and Not Diseased </a>
+</li> <li> <a href="#Regression_Coefficient_Equals_Log_of_the_Odds_Ratio"> Regression Coefficient Equals Log of the Odds Ratio </a>
+</li> <li> <a href="#Misuse_of_Odds_Ratio"> Misuse of Odds Ratio </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Odds_Ratio_61_Four_Probabilities">  Odds Ratio = Four Probabilities </h2>
+<p></p>
+<strong>Odds are already the ratio of two <a href="OddsTerm.html">probabilities</a>, so the odds ratio involves four probabilities:</strong> <ul>
+<li> p(event) / 1 - p(event) in the exposed, and
+</li> <li> p(event) / 1 - p(event) in the unexposed that yield a single ratio.
+</li></ul> 
+<blockquote><img alt="0311_pr_or.JPG" height="145" src="OddsTerm.attachments/0311_pr_or.JPG" width="179"></blockquote>
+<p></p>
+So in the above example the p of the event in the exposed is 2/5, 1 - p of the event in the exposed is 3/5. <ul>
+<li> Similarly, p of the event in the unexposed is 1/5 and 1- p(event) in the unexposed is 4/5.
+</li> <li> So the odds of the event in the exposed is 2/3 and the odds of the event in the unexposed is 1/4.
+</li> <li> <strong>The ratio of those two odds is (2/3) / (1/4) = 2.67</strong>
+</li></ul> 
+<blockquote><img width="110" src="OddsTerm.attachments/0311_2or.JPG" alt="0311_2or.JPG" height="44"></blockquote>
+<p></p>
+For <strong>probability</strong> (# events/ # exposed ) / (# non-events/ # not exposed)
+<blockquote>
+<p></p>
+<img src="OddsTerm.attachments/0311_3or_pr.JPG" alt="0311_3or_pr.JPG" height="36" width="124">
+</blockquote>
+<p></p>
+<h2 id="Relationship_Between_Probablity_Ratio_and_Odds_Ratio">  Relationship Between Probablity Ratio and Odds Ratio </h2>
+<p></p>
+Notice that the <a href="OddsRatioMeasures.html" class="foswikiCurrentTopicLink">odds ratio</a> is larger than the probability ratio (either prevalence or risk ratio) in the above example.
+<p></p>
+Unless both ratios = 1.0, <ul>
+<li> the odds ratio will always be farther from 1.0 than the probability ratio (greater if &gt; 1.0 and smaller if &lt; 1.0)
+</li> <li> because the probability ratio is the ratio of two probabilities and the odds ratio is the ratio of two probabilities each of which has been divided by (1 - probability), a quantity that is always &lt; 1 unless the probability is 1.0.
+</li></ul> 
+<span id="OddsCalc"></span> 
+<h2 id="Odds_Ratio_of_Disease_in_Exposed_and_Unexposed">  Odds Ratio of Disease in Exposed and Unexposed </h2>
+<p></p>
+We begin with our 2 x 2 table below:
+<blockquote>
+<p></p>
+<img width="170" src="OddsTerm.attachments/0311_2x2_lrs.JPG" height="156" alt="0311_2x2_lrs.JPG">
+</blockquote>
+<p></p>
+We then do a little algebra to show how these four fractions reduce down to what is called the cross-product of the 2x2 table, <ul>
+<li> the ratio of the products of the two diagonals.
+</li></ul> 
+<blockquote><img src="OddsTerm.attachments/0311_entire_calculation.JPG" alt="0311_entire_calculation.JPG" height="142" width="276"></blockquote>
+<p></p>
+We find that the <strong>odds ratio of disease in the exposed and unexposed equals the odds ratio of exposure in the diseased and not diseased</strong>.
+<p></p>
+<span id="EqualExposure"></span>
+<h2 id="Odds_Ratio_of_Exposure_in_Diseased_and_Not_Diseased">  Odds Ratio of Exposure in Diseased and Not Diseased </h2>
+<p></p>
+In the equations below we are calculating the probabilities of exposure and non-exposure in those with disease and similarly for those without disease and then forming an odds ratio.
+<blockquote>
+<p></p>
+<img width="303" alt="0311_exposure.JPG" height="181" src="OddsTerm.attachments/0311_exposure.JPG">
+</blockquote>
+<p></p>
+So the probabilities, with our arrangement of disease across the top, are calculated within the columns rather than within the rows.
+<p></p>
+In a <a href="CrossSectionalStudy.html">cross-sectional study</a>, we would normally not be interested in looking at <a href="PredictorVariable.html">exposure</a> by <a href="OutcomeVariable.html">disease status</a> because we are always interested in how exposure leads to disease, i.e., how disease is distributed among the exposed. We are looking at this way in order to show that the odds ratio for exposure equals the odds ratio for disease.
+<p></p>
+This is an important property of the odds ratio and its use in case-control studies. It was originally pointed out by Cornfield, a pioneer of modern observational epidemiology, in the 1950's and drew attention to the usefulness of the <a href="CaseControlStudy.html">case-control design</a>.
+<p></p>
+<h2 id="Regression_Coefficient_Equals_Log_of_the_Odds_Ratio">  Regression Coefficient Equals Log of the Odds Ratio </h2>
+<p></p>
+An important property of the odds ratio is that the:
+<p></p> <ul>
+<li> <strong>Regression coefficient in <a href="LogisticRegression.html">logistic regression</a> equals the log of the odds ratio.</strong>
+</li></ul> 
+The coefficient of a <a href="PredictorVariable.html">predictor variable</a> in logistic regression is the log odds of the <a href="OutcomeVariable.html">outcome</a>  <ul>
+<li> (e to the power of the coefficient = OR)
+</li></ul> 
+<p></p>
+<h2 id="Misuse_of_Odds_Ratio">  Misuse of Odds Ratio </h2>
+<p></p>
+<strong>Language like "X times as likely to" implies a comparison of probabilities, not odds -</strong>
+<p></p>
+Regardless of the actual measure of association that was calculated by the study or what measure it validly estimates, <ul>
+<li> most researchers want to use the language of probability or words that suggest probabilities when they discuss their results.
+</li></ul> 
+As a result, it is rare to hear the appropriate language:  <ul>
+<li> <strong>the odds of disease among those who had ever smoked were 3.6 fold greater than among those who never smoked.</strong>
+</li></ul> 
+<p></p>
+<hr />
+ <strong>With high incidence of outcome, OR misrepresents the relative probabilities, so language should not imply probability -</strong>
+<p></p>
+The language of probability can be justified if the <a href="CaseControlOddsRatio.html">rare disease assumption</a> is met <ul>
+<li> avoid the <a href="SampleEnd.html">prevalent controls</a> study design if you can.
+</li></ul> 
+Preferable is to attempt to use either <a href="SampleIncidence.html">incidence density sampling</a> of controls or a <a href="SampleBaseline.html">case-cohort design</a> for a <a href="CaseControlStudy.html">case-control study</a>  <ul>
+<li> pointing out in the methods that the OR from your design is an <a href="BiasDefinition.html">unbiased</a> estimated of the <a href="RiskRatio.html">risk ratio</a> or the <a href="RateRatio.html">rate ratio</a>, depending on which design you have used.
+</li></ul> 
+It then becomes legitimate to use the language of risk ratios or rate ratios in reporting your findings. 
+<hr />
+<p></p>
+<strong>Language like "7% more likely" suggests an absolute risk difference, not a ratio (also a misuse of risk ratios) -</strong>
+<p></p>
+Language like <strong>7% more likely</strong> sounds as if an absolute risk difference is being reported <ul>
+<li> but in some instances is actually describing an odds ratio of 1.07.
+</li></ul> 
+<strong>This is quite misleading and should be avoided.</strong>
+<p></p>
+<hr />
+ <br /> <strong>Abstracts and press releases determine how results are received by the public.</strong>
+<p></p>
+<hr />
+<p></p>
+<strong><em><br /></em></strong>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

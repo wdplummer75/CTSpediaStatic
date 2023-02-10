@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisAdjustment &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisAdjustment/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisAdjustment/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="StudyAnalysisAdjustment.html" title="edit StudyAnalysisAdjustment" type="application/x-wiki">
+<meta name="description" content="StudyAnalysisAdjustment" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyAnalysisAdjustment",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Adjustment">  Adjustment </h1>
+ The method of modifying observations to account for external factors that may distort or skew associations in observations.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Adjusted_Measure_of_Association"> Adjusted Measure of Association </a> <ul>
+<li> <a href="#Summary_Estimate"> Summary Estimate </a>
+</li></ul> 
+</li> <li> <a href="#Methods_for_Calculating_Summary_Adjusted_Estimators"> Methods for Calculating Summary Adjusted Estimators </a>
+</li> <li> <a href="#Interpretation_of_the_Adjusted_Estimate"> Interpretation of the Adjusted Estimate </a>
+</li> <li> <a href="#References"> References </a>
+</li> <li> <a href="#See_Also"> See Also </a>
+</li></ul> 
+</div>
+<h2 id="Adjusted_Measure_of_Association">  Adjusted Measure of Association </h2>
+<p></p>
+<span id="ExampleAZT"></span>
+<p></p>
+In the following <a href="CaseControlStudy.html">case-control study</a> of HIV seroconversion (<a class="foswikiCurrentTopicLink" href="#LiHIV">Li 1997</a>), we are looking at the effectiveness of AZT in preventing HIV seroconversion after a needlestick in health care workers. <ul>
+<li> <a href="PredictorVariable.html">Exposure</a>: Use of AZT
+</li> <li> <a href="OutcomeVariable.html">Outcome</a>: HIV infection
+</li> <li> Crude <a href="OddsTerm.html">OR</a>: 0.61 (NS)
+</li> <li> Is there <a href="VarThird.html">interaction</a>? Is there <a href="BiasConfound.html">confounding</a>?
+</li></ul> 
+<img height="260" alt="0416_1HIV.JPG" src="StudyAnalysisAdjustment.attachments/0416_1HIV.JPG" width="323">
+<p></p>
+The context is that needlesticks among health care workers from patients with HIV disease are unfortunately all too common. The question is whether taking the drug called AZT right after a needlestick can prevent the healthcare worker from becoming infected with HIV. <ul>
+<li> Attempts to address this question with a RCT did not work because no doctor or nurse wanted to be randomized to the placebo group.
+</li> <li> However, there was no evidence for many years whether taking antiretroviral therapy, replete with its toxicity, would do any good in preventing HIV acquisition.
+</li> <li> So, this had to be sorted out observationally and luckily there were at least some doctors and nurses who did not elect to use AZT such that we have some variability to work with.
+</li></ul> 
+So, the exposure in question is the use of AZT and the outcome is the occurrence of HIV. Cases were health care workers who had acquired HIV after a needlestick and controls were health care workers who did not acquire HIV after a needlestick.  <ul>
+<li> In the crude analysis, the OR was 0.61, which by the way was not statistically significant, i.e. no strong evidence of a benefit from AZT.
+</li> <li> When the authors stratified by the severity of the needlestick, look at the stratum specific estimates; they are much lower. The first thing to decide is whether interaction is present. What do you think?
+</li></ul> 
+Well, this is a big difference in magnitude but note how few cases there are in the minor needlestick severity group. What would you want to do at this point?  <ul>
+<li> When we look at a statistical test of heterogeneity, we see a p value of 0.44 showing that chance could have easily caused this difference between strata.
+</li> <li> So, the authors did not decide to declare that there was any important interaction.
+</li> <li> Remember, although it is more interesting, it is also always more complicated to report interaction. That said, is there <a href="BiasConfound.html">confounding</a> here? How do you know? To determine the adjusted measure of association, we have to form a summary estimate of the two strata.
+</li></ul> 
+<p></p>
+<h3 id="Summary_Estimate">  Summary Estimate </h3>
+ To determine the adjusted measure of association for the <a href="StudyTermInter.html">effect modifier</a>, we have to form a summary estimate of the two strata.
+<p></p>
+To do this, we will form a weighted average of the stratum-specific estimates.
+<blockquote> <img width="295" src="StudyAnalysisAdjustment.attachments/0416_2a_adjust.JPG" alt="0416_2a_adjust.JPG" height="155"> </blockquote>
+<p></p>
+In other words, we will assign weights to the various strata and then take an average of the strata using these weights. <ul>
+<li> We take the measure of association in each stratum and multiply by the weight and then divide by the total sum of the weights.
+</li></ul> 
+A simple mean is an example of a weighted average where all the weights are 1. <blockquote> <img alt="0416_2b_adjust.JPG" height="85" src="StudyAnalysisAdjustment.attachments/0416_2b_adjust.JPG" width="295"></blockquote>
+<p></p>
+<span id="CalculateAdjust"></span>
+<p></p>
+<h2 id="Methods_for_Calculating_Summary_Adjusted_Estimators">  Methods for Calculating Summary Adjusted Estimators </h2>
+ In our example, we know that the weighted average is going to be somewhere between 0.0 and 0.35, but where exactly is it going to be?  <ul>
+<li> So, how are we going to weight these two strata?
+</li> <li> Would you give them equal weight?
+</li> <li> Weight according to sample size?
+</li> <li> No. of cases?
+</li> <li> Variance?
+</li></ul> 
+<strong>Two methods for calculating summary adjusted estimators:</strong>  <ul>
+<li> <a href="StudyAnalysisWoolf.html">Wolf's Method</a>
+</li> <li> <a href="StudyAnalysisMH.html">Mantel-Haenszel</a>
+</li></ul> 
+<p></p>
+<h2 id="Interpretation_of_the_Adjusted_Estimate">  Interpretation of the Adjusted Estimate </h2>
+ Is <a href="BiasConfound.html">confounding</a> present or is there a <a href="VarThird.html">third variable</a>?
+<p></p>
+In the <a class="foswikiCurrentTopicLink" href="#ExampleAZT">example of AZT</a> use:
+<p></p>
+1 - Compare adjusted estimate to crude estimate <ul>
+<li> e.g. compare ORMH (= 0.30) to ORcrude (= 0.61)
+</li></ul> 
+2 - If adjusted measure <strong>differs meaningfully</strong> from crude estimate, then confounding is present  <ul>
+<li> e.g., does ORMH = 0.30 &ldquo;differ meaningfully&rdquo; from ORcrude = 0.61?
+</li></ul> 
+What does <strong>differs meaningfully</strong> mean?  <ul>
+<li> This a matter of judgement based on <strong>biologic/clinical sense</strong> rather than on a statistical test.
+</li> <li> This is <strong>no one correct answer</strong>
+</li> <li> The objective is to <strong>remove <a href="BiasConfound.html">bias</a></strong>.
+</li> <li> You need to be conservative - a <strong>10% change from the crude</strong> is often used,  <ul>
+<li> Your threshold needs to be <strong>stated a priori</strong> and included in your methods section.
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<span id="LiHIV"></span> Li, R. W., &amp; Wong, J. B. (1997). Postexposure treatment of HIV. <em>N Engl J Med</em>, 337(7), 499-500; author reply 501.
+<p></p>
+<hr />
+<p></p>
+<strong><em>Jeff Martin, MD</em></strong>
+<p></p>
+<h2 id="See_Also">  See Also </h2> <ul>
+<li> <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="DirectAgeAdjustment.html">DirectAgeAdjustment</a>
+</li> <li> <a title="Create this topic" href="IndirectAgeAdjustment.html" class="foswikiNewLink" rel="nofollow">IndirectAgeAdjustment</a>
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

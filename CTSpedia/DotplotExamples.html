@@ -1,0 +1,524 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>DotplotExamples &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/DotplotExamples/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/DotplotExamples/favicon.ico" type="image/x-icon">
+<link rel="alternate" href="DotplotExamples.html" title="edit DotplotExamples" type="application/x-wiki">
+<meta name="description" content="DotplotExamples" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "DotplotExamples",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="StatGraphHome.html">Return to Safety Graphics Home</a>
+<p></p>
+<h1 id="Dot_plots">  <strong>Dot plots</strong> </h1>
+<p></p>
+<strong>Contributed by:</strong> Mat Soukup (email: <a href="mailto&#58;Mat&#46;Soukup&#64;fda&#46;hhs&#46;gov">Mat.Soukup&#64;fda.hhs.gov</a>) 
+<p></p>
+<strong>Type of Data: continuous</strong>
+<p></p>
+<strong>Type of Analysis: univariate</strong>
+<p></p>
+<h2 id="Description_and_Purpose:">  <strong><em>Description and Purpose:</em></strong> </h2>
+<p></p>
+The dotplot is a useful graphical approach for plotting a quantitative variable with labels representing the quantitative measurement (e.g., when looking at adverse event rates, a label for the adverse event accompanies the rate). The dotplot is an alternative to plotting data using such displays as bar charts and pie charts, though it has advantages over such approaches in that it allows one the ability to plot data in which the baseline of the data is not zero.
+<p></p>
+<h2 id="Comparison_of_Multiple_Graphing_Techniques">  <strong><em>Comparison of Multiple Graphing Techniques</em></strong> </h2>
+<p></p>
+To illustrate the use of multiple graphical displays suppose we want to illustrate the disposition of subjects at the end of trial. Table 1 depicts the disposition along with the percentage of subjects in each category.
+<p></p>
+<p align="center" style="text-align: center"> <strong>Table 1: Disposition</strong> </p> <div align="center">
+<p></p>
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <p align="center" style="text-align: center"> <strong>Disposition</strong> </p> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <p align="center" style="text-align: center"> <strong>Percentage</strong> </p> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <p align="center" style="text-align: center">Completed Study</p> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <p align="center" style="text-align: center">75.0%</p> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <p align="center" style="text-align: center">Adverse Event</p> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <p align="center" style="text-align: center">7.0%</p> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <p align="center" style="text-align: center">Lack of Efficacy</p> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <p align="center" style="text-align: center">8.0%</p> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> <p align="center" style="text-align: center">Withdrew Consent</p> </td>
+			<td class="foswikiTableCol1 foswikiLastCol"> <p align="center" style="text-align: center">6.0%</p> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <p align="center" style="text-align: center">Other</p> </td>
+			<td class="foswikiTableCol1 foswikiLastCol foswikiLast"> <p align="center" style="text-align: center">4.0%</p> </td>
+		</tr>
+	</tbody></table>
+</div>
+<p></p>
+Figure 1 depicts the data from Table 1 using three approaches: dotplot, pie chart, and barplot. In this example, we can see the limitations of the pie chart as it is difficult to interpret the numerical differences for subjects that did not complete the study. Both the dotplot and the barchart show the magnitude of the differences. However, the dotplot has an advantage over the barchart in that the labels are written horizontally for the disposition as well as the ink used in the plotting region only corresponds to the point of interest, in this case the percentage.
+<p></p>
+<p align="center" style="text-align: center"> <strong>Figure 1: Disposition Graphical Displays</strong> </p> <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic003/Soukup_dotplot1_500.png">Figure 1</a>
+<p></p>
+<h2 id="Application_of_Dotplots_to_Adverse_Event_Data">  <strong><em>Application of Dotplots to Adverse Event Data</em></strong> </h2>
+<p></p>
+As an illustrative example, we can plot the percent of subjects that experience an adverse event (using MedDRA preferred terms) in a clinical trial (Figure 2). In this example, we see that the preferred terms are listed in alphabetical order.
+<p></p>
+<p align="center" style="text-align: center"> <strong>Figure 2: Percentage of subjects reporting an adverse event (MedDRA preferred term)</strong> </p>
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic003/Soukup_Dotplot2_500.png">Figure 2</a>
+<p></p>
+To aid in the visualization, the ordering of the preferred terms can be done based on the corresponding percentage (Figure 3). This plot allows one to easily see that PRURITUS and APPLICATION SITE PRURITUS are reported in the most frequently which requires more inspection if using Figure 2.
+<p></p>
+<p align="center" style="text-align: center"> <strong>Figure 3: Percentage of subjects reporting an adverse event (MedDRA preferred term) sorted by Frequency</strong> </p>
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic003/Soukup_dotplot3_500.png">Figure 3</a>
+<p></p>
+In addition, to using a basic dotplot as shown in Figures 2 and 3, additional information can be incorporated into the dotplot. For example, we could sort, the preferred according to the system organ classification (Figure 4). In this figure, color is used to denote the different the location of the SOC and terms are plotted by SOC descending from most frequent PT. Note that in this case, the color could be suppressed and rather the graphic could be printed in black and white since the SOC is provided on left side of the graphic.
+<p></p>
+<p align="center" style="text-align: center"> <strong>Figure 4: Percentage of subjects reporting an adverse event (MedDRA preferred term) sorted by Frequency and System Organ Classification</strong> </p>
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic003/Soukup_dotplot4_500.png">Figure 4</a>
+<p></p>
+The dotplot also allows one to use different plotting characters to correspond to a grouping (i.e. a superposition of plotting symbols). In the clinical trial realm, this would often times correspond to the treatment assignment. Figure 5 is similar in appearance to Figure 3 but adding in information for alternate treatment arms.
+<p></p>
+<p align="center" style="text-align: center"> <strong>Figure 5: Percentage of subjects reporting an adverse event (MedDRA preferred term) sorted by frequency and grouped by treatment assignment</strong> </p>
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic003/Soukup_dotplot5_500.png">Figure 5</a>
+<p></p>
+To incorporate additional information into the dotplot, one can also panel the display on additional categorical variable. Figure 6 contains such a plot in which the preferred term is paneled on the investigator&rsquo;s determination of whether the event was related to treatment or not.
+<p></p>
+<p align="center" style="text-align: center"> <strong>Figure 6: Percentage of subjects reporting an adverse event (MedDRA preferred term) sorted by frequency and grouped by treatment assignment with panels for treatment relationship</strong> </p>
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic003/Soukup_dotplot6_500.png">Figure 6</a>
+<p></p>
+<strong>Reference</strong>: Cleveland&rsquo;s &ldquo;The Elements of Graphing Data&rdquo; contains an extensive discussion on the use and application of dotplots. This was particularly helpful in devising an approach for presenting the information.
+<p></p>
+<h3 id="Code_40R_10.1_41:">  Code (R 10.1): </h3>
+%CODE{lang="java"}%
+<p></p>
+<strong>Coding Information</strong>
+<p></p>
+All figures were created using R version 10.1.
+<p></p>
+Required Libraries
+<p></p>
+library(lattice)
+<p></p>
+library(SASxport)
+<p></p>
+library(vcd) # for color scheme
+<p></p>
+library(plotrix) # for pie chart
+<p></p>
+Data Preparation Code for ADAE CDISC Pilot Data set
+<p></p>
+adae &lt;- read.xport("C:/Research/CDISC-ADaMPilot/900171/m5/datasets/CDISCPILOT01/analysis/ADAE.xPT",
+<p></p>
+names.tolower=TRUE)
+<p></p>
+adsl &lt;- read.xport("C:/Research/CDISC-ADaMPilot/900171/m5/datasets/CDISCPILOT01/analysis/ADSL.xPT",
+<p></p>
+names.tolower=TRUE)
+<p></p>
+dat &lt;- data.frame(ID=adae$usubjid,PT=adae$aedecod,TRT=adae$trtp)
+<p></p>
+# For each subject get only the unique PT
+<p></p>
+uid &lt;- unique(adae$usubjid)
+<p></p>
+pts &lt;- NULL
+<p></p>
+trts &lt;- NULL
+<p></p>
+for(i in 1:length(uid)){
+<p></p>
+sdat &lt;- subset(dat, ID%in%uid[i])
+<p></p>
+upt &lt;- unique(sdat$PT)
+<p></p>
+npt &lt;- length(upt)
+<p></p>
+rows &lt;- NULL
+<p></p>
+for(k in 1:npt){
+<p></p>
+ww &lt;- which(sdat$PT%in%upt[k])
+<p></p>
+rows[k] &lt;- ww[1]
+<p></p>
+}
+<p></p>
+pts[i] &lt;- list(sdat$PT[rows])
+<p></p>
+trts[i] &lt;- list(sdat$TRT[rows])
+<p></p>
+}
+<p></p>
+dat1 &lt;- data.frame(PT=unlist(pts), TRT=unlist(trts))
+<p></p>
+ss &lt;- with(dat1, table(PT, TRT))
+<p></p>
+sums &lt;- apply(ss, 1, sum)
+<p></p>
+ww &lt;- which(sums&gt;0)
+<p></p>
+xPT &lt;- ss[ww,]
+<p></p>
+# Get percents
+<p></p>
+pPT &lt;- NULL
+<p></p>
+for(j in 1:dim(xPT)[1]){
+<p></p>
+pPT[j] &lt;- list(100*xPT[j,]/c(84,84,84)) #N/group come from ADSL
+<p></p>
+}
+<p></p>
+matP &lt;- round(do.call('rbind', pPT),1)
+<p></p>
+# remove PT which occur in less than p subjects
+<p></p>
+sump &lt;- apply(matP, 1, sum)
+<p></p>
+wsum &lt;- which(sump &gt; 5.0)
+<p></p>
+matXp &lt;- xPT[wsum,]
+<p></p>
+matPp &lt;- matP[wsum,]
+<p></p>
+rownames(matPp) &lt;- rownames(matXp)
+<p></p>
+colnames(matPp) &lt;- colnames(matXp)
+<p></p>
+plotdat &lt;- data.frame(PT = rep(rownames(matPp), 3),
+<p></p>
+TRT = rep(colnames(matPp), each=dim(matPp)[1]),
+<p></p>
+PCT = c(matPp[,1], matPp[,2], matPp[,3]))
+<p></p>
+Setting up Graphical Parameters
+<p></p>
+hclcolors &lt;- rainbow_hcl(4, l=50, start=50, c=75)[c(3,2,4,1)]
+<p></p>
+colorpalette &lt;- c(hclcolors[1:3], 'grey45')
+<p></p>
+new.back &lt;- trellis.par.get("background")
+<p></p>
+new.back$col &lt;- "white"
+<p></p>
+newcol &lt;- trellis.par.get("superpose.symbol")
+<p></p>
+newcol$col &lt;- colorpalette
+<p></p>
+new.pan &lt;- trellis.par.get("strip.background")
+<p></p>
+new.pan$col &lt;- c('gray90','white')
+<p></p>
+trellis.par.set("background", new.back)
+<p></p>
+trellis.par.set("superpose.symbol", newcol)
+<p></p>
+trellis.par.set("strip.background",new.pan)
+<p></p>
+Figure 1 Code
+<p></p>
+advdat &lt;- data.frame(REAS=c('Completed Study','Adverse Event',
+<p></p>
+'Lack of Efficacy', 'Withdrew Consent', 'Other'),
+<p></p>
+PCT=c(75, 7, 8, 6, 4))
+<p></p>
+rr &lt;- rank(advdat$PCT)
+<p></p>
+mylayout &lt;- layout(matrix(c(1,2,3,4), byrow=TRUE, ncol=4),
+<p></p>
+widths=c(1/9,2/9,1/3, 1/3),
+<p></p>
+heights=c(3/4,3/4,3/4,3/4))
+<p></p>
+par(mar=c(5,1,7,0))
+<p></p>
+plot(x=c(0,1), y=c(1,dim(advdat)[1]), axes=FALSE, ann=FALSE, type='n', xlab='',
+<p></p>
+ylab='')
+<p></p>
+text(x=1, y=1:dim(advdat)[1], advdat$REAS[rr], adj=c(1,NA), cex=.9,
+<p></p>
+col='black')
+<p></p>
+par(mar=c(5,0,7,1))
+<p></p>
+plot(x=advdat$PCT[rr], y=1:dim(advdat)[1], type='n', pch=16, axes=FALSE,
+<p></p>
+xlab='Percent')
+<p></p>
+abline(h=1:dim(advdat)[1], col='grey80')
+<p></p>
+box()
+<p></p>
+points(x=advdat$PCT[rr], y=1:dim(advdat)[1], pch=16, col='black')
+<p></p>
+axis(1)
+<p></p>
+mtext('Dotplot', 3, line=1, font=2)
+<p></p>
+#dotplot(reorder(REAS,PCT) ~ PCT, data=advdat)
+<p></p>
+plot(1:5,type="n",axes=FALSE)
+<p></p>
+box()
+<p></p>
+floating.pie(3,3,advdat$PCT, col=c('red','blue','green4','orange','violet'))
+<p></p>
+mtext('Pie Chart', 3, line=1, font=2)
+<p></p>
+legend(x=1, y=5, legend=advdat$REAS, fill=c('red','blue','green4','orange','violet'),
+<p></p>
+text.col=c('red','blue','green4','orange','violet'))
+<p></p>
+par(mar=c(5,2,7,1))
+<p></p>
+barplot(advdat$PCT[rr], names.arg=advdat$REAS[rr], horiz=TRUE, xlab='Percent')
+<p></p>
+mtext('Barplot', 3, line=1, font=2)
+<p></p>
+Figure 2 Code
+<p></p>
+dathigh &lt;- subset(plotdat, TRT%in%'Xanomeline High Dose')
+<p></p>
+dotplot(PT ~ PCT, groups=TRT, data=dathigh,
+<p></p>
+xlab="Percent Reporting Event",
+<p></p>
+pch=16, col='black')
+<p></p>
+Figure 3 Code
+<p></p>
+dotplot(reorder(PT,PCT) ~ PCT, groups=TRT, data=dathigh,
+<p></p>
+xlab="Percent Reporting Event",
+<p></p>
+pch=16, col='black')
+<p></p>
+Figure 4 Code
+<p></p>
+dathigh$SOC &lt;- c('GASTROINTESTINAL DISORDERS', 'PSYCHIATRIC DISORDERS',
+<p></p>
+'GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS',
+<p></p>
+'GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS',
+<p></p>
+'GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS',
+<p></p>
+'GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS',
+<p></p>
+'GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS',
+<p></p>
+'CARDIAC DISORDERS','CARDIAC DISORDERS',
+<p></p>
+'MUSCULOSKELETAL AND CONNECTIVE TISSUE DISORDERS',
+<p></p>
+'SKIN AND SUBCUTANEOUS TISSUE DISORDERS',
+<p></p>
+'PSYCHIATRIC DISORDERS',
+<p></p>
+'RESPIRATORY, THORACIC AND MEDIASTINAL DISORDERS',
+<p></p>
+'GASTROINTESTINAL DISORDERS', 'NERVOUS SYSTEM DISORDERS',
+<p></p>
+'INVESTIGATIONS', 'SKIN AND SUBCUTANEOUS TISSUE DISORDERS',
+<p></p>
+'GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS',
+<p></p>
+'NERVOUS SYSTEM DISORDERS', 'SKIN AND SUBCUTANEOUS TISSUE DISORDERS',
+<p></p>
+'CARDIAC DISORDERS', 'RESPIRATORY, THORACIC AND MEDIASTINAL DISORDERS',
+<p></p>
+'INFECTIONS AND INFESTATIONS', 'GASTROINTESTINAL DISORDERS',
+<p></p>
+'GENERAL DISORDERS AND ADMINISTRATION SITE CONDITIONS',
+<p></p>
+'SKIN AND SUBCUTANEOUS TISSUE DISORDERS',
+<p></p>
+'SKIN AND SUBCUTANEOUS TISSUE DISORDERS','CARDIAC DISORDERS',
+<p></p>
+'SKIN AND SUBCUTANEOUS TISSUE DISORDERS','NERVOUS SYSTEM DISORDERS',
+<p></p>
+'NERVOUS SYSTEM DISORDERS',
+<p></p>
+'INFECTIONS AND INFESTATIONS','GASTROINTESTINAL DISORDERS')
+<p></p>
+sortmat &lt;- function (Mat, Sort) {
+<p></p>
+m &lt;- do.call("order", as.data.frame(Mat[, Sort]))
+<p></p>
+Mat[m, ]
+<p></p>
+} # Used to sort a matrix
+<p></p>
+dat2 &lt;- sortmat(dathigh, c(4,3))
+<p></p>
+tt &lt;- table(dat2$SOC)
+<p></p>
+plotcol &lt;- rainbow(length(tt))
+<p></p>
+dat2$color &lt;- rep(plotcol, tt)
+<p></p>
+mylayout &lt;- layout(matrix(c(1,2,3), byrow=TRUE, ncol=3),
+<p></p>
+widths=c(2/7,3/7, 2/7))
+<p></p>
+par(mar=c(5,1,2,0))
+<p></p>
+plot(x=c(0,1), y=c(1,dim(dat2)[1]), axes=FALSE, ann=FALSE, type='n', xlab='', ylab='')
+<p></p>
+text(x=1, y=1:dim(dat2)[1], dat2$PT, adj=c(1,NA), cex=.9,
+<p></p>
+col=dat2$color)
+<p></p>
+par(mar=c(5,0,2,2))
+<p></p>
+plot(x=dat2$PCT, y=1:dim(dat2)[1], type='n', pch=16, axes=FALSE, xlab='Percent Reporting Event')
+<p></p>
+abline(h=1:dim(dat2)[1], col='grey80')
+<p></p>
+box()
+<p></p>
+points(x=dat2$PCT, y=1:dim(dat2)[1], pch=16, col=dat2$color)
+<p></p>
+axis(1)
+<p></p>
+par(mar=c(5,0,2,1))
+<p></p>
+plot(x=c(0,1), y=c(1,dim(dat2)[1]), axes=FALSE, ann=FALSE, type='n', xlab='', ylab='')
+<p></p>
+text(x=0, y=1:dim(dat2)[1], dat2$SOC, adj=c(0,NA), cex=.85,
+<p></p>
+col=dat2$color)
+<p></p>
+Figure 5 Code
+<p></p>
+dotplot(reorder(PT,PCT) ~ PCT, groups=TRT, data=plotdat,
+<p></p>
+xlab="Percent Reporting Event",
+<p></p>
+pch=1:3,
+<p></p>
+key=list(
+<p></p>
+points=list(
+<p></p>
+col=trellis.par.get("superpose.symbol")$col[1:3],
+<p></p>
+pch=1:3),
+<p></p>
+text=list(
+<p></p>
+lab=levels(plotdat$TRT),
+<p></p>
+col=trellis.par.get('superpose.symbol')$col[1:3]),
+<p></p>
+columns=3, title='Treatment'))
+<p></p>
+Figure 6 Code
+<p></p>
+# Simulate Data
+<p></p>
+set.seed(133)
+<p></p>
+notrelated &lt;- NULL
+<p></p>
+for(i in 1:dim(plotdat)[1]){
+<p></p>
+notrelated[i] &lt;- plotdat$PCT[i] - runif(1, 0, plotdat$PCT[i])
+<p></p>
+}
+<p></p>
+related &lt;- plotdat$PCT - notrelated
+<p></p>
+plotdat2 &lt;- data.frame(PT=rep(plotdat$PT, 2),
+<p></p>
+TRT=rep(plotdat$TRT, 2),
+<p></p>
+REL=factor(rep(c('Related','Not Related'), each=dim(plotdat)[1]),
+<p></p>
+levels=c('Related','Not Related')),
+<p></p>
+PCT=c(related, notrelated))
+<p></p>
+dotplot(reorder(PT,PCT) ~ PCT|REL, groups=TRT, data=plotdat2,
+<p></p>
+xlab="Percent Reporting Event",
+<p></p>
+pch=1:3,
+<p></p>
+key=list(
+<p></p>
+points=list(
+<p></p>
+col=trellis.par.get("superpose.symbol")$col[1:3],
+<p></p>
+pch=1:3),
+<p></p>
+text=list(
+<p></p>
+lab=levels(plotdat$TRT),
+<p></p>
+col=trellis.par.get('superpose.symbol')$col[1:3]),
+<p></p>
+columns=3, title='Treatment'))
+<p></p>
+%ENDCODE%
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

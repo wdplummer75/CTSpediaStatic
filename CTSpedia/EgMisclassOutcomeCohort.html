@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgMisclassOutcomeCohort &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgMisclassOutcomeCohort/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgMisclassOutcomeCohort/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit EgMisclassOutcomeCohort" href="EgMisclassOutcomeCohort.html" rel="alternate">
+<meta name="description" content="EgMisclassOutcomeCohort" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "EgMisclassOutcomeCohort",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example_of_Misclassification_Bias">  Example of Misclassification Bias </h1>
+<h2 id="Outcome_Variable_45_Cohort_Study">  Outcome Variable - Cohort Study </h2>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<a href="BiasInfor.html">Misclassification bias</a> of the <a href="OutcomeVariable.html">outcome variable</a> does not reduce the measure of <a href="StudyAssoc.html">association</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Specificity_of_Outcome_100_37"> Specificity of Outcome 100% </a>
+</li> <li> <a href="#ROC_Curve_with_Specificity_of_Outcome_100_37"> ROC Curve with Specificity of Outcome 100% </a>
+</li> <li> <a href="#Choosing_the_Cutoff"> Choosing the Cutoff </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<h3 id="Diagram">  Diagram </h3>
+<p></p>
+As you can see in the diagram below the <a href="RiskRatio.html">risk ratio</a> is 2.0 in the true scenario.
+<blockquote> <img src="https://www.ctspedia.org/twiki/pub/CTSpedia/BiasInfor/0120_outcome4.JPG" width="306" height="202" alt="0120_outcome4.JPG"> </blockquote>
+<p></p>
+If <a href="ValiditySpecif.html">specificity</a> of the outcome measurement is 100% <ul>
+<li> but there is only 70% <a href="ValiditySensit.html">sensitivity</a> of the classification of the outcome,
+</li> <li> the <a href="RiskRatio.html">risk ratio</a> is unaltered at 2.0.
+</li></ul> 
+This is because all that you have done is to decrease both this cell and this cell by the same percentage.  <ul>
+<li> Therefore, the ratio between exposed and unexposed will not be affected.
+</li></ul> 
+This little trick is worth knowing about when you are using cutoffs for continuous variables using <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="ROCCurves.html">ROC curves</a> - it is a recommendation to choose cutoffs which provide very high specificity.
+<p></p>
+<h2 id="Specificity_of_Outcome_100_37">  Specificity of Outcome 100% </h2>
+<p></p>
+As noted in this figure from <a class="foswikiCurrentTopicLink" href="#CopelandBias">Copeland</a> (1977) when specificity is 100%, <ul>
+<li> you can actually get an unbiased risk ratio regardless of the sensitivity of the outcome measurement.
+</li> <li> Here the true risk ratio is 2.0 and when specificity is 100% you can get a risk ratio of 2.0 regardless of the sensitivity.
+</li></ul> 
+<blockquote> <img src="https://www.ctspedia.org/twiki/pub/CTSpedia/BiasInfor/0120_outcome5.JPG" alt="0120_outcome5.JPG" height="230" width="297"> </blockquote>
+<p></p>
+<span id="RocCurves"></span>
+<p></p>
+<h2 id="ROC_Curve_with_Specificity_of_Outcome_100_37">  ROC Curve with Specificity of Outcome 100% </h2>
+<p></p>
+As shown in the figure below 100% specificity in the outcome measurement preserves unbiased risk ratios even in the face of less than perfect sensitivity. <ul>
+<li> This is worth knowing when you are considering which outcomes to use or where to make cutoffs for certain diagnostic tests that are measured in their most raw form with a continuous variable.
+</li></ul> 
+<img src="https://www.ctspedia.org/twiki/pub/CTSpedia/BiasInfor/0120_outcome6_ROC.JPG" width="320" height="182" alt="0120_outcome6_ROC.JPG">
+<p></p>
+<span id="ChooseCutoff"></span>
+<p></p>
+<h2 id="Choosing_the_Cutoff">  Choosing the Cutoff </h2>
+ <strong>Choosing the most specific cutoff or the cutoff associated with 100% specificity</strong> will lead to least biased ratio measures of effect.  <ul>
+<li> In the ROC curve you can see that you have many choices in terms of where you can make your cutoff for positivity to remind.
+</li> <li> This is important, for example, when you have a diagnostic test for outcome, say an antibody test for an infectious disease, you have many choices in terms of where you can make your cutoff for positivity.
+</li></ul> 
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<span id="CopelandBias"></span>
+<p></p>
+Copeland, K. T., Checkoway, H., McMichael, A. J., &amp; Holbrook, R. H. (1977). Bias due to misclassification in the estimation of relative risk. <em>Am J Epidemiol, 105</em> (5), 488-495.
+<p></p>
+<hr />
+ <strong><em><br /></em></strong>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

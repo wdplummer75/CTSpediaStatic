@@ -1,0 +1,541 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>LinePlotExamples &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/LinePlotExamples/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/LinePlotExamples/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit LinePlotExamples" href="LinePlotExamples.html" rel="alternate">
+<meta name="description" content="LinePlotExamples" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "LinePlotExamples",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="StatGraphHome.html">Return to Safety Graphics Home</a>
+<p></p>
+<strong>Table of Contents</strong>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Type_of_Graph:_Line_Plot"> Type of Graph: Line Plot </a>
+</li> <li> <a href="#Last_updated_by__Main.FabriceBancken__on__August_26_44_2011"> Last updated by FabriceBancken on August 26, 2011 </a>
+</li> <li> <a href="#Type_of_Data:_Categorical_and_Continuous"> Type of Data: Categorical and Continuous </a>
+</li> <li> <a href="#Description_and_purpose:"> Description and purpose: </a>
+</li> <li> <a href="#Example_1:"> Example 1: </a> <ul>
+<li> <a href="#Click_for_Code_Example1"> Click for Code Example1</br> </a>
+</li> <li> <a href="#Code_40Example_1_41:"> Code (Example 1 ): </a>
+</li></ul> 
+</li> <li> <a href="#Example_2:"> Example 2: </a> <ul>
+<li> <a href="#Click_for_Code_Example_2"> Click for Code Example 2 </a>
+</li> <li> <a href="#Code_40Example_2_41:"> Code (Example 2 ): </a>
+</li></ul> 
+</li> <li> <a href="#Example_3:"> Example 3: </a> <ul>
+<li> <a href="#Click_for_Code_Example_3"> Click for Code Example 3 </a>
+</li> <li> <a href="#Code_40Example_3_41:"> Code (Example 3 ): </a>
+</li></ul> 
+</li> <li> <a href="#Example_4"> Example 4 </a> <ul>
+<li> <a href="#Click_for_Code_Example_4"> Click for Code Example 4 </a>
+</li> <li> <a href="#Code_40Example_4_41:"> Code (Example 4 ): </a>
+</li></ul> 
+</li> <li> <a href="#A_42Reference_42:"> Reference: </a>
+</li></ul> 
+</div>
+<p></p>
+<h3 id="Type_of_Graph:_Line_Plot">  Type of Graph: Line Plot </h3>
+<h3 id="Last_updated_by__Main.FabriceBancken__on__August_26_44_2011">  Last updated by <strong><em>Main.FabriceBancken</em></strong> on <strong><em>August 26, 2011</em></strong> </h3>
+<h3 id="Type_of_Data:_Categorical_and_Continuous">  Type of Data: Categorical and Continuous </h3>
+<h3 id="Description_and_purpose:">  Description and purpose: </h3>
+ The line plot displays either summary data (e.g., mean and 95 CI limits)or a subject's individual measurements (otherwise known as subject's profile) summary data at a series of time points.
+<p></p>
+In both cases, the X axis typically represents time, and therefore must be a quantitative axis, in the sense that the distance on the graph between 2 time points should be proportional to the time difference between those timepoints
+<p></p>
+For summary data,, the Y axis represents the summary results at the time point under consideration which - in most cases - are represented by a symbol and (vertical) error bar.
+<p></p>
+For subject's profiles, a symbol located at (x,y) represents the result y(laboratory result, vital signs, etc) for the subject under consideration at the time point x. (Example 4)
+<p></p>
+Connecting lines: The symbols representing points estimates may be connected with lines to outline trends over time.
+<p></p>
+Special features:
+<p></p>
+Margin : A margin can be drawn in the plot to hold a particular result. For example, when depicting the change from baseline at each time point during a study [based on available data at the timepoint], one may want to have a margin or side panel in which sensitivity analysis results are shown (LOCF, or other estimate obtained with more sophisticated techniques accounting for missing data). (see Example 1)
+<p></p>
+A good practice also to display the number of subjects who contributed to the summary data at timepoint Xi (i=1, ...n) (see Example 1). This can be displayed using text or using a bottom small side panel holding another lien plott (see Example 2)</br>
+<p></p>
+<br>%LIGHTBOX{ image="Bancken_LinePlotExample1.png" thumbnail="Bancken_LinePlotExample1_200.png" }%</br>
+<p></p>
+<h3 id="Example_1:">  Example 1:  </h3>
+Click on image to enlarge.
+<p></p>
+<h4 id="Click_for_Code_Example1">  <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/LinePlotExamples/lgplot_example01.sas">Click for Code Example1</a></br> </h4>
+<p></p>
+<p></p>
+<h4 id="Code_40Example_1_41:">  Code (Example 1 ): </h4>
+%CODE{lang="java"}%
+%autorun;
+<p></p>
+proc format; ;
+   value groupf
+     1 = 'Active'
+     2 = 'Control'
+     ;
+   value grpsf
+     1 = 'Act'
+     2 = 'Ctr' 
+     ;
+   value ep
+     1="Endpoint";
+run;
+<p></p>
+<p></p>
+<p></p>
+data smrydata;
+  set data_a.figure8_data;
+  if treat="Active" then grp=1;else grp=2;
+  grp2=grp;
+  if week=16 then do;
+    timeq=.;
+    timeq2=1+(grp-1.5)*0.20;
+  end;
+  else do;
+    timeq=week+(grp-1.5)*0.20;  *bring a slight horizontal shift to avoid error bars to overlap;
+    timeq2=.; *timeq - to use in the left column panels, timeq2 to use in the right col panels;
+  end; 
+run;
+<p></p>
+proc print;
+<p></p>
+title;
+proc template;
+   define style styles.redblue;
+      parent = styles.default;
+      class <a title="Create this topic" href="GraphColors.html" class="foswikiNewLink" rel="nofollow">GraphColors</a>
+         "Abstract colors used in graph styles" /
+         'gcdata1' = cx0300B3
+         'gcdata2' = cxFD1808;
+         style color_list from color_list
+         "Abstract colors used in graph styles" /
+         'bgA'   = cxffffff;
+   end;
+run;
+<p></p>
+<p></p>
+  * version with lines ;
+<p></p>
+proc template;
+  define statgraph <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="GroupedLG.html">GroupedLG</a>;
+    begingraph;
+    entrytitle 'Mean Change from Baseline in ALT (U/L)';
+    entryfootnote halign=left 'n.obs = Number of Observations at Time point in Treatment group';
+    layout lattice / columns=2 columngutter=0 columnweights=(.80 .20) rows=2 rowweights=(.70 .30);
+    *left upper cell with results over time;
+    sidebar / align=top;
+          discretelegend "a" / title="Treatment Group";
+    endsidebar;
+    layout overlay /    
+      xaxisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      x2axisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      yaxisopts=(label="Mean (95%%CI) Change from Bsl." griddisplay=on linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.10) viewmin=-0.05 viewmax=0.65))
+      y2axisopts=(display=(line) linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.10) viewmin=-0.05 viewmax=0.65));
+      scatterplot x=timeq y=meanchg / group=grp2 name='a' yerrorlower=loerror yerrorupper=uperror  ;
+      seriesplot x=timeq y=meanchg / group=grp2;
+      scatterplot x=timeq y=meanchg /  markerattrs=(size=0) xaxis=x2 yaxis=y2;                                   
+    endlayout;
+    *right upper cell with results at Endpoint;
+    layout overlay /        
+      yaxisopts=(display=(line ticks) griddisplay=on linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.1) viewmin=-0.05 viewmax=0.65))
+      y2axisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.1) viewmin=-0.05 viewmax=0.65))
+      xaxisopts=(display=(line) linearopts=(tickvaluelist=(1) viewmin=0 viewmax=2) offsetmin=0 offsetmax=0)
+      x2axisopts=(display=(line)linearopts=(tickvaluelist=(1) viewmin=0 viewmax=2) offsetmin=0 offsetmax=0);
+      scatterplot x=timeq2 y=endpoint / group=grp2 yerrorlower=loerror yerrorupper=uperror;
+      scatterplot x=timeq2 y=endpoint /  markerattrs=(size=0) xaxis=x2 yaxis=y2;                                  
+    endlayout;
+    *left lower cell with number of observations over time;
+    layout overlay /          
+      xaxisopts=(label="Time (Weeks)" linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      yaxisopts=(label="n.obs." linearopts=(tickvaluelist=(1 2) viewmin=0.5 viewmax=2.5));
+      scatterplot y=grp x=timeq  /  group=grp2 markercharacter=atrisk markercharacterattrs=(Size=8pt Family=GraphValueText:FontFamily) ; 
+    endlayout;
+      *right lower cell with number of observations at Endpoint;
+    layout overlay /   
+      xaxisopts=(display=(line label) label="Endpoint" linearopts=(tickvaluelist=(1) viewmin=0 viewmax=2) offsetmin=0 offsetmax=0)
+      yaxisopts=(display=(line) linearopts=(tickvaluelist=(1 2) viewmin=0.5 viewmax=2.5));
+      scatterplot y=grp x=timeq2  /  group=grp2 markercharacter=atrisk markercharacterattrs=(Size=8pt Family=GraphValueText:FontFamily); 
+    endlayout;
+<p></p>
+    endlayout;
+  endgraph;
+end;
+run;
+<p></p>
+<p></p>
+ods listing close;
+ods rtf style=Styles.Redblue file="./lgplot_example01.rtf";
+goptions reset=goptions device=sasemf target=sasemf ftext='Arial' ftitle='Arial/bold';
+ods graphics / reset noborder width=600px height=450px noscale;
+proc sgrender data=smrydata template=GroupedLG;
+   format grp grpsf. grp2 groupf. timeq2 ep. ;
+run;
+ODS RTF CLOSE;
+ods listing;
+quit;
+ ;
+%ENDCODE%
+<p></p>
+<br>%LIGHTBOX{ image="Bancken_LinePlotExample2.png" thumbnail="Bancken_LinePlotExample2_200.png" }%</br>
+<p></p>
+<h3 id="Example_2:">  Example 2:  </h3>
+Click on image to enlarge.
+<p></p>
+<p></p>
+<h4 id="Click_for_Code_Example_2">  <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/LinePlotExamples/lgplot_example02.sas">Click for Code Example 2</a> </h4>
+<p></p>
+<h4 id="Code_40Example_2_41:">  Code (Example 2 ): </h4>
+%CODE{lang="java"}%
+%autorun;
+<p></p>
+proc format; ;
+   value groupf
+     1 = 'Active'
+     2 = 'Control'
+     ;
+   value grpsf
+     1 = 'Act'
+     2 = 'Ctr' 
+     ;
+   value ep
+     1="Endpoint";
+run;
+<p></p>
+<p></p>
+<p></p>
+data smrydata;
+  set data_a.figure8_data;
+  if treat="Active" then grp=1;else grp=2;
+  grp2=grp;
+  if week=16 then do;
+    timeq=.;
+    timeq2=1+(grp-1.5)*0.20;
+  end;
+  else do;
+    timeq=week+(grp-1.5)*0.20;  *bring a slight horizontal shift to avoid error bars to overlap;
+    timeq2=.; *timeq - to use in the left column panels, timeq2 to use in the right col panels;
+  end; 
+run;
+<p></p>
+proc print;
+<p></p>
+title;
+proc template;
+   define style styles.redblue;
+      parent = styles.default;
+      class <a href="GraphColors.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">GraphColors</a>
+         "Abstract colors used in graph styles" /
+         'gcdata1' = cx0300B3
+         'gcdata2' = cxFD1808;
+         style color_list from color_list
+         "Abstract colors used in graph styles" /
+         'bgA'   = cxffffff;
+   end;
+run;
+<p></p>
+<p></p>
+  * version with lines ;
+<p></p>
+proc template;
+  define statgraph <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="GroupedLG.html">GroupedLG</a>;
+    begingraph;
+    entrytitle 'Mean Change from Baseline in ALT (U/L)';
+    entryfootnote halign=left 'n.obs = Number of Observations at Time point in Treatment group';
+    layout lattice / rows=2 rowweights=(.65 .35);
+    *upper cell with results over time;
+    sidebar / align=top;
+          discretelegend "a" / title="Treatment Group";
+    endsidebar;
+    layout overlay /    
+      yaxisopts=(label="Mean (95%%CI) Change from Bsl." griddisplay=on linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.1) viewmin=-0.05 viewmax=0.65))
+      y2axisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.1) viewmin=-0.05 viewmax=0.65))
+      xaxisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      x2axisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5));
+<p></p>
+      scatterplot x=timeq y=meanchg / group=grp2 name='a' yerrorlower=loerror yerrorupper=uperror  ;
+      seriesplot x=timeq y=meanchg / group=grp2 xaxis=x2 yaxis=y2;                                   
+    endlayout;
+<p></p>
+     *lower cell with number of observations over time;
+    layout overlay /          
+      xaxisopts=(label="Time (Weeks)" linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      x2axisopts=(display=(line) linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      yaxisopts=(label="n.obs." griddisplay=on linearopts=(tickvaluesequence=(start=130 end=180 increment=10) viewmin=125 viewmax=185))
+      y2axisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=130 end=180 increment=10) viewmin=125 viewmax=185));
+<p></p>
+      scatterplot x=timeq y=atrisk /  group=grp2 ;
+      seriesplot x=timeq y=atrisk /  group=grp2 xaxis=x2 yaxis=y2; 
+    endlayout;
+<p></p>
+    endlayout;
+  endgraph;
+end;
+run;
+<p></p>
+<p></p>
+ods listing close;
+ods rtf style=Styles.Redblue file="./lgplot_example03.rtf";
+goptions reset=goptions device=sasemf target=sasemf ftext='Arial' ftitle='Arial/bold';
+ods graphics / reset noborder width=600px height=600px noscale;
+proc sgrender data=smrydata template=GroupedLG;
+   format grp grpsf. grp2 groupf. timeq2 ep. ;
+run;
+ODS RTF CLOSE;
+ods listing;
+quit;
+ ;
+%ENDCODE%
+<p></p>
+<p></p>
+<br>%LIGHTBOX{ image="Bancken_LinePlotExample2.png" thumbnail="Bancken_LinePlotExample3_200.png" }%</br>
+<p></p>
+<h3 id="Example_3:">  Example 3:  </h3>
+Click on image to enlarge.
+<p></p>
+<p></p>
+<h4 id="Click_for_Code_Example_3">  <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/LinePlotExamples/lgplot_example03.sas">Click for Code Example 3</a> </h4>
+<p></p>
+<h4 id="Code_40Example_3_41:">  Code (Example 3 ): </h4>
+%CODE{lang="java"}%
+%autorun;
+<p></p>
+proc format; ;
+   value groupf
+     1 = 'Active'
+     2 = 'Control'
+     ;
+   value grpsf
+     1 = 'Act'
+     2 = 'Ctr' 
+     ;
+   value ep
+     1="Endpoint";
+run;
+<p></p>
+<p></p>
+<p></p>
+data smrydata;
+  set data_a.figure8_data;
+  if treat="Active" then grp=1;else grp=2;
+  grp2=grp;
+  if week=16 then do;
+    timeq=.;
+    timeq2=1+(grp-1.5)*0.20;
+  end;
+  else do;
+    timeq=week+(grp-1.5)*0.20;  *bring a slight horizontal shift to avoid error bars to overlap;
+    timeq2=.; *timeq - to use in the left column panels, timeq2 to use in the right col panels;
+  end; 
+run;
+<p></p>
+proc print;
+<p></p>
+title;
+proc template;
+   define style styles.redblue;
+      parent = styles.default;
+      class <a title="Create this topic" href="GraphColors.html" class="foswikiNewLink" rel="nofollow">GraphColors</a>
+         "Abstract colors used in graph styles" /
+         'gcdata1' = cx0300B3
+         'gcdata2' = cxFD1808;
+         style color_list from color_list
+         "Abstract colors used in graph styles" /
+         'bgA'   = cxffffff;
+   end;
+run;
+<p></p>
+<p></p>
+  * version with lines ;
+<p></p>
+proc template;
+  define statgraph <a title="Create this topic" href="GroupedLG.html" class="foswikiNewLink" rel="nofollow">GroupedLG</a>;
+    begingraph;
+    entrytitle 'Mean Change from Baseline in ALT (U/L)';
+    entryfootnote halign=left 'n.obs = Number of Observations at Time point in Treatment group';
+    layout lattice / rows=2 rowweights=(.70 .30);
+    *upper cell with results over time;
+    sidebar / align=top;
+          discretelegend "a" / title="Treatment Group";
+    endsidebar;
+    layout overlay /    
+      yaxisopts=(label="Mean (95%%CI) Change from Bsl." griddisplay=on linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.1) viewmin=-0.05 viewmax=0.65))
+      y2axisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=0.6 increment=0.1) viewmin=-0.05 viewmax=0.65))
+      xaxisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      x2axisopts=(display=(line ticks) linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5));
+      scatterplot x=timeq y=meanchg / group=grp2 name='a' yerrorlower=loerror yerrorupper=uperror  ;
+      seriesplot x=timeq y=meanchg / group=grp2 xaxis=x2 yaxis=y2;                                   
+    endlayout;
+<p></p>
+     *lower cell with number of observations over time;
+    layout overlay /          
+      xaxisopts=(label="Time (Weeks)" linearopts=(tickvaluesequence=(start=0 end=12 increment=2) viewmin=-0.5 viewmax=12.5))
+      yaxisopts=(label="n.obs." linearopts=(tickvaluelist=(1 2) viewmin=0.5 viewmax=2.5));
+      scatterplot y=grp x=timeq  /  group=grp2 markercharacter=atrisk markercharacterattrs=(Size=8pt Family=GraphValueText:FontFamily) ; 
+    endlayout;
+<p></p>
+    endlayout;
+  endgraph;
+end;
+run;
+<p></p>
+<p></p>
+ods listing close;
+ods rtf style=Styles.Redblue file="./lgplot_example02.rtf";
+goptions reset=goptions device=sasemf target=sasemf ftext='Arial' ftitle='Arial/bold';
+ods graphics / reset noborder width=600px height=450px noscale;
+proc sgrender data=smrydata template=GroupedLG;
+   format grp grpsf. grp2 groupf. timeq2 ep. ;
+run;
+ODS RTF CLOSE;
+ods listing;
+quit;
+ ;
+%ENDCODE%
+<p></p>
+<h3 id="Example_4">  Example 4 </h3>
+<p></p>
+<img alt="Figure_6_200.PNG" src="https://www.ctspedia.org/wiki/pub/CTSpedia/LabsLiverClinicalQuestionTopic005/Figure_6_200.PNG">
+<p></p>
+<h4 id="Click_for_Code_Example_4">  <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/LinePlotExamples/lgplot_example04.sas">Click for Code Example 4</a> </h4>
+<p></p>
+<h4 id="Code_40Example_4_41:">  Code (Example 4 ): </h4>
+%CODE{lang="java"}%
+data labs (keep=patient relday sday alat biltot alkph asat miny);
+   length patient $50;
+   label alat="ALAT";
+   label biltot="Bilirubin Total";
+   label alkph="Alk Phos";
+   label asat="ASAT";
+   label relday="Day";
+   label miny="Trial Duration";
+<p></p>
+   patient="Patient 5152: White Male Age 48; Drug: A";
+   do relday = -25 to 175 by 25;
+      alat = 0.5 + 4 * sin(3.14 * (relday+25) / 360.0);
+      asat = 0.5 + 3 * sin(3.14 * (relday+25) / 400.0);
+      alkph = 0.4 + 2 * sin(3.14 * (relday+25) / 540.0);
+      biltot = 0.4 + 1 * sin(3.14 * (relday+25) / 320.0);
+      miny=-0.5;
+      sday=relday;
+      if relday &lt; 0 or relday &gt; 150 then do;
+         miny = .;
+         sday=.;
+      end;
+      output;
+   end;
+<p></p>
+   patient="Patient 6416: White Male Age 64; Drug: A";
+   do relday = -25 to 70 by 15;
+      alat = 1.5 + 2 * sin(3.14 * (relday+25) / 540.0);
+      asat = 1.0 + 1 * sin(3.14 * (relday+25) / 540.0);
+      alkph = 0.5 + 2 * sin(3.14 * (relday+25) / 360.0);
+      biltot = 1.5 + 1 * sin(3.14 * (relday+25) / 360.0);
+      miny=-0.5;
+      sday=relday;
+      if relday &lt; 0 or relday &gt; 60 then do;
+         miny = .;
+         sday=.;
+      end;
+      output;
+   end;
+<p></p>
+   patient="Patient 6850: White Male Age 51; Drug: A";
+   do relday = -25 to 175 by 25;
+      alat = 2 + 1 * sin(3.14 * (relday+25) / 90);
+      asat = 1.2 + 1 * sin(3.14 * (relday+25) / 100);
+      alkph = 0.7 + 0.5 * sin(3.14 * (relday+25) / 120);
+      biltot = 0.3 + 0.2 * sin(3.14 * (relday+25) / 110);
+      miny=-0.5;
+      sday=relday;
+      if relday &lt; 0 or relday &gt; 150 then do;
+         miny = .;
+         sday=.;
+      end;
+      output;
+   end;
+<p></p>
+   patient="Patient 6969: White Female Age 48; Drug: B";
+   do relday = -25 to 175 by 25;
+      alat = 0.5 + 1.5 * sin(3.14 * (relday+25) / 540);
+      asat = 0.6 + 1.2 * sin(3.14 * (relday+25) / 480);
+      alkph = 0.7 + 1 * sin(3.14 * (relday+25) / 600);
+      biltot = 0.3 + 1 * sin(3.14 * (relday+25) / 500);
+      miny=-0.5;
+      sday=relday;
+      if relday &lt; 0 or relday &gt; 150 then do;
+         miny = .;
+         sday=.;
+      end;
+      output;
+   end;
+run;
+<p></p>
+ods listing close;
+ods html file='riskpanel.html' path='.' style=statistical ;
+ods graphics / reset width=800px height=600px imagename='RiskPanel' imagefmt=gif ;
+<p></p>
+title "Liver Function Tests by Trial Day: At Risk Patients";
+footnote1 ' ';
+footnote2 j=l italic height=8pt
+    " For ALAT, ASAT and Alkaline Phosphatase, the Clinical Concern Level is 2 ULN;";
+footnote3 j=l italic height=8pt
+     " For Bilirubin Total, the CCL is 1.5 ULN: "
+     "where ULN is the Upper Level of Normal";
+<p></p>
+proc sgpanel data=labs cycleattrs;
+   panelby patient / novarname;
+   series x=relday y=alat / markers lineattrs=(thickness=2px pattern=solid);
+   series x=relday y=asat / markers lineattrs=(thickness=2px pattern=solid);
+   series x=relday y=alkph / markers lineattrs=(thickness=2px pattern=solid);
+   series x=relday y=biltot / markers lineattrs=(thickness=2px pattern=solid);
+   band x=sday lower=miny upper=4.5 / transparency=0.8 legendlabel='Trial Duration';
+   refline 1 1.5 2 / axis=Y lineattrs=(pattern=dash);
+   colaxis min=-50 max= 200 offsetmin=.1 display=(nolabel);
+   rowaxis label="Upper Limit Normal";
+run;
+ods html close;
+ods listing;
+%ENDCODE%
+<p></p>
+<p></p>
+<h3 id="A_42Reference_42:">  <strong>Reference</strong>: </h3>
+Schwartz, Susan. 2009 \x93Clinical Trial Reporting Using SAS/GRAPH\xAE SG Procedures.\x94 Proceedings of the SAS Global Forum 2009 Conference. Cary, NC: SAS Institute Inc. Available at <a href="http://support.sas.com/resources/papers/proceedings09/174-2009.pdf">http://support.sas.com/resources/papers/proceedings09/174-2009.pdf</a>.
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

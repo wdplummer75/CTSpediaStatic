@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisBiasVariance &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisBiasVariance/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisBiasVariance/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit StudyAnalysisBiasVariance" rel="alternate" href="StudyAnalysisBiasVariance.html">
+<meta name="description" content="StudyAnalysisBiasVariance" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyAnalysisBiasVariance"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Bias_45Variance_Tradeoff">  Bias-Variance Tradeoff </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Bias_45Variance_Tradeoff"> Bias-Variance Tradeoff </a>
+</li> <li> <a href="#A_List_of_Potential_Confounders"> A List of Potential Confounders </a>
+</li> <li> <a href="#B_List_of_Potential_Confounders"> B List of Potential Confounders </a>
+</li> <li> <a href="#Using_the_A_List_and_the_B_List"> Using the A List and the B List </a> <ul>
+<li> <a href="#Adjusting_or_Ignoring_B_List_Factors"> Adjusting or Ignoring B List Factors </a>
+</li></ul> 
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Bias_45Variance_Tradeoff_AN1">  Bias-Variance Tradeoff </h2>
+<p></p> <ul>
+<li> What is a <strong>meaningful difference</strong> between the crude and adjusted measure of <a href="StudyAssoc.html">association</a>?
+</li> <li> Should you accept the <strong><a href="StratificationTerm.html">crude estimate</a></strong> or the <a href="StudyAnalysisAdjustment.html">summary adjusted etimate</a> as your final answer?
+</li></ul> 
+The tension is between trying to get the valid answer, or the least <a href="BiasDefinition.html">biased</a> answer without having to take unnecessary penalties in <a href="PrecisionStudy.html">precision</a>. This is known as the <strong>bias-variance tradeoff</strong>, and the methodologic literature is inconsistent on the best way to handle this, mainly because there is no one correct approach. This leaves the investigator on his/her own. <strong>The only scientifically rigorous approach to this would be to create two lists of potential confounders prior to conducting the analysis.</strong>
+<p></p>
+<span id="AListBias"></span>
+<h2 id="A_List_of_Potential_Confounders">  A List of Potential Confounders </h2>
+<p></p>
+<strong>A-List:</strong> Those factors for which you will accept the adjusted result no matter how small the difference from the crude. <ul>
+<li> Factors you know or believe are <strong><a href="BiasConfound.html">confounders</a></strong>.
+</li> <li> Example: Age, when looking at the association between hypertension and coronary artery disease.
+</li></ul> 
+<span id="BListBias"></span>
+<p></p>
+<h2 id="B_List_of_Potential_Confounders">  B List of Potential Confounders </h2>
+ <strong>B-List:</strong> Those factors for which you will accept the adjusted result only if it meaningfully differs from the crude (with some pre-specified difference, e.g., 10%).  <ul>
+<li> Factors you are less sure about causing <strong><a href="BiasConfound.html">confounding</a></strong>.
+</li> <li> These might be factors which you think may be confounders but you are not sure about.
+</li></ul> 
+<p></p>
+<h2 id="Using_the_A_List_and_the_B_List">  Using the A List and the B List </h2>
+ Always putting <strong>all factors on A list</strong> may seem conservative,  <ul>
+<li> but not necessarily the right thing to do in that there may be a <a href="StudyAnalysisInappropriate.html">penalty</a> in statistical <a href="PrecisionStudy.html">precision</a>.
+</li></ul> 
+For some analyses, you may have no factors on A list.  <ul>
+<li> For other analyses, you may have no factors on B list.
+</li></ul> 
+<strong>Recommendation</strong>: NOT many variables on A list  <ul>
+<li> <strong>Put just about everything on the B list</strong>.
+</li></ul> 
+<p></p>
+<h3 id="Adjusting_or_Ignoring_B_List_Factors">  Adjusting or Ignoring B List Factors </h3>
+ Here are a few numerical examples showing when to adjust and when not to adjust for factors on the B list.
+<p></p>
+<blockquote>
+<p></p>
+<img width="309" src="StudyAnalysisVariance.attachments/0421_1blist.JPG" alt="0421_1blist.JPG" height="200">
+</blockquote>
+<p></p>
+1) <strong>Column 1</strong> is the crude estimate.
+<p></p>
+2) <strong>Columns 2 and 3</strong> are the stratum-specific estimates.
+<p></p>
+3) <strong>Column 4</strong> is the adjusted estimate, the weighted average of the stratum specific estimates.
+<p></p> <ul>
+<li> If the crude is 4.0 and the adjusted is 2, you would <strong>always report</strong> the adjusted estimate.
+</li> <li> If the crude is 4.0 and the adjusted is 1.1, you would <strong>definitely report</strong> the adjusted.
+</li> <li> If the crude is 0.2 and the adjusted is 0.8, you would <strong>definitely report</strong> the adjusted.
+</li> <li> If the crude is 4.0 and the adjusted is 4.1, you <strong>would not adjust</strong>. You would ignore this in favor of the crude estimate.
+</li> <li> If the crude is 1.9 and the adjusted is 1.8, you <strong>would not adjust</strong>.
+</li></ul> 
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

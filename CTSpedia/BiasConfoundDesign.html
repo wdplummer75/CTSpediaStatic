@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasConfoundDesign &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundDesign/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundDesign/favicon.ico">
+<link title="edit BiasConfoundDesign" type="application/x-wiki" rel="alternate" href="BiasConfoundDesign.html">
+<meta name="description" content="BiasConfoundDesign" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "BiasConfoundDesign",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Reducing_Confounding_During_Study_Design">  Reducing Confounding During Study Design </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Methods_for_Reducing_Confounding_During_Study_Design"> Methods for Reducing Confounding During Study Design </a>
+</li> <li> <a href="#A_1._Randomization"> 1. Randomization </a>
+</li> <li> <a href="#A_2._Restriction"> 2. Restriction </a>
+</li> <li> <a href="#A_3._Matching"> 3. Matching </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Methods_for_Reducing_Confounding_During_Study_Design">  Methods for Reducing Confounding During Study Design </h2>
+<p></p>
+The <a href="CausalDiagrams.html">causal diagram</a> below presents ways to prevent or manage <a href="BiasConfound.html">confounding</a> during study design.
+<p></p>
+<blockquote>
+<p></p>
+<img src="BiasConfoundDesign.attachments/0402_3dags.JPG" alt="0402_3dags.JPG" height="220" width="176">
+</blockquote>
+<p></p> <ul>
+<li> You can block or interrupt the <strong>association between the confounder and the exposure</strong> (shown in the top diagram)
+</li> <li> You can block or interrupt the <strong>association between the confounder and the disease</strong> (in the bottom diagram).
+</li> <li> You can block or interrupt both arms.
+</li></ul> 
+<strong>There are three main ways to reduce confounding during study design:</strong>
+<p></p>
+<h2 id="A_1._Randomization">  1. Randomization </h2>
+ <strong>Definition of <a href="StudyTermRandom.html">Randomization</a></strong>:  <ul>
+<li> random assignment of subjects to <a href="PredictorVariable.html">exposure</a> (e.g., treatment) categories <img src="BiasConfoundDesign.attachments/0402_rand.JPG" width="265" height="84" alt="0402_rand.JPG">
+</li></ul> 
+This will block all association <strong>between the <a href="BiasConfound.html">confounder</a></strong> and the <strong>exposure</strong>:
+<p></p>
+<img src="BiasConfoundDesign.attachments/0402_dag_ran.JPG" alt="0402_dag_ran.JPG" height="164" width="249">
+<h2 id="A_2._Restriction">  2. Restriction </h2>
+ <strong>Definition of <a href="StudyTermRestrict.html">Restriction</a></strong>: Restrict enrollment to only those subjects who have a specific value/range of the confounding variable
+<p></p>
+This will eliminate: <ul>
+<li> any possible association <strong>between the <a href="PredictorVariable.html">exposure</a></strong> and the <strong><a href="BiasConfound.html">confounder</a></strong>
+</li> <li> any possible association <strong>between the</strong> <strong><a href="OutcomeVariable.html">disease</a></strong> and <strong>confounder</strong>
+</li></ul> 
+<img src="BiasConfoundDesign.attachments/0402_4restrict.JPG" width="258" height="163" alt="0402_4restrict.JPG">
+<p></p>
+<h2 id="A_3._Matching">  3. Matching </h2>
+ <strong>Definition of <a href="StudyTermMatch.html">Matching</a></strong>:  <ul>
+<li> Match <strong>unexposed or non-case subjects</strong> to those of the comparison group (either <strong>exposed or cases</strong>) in terms of the <a href="BiasConfound.html">confounder</a> in question.
+</li></ul> 
+<strong><a href="CohortStudy.html">Cohort Study</a>:</strong> unexposed subjects are <strong>matched</strong> to <a href="PredictorVariable.html">exposed subjects</a> according to their values for the potential <a href="BiasConfound.html">confounder</a>. <img src="BiasConfoundDesign.attachments/0407_3amatch.JPG" alt="0407_3amatch.JPG" height="147" width="203"> 
+<hr />
+<p></p>
+<strong><a href="CaseControlStudy.html">Case Control Study</a>:</strong> non-diseased controls are <strong>matched</strong> to <a href="OutcomeVariable.html">diseased</a> cases on the <a href="BiasConfound.html">confounding</a> variable. <img width="203" height="147" alt="3bmatch.JPG" src="BiasConfoundDesign.attachments/3bmatch.JPG">
+<p></p>
+<hr />
+ <strong><em><br /></em></strong>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

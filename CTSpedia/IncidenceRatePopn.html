@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>IncidenceRatePopn &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/IncidenceRatePopn/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/IncidenceRatePopn/favicon.ico" rel="shortcut icon">
+<link rel="alternate" href="IncidenceRatePopn.html" title="edit IncidenceRatePopn" type="application/x-wiki">
+<meta name="description" content="IncidenceRatePopn" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "IncidenceRatePopn",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Use_of_Incidence_Rate_45_Calculate_from_Population_Based_Registries">  Use of Incidence Rate - Calculate from Population Based Registries </h1>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Advantage_of_Using_Incidence_Rate"> Advantage of Using Incidence Rate </a>
+</li> <li> <a href="#Calculating_a_Rate"> Calculating a Rate </a>
+</li> <li> <a href="#Large_Population_Time_Rates"> Large Population Time Rates </a>
+</li> <li> <a href="#Average_Population_40Group_data_41_Rates_versus_Individual_Data_Rates"> Average Population (Group data) Rates versus Individual Data Rates </a>
+</li> <li> <a href="#Potential_Weakness_of_Using_Census_Data"> Potential Weakness of Using Census Data </a> <ul>
+<li> <a href="#Example:_Breast_Cancer_Estimates"> Example: Breast Cancer Estimates </a>
+</li></ul> 
+</li></ul> 
+</div> 
+<h2 id="Advantage_of_Using_Incidence_Rate">  Advantage of Using Incidence Rate </h2>
+<p></p>
+There are a number of advantages of <a href="StudyIncidencePersonTime.html">rates</a>. One is the ability to calculate rates from population based registries. <ul>
+<li> Registries capture the events in a defined geographic region, and a good registry will capture nearly all the events.
+</li> <li> So the <a href="StudyIncidence.html">numerator</a> (E) for disease <a href="OutcomeVariable.html">outcomes</a> with registries is readily available.
+</li></ul> 
+But how would those events be applied to the population covered by the registry if you tried to calculate a <a href="StudyIncidenceCumul.html">cumulative incidence</a> at one year?  <ul>
+<li> Individuals are entering and leaving the population throughout the year, but you have no ready way to record all that and link it with an outcome variable of diseased or <a href="CensorData.html">censored</a>, as you need to do for a Kaplan-Meier analysis.
+</li></ul> 
+We will look at an example of how a rate is calculated in this situation using the <a class="foswikiCurrentTopicLink" href="#AveragePopn">average population</a> at risk method.
+<p></p>
+<h2 id="Calculating_a_Rate">  Calculating a Rate </h2>
+<p></p>
+<strong>Research question:</strong> <ul>
+<li> What is the incidence rate for first diagnoses of breast cancer in Marin County?
+</li> <li> How does it compare with rates from other counties?
+</li></ul> 
+<strong>Nearly all new breast cancer diagnoses are reported to the SEER cancer registry</strong>
+<p></p>
+<strong>How do we obtain a denominator for a rate?</strong>
+<p></p>
+The cancer registry does an excellent job of capturing all of the new cancer diagnoses (E) for a large population. California now has a statewide cancer registry. Clearly, an investigator with access to the California registry data is not going to have individual level data on when every new arrival entered the state and when every departure or death took place, so the problem is to obtain information that will allow calculation of a rate.
+<p></p>
+The approach is to obtain an estimate of the average population size during the time period. Multiplied by the time period, usually one year, gives a person-time denominator for the rate. Census data provide the information to form this person-time denominator.
+<p></p>
+<h2 id="Large_Population_Time_Rates">  Large Population Time Rates </h2>
+<p></p>
+"Since the production of stable rates for cancers at most individual sites requires a population of at least one million subjects, the logistic and financial problems of attempting to maintain a constant surveillance system [of everyone in the population] are usually prohibitive." Breslow and Day, <em>Statistical Methods in Cancer Research</em>
+<p></p>
+<strong>TO GET A DENOMINATOR FOR A RATE:</strong> Do surveillance of all the cancer diagnoses and estimate the population denominator to get person-time at risk.
+<p></p>
+<span id="AveragePopn"></span>
+<p></p>
+To get an incidence rate person-time denominator by the group method requires only an <ul>
+<li> <strong>estimate of the average population size during the year (=the population at mid-year).</strong>
+</li></ul> 
+A further advantage of using census data for forming rates from case counts collected by registries is that rates can be formed for any of the grouping variables recorded in the census, such as age groups, gender, ethnicity, income, geographic sub-regions, and many others.
+<p></p>
+<h2 id="Average_Population_40Group_data_41_Rates_versus_Individual_Data_Rates">  Average Population (Group data) Rates versus Individual Data Rates </h2>
+<p></p>
+<strong>If losses are perfectly uniform</strong>, total person-time calculation for the denominator (and thus the rate) <ul>
+<li> is the <strong>same</strong> whether based on average population size or individual follow-up.
+</li></ul> 
+<strong>For large populations the rate will be nearly identical calculated by either method.</strong>
+<p></p>
+<h2 id="Potential_Weakness_of_Using_Census_Data">  Potential Weakness of Using Census Data </h2>
+<p></p>
+Calculating rates from census population data is very useful but caution is required as a <strong>full census is only done every 10 years.</strong>
+<p></p>
+<strong>Interim estimates of population change</strong> is made by the Census but over 10 years denominators may become inaccurate
+<p></p>
+Although not the only source of person-time denominators for calculating rates, census data are a major resource for such calculations. Researchers using census data should be aware that the possibility of <a href="BiasDefinition.html">bias</a> increases with time from the last census even though estimated adjustments using the current population survey are made annually by the census. In some cases this has resulted in incorrect rates.
+<p></p>
+<h3 id="Example:_Breast_Cancer_Estimates">  Example: Breast Cancer Estimates </h3>
+<p></p>
+A very good example of how census data can affect inferences is seen in the rates of breast cancer in Marin and San Francisco Counties compared to the rest of California and to U.S. rates (seen in the table below).
+<blockquote>
+<p></p>
+<img alt="0303_breast.JPG" height="224" width="382" src="IncidenceRatePopn.attachments/0303_breast.JPG">
+</blockquote>
+<p></p>
+Based on 1990 census data and extrapolations of the 1990 census the rates were significantly higher. It now appears since the 2000 census became available that the population grew faster in the 1990's in Marin County than the Census estimate, so the <strong>denominators used were too small</strong> and the <strong>rates higher</strong> than they should have been.
+<p></p>
+The rate for 2000 using the new census is not very different from the rest of California outside the Bay Area.
+<p></p>
+<hr />
+<p></p>
+<strong><em>Jeff Martin, MD</em></strong>
+<p></p>
+-- <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/MaryB.html">MaryB</a> - 03 Mar 2009
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

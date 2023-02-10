@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>DiagnosticsComparison &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/DiagnosticsComparison/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/DiagnosticsComparison/favicon.ico">
+<link type="application/x-wiki" title="edit DiagnosticsComparison" href="DiagnosticsComparison.html" rel="alternate">
+<meta name="description" content="DiagnosticsComparison" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "DiagnosticsComparison",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Comparing_Classification_92Diagnostic_Models">  Comparing Classification\Diagnostic Models </h1>
+ Joel is a clinical researcher who has developed two new tests for diagnosing Influenza, call them test A and test B. The current diagnostic test is considered to be a gold standard, that is, it has 100% sensitivity and specificity. While the current method perfectly diagnoses patients with Influenza it cannot distinguish subtype. That is, it doesn't give any information about whether the flu is <a title="Create this topic" href="H1N1.html" class="foswikiNewLink" rel="nofollow">H1N1</a>, H3, or H5.
+<p></p>
+The two new diagnostics, through separate mechanisms, have the ability to subtype Influenza. Subtyping has become a crucial part of flu diagnosis largely due to advances in preventive medicine (i.e., vaccinations). Because of this the researcher is willing to lose a bit in both <a href="ValiditySensit.html">sensitivity</a> and <a href="ValiditySpecif.html">specificity</a> to gain accuracy in subtyping. Suppose that it is known that the two tests are equal in their ability to subtype. Joel is interested in determining which of the two tests is the optimal test with regard to <a href="ValiditySensit.html">sensitivity</a> and <a href="ValiditySpecif.html">specificity</a> in diagnosing Influenza.
+<p></p>
+The accuracy of a test can be measured by the area under the <a href="ReceiverOperatingCharacteristic.html">ROC curve</a>. Thus we can compare the accuracy of the two new diagnostic tests by comparing the areas under the ROC curves. This can be done by <ol>
+<li> Applying the diagnostic tests to two independent random samples
+</li> <li> Applying the diagnostic tests to the same random sample.
+</li></ol> 
+<h2 id="Two_Independent_Random_Samples">  Two Independent Random Samples </h2>
+ Suppose that as patients come into Joel's clinic with flu-like symptoms they are randomized into two groups, A and B. Group A will be tested for influenza using the gold standard and test A. Group B will be tested for influenza using the gold standard and test B. The gold standard test has already been established and hence the outcome will be dichotomous, that is, the outcome of the gold standard test will be 0 if the patient tests negative for influenza and 1 if the patient tests positive for influenza. Using the procedure outlined in the <a href="ReceiverOperatingCharacteristic.html">ROC curve</a> page we constructed the following two ROC curves.
+<p></p>
+<img width="553" height="552" alt="Roccurve.jpeg" src="DiagnosticsComparison.attachments/Roccurve.jpeg">
+<p></p>
+We know that the test with the largest area under the ROC curve is the preferred diagnostic test. It is clear from the above plot that the area under the ROC curve for test A is larger than the area for test B. Now we need to determine whether or not this difference is statistically significant.
+<p></p>
+We calculate the area under the curves using the trapezoidal rule. The area under the ROC curve for test A was found to be 0.89 and the area under the ROC curve for test B was found to be 0.81. Following methods described by Hanley and <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="McNeil.html">McNeil</a> we can calculate the test statistic and p-value. Vassar College has created a calculator to assess the significance of the difference between the areas under two independent ROC curves. A picture of the calculator is provided below.
+<p></p>
+<img src="DiagnosticsComparison.attachments/Calculator.jpg" alt="Calculator.jpg" height="523" width="718">
+<p></p>
+From this output we see that there doesn't appear to be a significant difference between the efficacy of the two new diagnostic tests.
+<h2 id="One_Random_Sample">  One Random Sample </h2>
+ Suppose that as patients come into Joel's clinic with flu-like symptoms they are tested for influenza using test A, test B, and the gold standard. The gold standard test has already been established and hence the outcome will be dichotomous, that is, the outcome of the gold standard test will be 0 if the patient tests negative for influenza and 1 if the patient tests positive for influenza. Using the procedure outlined in the <a href="ReceiverOperatingCharacteristic.html">ROC curve</a> page we constructed the following two ROC curves.
+<p></p>
+<img src="DiagnosticsComparison.attachments/Roccurve.jpeg" width="553" height="552" alt="Roccurve.jpeg">
+<p></p>
+Again we calculate the area under the curves using the trapezoidal rule. The area under the ROC curve for test A was found to be 0.89 and the area under the ROC curve for test B was found to be 0.81. Since these tests were carried out on the same individuals the ROC curves are correlated. Hence we need to take this correlation into account and therefore we cannot perform the same procedure as above. When the ROC curves are correlated the procedure becomes more complicated and interested parties should see <a class="foswikiNewLink" rel="nofollow" href="DeLong.html" title="Create this topic">DeLong</a> et al. for further details.
+<p></p>
+We note that in the above examples the ROC curve for test A is almost always above the ROC curve for test B. Thus even without a formal statistical test it is clear that test A is the preferred diagnostic. In some situations this may not be the case. 
+<h2 id="References">  References </h2>
+ Hanley JA, <a href="McNeil.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">McNeil</a> BJ. The meaning and use of the area under a Receiver Operating Characteristic (ROC) curve. <em>Radiology,</em> 1982, <strong>143</strong>, 29-36.
+<p></p>
+<a title="Create this topic" href="DeLong.html" class="foswikiNewLink" rel="nofollow">DeLong</a> ER, <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="DeLong.html">DeLong</a> DM, Clark-Pearson DL. Comparing the Areas Under Two or More Correlated Receiver Operating Characteristic Curves: A Nonparametric Approach. Biometrics, 1988, 44, 837-845.
+<p></p>
+<a href="http://faculty.vassar.edu/lowry/roc_comp.html">http://faculty.vassar.edu/lowry/roc_comp.html</a>
+<p></p>
+<hr />
+<p></p>
+-- <a title="Create this topic" href="../Main/ErinEsp.html" class="foswikiNewLink" rel="nofollow">ErinEsp</a> - 16 Jan 2011
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

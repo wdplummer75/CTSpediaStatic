@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>OnlineJournalDiscussion003 &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/OnlineJournalDiscussion003/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/OnlineJournalDiscussion003/favicon.ico" rel="shortcut icon">
+<link title="edit OnlineJournalDiscussion003" rel="alternate" href="OnlineJournalDiscussion003.html" type="application/x-wiki">
+<meta name="description" content="OnlineJournalDiscussion003" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "OnlineJournalDiscussion003",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="OnlineJournalClubDiscussion.html">Return to Online Journal Club Discussion</a>
+<h1 id="See_YouTube_video_Verification_of_Assumptions_Online_Discussion">  See YouTube video <a href="http://www.youtube.com/watch?v=v46fSCC6WAY">Verification of Assumptions Online Discussion</a> </h1>
+<h5 id="A_40PLEASE_NOTE:_On_the_bottom_of_this_page_44_you_will_find_the_topic_for_discussion_and_the_name_of_the_contributor._41">  (PLEASE NOTE: On the bottom of this page, you will find the topic for discussion and the name of the contributor.) </h5>
+<h1 id="TITLE_Discussion_Topic:Verification_of_Assumptions">  TITLE Discussion Topic:Verification of Assumptions </h1>
+<p></p>
+Email Notification of Changes: <a href="mailto:mary.banach@vanderbilt.edu?subject=Add%20Me%20to%20Notifications%20of%20Changes">Click here and add TITLE of the topic to the body of the email.</a>
+<p></p>
+<strong>Please add comments and then click on the "Add comment" button.</strong>
+<p></p>
+%COMMENT{type="belowthreadmode"}%
+<h4 id="Main.PeterBacchetti_45_04_Jul_2012_45_13:31">  <a href="../Main/PeterBacchetti.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">PeterBacchetti</a> - 04 Jul 2012 - 13:31 </h4>
+<p></p>
+I agree with the point from Knut and in the recorded discussion that &ldquo;verifying&rdquo; assumptions is not a reasonable goal, or even possible. Instead, we just want the model to be reasonably accurate, not literally true. To meet this goal, I advocate performing &ldquo;due diligence&rdquo; assessments of model assumptions, and <a href="https://www.ctspedia.org/do/view/CTSpedia/PvalueFallacy#Are_large_p_values_good_for_anyt">I&rsquo;ve argued</a> that large P-values are of some value in such situations (in contrast to their usual worthlessness). As long as there is no particular <em>a priori</em> suspicion about an important departure from the assumptions, it may be enough to show that some reasonable precaution was taken and no alarming evidence was found.
+<p></p>
+Knut raises the important issue of how best to measure central tendency (or more generally, effects of predictors on the outcome). I agree that this should usually be decided <em>a priori</em> on conceptual grounds, rather than by empirically looking to see what better approximates statistical modeling assumptions. This is a key issue when deciding whether or not to <a href="LogTransformation.html">logarithmically transform</a> an outcome variable for modeling. If modeling the outcome on the most meaningful scale results in violations of statistical assumptions (such as Gaussian residuals), then I advocate using bootstrapping or other advanced methods to obtain valid confidence intervals; this seems preferable to modeling the wrong thing for statistical convenience. A common example is when cost is the outcome. Costs are often skewed, with a small number of patients with very high costs. Nevertheless, the handful of high-cost patients really are very important and should not be down-weighted by use of logarithmic transformation or nonparametric methods. The raw arithmetic mean cost is what matters for policy or for a hospital&rsquo;s bottom line, and the geometric mean and median are usually not relevant.
+<h4 id="Main.KnutWittkowski_45_07_Jun_2012_45_00:05">  <a class="foswikiNewLink" rel="nofollow" href="../Main/KnutWittkowski.html" title="Create this topic">KnutWittkowski</a> - 07 Jun 2012 - 00:05 </h4>
+<p></p>
+[Excerpted from a different thread.]
+<p></p>
+Re 3.5., the focus on the "assumption [of a] Gaussian distribution" may also me misleading. First, least-square methods are highly robust against deviations of the empirical distribution of residuals from the Gaussian distribution (Scheffe 1959). Second, lack of a "significant" result of a test for deviation does not prove the null hypothesis (of a Gaussian distribution). Hence, requiring "empirical verification" of assumptions could create the problems it is supposed to address. Finally, the focus on the Gaussian distribution may result in other assumptions, such as the adequatness of the measure of central tendency being used (arithmetic mean, geometric mean, median, ...) being overlooked. Which measure of central tendency to choose can rarely be decided (or verified) based on the data. Instead, knowledge of the subject matter are needs to be applied to select this measure. In particular, an approximate answer for the correct question may be better than the exact answer for the wrong question.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

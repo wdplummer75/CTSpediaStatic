@@ -1,0 +1,537 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>DiscussionBERD000 &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/DiscussionBERD000/favicon.ico"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/DiscussionBERD000/favicon.ico" type="image/x-icon">
+<link title="edit DiscussionBERD000" type="application/x-wiki" rel="alternate" href="DiscussionBERD000.html">
+<meta name="description" content="DiscussionBERD000" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "DiscussionBERD000"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="DiscussionForum.html">Return to Discussion Forum</a>
+<p></p>
+<h1 id="Title:_BERD_45_Pain_Presentation">  Title: BERD - Pain Presentation </h1>
+<p></p>
+On the bottom of this page, you will find the topic for discussion and the name of the contributor.
+<p></p>
+<strong>Please add comments and then click on the "Add comment" button.</strong>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+%COMMENT{type="belowthreadmode"}%
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_18_Aug_2011_45_10:10">  <a href="../Main/FrankHarrell.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FrankHarrell</a> - 18 Aug 2011 - 10:10 </h4>
+<p></p>
+A few random comments -
+<p></p>
+- This is a lot of work in SAS compared to the ordinal package in R  
+(handles random effects)
+<p></p>
+- Sparseness does not have to do with non-proportional odds except in a  
+strange way: the SAS PROC LOGISTIC test for proportional odds (which  
+doesn&#39;t reference my student Bercedis Peterson&#39;s paper which invented the  
+test and pointed out its shortcomings) will strongly reject  
+H0:proportional odds even when there is perfect proportional odds, when  
+cells are sparse.
+<p></p>
+- I suspect that your observations about standard errors when things  
+become more sparse is related to the above.  For proportional odds  
+assessment I rely on partial residual plots.
+<p></p>
+Regards,
+Frank
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Michael_Berbaum_45_17_Aug_2011_45_16:08">  Michael Berbaum - 17 Aug 2011 - 16:08 </h4>
+<p></p>
+Greetings,
+    I can offer a couple more examples of pain analyses.  Both designs are 3-arm RCTs examing pain control during interventional radiology procedures.  Thus, at baseline, before the procedure begins, average pain level should be nearly equivalent in the three groups.  Patients are repeatedly asked their pain (and anxiety) levels at regular intervals (repeated measures).  One key feature is that as patients&#39; procedures are completed, they &#34;drop out&#34; so that observation end when the patient with the longest duration completes.  With increasing sparsity, the standard errors around the groups&#39; curves grow substantially!  In study #1 we used a normal mixed model (SAS PROC MIXED or BMDP 5V); in study #2 we used a proportional odds model with random intercepts (SAS PROC NLMIXED).  The proportional odds assumption failed owing to the sparsity of data at later times and at higher pain levels.  We collapsed levels 9 and 10 into level 8 and then we were OK.  We struggled to find an understandable graph of results and ended up showing binary &#34;splits&#34; at various thresholds.  I&#39;ve appended some SAS code for analyses in #2, prepared mostly by Ms. Xinyu Li, M.S., co-author on the second paper.  If I had it to do again, I would think more about controlling baseline covariates and the MAR assumption we relied on.  I hope this is helpful, and I&#39;d welcome any comments on the approach we took.
+<p></p>
+#1
+Lang, Elvira V., Benotsch, Eric G., Fick, Lauri J., Lutgendorf, Susan, Berbaum, Michael L., Berbaum, Kevin S., Logan Henrietta, and Spiegel, David (2000).  Adjunctive non-pharmacological analgesia for invasive medical procedures:  a randomised trial.  The Lancet, vol. 355, issue 9214, pages 1486-1490, April 2000.  doi:10.1016/S0140-6736(00)02162-0
+<p></p>
+#2
+Lang EV, Berbaum KS, Faintuch S, Hatsiopoulou O, Halsey N, Li X, Berbaum ML, Laser E, Baum J. 2006).  Adjunctive self-hypnotic relaxation for outpatient medical proceudres:  A prospective randomized trial with women undergoing large core breast biopsy.  Pain, 126(1-3): 155-164, Dec 15, 2006.  PMID: 16959427. 
+Best regards, --Mike
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+-- 
+Michael L. Berbaum, Ph.D., Director
+Methodology Research Core
+Institute for Health Research and Policy (MC 275)
+University of Illinois at Chicago
+1747 West Roosevelt, Room 558
+Chicago, Illinois 60608
+Tel:  (312) 413-0476
+Fax:  (312) 996-2703
+Email:  <a href="mailto&#58;mberbaum&#64;uic&#46;edu">mberbaum&#64;uic.edu</a>
+IHRP web site:  <a href="http://www.ihrp.uic.edu/">http://www.ihrp.uic.edu</a> 
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_15_Aug_2011">  <a title="Create this topic" href="../Main/FrankHarrell.html" class="foswikiNewLink" rel="nofollow">FrankHarrell</a> - 15 Aug 2011 </h4>
+<p></p>
+I hear ya.
+<p></p>
+Thanks
+Frank
+<p></p>
+<p></p>
+<h4 id="Main.KnutWittkowski_45_15_Aug_2011">  <a href="../Main/KnutWittkowski.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">KnutWittkowski</a> - 15 Aug 2011  </h4>
+<p></p>
+<p></p>
+The fundamental difference from many other methods is that ambiguities are allowed. We don&#39;t need to make strong assumptions (proportionality, linearity, independence) to ensure that the pairwise ordering among all subjects can be decided. 
+<p></p>
+Knut
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_15_Aug_AN1">  <a href="../Main/FrankHarrell.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FrankHarrell</a> - 15 Aug 2011  </h4>
+<p></p>
+Hi Knut,
+<p></p>
+I&#39;m in England, with apologies for the slow reply.  Yes your example  
+isn&#39;t controversial.  Other combinations are harder to figure, which is  
+why I like to adjust for baseline as a covariate instead.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.KnutWittkowski_45_15_Au_AN1">  <a href="../Main/KnutWittkowski.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">KnutWittkowski</a> - 15 Aug 2011  </h4>
+<p></p>
+Frank,
+<p></p>
+I agree that this discussion I proving more interesting than I had expected, including two of your recent remarks.
+<p></p>
+In fact, I wonder whether we should edit this discussion and make it available in some form. 
+<p></p>
+First, I fully agree that &#34;making the subject its own control&#34; is heavily overrated among clinicians. As we have seen, it is less than trivial to formalize the concept of &#34;change&#34;, being it difference, ratio, sign, ...  Still, there may be cases where baseline values should be incorporated. 
+<p></p>
+Which brings is to your second comment. 
+<p></p>
+U-scores for multivariate data (Hoeffding 1948) are based on the assumption that - everything else being the same - more in any of the pain characteristics is worse. No linearity, proportionality, or independence being assumed. For instance, if subject A is coming in with a lower baseline and a higher outcome VAS than subject B, then A had less of a response than B. I would not expect too much of a controversy here. 
+<p></p>
+The fundamental difference from many other methods is that ambiguities are allowed. We don&#39;t need to make strong assumptions (proportionality, linearity, independence) to ensure that the pairwise ordering among all subjects can be decided. 
+<p></p>
+Knut
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.KnutWittkowski_45_15_Au_AN2">  <a class="foswikiNewLink" rel="nofollow" href="../Main/KnutWittkowski.html" title="Create this topic">KnutWittkowski</a> - 15 Aug 2011 </h4>
+<p></p>
+Hi Ron, 
+<p></p>
+Thanks for the clarification!
+<p></p>
+Of course, knowing the scale does not automatically lead to the method, but it restricts the methods one can use. Chi-square only for nominal, u-test for ordinal, u- or t-test for ratio/interval only.
+<p></p>
+It is also important to remember that rank tests are no panacea (see Scheffe, 1959, chapter 10) and that the (apparent, assumed, ...) distribution of the data is not very helpful in choosing between tests that are both asymptotically distribution-free (like the t- and the u-test). 
+<p></p>
+Still, I&#39;d rather use a test that is approximately right, than one that is exactly wrong. If all we were interested in is alpha, we might simply toss 17 coins and if we get less than five of either heads or tails, we have a test for the 5&#37; level, no need to even gather data <img class="smily" alt="wink" src="../System/SmiliesPlugin.attachments/emoticon-0105-wink.gif" title="wink"> Hence, we need to also consider what alternatives the tests are sensitive against, like deviations from the arithmetic mean being zero for the t-test vs the tendency among paired comparisons from 50:50 (not the median!) for the u-test. 
+<p></p>
+What&#39;s missing in many of these cook book rules is that we cannot choose a test by looking at the characteristics of the data (distribution) and the variables (scale), we also have to formalize the question (type of alternative) of interest.  
+<p></p>
+Knut
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_2011">  <a title="Create this topic" href="../Main/FrankHarrell.html" class="foswikiNewLink" rel="nofollow">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+Same here!  Great discussion!
+Frank
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.RonaldThisted_45_14_Aug_2011">  <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/RonaldThisted.html">RonaldThisted</a> - 14 Aug 2011 </h4>
+<p></p>
+(k) Enough ramblings for now. Thanks to all for the excuse to avoid doing other stuff on my plate.
+<p></p>
+Cheers, 
+Ron Thisted 
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_AN1">  <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/FrankHarrell.html">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+It is easy to convert the odds ratio and other parameters in the model to  
+the mean or median pain score.  Also, exceedance probabilities come  
+straight out of the model and are easily interpreted by clinicians.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.RonaldThisted_45_14_Aug_AN1">  <a href="../Main/RonaldThisted.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">RonaldThisted</a> - 14 Aug 2011  </h4>
+<p></p>
+ (h) Changes in pain (or in other symptoms that also have a subjective or self-report element) may make sense in some contexts and not in others.  For instance, pain after surgery eventually gets better.  The focus may be on how rapidly this occurs.  On the other hand, if one is studying chronic pain (that is, pain that one would not expect to improve in the natural course of things), then the focus is definitely on how much improvement in pain can be achieved, and in what fraction of patients.
+<p></p>
+ (i) Consider the situation in which patients are randomized to two treatments, and two hours later, a VAS pain measurement is taken.  If the point of an exercise is testing the null hypothesis of no difference between groups, lots of sensible and familiar tests will work just fine, in the sense that they will be valid tests of H0 and will have (approximately) the right size.  For this purpose, the difference between a t-test and a proportional-odds regression based measure (taking each unique observed VAS score as a "cutpoint") will depend upon the alternatives against which wants to have greatest power.
+<p></p>
+ (j) If the point is to estimate the size of the treatment effect, then one has to have some sense as to what differences on some scale mean.  In the context of anesthesia for certain particular operative procedures, for instance, VAS pain measurements of 30 or below are considered adequately low scores, and pre-treatment scores of 50 or 60 are typical.  In this context the mean and SD of VAS scores has a clinical interpretation (which may not extend to other contexts).  The odds ratio (from a proportional odds-based analysis) would not be easily understood or communicated, and it would be hard to relate to what clinicians already understand about how the VAS works in this particular context--even if it were the basis for a more sensitive test of the differences between the VAS distributions under the two treatments.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_AN2">  <a href="../Main/FrankHarrell.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+I haven&#39;t experienced that problem.  You can model baseline using dummies  
+or using quadratic or spline functions.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.RonaldThisted_45_14_Aug_AN2">  <a title="Create this topic" href="../Main/RonaldThisted.html" class="foswikiNewLink" rel="nofollow">RonaldThisted</a> - 14 Aug 2011 </h4>
+<p></p>
+ (g) I agree with Knut that changes in pain can (and often should) be analyzed using methods other than simply taking the numerical difference in pain scales.  Transition models (with a small number of defined ordered categories) are often successful at doing this.  Proportional odds models, while incredibly useful for comparing groups at a single point in time (such as the completion of a randomized clinical trial), are less easily used when one wants to make inferences conditional on, say, a baseline variable that itself is measured as an ordered category (for instance, baseline pain assessment).
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_AN3">  <a class="foswikiNewLink" rel="nofollow" href="../Main/FrankHarrell.html" title="Create this topic">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+I don&#39;t think that follows.  I agree that clinicians think this is more  
+interpretable but I think they are largely fooling themselves, mainly  
+because of floor and ceiling effects.  An unbiased estimate of current  
+status is going to be quite useful, and can be calibrated in the sense you  
+are saying, by including baseline level (or a spline function of it) as a  covariate.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.RonaldThisted_45_14_Aug_AN3">  <a class="foswikiNewLink" rel="nofollow" href="../Main/RonaldThisted.html" title="Create this topic">RonaldThisted</a> - 14 Aug 2011  </h4>
+<p></p>
+(f) Changes in pain scores (as opposed to changes in other kinds of scores) can be particularly important, since within-subject pain scores are likely to be much better calibrated than between-patient scores.  So from an interpretability standpoint, clinicians and others often find changes to be more compelling than raw scores.  And as we know, if the within-subject correlation exceeds 0.5, there are efficiency gains to the use of difference scores.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_AN4">  <a href="../Main/FrankHarrell.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+Often I see major non-proportionality yet the PO model fit better than all  
+the other models I was entertaining.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.RonaldThisted_45_14_Aug_AN4">  <a title="Create this topic" href="../Main/RonaldThisted.html" class="foswikiNewLink" rel="nofollow">RonaldThisted</a> - 14 Aug 2011  </h4>
+<p></p>
+(e) I agree with Frank that the proportional odds and related models are not known (or used) widely enough.  As with almost all models, the assumptions under which they work best (constant proportionality of odds between groups) always hold only approximately.  Conditional on actually using a proportional odds model, examining the extent to which proportionality holds, and critically assessing the extent to which it really matters whether it holds, are also not done widely enough.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell">  <a href="../Main/FrankHarrell.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FrankHarrell</a>  </h4>
+<p></p>
+The real problem with the central limit theorem is that for a given  
+dataset we don&#39;t know if it applies (this is more true for highly skewed  
+Y).
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.RonaldThisted_45_14_Aug_AN5">  <a title="Create this topic" href="../Main/RonaldThisted.html" class="foswikiNewLink" rel="nofollow">RonaldThisted</a> - 14 Aug 2011  </h4>
+<p></p>
+ (d) The utility of a particular analysis depends more on the study design and the substantive question than on the scale of measurement.  The central limit theorem works wonders in many situations.  (For instance, if one applies the two-sample t-test to binary data--ordinal scale at most--the test is essentially equivalent to the chi-squared test for comparing proportions.)
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_AN5">  <a title="Create this topic" href="../Main/FrankHarrell.html" class="foswikiNewLink" rel="nofollow">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+Very nice discussion Ron.  It should be noted that the Wilcoxon tests  
+almost always tests a stochastic ordering hypothesis that is relevant.  We  
+tend to get ourselves in trouble when we use the t- or normal  
+approximation for getting P-values with the Wilcoxon.  If you have scale  
+differences (or other simple translation differences) you can get very  
+accurate P-values using the general U-statistic standard error, as  
+implemented in the R Hmisc package&#39;s rcorr.cens function.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.RonaldThisted_45_14_Aug_AN6">  <a class="foswikiNewLink" rel="nofollow" href="../Main/RonaldThisted.html" title="Create this topic">RonaldThisted</a> - 14 Aug 2011 </h4>
+<p></p>
+Dear Laura Lee, Frank, Knut, Greg, et al:
+<p></p>
+A few random thoughts on pain stimulated by the (less random) notes of others:
+<p></p>
+(a) Regarding Laura Lee&#39;s original request, Thomas Permutt at FDA has done some very thoughtful work on analyzing pain outcomes in the context of clinical trials.  I am not sure if his work has been published, but it has been influential in the design and analysis of Phase III studies of drugs intended to affect pain.  A key reference is the IMMPACT recommendations (2005, &#34;Core outcome measures for chronic pain clinical trials: IMMPACT recommendations,&#34; Pain 113: 9-19).
+<p></p>
+ (b) The emphasis on scale of measurement (ordinal, interval, ratio, etc) has the potential to side-track us from the most important questions of design, analysis, and inference.  As often as not, focusing on scale of measurement can be misleading.  It is particularly pernicious when it leads to automatic choices of the &#34;correct&#34; statistical analysis based on measurement characteristics and not consideration of the study design, distributional characteristics of the measurements, subject-matter knowledge, and identification of the question that really needs to be answered.  The outstanding paper by Velleman and Wilkinson makes a convincing case. [Velleman, P. F. &amp; Wilkinson L. (1993). Nominal, ordinal, interval, and ratio typologies are misleading. American Statistician, 47, 65-72.]
+<p></p>
+ (c) The identification of a particular statistical test with a scale of measurement is often gets things badly wrong.  For instance, it is commonly stated that the t-test assumes an interval scale, while the Wilcoxon (Mann-Whitney) test assumes only an ordinal scale.  That is not correct.  In fact, the two-sample Wilcoxon procedure relies on the assumption that the two distributions differ only in location and not in shape.  In particular, that variances and skewness are identical in the two distributions, and that one is simply a shifted version of the other.  Simply having an ordinal scale of measurement is not sufficient to justify the validity of the Wilcoxon test.  Indeed, if the two groups are normally distributed and have the same mean, but one standard deviation is twice the size of the other, the size of a nominal 0.05 Wilcoxon test is actually 0.074 (JW Pratt, JASA 1964, 59: 665-80).
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Ronghui_40Lily_41_Xu_45_14_Aug_2011">  Ronghui (Lily) Xu - 14 Aug 2011  </h4>
+<p></p>
+Hi Laura,
+<p></p>
+<p></p>
+If it adds to it, our group have also worked on brain imaging and meta-analysis aspects of pain research:
+<p></p>
+<p></p>
+Leung A, Duann J, <a class="foswikiNewLink" rel="nofollow" href="McGreevy.html" title="Create this topic">McGreevy</a> K, Li E, Xu R, Donohue M, et al. The supraspinal 
+pain pathway of the thermal grill illusion. <a href="NeuroImage.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">NeuroImage</a>, 2009; 47(Supplement 1): 
+S61-S61.
+<p></p>
+<p></p>
+Leung AY, Donohue M, Xu R, Lee R, Lefaucheur J, Khedr E, Saitoh Y, Andre- 
+Obadia N, Rollnik J, Wallace M, Chen R. rTMS in suppressing neuropathic pain: 
+a meta-analysis. The Journal of Pain, 2009; 10(12): 1205-16.
+<p></p>
+<p></p>
+Thanks,
+Ronghui (Lily) Xu
+Professor
+Division of Biostatistics and Bioinformatics
+Department of Family and Preventive Medicine
+ and Department of Mathematics
+Director, CTRI Design and Biostatistics
+University of California, San Diego
+9500 Gilman Drive, Mail Code 0112
+La Jolla, CA 92093-0112
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_AN6">  <a class="foswikiNewLink" rel="nofollow" href="../Main/FrankHarrell.html" title="Create this topic">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+Hi Knut,
+<p></p>
+Good discussion.  I think the score you&#39;ve specified will make even more  
+assumptions than the proportional odds assumption though.
+<p></p>
+I don&#39;t think that change will do better adjusting for baseline  
+differences, because of floor and ceiling effects.
+<p></p>
+Best,
+Frank
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.KnutWittkowski_45_14_Aug_2011">  <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/KnutWittkowski.html">KnutWittkowski</a> - 14 Aug 2011  </h4>
+<p></p>
+A deterministic reply to a random comment: analyzing changes in pain could potentially adjust for differences in baseline pain perception without the need of making assumptions about proportionality. Of course, &#34;analyzing changes&#34; does not necessarily mean &#34;computing differences of scores&#34;. For instance, one could score a particular subject&#39;s response (outcome vs baseline) as 
+<p></p>
+- the number of subjects with a larger-or-equal baseline and a smaller-or-equal outcome (smaller effect) minus
+- the number of subjects with a smaller-or-equal baseline and a larger-or-equal outcome (larger effect). 
+<p></p>
+These &#39;u-scores&#39; would score changes on one (or several) ordinal outcomes without computing differences. 
+<p></p>
+Knut
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_14_Aug_AN7">  <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/FrankHarrell.html">FrankHarrell</a> - 14 Aug 2011  </h4>
+<p></p>
+A random comment: I think it is a mistake to analyze change in pain  
+status.  The difference in two ordinal scales is not ordinal.  There are  
+many reasons to have the final pain severity as the outcome, adjusted for  
+initial severity as a baseline covariate.
+<p></p>
+A nice feature of the proportional odds model is that you can have as many  
+categories as you have unique Y values.
+<p></p>
+Frank
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Kathryn_Chaloner_45_14_Aug_2011">  Kathryn Chaloner - 14 Aug 2011  </h4>
+<p></p>
+Hi all
+<p></p>
+<p></p>
+<p></p>
+Like John Connett I was involved in the Shlay (1998) study.  The more we looked and analyzed the Gracely continous scale, I think it is fair to say as the study went on, the less we believed that it measured something real.  We also had a \x93Global Pain Relief Scale\x94 that was ordered \x93Complete, A lot, \x85none, Pain got worse\x94 that was more believable in interpretation and in analysis.  Fortunately results were consistent.
+<p></p>
+<p></p>
+<p></p>
+The rationale for the Gracely scale was that a previous study in diabetic peripheral neuropathy had used the scale \x96 and so for the HIV and acupuncture design there was data \x96 and there was a lot of support for using the same scale from clinicians.  In retrospect not a great idea to perpetuate a bad endpoint.
+<p></p>
+<p></p>
+<p></p>
+With hindsight, the simple global pain relief scale made a much better endpoint and analysis and was much more interpretable.  We used ordinal response models.
+<p></p>
+<p></p>
+<p></p>
+Kathryn
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+Kathryn Chaloner, PhD
+<p></p>
+319 384 5029
+<p></p>
+<a href="mailto&#58;kathryn&#45;chaloner&#64;uiowa&#46;edu">kathryn-chaloner&#64;uiowa.edu</a>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.KnutWittkowski_45_14_Au_AN1">  <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/KnutWittkowski.html">KnutWittkowski</a> - 14 Aug 2011  </h4>
+<p></p>
+Hi Laura Lee,
+<p></p>
+I find the empirical &#34;validation&#34; for using methods based on the linear model for individual VAS scales less convincing, but the real problem lies in the complexity of measuring complex phenomena, such as pain, on a variety of scales. 
+Shlay (1998): Patients rated their pain in a diary once daily, choosing from the Gracely scale of 13 words that describe the intensity. The words had been assigned magnitudes on the basis of ratio-scaling procedures that demonstrated internal consistency, reliability, and objectivity. --- Comparison of treatment groups for the primary end point of change in pain, as measured by the pain diary, used a linear model with baseline characteristics, clinical unit, and option (factorial or single factor) as covariates. 
+Griffith (2008): The primary outcome measure was the mean difference in the subjects\x92 self-reported pain scores before and after the administration of the initial medication treatment. A pain score reduction of 3 or more points after the initial treatment was considered clinically effective and used as a cutoff point to dichotomize the primary outcome measure for multivariate statistical analyses. 
+I agree with Frank that ordinary regression may not be appropriate to generate valid comprehensive scores. Trying to avoid the problem by dichotomizing the outcomes at an arbitrary cutoff point may also not be a good solution.
+<p></p>
+Under <a href="WebServices.html">WebServices</a>/MuStat, CTSPedia offers biostatstical tools (spreadsheets, R package, and Web server) that help to resolve some of these problems by creating scores/metrics that are intrinsically valid, because fewer assumptions need to made and, thus, empirically &#34;validated&#34;.
+<p></p>
+BTW, in a collaboration with the NINR we are corrently using the same <a href="WebServices.html">WebServices</a>/MuStat to screen for genetic risk factors of fibromyalgia, yet another way of addressing the many open questions in pain research using the novel methods and tools developed by BERD.
+<p></p>
+Here are the references: <br />
+Morales (2008): www.bepress.com/sagmb/vol7/iss1/art19/ (complex phenotypes, such as pain) <br />
+Wittkowski (2010) www.ncbi.nlm.nih.gov/pubmed/20652502  (comprehensive overview in a book with many <a href="CTSA.html">CTSA</a> contributions) <br />
+Rubio (2011): www.ncbi.nlm.nih.gov/pubmed/21284015 (on the crossfertilization of BERD developing metrics applied both by and to BERD practicioners) <br />
+<p></p>
+Knut
+<p></p>
+<p></p>
+<p></p>
+<h4 id="John_Connett_45_13_Aug_2011">  John Connett - 13 Aug 2011 </h4>
+<p></p>
+Laura,
+<p></p>
+      An example of pain measurement and analysis in an acupuncture study:
+<p></p>
+      Shlay, Chaloner et al. (1998) &#34;Acupuncture and amitriptyline for pain
+      due to HIV-related peripheral neuropathy,&#34; JAMA 280: 1590-1595.
+<p></p>
+      John C.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.FrankHarrell_45_13_Aug_2011">  <a href="../Main/FrankHarrell.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">FrankHarrell</a> - 13 Aug 2011  </h4>
+<p></p>
+Greg,
+<p></p>
+I&#39;m amazed that I still see people analyzing ordinal scales using ordinary  
+regression.  The proportional odds model and its cousins are still not  
+known to vast areas of research.
+<p></p>
+Frank
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Main.GregoryStoddard_45_13_Aug_2011">  <a class="foswikiNewLink" rel="nofollow" href="../Main/GregoryStoddard.html" title="Create this topic">GregoryStoddard</a> - 13 Aug 2011 </h4>
+<p></p>
+Laura,
+<p></p>
+<p></p>
+<p></p>
+Pain research usually involves a visual analog scale (VAS) measurement of pain.  There is confusion, however, if these can be analyzed as a continuous variable (interval scale), or if should they be considered an ordered categorical variable (ordinal scale).  That is, there is inconsistent in how these scales are analyzed.  You could clear up this confusion in your talk.
+<p></p>
+<p></p>
+<p></p>
+I introduce this topic on page 3 of Ch 2-6 of my course manual that is available in CTSpedia, the educational materials section.  Another website for it is given in the footnote on the first page.  In that chapter, I provided citations and justification of why it can be analyzed as an interval scale.  I have attached two papers I cited.
+<p></p>
+<p></p>
+<p></p>
+On p 41 of Ch 2-1, I give the taxonomy of levels of measurement, which you might use as background material.
+<p></p>
+<p></p>
+<p></p>
+Thanks,
+<p></p>
+Greg
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h4 id="Demetrios_Kyriacou_45_13_Aug_2011">  Demetrios Kyriacou  - 13 Aug 2011 </h4>
+<p></p>
+Dear Laura Lee,
+<p></p>
+Attached is a study that was published in Journal of Pain and conducted at
+Northwestern University Department of Emergency Medicine by one of our senior
+residents, a junior faculty person, and me.  We conducted a retrospective cohort
+study to compare &#34;Metoclopramide Versus Hydromorphone for the Emergency Department
+Treatment of Migraine Headache.&#34;
+<p></p>
+I use this study in my Intermediate Epidemiology course to illustrate the different
+types of confounding by indication.  While we adjusted for potential confounding by
+severity of the migraine headache in the adjusted relative risk comparison of
+reduction in migraine pain, we did not adjust for the potential confounding by
+indication for nausea or vomiting that is frequently associated with more severe
+migraine headaches and is often treated with metoclopramide which is an anti-emetic
+medications. Thus, there is still potential for confoudning in the study.
+<p></p>
+Let me know if this is useful to you and if you have any questions.
+<p></p>
+Demetrios N. Kyriacou (Jim)
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

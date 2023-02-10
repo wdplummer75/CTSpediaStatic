@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ScatterplotExamples &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/ScatterplotExamples/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/ScatterplotExamples/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link title="edit ScatterplotExamples" href="ScatterplotExamples.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="ScatterplotExamples" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "ScatterplotExamples",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="StatGraphHome.html">Return to Safety Graphics Home</a>
+<p></p>
+<h3 id="A_42Scatterplots_and_Bivariate_Density_Plots_42">  <strong>Scatterplots and Bivariate Density Plots</strong> </h3>
+<p></p>
+<h3 id="A_42Last_updated_by_Richard_Forshee_on_April_14_44_2011_42">  <strong>Last updated by Richard Forshee on April 14, 2011</strong> </h3>
+<h3 id="Disclaimer:_The_opinions_expressed_in_this_document_are_those_of_the_author_and_may_not_represent_the_opinions_of_the_U.S._Food_and_Drug_Administration.">  <strong>Disclaimer: </strong>The opinions expressed in this document are those of the author and may not represent the opinions of the U.S. Food and Drug Administration. </h3>
+<h3 id="A_42Type_of_data_42:_continuous">  <strong>Type of data</strong>: continuous </h3>
+<h3 id="A_42Type_of_analysis_42:_bivariate">  <strong>Type of analysis</strong>: bivariate </h3>
+<h3 id="A_42Description_and_purpose_42:">  <strong>Description and purpose</strong>: </h3>
+<p></p>
+Scatterplots are used to represent and explore the relationship between two continuous variables. The two axes represent the continuous variables, and each data point is plotted at the x,y coordinates corresponding to its values for the two variables. Scatterplots can help to identify whether two variables have a linear or non-linear relationship or whether they are not related to one another. Unusual observations, such as extreme values, possible coding errors, or possible outliers, can often be identified by scatterplots. Unusual clusters of observations that do not seem to conform to the general patter may be observed in a scatterplot. Exploring these divergent clusters of observations can lead to important insights.
+<h3 id="A_42Examples_42:">  <strong>Examples</strong>: </h3>
+<p></p>
+The following plots are based on the ADLBC data set available on the CTSPedia website. The scatterplots examine the relationship between blood glucose levels (mmol/L) at baseline and week 26 in the clinical trial.
+<h3 id="A_42Basic_Scatterplots_42">  <strong>Basic Scatterplots</strong> </h3>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_Scatterplot_Example1_500.png">Example 1</a>
+<p></p>
+The scatterplot suggests a linear relationship between baseline blood glucose levels and the levels measured at week 26 in the trial. There is one extreme value at about baseline 22 mmol/L and week 26 15 mmol/L. While extreme, the value does not appear to be discrepant from the overall pattern in the data. There is a large cluster of observations in the general vicinity of baseline 5 mmol/L and week 26 5 mmol/L, and the large number of observations in this area of the graph has produced some overstrikes (two or more data points overlapping).
+<p></p>
+<h3 id="A_42Scatterplots_with_overlays_42"> <strong>Scatterplots with overlays</strong> </h3>
+<p></p>
+A variety of overlays can be added to scatterplots to improve the visualization of the relationship between the two variables.
+<p></p>
+<h4 id="Confidence_Ellipses"> <em>Confidence Ellipses</em> </h4>
+<p></p>
+Confidence ellipses <a class="foswikiCurrentTopicLink" href="#_edn1">[i</a>]<sup>, <a class="foswikiCurrentTopicLink" href="#_edn2">[ii</a>], <a href="#_edn3" class="foswikiCurrentTopicLink">[iii</a>]</sup> draw an ellipse that contains a specified percentage of all the observations. Confidence ellipses can help to identify the nature of the relationship between the two variables. A narrow ellipse that is tilted away from the horizontal axis suggests a strong linear between the two variables. An ellipse that is closer in shape to a circle indicates that there is not a linear relationship between the two variables.
+<p></p>
+The confidence ellipse plots for the blood glucose lab results suggest a linear relationship between baseline and week 26 results.
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_scatterplot_ellip_500.png">Confidence Ellipses Overlays</a>
+<p></p>
+<h4 id="Linear_fit_overlays"> <em>Linear fit overlays</em> </h4>
+<p></p>
+It may be helpful to overlay a scatterplot with a statistical model fit to the data. Here we add a line for the linear regression estimates and a pair of curves for the 95% confidence interval of the prediction.
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_LinearFit_500.png">Linear Fit Overlays</a>
+<p></p>
+<em>Fractional polynomial fit overlays</em>
+<p></p>
+It is also possible to include a non-linear model that has been fit to the data. Here we use a fractional polynomial model. The results are very similar to the linear model for these data.
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_Fractional_500.png">Fractional fit Overlays</a>
+<p></p>
+<strong>Plotting by sub-groups</strong>
+<p></p>
+<h4 id="Contrasting_symbols"> <em>Contrasting symbols</em> </h4>
+<p></p>
+Scatterplots are often used to explore possible differences between subgroups. Men and women, for example, may respond differently to a medical treatment. The scatterplot below uses squares as the marker symbol for females and circles as the marker symbol for males. It is difficult to see any patterns by sex in the scatterplot because of the large cluster of overlapping points in the general vicinity of baseline 5 mmol/L and week 26 5 mmol/L.
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_Scatter_Subgroups500.png">Subgroup Overlays</a>
+<p></p>
+<h4 id="Plotting_by_subgroups_in_separate_panels"> <em>Plotting by subgroups in separate panels</em> </h4>
+<p></p>
+An alternative method to compare sub-groups is to plot the data in side-by-side panels. We have also added a linear fit overlay to these plots for this example. The differences between men and women are more clear in this scatterplot. The relationship between baseline and week 26 glucose values appears to be stronger for women, as indicated by the steeper slope of the fitted regression line. This may be influenced by the extreme value at about 22 mmol/L and week 26 15 mmol/L.
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_Scatter_Separate500.png">Subgroups - Separate Panels</a>
+<p></p>
+<h3 id="A_42Sunflower_density_plots_42"> <strong>Sunflower density plots</strong> </h3>
+<p></p>
+As mentioned previously, there is a cluster of values in the vicinity of baseline 5 mmol/L and week 26 5 mmol/L. The density of this cluster causes some overstrikes and makes it difficult to see the details of the distribution in a standard scatterplot. In these situations, an alternative approach is to use bivariate density plot, such a sunflower density plot. <a href="#_edn4" class="foswikiCurrentTopicLink">[iv</a>] In a sunflower density plot, the plot area is divided into bins.
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_Sunflower_500up.png">Sunflower</a>
+<p></p>
+<h3 id="A_42Scatterplots_for_Change_versus_Average_Measurement_42"> <strong>Scatterplots for Change versus Average Measurement</strong> </h3>
+<p></p>
+{background information here}
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/StatGraphClassTopic002/Forshee_Scatterplot_Reference_500.png">Change vs Average</a>
+<p></p>
+<hr />
+ <div id="edn1">
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#_ednref1">[i</a>] Alexandersson, A. 1998. gr32: Confidence ellipses. Stata Technical Bulletin 46: 10-13. In Stata Technical Bulletin Reprints, vol. 8, 54-57. College Station, TX: Stata Press.
+</div> <div id="edn2">
+<p></p>
+<a href="#_ednref2" class="foswikiCurrentTopicLink">[ii</a>] Alexandersson, A. 2004. Graphing confidence ellipses: An update of ellip for Stata 8. Stata Journal 4(3): 242-256.
+</div> <div id="edn3">
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#_ednref3">[iii</a>] <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="McCartin.html">McCartin</a>, B. 2003. A Geometric Characterization of Linear Regression. Statistics: A Journal of Theoretical and Applied Statistics 37(2): 101-117.
+</div> <div id="edn4">
+<p></p>
+<a class="foswikiCurrentTopicLink" href="#_ednref4">[iv</a>]Dupont, W. D., and W. D. Plummer Jr. 2003. Density distribution sunflower plots. Journal of Statistical Software 8: 1-11.
+</div>
+<p></p>
+<strong>Reference</strong>:
+<p></p>
+<h3 id="Code_40_41:">  Code ( ): </h3>
+%CODE{lang="java"}% Code for Examples Stata 11 Software
+<p></p>
+<strong>********************************************************</strong> <strong>* *</strong> Scatterplot Examples for FDA-Industry-Academia Safety Graphics WG <strong>* Richard Forshee, FDA/CBER/OBE *</strong> <strong>* Last updated April 12, 2010 *</strong> <strong>********************************************************</strong>
+<p></p>
+clear
+<p></p>
+cd "C:\Documents and Settings\forshee\My Documents\CTSPedia"
+<p></p>
+use ADLBC // This data set is available on CTSPedia in SAS Transport format datasignature confirm // Confirming that the data have not changed
+<p></p>
+keep if lbtestcd=="GLUC" // Selecting only glucose tests
+<p></p>
+** Checking summary statistics for quality control summarize blstresn lbstresn bysort visit: summarize blstresn lbstresn
+<p></p>
+stem blstresn if visit=="WEEK 26" stem lbstresn if visit=="WEEK 26"
+<p></p>
+** Creating basic scatterplot comparing baseline and week 26 results
+<p></p>
+twoway (scatter lbstresn blstresn if visit=="WEEK 26", msize(small)), /// title("Blood Glucose Lab Results") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)") /// ytitle("Week 26 Result (mmol/L)") /// xscale(range(0 25)) yscale(range(0 25)) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(off)
+<p></p>
+graph export scatterbasic.eps, replace
+<p></p>
+<strong>* Generating data for a 50% and 90% confidence ellipse *</strong> Requires --ellip-- from the SSC ** Use --ssc install ellip-- to install
+<p></p>
+ellip lbstresn blstresn if visit=="WEEK 26", c(f) level(90) g(ey90 ex90) ellip lbstresn blstresn if visit=="WEEK 26", c(f) level(50) g(ey50 ex50)
+<p></p>
+** Creating a scatterplot with a 50% and 90% confidence ellipse overlay twoway /// (scatter lbstresn blstresn if visit=="WEEK 26", msize(small)) /// (scatter ey90 ex90, connect(l) msymbol(none)) /// (scatter ey50 ex50, connect(l) msymbol(none) lpattern(dash)), /// title("Blood Glucose Lab Results") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)") /// ytitle("Week 26 Result (mmol/L)") /// xscale(range(0 25)) yscale(range(0 25)) xlabel(0(5)25) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(order(2 3) rows(2) label(2 "90% of observations") /// label(3 "50% of observations"))
+<p></p>
+graph export scatterellip.eps, replace
+<p></p>
+** Creating a scatterplot with a linear regression overlay twoway /// (lfitci lbstresn blstresn if visit=="WEEK 26", clpattern(blank) ciplot(rline) alpattern(dash)) /// (scatter lbstresn blstresn if visit=="WEEK 26", msize(small)) /// (lfit lbstresn blstresn if visit=="WEEK 26"), /// title("Blood Glucose Lab Results") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)") /// ytitle("Week 26 Result (mmol/L)") /// xscale(range(0 25)) yscale(range(0 25)) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(row(2) order(4 1) label(1 "95% Confidence Interval of Prediction") /// label(4 "Linear Prediction"))
+<p></p>
+graph export scatterlfit.eps, replace
+<p></p>
+** Creating a scatterplot with a fractional polynomial overlay twoway /// (fpfitci lbstresn blstresn if visit=="WEEK 26", clpattern(solid) ciplot(rline) alpattern(dash)) /// (scatter lbstresn blstresn if visit=="WEEK 26", msize(small)), /// title("Blood Glucose Lab Results") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)") /// ytitle("Week 26 Result (mmol/L)") /// xscale(range(0 25)) yscale(range(0 25)) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(rows(2) order(2 1) label(1 "95% Confidence Interval of Prediction") /// label(2 "Linear Prediction"))
+<p></p>
+graph export scatterfpfit.eps, replace
+<p></p>
+** Scatterplot comparing men and women (single plot) twoway /// (scatter lbstresn blstresn if visit=="WEEK 26" &amp; sex=="M", msize(small) msymbol(smcircle)) /// (scatter lbstresn blstresn if visit=="WEEK 26" &amp; sex=="F", msize(small) msymbol(smsquare)), /// title("Blood Glucose Lab Results") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)") /// ytitle("Week 26 Result (mmol/L)") /// xscale(range(0 25)) yscale(range(0 25)) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(label(1 "Males") label(2 "Females"))
+<p></p>
+graph export scattermf.eps, replace
+<p></p>
+** Scatterplot comparing men and women in two panels with lfit overlay
+<p></p>
+twoway /// (lfitci lbstresn blstresn if visit=="WEEK 26" &amp; sex=="M", clpattern(solid) ciplot(rline) alpattern(dash)) /// (scatter lbstresn blstresn if visit=="WEEK 26" &amp; sex=="M", msize(small) msymbol(smcircle)), /// title("Blood Glucose Lab Results for Males") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)", margin(medium)) /// ytitle("Week 26 Result (mmol/L)", margin(medium)) /// xscale(range(0 25)) xlabel(0(5)25) yscale(range(0 25)) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(order(2 1) label(1 "95% CI") label(2 "Prediction"))
+<p></p>
+graph save male, replace
+<p></p>
+twoway /// (lfitci lbstresn blstresn if visit=="WEEK 26" &amp; sex=="F", clpattern(solid) ciplot(rline) alpattern(dash)) /// (scatter lbstresn blstresn if visit=="WEEK 26" &amp; sex=="F", msize(small) msymbol(smcircle)), /// title("Blood Glucose Lab Results for Females") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)", margin(medium)) /// ytitle("Week 26 Result (mmol/L)", margin(medium)) /// xscale(range(0 25)) xlabel(0(5)25) yscale(range(0 25)) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(order(2 1) label(1 "95% CI") label(2 "Prediction"))
+<p></p>
+graph save female, replace
+<p></p>
+graph combine male.gph female.gph graph export scattermf2panels.eps, replace
+<p></p>
+** Creating sunflower density plot twoway sunflower lbstresn blstresn if visit=="WEEK 26", /// title("Blood Glucose Lab Results") /// subtitle("Baseline Compared to Week 26") /// xtitle("Baseline Result (mmol/L)") /// ytitle("Week 26 Result (mmol/L)") /// xscale(range(0 25)) yscale(range(0 25)) xlabel(0(5)25) ylabel(0(5)25) /// aspectratio(1) xsize(3) ysize(4) /// legend(rows(3) label(1 "Single Observation"))
+<p></p>
+graph export sunflower.eps, replace
+<p></p>
+<strong>* *</strong> Plotting Change vs Average <strong>* Bland-Altman or Tukey mean-difference plot *</strong>
+<p></p>
+gen avg = (lbstresn+blstresn)/2 label var avg "Average glucose at baseline and visit"
+<p></p>
+gen diff = lbstresn-blstresn label var diff "Difference in glucose between visit and baseline"
+<p></p>
+twoway (scatter diff avg if visit=="WEEK 26", msize(small)), /// title("Blood Glucose at Baseline and Week 26") /// subtitle("Difference versus Average") /// xtitle("Average Blood Glucose at Baseline and Week 26 (mmol/L)") /// ytitle("Difference Between Blood Glucose" "at Week 26 and Baseline (mmol/L)") /// yscale(range(-10(5)10)) ylabel(-10(5)10)
+<p></p>
+graph export scatterblandaltman.eps, replace
+<p></p>
+%ENDCODE%
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

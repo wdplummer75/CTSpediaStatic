@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>Table1Checklist &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/Table1Checklist/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/Table1Checklist/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="Table1Checklist.html" title="edit Table1Checklist">
+<meta name="description" content="Table1Checklist" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "Table1Checklist",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+-- <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/BarbaraGrimes.html">BarbaraGrimes</a> - 13 Mar 2009
+<h3 id="Table1_Preliminary_Checklist">  Table1 Preliminary Checklist </h3>
+<strong>First check "N=" Is this the number of observations you were expecting?</strong>
+<p></p>
+<strong>Continuous Variables:</strong> <ol>
+<li> Are the mean and median values reasonable?
+</li> <li> Are the mean and median values similar? If not, you may need to think about transforming this variable or creating a categorical version. If the mean is much larger than the median, the variable may be right-skewed. This may suggest that a predictor variable will not meet the linearity assumption if modeled as an untransformed continuous predictor in regression models, in which case consider logarithmic transformation or modeling as a categorical predictor (e.g., quartiles). For an outcome variable, skewness may suggest that modeling it as an untransformed numeric outcome may not be the most meaningful scale, for example, if a 1 point difference is more important at low values of the outcome than it is at high values of the outcome. Logarithmic transformation may again be worth considering; this is appropriate if, for example, a 50% difference is equally important at both low and high values of the outcome.
+</li> <li> For variables that can only take on non-negative values, is the SD more than half as large as the mean? This also indicates right-skewness.
+</li> <li> Are the min and max values (that are shown with the median ) consistent with the possible values for this variable? If not there is probably a data problem that should be investigated and systematically corrected.
+</li> <li> Are the min or max more than 3 SD's from the mean? If so, these may be overly-influential outliers that need to be considered when presenting summaries and performing analyses. Median is often a better summary than mean when outliers are present. Logarithmic transformation often helps with positive outliers. DFBeta's can be calculated for regression models to assess the impact each observation on the regression estimates. Sensitivity analyses can be performed deleting outliers.
+</li> <li> If dates are shown, consider the min and max dates. Are they reasonable? Date values may be corrupted when moving from one source to another, eg from an EXCEL spreadsheet to SAS.
+</li></ol> 
+<strong>Categorical variables:</strong>  <ol>
+<li> Are the categories labeled correctly? Look for misspelled words. Often misspellings occur in data eg Mlae for Male. The computer considers those as two different categories.
+</li> <li> Do some variables have a large number of missing values? Was this expected or is there a problem with the source data?
+</li> <li> Do some categories need to be combined due to small counts? Especially consider categories with counts less than 5.
+</li></ol> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EducationalMaterials017 &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/EducationalMaterials017/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/EducationalMaterials017/favicon.ico" type="image/x-icon">
+<link rel="alternate" href="EducationalMaterials017.html" title="edit EducationalMaterials017" type="application/x-wiki">
+<meta name="description" content="EducationalMaterials017" />
+<link type="text/css" href="../System/JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" rel="stylesheet" media="all" class="head JQUERYPLUGIN::BUTTON"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="../System/JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::BUTTON" src="../System/JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "EducationalMaterials017",
+   "SERVERTIME" : "08 Feb 2023 - 15:50"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<a href="CourseMaterials.html">Return to Course Materials</a>
+<p></p>
+<h1 id="Title:_UCSF_45_Simple_Linear_Regression">  Title: UCSF - Simple Linear Regression </h1>
+ <strong><em>Lead Author(s):</em></strong> David Glidden, PhD
+<p></p>
+<p></p>
+<span id="StartPresentation"></span>
+<span class='slideShowControls'><a class="jqButton slideShowStart" href="EducationalMaterials017.html"><i class='jqButtonIcon fa fa-fw fa-television'></i><span class='jqButtonText'>Start presentation</span></a></span>
+<p></p>
+<p></p>
+<h2 id="Slide_1:_Simple_Linear_Regression">  Slide 1: Simple Linear Regression </h2>
+ Example  <ul>
+<li> HERS: Randomized clinical trial n=2763
+</li> <li> Post menopausal women with hx of MI
+</li> <li> Randomized to placebo v. hormone therapy
+</li> <li> Outcome: Second MI
+</li> <li> Wealth of baseline data
+</li> <li> HDL associated w/ waist circumference?
+</li> <li> Sample of 221 subjects - baseline data
+</li></ul> 
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_02.jpg">Scatterplot</a> 
+<h2 id="Slide_2:_Why_regression_63">  Slide 2: Why regression? </h2> <ul>
+<li> Take as given that mean is a good summary
+</li> <li> How does mean HDL depend on waist circumference?
+</li> <li> Other methods are not ideal
+</li> <li> Try forming groups based on value of waist circumference...
+</li></ul> 
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_03.jpg">Scatterplot: Mean &amp; 95% CI</a> 
+<h2 id="Slide_3:_Grouping_Approach">  Slide 3: Grouping Approach </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_04.jpg">Scatterplot - Waist Circumference</a>  <ul>
+<li> Advantages:  <ul>
+<li> Simplicity
+</li> <li> Interpretable
+</li></ul> 
+</li> <li> Disadvantages:  <ul>
+<li> Choice of groups
+</li> <li> More groups: resolution but variability
+</li> <li> Maybe important differences w/in groups
+</li> <li> Hard to describe
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_4:_Linear_Regression">  Slide 4: Linear Regression </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_05.jpg">Linear Regression</a>  <ul>
+<li> No groups
+</li> <li> Mean changes continuously with predictor
+</li> <li> Uses all the data to predict mean at any point (borrows strength)
+</li> <li> Can work around linear assumption
+</li> <li> Has a straightforward interpretation!
+</li></ul> 
+(See also: <a href="LinearRegression.html">Linear Regression</a>) 
+<h2 id="Slide_5:_Linear_Regression_Mean">  Slide 5: Linear Regression Mean </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_06.jpg">Is Line Reasonable?</a> 
+<h2 id="Slide_6:_Example">  Slide 6: Example </h2>
+ <p align="left"> </p>  <ul>
+<li> Study of 52 HIV+ individuals
+</li> <li> Recruited from the SFGH Neurology clinic
+</li> <li> Studied cross-sectionally
+</li> <li> Not on anti retroviral therapy
+</li> <li> HIV-RNA determined in plasma and CSF
+</li> <li> How are the two related?
+</li></ul> 
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_07.jpg">Does line fit well?</a> 
+<h2 id="Slide_7:_Scatterplot_Smoother">  Slide 7: Scatterplot Smoother </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_08.jpg">Scatterplot with line</a>  <ul>
+<li> Nonparametric method
+</li> <li> Draws and connects a series of local lines
+</li> <li> Result: flexible smooth curve
+</li> <li> Mean of y as a function of x non-linear regression line
+</li> <li> Useful tool for exploring association
+</li></ul> 
+<h2 id="Slide_8:_Suppose_45_Let_39s_consider_4_equal_45sized_groups">  Slide 8: Suppose - Let's consider 4 equal-sized groups </h2> <ul>
+<li> Break the data into a series of groups <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_09.jpg">Data</a>
+</li> <li> Fit a line to each of those groups
+</li> <li> "Connect" them <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_10.jpg">Four local lines</a>
+</li> <li> What would that look like?
+</li> <li> It would be kind a like a smooth <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_11.jpg">Four local lines Lowess Smooth</a>
+</li></ul> 
+<h2 id="Slide_9:_Scatterplot_Smoother">  Slide 9: Scatterplot Smoother </h2> <ul>
+<li> Many methods for smoothing.
+</li> <li> LOWESS (locally weighted scatterplot smoothing) is the most popular
+</li> <li> Depends on inputs how smooth to make the line
+</li> <li> Oversmooth: linear fit
+</li> <li> Undersmooth: connects the dots
+</li> <li> Programs have defaults (80% smoothing)
+</li> <li> Methods work by "local" regression
+</li></ul> 
+<p></p>
+<h2 id="Slide_10:_STATA">  Slide 10: <a href="STATA.html">STATA</a> </h2> <ul>
+<li> twoway scatter csfrna hivrna scatterplot
+</li> <li> lowess csfrna hivrna lowess curve for data
+</li> <li> Menu: Graphics, Twoway Graphs
+</li></ul> 
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_15.jpg">Linear regression variability</a> 
+<h2 id="Slide_11:_Next_Example">  Slide 11: Next Example </h2> <ul>
+<li> Based on a 19 subject subsample of the HERS data
+</li> <li> Makes it easier to visualize data
+</li> <li> Effects of the outliers is more vivid
+</li></ul> 
+<h2 id="Slide_12:_Scatterplot_43_Fitted">  Slide 12: Scatterplot + Fitted </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_16.jpg">Scatterplot and Fitted</a> 
+<h2 id="Slide_13:_Least_Squares">  Slide 13: Least Squares </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_17.jpg">Simple Linear Regression - Scatterplot</a> <br /> (See also: <a href="LeastSquares.html">Least Squares</a>) 
+<h2 id="Slide_14:_Effect_of_Outlier">  Slide 14: Effect of Outlier </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_18.jpg">Which fits better?</a>  <ul>
+<li> Large if....
+</li> <li> Predictor value is far from mean
+</li> <li> Large residual in regression
+</li> <li> Relatively few values
+</li> <li> Same outlier has little effect in big dataset
+</li></ul> 
+<h2 id="Slide_15:_Interpreting_Regression">  Slide 15: Interpreting Regression </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_19.jpg">Less influence of outlier</a> 
+<h2 id="Slide_16:_Intercept_47Slope">  Slide 16: Intercept/Slope </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_20.jpg">Intercept and Slope</a> 
+<h2 id="Slide_17:_Questions_a_Regression_Can_Answer">  Slide 17: Questions a Regression Can Answer </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_21.jpg">Questions a regression can answer</a> 
+<h2 id="Slide_18:_Answers_45_Question_1">  Slide 18: Answers - Question 1 </h2>
+Question 1: How does mean HDL vary with waist circumference?
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_22.jpg">Question 1 Answer</a>
+<h2 id="Slide_19:_Answers_45_Question_2">  Slide 19: Answers - Question 2 </h2>
+Question 2: Is the association significant?
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_23.jpg">Question 2 Answer</a> 
+<h2 id="Slide_20:_Answers_45_Question_3">  Slide 20: Answers - Question 3 </h2>
+Question 3: How much of HDL variation is explained by variation in waist circumference?
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_24.jpg">Question 3 Answer</a> 
+<h2 id="Slide_21:_Answers_45_Question_3">  Slide 21: Answers - Question 3 </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/EducationalMaterials017/lecture2_Page_25.jpg">Question 3</a> 
+<h2 id="Slide_22:_Sample_Paragraph">  Slide 22: Sample Paragraph </h2>
+<p></p>
+There is an inverse association between waist circumference and HDL (p=0.002) with each one cm increase in waist circumference associated with a -0.196 mg/dL decrease in HDL, 95% CI (-0.32,-0.07). Even though the relationship was significant, waist circumference accounted for only 4% of the observed variance in HDL.
+<p></p>
+<h2 id="Slide_23:_Good_Paragraph">  Slide 23: Good Paragraph </h2> <ul>
+<li> Doesn't focus solely on significance
+</li> <li> Quotes slope and 95% CI
+</li> <li> Perhaps R-squared
+</li> <li> Don't bother with sum of squares
+</li></ul> 
+<h2 id="Slide_24:_Confounding">  Slide 24: Confounding </h2> <ul>
+<li> Is the effect of waist on HDL causal? -1cm change in person translate to +.45?
+</li> <li> Maybe waist circ. reflecting different populations? with different diet and exercise patterns?
+</li> <li> How can we isolate the effect of waist? adjusting for diet and exercise! *Solution... Multiple Linear Regression
+</li></ul> 
+(See also: <a href="BiasConfound.html">Bias or Confounding</a>) 
+<h2 id="Slide_25:_Summary">  Slide 25: Summary </h2> <ul>
+<li> Linear regression is a powerful tool for interpreting associations
+</li> <li> Extends familiar methods (t-test, <a href="ANOVA.html">ANOVA</a>)
+</li> <li> Series of assumptions' (Lines, normality) all of which can be relaxed
+</li></ul> 
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

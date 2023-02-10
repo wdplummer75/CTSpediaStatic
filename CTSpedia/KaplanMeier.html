@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>KaplanMeier &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/KaplanMeier/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/KaplanMeier/favicon.ico">
+<link title="edit KaplanMeier" type="application/x-wiki" rel="alternate" href="KaplanMeier.html">
+<meta name="description" content="KaplanMeier" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "KaplanMeier",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Kaplan_45Meier_Method_for_Calculating_Cumulative_Incidence">  Kaplan-Meier Method for Calculating Cumulative Incidence </h1>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Calculating_Cumulative_Incidence_with_the_Kaplan_45Meier_Method"> Calculating Cumulative Incidence with the Kaplan-Meier Method </a>
+</li> <li> <a href="#Cumulative_Probability"> Cumulative Probability </a> <ul>
+<li> <a href="#Example_45_Kaplan_Meier_Estimates"> Example - Kaplan Meier Estimates </a>
+</li></ul> 
+</li> <li> <a href="#Survival_Probabilities"> Survival Probabilities </a> <ul>
+<li> <a href="#Example_45_Kaplan_Meier_Analysis"> Example - Kaplan Meier Analysis </a>
+</li></ul> 
+</li> <li> <a href="#Comparing_Two_KM_Curves"> Comparing Two KM Curves </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Calculating_Cumulative_Incidence_with_the_Kaplan_45Meier_Method">  Calculating Cumulative Incidence with the Kaplan-Meier Method </h2>
+<p></p>
+To calculate <a href="StudyIncidenceCumul.html">cumulative incidence</a> we must take into consideration varying <a href="FollowUpTime.html">follow-up times</a>.
+<p></p>
+<strong>The Kaplan-Meier Method</strong>: <ul>
+<li> requires date last observed or date outcome occurred on each individual (end of study can be the last date observed) The essence of the Kaplan-Meier (KM) method is having the date each outcome in the cohort occurred.
+</li></ul> 
+<strong>The Analysis:</strong>  <ul>
+<li> Analysis is performed by dividing the follow-up time into discrete pieces to calculate probability of survival at each event (survival = probability of no event)
+</li></ul> 
+Those dates divide the <a href="FollowUpTime.html">follow-up time</a> of the cohort into a number of discrete pieces. The proportion <a href="OutcomeVariable.html">surviving (probability)</a> is calculated for each discrete piece and the overall cumulative probability of surviving is calculated by multiplying together the individual probabilities.
+<p></p>
+Every member of the <a href="StudyCohort.html">cohort</a> has to be assigned a date first seen and a date last seen or a date diagnosed.
+<p></p>
+<h2 id="Cumulative_Probability">  Cumulative Probability </h2>
+<p></p>
+<strong>Probability of two independent events occurring is the product of the two probabilities for each occurring alone</strong> <ul>
+<li> eg, if event 1 occurs with probability 1/6 and event 2 with probability 1/2,
+</li> <li> then the probability of both event 1 and 2 occurring = 1/6 x 1/2 = 1/12
+</li></ul> 
+<strong>Probability of living to time 2 given that one has already lived to time 1</strong>  <ul>
+<li> <strong>Is independent of the probability of living to time 1</strong>
+</li></ul> 
+In order to calculate cumulative incidence, you need to understand or least accept on faith the following. It is a fundamental theorem of probability that the cumulative probability of two independent events is the product of their individual probabilities. So the probability of flipping two heads in a row with a fair coin is 1/2 x 1/2 = 1/4 .
+<p></p>
+The Kaplan-Meier method of calculating the cumulative probability of the disease <a href="OutcomeVariable.html">outcome</a> is to treat each separate discrete piece of time as an independent trial. There was some probability of the outcome during the first time period; there was another probability of the outcome during the second time period. The probability of the outcome during both time periods together is the product of the individual probabilities.
+<p></p>
+Students sometimes balk at treating the two time periods as independent events. They say, "How can they be considered independent when it is many of the same persons in each time period?" The answer is that the probability in the second time period is conditional on a given person already having lived through the first time. So the probability of the outcome in the second period is the probability conditional on not having experienced the outcome up until that point in time. A similar mistake is made by gamblers who think that because a coin has come up tails four times in row the probability of heads on the next toss is better than 1/2. IT IS NOT.
+<p></p>
+<h3 id="Example_45_Kaplan_Meier_Estimates">  Example - Kaplan Meier Estimates </h3>
+<p></p>
+Using the data from <a href="FollowUpTime.html">Follow-up Starting Times</a> Szklo and Nieto (Szklo, M., &amp; Nieto, F. (2007). Epidemiology: Beyond the Basics (2nd Edition ed.). Boston: Jones and Bartlett Publishers) produced the following cumulative survival table.
+<p></p>
+<img width="457" height="177" alt="0226_3table.JPG" src="https://www.ctspedia.org/twiki/pub/CTSpedia/StudyAnalysisKaplan/0226_3table.JPG">
+<p></p>
+<strong>Cumulative survival is calculated by multiplying probabilities for each prior failure time:</strong> <ul>
+<li> e.g., 0.9 x 0.875 x 0.857 = 0.675 and
+</li> <li> <font color="crimson" class="WYSIWYG_COLOR"> 0.9 x 0.875 x 0.857 x 0.800 x 0.667 x 0.500 = 0.180</font>
+</li></ul> 
+Deaths occurred at 6 different times during follow-up, so there are 6 discrete pieces of time (D = death).
+<p></p>
+<strong>Data One Month Follow-up:</strong> <ul>
+<li> The probability of the event is the number of deaths at each point in time (just 1 here, but it is possible to have more than 1 at the same time) divided by the number in the cohort at that time.
+</li> <li> So at 1 month of follow-up there was a death and at that time all 10 original members of the cohort were still in follow-up.
+</li> <li> <strong>The probability of death was 1/10 and the probability of survival was 1 minus 1/10 = 9/10.</strong>
+</li></ul> 
+<strong>Data Three Month Follow-up:</strong>  <ul>
+<li> When the second diagnosis occurs at 3 months of follow-up, only 8 persons are still in follow-up because one person was lost to follow-up at 2 months of follow-up.
+</li> <li> <strong>The probability of death was 1/8, of survival was 7/8</strong>
+</li> <li> <strong>The cumulative probability of survival was 9/10 x 7/8 = 0.788.</strong>
+</li></ul> 
+Why not calculate a probability of survival when the one person was lost at 2 months? Because the probability of survival for the 9 would be 9/9 = 1 and 1 times the previous cumulative survival leaves it unchanged.
+<p></p>
+<h2 id="Survival_Probabilities">  Survival Probabilities </h2>
+ <strong>Cannot calculate by multiplying each event probability (=probability of repeating event)</strong>  <ul>
+<li> (in our example, 0.100 x 0.125 x 0.143 x 0.200 x 0.333 x 0.500 = 0.0000595)
+</li></ul> 
+The cumulative probability is calculated with the survival probabilities because it is only survival that happens repeatedly. To use the probability of the event each time you would be calculating a probability of repeated diagnoses, not what you want.
+<p></p>
+At the end of multiplying together all of the individual survival probabilities to get the cumulative probability of 0.18, the cumulative probability of death can be obtained by subtracting from 1. 1 &ndash; 0.18 = 0.82.
+<p></p>
+<strong>Since it is a proportion, it has no time unit connected to it, so time period has to be added</strong> <ul>
+<li> e.g, 2-year cumulative incidence
+</li></ul> 
+<p></p>
+<h3 id="Example_45_Kaplan_Meier_Analysis">  Example - Kaplan Meier Analysis </h3>
+<p></p>
+The following is a graph showing a Kaplan-Meier analysis of cumulative survival after breast cancer among patients grouped by whether they carry either the BRCA1 or the BRCA2 breast cancer gene mutation (N=58) versus patients without either mutation (N=979)
+<p></p>
+( Lee, J. S., Wacholder, S., Struewing, J. P., McAdams, M., Pee, D., Brody, L. C., et al. (1999). Survival after breast cancer in Ashkenazi Jewish BRCA1 and BRCA2 mutation carriers. J Natl Cancer Inst, 91(3), 259-263). <img src="https://www.ctspedia.org/twiki/pub/CTSpedia/StudyAnalysisKaplan/0226_4brca1.JPG" alt="0226_4brca1.JPG" height="305" width="401">
+<p></p>
+Notice that the lines are graphed in a stepwise fashion. <ul>
+<li> This is because there is a discrete jump in the <a href="StudyIncidenceCumul.html">cumulative incidence</a> each time a death occurred.
+</li></ul> 
+Note also that the two curves lie on top of one another for about two years, but there is a suggestion that the mutation carriers have better survival beyond two years or so.  <ul>
+<li> This observation should be viewed skeptically, though, as the numbers have become very small among both groups by 40 months and especially among the carriers (N=3).
+</li> <li> In a Kaplan-Meier graphic large steps indicate big jumps in probability due to small numbers at risk. Hence, the tail of the curve does not give precise information.
+</li></ul> 
+To read cumulative survival for a group from the graph, pick a time point, such as 24 months, draw a line straight up to intersect the survival curve and then a horizontal line that intersects the y-axis. Where it intersects the y-axis is the estimate of the proportion surviving at 24 months of follow-up (about 44% in these data for either group).
+<p></p>
+If the cumulative incidence of death had been plotted instead of the cumulative incidence of survival (always an option), the graph would have started in the lower left-hand corner at 0 and moved up toward 1 (inverting the curve pictured).
+<p></p>
+<h2 id="Comparing_Two_KM_Curves">  Comparing Two KM Curves </h2>
+ As you can see in the two Kaplan Meier curves (below) the <a href="RiskRatio.html">risk ratio</a> would be different for different <a href="FollowUpTime.html">follow-up times</a>.
+<p></p>
+<img src="https://www.ctspedia.org/twiki/pub/CTSpedia/StudyAnalysisKaplan/0313_3testkm.JPG" width="397" height="242" alt="0313_3testkm.JPG">
+<p></p>
+When a Kaplan-Meier analysis is presented in the medical literature, a <a href="StatTestPValue.html">p-value</a> that summarizes the probability that the two curves differ over their entire lengths is usually given.
+<p></p> <ul>
+<li> This is a more complex statistic than just comparing two proportions with a <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="StatTestChiSquare.html">chi-square test</a> as it <strong>compares proportions all along the curves whenever an event occurs</strong>.
+</li> <li> The most commonly used statistic is called the <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="StatTestLogRank.html">log rank test</a>;
+</li> <li> An alternative test is called the <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="StatTestWilcoxon.html">Wilcoxon</a>.
+</li></ul> 
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

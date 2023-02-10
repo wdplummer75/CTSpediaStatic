@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyTermRandom &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyTermRandom/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE CTSpedia/StudyTermRandom/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit StudyTermRandom" href="StudyTermRandom.html" rel="alternate">
+<meta name="description" content="StudyTermRandom" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "StudyTermRandom",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Randomization">  Randomization </h1>
+ <div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Randomization"> Definition of Randomization </a>
+</li> <li> <a href="#Randomization_to_Reduce_Bias"> Randomization to Reduce Bias </a>
+</li> <li> <a href="#How_Randomization_Works"> How Randomization Works </a>
+</li> <li> <a href="#Applicability_of_Randomization"> Applicability of Randomization </a>
+</li> <li> <a href="#Limitation_of_Randomization"> Limitation of Randomization </a>
+</li> <li> <a href="#Randomizaton_Does_Not_Always_Eliminate_Confounding"> Randomizaton Does Not Always Eliminate Confounding </a>
+</li> <li> <a href="#What_To_Do_If_You_Cannot_Randomize"> What To Do If You Cannot Randomize </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Definition_of_Randomization">  Definition of Randomization </h2>
+ <strong>Definition of Randomization</strong>: random assignment of subjects to <a href="PredictorVariable.html">exposure</a> (e.g., treatment) categories
+<p></p>
+<img alt="0402_rand.JPG" height="84" src="StudyTermRandom.attachments/0402_rand.JPG" width="265">
+<p></p>
+One of the three main ways for <a href="BiasConfoundDesign.html">reducing confounding</a> during study design.
+<p></p>
+<h2 id="Randomization_to_Reduce_Bias">  Randomization to Reduce Bias </h2>
+<p></p>
+In the following <a href="CausalDiagrams.html">DAG</a>, you can see that with randomization <ul>
+<li> there can be <strong>no association between any would-be <a href="BiasConfound.html">confounder</a></strong> and the <strong><a href="OutcomeVariable.html">exposure</a>.</strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Therefore, confounding cannot occur.</strong>
+</li></ul> 
+<p></p>
+<blockquote> <img width="249" height="164" alt="0402_dag_ran.JPG" src="StudyTermRandom.attachments/0402_dag_ran.JPG"> </blockquote>
+<p></p>
+This is why randomization holds it exulted place in clinical research as the cadillac method to deal with confounding. <ul>
+<li> If one can implement it in one's study, randomization is the optimal strategy to reduce confounding.
+</li></ul> 
+<p></p>
+<h2 id="How_Randomization_Works">  How Randomization Works </h2>
+ In randomization all study subjects are randomly allocated to an exposure group.  <ul>
+<li> This is most commonly some form of therapy, but can also be an exposure in the sense of a diet or other behavioral modification.
+</li> <li> As usual, &ldquo;exposure&rdquo; is used very generally here to mean <a href="PredictorVariable.html">predictor or independent variable</a>.
+</li></ul> 
+Since the exposure groups are created by a random process, the distribution of any variable you can think of is theoretically the same in the exposed group and the unexposed group. Therefore, there can be no association between exposure and any other variable.
+<p></p>
+Randomization is truly one of the most important inventions of the 20th century.
+<p></p>
+<h2 id="Applicability_of_Randomization">  Applicability of Randomization </h2>
+<p></p>
+Applicable only for <strong>ethically assignable <a href="OutcomeVariable.html">exposures</a> (ie, interventions, experiments)</strong> <ul>
+<li> In other words, it is only relevant when you are doing things to people or you are instructing them to do things to themselves.
+</li></ul> 
+Special strength of randomization is its ability to control the effect of confounding variables about which the investigator is <strong>unaware</strong>  <ul>
+<li> Because distribution of any variable is theoretically the same across randomization groups
+</li></ul> 
+<h2 id="Limitation_of_Randomization">  Limitation of Randomization </h2>
+<p></p>
+<strong>Not for naturally occuring exosures</strong> (e.g., air pollution) <ul>
+<li> There are sadly limitations to this in that we cannot, for example, randomize people to naturally occuring exposures, e.g. smoking or air pollution, or unprotected sexual behavior.
+</li></ul> 
+Unfortunately, as mentioned, in some fields we unfortunately do not have the luxury of randomization and hence we have to live by our wits. Fortunately, there are good techniques we can use even if we cannot randomize. 
+<h2 id="Randomizaton_Does_Not_Always_Eliminate_Confounding">  Randomizaton Does Not Always Eliminate Confounding </h2>
+<p></p>
+<strong>Randomization does not always eliminate confounding!</strong> <ul>
+<li> <em>By chance alone, there can be imbalance</em>
+</li></ul> 
+Randomization does not always eliminate confounding, especially in small studies. It may not lead to perfect balancing of potential confounding factors in the 2 exposure arms (in the case of a drug trial, treatment and placebo arms, for example). Just by chance alone, there can be imbalance. 
+<hr />
+<p></p> <ul>
+<li> <em>Less of a problem in large studies</em>
+</li></ul> 
+The bigger the study, the less of a problem this is.
+<p></p>
+<hr />
+<p></p> <ul>
+<li> <em>Techniques exist to ensure balance of certain variables</em>
+</li></ul> 
+For those of you in the trial business, you will want to pay attention to this and know that there are also certain specialized randomization techniques that help to assure balance of potential confounders even in small studies.
+<p></p>
+<h2 id="What_To_Do_If_You_Cannot_Randomize">  What To Do If You Cannot Randomize </h2>
+<p></p>
+Unfortunately, as mentioned, in some fields we unfortunately do not have the luxury of randomization and hence <strong>we have to live by our wits</strong>. <ul>
+<li> Fortunately, there are good techniques we can use even if we cannot randomize.
+</li></ul> 
+<strong><a href="StudyTermRestrict.html">Restriction</a></strong>, also known as specification, is one such method, and probably the most blunt one we can use.
+<p></p>
+<hr />
+ <strong><em>Jeff Martin, MD</em></strong>
+<p></p>
+-- <a class="foswikiNewLink" rel="nofollow" href="../Main/MaryB.html" title="Create this topic">MaryB</a> - 02 Apr 2009
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

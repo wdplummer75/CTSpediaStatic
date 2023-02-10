@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>TICRDisOccurIICohort &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/TICRDisOccurIICohort/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/TICRDisOccurIICohort/favicon.ico">
+<link type="application/x-wiki" href="TICRDisOccurIICohort.html" rel="alternate" title="edit TICRDisOccurIICohort">
+<meta name="description" content="TICRDisOccurIICohort" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "TICRDisOccurIICohort",
+   "SERVERTIME" : "08 Feb 2023 - 15:50"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Comparing_Disease_CTSpedia.IncidenceMove_in_a_Cohort"> Comparing Disease IncidenceMove in a Cohort </a>
+</li> <li> <a href="#Example_of_Using_Person_45Time_Rates_for_Cohort_Analysis"> Example of Using Person-Time Rates for Cohort Analysis </a>
+</li> <li> <a href="#Cohort_of_Petrochemical_Workers"> Cohort of Petrochemical Workers </a>
+</li> <li> <a href="#Standardized_Mortality_Ratio"> Standardized Mortality Ratio </a>
+</li> <li> <a href="#Obtaining_an_Expected_Rate_for_Comparison"> Obtaining an Expected Rate for Comparison </a>
+</li> <li> <a href="#Cause_Specific_SMRs"> Cause Specific SMR&#8217;s </a>
+</li> <li> <a href="#Examples_of_Cumulative_CTSpedia.IncidenceMove_Within_a_Cohort_and_CTSpedia.IncidenceMove_Compared_with_National_Pop._Rates"> Examples of Cumulative IncidenceMove Within a Cohort and IncidenceMove Compared with National Pop. Rates </a>
+</li></ul> 
+</div>
+<h1 id="A_">   </h1>
+<h2 id="Comparing_Disease_CTSpedia.IncidenceMove_in_a_Cohort">  Comparing Disease <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="IncidenceMove.html">IncidenceMove</a> in a Cohort </h2>
+<b><span face='"Times New Roman"' style="font-size: 12pt;">Why Use <a href="IncidenceMove.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">IncidenceMove</a> Rates</span></b> <span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span>  <ol>
+<li> <b><span face='"Times New Roman"' style="font-size: 12pt;">To calculate incidence from population-based disease registries</span> </b>
+</li> <li> <span face='"Times New Roman"' style="font-size: 12pt;"> <strong>To compare disease incidence in a cohort with a rate from the general population</strong> </span>
+</li></ol> 
+<p></p>
+<font color="darkmagenta">Another common applications is age-adjusting incidence in order to make comparisons. Say you want to compare the mortality in a cohort with 3 years of follow-up separately in the women and the men in the study, but the women are older on average than the men. A straight comparison of survival or cumulative incidence curves in women and men would be misleading. You could make separate survival curves for percent alive at 3 years in age-specific groups (such as 5-year age ranges) for women and men, but there is no easy way to summarize all those individual cumulative incidence percentages. Age-adjusting with rates works to give you one overall adjusted rate by applying the rates from the sex by 5-year age groups to the age distribution of the whole cohort (or some other external population age distribution such as the 2000 Census). The deaths in each sex by age group are summed up for the whole cohort as if the rates in women applied to the whole cohort and the same is done for the rates in men. These two rates can then be compared as a rate ratio. A rate ratio of 1.0 would mean there was no difference in the mortality rates in women and men once age-differences are adjusted.</font>
+<p></p>
+<span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span>
+<p></p>
+<font color="darkmagenta">Even more common is to apply this general method of comparing rates by comparing cohorts rates with general population rates. This allows investigation of whether the events in the cohort are more or less frequent than would be expected from a sample of the general population in the same age groups.</font>
+<p></p>
+<strong>Comparing a rate from a cohort to the rate in the general population</strong> <span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span> <ul>
+<li> A cohort study of petroleum refinery workers followed up subjects for mortality for 36 years and found 765 deaths. 
+</li> <li> Research question: Was the cohort mortality incidence high, low, or just average for those calendar years? 
+</li> <li> How would you calculate the mortality incidence in the cohort? 
+</li></ul> 
+<p></p>
+<font color="darkmagenta">It is easy enough to calculate the cumulative incidence from the cohort data since you will have follow-up on each person, but the question of what to compare it to is difficult. Clearly survival is related to the original age distribution of the cohort as well as the 36 years of follow-up and there is no source from public data that would give individual level data with up to 36 years of follow-up.</font>
+<p></p>
+<h2 id="Example_of_Using_Person_45Time_Rates_for_Cohort_Analysis">  Example of Using Person-Time Rates for Cohort Analysis </h2>
+<span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span>
+<p></p>
+<span face='"Times New Roman"'><span face='"Times New Roman"' style="font-weight: normal; font-size: 7pt; line-height: normal; font-style: normal; font-variant: normal; font-size-adjust: none; font-stretch: normal;"></span></span> <strong>Cohort of petrochemical workers</strong>
+<p></p>
+6,588 white male employees of <st1:state w:st="on"><st1:place w:st="on">Texas</st1:place></st1:state> plant
+<p></p>
+Mortality determined from 1941-1977
+<p></p>
+137,745 person-years of follow-up time
+<p></p>
+<span face='"Times New Roman"'><span face='"Times New Roman"' style="font-weight: normal; font-size: 7pt; line-height: normal; font-style: normal; font-variant: normal; font-size-adjust: none; font-stretch: normal;"></span></span>765 deaths <o:p></o:p> <ul>
+<li> Overall death rate = 765 / 137,745 person-years = 5.6 per 1000 person-years 
+</li> <li> Question: Is this a high death rate? 
+</li></ul> 
+<p></p>
+<st1:place w:st="on"><st1:city w:st="on">Austin</st1:city></st1:place> SG, et al., <em>J Occupat Med</em>, 1983 <o:p></o:p>
+<p></p>
+<font color="darkmagenta">This is a typical retrospective cohort study in which it is relatively easy, by searching the National Death Index, to determine mortality over a long period of time in the cohort. The problem is how to interpret the findings. Is the observed death rate high or low? A comparison is needed and one possibility is to compare it to national mortality data.</font>
+<p></p>
+<o:p></o:p>
+<p></p>
+<h2 id="Cohort_of_Petrochemical_Workers">  Cohort of Petrochemical Workers </h2>
+<span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span>  <ul>
+<li> Could calculate KM estimate of cumulative incidence (for 36 years of follow-up), but what is the comparison group? 
+</li> <li> Using the person-time rate, the observed rate can be compared to the rate that would be expected if the person-time rate from a reference population (e.g., United States population) is applied to the cohort 
+</li></ul> 
+<span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span>
+<p></p>
+<font color="darkmagenta">The approach of calculating cumulative incidence in the cohort is not so helpful because there is no clear comparison group with cumulative incidence at 36 years. Age-sex-race-calendar period person-time rates from United States population data can be applied to the amount of person-time follow-up by those groups in the cohort to produce an expected number of deaths under United States rates for comparison with the observed number of deaths in the cohort. Calendar date (birth cohorts) provide the needed comparison. United States population data are available from the National Center for Health Statistics. This method of applying rates from a reference population to a study population is called indirect standardization, and the statistic is the ratio of observed to expected outcomes, called the Standardized Mortality Ratio when the outcome is death. </font>
+<p></p>
+<font color="#8b008b"></font>
+<p></p>
+<h2 id="Standardized_Mortality_Ratio">  Standardized Mortality Ratio </h2>
+<o:p></o:p>  <ul>
+<li> If United States death rates for age-sex-race-calendar period groups applied to the cohort, 924 deaths were expected in the cohort versus the 765 observed. 
+</li> <li> Ratio of 765 observed/924 expected = 0.83 = 83%. This is called a <b>Standardized Mortality Ratio (SMR).<o:p></o:p></b> 
+</li></ul> 
+<b><o:p></o:p></b>
+<p></p>
+<font color="darkmagenta">The Standardized Mortality Ratio (SMR) is formed by the ratio of the observed number of events in the cohort and the number of events that would be expected applying age-sex-race-calendar period-specific rates from the United States population to the distribution of the cohort by those variables. Applying the United States rates gives an overall mortality that would be expected if the United States rates were operating in the cohort. So the ratio is an expected compared to an observed rate.</font>
+<p></p>
+<o:p></o:p>
+<p></p>
+<font color="darkmagenta">The problem with this analysis is what is known as &#8220;the healthy worker effect.&#8221; In this example the observed rate in the cohort of petrochemical workers was actually lower than expected if the United States mortality rates had been present. This is a common outcome of cohort studies of workers when they are compared to the general United States population because workers need to have a level of health in order to work which makes them generally healthier than the entire United States population in the same age groups. </font><o:p></o:p>
+<p></p>
+<h2 id="Obtaining_an_Expected_Rate_for_Comparison">  Obtaining an Expected Rate for Comparison </h2>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=SMR.JPG">http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=SMR.JPG</a> <o:p></o:p>
+<p></p>
+<font color="darkmagenta">The table illustrates how U.S. population rates are used to produce a comparison rate to the cohort rate. For simplicity only 2 age-sex-race-calendar groups are shown and the person-years in the groups are hypothetical as that detail is not available in the paper. Since the cohort has a different age-sex-race composition from the U.S. population, one cannot just use the overall U.S. mortality rate for comparison. In addition the U.S. mortality rate has changed over time, albeit very slowly. By using U.S. mortality rates specific to groups defined by those variables and applying them to the person-years at risk in each comparable group in the cohort, the expected number of deaths that would have been seen if the U.S. rates applied are calculated. The actual cohort deaths gives the observed rate. Since both have the same total person-time denominator, it cancels out in division and the ratio of the rates is just the ratio of the observed and the expected number of deaths. This is called a Standardized Mortality Ratio (SMR). </font>
+<p></p>
+<o:p></o:p>
+<p></p>
+<h2 id="Cause_Specific_SMRs">  Cause Specific SMR&#8217;s </h2>
+<span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=SMR2.JPG">http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=SMR2.JPG</a>
+<p></p>
+<st1:city w:st="on"><st1:place w:st="on">Austin</st1:place></st1:city> SG, et al., <em>J Occupat Med</em>, 1983 <span face='"Times New Roman"' style="font-size: 12pt;"><o:p></o:p></span>
+<p></p>
+<font color="darkmagenta">More specific outcomes might be more revealing, such as whether the cohort experienced a higher than expected rate of certain types of cancer that are suspected of being caused by petrochemical exposure, and, in fact, the research question that prompted the study was whether there was evidence for occupational risk of brain tumors in the petrochemical industry. A sample of a number of cause-of-death specific comparisons that were made in the study are shown here. These specific SMR&#8217;s are for employess who were hourly and had greater than six months of employment. Given the large numbers of comparisons that were made and hence the probability of finding a significantly elevated SMR by chance, interpretation of these subgroup results has to be made with caution. Although the SMR for brain and CNS tumors had an associated p-value of 0.05 for this subgroup, overall in all employees the SMR for brain and CNS was 162 with 95% CI = 83-283, and the authors concluded that there was insufficient evidence to say that these were occupationally caused tumors.</font>
+<p></p>
+<h2 id="Examples_of_Cumulative_CTSpedia.IncidenceMove_Within_a_Cohort_and_CTSpedia.IncidenceMove_Compared_with_National_Pop._Rates">  Examples of Cumulative <a href="IncidenceMove.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">IncidenceMove</a> Within a Cohort and <a title="Create this topic" href="IncidenceMove.html" class="foswikiNewLink" rel="nofollow">IncidenceMove</a> Compared with National Pop. Rates </h2>
+<p></p>
+<strong>Long-term survival among children with end-stage renal disease, Australia and New Zealand</strong>
+<p></p>
+<strong>Example of cumulative incidence (survival) within cohort</strong>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=Cumul_Inc.JPG">http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=Cumul_Inc.JPG</a>
+<p></p>
+<strong>Rate ratios for death in 10 yrs compared to Australian national death rates</strong>
+<p></p>
+<strong>Example of incidence rates compared with national population rates</strong>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=Popn_rate.JPG">http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/TICRDisOccurIICohort?rev=1;filename=Popn_rate.JPG</a><br />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

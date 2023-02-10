@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgBiasDown &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/EgBiasDown/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/EgBiasDown/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit EgBiasDown" href="EgBiasDown.html" rel="alternate">
+<meta name="description" content="EgBiasDown" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "EgBiasDown",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Bias_45_Study_of_Spermicide_Use_and_Down_Syndrome">  Example: Bias - Study of Spermicide Use and Down Syndrome </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Analysis_of_Spermicide_Use_and_Down_Syndrome_Data"> Analysis of Spermicide Use and Down Syndrome Data </a>
+</li> <li> <a href="#Crude_and_Adjusted_Estimates"> Crude and Adjusted Estimates </a>
+</li> <li> <a href="#What_Should_We_Report_63"> What Should We Report? </a>
+</li> <li> <a href="#Decreased_Precision"> Decreased Precision </a>
+</li> <li> <a href="#How_Sure_Are_You_that_Age_Is_a_Confounder_63"> How Sure Are You that Age Is a Confounder? </a>
+</li></ul> 
+</div> 
+<h2 id="Analysis_of_Spermicide_Use_and_Down_Syndrome_Data">  Analysis of Spermicide Use and Down Syndrome Data </h2>
+ We are looking at the effect of spermicide use and the development of Down Syndrome.  <ul>
+<li> After we <a href="StratificationTerm.html">stratified</a> by maternal age, we saw these two stratum specific estimates: 3.4 and 5.7.
+</li> <li> We were suspicious because of the small numbers in some of the cells that the stratum-specific estimates differed only because of <a href="SamplingError.html">sampling error</a>.
+</li> <li> When we went ahead and performed a test of homogeneity, we found it was 0.71 and so we were willing to pass on <a href="VarThird.html">interaction</a> and now we need to assess for confounding.
+</li></ul> 
+<blockquote> <img src="StudyAnalysisInappropriate.attachments/0417_3sperm.JPG" width="317" height="154" alt="0417_3sperm.JPG"> </blockquote> 
+<h2 id="Crude_and_Adjusted_Estimates">  Crude and Adjusted Estimates </h2>
+ Here the crude estimate is 3.5  <ul>
+<li> The adjusted <a href="OddsTerm.html">OR</a> by <a href="StudyAnalysisWoolf.html">Woolf method</a> is 3.82
+</li> <li> The adjusted OR by <a href="StudyAnalysisMH.html">Mantel Haenszel method</a> is 3.78;
+</li> <li> both are essentially 3.8.
+</li></ul> 
+<h2 id="What_Should_We_Report_63">  What Should We Report? </h2>
+ What should we report as our final answer, the <a href="StratificationTerm.html">crude or the adjusted</a> estimate?  <ul>
+<li> The difference between the crude (3.5) and the adjusted (3.8) is 0.30 which is not quite 10%.
+</li></ul> 
+Before you answer note the <strong>decreased <a href="PrecisionStudy.html">precision</a></strong> in the adjusted estimate compared to the crude estimate, as seen in the confidence interval.  <ul>
+<li> In this particular example, the CI&rsquo;s are still well above 1 such that whether you go with the crude or the adjusted so it does not matter much.
+</li> <li> In other words, the overall inference will be the same in either case.
+</li></ul> 
+<span id="DecreasedPrecision"></span><br /> 
+<h2 id="Decreased_Precision">  Decreased Precision </h2>
+ If you start adding in adjustment of other potential confounders, then you might start to nudge the 95% CI down to 1.  <ul>
+<li> So, the point is that with <strong>more and more adjustment often comes decreased precision</strong> and the question is whether the statistical penalty you must take is worth it.
+</li></ul> 
+<p></p>
+<h2 id="How_Sure_Are_You_that_Age_Is_a_Confounder_63">  How Sure Are You that Age Is a Confounder? </h2>
+ Your answer should be guided in just how sure you are that <a href="StudyAnalysisBiasVariance.html">age is a confounder</a>.  <ul>
+<li> On the one hand, if you are absolutely certain that age is associated with both spermicide use and Down syndrome &ndash;  <ul>
+<li> <strong>not from these data but from other sources</strong> --
+</li></ul> 
+</li> <li> then it should be adjusted for and you should accept the adjusted OR as the right answer regardless of the penalty in precision.
+</li> <li> But here, whereas we might be pretty sure that age is associated with Down syndrome, how certain are we that age is associated with spermicide use?  <ul>
+<li> Maybe it is in some populations but not necessarily in this one.
+</li></ul> 
+</li></ul> 
+<strong>If you are uncertain, then it may not be worth taking the statistical penalty.</strong>
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

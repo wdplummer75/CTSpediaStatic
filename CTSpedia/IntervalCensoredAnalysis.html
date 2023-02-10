@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>IntervalCensoredAnalysis &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/IntervalCensoredAnalysis/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/IntervalCensoredAnalysis/favicon.ico">
+<link href="IntervalCensoredAnalysis.html" rel="alternate" type="application/x-wiki" title="edit IntervalCensoredAnalysis">
+<meta name="description" content="IntervalCensoredAnalysis" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "IntervalCensoredAnalysis",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Interval_45Censored_Survival_Analysis">  Interval-Censored Survival Analysis </h1>
+ Primary Author: <a href="../Main/JohnKornak.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">JohnKornak</a>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Description"> Description </a>
+</li> <li> <a href="#R"> R </a> <ul>
+<li> <a href="#Non_45parametric:"> Non-parametric: </a>
+</li> <li> <a href="#Parametric:"> Parametric: </a>
+</li> <li> <a href="#Ordered_logistic_regression:"> Ordered logistic regression: </a>
+</li></ul> 
+</li> <li> <a href="#SAS"> SAS </a> <ul>
+<li> <a href="#Non_45parametric:_AN1"> Non-parametric: </a>
+</li> <li> <a href="#Parametric:_AN1"> Parametric: </a>
+</li> <li> <a href="#Ordered_logistic_regression:_AN1"> Ordered logistic regression: </a>
+</li></ul> 
+</li> <li> <a href="#General_Proposed_Analysis_Strategy_For_Interval_45Censored_Data"> General Proposed Analysis Strategy For Interval-Censored Data </a>
+</li></ul> 
+</div>
+<h2 id="Description">  Description </h2>
+ Survival analysis methods play an important role in the statistical analysis of medical data. In particular the advent of the Cox proportional hazards model coupled with the increasing computational power of the standard desktop computer, has led to widespread (and virtually automated) implementation of the Cox model for a wide range of survival data problems.
+<p></p>
+One notable exception for analyzing survival data for which the Cox model cannot be implemented "off-the-shelf" occurs when data are interval-censored: the usual quick and dirty approach of implementing the Cox model based on mid-points of intervals defining the time-of-event leads to conservative results (and referees are objecting more frequently to the use of mid-points). With interval-censored data, not only are many observations right-censored as in conventional survival data (that is the event [death] has not necessarily occurred by the time the subject is lost to follow up), but also for events that have occurred we do not have precise information as to when the event occurred; we only know that the event occurred within the last two follow up times.
+<p></p>
+The objectives of this document are to a) describe the tools available to the statistical consultant for analyzing interval-censored data; and b) provide guidance to efficiently approach interval-censored analysis (considering both the stability of implementation, as well as the ease of interpretability when disseminating results to medical researchers).
+<p></p>
+There are three primary approaches to dealing with interval-censored data: a) parametric modeling (accelerated failure time); b) non-parametric maximum likelihood (NPLME) Kaplan-Meier-Turnbull interval-censored methods; and c) complementary log-log link based ordered logistic regression proportional hazards modeling (this last approach requires that the intervals are somewhat consistent across subjects: e.g., patients might be followed up at pre-defined times post treatment such as 1 month, 3 months and 6 months post-surgery.
+<p></p>
+We now discuss options available in the two major statistical packages for each of these interval-censored analysis methods and how to implement the analyses:
+<h2 id="R">  R </h2>
+ The symbol &gt; is used to define the R prompt, so that text beyond that corresponds to commands given to R. 
+<h3 id="Non_45parametric:">  Non-parametric: </h3> <ul>
+<li> First, format the data for interval-censored survival analysis. There are two basic formats for interval-censored data in R, the easiest of which is called "interval2", defined as follows: a subject's data for the pair of columns in the dataset (time1, time2) is (t_e, t_e) if the event time t_e is known exactly; (t_l, NA) if right censored (where t_l is the censoring time); and (t_l, t_u) if interval censored (where t_l is the lower and t_u is the upper bound of the interval). An alternative format ("interval") is also available in R, but this format also requires a column for event status (type ?Surv in R after loading the survival package for more details if client provides data in such a format).
+</li> <li> Start R and load survival package &gt; library(survival) - note that the survival package is already included with the standard R install.
+</li> <li> Load the interval package &gt; library(interval) - note that on first use the package will need to be installed via &gt; install.packages("interval"),
+</li> <li> Generate a survival object from the dataset<br /> &gt; <a title="Create this topic" href="YourSurv.html" class="foswikiNewLink" rel="nofollow">YourSurv</a> = Surv(<a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="YourData.html">YourData</a>$time1,YourData$time2,type="interval2")
+</li> <li> Generate Kaplan-Meier-Turnbull non-parametric maximum likelihood (NPLME) survival curve estimates by group using e.g., KMTcurves = icfit(<a class="foswikiNewLink" rel="nofollow" href="YourSurv.html" title="Create this topic">YourSurv</a> ~ group, data = <a title="Create this topic" href="YourData.html" class="foswikiNewLink" rel="nofollow">YourData</a>). If there is no important grouping in the data a single curve can be generated with icfit(<a class="foswikiNewLink" rel="nofollow" href="YourSurv.html" title="Create this topic">YourSurv</a> ~ 1, data = <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="YourData.html">YourData</a>). Plot the curves via &gt; plot(KMTcurves).
+</li> <li> A test for group differences can be performed via &gt; ictest(<a href="YourSurv.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">YourSurv</a> ~ group, data = <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="YourData.html">YourData</a>)
+</li> <li> Note that there is an additional package in R called intcox that performs proportional hazards analysis for interval-censored data using the iterant convex minorant algorithm. At the time of writing however, the package is not fully developed and does not provide confidence intervals and p-values for estimated hazard ratios. Consequently we do not suggest the use of intcox as a routine package for use in statistical consultation.
+</li></ul> 
+<h3 id="Parametric:">  Parametric: </h3> <ul>
+<li> First, format the data for interval-censored survival analysis. There are two basic formats for interval-censored data in R, the easiest of which is called "interval2", defined as follows: a subject's data for the pair of columns in the dataset (time1, time2) is (t_e, t_e) if the event time t_e is known exactly; (t_l, NA) if right censored (where t_l is the censoring time); and (t_l, t_u) if interval censored (where t_l is the lower and t_u is the upper bound of the interval). An alternative format ("interval") is also available in R, but this format also requires a column for event status (type ?Surv in R after loading the survival package for more details if client provides data in such a format). <strong>Note that it is critical for the implementation of parametric survival regression for a range of survival distributions (including the Weibull) that there are no zeros in the survival time data, even if the zero data points only correspond to the lower value of a censored interval. If there are zeros in the data R returns the error: "Error in survreg: Invalid survival times for this distribution". A trick to get around this problem when you have intervals that begin at time zero is to add a small constant to all survival times in the dataset.</strong>
+</li> <li> Load survival package &gt; library(survival) - note that the survival package is included with the standard R install.
+</li> <li> Fit a parametric accelerated failure time model with the R function survreg. To fit a survival model with a Weibull distributed survival data use &gt; modelfit = survreg(<a title="Create this topic" href="YourSurv.html" class="foswikiNewLink" rel="nofollow">YourSurv</a> ~ group + covariates, dist = "weibull", data = <a href="YourData.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">YourData</a>) in the presence of additional covariates or for unadjusted model fits &gt; modelUnadj = survreg(<a title="Create this topic" href="YourSurv.html" class="foswikiNewLink" rel="nofollow">YourSurv</a> ~ group, dist = "weibull", data = <a class="foswikiNewLink" rel="nofollow" href="YourData.html" title="Create this topic">YourData</a>). Note that the Weibull is the default distribution so in these examples the function would still work if the dist argument were omitted. However, for all other survival distributions the dist argument must be included.
+</li> <li> (For Weibull accelerated failure time model only) Generate hazard ratio estimates and confidence intervals from the parameters of the fitted Weibull accelerated failure time model: take the exponential of the model coefficient estimates and confidence intervals and then divide these by the fitted scale parameter (the scale parameter can be extracted via &gt; modelfit$scale).
+</li> <li> Generate survival curves (unadjusted or adjusted) using the predict command to generate the curve points, e.g., for unadjusted: <br />predCurve = predict(modelUnadj,newdata=data.frame(group="group1"),type='quantile',p=pct) and then plot predCurve versus 1 - pct. For adjusted curves the values that the other covariates should be fixed at must also be given to the predict function, e.g., predict(modelfit, newdata=list(group = "group1", covariate=0), type='quantile',p=pct) will generate the curve based on the covariate taking the value 0.
+</li></ul> 
+<h3 id="Ordered_logistic_regression:">  Ordered logistic regression: </h3> <ul>
+<li> Load the MASS package &gt; library(MASS) - note that MASS package is included with the standard R install.
+</li> <li> Use the polr function with method = "cloglog". When the cloglog link is used, the ensuing ordered logistic model is of the proportional hazards form for survival times where the survival times can be considered as grouped within intervals (with the intervals being those defined by the discrete interval-censoring mechanism).
+</li></ul> 
+<h2 id="SAS">  SAS </h2>
+<h3 id="Non_45parametric:_AN1">  Non-parametric: </h3> <ul>
+<li> Use the macros available for SAS for the purpose of fitting Kaplan-Meier-Turnbull non-parametric maximum likelihood (NPLME) survival curves and testing for group differences. The following reference gives details on the macros and their implementation: So, Y., Johnston, G., and Kim, S.H. (2010), "Analyzing Interval-Censored Survival Data with SAS\xAE Software," Proceedings of the SAS\xAE Global Forum 2010 Conference, Cary, NC: SAS Institute Inc. The SAS support page for these macros is available at <a href="http://support.sas.com/kb/24/980.html#ref">http://support.sas.com/kb/24/980.html#ref</a>.
+</li></ul> 
+<h3 id="Parametric:_AN1">  Parametric: </h3> <ul>
+<li> Format the data for interval-censored survival analysis as follows: a subject's data for the pair of columns in the dataset (time1, time2) is (t_e, t_e) if the event time t_e is known exactly; (t_l, .) if right censored (where t_l is the censoring time); and (t_l, t_u) if interval censored (where t_l is the lower and t_u is the upper bound of the interval). <strong>Note that it is critical for the implementation of parametric survival regression for a range of survival distributions (including the Weibull) that there are no zeros in the survival time data, even if the zero data points only correspond to the lower value of a censored interval. This is especially critical for proc lifereg as the zero observations are simply removed from the dataset without warning.</strong> <br />Implement the interval-censored parametric model using proc lifereg as follows (in this example the Weibull accelerated failure time model is given):<br />proc lifereg data=YourData;<br /> class group ;<br /> model (time1, time2) = group covariates / dist=Weibull;<br />run;
+</li> <li> (For Weibull accelerated failure time model only) Generate hazard ratio estimates and confidence intervals from the parameters of the fitted Weibull accelerated failure time model: take the exponential of the model coefficient estimates and confidence intervals and then divide these by the fitted scale parameter.
+</li></ul> 
+<h3 id="Ordered_logistic_regression:_AN1">  Ordered logistic regression: </h3> <ul>
+<li> Run proc logistic with link=cloglog
+</li></ul> 
+<h2 id="General_Proposed_Analysis_Strategy_For_Interval_45Censored_Data">  General Proposed Analysis Strategy For Interval-Censored Data </h2> <ol>
+<li> Are the intervals defined by a small discrete set of times that are consistent for all subjects? If so, the logistic regression based approach should be used.
+</li> <li> Is there a primary group comparison to be performed? If so, implement group test based on Kaplan-Meier-Turnbull based estimates
+</li> <li> Perform parametric accelerated failure time interval-censored analysis with Weibull-modeled survival times mirroring the (unadjusted) primary group comparison performed in 2). Note that the Weibull-model is recommended here primarily for interpretation reasons. The Weibull model for survival times is the only parametric distribution available that corresponds to a proportional hazards model and therefore is the only one for which interpretation in terms of hazard ratios can be made. Interpretation via hazard ratios is desirable because clinicians tend to have acquired some understanding of their meaning. Of course, if the proportional hazard assumption is violated then either alternative survival distributions or time-varying covariate methods must be used.
+</li> <li> Generate Hazard Ratios, confidence intervals and p-values from Weibull-model fitted parameter estimates.
+</li> <li> Compare parametric model fitted group survival curves to corresponding Kaplan-Meier-Turnbull curve estimates.
+</li> <li> Check whether proportional hazards or parametric modeling assumptions are reasonable via diagnostic probability and log-log plots. If assumptions are violated consider alternative parametric survival distributions, modeling non-proportionality with time-varying covariates, or semi-parametric baseline hazard models (see<strong> <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3107558/bin/supp_203_8_1174__index.html">methods developed</a> </strong>for <strong><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3107558/">this article</a></strong> for a template for how to include time-varying covariates in models with interval-censoring, late entry, and clustering).
+</li> <li> Repeat parametric interval-censored analysis with any additional covariates and potential confounding variable included in the model. Compare estimates with unadjusted models.
+</li></ol> 
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

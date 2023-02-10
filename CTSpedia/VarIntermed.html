@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>VarIntermed &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/VarIntermed/favicon.ico" rel="icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/VarIntermed/favicon.ico" rel="shortcut icon">
+<link title="edit VarIntermed" href="VarIntermed.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="VarIntermed" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "VarIntermed",
+   "SERVERTIME" : "08 Feb 2023 - 15:51"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Intermediary_Variable">  Intermediary Variable </h1>
+<strong><em>Lead Author(s):</em></strong>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Intermediary_Variable_Is_Not_a_Confounder"> Intermediary Variable Is Not a Confounder </a>
+</li> <li> <a href="#Is_It_an_Intermediary_Variable_or_a_Confounder_63"> Is It an Intermediary Variable or a Confounder? </a>
+</li> <li> <a href="#What_Is_Your_Research_Question_63"> What Is Your Research Question? </a>
+</li> <li> <a href="#What_Is_the_Pathway_Under_Investigation_63"> What Is the Pathway Under Investigation? </a>
+</li> <li> <a href="#Third_Variable:_Decision_Tree_45_Intermediary_Variable"> Third Variable: Decision Tree - Intermediary Variable </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Intermediary_Variable_Is_Not_a_Confounder">  Intermediary Variable Is Not a Confounder </h2>
+<p></p>
+As seen in the diagram below a variable that is an <strong>intermediate</strong> step in the causal path under study <ul>
+<li> <strong>between the <a href="PredictorVariable.html">exposure</a> in question and a <a href="OutcomeVariable.html">disease</a></strong>
+</li> <li> is <strong>not</strong> a confounding variable.
+</li></ul> 
+<blockquote> <img width="214" src="VarIntermed.attachments/0401_6inter.JPG" alt="0401_6inter.JPG" height="198"> </blockquote>
+<p></p>
+DESPITE BEING ASSOCIATED WITH BOTH EXPOSURE AND OUTCOME, <ul>
+<li> <strong>FACTOR I IS NOT A CONFOUNDER</strong>.
+</li> <li> IT IS ON THE PATHWAY UNDER STUDY.
+</li> <li> IT IS AN <strong>INTERMEDIARY</strong> VARIABLE.
+</li></ul> 
+Often na\xEFve investigators think of an <strong>intermediary variable</strong> as a <a href="BiasConfound.html">confounder</a> -  <ul>
+<li> in other words, a <strong>variable that sits right on the causal pathway you are investigating</strong>.
+</li></ul> 
+You might be tempted to adjust for it if you naively looked at basic requirements of a confounding factor (associated with disease and exposure).
+<p></p>
+The issue with confounding <strong>is not just that you want to adjust for factors</strong> associated with the exposure and the outcome <ul>
+<li> but it is more aptly that <strong>you want to exclude other pathways not under study</strong>.
+</li></ul> 
+Therefore, if you believe <strong>E caused D through some factor I</strong> and this is the pathway you are interested in studying,  <ul>
+<li> <strong>you would not want to treat factor I as a confounder</strong>.
+</li></ul> 
+<h2 id="Is_It_an_Intermediary_Variable_or_a_Confounder_63">  Is It an Intermediary Variable or a Confounder? </h2>
+ How do you determine if it is and intermediary variable or a <a href="BiasConfound.html">confounder</a>?
+<p></p>
+(1) Ask: What is your research question?
+<p></p>
+(2) Ask: What is the pathway under investigation?
+<p></p>
+<span id="ExampleResearchQuestion"></span>
+<p></p>
+<h2 id="What_Is_Your_Research_Question_63">  What Is Your Research Question? </h2>
+<p></p>
+An excellent example of determining your research question can be found in <a href="EgIntermediateHIV.html">Taylor's Study</a> of the CCR5 receptor in HIV.
+<p></p>
+To determine if CD4 count is an intermediary variable we ask: <ul>
+<li> Is CCR5 associated with progression to AIDS, <strong>irrespective of mechanism</strong>?
+</li></ul> 
+To determine if CD4 count is a confounding variable we ask:  <ul>
+<li> Is CCR5 asssocated with progression to AIDS, <strong>independent of CD4 count</strong>?
+</li></ul> 
+<span id="ExamplePathway"></span>
+<p></p>
+<h2 id="What_Is_the_Pathway_Under_Investigation_63">  What Is the Pathway Under Investigation? </h2>
+ An excellent example of determining the pathway under investigation can be found in <a href="EgIntermediateCAD.html">Pathway Under Investigation - CAD</a>.
+<p></p>
+If you <strong>do not care about the exact pathway or you are only thinking about one pathway</strong> by which exercise can influence the development of heart disease, and HDL was right in the middle of this pathway, <ul>
+<li> then HDL is an <strong>intermediary variable</strong> and we would not want to control for it.
+</li></ul> 
+If the pathway you are <strong>interested in pathway other than HDL</strong>,  <ul>
+<li> then HDL is a <strong><a href="BiasConfound.html">confounder</a></strong>.
+</li></ul> 
+<span id="IntermQuestOne"></span> 
+<h2 id="Third_Variable:_Decision_Tree_45_Intermediary_Variable">  Third Variable: Decision Tree - Intermediary Variable </h2>
+<p></p>
+The <strong>first decision</strong> you have to make is a conceptual one based upon your knowledge of the biological or behavioral system and the research question at hand. <ul>
+<li> If you are conceptualizing the <strong><a href="VarThird.html">third variable</a> as an intermediary variable</strong>, then you would not control for it.
+</li> <li> You would stop right here and just <strong>report the crude or unadjusted association</strong>.
+</li></ul> 
+<img width="256" src="VarIntermed.attachments/0415_8yes_interm.JPG" height="70" alt="0415_8yes_interm.JPG">
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

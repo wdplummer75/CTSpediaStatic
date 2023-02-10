@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StataDoFilesKM &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StataDoFilesKM/favicon.ico" rel="icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StataDoFilesKM/favicon.ico">
+<link type="application/x-wiki" rel="alternate" href="StataDoFilesKM.html" title="edit StataDoFilesKM">
+<meta name="description" content="StataDoFilesKM" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "StataDoFilesKM",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Stata_Do_Files">  <a href="STATA.html">Stata</a> Do Files </h1>
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Kaplan_45Meier_Analysis_Using_Stata"> Kaplan-Meier Analysis Using Stata </a>
+</li> <li> <a href="#Step_1_45_SURVIVAL_ANALYSIS_IN_Stata"> Step 1 - SURVIVAL ANALYSIS IN Stata </a>
+</li> <li> <a href="#Step_2_45_Kaplan_45Meier_Analysis_in_Stata"> Step 2 - Kaplan-Meier Analysis in Stata </a>
+</li> <li> <a href="#Step_3_45_Graph_a_Curve_from_the_Kaplan_45Meier_Estimates_in_Stata"> Step 3 - Graph a Curve from the Kaplan-Meier Estimates in Stata </a>
+</li> <li> <a href="#Analysis_in_Stata10"> Analysis in Stata10 </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Kaplan_45Meier_Analysis_Using_Stata">  Kaplan-Meier Analysis Using <a href="STATA.html">Stata</a> </h2>
+<p></p>
+Need a data set with one observation per person.
+<p></p>
+Each person either experiences event or is censored.
+<p></p>
+Need a variable for the time from study entry to date of event or date of censoring/failure <ul>
+<li> ( <strong>timevariable</strong>).
+</li></ul> 
+Need a variable indicating whether follow-up ended with the event or with censoring/failure  <ul>
+<li> ( <strong>failvariable</strong>)
+</li></ul> 
+<h2 id="Step_1_45_SURVIVAL_ANALYSIS_IN_Stata">  Step 1 - SURVIVAL ANALYSIS IN <a href="STATA.html">Stata</a> </h2>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/StataDoFilesKM?rev=1;filename=STEP1_km.JPG">Step 1 in Kaplan Meier Survival Analysis</a>
+<p></p>
+<h2 id="Step_2_45_Kaplan_45Meier_Analysis_in_Stata">  Step 2 - Kaplan-Meier Analysis in <a href="STATA.html">Stata</a> </h2>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/StataDoFilesKM?rev=1;filename=step2.JPG">Step 2 in Kaplan-Meier Analysis</a>.
+<h2 id="Step_3_45_Graph_a_Curve_from_the_Kaplan_45Meier_Estimates_in_Stata">  Step 3 - Graph a Curve from the Kaplan-Meier Estimates in <a href="STATA.html">Stata</a> </h2>
+<p></p>
+TO GRAPH A CURVE FROM THE KAPLAN-MEIER ESTIMATES:
+<p></p>
+Using command line, type:
+<p></p>
+<strong>. sts graph</strong>
+<p></p>
+<a href="http://twiki.library.ucsf.edu/twiki/bin/viewfile/CTSpedia/StataDoFilesKM?rev=1;filename=km_curve.JPG">Step 3: Graph the curve</a>&gt;
+<h2 id="Analysis_in_Stata10">  Analysis in <a href="STATA.html">Stata</a>10 </h2>
+<p></p>
+All of preceding can be done in <a href="STATA.html">Stata</a> 10 using its pull-down menus.
+<p></p>
+<strong>Statistics</strong> <ul>
+<li> <strong>Survival Analysis: Setup &amp; Utilities</strong>
+</li></ul> 
+Use <strong>Declare data to be survival-time data</strong> to identify time and censoring variables and specify value that indicates failure (eg, 1)
+<p></p>
+<strong>Statistics</strong> <ul>
+<li> <strong>Survival Analysis:</strong> <strong>Summary statistics, tests, &amp; tables</strong>
+</li></ul> 
+Use <strong>Create survivor, hazard, &amp; other variables</strong> to get values of survival function
+<p></p>
+Use <strong>Graph survivor &amp; cumulative hazard functions</strong> to get K-M graph <ul>
+<li> (or use pull-down <strong>Graphics</strong> -- <strong>Survival analysis graphs</strong>)
+</li></ul> 
+<hr />
+<p></p>
+<strong><em>Jeff Martin, MD</em></strong>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

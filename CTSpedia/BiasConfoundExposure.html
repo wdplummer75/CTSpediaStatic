@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>BiasConfoundExposure &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/BiasConfoundExposure/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/BiasConfoundExposure/favicon.ico" type="image/x-icon">
+<link rel="alternate" href="BiasConfoundExposure.html" title="edit BiasConfoundExposure" type="application/x-wiki">
+<meta name="description" content="BiasConfoundExposure" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "BiasConfoundExposure",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Properties_of_a_Confounder_45_Association_with_Exposure">  Properties of a Confounder - Association with Exposure </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Refined_Properties_of_a_True_Confounder_45_Association_with_Exposure"> Refined Properties of a True Confounder - Association with Exposure </a>
+</li> <li> <a href="#Confounder_Causes_the_Exposure"> Confounder Causes the Exposure </a>
+</li> <li> <a href="#Confounder_Is_the_Result_of_the_Exposure"> Confounder Is the Result of the Exposure </a>
+</li> <li> <a href="#Confounder_Associated_with_the_Exposure_in_a_Non_45causal_Manner"> Confounder Associated with the Exposure in a Non-causal Manner </a>
+</li></ul> 
+</div> 
+<h2 id="Refined_Properties_of_a_True_Confounder_45_Association_with_Exposure">  Refined Properties of a True Confounder - Association with Exposure </h2>
+<p></p>
+When we say the <a href="BiasConfound.html">confounder</a> has to be <em>associated with the <a href="PredictorVariable.html">exposure</a></em> - what do we mean?
+<p></p>
+A confounding variable can be either:
+<p></p>
+(1) <strong><a class="foswikiCurrentTopicLink" href="#BiasCause">Cause of the exposure</a></strong> (arrow pointing from the confounder to the exposure),
+<p></p>
+(2) <strong><a class="foswikiCurrentTopicLink" href="#BiasResult">Result of the exposure</a></strong> (arrow pointing from the exposure to the confounder),
+<p></p>
+(3) <strong><a class="foswikiCurrentTopicLink" href="#BiasNoncausal">Related to the exposure in a non-causal fashion</a></strong> (the double-headed arrow from the exposure to the confounder).
+<p></p>
+<span id="BiasCause"></span>
+<p></p>
+<h2 id="Confounder_Causes_the_Exposure">  Confounder Causes the Exposure </h2>
+<p></p>
+<strong>DAG - Confounder Causes the Exposure</strong>
+<blockquote> <img src="BiasConfoundExposure.attachments/0330_6ccausee.JPG" width="164" height="164" alt="0330_6ccausee.JPG"></blockquote>
+<p></p>
+<strong>Given the research question:</strong> Is sexual activity associated with survival independent of general health?
+<p></p>
+Consider the diagram below where we are looking at whether sexual activity influences mortality, say, <ul>
+<li> via a mechanism of getting a cardiovascular work out.
+</li></ul> 
+If this is the research question, <strong>then a person's general health may be a confounder</strong> in this relationship because good health is generally associated with having more sexual activity (i.e. <strong>the confounder causes the exposure in question</strong>).  <ul>
+<li> And, general health also, of course, influences mortality.
+</li></ul> 
+<span id="BiasResult"></span>
+<p></p>
+<h2 id="Confounder_Is_the_Result_of_the_Exposure">  Confounder Is the Result of the Exposure </h2>
+<p></p>
+<strong>DAG - Confounder Is the Result of Exposure</strong>
+<blockquote>
+<p></p>
+<img alt="0330_7ecausesc.JPG" height="168" width="175" src="BiasConfoundExposure.attachments/0330_7ecausesc.JPG">
+</blockquote>
+<p></p>
+<strong>Given the research question:</strong> Is poverty associated with survival independent of effects on diet?
+<p></p>
+Consider the case below where we are looking at the <a href="PredictorVariable.html">exposure</a> in question causing the confounder. <ul>
+<li> Situations like this remind that it is very important to be clear about the <a href="VarIntermed.html">research question</a>.
+</li></ul> 
+Assume that we all know and agree that poverty influences overall through effects on diet.  <ul>
+<li> More poverty leads to poor diet (defined in some way) which leads to shorter survival.
+</li></ul> 
+<strong>Then, the next research question may be whether there is a another mechanism by which poverty influences survival</strong> --  <ul>
+<li> perhaps by way of poor access to medical care.
+</li></ul> 
+If that is the question, then <strong>poor diet becomes a confounding factor</strong> and  <ul>
+<li> we need to deal with it if we are going to get a valid answer to our research question.
+</li></ul> 
+<strong>Therefore, this is an example where the exposure (E) is a cause of the confounding variable (C).</strong>
+<p></p>
+These kind of situations come up all of the time in research.
+<p></p>
+Even though poor diet is one pathway, it becomes a potential confounding variable when we begin to research other <a href="VarIntermed.html">pathways under investigation</a>. <ul>
+<li> <strong>Whether or not a given variable is sitting right on the causal pathway in question or whether it is a confounder simply depends upon the research question</strong>.
+</li></ul> 
+<strong>You have to have your research question in mind once you begin to assign roles to variables.</strong>
+<p></p>
+<span id="BiasNoncausal"></span>
+<p></p>
+<h2 id="Confounder_Associated_with_the_Exposure_in_a_Non_45causal_Manner">  Confounder Associated with the Exposure in a Non-causal Manner </h2>
+<p></p>
+<strong>DAG - Confounder Associated in a Non-causal Manner</strong>
+<blockquote> <img width="174" height="167" alt="0330_8non.JPG" src="BiasConfoundExposure.attachments/0330_8non.JPG"></blockquote>
+<p></p>
+<strong>Given the research question:</strong> Are Ca channel blockers associated with GI bleeding independent of other med use?
+<p></p>
+Consider the diagram below where we are looking at a non-causal association between the confounder and the exposure.
+<p></p>
+For example, if we were interested in studying the relationship between Ca channel blockers and GI bleeding, <ul>
+<li> we have to be concerned <strong>about confounding by other medications</strong>.
+</li></ul> 
+Here, having coronary artery disease may cause persons both:  <ul>
+<li> to use Ca channel blockers and
+</li> <li> other meds (perhaps ASA).
+</li></ul> 
+<strong>So, while the confounder in question (other meds) and the exposure (ca channel blockers) are related,</strong>  <ul>
+<li> <strong>it is non-causal through a separate pathway.</strong>
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

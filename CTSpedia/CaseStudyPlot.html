@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CaseStudyPlot &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/CaseStudyPlot/favicon.ico"> <link href="../MISSING RESOURCE CTSpedia/CaseStudyPlot/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="alternate" href="CaseStudyPlot.html" title="edit CaseStudyPlot" type="application/x-wiki">
+<meta name="description" content="CaseStudyPlot" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "CaseStudyPlot",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Box_Plot">  Box Plot </h1>
+ <strong><em>Lead Author(s):</em></strong> Erin Dienes 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Box_Plot"> Definition of Box Plot </a>
+</li> <li> <a href="#Constructing_a_Box_Plot"> Constructing a Box Plot </a>
+</li> <li> <a href="#Interpreting_a_Box_Plot"> Interpreting a Box Plot </a>
+</li> <li> <a href="#Example_of_a_Box_Plot"> Example of a Box Plot </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Definition_of_Box_Plot">  Definition of Box Plot </h2>
+ A box plot, also known as a box and whiskers plot, is a graphical method that is based on the quartiles of a data set. Quartiles are values that partition the data set into four groups, each containing 25% of the measurements. The lower quartile is the 25th percentile, the middle quartile is the 50th percentile (the median), and the upper quartile is the 75th percentile. A box plot is based on the interquartile range (IQR), meaning the distance between the lower and upper quartiles. Thus the IQR is calculated by<br /><img src="CaseStudyPlot.attachments/IQR.JPG" width="131" height="24" alt="IQR.JPG"> 
+<h2 id="Constructing_a_Box_Plot">  Constructing a Box Plot </h2>
+<p></p>
+There are three elements of a box plot: <ol>
+<li> A rectangle (the box) is drawn with the ends (the hinges) drawn at the lower and upper quartiles. The median of the data is shown in the box, typically by a line.
+</li> <li> The points at distances 1.5 (IQR) from each hinges mark are the inner fences of the data set. Lines (the whiskers) are drawn from each hinge to the most extreme measurement within the inner fence.
+</li> <li> A second pair of fences, the outer fences, appear at a distance of 3(IQR) from the hinges. One symbol (usually "*") is used to represent measurements falling between the inner and outer fences, and another (usually "0") is used to represent measurements that lie beyond the outer fences. Outer fences are not shown unless one or more measurements lie beyond them.
+</li></ol> 
+<h2 id="Interpreting_a_Box_Plot">  Interpreting a Box Plot </h2>
+ To interpret a box plot we consider several things.  <ol>
+<li> Examine the length of the box. The IQR is a measure of the sample's variability and is especially useful for comparing two or more samples.
+</li> <li> Consider the spread between each quartile and the median. If one of these distances is much larger than the other then this indicates that the distribution is probably skewed in the direction of the larger distance.
+</li> <li> Visually compare the lengths of the whiskers. If one is clearly longer, the distribution of the data is probably skewed in the direction of the longer whisker.
+</li> <li> Analyze any measurements that lie beyond the fences. Less than 5% of the data should fall beyond the inner fences, even for very skewed distributions. Measurements beyond the outer fences are probably <a href="DefOutlier.html">outliers</a>.
+</li></ol> 
+<h2 id="Example_of_a_Box_Plot">  Example of a Box Plot </h2>
+ Consider the following two sample data sets:
+<p></p>
+<img width="280" height="195" alt="boxplottable.JPG" src="CaseStudyPlot.attachments/boxplottable.JPG">
+<p></p>
+For Sample A we get the following summary:
+<p></p>
+<img src="CaseStudyPlot.attachments/boxplotsummary.JPG" alt="boxplotsummary.JPG" height="54" width="550">
+<p></p>
+From the above information we can calculate the IQR and the fences for Sample A:
+<p></p>
+IQR = 172 - 157 = 15
+<p></p>
+Then 1.5 (IQR) = 1.5 (15) = 22.5<br />Lower Inner Fence = 157 - 22.5 = 134.5<br />Upper Inner Fence = 172 + 22.5 = 194.5<br />We can see that the measurements 85, 100, 121, and 196 are outside of the inner fences.
+<p></p>
+And 3 (IQR) = 3 (15) = 45<br />Lower Outer Fence = 157 - 45 = 112<br />Upper Outer Fence = 172 + 45 = 217 <br />We can see that the measurements 85 and 100 are outside of the outer fences.
+<p></p>
+For Sample B we get the following summary:
+<p></p>
+<img width="550" height="51" alt="boxplotsummaryb.JPG" src="CaseStudyPlot.attachments/boxplotsummaryb.JPG">
+<p></p>
+From the above information we can calculate the IQR and the fences for Sample B:
+<p></p>
+IQR = 183 - 169 = 14
+<p></p>
+Then 1.5 (IQR) = 1.5 (14) = 21<br />Lower Inner Fence = 169 - 21 = 148<br />Upper Inner Fence = 183 + 21 = 204<br /> We can see that the measurements 140 and 206 are outside of the inner fences.
+<p></p>
+And 3 (IQR) = 3 (14) = 42<br />Lower Outer Fence = 169 - 42 = 127<br />Upper Outer Fence = 183 + 42 = 225 <br /> We can see that none of the measurements are outside of the outer fences.
+<p></p>
+A box plot for each of the above samples is provided below. The measurements in between the inner and outer fences are labeled with a " * ", and the measurements outside of the outer fences are labeled with a " 0 ".
+<p></p>
+<img width="500" height="455" alt="boxplot.JPG" src="CaseStudyPlot.attachments/boxplot.JPG">
+<p></p>
+From these two box plots we see that the variability in each sample, based on the IQR, is very similar. From a visual inspection of the box plot of the data in Sample A, we see that the distance from the lower and upper quartiles to the median are very similar which suggests that the underlying distribution is rather symmetric. This conclusion is also supported by the approximately equal lengths of the whiskers. From the box plot of the data in Sample B, we see that the distance from the lower quartile to the median is significantly smaller than the distance from the upper quartile to the median. This suggests that the underlying distribution is skewed to the right. Since the whiskers are approximately equal in length, we may conclude that the skew is very slight.
+<p></p>
+Also in Sample A there appears to be four possible outliers (two extreme outliers) and in Sample B there appears to be two possible outliers. Further analysis of these points is needed.
+<p></p>
+-- <a href="../Main/ErinEsp.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">ErinEsp</a> - 12 Apr 2010
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>OddsRatioExpressions &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/OddsRatioExpressions/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/OddsRatioExpressions/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" rel="alternate" href="OddsRatioExpressions.html" title="edit OddsRatioExpressions">
+<meta name="description" content="OddsRatioExpressions" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "OddsRatioExpressions",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Odds_Ratio_45_Expressions">  Odds Ratio - Expressions </h1>
+<p></p>
+<h4 id="FORUM_QUESTION:_Julia_St_George_45_27_May_2009_45_11:09">  FORUM QUESTION: Julia St George - 27 May 2009 - 11:09 </h4>
+I ran a logistic regression model and got an estimated odds ratio showing that when this protein is overexpressed, cells are less likely to die (odds below 1), with a confidence interval. But I think this would be easier to explain if I could express my result as a positive finding (more likely to live), with an odds greater than 1. Is there a way I can change this without rerunning my model?
+<p></p>
+<h4 id="FORUM_ANSWER:__45_45_Charity_Moore_44_PhD_44_MSPH__Julia_St_George_45_27_May_2009_45_11:10">  FORUM ANSWER: <strong><em>-- Charity Moore, PhD, MSPH</em></strong> Julia St George - 27 May 2009 - 11:10 </h4>
+Depending on the software that you are running, you can choose the option or specify to model the likelihood of living instead of the likelihood of dying. Another way to do this would be to take the inverse of the odds ratio for the likelihood of dying. This will give you the odds ratio for the likelihood of living -- same goes for the 95% CI limits.
+<p></p>
+OR = a*d/(b*c) if this is for dying, then OR for living would be b*c/(a*d)
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

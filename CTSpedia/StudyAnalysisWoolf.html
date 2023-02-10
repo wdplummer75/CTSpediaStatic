@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisWoolf &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisWoolf/favicon.ico" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisWoolf/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" href="StudyAnalysisWoolf.html" rel="alternate" title="edit StudyAnalysisWoolf">
+<meta name="description" content="StudyAnalysisWoolf" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyAnalysisWoolf",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Summary_Estimators:_Woolf_39s_Method">  Summary Estimators: Woolf's Method </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+This is one method for calculating summary adjusted estimators when making <a href="StudyAnalysisAdjustment.html">adjustments</a> in the measure of <a href="StudyAssoc.html">association</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Woolf_39s_Method_for_Adjusted_Odds_Ratio"> Woolf's Method for Adjusted Odds Ratio </a> <ul>
+<li> <a href="#Data_for_Woolf_39s_Method"> Data for Woolf's Method </a>
+</li> <li> <a href="#Step_1_45_Weighted_Average_of_the_LOg_odds_ratio"> Step 1 - Weighted Average of the LOg odds ratio </a>
+</li> <li> <a href="#Step_2_45_Expoteniate_the_log_odds"> Step 2 - Expoteniate the log odds </a>
+</li> <li> <a href="#Step_3_45_inverse_of_the_log_odds_ratio"> Step 3 - inverse of the log odds ratio </a>
+</li></ul> 
+</li> <li> <a href="#Pros_and_Cons_of_Woolf_39s_Method"> Pros and Cons of Woolf's Method </a>
+</li> <li> <a href="#Mantel_45Haenszel_Method"> Mantel-Haenszel Method </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Woolf_39s_Method_for_Adjusted_Odds_Ratio">  Woolf's Method for Adjusted Odds Ratio </h2>
+<p></p>
+In all of our studies, we are just taking a sample of the population and we know there is always the threat of <a href="SamplingError.html">sampling error</a>. <ul>
+<li> The potential for sampling error is best seen in the <a href="StudyAnalysisVariance.html">variance</a> of the measure of association for each <a href="StratificationTerm.html">stratum</a>.
+</li></ul> 
+Consequently, <strong>Woolf's Method</strong> is based on:
+<p></p> <ul>
+<li> Weighing each stratum according to its sampling error - giving the most weight to those strata that have the smallest variance.
+</li></ul> 
+<strong>Woolf's Method:</strong> In this method, we actually initially work with log of the <a href="OddsTerm.html">odds ratio</a> and the formula uses the weighted average.
+<p></p>
+<h3 id="Data_for_Woolf_39s_Method">  Data for Woolf's Method </h3>
+<p></p>
+<blockquote> <img src="StudyAnalysisWoolf.attachments/0416_4a_chi.JPG" alt="0416_4a_chi.JPG" height="93" width="229">
+<p></p>
+</blockquote>
+<p></p>
+<h3 id="Step_1_45_Weighted_Average_of_the_LOg_odds_ratio">  Step 1 - Weighted Average of the LOg odds ratio </h3>
+ <blockquote><img src="StudyAnalysisWoolf.attachments/0416_4b_logOR.JPG" height="96" alt="0416_4b_logOR.JPG" width="204"> </blockquote>
+<p></p>
+1 - The weighted average of the different strata is the weighted average of log odds ratio for each of the strata. In other words, this is the sum of the products of each stratum-specific log odds ratio times its weight, all divided by the sum of the weights.
+<p></p>
+<h3 id="Step_2_45_Expoteniate_the_log_odds">  Step 2 - Expoteniate the log odds </h3>
+ <blockquote> <img alt="0416_4c_OR.JPG" height="57" src="StudyAnalysisWoolf.attachments/0416_4c_OR.JPG" width="147"> </blockquote>
+<p></p>
+2 - After you have taken the weighted average on the log scale, at the end you exponentiate this to get back to the native scale.
+<p></p>
+<h3 id="Step_3_45_inverse_of_the_log_odds_ratio">  Step 3 - inverse of the log odds ratio </h3>
+ <blockquote> <img alt="0416_4d_where.JPG" height="108" src="StudyAnalysisWoolf.attachments/0416_4d_where.JPG" width="277"> </blockquote>
+<p></p>
+3 - The weight is not the variance of the log odds ratio per se but it is the inverse of the variance. So, what you see in the denominator here is the variance of the log odds ratios. This makes sense, right, because the bigger the variance, the inverse of the variance is small and thus a smaller weight. The smaller the variance, ie the more confident that you have nailed down the estimate, the inverse is larger - i.e. more weight.
+<p></p>
+<h2 id="Pros_and_Cons_of_Woolf_39s_Method">  Pros and Cons of Woolf's Method </h2>
+<p></p>
+<strong>Conceptually straightforward</strong>
+<p></p>
+<strong>Best when</strong>: number of strata is small sample size within each strata is large
+<p></p>
+<strong>Cannot be calculated</strong> when any cell in any stratum is zero <ul>
+<li> because log(0) is undefined
+</li> <li> 0.5 cell corrections have been suggested but are subject to bias
+</li></ul> 
+You can find formulae for the Woolf&rsquo;s approach for other measures of association, like a <a href="RiskRatio.html">risk ratio</a>, <a href="StudyAssocDiff.html">risk difference</a> in textbooks and software documentation.
+<p></p>
+<h2 id="Mantel_45Haenszel_Method">  Mantel-Haenszel Method </h2>
+<p></p>
+<strong>Given the Woolf's Method problem with cells of zero, a second method, the <a href="StudyAnalysisMH.html">Mantel-Haenszel method</a> is more widely used.</strong>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

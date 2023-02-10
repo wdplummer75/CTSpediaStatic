@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisMH &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisMH/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisMH/favicon.ico" type="image/x-icon">
+<link title="edit StudyAnalysisMH" rel="alternate" href="StudyAnalysisMH.html" type="application/x-wiki">
+<meta name="description" content="StudyAnalysisMH" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "StudyAnalysisMH",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : ""
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Summary_Estimators:_Mantel_45Haenszel_Method">  Summary Estimators: Mantel-Haenszel Method </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+This is one method for calculating summary adjusted estimators when making <a href="StudyAnalysisAdjustment.html">adjustments</a> in the measure of <a href="StudyAssoc.html">association</a>.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Summary_Estimators:_Mantel_45Haenszel_Method"> Summary Estimators: Mantel-Haenszel Method </a> <ul>
+<li> <a href="#Data_for_Mantel_45Haenszel_39s_Method"> Data for Mantel-Haenszel's Method </a>
+</li></ul> 
+</li> <li> <a href="#Step_1_45_Weight_Using_the_Native_Odds_Ratio_Scale"> Step 1 - Weight Using the Native Odds Ratio Scale </a> <ul>
+<li> <a href="#Step_2_45_Weight_Related_to_Variance"> Step 2 - Weight Related to Variance </a>
+</li></ul> 
+</li> <li> <a href="#Example:_Summary_Adjusted_Effect_Using_Mantel_45Haenszel_Method"> Example: Summary Adjusted Effect Using Mantel-Haenszel Method </a>
+</li> <li> <a href="#Variance_Associated_with_No_Effect"> Variance Associated with No Effect </a>
+</li> <li> <a href="#Pros_and_Cons_of_Mantel_45Haenszel_39s_Methods"> Pros and Cons of Mantel-Haenszel's Methods </a>
+</li></ul> 
+</div>
+<p></p>
+<span id="FormulaMH"></span> 
+<p></p>
+<h2 id="Summary_Estimators:_Mantel_4_AN1">  Summary Estimators: Mantel-Haenszel Method </h2>
+ Given the <a href="StudyAnalysisWoolf.html">Woolf's Method</a> problem with cells of zero, the Mantel-Haenszel method is more widely used. 
+<h3 id="Data_for_Mantel_45Haenszel_39s_Method">  Data for Mantel-Haenszel's Method </h3>
+ <blockquote> <img width="207" src="StudyAnalysisMH.attachments/0417_1A_chi.JPG" alt="0417_1A_chi.JPG" height="113"></blockquote>
+<p></p>
+<span id="FormulaMH"></span>
+<h2 id="Step_1_45_Weight_Using_the_Native_Odds_Ratio_Scale">  Step 1 - Weight Using the Native Odds Ratio Scale </h2>
+<p></p>
+<blockquote> <img src="StudyAnalysisMH.attachments/0417_1B_sum.JPG" alt="0417_1B_sum.JPG" height="113" width="232"> </blockquote> Here, we are working with the plain old native <a href="OddsTerm.html">odds ratio scale</a>.
+<p></p> <ul>
+<li> The weight is bc/N which happens to be the inverse of the variance of each stratum under the conditions when the OR=1.
+</li> <li> This is one of those things you are going to have to accept without proof.
+</li></ul> 
+<h3 id="Step_2_45_Weight_Related_to_Variance">  Step 2 - Weight Related to Variance </h3>
+ <blockquote> <img height="69" alt="0417_1C_weight.JPG" src="StudyAnalysisMH.attachments/0417_1C_weight.JPG" width="87"> </blockquote>
+<p></p>
+In other words, the weight is related to the <a href="StudyAnalysisVariance.html">variance</a>, but a special form of the variance, that is, when there is no association.
+<p></p>
+<h2 id="Example:_Summary_Adjusted_Effect_Using_Mantel_45Haenszel_Method">  Example: Summary Adjusted Effect Using Mantel-Haenszel Method </h2>
+ In the <a href="#ExampleAZT" class="foswikiCurrentTopicLink">example of AZT</a> use we need to determine the summary adjusted effect, using the Mantel-Haenszel Method. We obtain an summary estimate for the association between AZT use and HIV seroconversion after adjusting for severity of needlestick. <blockquote>
+<p></p>
+<img width="243" src="StudyAnalysisAdjustment.attachments/0417_2a_number.JPG" alt="0417_2a_number.JPG" height="81">
+</blockquote>
+<p></p>
+The summary adjusted estimate is 0.3. <ul>
+<li> This is an example of negative confounding.
+</li></ul> 
+The crude estimate was 0.6 and not even statistically significant.  <ul>
+<li> After adjustment for severity of needlestick the OR is now an impressive 0.3.
+</li> <li> <strong>There is a 70% reduction in odds of HIV seroconversion associated with using AZT</strong>.
+</li></ul> 
+<p></p>
+<h2 id="Variance_Associated_with_No_Effect">  Variance Associated with No Effect </h2>
+ Now, you might wonder why we using a variance associated with an odds ratio of no effect if indeed there is an effect in the stratum.  <ul>
+<li> It turns out that despite this apparent illogic, this weight works quite well compared to what is considered the real gold standard approach of using a technique called <a class="foswikiNewLink" rel="nofollow" href="StudyAnalysisMaximum.html" title="Create this topic">maximum likelihood</a> estimation to find the adjusted measure.
+</li> <li> Because Mantel Haenszel works about as well in many situations, and is much simpler, it is often favored.
+</li></ul> 
+Note: another intuitive approach to understanding the MH formula is to note that ad/n is a pretty good approximation of the numerator ad in an odds ratio and bc/N is a pretty good approximation of the denominator of the odds ratio.
+<p></p>
+<h2 id="Pros_and_Cons_of_Mantel_45Haenszel_39s_Methods">  Pros and Cons of Mantel-Haenszel's Methods </h2>
+<p></p>
+The Mantel-Haenszel technique, although not as straightforward conceptually as the <a href="StudyAnalysisWoolf.html">Woolf technique</a>, which directly uses stratum-specific variances, <strong>has many advantages</strong>:
+<p></p> <ul>
+<li> <strong>Relatively resistant</strong> to the effects of large numbers of strata with few observations
+</li> <li> <strong>Resistant to cells with a value of &ldquo;0&rdquo;</strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Computationally easy</strong>
+</li></ul> 
+<p></p> <ul>
+<li> <strong>Most commonly used approach to forming adjusted summary estimates.</strong>
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

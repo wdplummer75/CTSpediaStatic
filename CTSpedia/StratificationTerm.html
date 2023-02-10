@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StratificationTerm &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/StratificationTerm/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/StratificationTerm/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="StratificationTerm.html" rel="alternate" title="edit StratificationTerm" type="application/x-wiki">
+<meta name="description" content="StratificationTerm" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StratificationTerm",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Stratification">  Stratification </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Stratification"> Definition of Stratification </a>
+</li> <li> <a href="#Strata_to_Determine_if_Confounding_Is_Present"> Strata to Determine if Confounding Is Present </a>
+</li> <li> <a href="#Adjusted_Estimate_from_the_Stratified_Analyses"> Adjusted Estimate from the Stratified Analyses </a>
+</li> <li> <a href="#Advantages_of_Stratification"> Advantages of Stratification </a>
+</li> <li> <a href="#Limitations_of_Stratification"> Limitations of Stratification </a>
+</li> <li> <a href="#Solution_to_Limitations_of_Stratification"> Solution to Limitations of Stratification </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Definition_of_Stratification">  Definition of Stratification </h2>
+ Forming separate strata or groups during study analysis or during study design.
+<p></p>
+<span id="StrataConfound"></span>
+<p></p>
+<h2 id="Strata_to_Determine_if_Confounding_Is_Present">  Strata to Determine if Confounding Is Present </h2>
+<p></p>
+To determine if <a href="BiasConfound.html">confounding</a> is present we need to look at potential associations (diagram below) <ul>
+<li> between <a href="PredictorVariable.html">exposures</a> (risk factor or predictor variable) and
+</li> <li> <a href="OutcomesDef.html">outcomes</a> (diseases)
+</li></ul> 
+<img width="360" height="196" alt="0326_2x2crude.JPG" src="StratificationTerm.attachments/0326_2x2crude.JPG">
+<p></p>
+<strong>First,</strong> we look at the <strong>crude or unadjusted estimates</strong>, <ul>
+<li> symbolized by some <a href="StudyAssoc.html">measure of association</a>,  <ul>
+<li> here a crude <a href="OddsTerm.html">odds ratio</a>.
+</li></ul> 
+</li></ul> 
+<strong>Second,</strong> to determine if confounding is present, we stratify for the potential confounding variable in question by  <ul>
+<li> <strong>forming separate strata for the confounder</strong> and
+</li> <li> <strong>looking at the association between the exposure and disease in each of these strata separately</strong>.  <ul>
+<li> NOTE: <a href="BiasConfoundAnalysis.html">Steps in stratification</a>.
+</li></ul> 
+</li></ul> 
+You can determine an odds ratio (OR) separately in each stratum, depicted in this example where the potential confounder:  <ul>
+<li> is a <strong>dichotomous variable</strong> with  <ul>
+<li> OR when the <strong>confounder is present</strong>
+</li> <li> OR when the <strong>confounder is absent</strong>
+</li></ul> 
+</li></ul> 
+<p></p>
+<h2 id="Adjusted_Estimate_from_the_Stratified_Analyses">  Adjusted Estimate from the Stratified Analyses </h2>
+<p></p>
+If there are multiple confounders, we need to create a stratum for each one.
+<p></p>
+<strong>Goal</strong>: Create a single unconfounded ( <strong>adjusted</strong>) estimate for the relationship in question <ul>
+<li> e.g., in the relationship between matches and lung cancer after adjustment ( <strong>controlling</strong>) for smoking
+</li></ul> 
+<strong>Process</strong>: Summarize the unconfounded estimates from the two (or more) strata to form a <strong>single overall unconfounded adjusted estimate</strong>  <ul>
+<li> In this <a href="BiasConfoundAnalysis.html">example</a> from a study of smoking, matches, and lung cancer the adjusted <a href="OddsTerm.html">odds ratios</a> was based on the summarized data from the smoking stratum (1) and non-smoking stratum (1) into one odds ratio = 1.0
+</li></ul> 
+<p></p>
+<h2 id="Advantages_of_Stratification">  Advantages of Stratification </h2> <ul>
+<li> <strong>Straightforward</strong> to implement and comprehend
+</li></ul> 
+The primary advantage is that this is a very straightforward and easy to comprehend approach. Many reviewers are phobic of fancy regression models and, hence, stratification, if you can do it is typically very easily understood.
+<p></p> <ul>
+<li> Easy way to evaluate <strong><a href="InterConfound.html">interaction</a></strong>
+</li></ul> 
+Stratification is also a very easy way to evaluate for the presence of interaction.
+<p></p>
+<h2 id="Limitations_of_Stratification">  Limitations of Stratification </h2>
+ Requires continuous variables to be discretized  <ul>
+<li> Loses information
+</li> <li> Possibly results in <strong>residual confounding</strong>
+</li></ul> 
+The first limitation is what do we do if we have continuous variables as our exposure or potential confounders, something like age, for example?  <ul>
+<li> To use stratification, we have to break these continuous variables into categories in order to get them into our contingency tables.
+</li> <li> This unfortunately is not the richest use of continuous data.
+</li> <li> This can result in residual confounding.
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+Deteriorates with multiple confounders <ul>
+<li> For Example, suppose 4 confounders with 3 levels
+</li> <li> 3x3x3x3=81 strata needed
+</li> <li> Unless huge sample, many cells have <strong>zeros</strong> and strata have undefined effect measures
+</li> <li> You could not perform <a href="StudyAnalysisAdjustment.html">adjustment</a>.
+</li></ul> 
+<p></p>
+<h2 id="Solution_to_Limitations_of_Stratification">  Solution to Limitations of Stratification </h2>
+ Mathematical <a href="StudyAnalysisModel.html">modeling</a> (multivariate regression) e.g.  <ul>
+<li> <a href="LinearRegression.html">linear regression</a>
+</li> <li> <a href="LogisticRegression.html">logistic regression</a>
+</li> <li> <a class="foswikiNewLink" rel="nofollow" href="StatTestProport.html" title="Create this topic">proportional hazards regression</a>
+</li></ul> 
+The solution to all of these limitations lies in the use of mathematical models also known as multivariate regression.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

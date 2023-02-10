@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>FishersExactTest &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/FishersExactTest/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/FishersExactTest/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit FishersExactTest" href="FishersExactTest.html" rel="alternate">
+<meta name="description" content="FishersExactTest" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "FishersExactTest",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Fisher_39s_Exact_Test">  Fisher's Exact Test </h1>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Example"> Example </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div> <div id="bodyContent"> <strong>Fisher's exact test</strong> is a<font face="'Courier New'" color="#7a4707" size="3"> </font>statistical significance test used in the analysis of tables<font face="'Courier New'" color="#7a4707" size="3"> </font>where<font face="'Courier New'" color="#7a4707" size="3"> </font>sample<font face="'Courier New'" color="#7a4707" size="3"> </font>sizes are small. It is named after its inventor,<font face="'Courier New'" color="#7a4707" size="3"> </font>R. A. Fisher, and is one of a class ofexact tests, so called because the significance of the deviation from a<font face="'Courier New'" color="#7a4707" size="3"> </font>null hypothesis can be calculated exactly, rather than relying on an approximation that becomes exact in the limit as the sample size grows to infinity, as with many statistical tests. Fisher is said to have devised the test following a comment from &lt;Muriel Bristol, who claimed to be able to detect whether the tea or the milk was added first to her cup.
+<p></p>
+The test is useful for <a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Nominal_data" title="Nominal data">categorical data</a> that result from classifying objects in two different ways; it is used to examine the significance of the association (contingency) between the two kinds of classification. So in Fisher's original example, one criterion of classification could be whether milk or tea was put in the cup first; the other could be whether Ms Bristol thinks that the milk or tea was put in first. We want to know whether these two classifications are associated - that is, whether Ms Bristol really can tell whether milk or tea was poured in first. Most uses of the Fisher test involve, like this example, a 2 x 2 contingency table. The <a title="P-value" href="http://en.wikipedia.org/wiki/P-value" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial">p-value</a> from the test is computed as if the margins of the table are fixed, i.e. as if, in the tea-tasting example, Ms. Bristol knows the number of cups with each treatment (milk or tea first) and will therefore provide guesses with the correct number in each category. As pointed out by Fisher, this leads under a null hypothesis of independence to a <a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Hypergeometric_distribution" title="Hypergeometric distribution">hypergeometric distribution</a> of the numbers in the cells of the table.
+<p></p>
+With large samples, a <a title="Chi-square test" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Chi-square_test">chi-square test</a> can be used in this situation. The usual rule of thumb is that the chi-square test is not suitable when the expected values in any of the cells of the table, given the margins, is below 10: the <a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Sampling_distribution" title="Sampling distribution">sampling distribution</a> of the test statistic that is calculated is only approximately equal to the theoretical chi-squared distribution, and the approximation is inadequate in these conditions (which arise when sample sizes are small, or the data are very unequally distributed among the cells of the table). In fact, for small, sparse, or unbalanced data, the exact and asymptotic <em>p</em> -values can be quite different and may lead to opposite conclusions concerning the hypothesis of interest.<sup style="line-height: 1em; font-weight: normal; font-style: normal"> <a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_note-Mehta1984-3">[4</a>]</sup><sup style="line-height: 1em; font-weight: normal; font-style: normal"> <a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_note-Mehta1995-4">[5</a>]</sup> The Fisher test is, as its name states, exact, and it can therefore be used regardless of the sample characteristics. It becomes difficult to calculate with large samples or well-balanced tables, but fortunately these are exactly the conditions where the chi-square test is appropriate.
+<p></p>
+For hand calculations, the test is only feasible in the case of a 2 x 2 contingency table. However the principle of the test can be extended to the general case of an <em>m</em> x <em>n</em> table<sup style="line-height: 1em; font-weight: normal; font-style: normal"> <a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_note-5">[6</a>]</sup>, and some<a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Statistical_packages" title="Statistical packages">statistical packages</a> provide a calculation (sometimes using a <a href="http://en.wikipedia.org/wiki/Monte_Carlo_method" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" title="Monte Carlo method">Monte Carlo method</a> to obtain an approximation) for the more general case.
+<p></p>
+<a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" name="Example" id="Example" title="Example"></a>
+<h2 id="Example">  Example </h2>
+ For example, a sample of teenagers might be divided into male and female on the one hand, and those that are and are not currently dieting on the other. We hypothesize, perhaps, that the proportion of dieting individuals is higher among the women than among the men, and we want to test whether any difference of proportions that we observe is significant. The data might look like this: 
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> &nbsp; </td>
+			<td class="foswikiTableCol1"> men </td>
+			<td class="foswikiTableCol2"> women </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> total </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> dieting </td>
+			<td class="foswikiTableCol1"> 1 </td>
+			<td class="foswikiTableCol2"> 9 </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> 10 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> not dieting </td>
+			<td class="foswikiTableCol1"> 11 </td>
+			<td class="foswikiTableCol2"> 3 </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> 14 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> totals </td>
+			<td class="foswikiTableCol1 foswikiLast"> 12 </td>
+			<td class="foswikiTableCol2 foswikiLast"> 12 </td>
+			<td class="foswikiTableCol3 foswikiLastCol foswikiLast"> 24 </td>
+		</tr>
+	</tbody></table>
+ These data would not be suitable for analysis by a chi-squared test, because the expected values in the table are all below 10, and in a 2 \xD7 2 contingency table, the number of degrees of freedom is always 1.
+<p></p>
+The question we ask about these data is: knowing that 10 of these 24 teenagers are dieters, and that 12 of the 24 are female, what is the probability that these 10 dieters would be so unevenly distributed between the women and the men? If we were to choose 10 of the teenagers at random, what is the probability that 9 of them would be among the 12 women, and only 1 from among the 12 men?
+<p></p>
+Before we proceed with the Fisher test, we first introduce some notation. We represent the cells by the letters <em>a, b, c</em> and <em>d</em>, call the totals across rows and columns <em>marginal totals</em>, and represent the grand total by <em>n</em>. So the table now looks like this:
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> &nbsp; </td>
+			<td class="foswikiTableCol1"> men </td>
+			<td class="foswikiTableCol2"> women </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> total </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> dieting </td>
+			<td class="foswikiTableCol1"> <em>a</em> </td>
+			<td class="foswikiTableCol2"> <em>b</em> </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> <em>a</em> + <em>b</em> </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> not dieting </td>
+			<td class="foswikiTableCol1"> <em>c</em> </td>
+			<td class="foswikiTableCol2"> <em>d</em> </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> <em>c</em> + <em>d</em> </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> totals </td>
+			<td class="foswikiTableCol1 foswikiLast"> <em>a</em> + <em>c_</em> </td>
+			<td class="foswikiTableCol2 foswikiLast"> <em>b + _d</em> </td>
+			<td class="foswikiTableCol3 foswikiLastCol foswikiLast"> <em>n</em> </td>
+		</tr>
+	</tbody></table>
+ Fisher showed that the <a title="Probability" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Probability">probability</a> of obtaining any such set of values was given by the <a href="http://en.wikipedia.org/wiki/Hypergeometric_distribution" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" title="Hypergeometric distribution">hypergeometric distribution</a>:
+<p></p>
+<img src="http://upload.wikimedia.org/math/0/0/6/00647641b18d19122b930fed836ed1cc.png" style="border-style: none; margin: 0px; vertical-align: middle" alt="p = {{{a+b}\choose{a}}{{c+d}\choose{c}}}\left/{{{n}\choose{a+c}}}\right."><img src="http://upload.wikimedia.org/math/6/e/2/6e2ac952c3de63471788477e017501f6.png" style="border-style: none; margin: 0px; vertical-align: middle" alt=" =\frac{(a+b)!(c+d)!(a+c)!(b+d)!}{n!a!b!c!d!}">
+<p></p>
+where <img alt=" \tbinom nk " style="border-style: none; margin: 0px; vertical-align: middle" src="http://upload.wikimedia.org/math/3/8/2/382c5908d125a08662b2fedc22f4d02c.png"> is the <a href="http://en.wikipedia.org/wiki/Binomial_coefficient" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" title="Binomial coefficient">binomial coefficient</a> and the symbol ! indicates the <a title="Factorial" href="http://en.wikipedia.org/wiki/Factorial" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial">factorial operator</a>.
+<p></p>
+This formula gives the exact probability of observing this particular arrangement of the data, assuming the given marginal totals, on the <a title="Null hypothesis" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Null_hypothesis">null hypothesis</a> that men and women are equally likely to be dieters. Fisher showed that we could deal only with cases where the marginal totals are the same as in the observed table. (<a href="http://en.wikipedia.org/wiki/Barnard%27s_test" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" title="Barnard's test">Barnard's test</a> relaxes this constraint on one of the marginal totals.) In the example, there are 11 such cases. Of these only one is more extreme in the same direction as our data; it looks like this:
+<table class="foswikiTable" rules="none">
+	<tbody>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> &nbsp; </td>
+			<td class="foswikiTableCol1"> men </td>
+			<td class="foswikiTableCol2"> women </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> total </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol"> dieting </td>
+			<td class="foswikiTableCol1"> 0 </td>
+			<td class="foswikiTableCol2"> 10 </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> 10 </td>
+		</tr>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol"> not dieting </td>
+			<td class="foswikiTableCol1"> 12 </td>
+			<td class="foswikiTableCol2"> 2 </td>
+			<td class="foswikiTableCol3 foswikiLastCol"> 14 </td>
+		</tr>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> totals </td>
+			<td class="foswikiTableCol1 foswikiLast"> 12 </td>
+			<td class="foswikiTableCol2 foswikiLast"> 12 </td>
+			<td class="foswikiTableCol3 foswikiLastCol foswikiLast"> 24 </td>
+		</tr>
+	</tbody></table>
+ In order to calculate the significance of the observed data, i.e. the total probability of observing data as extreme or more extreme if the <a title="Null hypothesis" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Null_hypothesis">null hypothesis</a> is true, we have to calculate the values of <em>p</em> for both these tables, and add them together. This gives a <a href="http://en.wikipedia.org/wiki/One-tailed_test" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" title="One-tailed test">one-tailed test</a>; for a <a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Two-tailed_test" title="Two-tailed test">two-tailed test</a> we must also consider tables that are equally extreme but in the opposite direction. Unfortunately, classification of the tables according to whether or not they are 'as extreme' is problematic. An approach used by the <a title="R programming language" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/R_programming_language">R programming language</a> is to compute the p-value by summing the probabilities for all tables with probabilities less than or equal to that of the observed table. For tables with small counts, the 2-sided p-value can differ substantially from twice the 1-sided value, unlike the case with test statistics that have a symmetric sampling distribution.
+<p></p>
+As noted above, most modern <a title="Statistical package" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Statistical_package">statistical packages</a> will calculate the significance of Fisher tests, in some cases even where the chi-squared approximation would also be acceptable. The actual computations as performed by statistical software packages will as a rule differ from those described above, because numerical difficulties may result from the large values taken by the factorials. A simple, somewhat better computational approach relies on a <a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Gamma_function" title="Gamma function">gamma function</a> or log-gamma function, but methods for accurate computation of hypergeometric and binomial probabilities remains an active research area.
+<p></p>
+<a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" name="References" id="References" title="References"></a>
+<h2 id="References">  References </h2> <ol>
+<li> <strong><a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_ref-0">^</a></strong> <cite style="font-style: normal" id="CITEREFFisher1922"><a title="Ronald Fisher" href="http://en.wikipedia.org/wiki/Ronald_Fisher" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial">Fisher, R. A.</a> (1922). "<a rel="nofollow" href="http://www.jstor.org/stable/2340521" style="text-decoration: none; color: #3366bb; background-image: url('http://en.wikipedia.org/skins-1.5/monobook/external.png'); background-repeat: no-repeat; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial; padding-top: 0px; padding-right: 13px; padding-bottom: 0px; padding-left: 0px; background-position: 100% 50%" title="http://www.jstor.org/stable/2340521">On the interpretation of &chi;<sup style="line-height: 1em">2</sup> from contingency tables, and the calculation of P</a>". <em><a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Journal_of_the_Royal_Statistical_Society" title="Journal of the Royal Statistical Society">Journal of the Royal Statistical Society</a></em> <strong>85</strong> (1): 87-94. <a href="http://en.wikipedia.org/wiki/JSTOR" style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" title="JSTOR">JSTOR</a>:<a style="text-decoration: none; color: #3366bb; background-image: url('http://en.wikipedia.org/skins-1.5/monobook/external.png'); background-repeat: no-repeat; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial; padding-top: 0px; padding-right: 13px; padding-bottom: 0px; padding-left: 0px; background-position: 100% 50%" href="http://www.jstor.org/stable/2340521" rel="nofollow" class="external text" title="http://www.jstor.org/stable/2340521">2340521</a>.</cite>
+</li> <li> <strong><a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_ref-1">^</a></strong> <cite style="font-style: normal" id="CITEREFFisher1954" class="book">Fisher, R.A. (1954). <em><a href="http://en.wikipedia.org/wiki/Statistical_Methods_for_Research_Workers" title="Statistical Methods for Research Workers">Statistical Methods for Research Workers</a></em>. Oliver and Boyd.</cite>
+</li> <li> <strong><a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_ref-2">^</a></strong> <cite style="font-style: normal" id="CITEREFAgresti1992">Agresti, Alan (1992). "<a title="http://www.jstor.org/stable/2246001" href="http://www.jstor.org/stable/2246001" style="text-decoration: none; color: #3366bb; background-image: url('http://en.wikipedia.org/skins-1.5/monobook/external.png'); background-repeat: no-repeat; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial; padding-top: 0px; padding-right: 13px; padding-bottom: 0px; padding-left: 0px; background-position: 100% 50%" rel="nofollow">A Survey of Exact Inference for Contingency Tables</a>". <em>Statistical Science</em> <strong>7</strong> (1): 131-153.</cite>
+</li> <li> <strong><a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_ref-Mehta1984_3-0">^</a></strong> <cite style="font-style: normal" id="CITEREFMehtaPatelTsiatis1984">Mehta, Cyrus R; Patel, Nitin R; Tsiatis, Anastasios A (1984), "<a title="http://www.jstor.org/stable/2530927" style="text-decoration: none; color: #3366bb; background-image: url('http://en.wikipedia.org/skins-1.5/monobook/external.png'); background-repeat: no-repeat; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial; padding-top: 0px; padding-right: 13px; padding-bottom: 0px; padding-left: 0px; background-position: 100% 50%" href="http://www.jstor.org/stable/2530927" rel="nofollow">Exact significance testing to establish treatment equivalence with ordered categorical data</a>", <em>Biometrics</em> <strong>40</strong>: 819&ndash;825, <a style="text-decoration: none; color: #002bb8; background-image: none; background-repeat: initial; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial" href="http://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a href="http://dx.doi.org/10.2307%2F2530927" rel="nofollow" title="http://dx.doi.org/10.2307%2F2530927">10.2307/2530927</a></cite>
+</li> <li> <strong><a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_ref-Mehta1995_4-0">^</a></strong> Mehta, C. R. 1995. SPSS 6.1 Exact test for Windows. Englewood Cliffs, NJ: Prentice Hall.
+</li> <li> <strong><a href="http://en.wikipedia.org/wiki/Fishers_exact_test#cite_ref-5">^</a></strong> <a class="external text" rel="nofollow" style="text-decoration: none; color: #3366bb; background-image: url('http://en.wikipedia.org/skins-1.5/monobook/external.png'); background-repeat: no-repeat; background-attachment: initial; -webkit-background-clip: initial; -webkit-background-origin: initial; background-color: initial; padding-top: 0px; padding-right: 13px; padding-bottom: 0px; padding-left: 0px; background-position: 100% 50%" href="http://mathworld.wolfram.com/FishersExactTest.html" title="http://mathworld.wolfram.com/FishersExactTest.html">mathworld.wolfram.com</a> Page giving the formula for the general form of Fisher's exact test for <em>m</em> x <em>n</em> contingency tables
+</li></ol> 
+<p></p>
+<br /> </div><div id="bodyContent"> This article uses material from <a href="http://wikipedia.org/" style="text-decoration: underline; color: #666666; background-color: transparent" target="_top">Wikipedia</a>; the original article is found at <a href="http://en.wikipedia.org/wiki/Fishers_exact_test">Fisher's Exact Test</a>. The list of authors can be viewed in the <a href="http://en.wikipedia.org/w/index.php?title=Fisher's_exact_test&amp;action=history">authors page</a>. As with all <a class="foswikiCurrentWebHomeLink" href="WebHome.html">CTSpedia</a> content, this Wikipedia article is licensed under the <a style="text-decoration: underline; color: #1e5390; background-color: transparent" href="http://www.gnu.org/copyleft/fdl/html" target="_top">GNU Free Documentation License</a> 
+</div>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

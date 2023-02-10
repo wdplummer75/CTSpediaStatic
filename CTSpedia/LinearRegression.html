@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>LinearRegression &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/LinearRegression/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/LinearRegression/favicon.ico">
+<link type="application/x-wiki" href="LinearRegression.html" rel="alternate" title="edit LinearRegression">
+<meta name="description" content="LinearRegression" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "LinearRegression",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Linear_Regression">  Linear Regression </h1>
+ <strong><em>Lead Author(s): </em></strong>Erin Dienes
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Definition_of_Linear_Regression"> Definition of Linear Regression </a> <ul>
+<li> <a href="#Simple_Linear_Regression"> Simple Linear Regression </a>
+</li> <li> <a href="#Multiple_Linear_Regression"> Multiple Linear Regression </a>
+</li></ul> 
+</li> <li> <a href="#Model_Assumptions"> Model Assumptions </a>
+</li> <li> <a href="#Model_Diagnostics"> Model Diagnostics </a>
+</li> <li> <a href="#Example"> Example </a>
+</li></ul> 
+</div>
+<h2 id="Definition_of_Linear_Regression">  Definition of Linear Regression </h2>
+ Regression analysis is a statistical methodology that utilizes the relationship between two or more quantitative variables so that a response (outcome) variable can be predicted from the other(s). For example, we may wish to predict the length of hospital stay of a surgical patient by utilizing the relationship between the time in the hospital and the severity of the operation. Only a limited number of explanatory/predictor/covariate variables can or should be included in a regression model. Thus a central problem is choosing a "good" set of predictor variables in some sense. Some considerations in making this choice are  <ul>
+<li> How much does a chosen variable contribute to reducing the remaining variation in Y after allowance is made for the contributions of other predictor variables that have been included in the model.
+</li> <li> The importance of the variable as a causal agen in the process under analysis.
+</li> <li> The degree to which observations on the variable can be obtained more accurately, or quickly, or economically than on other variables.
+</li> <li> The degree to which the variable can be controlled.
+</li></ul> 
+In linear regression, the term "linear" refers to the model being linear in the parameters, meaning no parameter appears as an exponent or is multiplied or divided by another parameter. It does NOT mean that the model is necessarily linear in the covariate. For example, we may believe that the relationship between the response variable and a single covariate is actually quadratic in nature. If we model this quadratic trend we would still call this linear regression. <br /> 
+<h3 id="Simple_Linear_Regression">  Simple Linear Regression </h3>
+ Simple linear regression is a regression analysis between a response variable and a single covariate. The model can be stated as follows:
+<p></p>
+<img src="LinearRegression.attachments/Regression.JPG" height="732" alt="Regression.JPG" width="671">
+<p></p>
+<h3 id="Multiple_Linear_Regression">  Multiple Linear Regression </h3>
+ Multiple linear regression is a regression analysis between a response variable and several covariate variables. In order to find the least squares estimates in this situation we need to define the model using matrix notation.
+<p></p>
+<img width="669" alt="MultRegression.JPG" height="434" src="LinearRegression.attachments/MultRegression.JPG">
+<h2 id="Model_Assumptions">  Model Assumptions </h2> <ol>
+<li> The mean of the probability distribution of the error term is 0.
+</li> <li> The variance of the probability distribution of the error term is constant for all values of the predictor X.
+</li> <li> The probability distribution of the error term is normal.
+</li> <li> The values of the error term associated with any two observed values of y are independent. That is, the value of the error term associated with one value of Y has no effect on any of the values of the error associated with any other Y value.
+</li></ol> 
+<h2 id="Model_Diagnostics">  Model Diagnostics </h2>
+ As seen above there are certain assumptions we make about the properties and underlying distribution of the population that the data is sampled from. Since we cannot be certain that these assumptions are met we use model diagnostics to confirm the validity of using a simple linear regression model for our data. Typically we calculate residuals in order to validate our assumptions. The residual is defined as the difference between the observed value of the response and the fitted value of the response. That is,
+<p></p>
+<img height="121" alt="Regression-residual2.JPG" src="LinearRegression.attachments/Regression-residual2.JPG" width="650">
+<p></p>
+First we want to determine whether or not a linear regression function is appropriate for the data being analyzed. This assumption can be studied from a plot of the residuals (y axis) versus the predictor variable (x axis) or, equivalently, from a plot of the residuals versus the fitted values. When we plot the residuals versus the predictor variable we are looking for an even spread around the line Y = 0, this would satisfy the assumption that mean of the error terms is 0. In the same plot if the residuals appear to have an even spread around the line Y = 0 then this would indicate a constant variance which would satisfy another of our assumptions. Lastly, if the residuals fall along the line in a normal probability plot then this would validate our assumption of normality.
+<p></p>
+<h2 id="Example">  Example </h2>
+ A substance used in biological and medical research is shipped by airfreight to users in cartons of 1,000 ampules. The data below, involving 10 shipments, were collected on the number of times the carton was transferred from one aircraft to another over the shipment route (X) and the number of ampules found to be broken upon arrival (Y).
+<p></p>
+<img width="396" src="LinearRegression.attachments/RegressionData.JPG" align="absmiddle" alt="RegressionData.JPG" height="70">
+<p></p>
+The goal is to estimate the regression function based on the above data. In order to determine the type of relationship between X and Y we should first look at a scatter plot. Consider the following plot:
+<p></p>
+<table width="26" style="border: 0pt solid #000000" height="26" border="0"><tbody><tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr><tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr><tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr></tbody></table>
+<p></p>
+<img width="500" src="LinearRegression.attachments/scatterplot.JPG" alt="scatterplot.JPG" height="488">
+<p></p>
+From the above plot we see that there appears to be an upward sloping linear trend between the number of times the carton was transferred and the number of ampules that were broken. Hence to obtain the estimated regression function, we will use a simple linear regression model of the form:
+<p></p>
+<img width="550" alt="Regression-example.JPG" height="291" src="LinearRegression.attachments/Regression-example.JPG">
+<p></p>
+To interpret this model we say that as number of times the cartons are transfered from one aircraft to another increases by 1, on average the number of ampules broken increases by 4. Also if the cartons are never transfered to a different aircraft we can estimate that approximately 10 ampules will be broken.
+<p></p>
+Next we want to check the model assumptions in order to verify the above interpretation of the model. Let's first consider a plot of the residual values versus the fitted values, given below.
+<p></p>
+<img src="LinearRegression.attachments/ResidualsvsFits.jpeg" height="499" alt="ResidualsvsFits.jpeg" width="500">
+<p></p>
+From the above plot we can see that the residuals seem to be evenly clustered around zero and the spread of the residuals appears to be constant. In order to be more confident in this conclusion we would prefer to have more data observations, however based on the scatter plot and the above residual plot it appears that a simple linear model is a good fit for this particular applications. Next let's consider a normal probability plot of the residuals.
+<p></p>
+<img width="500" height="499" alt="RegressionQQplot.jpeg" src="LinearRegression.attachments/RegressionQQplot.jpeg">
+<p></p>
+Since the points appear to follow the line in the normal probability plot we can conclude that our assumption of normality is reasonable.
+<p></p>
+-- <a href="http://ctspedia.org/do/view/Main/ErinEsp">ErinEsp</a> - 30 Apr 2010
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

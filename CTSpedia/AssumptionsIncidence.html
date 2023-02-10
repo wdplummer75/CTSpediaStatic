@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>AssumptionsIncidence &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/AssumptionsIncidence/favicon.ico"> <link href="../MISSING RESOURCE CTSpedia/AssumptionsIncidence/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="AssumptionsIncidence.html" rel="alternate" type="application/x-wiki" title="edit AssumptionsIncidence">
+<meta name="description" content="AssumptionsIncidence" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "AssumptionsIncidence",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Assumptions:_Cumulative_Incidence_and_Incidence_Rate">  Assumptions: Cumulative Incidence and Incidence Rate </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Assumption_No_Temporal_47Secural_Trends"> Assumption No Temporal/Secural Trends </a>
+</li> <li> <a href="#Assumption_in_Follow_45up_Starting_Times"> Assumption in Follow-up Starting Times </a>
+</li> <li> <a href="#Assumptions_for_Cumulative_Incidence_and_Incidence_Rate_Calculations"> Assumptions for Cumulative Incidence and Incidence Rate Calculations </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Assumption_No_Temporal_47Secural_Trends">  Assumption No Temporal/Secural Trends </h2>
+ Calculating <a href="StudyIncidenceCumul.html">cumulative incidence</a> with different <a href="FollowUpTime.html">follow-up times</a>, assumes the probability of the <a href="OutcomeVariable.html">outcome</a> is not changing during the study period = <strong>no temporal/secular trends affecting the outcome.</strong>  <ul>
+<li> This assumption does not mean that the probability of the outcome is the same during all of the follow-up time. Remember that by moving everyone to the left to start at study time zero, you are guaranteeing that one-year of follow-up in <strong>follow-up or study time</strong> will be different <strong>calendar times</strong> for individuals who were enrolled in the study on different dates.
+</li> <li> So this concept requires that the probability is not changing over calendar time.
+</li> <li> It may well change over study time as for many diseases risk increases with age.
+</li></ul> 
+<p></p>
+<h2 id="Assumption_in_Follow_45up_Starting_Times">  Assumption in Follow-up Starting Times </h2>
+<p></p>
+It should be clear that by assigning everyone the same starting time you are making the assumption that there are no calendar time trends that will affect your estimate of incidence. You have dropped calendar time, and hence trends associated with calendar time (often called <strong>secular trends</strong>), out of the analysis. <ul>
+<li> For many studies this is probably a perfectly reasonable assumption.
+</li> <li> For one thing the difference in calendar time may be just a matter of months rather than years, so it would take a very rapidly changing trend to be important in a time frame of months.
+</li></ul> 
+<strong>For some situations</strong>, though, this may be a dubious assumption. For example, if one were enrolling subjects to study a new infectious disease during its introductory epidemic period (HIV, SARS, ebola, etc.), temporal trends might affect incidence estimates significantly.
+<p></p>
+<h2 id="Assumptions_for_Cumulative_Incidence_and_Incidence_Rate_Calculations">  Assumptions for Cumulative Incidence and Incidence Rate Calculations </h2>
+ Note that <a class="foswikiCurrentTopicLink" href="#SzkloEpi">Szklo and Nieto</a> in the table below use the headings <strong>Survival Analysis</strong> for <strong>cumulative incidence</strong> approach and <strong>Person-time</strong> for the <strong>incidence rate</strong> approach in analyzing data that features time to an event. These are the assumptions of both methods.
+<p></p> <ul>
+<li> Note that they have the <strong>same assumptions with the exception of how the risk is calculated</strong> over intervals.
+</li></ul> 
+<img width="251" height="237" alt="0305_table2.JPG" src="StudyIncidenceCumul.attachments/0305_table2.JPG">
+<p></p>
+<h2 id="References">  References </h2>
+<span id="SzkloEpi"></span>
+<p></p>
+Szklo, M., &amp; Nieto, F. (2007). <em>Epidemiology: Beyond the Basics</em> (2nd Edition ed.). Boston: Jones and Bartlett Publishers.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

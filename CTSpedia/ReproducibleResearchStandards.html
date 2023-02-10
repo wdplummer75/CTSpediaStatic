@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>ReproducibleResearchStandards &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/ReproducibleResearchStandards/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/ReproducibleResearchStandards/favicon.ico" type="image/x-icon">
+<link href="ReproducibleResearchStandards.html" rel="alternate" title="edit ReproducibleResearchStandards" type="application/x-wiki">
+<meta name="description" content="ReproducibleResearchStandards" />
+<link type="text/css" media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "ReproducibleResearchStandards",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Reproducible_Research_Standards_and_Definitions">  Reproducible Research Standards and Definitions </h1>
+<p></p>
+<em>An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.</em> - D. Donoho
+<p></p>
+<em>Reproducible Research (RR) is the practice of distributing, along with a research publication, all data, software source code, and tools required to reproduce the results discussed in the publication. As such the RR package not only describes the research and its results, but becomes a complete laboratory in which the research can be reproduced and extended.</em> - <a href="http://orgmode.org/worg/org-contrib/babel/intro.php%20orgmode.org">http://orgmode.org/worg/org-contrib/babel/intro.php orgmode.org</a>
+<p></p>
+In his 1994 editorial <em><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2539276/pdf/bmj00425-0005.pdf%20The%20Scandal%20of%20Poor%20Medical%20Research">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2539276/pdf/bmj00425-0005.pdf The Scandal of Poor Medical Research</a></em>, Doug Altman decries the poor reliability of the majority of medical research. Medical research is afflicted with common methodologic problems including inappropriate study design, analysis, and interpretation. A significant portion of medical research is not reproducible because of these problems, and because researchers even have difficulties reproducing their own findings. Even when a research journal allows the authors the "luxury" of having space to describe their methods, such text can never be specific enough for readers to exactly reproduce what was done.
+<p></p>
+There are many ways that research is non-reproducible, including
+<p></p> <ol>
+<li> Tweaking instrumentation to work on a series of patients but not in general
+</li> <li> Pre-statistician "normalization'' of data and background subtraction
+</li> <li> Poorly studied high-dimensional feature selection
+</li> <li> Programming errors
+</li> <li> Lack of documentation
+</li> <li> Failing to script multiple-step procedures
+</li> <li> Copying and pasting results into manuscripts
+</li> <li> Insufficient detail in scientific articles
+</li> <li> Lack of an audit trail
+</li></ol> 
+Science requires that one must be able to reproduce <strong>all</strong> results. There is a growing realization that <strong>all steps</strong> related to data manipulation and processing, transformation and analysis be scripted and the purely interactive approaches that do not generate an audit trail, such as Excel, do not play a role in scientific investigation.
+<p></p>
+Regarding statistical reports, when components (calculations, tables, or graphs) change, being able to automatically recompile a report results in major gains in efficiency and freedom from transcription errors. Markup languages such as LaTeX, html, and special XML formats are useful for this purpose. <em><a href="http://www.non.com/news.answers/literate-programming-faq.html%20Literate%20programming">http://www.non.com/news.answers/literate-programming-faq.html Literate programming</a></em>, in which a single source document contains analysis code as well as all the text for the final report, has been found to result in better documentation for the code as well as the text.
+<p></p>
+Projects require multiple programming and writing steps (click <a href="https://biostat.app.vumc.org/StatReport">here</a> for more information): <ol>
+<li> create/update primary database (e.g., using SQL)
+</li> <li> create/update extractions from primary database (e.g., using SAS or R to merge data tables)
+</li> <li> create/update S analysis files
+</li> <li> obtain computed values, tabular, and graphics output on latest data
+</li> <li> assemble new computed values, tables, and graphics into a report
+</li> <li> recompile the report into a final output format such as <code>PDF</code>
+</li></ol> 
+The more of these steps that can be automated the more efficient and error-free the analysis becomes. With proper planning, an entire report, manuscript, dissertation, or book can be reproduced by running a single computer command when changes occur in the operating system, statistical software, graphics engines, sources data, derived variables, analysis, or interpretation.
+<p></p>
+<em>Time turns each one of us into another person, and by making effort to communicate with strangers, we help ourselves to communicate with our future selves.</em> - Schwab and Claerbout
+<p></p>
+It has been said that the analysis code provides the ultimate documention of the "what, when, and how" for data analyses.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

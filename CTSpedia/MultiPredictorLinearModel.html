@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>MultiPredictorLinearModel &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/MultiPredictorLinearModel/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/MultiPredictorLinearModel/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit MultiPredictorLinearModel" href="MultiPredictorLinearModel.html" rel="alternate">
+<meta name="description" content="MultiPredictorLinearModel" />
+<link href="../System/JQueryPlugin.attachments/plugins/button/jquery.button.css?version=2.2" rel="stylesheet" media="all" class="head JQUERYPLUGIN::BUTTON" type="text/css"><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::METADATA" src="../System/JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script class="script JQUERYPLUGIN::BUTTON" src="../System/JQueryPlugin.attachments/plugins/button/jquery.button.init.js?version=2.2"></script><!--JQUERYPLUGIN::BUTTON: requires= missing ids: JQUERYPLUGIN::FORM-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "MultiPredictorLinearModel"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Multiple_Predictor_Linear_Model">  Multiple Predictor Linear Model </h1>
+<p></p>
+<a href="CourseMaterials.html">Return to Course Materials</a>
+<p></p>
+<strong><em>Lead Author(s)</em></strong>: David Glidden, PhD
+<p></p>
+<p></p>
+<span id="StartPresentation"></span>
+<span class='slideShowControls'><a class="jqButton slideShowStart" href="MultiPredictorLinearModel.html"><i class='jqButtonIcon fa fa-fw fa-television'></i><span class='jqButtonText'>Start presentation</span></a></span>
+<p></p>
+<p></p>
+<h2 id="Slide_1:_Multiple_predictor_linear_regression">  Slide 1: Multiple predictor linear regression </h2> <ul>
+<li> Models dependence of the mean of continuous outcome on multiple predictors simultaneously
+</li> <li> By including multiple predictors we can try to  <ul>
+<li> control confounding of treatment effects by indication, risk factor effects by demographics, other covariates
+</li> <li> examine mediation of treatment, risk factor effects
+</li> <li> assess interaction of treatment effects or exposure with sex, race/ethnicity, genotype, other effect modifiers
+</li> <li> get at causal mechanisms in observational data
+</li> <li> also: account for stratified or multi-center design of RCT, increase precision of estimates
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_2:_Components_of_the_Linear_Model">  Slide 2: Components of the Linear Model </h2> <ul>
+<li> Systematic:  <ul>
+<li> how does the average value of outcome y depend on values of the predictors?
+</li></ul> 
+</li> <li> Random:  <ul>
+<li> at each observed value of the predictors, values of y <br />are distributed about the predicted average
+</li> <li> assumed distribution of deviations underlies <br />hypothesis tests, p-values, and confidence intervals
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_3:_Systematic_part_of_the_model">  Slide 3: Systematic part of the model </h2> <ul>
+<li> In abstract terms, model written as  <ul>
+<li> &Sigma;[y|x]= \xDF0 + \xDF1x1 + \xDF2x2 + \xB7\xB7\xB7 + \xDFpxp
+</li></ul> 
+</li> <li> &Sigma;[y|x]: Expected or average value of y for a given set of predictors x = x1,x2,\xB7\xB7\xB7 ,xp
+</li> <li> \xDFj: change in average value of outcome y per unit increase in predictor xj, holding all other predictors <br />constant
+</li> <li> \xDF0 (the intercept): average value of the outcomey when <br />all predictors = 0
+</li> <li> "Linear predictor" common to linear, logistic, Cox, and longitudinal models
+</li></ul> 
+<h2 id="Slide_4:_Interpretation_of_regression_coefficients">  Slide 4: Interpretation of regression coefficients </h2> <ul>
+<li> \xDFj: change in average value of outcome y per unit increase in predictor xj, holding all other predictors <br />constant
+</li> <li> Hold x2,...,xp constant, and let x1= k:  <ul>
+<li> &Sigma;[y|x]= \xDF0 + \xDF1k+ \xDF2x2 + \xB7\xB7\xB7 + \xDFpxp (1)
+</li></ul> 
+</li> <li> Now increase x1 by one unit to k+1:  <ul>
+<li> &Sigma;[y|x]= \xDF0 + \xDF1(k +1)+ \xDF2x2 + \xB7\xB7\xB7 + \xDFpxp (2)
+</li></ul> 
+</li> <li> Subtracting(1) from(2) gives \xDF1, for every value of k as well as x2,...xp
+</li> <li> Note: assumes x1 does not interact with x2,...xp
+</li></ul> 
+<h2 id="Slide_5:_Interpretation_of_regression_coefficients">  Slide 5: Interpretation of regression coefficients </h2> <ul>
+<li> \xDF0: average value of outcome y when all predictors = 0
+</li> <li> Let x1 = x2 = \xB7\xB7\xB7 = xp <code>0. Then E[y|x]</code> \xDF0 + \xDF1x1 + \xDF2x2 + \xB7\xB7\xB7 + \xDFpxp = \xDF0
+</li> <li> Intercept: where the regression line meets the y-axis in single-predictor models
+</li></ul> 
+<h2 id="Slide_6:_Review:_centering_predictors">  Slide 6: Review: centering predictors </h2> <ul>
+<li> Same as in single-predictor model
+</li> <li> For many continuous predictors like age, SBP, LDL, no one has value 0
+</li> <li> Solution: center them on their sample means, so new variable has value 0 for observations at the mean
+</li> <li> For binary predictors, 0 is the usual coding for the reference group, so not a problem for interpretation
+</li> <li> With centering, \xDF0 estimates expected value of y for participant at reference level of binary predictors, mean of centered continuous predictors
+</li> <li> Values and interpretation of other coefficients unaffected
+</li></ul> 
+<h2 id="Slide_7:_Review:_rescaling_predictors">  Slide 7: Review: rescaling predictors </h2> <ul>
+<li> Same as in single-predictor model
+</li> <li> Rescaled variable Xrs = X/k
+</li> <li> Coefficient for Xrs interpretable as increase in mean of outcome for a k-unit increase in X
+</li> <li> If k = SD(X), coefficient forXrs interpretable as increase in mean of outcome for a 1 SD increase in X
+</li> <li> \xDF&circ;(Xrs)= k\xDF&circ;(X);SE(\xDF&circ;), 95% CI for \xDF&circ;also rescaled
+</li> <li> P-value for \xDF, intercept coefficient unaffected
+</li> <li> Can accomplish the same thing using lincom
+</li></ul> 
+<h2 id="Slide_8:_Random_part_of_the_model">  Slide 8: Random part of the model </h2>
+<p></p>
+yi =&Sigma;[y|xi]+&epsilon;i
+<p></p> <ul>
+<li> Outcome yi varies from the average at xi by an amount oi
+</li> <li> &epsilon; represents unmeasured sources of variation, error
+</li> <li> As in single-predictor model, four assumptions about o:
+</li></ul> 
+1. Normally distributed <br />2. mean zero at every value of x <br />3. constant variance <br />4. statistically independent  <ul>
+<li> These assumptions underlie hypothesis tests, confidence intervals, p-values, also model checking
+</li></ul> 
+<h2 id="Slide_9:_Assumptions_about_the_predictors">  Slide 9: Assumptions about the predictors </h2> <ul>
+<li> Nodistributional assumptions(e.g. Normality)  <ul>
+<li> predictorscanbecontinuous,discrete(e.g. counts), <br />categorical(dichotomous, nominal, ordinal)
+</li></ul> 
+</li> <li> Linear regression works better if  <ul>
+<li> predictors are relatively variable
+</li> <li> there are no excessively "influential" points
+</li></ul> 
+</li> <li> Assumed measured without error(otherwise "regression dilution bias" and residual confounding)
+</li></ul> 
+<h2 id="Slide_10:_Update_of_two_details">  Slide 10: Update of two details </h2> <ul>
+<li> Fitted value:&circ;yi = \xDF&circ;0 + \xDF&circ;1xi1 + \xB7\xB7\xB7 + \xDF&circ;pxip - estimated average or expected value of outcome y when <br />x = xi, the predictor values for observation i  <ul>
+<li> now depends on multiple predictors instead of just one
+</li></ul> 
+</li> <li> Residual: ri = yi -y&circ;i =&circ;oi  <ul>
+<li> difference between datapoint and fitted value
+</li> <li> sample analogue of oi, used in checking model fit
+</li> <li> not obvious what "vertical" means with multiple predictors
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_11:_Ordinaryleast_squares_40OLS_41">  Slide 11: Ordinaryleast squares(OLS) </h2> <ul>
+<li> Method for fitting linear regression models
+</li> <li> OLS finds values of regression coefficients which minimize residual sumof squares(RSS; i.e. sumof squared residuals)
+</li> <li> Good statistical properties: unbiased, efficient, easy to compute, but sensitive to outliers
+</li> <li> For normally distributed outcomes, OLS is equivalent to "maximumlikelihood" (methodusedforlogistic,Cox, some repeated measures, many other models)
+</li></ul> 
+<h2 id="Slide_12:_Multi_45predictor_linear_model_for_glucose">  Slide 12: Multi-predictor linear model for glucose </h2>
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/MultiPredictorLinearModel/multipredictor_linearmodelforglucose.JPG">Multi-predictor linear model for glucose</a>
+<p></p> <ul>
+<li> Upper left(<a href="ANOVA.html">ANOVA</a> table)  <ul>
+<li> Total SS =&Sigma;n/i=1(yi-\xAFy)2: variability of outcome yi=1(yi - about the sample average \xAFy n
+</li> <li> Total MS =(yi -y\xAF)2/(n -1): sample variance i=1 of outcome y n
+</li> <li> Model SS = (&circ;yi -y\xAF)2: variability of outcome i=1 accounted for by predictors included in model
+</li> <li> Model MS: numerator of model F-statistic n
+</li> <li> Residual SS =(yi -y&circ;i)2: residual variability i=1 not accounted for by predictors, what OLS minimizes
+</li> <li> Residual MS = yi)2/(n -p): sample i=1(yi - &circ;variance of residuals
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_13:_Interpreting_Stata_regression_output">  Slide 13: Interpreting <a href="STATA.html">Stata</a> regression output </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/MultiPredictorLinearModel/Stataresultsright.JPG">Interpreting STATA regression output</a>
+<p></p>
+<h2 id="Slide_14:_Summary_of_model">  Slide 14: Summary of model </h2>
+<p></p> <ul>
+<li> Multipredictor linear regression is a tool for estimating how the average value of a continuous outcome depends <br />on multiple predictors simultaneously
+</li> <li> Inferential machinery evaluates precision of estimates and whether sampling error can account for findings
+</li> <li> Coefficients generally interpretable as the change in theaverage value of the outcome per unit increase in the <br />predictor, holding all other predictors constant
+</li> <li> Power helped by effect size, sample size, variability of predictor; hurt by correlation with other predictors, <br />variability left unexplained
+</li></ul> 
+<h2 id="Slide_15:_Confounding">  Slide 15: Confounding </h2> <ul>
+<li> Can account for the some or all of the unadjusted association between a predictor and an outcome
+</li> <li> Controlling confounding the primary reason for doing multi-predictor regression
+</li> <li> Confounders must be associated with predictor and independently with outcome
+</li> <li> Only an association adjusted for confounders can be viewed as possibly causal
+</li></ul> 
+<h2 id="Slide_16:_Unadjusted_waist_47glucose_association">  Slide 16: Unadjusted waist/glucose association </h2>
+<p></p>
+<a href="https://www.ctspedia.org/do/attach/CTSpedia/MultiPredictorLinearModel?filename=unadjusted_waist.JPG;revInfo=1">Unadjusted waist/glucose association</a>
+<h2 id="Slide_17:_Adjusted_waist_47glucose_association">  Slide 17: Adjusted waist/glucose association </h2>
+<p></p>
+<a href="https://www.ctspedia.org/wiki/pub/CTSpedia/MultiPredictorLinearModel/adjusted_waist.JPG">Adjusted waist/glucose association</a>
+<h2 id="Slide_18:_Primary_predictor_44_confounder_44_and_outcome">  Slide 18: Primary predictor, confounder, and outcome </h2>
+ <a href="https://www.ctspedia.org/wiki/pub/CTSpedia/MultiPredictorLinearModel/Primary_Predictor.JPG">Primary predictor, confounder and outcome</a>
+<p></p>
+Adjusting for a confounder <ul>
+<li> Primary predictor and confounder are correlated:  <ul>
+<li> values of primary predictor larger in subgroup 2 than subgroup 1
+</li> <li> conversely, those with larger values of primary predictor more likely in subgroup 2
+</li></ul> 
+</li> <li> Both continuousprimarypredictor andbinary confounder independently predict higher values of outcome
+</li> <li> Unadjusted effect of primary predictor partly reflects effect of being in subgroup 2
+</li> <li> Adjustment for the confounder fixes the problem
+</li></ul> 
+<h2 id="Slide_19:_Interpretation_of_results">  Slide 19: Interpretation of results </h2> <ul>
+<li> Unadjusted estimateforprimarypredictor(6.2)  <ul>
+<li> Estimates an observable trend in whole population
+</li> <li> Causal interpretation misleading in most contexts
+</li></ul> 
+</li> <li> Adjusted estimate(3.3) may have a causalinterpretation, because the effect of the confounder is not ignored
+</li> <li> Regression lines for subgroups 1 and 2:  <ul>
+<li> slopes estimate predictor/outcome association within <br />each subgroup("holding subgroup constant")
+</li> <li> assumedparallel(nointeraction - sameeffectinboth <br />subgroups)
+</li></ul> 
+</li></ul> 
+Behavior of regression coefficients for this case  <ul>
+<li> When the primary predictor and confounder are positively correlated, both predict higher(or lower)
+</li> <li> Values of the outcome adjusted coefficient for primary predictor is attenuated: that is, closer to zero than unadjusted coefficient in this case, still non-zero and signficant
+</li> <li> Typical pattern for confounding
+</li></ul> 
+<h2 id="Slide_20:_Another_case:_so_45called_negative_confounding">  Slide 20: Another case: so-called negative confounding </h2> <ul>
+<li> Confounding can also "mask" an independent association
+</li> <li> Example: needlestick injuries and HIV-seroconversion  <ul>
+<li> overall, AZT prophylaxis does not predict seroconversion, but* use of AZT associated with severity of injury * severity of injury predicts seroconversion
+</li> <li> protective effect of AZT unmasked after controlling <br />for severity of injury
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_21:_Negative_confounding:_two_scenarios">  Slide 21: Negative confounding: two scenarios </h2>
+<p></p>
+Negative confounding may arise between predictors that are <ol>
+<li> Positively correlated, with opposite effects on outcome: <br />Example: injury severity, AZT, and seroconversion
+</li> <li> Negatively correlated, with similar effects on outcome: <br />Example: average BMI decreases with age in HERS <br />cohort, but both predict increased SBP
+</li></ol> 
+<p></p>
+<h2 id="Slide_22:_Summary:_negative_confounding">  Slide 22: Summary: negative confounding </h2> <ul>
+<li> Average BMI decreases with age in HERS cohort, but both predict increased SBP
+</li> <li> Adjustment for age increases BMI slope estimate from .21 to .30 mmHg per kg/m2
+</li> <li> Negative confounding is not all that uncommon
+</li> <li> Implications for predictor selection: univariate screening, "forward" selection procedures may miss some negatively confounded predictors
+</li></ul> 
+<h2 id="Slide_23:_Confounding_is_difficult_to_rule_out">  Slide 23: Confounding is difficult to rule out </h2> <ul>
+<li> Were all important confounders adjusted for?
+</li> <li> Were they measured accurately?
+</li> <li> Were their effects modeled adequately?  <ul>
+<li> modeled non-linearities in response to continuous <br />predictors(Session 6)
+</li> <li> no omittedinteractions(Session5)
+</li> <li> no gross extrapolations
+</li></ul> 
+</li> <li> Modeling difficulties used to argue for propensity scores
+</li></ul> 
+<h2 id="Slide_24:_Summary">  Slide 24: Summary </h2> <ul>
+<li> Confounders must be associated with predictor and independently with outcome
+</li> <li> Unadjusted, adjusted coefficients estimate different things
+</li> <li> Unadjusted association may be partly or completely explained or, conversely, unmasked after adjustment
+</li> <li> Regression controlsfor confounding byjointly modeling effects ofpredictor and confounders(VGSMSect. 4.4)
+</li> <li> Bigger samples don't help, except by making it easier to adjust
+</li> <li> Controlling for covariates is easy enough, but residual confounding is difficult to rule out
+</li></ul> 
+<h2 id="Slide_25:_Causal_diagrams_Mediation">  Slide 25: Causal diagrams Mediation </h2> <ul>
+<li> Confounders are thought to cause the primary predictor, or are correlates of such a cause
+</li> <li> In contrast, mediators are on the causal pathway from primary predictor to the outcome
+</li> <li> In models, mediation and confounding behave alike and must be distinguished on substantive grounds
+</li> <li> Example: to what extent is effect of BMI on SBP mediated by its effects on glucose levels?
+</li></ul> 
+<h2 id="Slide_26:_Examining_mediation">  Slide 26: Examining mediation </h2> <ul>
+<li> Use a series of models to show that:  <ul>
+<li> primary predictor independently predicts mediator
+</li> <li> mediator predicts outcome independently of primary predictor
+</li> <li> adjustment for mediator attenuates estimate for primary predictor
+</li></ul> 
+</li> <li> The models:  <ul>
+<li> regress mediator on predictor and confounders
+</li> <li> regress outcome on predictor and confounders
+</li> <li> regress outcome on predictor, mediator, and confounder
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_27:_Mediation">  Slide 27: Mediation </h2> <ul>
+<li> Interpretation of coefficient estimates for primary predictor:  <ul>
+<li> before adjustment for mediator: overall effect
+</li> <li> after adjustment: effect, if any, via pathways other than the mediator
+</li></ul> 
+</li> <li> Assess mediation by difference between coefficients for primary predictor before and after adjustment for mediator
+</li> <li> Hypothesis tests, CIs for difference and proportion of effect explained abitharder(seebookfor references)
+</li> <li> Example: is association of BMI with SBP mediated by glucose levels?
+</li></ul> 
+<p></p>
+<h2 id="Slide_28:_Mediation_of_BMI_by_glucose_levels">  Slide 28: Mediation of BMI by glucose levels </h2> <ul>
+<li> BMI independently predicts higher glucose: 1.7 mg/dL (95% CI 1.4-1.9) for each kg/m2 <br />increase in BMI
+</li> <li> A 10 mg/dL increase in glucose levels is independently associated withhigherSBP:0.5 mmHg(95%CI0.3-0.7)
+</li> <li> Overall BMI effect: before adjustment for glucose levels, each additional kg/m2 predicts an increase of .25 mmHg (95% CI 0.12-0.38) in average SBP
+</li> <li> Direct BMI effect via other pathways: after adjustment for glucose levels, each kg/m2 predicts an increase of only .16 mmHg(95%CI0.03-0.30)
+</li> <li> Degree of attenuation(PTE):glucoselevels explain (.25-.16)/.25*100 = 34% of the effect of BMI on SBP
+</li></ul> 
+<h2 id="Slide_29:_Mediation_issues">  Slide 29: Mediation issues </h2> <ul>
+<li> An observational analysis even when the primary predictor is treatment in RCT; must control for <br />confounding of mediator effects.
+</li> <li> Evidence for mediation potentially stronger in longitudinal data  <ul>
+<li> but when predictor is both a mediator and a confounder, fancier methods required: e.g., "marginal structural models"
+</li></ul> 
+</li> <li> "Negative" mediation is possible: glitazones, weight, bone loss; HT, statin use, CHD events
+</li></ul> 
+<h2 id="Slide_30:_Negative_mediation">  Slide 30: Negative mediation </h2> <ul>
+<li> TZDs cause bone loss in mouse models.
+</li> <li> In HABC, TZD use not associated with bone loss, after controlling for confounders by indication
+</li> <li> TZDs also cause weight gain, which is protective against bone loss
+</li> <li> TZDs do predict bone loss, after controlling for weight gain: adverse effect emerges after controlling for <br />beneficial effect via weight gain
+</li> <li> In HERS, statin use differentially increased in placebo group, and controlling for this makes HT look a bit protective
+</li></ul> 
+<p></p>
+<h2 id="Slide_31:_Summary:_mediation">  Slide 31: Summary: mediation </h2> <ul>
+<li> Regression coefficients change when either a confounder or a mediator is added to the model; which is which depends on how you draw the causal arrows(statistics not informative)
+</li> <li> Negative mediation is possible
+</li> <li> Must control for confounders of mediator
+</li> <li> Estimated independent effect of primary predictor  <ul>
+<li> before adjustment for mediator: overall effect
+</li> <li> after adjustment: direct effect via other pathways <br />(assumingboth models adjust for confounders)
+</li></ul> 
+</li></ul> 
+<h2 id="Slide_32:_Interpreting_results_for_log_45transformed_variables">  Slide 32: Interpreting results for log-transformed variables </h2> <ul>
+<li> Positive continuous variables commonly log-transformed outcomes: normalize and equalize variance  <ul>
+<li> predictors: get rid of non-linearity, interaction
+</li> <li> more about this is session 6
+</li></ul> 
+</li> <li> Bothlog-10(HIV viralload) and natural log transformations used
+</li> <li> How does this affect interpretation of regression coefficients
+</li></ul> 
+<h2 id="Slide_33:_Log_45transformed_predictors">  Slide 33: Log-transformed predictors </h2> <ul>
+<li> For natural-log or log-10 transformed predictor xj, \xDF&circ;j estimates the increase in the mean of the outcome for each 1-log increase in log-transformed xj - equivalently a 2.7-fold or 10-fold increase in untransformed value of xj.
+</li> <li> \xDF&circ;jln(1+k/100) estimates the change in the mean of the outcome for each k% increase in untransformed xj.
+</li> <li> Note: p-value for test of \xDFj =0 unaffected by choice of k
+</li> <li> Use \xDF&circ;jlog10(1+k/100) if xj is log10  <ul>
+<li> transformed
+</li></ul> 
+</li> <li> Use nlcom to get interpretable estimates with confidence interval(lincom does not allow log() as argument)
+</li></ul> 
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

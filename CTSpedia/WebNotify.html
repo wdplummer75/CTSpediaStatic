@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WebNotify &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/WebNotify/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/WebNotify/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit WebNotify" href="WebNotify.html" rel="alternate">
+<meta name="description" content="WebNotify" />
+<link type="text/css" media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "WebNotify"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::TWISTY" src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+</head>
+<body>
+<h1 id="Web_Notify_Subscription_Service_for_the_CTSpedia_Web">  Web Notify Subscription Service for the CTSpedia Web </h1>
+<p></p>
+You can be notified nightly of changes on a topic page or in the whole web.  (See below for <a class="foswikiCurrentTopicLink" href="#FurtherInformation">further information</a>.) <strong>To subscribe</strong>, click on edit on the top of this page, add a bullet with your email address to this list: <ul>
+<li> <a href="mailto&#58;dale&#46;plummer&#64;vumc&#46;org">dale.plummer&#64;vumc.org</a>
+</li></ul> 
+<span id="FurtherInformation"></span>
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemWebNotifyHelp1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="foswikiButton" href=".."><span class="foswikiLinkLabel foswikiUnvisited">&#9658; Notification help</span></a></span><span id="twistyIdSystemWebNotifyHelp1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class="foswikiButton"><span class="foswikiLinkLabel foswikiUnvisited">&#9660; Notification help</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemWebNotifyHelp1toggle" style="" class="twistyRememberSetting twistyContent twistyInited">
+<div class="foswikiHelp">
+<h3 id="About_the_Web_changes_notification_service">  About the Web changes notification service </h3>
+<p></p>
+Each Foswiki web has an automatic e-mail notification service that sends you an e-mail with links to all of the topics modified since the last alert. 
+<p></p>
+<p></p>
+Users subscribe to email notifications using their <a href="../System/WikiName.html">WikiName</a> or an alternative email address, and can specify the webs/topics they wish to track. Whole groups of users can also be subscribed for notification.
+<p></p>
+The general format of a subscription is:
+<p></p>
+<em>three spaces</em> <code>*</code> <em>subscriber</em> [ <code>:</code> <em>topics</em> ]
+<p></p>
+Where <em>subscriber</em> can be a <a href="../System/WikiName.html">WikiName</a>, an email address, or a group name. If <em>subscriber</em> contains any characters that are not legal in an email address, then it must be enclosed in 'single' or "double" quotes. <img height="16" alt="ALERT!" src="../System/DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> <strong>Note:</strong> The guest user <a href="../Main/WikiGuest.html">WikiGuest</a> does not have an email address mapped to it, and will never receive email regardless of the configuration of that user.
+<p></p>
+<em>topics</em> is an optional space-separated list of topics: <ul>
+<li> ... <strong>without</strong> a <em>Web.</em> prefix
+</li> <li> ...that exist in this web.
+</li></ul> 
+Users may further customize the specific content they will receive using the following controls: <ul>
+<li> <strong>Using wild-card character in topic names</strong> - You can use <code>*</code> in a topic name, where it is treated as a <a href="http://en.wikipedia.org/wiki/Wildcard_character">wildcard character</a>. A <code>*</code> will match zero or more other characters - so, for example, <code>Fred*</code> will match all topic names starting with <code>Fred</code>, <code>*Fred</code> will match all topic names <em>ending</em> with <code>Fred</code>, and <code>*</code> will match <em>all</em> topic names.
+</li> <li> <strong>Unsubscribing to specific topics</strong> - Each topic may optionally be preceded by a '+' or '-' sign. The '+' sign means "subscribe to this topic". The '-' sign means "unsubscribe" or "don't send notifications regarding this particular topic". This allows users to elect to filter out certain topics. Topic filters ('-') take precedence over topic includes ('+') i.e. if you unsubscribe from a topic it will cancel out any subscriptions to that topic.
+</li> <li> <strong>Including child-topics in subscription</strong> - Each topic may optionally be followed by an integer in parentheses, indicating the depth of the tree of children below that topic. Changes in all these children will be detected and reported along with changes to the topic itself. <em>Note</em> This uses the Foswiki "Topic parent" feature.
+</li> <li> <strong>Subscribing to entire topic ("news mode")</strong> - Each topic may optionally be immediately followed by an exclamation mark ! and/or a question mark ? with no intervening spaces, indicating that the topic (and children if there is a tree depth specifier as well) should be mailed out as <strong>complete topics</strong> instead of change summaries. ! causes the full topic to be mailed every time <em>even if there have been no changes</em>, and ? will mail the full topic only if there have been changes. One can limit the content of the subscribed topic to send out by inserting <code>%STARTPUBLISH%</code> and <code>%STOPPUBLISH%</code> markers within the topic.
+</li></ul> 
+<p></p>
+Examples:
+Subscribe Daisy to all changes to topics in this web.
+<pre class="tml">
+   &#42; daisy.cutter&#64;flowers.com
+</pre>
+Subscribe Daisy to all changes to topics that start with <code>Web</code>.
+<pre class="tml">
+   &#42; daisy.cutter&#64;flowers.com : Web&#42;
+</pre>
+Subscribe Daisy to changes to topics starting with <code>Petal</code>, and their immediate children, <code>WeedKillers</code> and children to a depth of 3, and all topics that match start with <code>Pretty</code> and end with <code>Flowers</code> e.g. <code>PrettyPinkFlowers</code>.
+<pre class="tml">
+   &#42; DaisyCutter: Petal&#42; (1) WeedKillers (3) Pretty&#42;Flowers
+</pre>
+Subscribe StarTrekFan to changes to all topics that start with <code>Star</code> <strong>except</strong> those that end in <code>Wars</code>, <code>sInTheirEyes</code> or <code>shipTroopers</code>.
+<pre class="tml">
+   &#42; StarTrekFan: Star&#42; - &#42;Wars - &#42;sInTheirEyes - &#42;shipTroopers
+</pre>
+Subscribe Daisy to the full content of <code>NewsLetter</code> whenever it has changed.
+<pre class="tml">
+   &#42; daisy&#64;flowers.com: NewsLetter?
+</pre>
+Subscribe buttercup to <code>NewsLetter</code> and its immediate children, even if it hasn't changed.
+<pre class="tml">
+   &#42; buttercup&#64;flowers.com: NewsLetter! (1)
+</pre>
+Subscribe GardenGroup (which includes Petunia) to all changed topics under <code>AllNewsLetters</code> to a depth of 3. Then unsubscribe Petunia from the <code>ManureNewsLetter</code>, which she would normally get as a member of GardenGroup:
+<pre class="tml">
+   &#42; GardenGroup: AllNewsLetters? (3)
+   &#42; petunia&#64;flowers.com: - ManureNewsLetter
+</pre>
+Subscribe <code>IT:admins</code> (a non-Foswiki group defined by an alternate user mapping) to all changes to Web* topics.
+<pre class="tml">
+   &#42; &#39;IT:admins&#39; : Web&#42;
+</pre>
+<p></p>
+A user may be listed many times in the WebNotify topic. Where a user has several lines in WebNotify that all match the same topic, they will only be notified about <em>changes</em> in that topic <em>once</em> (though they will still receive individual mails for news topics).
+<p></p>
+If a <em>group</em> is listed for notification, the group will be recursively expanded to the email addresses of all members.
+<p></p>
+<div class="foswikihelp"> <strong><img width="16" title="ALERT!" height="16" alt="ALERT!" src="../System/DocumentGraphics.attachments/warning.png"> Warning:</strong> Because an email address is not linked to a user name, there is no way for Foswiki to check access controls for subscribers identified by email addresses. A subscriber identified by an email address alone will only be sent change notifications if the topic they are subscribed to is readable by guest users. You can limit which email addresses can be used in WebNotify, or even block use of emails altogther, using the <code>{MailerContrib}{EmailFilterIn}</code> setting in <code>configure</code>.</div>
+<p></p>
+<div class="foswikiHelp"> <strong><img width="16" title="TIP" alt="TIP" height="16" src="../System/DocumentGraphics.attachments/tip.png"> Tip:</strong> List names in alphabetical order to make it easier to find the names.</div>
+<p></p>
+<p></p>
+<strong>Note for System Administrators:</strong> Notification is supported by an add-on to the Foswiki kernel called the MailerContrib. See the <a href="../System/MailerContrib.html">MailerContrib</a> topic for details of how to set up this service.
+<p></p>
+<strong>Note:</strong> If you prefer a news feed, point your reader to <a href="WebRss.html">WebRss</a> (for RSS 1.0 feeds) or <a href="WebAtom.html">WebAtom</a> (for ATOM 1.0 feeds). Learn more at <a href="../System/WebRssBase.html">WebRssBase</a> and <a href="../System/WebAtomBase.html">WebAtomBase</a>, respectively.
+<p></p>
+<hr />
+<strong>Related topics:</strong> <a href="../Main/WikiUsers.html">Main.WikiUsers</a>, <a href="../System/UserRegistration.html">UserRegistration</a>
+<p></p>
+</div><!--/foswikiHelp-->
+</div></div>
+<p></p>
+<strong><em>Related topics:</em></strong> <a href="../System/WebNotifyHelp.html">WebNotifyHelp</a>, <a href="../Main/WikiUsers.html">WikiUsers</a>, <a href="../System/UserRegistration.html">UserRegistration</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>StudyAnalysisMultiple &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisMultiple/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/StudyAnalysisMultiple/favicon.ico" type="image/x-icon">
+<link title="edit StudyAnalysisMultiple" rel="alternate" href="StudyAnalysisMultiple.html" type="application/x-wiki">
+<meta name="description" content="StudyAnalysisMultiple" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "StudyAnalysisMultiple",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Adjustment_for_Multiple_Confounders">  Adjustment for Multiple Confounders </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Stratification_of_Multiple_Confounders_with_More_Than_Two_Levels"> Stratification of Multiple Confounders with More Than Two Levels </a> <ul>
+<li> <a href="#Potential_Confound_effects"> Potential Confound effects </a>
+</li> <li> <a href="#Strata_for_CONFOUNDING_Effects"> Strata for CONFOUNDING Effects </a>
+</li> <li> <a href="#Schema_for_Potential_Founding_Effects"> Schema for Potential Founding Effects </a>
+</li></ul> 
+</li> <li> <a href="#Evaluating_Joint_Confounding"> Evaluating Joint Confounding </a> <ul>
+<li> <a href="#Looking_at_One_Variable_at_a_Time"> Looking at One Variable at a Time </a>
+</li> <li> <a href="#Looking_at_Combinations_of_Potential_Confounders"> Looking at Combinations of Potential Confounders </a>
+</li></ul> 
+</li> <li> <a href="#Approaches_for_More_than_One_Potential_Confounder"> Approaches for More than One Potential Confounder </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Stratification_of_Multiple_Confounders_with_More_Than_Two_Levels">  Stratification of Multiple Confounders with More Than Two Levels </h2>
+<p></p>
+Stratification can also be used when there are multiple potential <a href="BiasConfound.html">confounders</a> with more than two levels. <ul>
+<li> We want to look at the joint effects of these potential confounders,
+</li> <li> in other words these potential confounders working together, <strong>by forming mutually exclusive and exhaustive strata</strong>.
+</li></ul> 
+<p></p>
+<h3 id="Potential_Confound_effects">  Potential Confound effects </h3>
+<p></p>
+We are looking at the <strong><a href="StudyAssoc.html">association</a> between <em>Chlamydia pneumonia</em> infection and coronary artery disease</strong> (CAD) <ul>
+<li> <strong>W</strong> <strong>hat are the potential confounding effects of age and smoking</strong> (see figure below)?
+</li></ul> 
+<blockquote><img width="252" alt="0410_3chlamydia.JPG" height="98" src="StratificationTerm.attachments/0410_3chlamydia.JPG"></blockquote>
+<p></p>
+<hr />
+<p></p>
+<h3 id="Strata_for_CONFOUNDING_Effects">  Strata for CONFOUNDING Effects </h3>
+<p></p>
+To perform stratification, we would form six strata where we could put each subject only once by crossing smoking by age (see figure below). This would result in the following strata: <ol>
+<li> &lt; 40 year old smokers,
+</li> <li> &lt; 40 year old non-smokers,
+</li> <li> 40-60 year old smokers,
+</li> <li> 40-60 year old non-smokers,
+</li> <li> &gt; 60 year old smokers, and &gt;
+</li> <li> 60 year old non-smokers.
+</li></ol> 
+<blockquote><img width="256" src="StratificationTerm.attachments/0410_4confound.JPG" alt="0410_4confound.JPG" height="115"></blockquote>
+<p></p>
+<hr />
+<p></p>
+<h3 id="Schema_for_Potential_Founding_Effects">  Schema for Potential Founding Effects </h3>
+ Schematically (below), it would look like this with six mutually exclusive and exhaustive strata based on the two potential confounders looked at jointly.  <ul>
+<li> Each of these strata is unconfounded by age and smoking; i.e., all members of the strata have the same value of the two confounders.
+</li></ul> 
+<blockquote><img width="285" height="214" alt="0410_5stratify.JPG" src="StratificationTerm.attachments/0410_5stratify.JPG"></blockquote> 
+<h2 id="Evaluating_Joint_Confounding">  Evaluating Joint Confounding </h2>
+<p></p>
+There are a couple of approaches you could take.
+<p></p>
+1) You could look at each of the other variables one variable at a time to see if it is a confounder.
+<p></p>
+2) You could look at combinations of potential confounders.
+<p></p>
+<h3 id="Looking_at_One_Variable_at_a_Time">  Looking at One Variable at a Time </h3>
+ You could look at each of the other variables one variable at a time to see if it is a confounder.
+<p></p>
+Consider this <a href="CaseControlStudy.html">case-control study</a> where the crude <a href="OddsTerm.html">OR</a> is 2.2. <ul>
+<li> There are two additional variables, typically we call these covariates:  <ul>
+<li> factor 1 and factor 2.
+</li></ul> 
+</li></ul> 
+<p></p>
+<blockquote> <img width="312" height="222" alt="0420_1multi.JPG" src="StudyAnalysisMultiple.attachments/0420_1multi.JPG"> </blockquote>
+<p></p> <ul>
+<li> If we just <a href="StratificationTerm.html">stratified</a> by factor 1, we would see <strong>no evidence</strong> of interaction or confounding.
+</li> <li> If we just stratified by factor 2, we would also see <strong>no evidence</strong> of interaction or confounding.
+</li> <li> If you stopped here, you would be tempted to say that there is <strong>no effect of factors 1 and 2</strong> in the relationship between the primary <a href="PredictorVariable.html">exposure</a> and the <a href="OutcomeVariable.html">outcome</a>.
+</li></ul> 
+<strong>This is a dangerous practice because it ignores the joint effects of the two potential confounders (the third and fourth variables).</strong>
+<p></p>
+<h3 id="Looking_at_Combinations_of_Potential_Confounders">  Looking at Combinations of Potential Confounders </h3>
+ If we formed four strata based on the combinations of the two potential confounders, we would see the following. <blockquote> <img width="323" src="StudyAnalysisMultiple.attachments/0421_2multi_plus.JPG" alt="0421_2multi_plus.JPG" height="230"> </blockquote> Each of the four strata shows no effect.  <ul>
+<li> In other words, when we looked at the <strong>joint effects of factors 1 and 2</strong>, positive confounding is present - such that, after adjustment for factors 1 and 2, there is <strong>no longer any association</strong> between the exposure and the disease.
+</li></ul> 
+<strong>This illustrates the point that variables which when evaluated alone show no effect (ie no confounding or no interaction) may show confounding when evaluated jointly.</strong>
+<p></p>
+<h2 id="Approaches_for_More_than_One_Potential_Confounder">  Approaches for More than One Potential Confounder </h2>
+<p></p> <ul>
+<li> <strong>Approach 1:</strong> <a href="StudyAnalysisBackwards.html">Backwards Strategy</a>
+</li> <li> <strong>Approach 2:</strong> <a href="StudyAnalysisForwards.html">Forwards Strategy</a>
+</li></ul> 
+Backward versus forward confounder evaluation strategies are relevant both for <a href="StratificationTerm.html">stratification</a> and <a href="StudyAnalysisMultivariate.html">multivariate regression modeling</a>. In other words, we are selecting for the best <a href="StudyAnalysisModel.html">model</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgAgeAdjustPetro &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/EgAgeAdjustPetro/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/EgAgeAdjustPetro/favicon.ico" type="image/x-icon">
+<link title="edit EgAgeAdjustPetro" type="application/x-wiki" rel="alternate" href="EgAgeAdjustPetro.html">
+<meta name="description" content="EgAgeAdjustPetro" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgAgeAdjustPetro",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example:_Age_Adjust_45_Petrochemical_Workers">  Example: Age Adjust - Petrochemical Workers </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Person_45Time_Rates_for_Cohort_Analysis"> Person-Time Rates for Cohort Analysis </a>
+</li> <li> <a href="#Calculate_Standardized_Mortality_Ratio"> Calculate Standardized Mortality Ratio </a>
+</li> <li> <a href="#Healthy_Worker_Effect"> Healthy Worker Effect </a>
+</li> <li> <a href="#Cause_Specific_SMRs"> Cause Specific SMRs </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Person_45Time_Rates_for_Cohort_Analysis">  Person-Time Rates for Cohort Analysis </h2>
+<p></p>
+In <a href="#AustinSMR" class="foswikiCurrentTopicLink">Austin's (1983)</a> study of petrochemical workers:
+<p></p>
+<strong>Cohort of petrochemical workers</strong> <ul>
+<li> 6,588 white male employees of Texas plant
+</li></ul> 
+<strong>Mortality determined from 1941-1977</strong>  <ul>
+<li> 137,745 person-years of follow-up time
+</li> <li> 765 deaths
+</li></ul> 
+<strong>Overall death rate</strong> =  <ul>
+<li> 765 / 137,745 person-years =
+</li> <li> 5.6 per 1000 person-years
+</li></ul> 
+<strong>Question: Is this a high death rate?</strong> 
+<h2 id="Calculate_Standardized_Mortality_Ratio">  Calculate Standardized Mortality Ratio </h2>
+ In this study:  <ul>
+<li> Apply U.S. death rates for age-sex-race-calendar period groups to the cohort,
+</li> <li> 924 deaths (from the U.S. population data from the National Center for Health Statistics) were expected in the cohort
+</li> <li> versus the 765 observed
+</li></ul> 
+<strong>Ratio of 765 observed/924 expected</strong> =  <ul>
+<li> 0.83 = 83%.
+</li></ul> 
+<strong>This is called a <a href="StanMortRatio.html">Standardized Mortality Ratio</a> (SMR).</strong>
+<p></p>
+<span id="HealthyWorker"></span>
+<h2 id="Healthy_Worker_Effect">  Healthy Worker Effect </h2>
+ The problem with this analysis is what is known as <strong>the healthy worker effect.</strong>  <ul>
+<li> In this example the observed rate in the cohort of petrochemical workers was actually lower than expected if the U.S. mortality rates had been present.
+</li> <li> This is a common <a href="OutcomeVariable.html">outcome</a> of <a href="CohortStudy.html">cohort studies</a> of workers when they are compared to the general U.S. population because workers need to have a level of health in order to work which makes them generally healthier than the entire U.S. population in the same age groups.
+</li></ul> 
+<p></p>
+<h2 id="Cause_Specific_SMRs">  Cause Specific SMRs </h2>
+<p></p>
+More specific outcomes might be more revealing, such as whether the cohort experienced a higher than expected rate of certain types of cancer that are suspected of being caused by petrochemical exposure, and, in fact, the research question that prompted the study was whether there was evidence for occupational risk of brain tumors in the petrochemical industry.
+<p></p>
+A sample of a number of cause-of-death specific comparisons that were made in the study are shown here.
+<blockquote> <img src="IncidenceRateCohortPopn.attachments/0304_table2_smr.JPG" width="494" height="144" alt="0304_table2_smr.JPG"> </blockquote>
+<p></p>
+These specific SMR's are for employess who were hourly and had greater than six months of employment.
+<p></p>
+Given the large numbers of comparisons that were made and hence the probability of finding a significantly elevated SMR by chance, interpretation of the these subgroup results has to be made with caution.
+<p></p>
+Although the SMR for brain and CNS tumors had an associated p-value of 0.05 for this subgroup, overall in all employees the SMR for brain and CNS was 162 with 95% CI = 83-283, and the authors concluded that there was <strong>insufficient evidence to say that these were occupationally caused tumors</strong>.
+<p></p>
+<h2 id="References">  References </h2>
+<span id="AustinSMR"></span>
+<p></p>
+Austin, S. G., &amp; Schnatter, A. R. (1983). A cohort mortality study of petrochemical workers. <em>J Occup Med</em>, 25(4), 304-312.
+<p></p>
+<hr />
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

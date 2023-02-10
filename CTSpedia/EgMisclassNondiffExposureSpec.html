@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>EgMisclassNondiffExposureSpec &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/EgMisclassNondiffExposureSpec/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/EgMisclassNondiffExposureSpec/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="alternate" href="EgMisclassNondiffExposureSpec.html" title="edit EgMisclassNondiffExposureSpec" type="application/x-wiki">
+<meta name="description" content="EgMisclassNondiffExposureSpec" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "EgMisclassNondiffExposureSpec"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Example_of_Misclassification_Bias">  Example of Misclassification Bias </h1>
+<h2 id="Non_45Differential_Exposure_45_Imperfect_Specificity">  Non-Differential Exposure - Imperfect Specificity </h2>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<p></p>
+<a href="BiasInfor.html">Measurement bias</a> results from imperfect <a href="ValiditySpecif.html">specificity</a> of the <a href="PredictorVariable.html">exposure variable</a>. 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Imperfect_Specificity"> Imperfect Specificity </a>
+</li> <li> <a href="#Study_45_Second_Hand_Cigarette_Smoke"> Study - Second Hand Cigarette Smoke </a>
+</li> <li> <a href="#Non_45Differential_Misclassification_of_Exposure"> Non-Differential Misclassification of Exposure </a>
+</li> <li> <a href="#Imperfect_Specificity_45_Bias_the_OR_towards_the_Null_Hypothesis"> Imperfect Specificity - Bias the OR towards the Null Hypothesis </a>
+</li> <li> <a href="#Bias_Towards_the_Null_Hypothesis"> Bias Towards the Null Hypothesis </a>
+</li></ul> 
+</div> 
+<h2 id="Imperfect_Specificity">  Imperfect Specificity </h2>
+ <blockquote> <img alt="0520_non_diff_spec.JPG" height="214" width="376" src="EgMisclassNondiffExposureSpec.attachments/0520_non_diff_spec.JPG"> </blockquote>
+<p></p>
+In the diagram above the source <a href="StudyBase.html">population</a> is on the top left and our study sample is on the bottom right. <ul>
+<li> We use our study sample to make inferences about the source population.
+</li></ul> 
+<span id="EgSecondHandSmoke"></span>
+<p></p>
+<h2 id="Study_45_Second_Hand_Cigarette_Smoke">  Study - Second Hand Cigarette Smoke </h2>
+<p></p>
+The above schematic representation of misclassification of <a href="PredictorVariable.html">exposure</a> when we have imperfect <a href="ValiditySpecif.html">specificity</a>. <ul>
+<li> Let&rsquo;s say we are doing a <a href="CaseControlStudy.html">case-control study</a> where our exposure is self report of second hand cigarette smoke and where it is possible that some people may over report their exposure.
+</li></ul> 
+Persons who are truly unexposed but who are classified as exposed (because of faulty self-report) are reflected in both arrows.  <ul>
+<li> This is a problem of <strong>specificity</strong>.
+</li></ul> 
+This is happening to the same degree in the diseased individuals as it is in the non-diseased individuals.  <ul>
+<li> The arrows are evenly shaded and are meant to depict that misclassification is occurring to the same degree in the diseased and non-diseased persons.
+</li></ul> 
+<h2 id="Non_45Differential_Misclassification_of_Exposure">  Non-Differential Misclassification of Exposure </h2> <ul>
+<li> If the degree of misclassification of exposure is equivalent in the diseased vs non-diseased groups -i.e. independent of disease-, this again is known as <strong>non-differential misclassification of exposure</strong>.
+</li></ul> 
+<p></p>
+<h2 id="Imperfect_Specificity_45_Bias_the_OR_towards_the_Null_Hypothesis">  Imperfect Specificity - Bias the OR towards the Null Hypothesis </h2>
+ <blockquote>
+<p></p>
+<img src="BiasInfor.attachments/0114_eg_spec.JPG" width="332" height="189" alt="0114_eg_spec.JPG">
+</blockquote>
+<p></p>
+Here is what non-differential misclassification of exposure because of problems of specificity would look like numerically. <ul>
+<li> IN the top panel above we have the truth, in other words, perfect classification of exposure (100% <a href="ValiditySensit.html">sensitivity</a> and 100% <a href="ValiditySpecif.html">specificity</a>).
+</li> <li> The true <a href="OddsRatioMeasures.html">odds ratio</a> is 4.
+</li></ul> 
+What happens in the presence of <strong>70%</strong> <strong>specificity</strong> in exposure classification?  <ul>
+<li> That means that 30% of truly unexposed cases or 15 of 50 are instead classified as exposed.
+</li> <li> Also, 30% of the 80 unexposed controls are falsely classified as exposed, or 24 persons.
+</li> <li> The bottom panel therefore shows what happens and you can see that the OR is now attenuated to 2.4.
+</li></ul> 
+<h2 id="Bias_Towards_the_Null_Hypothesis">  Bias Towards the Null Hypothesis </h2>
+<p></p>
+This illustrates the effect of non-differential misclassification of exposure because of imperfect specificity in the presence of 2 exposure categories - <ul>
+<li> the <strong>bias is towards the</strong> <a href="NullHypothesis.html"> <strong>null hypothesis</strong> </a>, towards 1.0.
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<strong><em><br /></em></strong>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

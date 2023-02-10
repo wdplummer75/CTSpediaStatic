@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>NextWord &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/NextWord/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/NextWord/favicon.ico" type="image/x-icon">
+<link title="edit NextWord" rel="alternate" href="NextWord.html" type="application/x-wiki">
+<meta name="description" content="NextWord" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "TOPIC" : "NextWord",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<font color="darkgreen"> * Macro function </font> <strong>NextWord</strong> <font color="darkgreen">returns the first word from a string, and removes <br /> the first word from the list. The macro parameter is:<br /> string = a string of words.<br /><br /> example: %Let next=%NextWord(string) ;</font><br /><br /><b><font color="darkblue">%Macro</font></b> <a href="NextWord.html" class="foswikiCurrentTopicLink">NextWord</a>(string);<br />   %Let space=%Index(&amp;&amp;&amp;string,%Str( ));<br />   %Let size=%Length(&amp;&amp;&amp;string);<br />   %If %Eval(&amp;space)&gt;0 %Then %Do; <br />      %Let <a class="foswikiCurrentTopicLink" href="NextWord.html">NextWord</a>=%Substr(&amp;&amp;&amp;string,1,&amp;space); <br />      %Let &amp;string=%Substr(&amp;&amp;&amp;string,&amp;space+1,&amp;size-&amp;space); <br />   %End; %Else %Do; %Let <a href="NextWord.html" class="foswikiCurrentTopicLink">NextWord</a>=&amp;&amp;&amp;string; %Let &amp;string= ; %End;<br />   &amp;NextWord<br /><b><font color="darkblue">%Mend</font></b> <a class="foswikiCurrentTopicLink" href="NextWord.html">NextWord</a>;
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>IncidenceRateCohortPopn &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/IncidenceRateCohortPopn/favicon.ico" rel="icon"> <link href="../MISSING RESOURCE CTSpedia/IncidenceRateCohortPopn/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="IncidenceRateCohortPopn.html" rel="alternate" type="application/x-wiki" title="edit IncidenceRateCohortPopn">
+<meta name="description" content="IncidenceRateCohortPopn" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "IncidenceRateCohortPopn",
+   "SERVERTIME" : "08 Feb 2023 - 15:50"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Use_of_Incidence_Rate_45_Compare_Disease_Incidence_in_a_Cohort_with_Population">  Use of Incidence Rate - Compare Disease Incidence in a Cohort with Population </h1>
+<strong><em>Lead Author(s):</em></strong> Jeff Martin, MD
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Advantage_of_Using_Incidence_Rate"> Advantage of Using Incidence Rate </a>
+</li> <li> <a href="#Age_Adjustment_to_Make_Comparisons"> Age Adjustment to Make Comparisons </a>
+</li> <li> <a href="#Age_Adjusting_Rates"> Age Adjusting Rates </a>
+</li> <li> <a href="#Compare_Cohort_and_General_Population_Rates"> Compare Cohort and General Population Rates </a> <ul>
+<li> <a href="#Example_45_Rates_from_a_Cohort"> Example - Rates from a Cohort </a>
+</li></ul> 
+</li> <li> <a href="#Calculating_Person_45Time_Rate_from_a_Reference_Population"> Calculating Person-Time Rate from a Reference Population </a>
+</li></ul> 
+</div> 
+<h2 id="Advantage_of_Using_Incidence_Rate">  Advantage of Using Incidence Rate </h2>
+ There are a number of advantages of using <a href="StudyIncidencePersonTime.html">incident</a> rates. One of them is the ability to compare disease incidence in a cohort with the general population. 
+<h2 id="Age_Adjustment_to_Make_Comparisons">  Age Adjustment to Make Comparisons </h2>
+ <strong>Another common application of incidence rates is age-adjusting incidence in order to make comparisons.</strong>
+<p></p>
+Say you want to compare the mortality in a cohort with 3 years of follow-up separately in the women and the men in the study, but the women are older on average than the men.
+<p></p>
+A straight comparison of <a href="StudyIncidenceCumul.html">survival</a> or cumulative incidence curves in women and men would be misleading.
+<p></p>
+You could make separate survival curves for percent alive at 3 years in age-specific groups (such as 5-year age ranges) for women and men, but there is no easy way to summarize all those individual cumulative incidence percentages.
+<p></p>
+<h2 id="Age_Adjusting_Rates">  Age Adjusting Rates </h2>
+<p></p>
+<strong>Age-adjusting with rates</strong> works to give you one overall adjusted rate by applying the rates from the sex by 5-year age groups to the age distribution of the whole cohort (or some other external population age distribution such as the 2000 Census). <ul>
+<li> The deaths in each sex by age group are summed up for the whole cohort as if the rates in women applied to the whole cohort and the same is done for the rates in men.
+</li> <li> These two rates can then be compared as a <a href="RateRatio.html">rate ratio</a>.
+</li> <li> A rate ratio of 1.0 would mean there was no difference in the mortality rates in women and men once age-differences are adjusted.
+</li></ul> 
+<h2 id="Compare_Cohort_and_General_Population_Rates">  Compare Cohort and General Population Rates </h2>
+ Even more common is to apply this general method of <strong>comparing rates by comparing <a href="StudyCohort.html">cohort</a> rates with general population rates</strong>. This allows investigation of whether the events in the cohort are more or less frequent than would be expected from a sample of the general population in the same age groups.
+<p></p>
+This is a typical retrospective cohort study in which it is relatively easy, by searching the National Death Index, to determine mortality over a long period of time in the cohort. The problem is how to interpret the findings. Is the observed death rate high or low? A comparison is needed and one possibility is to compare it to national mortality data.
+<p></p>
+<h3 id="Example_45_Rates_from_a_Cohort">  Example - Rates from a Cohort </h3>
+<p></p>
+<strong><a href="EgAgeAdjustPetro.html">Example</a> of Petrochemical Workers:</strong> A cohort study of petroleum refinery workers followed up subjects for mortality for 36 years and found 765 deaths.
+<p></p>
+<strong>Research question:</strong> Was the cohort mortality incidence high, low, or just average for those calendar years?
+<p></p>
+It is easy enough to calculate the <a href="StudyIncidenceCumul.html">cumulative incidence</a> from the cohort data since you will have follow-up on each person, but the <strong>question of what to compare it to is difficult</strong>. Clearly survival is related to the original age distribution of the cohort as well as the 36 years of follow-up and there is no source from public data that would give individual level data with up to 36 years of follow-up.
+<p></p>
+<h2 id="Calculating_Person_45Time_Rate_from_a_Reference_Population">  Calculating Person-Time Rate from a Reference Population </h2>
+<p></p>
+<strong>Using the person-time rate,</strong> the observed rate can be compared to the rate that would be expected by using a reference population and a <strong><a href="StanMortRatio.html">standardized mortality ratio</a></strong>.
+<p></p> <ul>
+<li> For example, age-sex-race-calendar period person-time rates from U.S. population data can be applied to the amount of person-time follow-up by those groups in the cohort to produce an expected number of deaths under U.S. rates for comparison with the observed number of deaths in the cohort.
+</li></ul> 
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

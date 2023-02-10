@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CensorData &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/CensorData/favicon.ico" rel="icon" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/CensorData/favicon.ico">
+<link href="CensorData.html" rel="alternate" type="application/x-wiki" title="edit CensorData">
+<meta name="description" content="CensorData" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "CensorData",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Censoring">  Censoring </h1>
+ <strong><em>Lead Author(s):</em></strong> Jeff Martin, MD 
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Three_Ways_Censoring_Occurs"> Three Ways Censoring Occurs </a>
+</li> <li> <a href="#Concept_of_Censoring_Observations"> Concept of Censoring Observations </a> <ul>
+<li> <a href="#Diagram_of_a_Hypothetical_Cohort"> Diagram of a Hypothetical Cohort </a>
+</li></ul> 
+</li> <li> <a href="#Censoring_Is_Unrelated_to_Survival"> Censoring Is Unrelated to Survival </a>
+</li> <li> <a href="#Example_of_Informative_Censoring"> Example of Informative Censoring </a>
+</li> <li> <a href="#References"> References </a>
+</li></ul> 
+</div>
+<p></p>
+<h2 id="Three_Ways_Censoring_Occurs">  Three Ways Censoring Occurs </h2>
+<p></p>
+<strong>1) Death</strong> (if death is not the study outcome)
+<p></p>
+<strong>2) Loss to follow-up</strong> (refuse, move, or cannot be found)
+<p></p>
+<strong>3) End of study observation</strong> (if still alive and have not experienced outcome)
+<p></p>
+<strong>Each subject either experiences the outcome or is censored.</strong>
+<p></p>
+NOTE: To censoring caused by death we could also add diagnosis of another disease that makes the subject ineligible for further follow-up for the main disease under study. Such diagnoses would be specified in advance as censoring event.
+<h2 id="Concept_of_Censoring_Observations">  Concept of Censoring Observations </h2>
+<p></p>
+Individuals in a study usually start at different times but may drop out before the end of the study, or may experience the <a href="OutcomeVariable.html">outcome</a> (e.g. death) before the end of the study. <ul>
+<li> In the diagram below from <a href="#SzkloEpi" class="foswikiCurrentTopicLink">Szklo and Nieto</a> a hypothetical example of a 10 person <a href="CohortStudy.html">cohort study</a> is given.
+</li></ul> 
+It illustrates:  <ul>
+<li> How the individuals in the study started at different times,
+</li> <li> Dropped out before the end of the study, or
+</li> <li> Experienced the outcome (death in this example) before the end of the study
+</li></ul> 
+<p></p>
+<h3 id="Diagram_of_a_Hypothetical_Cohort">  Diagram of a Hypothetical Cohort </h3>
+<p></p>
+<blockquote><img width="339" height="273" alt="0226_1km.JPG" src="CensorData.attachments/0226_1km.JPG"></blockquote>
+<p></p>
+NOTE: <ul>
+<li> The times persons enter and leave the cohort are being shown on a calendar time scale.
+</li> <li> The solid black bars represent the length of time each person was followed in the study.
+</li> <li> D = death
+</li> <li> C = censored observation, which means  <ul>
+<li> The subject either was lost to follow-up,
+</li> <li> Refused to participate further in the study, or
+</li> <li> Continued until the study was ended.
+</li></ul> 
+</li></ul> 
+Person number 5 was enrolled at the very beginning and was still in the study at the end. Because this person was the only one with the full 24 months of study follow-up the text does not show this person as censored. I have added a "C" to the figure because when these data are coded for analysis, each person must be coded as either dead or censored. There is no other possibility. For the analysis there is a single variable that indicates whether each person died or didn't die. In terms of the analysis it doesn't matter why a person is censored.
+<p></p>
+<span id="AdministrativeCensoring"></span>
+<p></p>
+The <em>C</em> for persons still in the study at 24 months, the end of the study in calendar time, is often called <strong>administrative censoring</strong>. In terms of the analysis it doesn't matter why a person is censored.
+<p></p>
+In this example, death is the outcome, but in studies with a disease diagnosis outcome death becomes a censoring event since it removes that individual for further follow-up.
+<p></p>
+<span id="InformCensor"></span>
+<h2 id="Censoring_Is_Unrelated_to_Survival">  Censoring Is Unrelated to Survival </h2>
+<p></p>
+<strong>Censoring is unrelated to the probability of experiencing the <a href="OutcomeVariable.html">outcome</a> (unrelated to survival).</strong>
+<p></p>
+This concept is related to the threats to validity in a <a href="CohortStudy.html">cohort study</a> that come from <a href="LostToFollowUp.html">losses to follow-up</a>. Those persons lost to follow-up are the persons who are censored in the data analysis, so if the goal is to get an unbiased measure of incidence, those losses to follow-up cannot be related to the probability of the <a href="OutcomeVariable.html">outcome</a>. If members of the cohort who are leaving are either more or less likely to experience the outcome than those remaining, the <a href="StudyIncidence.html">incidence estimate</a> will be either too high or too low.
+<p></p>
+<span id="InformativeCensoring"></span>
+<p></p>
+<h2 id="Example_of_Informative_Censoring">  Example of Informative Censoring </h2>
+<p></p>
+This figure from <a class="foswikiCurrentTopicLink" href="#BraitsteinCensor">Braitstein 2006</a> presents the cumulative probability of death for HIV patients in highly active anti-retroviral therapy (HAART) programs in low-income countries based on active or passive follow-up. Active follow-up consisted of telephone calls, mailings, or both.
+<blockquote>
+<p></p>
+<img src="CensorData.attachments/0302_censor.JPG" alt="0302_censor.JPG" height="197" width="361">
+</blockquote>
+<p></p>
+As one can see there is a large difference in the cumulative probability for those on active versus passive follow-up. The authors then remove (informative censoring) those on passive follow-up from further study.
+<p></p>
+<h2 id="References">  References </h2>
+<p></p>
+<span id="BraitsteinCensor"></span>
+<p></p>
+Braitstein, P., Brinkhof, M. W., Dabis, F., Schechter, M., Boulle, A., Miotti, P., et al. (2006). Mortality of HIV-1-infected patients in the first year of antiretroviral therapy: comparison between low-income and high-income countries. <em>Lancet, 367</em> (9513), 817-824.
+<p></p>
+<span id="SzkloEpi"></span>
+<p></p>
+Szklo, M., &amp; Nieto, F. (2007). <em>Epidemiology: Beyond the Basics</em> (2nd Edition ed.). Boston: Jones and Bartlett Publishers.
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

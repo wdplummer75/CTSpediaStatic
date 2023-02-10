@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>CoxPropHazard &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE CTSpedia/CoxPropHazard/favicon.ico" type="image/x-icon"> <link href="../MISSING RESOURCE CTSpedia/CoxPropHazard/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit CoxPropHazard" href="CoxPropHazard.html" rel="alternate">
+<meta name="description" content="CoxPropHazard" />
+<link type="text/css" href="../System/SmiliesPlugin.attachments/smilies.css" class="head SMILIESPLUGIN" media="all" rel="stylesheet"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "TOPIC" : "CoxPropHazard",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "WIKINAME" : "WikiAdmin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Cox_and_Proportional_Hazard">  Cox and Proportional Hazard </h1>
+<p></p>
+<h4 id="FORUM_QUESTION:_Main.BarbaraGrimes_45_24_Aug_2009_45_13:09">  FORUM QUESTION: <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/BarbaraGrimes.html">BarbaraGrimes</a> - 24 Aug 2009 - 13:09 </h4>
+<p></p>
+If the proportional hazards assumption is not met for a predictor in a Cox model, what should I do?
+<p></p>
+<h4 id="FORUM_ANSWER_1:_Main.KnutWittkowski_45_25_Aug_2009_45_05:13">  FORUM ANSWER 1: <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/KnutWittkowski.html">KnutWittkowski</a> - 25 Aug 2009 - 05:13 </h4>
+<p></p>
+Like the related assumption of linearity in the linear model the proportional hazard assumption is being made for computational convenience, not biologic plausibility. Depending on your problem, you may use Kaplan-Meier curves or Gehan's test (see <a href="http://www.bepress.com/sagmb/vol7/iss1/art19" target="_blank">Morales 2008, SAGMB</a>, for extensions to several event categories).
+<p></p>
+<h4 id="FORUM_ANSWER_2:_Main.PeterBacchetti_45_27_Aug_2009_45_20:22">  FORUM ANSWER 2: <a href="../Main/PeterBacchetti.html" rel="nofollow" class="foswikiNewLink" title="Create this topic">PeterBacchetti</a> - 27 Aug 2009 - 20:22 </h4>
+<p></p>
+If there is some interest in the predictor, then modeling the non-proportionality may provide insight. This can be done using time-varying covariates. For example, you can divide followup time into early and late eras, and then define two predictors: one equal to the predictor at times in the early era and equal to zero in the late era, and one equal to zero in the early era and equal to the predictor in the late era. You can then obtain estimates for the effect of the predictor early and for its effect late. There are many variations possible on this approach.
+<p></p>
+This is in keeping with the general good statistical practice of obtaining estimates (with confidence intervals) for quantities that address any important issues.
+<p></p>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

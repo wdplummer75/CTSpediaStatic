@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>OddsRatio &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/OddsRatio/favicon.ico" rel="icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/OddsRatio/favicon.ico" type="image/x-icon">
+<link title="edit OddsRatio" href="OddsRatio.html" rel="alternate" type="application/x-wiki">
+<meta name="description" content="OddsRatio" />
+<link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "TOPIC" : "OddsRatio",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "CTSpedia"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 align="left" dir="ltr">Odds Ratio</h1><p align="left" dir="ltr"><div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Examples_of_how_to_describe_in_manuscript_text"> Examples of how to describe in manuscript text </a>
+</li></ul> 
+</div></p><p align="left" dir="ltr">This is a measure of the association between a <a href="PredictorVariable.html">predictor</a> (or independent) variable and a yes or no (<a href="LogisticOutcome.html">binary</a>) <a href="OutcomeVariable.html">outcome</a> (or dependent) variable. </p>
+<p></p> <ul>
+<li> A value of exactly 1.0 corresponds to no observed association
+</li> <li> Values of less than 1.0 indicate that the outcome appears to be less likely when the predictor is present or when its value is higher
+</li> <li> Values greater than 1.0 indicate that the outcome appears to be more likely when the predictor is present or its value is higher.
+</li></ul> 
+<p align="left" dir="ltr">For a yes or no predictor, the odds ratio estimates the ratio of the odds of the outcome being present when the predictor is present to the odds of the outcome when the predictor is absent.</p><p align="left" dir="ltr">When a predictor has several categories, one is chosen as the reference category and then each of the remaining categories is compared to that one.</p><p align="left" dir="ltr">For a <a href="NumericVariable.html">numeric</a> predictor, the odds ratio pertains to a one unit increase in the value of the predictor, and the assumption is that this is the same no matter whether the one unit increase is from 0 to 1, 10 to 11, or 987 to 988 (this is the <a href="LinearityAssumption.html"><em>linearity assumption</a></em>). </p><p align="left" dir="ltr">The odds ratio is not the same as the <a href="RelativeRisk.html">relative risk</a> (also called the <em>risk ratio</em>), although it is a good approximation when the outcome is rare; see <a href="OddsRisk.html">Odds Ratio vs Risk Ratio</a>.</p> 
+<h2 id="Examples_of_how_to_describe_in_manuscript_text">  Examples of how to describe in manuscript text </h2>
+"The odds of disease among those who had ever smoked were 3.6 fold greater than among those who never smoked."
+<p></p>
+"The odds of disease were lower by a factor of 0.35 in those taking the active drug compared to those on placebo." 
+<p></p>
+For calculations and more discussion see <a href="OddsRatioMeasures.html">here</a>.
+<p></p>
+-- <a class="foswikiNewLink" rel="nofollow" href="../Main/PeterBacchetti.html" title="Create this topic">PeterBacchetti</a> - 03 Feb 2012
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>GeocodingDescription &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/GeocodingDescription/favicon.ico"> <link type="image/x-icon" href="../MISSING RESOURCE CTSpedia/GeocodingDescription/favicon.ico" rel="shortcut icon">
+<link type="application/x-wiki" title="edit GeocodingDescription" href="GeocodingDescription.html" rel="alternate">
+<meta name="description" content="GeocodingDescription" />
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "TOPIC" : "GeocodingDescription",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Geocoding:_What_is_it_and_why_is_it_necessary_63">  Geocoding: What is it and why is it necessary? </h1>
+This article is derived from materials created by Dr. David Rehkopf.
+<p></p>
+Geocoding involves assigning an exact location (a numeric code) to participants in a study.
+<p></p>
+<div class="foswikiToc" id="foswikiTOC"> <ul>
+<li> <a href="#Why_is_geocoding_necessary_63"> Why is geocoding necessary? </a>
+</li> <li> <a href="#How_do_I_geocode_my_data_63"> How do I geocode my data? </a>
+</li> <li> <a href="#How_do_I_link_my_geocoded_data_to_census_SES_data_63"> How do I link my geocoded data to census SES data? </a> <ul>
+<li> <a href="#I._2000_U.S._Census_data:_an_overview"> I. 2000 U.S. Census data: an overview </a>
+</li> <li> <a href="#II._Sources_of_U.S._Census_data"> II. Sources of U.S. Census data </a>
+</li> <li> <a href="#III._Using_raw_FTP_U.S._Census_data"> III. Using raw FTP U.S. Census data </a>
+</li></ul> 
+</li></ul> 
+</div>
+<hr />
+<h2 id="Why_is_geocoding_necessary_63">  Why is geocoding necessary? </h2>
+Geocoding is necessary because of the lack of socioeconomic data in most US public health surveillance systems. This is a problem because, absent this data, we cannot:
+<p></p> <ul>
+<li> monitor socioeconomic inequalities in US health;
+</li> <li> ascertain their contribution to racial/ethnic and gender inequalities in health;and
+</li> <li> galvanize public concern, debate, and action concerning how we, as a nation, can achieve the vital goal of eliminating social disparities in health.
+</li></ul> 
+Geocoding public health surveillance data and using census-derived area-based socioeconomic measures (ABSMs) to characterize both the cases and population in the catchment area enables computation of rates stratified by the area-based measure of socioeconomic position. This can serve to close knowledge gaps which presently exist concerning which ABSMs, at which level of geography, would be most apt for monitoring US socioeconomic inequalities in health, overall and within diverse racial/ethnic-gender groups.
+<p></p>
+The Public Health Disparities Geocoding Project was launched to ascertain which ABSMs, at which geographic level (census block group [BG], census tract [CT], or ZIP code [ZC]), would be suitable for monitoring US socioeconomic inequalities in health. This project resulted in the recommendation that US public health surveillance data should be geocoded and routinely analyzed using the CT-level measure "percent of persons below poverty," thereby enhancing efforts to track, and improve accountability by addressing, social disparities in health in the United States. For details on this project, see <a href="http://www.hsph.harvard.edu/thegeocodingproject/webpage/monograph/execsummary.htm">http://www.hsph.harvard.edu/thegeocodingproject/webpage/monograph/execsummary.htm</a>, from which this information was drawn.
+<h2 id="How_do_I_geocode_my_data_63">  How do I geocode my data? </h2>
+A census-tract number can be obtained by goingto the following website:
+<p></p>
+<a href="http://factfinder.census.gov/servlet/AGSGeoAddressServlet?_lang=en&amp;_programYear=50&amp;_treeId=420">http://factfinder.census.gov/servlet/AGSGeoAddressServlet?_lang=en&amp;_programYear=50&amp;_treeId=420</a>
+<p></p>
+An address can be typed in, a year and program (such as Census 2000) can be selected, and census geographies, including CT, will be generated.
+<p></p>
+Issues may arise in the data to be geocoded include a number of P.O. boxes that cannot be mapped, or if address cleaning is necessary (particularly, if the data set is larger than a few hundred observations). Address-cleaning macros may be obtained in this latter case.
+<h2 id="How_do_I_link_my_geocoded_data_to_census_SES_data_63">  How do I link my geocoded data to census SES data? </h2>
+The U.S. Census website is an excellent resource for Census information and documentation, and all the data you need resides somewhere on this site. However, there are some details involved in obtaining and using U.S. Census dta that are not immediately clear. Much like geocoding, using the U.S. Census data involves a number of decisions that can have a substantial impact on study results.
+<p></p>
+To put census data in the context of the process of geocoding cases and creating rates for the outcomes of interest there are 3 distinct types of data needed: <ol>
+<li> Geocoded Case Data, which provides data for the numerator
+</li> <li> Population Count Data, which provides data for the denominator, and
+</li> <li> Area Based Socioeconomic Measure Data.
+</li></ol> 
+The focus here is on year 2000 census data, and while for the most part similar, there are some differences with prior years' census data.
+<p></p>
+Year 2000 U.S. Census data can be obtained at <a href="http://www.census.gov/">http://www.census.gov</a>. The data consist of:
+<h3 id="I._2000_U.S._Census_data:_an_overview">  I. 2000 U.S. Census data: an overview </h3>
+The 2000 census data is organized into 4 summary files, or (SF). These summary files are from 2 different sources:  <ol>
+<li> Short form data, which is based on data collected on every person in the U.S., and
+</li> <li> Long form data, which is based on more detailed forms sent to a sample of the U.S. population, approximately 1 in 6.
+</li></ol> 
+Two summary files, SF1 and SF2, are from complete count data. The data in SF1 and SF2 are tables reporting counts by age, gender, race, and Ethnicity. The difference is that in SF2 there is much more detailed information on race/Ethnicity, for example, specific country of origin, Native American tribe, and whether there were multiple race/Ethnicities reported. An important note is that in these detailed tables in SF2, there is data suppression. Specifically, for tables with less than 100 individuals, data is not released.
+<p></p>
+The other two summary files, SF3 and SF4, contain data from the long form which is taken from the 1 in 6 sample of the population. SF3 includes detailed tables with socioeconomic and housing data. This is the source of data for more detailed population information such as on poverty, crowding, occupation, and it is this SF3 data that is used to create ABSMs.
+<p></p>
+A. Summary File Data (<a href="http://www.census.gov/main/www/cen2000.html">http://www.census.gov/main/www/cen2000.html</a>) <ol>
+<li> SF1: short form, complete count data, (age, gender, race, Ethnicity)
+</li> <li> SF2: short form, complete count data, (detailed race and Ethnicity)
+</li> <li> SF3: long form, data based on sample, (socioeconomic and housing data)
+</li> <li> Technical note on SF1 vs. SF3: (<a href="http://www.census.gov/Press-Release/www/2002/sf3compnote.html">http://www.census.gov/Press-Release/www/2002/sf3compnote.html</a>)
+</li></ol> 
+Differences between SF1 (taken from a complete enumeration of the population) and SF3 (taken from a sample of the population) counts:
+<p></p> <ul>
+<li> SF3 counts are weighted estimates for an area, and there are wider confidence limits for smaller areas
+</li> <li> In the 2000 Census, the weighting areas used were where 200 or more long forms were completed, giving more accurate estimates;
+</li> <li> However, this results in a mismatch between SF1 and SF3 estimates for small areas or strata.
+</li></ul> 
+To be clear, this is in general useful. Because for the more detailed data from the long forms, this sampling and weighting results in more accurate estimates of detailed SF3 data. The mismatch that occurs is for small areas and particularly for variables which result in small strata.
+<p></p>
+B. Recommendations <ol>
+<li> For Denominator data, use SF1 data
+</li> <li> For creating ABSMs, use SF3 data (socioeconomic and housing data)
+</li> <li> Remember that "the official values for items reported on the short form come from SF1 and SF2" (U.S. Census Bureau Documentation)
+</li></ol> 
+<h3 id="II._Sources_of_U.S._Census_data">  II. Sources of U.S. Census data </h3>
+A. American Factfinder: These data come directly from the U.S. Census. Factfinder is best for using data from a small number of areas (<a href="http://factfinder.census.gov/home/saff/main.html?_lang=en">http://factfinder.census.gov/home/saff/main.html?_lang=en</a>).
+<p></p>
+<strong>Advantages</strong>: <ul>
+<li> easy to use
+</li> <li> all census data available
+</li> <li> data from offical source
+</li> <li> output to html, Excel, comma delimited text
+</li> <li> free
+</li></ul> 
+<strong>Disadvantages:</strong>  <ul>
+<li> time consuming if downloading data from more than a few areas
+</li></ul> 
+B. FTP raw data: Best for using data from a large number of areas
+<p></p>
+C. <a title="Create this topic" href="DataFerrett.html" class="foswikiNewLink" rel="nofollow">DataFerrett</a> (<a href="http://dataferrett.census.gov/">http://dataferrett.census.gov</a>) is a data mining tool (free, downloadable software) that accesses data stored in <a class="foswikiNewLink" rel="nofollow" href="TheDataWeb.html" title="Create this topic">TheDataWeb</a> through the internet
+<p></p>
+D. Commercial Vendor
+<p></p>
+<strong>Advantages:</strong> <ul>
+<li> may be easier to manipulate data for a large number of areas
+</li> <li> special packages allow for built-in mapping and longitudinal analysis
+</li> <li> Windows-based
+</li></ul> 
+<strong>Disadvantages:</strong>  <ul>
+<li> cost ($1500 for year 2000, $4500 for 1970-2000 for the whole United States for a single user; the cost for one state is roughly half that price. For 20-25 users, full package is ~$20,000 or $10,000 for one state)
+</li> <li> all census data may not be available
+</li> <li> data manipulation and compression may occur in order to fit data on CDs
+</li></ul> 
+<h3 id="III._Using_raw_FTP_U.S._Census_data">  III. Using raw FTP U.S. Census data </h3>
+Considering these three options, when doing an analysis at the CT level for a large area such as a state, it is recommended to obtain raw U.S. Census data using FTP downloaded raw data from the census. [This discussion will be related to SAS, but the same principles and process applies for other database programs, and code is available from the census for entering data. Census documentation also notes that some state data centers have code for inputting data into SPSS, but this varies by state.]
+<p></p>
+There are three basic steps to this process:
+<p></p>
+A. Step 1. Figure out what data are needed and where they are located <ol>
+<li> SF1 Technical documentation, FTP read me, FTP download at <a href="http://www.census.gov/Press-Release/www/2001/sumfile1.html">http://www.census.gov/Press-Release/www/2001/sumfile1.html</a>
+</li> <li> SF3 Technical documentation, FTP read me, FTP download at <a href="http://www.census.gov/Press-Release/www/2002/sumfile3.html">http://www.census.gov/Press-Release/www/2002/sumfile3.html</a>
+</li></ol> 
+<strong>N.B. The Summary File document is over 600 pages in length, so it is best to just look at it on your computer and not try and print it. The computer version also has a very hand search text feature in Adobe Acrobat that works very well.</strong>
+<p></p>
+Census data are organized into tables, and Chapter 6 of this document contains documentation of what information is in each table.
+<p></p>
+B. Step 2. Download raw data and geographic header file <ol>
+<li> Use "FTP read me" doc to determine file that has table of interest
+</li> <li> Download raw data file and geographic header file
+</li></ol> 
+At the FTP site, in the file for whatever state you are interested in (data is listed separately by state), you can now go and download the ZIPed file (e.g., ma0002_uf1.zip is the file for 02 Massachusetts data, with the naming convention being state, file name, and f1 for summary file 1)
+<p></p>
+<strong>Very importantly</strong>, you will also need to download the geographic header file, with the naming convention (in this case) "mageo_uf1.zip".
+<p></p>
+C. Step 3. Download appropriate SAS program and read in raw data <ol>
+<li> SF1: <a href="http://www.census.gov/support/SF1ASCII.html">http://www.census.gov/support/SF1ASCII.html</a>
+</li> <li> SF3: <a href="http://www.census.gov/support/SF3ASCII.html">http://www.census.gov/support/SF3ASCII.html</a>
+</li> <li> Go to "Using SAS," click download to get zipped SAS files
+</li> <li> Modify SAS programs as indicated (path to file, merge, SUMLEV=; e.g., census tract for 2000 is sumlev "080")
+</li></ol> 
+After unzipping this file, choose the file that corresponds to the data you downloaded.
+<p></p>
+The procedure for obtaining ABSM data from SF3 is identical to the process for obtaining the denominator data from SF1. For example, if you wanted to create an ABSM for poverty, you could go into the SF3 documentation, and find table P87, and go through the same three basic steps of then downloading the data and the SAS code and reading the data into SAS.
+<p></p>
+<strong>Summary and recommendations for using 2000 Census Data</strong> <ul>
+<li> We recommend obtaining data directly from the U.S. Census, using Factfinder for simple queries, FTP download of raw data for analyses involving many areas.
+</li> <li> We recommend using SF1 data for denominator data, and SF3 data for creating ABSMs
+</li> <li> Completedocumentation of what 2000 Census data is available in which table is available at www.census.gov.
+</li> <li> To use FTP raw data, you need: raw data, geographic header file, and SAS code to read in data.
+</li></ul> 
+This is really a relatively painless process of obtaining and manipulating the census data. If starting only with a familiarity with SAS, it really is quite easy to get and use this data.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

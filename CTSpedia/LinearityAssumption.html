@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>LinearityAssumption &lt; CTSpedia &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE CTSpedia/LinearityAssumption/favicon.ico" rel="icon" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/LinearityAssumption/favicon.ico" type="image/x-icon">
+<link type="application/x-wiki" title="edit LinearityAssumption" href="LinearityAssumption.html" rel="alternate">
+<meta name="description" content="LinearityAssumption" />
+<link type="text/css" media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "SKIN" : "natedit,pattern",
+   "WIKINAME" : "WikiAdmin",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "WEB" : "CTSpedia",
+   "SCRIPTURLPATHS" : {},
+   "TOPIC" : "LinearityAssumption",
+   "SERVERTIME" : "08 Feb 2023 - 15:50",
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.WikiAdmin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Linearity_Assumption">  Linearity Assumption </h1>
+<strong><em>Lead Author(s):</em></strong> Peter Bacchetti, PhD
+<p></p>
+In regression models, <a href="NumericVariable.html">numeric</a> <a href="PredictorVariable.html">predictors</a> are assumed to have a linear association with the outcome. In mathematical terms with a predictor X and outcome Y, this means a model like:
+<p></p>
+Y = a + bX + &lt;other predictors' effects&gt;, where a and b are constants.
+<p></p>
+(For some types of models, a function of Y is used instead of Y itself, like the log odds for logistic regression or log hazard for Cox proportional hazards regression.)
+<p></p>
+A less mathematical way to think about this assumption is that it means that each 1 unit difference in the predictor is associated with the same effect on the outcome regardless of whether it is a difference between 0 and 1 or between 100 and 101. Similarly, each 10 point difference is associated with the same effect on the outcome regardless of whether it is a difference between 5 and 15 or between 150 and 160 or between 2345 and 2355.
+<p></p>
+A simple way to relax this assumption is to add a quadratic term for X to the model, Xsquared = X times X. If the P-value for Xsquared is &lt;0.05, this is usually considered to be strong evidence that the linearity assumption is inaccurate. In this case, a more flexible model can be fitted by categorizing X, using <a href="LinearSplines.html">linear splines</a>, or simply retaining Xsquared in the model. Categorizing or using linear splines will provide interpretable regression coefficients, but retaining Xsquared or fitting a higher order <a href="PolynomialModel.html">polynomial model</a> will usually necessitate a graphical depiction of the effect of X to aid interpretation.
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>
