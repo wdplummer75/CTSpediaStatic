@@ -1,0 +1,996 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.MsoPlaceholderText
+	{color:gray;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>This example demonstrates how %GEEZIP is used to model pre
+and post zero inflated count data with continuous covariates.</p>
+
+<p class=MsoNormal>The data used in this example was simulated. For each observation
+<span style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif";
+position:relative;top:4.5pt'><img width=5 height=20
+src="Rochester_GEEZIP_Example_files/image019.png"></span>, there are three independent
+continuous covariates <span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif";
+position:relative;top:6.0pt'><img width=59 height=21
+src="Rochester_GEEZIP_Example_files/image020.png"></span> , each of which follows
+a normal distribution <span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri","sans-serif";position:relative;top:5.5pt'><img width=43
+height=20 src="Rochester_GEEZIP_Example_files/image021.png"></span>. The bivariate
+pre and post count response <span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif";
+position:relative;top:5.5pt'><img width=86 height=20
+src="Rochester_GEEZIP_Example_files/image022.png"></span> satisfies the
+following marginal ZIP model:</p>
+
+<p class=MsoNormal><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><img
+width=158 height=21 src="Rochester_GEEZIP_Example_files/image023.png"></span></p>
+
+<p class=MsoNormal><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><img
+width=98 height=20 src="Rochester_GEEZIP_Example_files/image024.png"></span></p>
+
+<p class=MsoNormal><span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif"'><img
+width=231 height=20 src="Rochester_GEEZIP_Example_files/image025.png"></span></p>
+
+<p class=MsoNormal>In the simulated data, we set <span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif";
+position:relative;top:5.5pt'><img width=213 height=20
+src="Rochester_GEEZIP_Example_files/image026.png"></span>.</p>
+
+<p class=MsoNormal>The simulated data used to demonstrate is shown below</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><span style='font-size:10.0pt;font-family:"Courier New";
+color:navy;background:white'>data</span></b><span style='font-size:10.0pt;
+font-family:"Courier New";color:black;background:white'> mydata;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>  </span><span style='font-size:10.0pt;
+font-family:"Courier New";color:blue;background:white'>input</span><span
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:white'>
+id count time x1 x2 x3 @@;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>  </span><span style='font-size:10.0pt;
+font-family:"Courier New";color:blue;background:white'>datalines</span><span
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:white'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>1     37    1     0.06155278  2.148548496 0.434040304</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>2     139   1     1.801373099 0.080430585 2.092864909</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>3     15    1     -0.504148447      1.158435425 0.771048924</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>4     1     1     -0.686471459      0.355961741 -0.145750225</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>5     7     1     -0.820546857      0.442175622 1.825474402</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>6     11    1     0.268240074 0.802493407 0.080893178</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>7     0     1     -0.493636867      0.375293153 0.573253225</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>8     8     1     0.72767749  0.070195021 -0.228101346</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>9     23    1     0.527134111 1.196801133 0.589503425</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>10    5     1     -1.540530272      1.619615831 1.071691351</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>11    200   1     0.934676218 1.012937027 2.408493739</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>12    321   1     1.613109628 1.395561261 1.772718184</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>13    86    1     -0.665947638      2.601282293 1.476294195</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>14    0     1     2.58609672  0.070249734 1.204037005</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>15    75    1     1.633343397 0.058584787 1.501908833</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>16    4117  1     2.158476338 2.344014304 2.809786812</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>17    13    1     1.639288732 0.140851515 0.190201761</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>18    10    1     -0.26405467 0.915985131 0.848716353</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>19    0     1     -0.132223162      1.041922045 1.864684555</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>20    4     1     0.284495636 0.100280935 0.238173281</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>21    0     1     -0.07853971 2.345437551 -0.133841944</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>22    1543  1     2.815858844 1.584458271 1.939240632</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>23    106   1     1.815947006 1.204528823 0.510764623</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>24    6     1     -0.919935918      1.01288542  1.441913079</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>25    0     1     1.600916988 0.987582435 0.001774726</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>26    74    1     -0.805464711      0.700728191 3.417625719</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>27    40    1     1.158006518 0.318182064 1.247635988</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>28    0     1     1.832724378 1.880785968 0.382622566</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>29    0     1     0.669880454 0.038102551 0.630297368</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>30    241   1     1.041165514 1.682074495 1.799590357</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>31    5     1     1.826781029 -1.936939901      0.954953194</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>32    45    1     1.298312616 0.588530186 0.835506127</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>33    952   1     1.205678291 1.122062448 3.524682698</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>34    2     1     -0.248608134      0.25198281  0.913111879</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>35    109   1     3.102556754 1.124687414 -0.416833253</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>36    213   1     1.01369739  1.218032003 2.181664059</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>37    0     1     0.491717946 2.686430712 1.264299687</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>38    57    1     1.538281573 1.640759419 -0.388871051</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>39    76    1     0.831307714 1.110495127 1.505124911</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>40    29    1     0.10000232  2.629723576 -0.495964427</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>41    0     1     2.237064622 1.201867297 0.516706244</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>42    2     1     -1.028786768      0.330159096 0.191258677</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>43    20    1     -0.138692937      1.364370033 0.618534677</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>44    90    1     1.933672104 1.591918153 -0.197365162</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>45    0     1     0.492817929 -0.719812154      0.019198246</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>46    13    1     0.172185728 1.240199677 0.417637589</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>47    19    1     0.285813009 0.590229573 1.419569923</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>48    1     1     -0.820661872      -0.38471966 1.124148233</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>49    26    1     1.394492725 -0.268906917      1.041842922</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>50    107   1     1.998495218 1.093543328 0.665449117</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>51    1053  1     0.979190049 2.444203043 2.490915015</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>52    21    1     1.874292524 0.098065975 0.254254291</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>53    31    1     1.226109818 0.527391491 0.644971437</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>54    0     1     2.356911517 0.775583104 1.859593196</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>55    155   1     2.299232416 2.500828472 -0.728587176</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>56    65    1     1.217483374 1.481188675 0.497854519</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>57    26    1     1.48400698  -0.815609677      1.300043223</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>58    0     1     2.48713067  0.90949837  0.831035604</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>59    0     1     1.315560455 0.150026561 0.493335813</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>60    4     1     -0.644685681      1.105909031 -0.442400788</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>61    534   1     2.321458044 1.370274483 1.559825769</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>62    13    1     -0.460574532      -0.198342202      2.275644021</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>63    280   1     1.62745939  2.096186064 0.907013322</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>64    1     1     -1.462302942      0.131325555 0.808617873</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>65    60    1     2.628936719 0.134406434 0.446405554</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>66    32    1     1.294384341 1.18273574  -0.231874576</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>67    14    1     0.08413495  1.949344126 -0.382151923</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>68    87    1     -0.411609242      1.708463382 2.053365065</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>69    3     1     -0.554934502      -0.167479704      -0.131514797</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>70    0     1     -1.101663245      0.935372333 -0.86894494</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>71    12    1     0.189842914 2.21741084  -0.788981857</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>72    0     1     0.740625863 0.794476382 0.71140164</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>73    0     1     1.715290086 2.143801108 0.816039282</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>74    0     1     1.252572723 3.022170235 -0.004890403</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>75    25    1     -0.373922989      0.056760082 2.416334131</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>76    11    1     1.411277797 -0.3071286  -0.076262558</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>77    260   1     1.058433007 1.960420741 1.494615753</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>78    10    1     1.04273236  -0.236274723      0.332190734</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>79    0     1     1.582046761 1.135317898 0.595587385</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>80    56    1     1.852239065 0.420771426 0.84740689</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>81    0     1     -0.095761603      1.702980397 0.906572762</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>82    0     1     -1.484126124      0.724602174 0.52956048</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>83    53    1     0.728951443 1.151280293 1.008606828</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>84    71    1     1.024409437 1.374301981 0.687993842</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>85    0     1     -1.01518042 0.054318734 1.487828812</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>86    0     1     -0.172992781      -0.617774526      1.395822374</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>87    95    1     2.354415617 1.134775138 -0.130221596</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>88    232   1     3.598660247 1.893259548 -1.095419869</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>89    16    1     1.708743348 0.830808035 -0.805728862</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>90    31    1     0.8056603   0.862692183 0.856548543</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>91    98    1     0.854586785 2.390460476 0.312085051</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>92    485   1     1.769052428 3.404715908 0.057472015</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>93    320   1     1.111846819 2.209737982 1.589324759</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>94    0     1     0.984481251 1.121123717 0.749495271</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>95    3178  1     2.563733829 2.468397009 2.013996089</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>96    61    1     2.15334645  0.178267871 0.843308478</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>97    0     1     -0.127117911      0.564778856 0.038863895</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>98    182   1     0.905156631 0.819153039 2.571524279</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>99    60    1     1.390395848 1.56900858  0.487291816</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>100   3166  1     2.355217089 1.50671147  3.209739736</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>1     43    2     0.06155278  2.148548496 0.434040304</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>2     145   2     1.801373099 0.080430585 2.092864909</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>3     12    2     -0.504148447      1.158435425 0.771048924</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>4     0     2     -0.686471459      0.355961741 -0.145750225</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>5     13    2     -0.820546857      0.442175622 1.825474402</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>6     9     2     0.268240074 0.802493407 0.080893178</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>7     0     2     -0.493636867      0.375293153 0.573253225</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>8     5     2     0.72767749  0.070195021 -0.228101346</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>9     32    2     0.527134111 1.196801133 0.589503425</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>10    10    2     -1.540530272      1.619615831 1.071691351</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>11    195   2     0.934676218 1.012937027 2.408493739</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>12    321   2     1.613109628 1.395561261 1.772718184</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>13    90    2     -0.665947638      2.601282293 1.476294195</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>14    0     2     2.58609672  0.070249734 1.204037005</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>15    62    2     1.633343397 0.058584787 1.501908833</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>16    4019  2     2.158476338 2.344014304 2.809786812</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>17    20    2     1.639288732 0.140851515 0.190201761</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>18    12    2     -0.26405467 0.915985131 0.848716353</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>19    0     2     -0.132223162      1.041922045 1.864684555</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>20    7     2     0.284495636 0.100280935 0.238173281</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>21    0     2     -0.07853971 2.345437551 -0.133841944</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>22    1569  2     2.815858844 1.584458271 1.939240632</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>23    94    2     1.815947006 1.204528823 0.510764623</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>24    15    2     -0.919935918      1.01288542  1.441913079</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>25    0     2     1.600916988 0.987582435 0.001774726</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>26    74    2     -0.805464711      0.700728191 3.417625719</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>27    43    2     1.158006518 0.318182064 1.247635988</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>28    0     2     1.832724378 1.880785968 0.382622566</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>29    0     2     0.669880454 0.038102551 0.630297368</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>30    259   2     1.041165514 1.682074495 1.799590357</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>31    7     2     1.826781029 -1.936939901      0.954953194</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>32    43    2     1.298312616 0.588530186 0.835506127</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>33    934   2     1.205678291 1.122062448 3.524682698</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>34    5     2     -0.248608134      0.25198281  0.913111879</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>35    115   2     3.102556754 1.124687414 -0.416833253</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>36    228   2     1.01369739  1.218032003 2.181664059</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>37    0     2     0.491717946 2.686430712 1.264299687</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>38    52    2     1.538281573 1.640759419 -0.388871051</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>39    95    2     0.831307714 1.110495127 1.505124911</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>40    28    2     0.10000232  2.629723576 -0.495964427</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>41    0     2     2.237064622 1.201867297 0.516706244</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>42    1     2     -1.028786768      0.330159096 0.191258677</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>43    19    2     -0.138692937      1.364370033 0.618534677</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>44    84    2     1.933672104 1.591918153 -0.197365162</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>45    0     2     0.492817929 -0.719812154      0.019198246</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>46    14    2     0.172185728 1.240199677 0.417637589</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>47    30    2     0.285813009 0.590229573 1.419569923</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>48    1     2     -0.820661872      -0.38471966 1.124148233</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>49    24    2     1.394492725 -0.268906917      1.041842922</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>50    132   2     1.998495218 1.093543328 0.665449117</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>51    965   2     0.979190049 2.444203043 2.490915015</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>52    21    2     1.874292524 0.098065975 0.254254291</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>53    36    2     1.226109818 0.527391491 0.644971437</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>54    0     2     2.356911517 0.775583104 1.859593196</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>55    173   2     2.299232416 2.500828472 -0.728587176</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>56    81    2     1.217483374 1.481188675 0.497854519</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>57    19    2     1.48400698  -0.815609677      1.300043223</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>58    0     2     2.48713067  0.90949837  0.831035604</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>59    0     2     1.315560455 0.150026561 0.493335813</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>60    2     2     -0.644685681      1.105909031 -0.442400788</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>61    506   2     2.321458044 1.370274483 1.559825769</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>62    14    2     -0.460574532      -0.198342202      2.275644021</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>63    259   2     1.62745939  2.096186064 0.907013322</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>64    0     2     -1.462302942      0.131325555 0.808617873</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>65    75    2     2.628936719 0.134406434 0.446405554</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>66    29    2     1.294384341 1.18273574  -0.231874576</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>67    15    2     0.08413495  1.949344126 -0.382151923</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>68    87    2     -0.411609242      1.708463382 2.053365065</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>69    0     2     -0.554934502      -0.167479704      -0.131514797</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>70    0     2     -1.101663245      0.935372333 -0.86894494</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>71    10    2     0.189842914 2.21741084  -0.788981857</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>72    0     2     0.740625863 0.794476382 0.71140164</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>73    0     2     1.715290086 2.143801108 0.816039282</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>74    0     2     1.252572723 3.022170235 -0.004890403</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>75    25    2     -0.373922989      0.056760082 2.416334131</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>76    11    2     1.411277797 -0.3071286  -0.076262558</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>77    242   2     1.058433007 1.960420741 1.494615753</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>78    8     2     1.04273236  -0.236274723      0.332190734</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>79    0     2     1.582046761 1.135317898 0.595587385</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>80    63    2     1.852239065 0.420771426 0.84740689</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>81    0     2     -0.095761603      1.702980397 0.906572762</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>82    0     2     -1.484126124      0.724602174 0.52956048</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>83    65    2     0.728951443 1.151280293 1.008606828</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>84    53    2     1.024409437 1.374301981 0.687993842</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>85    9     2     -1.01518042 0.054318734 1.487828812</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>86    0     2     -0.172992781      -0.617774526      1.395822374</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>87    70    2     2.354415617 1.134775138 -0.130221596</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>88    203   2     3.598660247 1.893259548 -1.095419869</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>89    13    2     1.708743348 0.830808035 -0.805728862</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>90    29    2     0.8056603   0.862692183 0.856548543</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>91    94    2     0.854586785 2.390460476 0.312085051</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>92    500   2     1.769052428 3.404715908 0.057472015</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>93    389   2     1.111846819 2.209737982 1.589324759</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>94    0     2     0.984481251 1.121123717 0.749495271</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>95    3066  2     2.563733829 2.468397009 2.013996089</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>96    72    2     2.15334645  0.178267871 0.843308478</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>97    0     2     -0.127117911      0.564778856 0.038863895</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>98    188   2     0.905156631 0.819153039 2.571524279</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>99    83    2     1.390395848 1.56900858  0.487291816</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#FFFFC0'>100   3220  2     2.355217089 1.50671147  3.209739736</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><b><span style='font-size:10.0pt;font-family:"Courier New";
+color:navy;background:white'>run</span></b><span style='font-size:10.0pt;
+font-family:"Courier New";color:black;background:white'>; </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The macro is used to fit the above data set to estimate the
+parameter value <span
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri","sans-serif";
+position:relative;top:5.5pt'><img width=142 height=20
+src="Rochester_GEEZIP_Example_files/image027.png"></span> and its corresponding
+asymptotic variances. The following statements should be used:</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue;background:white'>filename</span><span style='font-size:10.0pt;
+font-family:"Courier New";color:black;background:white'> GEEZIP URL </span><span
+style='font-size:10.0pt;font-family:"Courier New";color:purple;background:white'>&quot;http://www.ctspedia.org/wiki/pub/CTSpedia/StatToolsTopic051/Rochester_GEEZIP.sas&quot;</span><span
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:white'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:blue;background:white'>%include</span><span style='font-size:10.0pt;
+font-family:"Courier New";color:black;background:white'> GEEZIP;  </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>%<b><i>GEEZIP</i></b>(DSName=mydata,</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>            Outcome=count, </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>            PredictNum=x1 x2 x3, </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>            ID=id,</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none'><span style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:white'>            Time=time,</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;font-family:
+"Courier New";color:black;background:white'>            OutForm=);</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;font-family:
+"Courier New";color:black;background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal>The output generated from these statements are the parameter
+estimate <i>theta</i> and the asymptotic standard deviation <i>sigma</i>: </p>
+
+<p class=MsoNormal><i>theta</i>=(-1.25, 0.81, 1.07, 1.03, 10.7)</p>
+
+<p class=MsoNormal><i>sigma</i>=(0.24, 0.14, 0.06, 0.07, 0.05)</p>
+
+</div>
+
+</body>
+
+</html>

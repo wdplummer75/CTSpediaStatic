@@ -1,0 +1,36 @@
+dat <- read.csv('//cdsnas/oebdbdms/Graphics/Datasets/CleanTrial.csv')
+
+base <- subset(dat, visit==2)
+eot <- subset(dat, visit==6)
+
+#png('C:/Research/Graphics/Graphs4Display/webpages/classes/pages/images/scattertrellis.png',
+#         width=500, height=500)
+
+new.line <- trellis.par.get('superpose.line')
+new.line$col <- c('seagreen2','grey60')
+new.line$lty <- c(1,1,1,1)
+new.symbol <- trellis.par.get('superpose.symbol')
+new.symbol$col <- c('seagreen2','grey60')
+new.symbol$pch <- c(1, 4, 16, 8)
+trellis.par.set('superpose.line', new.line)
+trellis.par.set('superpose.symbol', new.symbol)
+    
+xyplot(eot$count ~ base$count | base$racef, 
+       groups=base$trtf, 
+       panel=panel.plsmo,
+       xlab='Baseline Count',
+       ylab='End of Treatment Count',
+       sub='EOT CT ~ BASE CT | RACE, groups=TRT',
+       cex=1.25,
+       par.settings=list(superpose.symbol=list(
+                                col=c('seagreen2','grey60')),
+                     superpose.line=list(
+                                col=c('seagreen2','grey60'),
+                                lty=c(1,1))),
+       key=list(type='p',
+          points=list(pch=trellis.par.get('superpose.symbol')$pch[1:2],
+                          col=trellis.par.get('superpose.symbol')$col[1:2]),
+          text=list(levels(base$trtf),
+                         col=trellis.par.get('superpose.symbol')$col[1:2]),
+          columns=2, cex=1, title='Treatment'))
+#dev.off()

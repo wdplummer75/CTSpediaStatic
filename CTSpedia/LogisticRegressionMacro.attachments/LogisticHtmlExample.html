@@ -1,0 +1,2311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software, see www.sas.com" sasversion="9.1">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>SAS Output</title>
+<style type="text/css">
+<!--
+.ContentTitle
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.NoteContent
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.GraphLegendBackground
+{
+  background-color: #FFFFFF;
+}
+.HeaderEmphasis
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.Output
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #CCCCCC;
+}
+.FatalContent
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.WarnContentFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.NoteBanner
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.DataStrong
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.TitlesAndFooters
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.Pages
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  margin-left: 8px;
+  margin-right: 8px;
+  list-style-type: decimal;
+}
+.Document
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.Graph
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.DropShadowStyle
+{
+  color: #000000;
+}
+.BeforeCaption
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.ContentsDate
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+.IndexProcName
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: decimal;
+}
+.Date
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+.ProcTitle
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.Table
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #CCCCCC;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+}
+.IndexAction
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.Data
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.GraphBorderLines
+{
+  color: #000000;
+}
+.FooterEmpty
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.Container
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.GraphValueText
+{
+  font-family: Arial;
+  font-size: 10pt;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+}
+.GraphLabelText
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  font-style: normal;
+  color: #000000;
+}
+.SysTitleAndFooterContainer
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  border-width: 0;
+  width: 100%;
+}
+.RowFooterEmpty
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.RowFooterEmphasis
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.ExtendedPage
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #003399;
+  background-color: #FFFFFF;
+  border-width: 1pt;
+  text-align: center;
+}
+.ContentFolder
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: NONE;
+}
+.RowFooterStrongFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.FooterFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.RowFooterFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.Caption
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.Index
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.WarnBanner
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.Note
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.HeaderStrongFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.NoteContentFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.DataEmphasisFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.IndexTitle
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.Byline
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.FatalBanner
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.PagesDate
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+.ProcTitleFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.ByContentFolder
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: NONE;
+}
+.PagesProcLabel
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: decimal;
+}
+.Frame
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.GraphAxisLines
+{
+  color: #000000;
+}
+.RowFooterEmphasisFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.RowHeaderFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.Header
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.GraphData9
+{
+  color: #9DAA2D;
+}
+.DataEmpty
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.Cell
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.WarnContent
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.PageNo
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  text-align: right;
+  vertical-align: top;
+}
+.ContentProcLabel
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: decimal;
+}
+.HeaderFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.PagesTitle
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.RowHeaderEmpty
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.PagesProcName
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: decimal;
+}
+.Batch
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.ContentItem
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: NONE;
+}
+.Body
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.HeaderEmpty
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.DataFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.FooterStrong
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.FooterEmphasis
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.ErrorContent
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.GraphData1
+{
+  color: #FFA53D;
+}
+.HeaderStrong
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.DataEmphasis
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.GraphData3
+{
+  color: #EF6B48;
+}
+.IndexItem
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  margin-left: 6pt;
+  list-style-type: NONE;
+}
+.RowFooter
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.TitleAndNoteContainer
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  border-width: 0;
+  width: 100%;
+}
+.BylineContainer
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  border-width: 0;
+  width: 100%;
+}
+.Contents
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  margin-left: 8px;
+  margin-right: 8px;
+  list-style-type: decimal;
+}
+.GraphData2
+{
+  color: #F7DF54;
+}
+.FatalContentFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.GraphData11
+{
+  color: #2EA64A;
+}
+.GraphData5
+{
+  color: #CB79C8;
+}
+.BodyDate
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  width: 100%;
+  text-align: right;
+  vertical-align: top;
+}
+.GraphFloor
+{
+  background-color: #FFFFFF;
+}
+.FooterEmphasisFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.GraphData10
+{
+  color: #6C69D9;
+}
+.GraphData4
+{
+  color: #61A6E7;
+}
+.GraphData6
+{
+  color: #85CE79;
+}
+.GraphData12
+{
+  color: #C17D35;
+}
+.RowFooterStrong
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.HeadersAndFooters
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.RowHeaderStrong
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.UserText
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.RowHeaderEmphasisFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.ErrorBanner
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.FooterStrongFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.PagesItem
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: NONE;
+}
+.RowHeader
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.ContentProcName
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+  list-style-type: decimal;
+}
+.AfterCaption
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.GraphOutlines
+{
+  color: #000000;
+}
+.RowHeaderStrongFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.DataStrongFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.RowHeaderEmphasis
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.Footer
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.FolderAction
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.SystemFooter
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  font-style: italic;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.HeaderEmphasisFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: italic;
+  color: #FFFFFF;
+  background-color: #6495ED;
+}
+.SystemTitle
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.ErrorContentFixed
+{
+  font-family: Courier New, Courier, monospace;
+  font-size: x-small;
+  font-weight: normal;
+  font-style: normal;
+  color: #003399;
+  background-color: #FFFFFF;
+}
+.GraphGridLines
+{
+  color: #E0E0E0;
+}
+.GraphTitleText
+{
+  color: #003399;
+}
+.GraphData7
+{
+  color: #967CD0;
+}
+.GraphBackground
+{
+  background-color: #FFFFFF;
+}
+.GraphData8
+{
+  color: #DD6475;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: "." }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+<noscript></noscript>
+</head>
+<body onload="startup()" onunload="shutdown()" class="Body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+
+//-->
+</script>
+
+<noscript></noscript>
+<div class="branch">
+<a name="IDX"></a>
+<table class="SysTitleAndFooterContainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l SystemTitle">Example of running a series of univariate models and multivariate models with the logistic macro</td>
+</tr>
+</table><br>
+<div>
+<div align="left">
+<table class="Table" cellspacing="1" cellpadding="7" rules="none" frame="box" summary="Procedure Report: Detailed and/or summarized report">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r NoteContent" colspan="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</th>
+</tr>
+<tr>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ModelNumber">Model</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/VariableColumn">Variable</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 2.5in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ValueColumn">Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/CountsInOutput"># Outcome = 1/<br># subgroup<br>(% Outcome = 1)</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/OddsRatio"> Odds <br> Ratio</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Lower <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Upper <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/PValues">P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/QuadraticPvalue">Quadratic<br>P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/Type3Pvalue">Type 3<br>P-Value</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="c Data">  1</td>
+<td class="l Data">age</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">1.10</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">1.08</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">1.12</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FF0000; width: 1in;">0.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/RescaledPredictors">age (per 10 units)</a>
+</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">2.5</td>
+<td class="c Data" style=" width: 1in;">2.2</td>
+<td class="c Data" style=" width: 1in;">3.0</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)Died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)Died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">477.125</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">10 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FF0000; width: 1in;">0.0028</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">  2</td>
+<td class="l Data">age</td>
+<td class="l Data">20-35</td>
+<td class="c Data">  18/129 (14.0%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">age</td>
+<td class="l Data">36-51</td>
+<td class="c Data">  22/125 (17.6%)</td>
+<td class="c Data" style=" width: 1in;">1.32</td>
+<td class="c Data" style=" width: 1in;">0.67</td>
+<td class="c Data" style=" width: 1in;">2.6</td>
+<td class="c Data" style=" width: 1in;">0.43</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">age</td>
+<td class="l Data">52-66</td>
+<td class="c Data">  80/128 (62.5%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">10.3</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">5.6</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">19.0</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">age</td>
+<td class="l Data">67-80</td>
+<td class="c Data"> 105/118 (89.0%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">50</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">23</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">107</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)Died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)Died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">471.802</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">4 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="l NoteContent" colspan="10">Pink&nbsp;cells&nbsp;indicate&nbsp;effects&nbsp;with&nbsp;p&lt;0.05<br>Red&nbsp;cells&nbsp;indicate&nbsp;evidence&nbsp;for&nbsp;violations&nbsp;of&nbsp;model&nbsp;assumptions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="page-break-after: always;">&#160</p><hr size="3">
+<a name="IDX1"></a>
+<table class="SysTitleAndFooterContainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l SystemTitle">Example of running a series of univariate models and multivariate models with the logistic macro</td>
+</tr>
+</table><br>
+<div align="left">
+<table class="Table" cellspacing="1" cellpadding="7" rules="none" frame="box" summary="Procedure Report: Detailed and/or summarized report">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r NoteContent" colspan="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</th>
+</tr>
+<tr>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ModelNumber">Model</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/VariableColumn">Variable</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 2.5in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ValueColumn">Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/CountsInOutput"># Outcome = 1/<br># subgroup<br>(% Outcome = 1)</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/OddsRatio"> Odds <br> Ratio</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Lower <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Upper <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/PValues">P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/QuadraticPvalue">Quadratic<br>P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/Type3Pvalue">Type 3<br>P-Value</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">  3</td>
+<td class="l Data">female</td>
+<td class="l Data">No</td>
+<td class="c Data"> 108/235 (46.0%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">female</td>
+<td class="l Data">Yes</td>
+<td class="c Data"> 117/265 (44.2%)</td>
+<td class="c Data" style=" width: 1in;">0.93</td>
+<td class="c Data" style=" width: 1in;">0.65</td>
+<td class="c Data" style=" width: 1in;">1.32</td>
+<td class="c Data" style=" width: 1in;">0.69</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)Died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)Died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">687.975</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">&lt; 3 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">  4</td>
+<td class="l Data">treatment</td>
+<td class="l Data">Placebo</td>
+<td class="c Data"> 118/250 (47.2%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">treatment</td>
+<td class="l Data">Active</td>
+<td class="c Data"> 107/250 (42.8%)</td>
+<td class="c Data" style=" width: 1in;">0.84</td>
+<td class="c Data" style=" width: 1in;">0.59</td>
+<td class="c Data" style=" width: 1in;">1.19</td>
+<td class="c Data" style=" width: 1in;">0.32</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)Died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)Died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">687.161</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">&lt; 3 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="l NoteContent" colspan="10">Pink&nbsp;cells&nbsp;indicate&nbsp;effects&nbsp;with&nbsp;p&lt;0.05<br>Red&nbsp;cells&nbsp;indicate&nbsp;evidence&nbsp;for&nbsp;violations&nbsp;of&nbsp;model&nbsp;assumptions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="page-break-after: always;">&#160</p><hr size="3">
+<a name="IDX2"></a>
+<table class="SysTitleAndFooterContainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l SystemTitle">Example of running a series of univariate models and multivariate models with the logistic macro</td>
+</tr>
+</table><br>
+<div align="left">
+<table class="Table" cellspacing="1" cellpadding="7" rules="none" frame="box" summary="Procedure Report: Detailed and/or summarized report">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r NoteContent" colspan="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</th>
+</tr>
+<tr>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ModelNumber">Model</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/VariableColumn">Variable</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 2.5in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ValueColumn">Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/CountsInOutput"># Outcome = 1/<br># subgroup<br>(% Outcome = 1)</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/OddsRatio"> Odds <br> Ratio</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Lower <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Upper <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/PValues">P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/QuadraticPvalue">Quadratic<br>P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/Type3Pvalue">Type 3<br>P-Value</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="c Data">  5</td>
+<td class="l Data">bmi</td>
+<td class="l Data">16.58-24.24</td>
+<td class="c Data"> 28/125 (22.4%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">bmi</td>
+<td class="l Data">24.26-27.06</td>
+<td class="c Data"> 54/126 (42.9%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">2.6</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">1.50</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">4.5</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">0.0007</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">bmi</td>
+<td class="l Data">27.08-29.89</td>
+<td class="c Data"> 60/124 (48.4%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">3.2</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">1.88</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">5.6</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">bmi</td>
+<td class="l Data">29.9-37.06</td>
+<td class="c Data"> 83/125 (66.4%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">6.8</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">3.9</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">12.0</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)Died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)Died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">636.432</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">4 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">  6</td>
+<td class="l Data">obese</td>
+<td class="l Data">No</td>
+<td class="c Data"> 144/379 (38.0%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">obese</td>
+<td class="l Data">Yes</td>
+<td class="c Data">  81/121 (66.9%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">3.3</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">2.1</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">5.1</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)Died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)Died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">656.911</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">&lt; 3 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="l NoteContent" colspan="10">Pink&nbsp;cells&nbsp;indicate&nbsp;effects&nbsp;with&nbsp;p&lt;0.05<br>Red&nbsp;cells&nbsp;indicate&nbsp;evidence&nbsp;for&nbsp;violations&nbsp;of&nbsp;model&nbsp;assumptions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="page-break-after: always;">&#160</p><hr size="3">
+<a name="IDX3"></a>
+<table class="SysTitleAndFooterContainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l SystemTitle">Example of running a series of univariate models and multivariate models with the logistic macro</td>
+</tr>
+</table><br>
+<div align="left">
+<table class="Table" cellspacing="1" cellpadding="7" rules="none" frame="box" summary="Procedure Report: Detailed and/or summarized report">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r NoteContent" colspan="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4</th>
+</tr>
+<tr>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ModelNumber">Model</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/VariableColumn">Variable</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 2.5in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ValueColumn">Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/CountsInOutput"># Outcome = 1/<br># subgroup<br>(% Outcome = 1)</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/OddsRatio"> Odds <br> Ratio</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Lower <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Upper <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/PValues">P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/QuadraticPvalue">Quadratic<br>P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/Type3Pvalue">Type 3<br>P-Value</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">  7</td>
+<td class="l Data">overweight</td>
+<td class="l Data">No</td>
+<td class="c Data"> 162/368 (44.0%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">overweight</td>
+<td class="l Data">Yes</td>
+<td class="c Data">  63/132 (47.7%)</td>
+<td class="c Data" style=" width: 1in;">1.16</td>
+<td class="c Data" style=" width: 1in;">0.78</td>
+<td class="c Data" style=" width: 1in;">1.73</td>
+<td class="c Data" style=" width: 1in;">0.46</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)Died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)Died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">687.601</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">&lt; 3 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">  8</td>
+<td class="l Data">age</td>
+<td class="l Data">20-35</td>
+<td class="c Data">  18/129 (14.0%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">age</td>
+<td class="l Data">36-51</td>
+<td class="c Data">  22/125 (17.6%)</td>
+<td class="c Data" style=" width: 1in;">1.27</td>
+<td class="c Data" style=" width: 1in;">0.64</td>
+<td class="c Data" style=" width: 1in;">2.5</td>
+<td class="c Data" style=" width: 1in;">0.49</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">age</td>
+<td class="l Data">52-66</td>
+<td class="c Data">  80/128 (62.5%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">9.6</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">5.1</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">18.1</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">age</td>
+<td class="l Data">67-80</td>
+<td class="c Data"> 105/118 (89.0%)</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">43</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">19.8</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">95</td>
+<td class="c Data" style=" font-weight: bold; background-color: #FFC0CB; width: 1in;">&lt;.0001</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">treatment</td>
+<td class="l Data">Placebo</td>
+<td class="c Data"> 118/250 (47.2%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">treatment</td>
+<td class="l Data">Active</td>
+<td class="c Data"> 107/250 (42.8%)</td>
+<td class="c Data" style=" width: 1in;">0.97</td>
+<td class="c Data" style=" width: 1in;">0.62</td>
+<td class="c Data" style=" width: 1in;">1.53</td>
+<td class="c Data" style=" width: 1in;">0.90</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="l NoteContent" colspan="10">Pink&nbsp;cells&nbsp;indicate&nbsp;effects&nbsp;with&nbsp;p&lt;0.05<br>Red&nbsp;cells&nbsp;indicate&nbsp;evidence&nbsp;for&nbsp;violations&nbsp;of&nbsp;model&nbsp;assumptions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="page-break-after: always;">&#160</p><hr size="3">
+<a name="IDX4"></a>
+<table class="SysTitleAndFooterContainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="l SystemTitle">Example of running a series of univariate models and multivariate models with the logistic macro</td>
+</tr>
+</table><br>
+<div align="left">
+<table class="Table" cellspacing="1" cellpadding="7" rules="none" frame="box" summary="Procedure Report: Detailed and/or summarized report">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r NoteContent" colspan="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</th>
+</tr>
+<tr>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ModelNumber">Model</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/VariableColumn">Variable</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 2.5in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ValueColumn">Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 2in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/CountsInOutput"># Outcome = 1/<br># subgroup<br>(% Outcome = 1)</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/OddsRatio"> Odds <br> Ratio</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Lower <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; color: #0000FF; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/ConfidenceIntervals"> Upper <br> 95% CI</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/PValues">P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/QuadraticPvalue">Quadratic<br>P-Value</a>
+</th>
+<th class="c Header" style=" font-weight: bold; background-color: #FFFFFF; width: 1in;" scope="col"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/Type3Pvalue">Type 3<br>P-Value</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">female</td>
+<td class="l Data">No</td>
+<td class="c Data"> 108/235 (46.0%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">female</td>
+<td class="l Data">Yes</td>
+<td class="c Data"> 117/265 (44.2%)</td>
+<td class="c Data" style=" width: 1in;">0.91</td>
+<td class="c Data" style=" width: 1in;">0.57</td>
+<td class="c Data" style=" width: 1in;">1.45</td>
+<td class="c Data" style=" width: 1in;">0.69</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">weightcat</td>
+<td class="l Data">Not over</td>
+<td class="c Data">  81/247 (32.8%)</td>
+<td class="c Data" style=" width: 1in;">1.00</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">weightcat</td>
+<td class="l Data">Overweight</td>
+<td class="c Data">  63/132 (47.7%)</td>
+<td class="c Data" style=" width: 1in;">0.99</td>
+<td class="c Data" style=" width: 1in;">0.57</td>
+<td class="c Data" style=" width: 1in;">1.72</td>
+<td class="c Data" style=" width: 1in;">0.96</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">0.19</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">weightcat</td>
+<td class="l Data">Obese</td>
+<td class="c Data">  81/121 (66.9%)</td>
+<td class="c Data" style=" width: 1in;">1.65</td>
+<td class="c Data" style=" width: 1in;">0.91</td>
+<td class="c Data" style=" width: 1in;">3.0</td>
+<td class="c Data" style=" width: 1in;">0.096</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(+)died Yes=225</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogisticOutcome">Outcome</a>
+</td>
+<td class="l Data">(-)died No =275</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/LogLikelihood">-2 Log L</a>
+</td>
+<td class="l Data">468.149</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data"><a href="http://twiki.library.ucsf.edu/do/view/CTSpedia/HosmerLemeshowTest">H-L Test</a>
+</td>
+<td class="l Data">10 groups</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">0.58</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="c Data">   </td>
+<td class="l Data">&nbsp;</td>
+<td class="l Data">&nbsp;</td>
+<td class="c Data">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+<td class="c Data" style=" width: 1in;">&nbsp;</td>
+</tr>
+<tr>
+<td class="l NoteContent" colspan="10">Pink&nbsp;cells&nbsp;indicate&nbsp;effects&nbsp;with&nbsp;p&lt;0.05<br>Red&nbsp;cells&nbsp;indicate&nbsp;evidence&nbsp;for&nbsp;violations&nbsp;of&nbsp;model&nbsp;assumptions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>

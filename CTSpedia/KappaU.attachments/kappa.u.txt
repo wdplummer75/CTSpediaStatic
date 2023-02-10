@@ -1,0 +1,555 @@
+####kappa.u: A function for calculating kappa statistics based on U-statistics####
+####reference: Ma Y, Tang W, Feng C, and Tu X.M. "Inference for Kappas for Longitudinal Study Data: Applications to Sexual Health Research" Biometrics 2008 64: 781-789.
+
+
+#####reuqired parameters#######
+### n: number of subjects
+### g: number of categories
+### t: number of repeated measurements (t=2 or 3 for the currently version)
+### x: a n*t matrix of ratings of the first rater
+### y: a n*t matrix of ratings of the second rater
+### weight: weighted function, 1 for unweighted kappa; 2 for Cicchetti-Allison weighted kappa; 3 for Fleiss-Cohen weighted kappa
+
+#####results#####
+### u.kappa: U-statistic based kappa estimate
+### standard error: standard error of the kappa estimate
+### test statistic: test statistic for testing equal kappas over time
+### p-value: p-value for the test of equal kappas
+
+
+kappa.u=function(n, g, t, x, y, weight)
+{
+if (weight==1){
+w=matrix(0,ncol=g, nrow=g)
+diag(w)=1
+}
+
+if (weight==2){
+w=matrix(0,ncol=g, nrow=g)
+for (i in 1:g)
+{
+for (j in 1:g)
+{  w[i,j]=1-abs(i-j)/(g-1)
+}
+}
+}
+
+
+if (weight==3){
+w=matrix(0,ncol=g, nrow=g)
+for (i in 1:g)
+{
+for (j in 1:g)
+{  w[i,j]=1-(i-j)^2/(g-1)^2
+}
+}
+}
+
+if (t==2){
+m=matrix(0,nrow=(n*t), ncol=(2*g))
+for (i in (1:n))
+{
+m[i,x[i,1]]=1
+m[(n+i),x[i,2]]=1
+m[i,(g+y[i,1])]=1
+m[(n+i),(g+y[i,2])]=1
+}
+
+
+x12=m[1:n, 1:g]
+x12=as.matrix(x12)
+y12=m[1:n, (g+1):(2*g)]
+y12=as.matrix(y12)
+xy12=t(x12)%*%y12
+xy12=as.vector(t(xy12))
+p12=matrix(nrow=(2*g+g*g), ncol=1)
+for (i in 1:g)
+{
+p12[i,]=mean(x12[,i])
+}
+for (i in (g+1):(2*g))
+{
+p12[i,]=mean(y12[,(i-g)])
+}	
+for (i in 1:(g*g))
+{
+p12[(i+2*g),]=xy12[i]/n
+}	
+
+x34=m[(n+1):(2*n), 1:g]
+y34=m[(n+1):(2*n), (g+1):(2*g)]
+x34=as.matrix(x34)
+y34=as.matrix(y34)
+xy34=t(x34)%*%y34
+xy34=as.vector(t(xy34))
+p34=matrix(nrow=(2*g+g*g), ncol=1)
+for (i in 1:g)
+{
+p34[i,]=mean(x34[,i])
+}
+for (i in (g+1):(2*g))
+{
+p34[i,]=mean(y34[,(i-g)])
+}	
+for (i in 1:(g*g))
+{
+p34[(i+2*g),]=xy34[i]/n
+}	
+
+
+u121=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+       for (k in 1:g)
+        {
+         for (q in 1:g)
+       {
+	u121[i,(j-1)]=u121[i,(j-1)]+w[k,q]*(x12[i,k]-x12[j,k])*(y12[i,q]-y12[j,q])  
+}
+}
+}
+}
+u121=sum(u121)/2
+
+u122=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+{
+for (q in 1:g)
+{
+	u122[i,(j-1)]=u122[i,(j-1)]+w[k,q]*(x12[i,k]*y12[j,q]+x12[j,k]*y12[i,q])
+}	
+}
+}
+}
+u122=n*(n-1)/2-sum(u122)/2
+
+u341=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+
+{
+ for (q in 1:g)
+{
+	u341[i,(j-1)]=u341[i,(j-1)]+w[k,q]*(x34[i,k]-x34[j,k])*(y34[i,q]-y34[j,q])    
+}
+}
+}
+}
+
+u341=sum(u341)/2
+
+
+u342=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+{
+for (q in 1:g)
+{
+
+	u342[i,(j-1)]=u342[i,(j-1)]+w[k,q]*(x34[i,k]*y34[j,q]+x34[j,k]*y34[i,q])
+	
+}
+}
+}
+}
+
+u342=n*(n-1)/2-sum(u342)/2
+u342
+
+thta=2/(n*(n-1))*matrix(c(u121,u122,u341,u342), nrow=4,ncol=1)
+
+
+eu121=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu121=eu121+w[i,j]*(x12[,i]*y12[,j]-x12[,i]*p12[(j+g),]-y12[,j]*p12[i,]+p12[((i-1)*g+2*g+j),])
+}
+}
+eu121=eu121/2
+
+
+eu122=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu122=eu122+w[i,j]*(x12[,i]*p12[(j+g),]+y12[,j]*p12[i,])
+}
+}
+eu122=1-1/2*eu122
+
+
+eu341=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu341=eu341+w[i,j]*(x34[,i]*y34[,j]-x34[,i]*p34[(j+g),]-y34[,j]*p34[i,]+p34[((i-1)*g+2*g+j),])
+}
+}
+eu341=eu341/2
+
+eu342=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu342=eu342+w[i,j]*(x34[,i]*p34[(j+g),]+y34[,j]*p34[i,])
+}
+}
+eu342=1-1/2*eu342
+
+eu=cbind(eu121,eu122,eu341,eu342)
+eu=t(eu)
+
+usig=matrix(nrow=2*t, ncol=n*2*t)
+for (i in 1:n)
+{
+	usig[,((i-1)*(2*t)+1):(i*(2*t))]=(eu[,i]-thta)%*%t(eu[,i]-thta)
+}
+
+usigm=matrix(nrow=2*t, ncol=2*t)
+usigm=usig[,1:(2*t)]
+for (i in 1:(n-1))
+{
+
+usigm=usigm+usig[,(i*(2*t)+1):((i+1)*(2*t))]
+
+}
+
+usigm=4/n*usigm
+
+udev=matrix(nrow=t,ncol=2*t)
+udev[1,]=c(1/thta[2,1], -thta[1,1]/(thta[2,1]^2),0,0)
+udev[2,]=c(0,0,1/thta[4,1], -thta[3,1]/(thta[4,1]^2))
+usigk=udev%*%usigm%*%t(udev)
+
+
+uk12=thta[1,]/thta[2,]
+uk34=thta[3,]/thta[4,]
+
+u.kappa=c(uk12, uk34)
+se.kappa=sqrt(diag(usigk)/n) #standard error
+
+###Ho: k12=k34
+a=matrix(c(1,-1), ncol=2,nrow=1, byrow=T)
+uk=matrix(nrow=1,ncol=1)
+uk[1,]=c(uk12-uk34)
+chi.stat=uk^2/(a%*%(usigk/n)%*%t(a))
+pvalue=1-pchisq(chi.stat,1)
+ukappa=list(c("u.kappa"=u.kappa, "standard error"=se.kappa, "test statistic"=chi.stat, "p-value"=pvalue))
+return(ukappa)
+}
+
+if (t==3){
+m=matrix(0,nrow=(n*t), ncol=(2*g))
+for (i in (1:n))
+{
+m[i,x[i,1]]=1
+m[(n+i),x[i,2]]=1
+m[(2*n+i),x[i,3]]=1
+
+m[i,(g+y[i,1])]=1
+m[(n+i),(g+y[i,2])]=1
+m[(2*n+i),(g+y[i,3])]=1
+}
+
+
+x12=m[1:n, 1:g]
+x12=as.matrix(x12)
+y12=m[1:n, (g+1):(2*g)]
+y12=as.matrix(y12)
+xy12=t(x12)%*%y12
+xy12=as.vector(t(xy12))
+p12=matrix(nrow=(2*g+g*g), ncol=1)
+for (i in 1:g)
+{
+p12[i,]=mean(x12[,i])
+}
+for (i in (g+1):(2*g))
+{
+p12[i,]=mean(y12[,(i-g)])
+}	
+for (i in 1:(g*g))
+{
+p12[(i+2*g),]=xy12[i]/n
+}	
+
+x34=m[(n+1):(2*n), 1:g]
+y34=m[(n+1):(2*n), (g+1):(2*g)]
+x34=as.matrix(x34)
+y34=as.matrix(y34)
+xy34=t(x34)%*%y34
+xy34=as.vector(t(xy34))
+p34=matrix(nrow=(2*g+g*g), ncol=1)
+for (i in 1:g)
+{
+p34[i,]=mean(x34[,i])
+}
+for (i in (g+1):(2*g))
+{
+p34[i,]=mean(y34[,(i-g)])
+}	
+for (i in 1:(g*g))
+{
+p34[(i+2*g),]=xy34[i]/n
+}	
+
+x56=m[(2*n+1):(3*n), 1:g]
+y56=m[(2*n+1):(3*n), (g+1):(2*g)]
+x56=as.matrix(x56)
+y56=as.matrix(y56)
+xy56=t(x56)%*%y56
+xy56=as.vector(t(xy56))
+p56=matrix(nrow=(2*g+g*g), ncol=1)
+for (i in 1:g)
+{
+p56[i,]=mean(x56[,i])
+}
+for (i in (g+1):(2*g))
+{
+p56[i,]=mean(y56[,(i-g)])
+}	
+for (i in 1:(g*g))
+{
+p56[(i+2*g),]=xy56[i]/n
+}
+
+
+u121=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+       for (k in 1:g)
+        {
+         for (q in 1:g)
+       {
+	u121[i,(j-1)]=u121[i,(j-1)]+w[k,q]*(x12[i,k]-x12[j,k])*(y12[i,q]-y12[j,q])  
+}
+}
+}
+}
+
+u121=sum(u121)/2
+
+u122=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+{
+for (q in 1:g)
+{
+	u122[i,(j-1)]=u122[i,(j-1)]+w[k,q]*(x12[i,k]*y12[j,q]+x12[j,k]*y12[i,q])
+}	
+}
+}
+}
+u122=n*(n-1)/2-sum(u122)/2
+
+u341=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+
+{
+ for (q in 1:g)
+{
+	u341[i,(j-1)]=u341[i,(j-1)]+w[k,q]*(x34[i,k]-x34[j,k])*(y34[i,q]-y34[j,q])    
+}
+}
+}
+}
+
+u341=sum(u341)/2
+
+
+u342=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+{
+for (q in 1:g)
+{
+
+	u342[i,(j-1)]=u342[i,(j-1)]+w[k,q]*(x34[i,k]*y34[j,q]+x34[j,k]*y34[i,q])
+	
+}
+}
+}
+}
+
+u342=n*(n-1)/2-sum(u342)/2
+u342
+
+
+u561=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+{
+for (q in 1:g)
+{
+	u561[i,(j-1)]=u561[i,(j-1)]+w[k,q]*(x56[i,k]-x56[j,k])*(y56[i,q]-y56[j,q])    
+}
+}
+}
+}
+u561=sum(u561)/2
+
+u562=matrix(0,ncol=(n-1),nrow=(n-1))
+for (i in 1:(n-1))
+{
+	for (j in (i+1):n)
+	{
+for (k in 1:g)
+{
+for (q in 1:g)
+{
+	u562[i,(j-1)]=u562[i,(j-1)]+w[k,q]*(x56[i,k]*y56[j,q]+x56[j,k]*y56[i,q])
+	
+}
+}
+}
+}
+u562=n*(n-1)/2-sum(u562)/2
+
+thta=2/(n*(n-1))*matrix(c(u121,u122,u341,u342,u561, u562), nrow=6,ncol=1)
+
+
+eu121=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu121=eu121+w[i,j]*(x12[,i]*y12[,j]-x12[,i]*p12[(j+g),]-y12[,j]*p12[i,]+p12[((i-1)*g+2*g+j),])
+}
+}
+eu121=eu121/2
+
+
+eu122=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu122=eu122+w[i,j]*(x12[,i]*p12[(j+g),]+y12[,j]*p12[i,])
+}
+}
+eu122=1-1/2*eu122
+
+
+eu341=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu341=eu341+w[i,j]*(x34[,i]*y34[,j]-x34[,i]*p34[(j+g),]-y34[,j]*p34[i,]+p34[((i-1)*g+2*g+j),])
+}
+}
+eu341=eu341/2
+
+eu342=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu342=eu342+w[i,j]*(x34[,i]*p34[(j+g),]+y34[,j]*p34[i,])
+}
+}
+eu342=1-1/2*eu342
+
+eu561=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu561=eu561+w[i,j]*(x56[,i]*y56[,j]-x56[,i]*p56[(j+g),]-y56[,j]*p56[i,]+p56[((i-1)*g+2*g+j),])
+}
+}
+eu561=eu561/2
+
+eu562=rep(0,n)
+for (i in 1:g)
+{
+for (j in 1:g)
+{
+eu562=eu562+w[i,j]*(x56[,i]*p56[(j+g),]+y56[,j]*p56[i,])
+}
+}
+eu562=1-1/2*eu562
+eu=cbind(eu121,eu122,eu341,eu342,eu561,eu562)
+eu=t(eu)
+
+usig=matrix(nrow=2*t, ncol=n*2*t)
+for (i in 1:n)
+{
+	usig[,((i-1)*(2*t)+1):(i*(2*t))]=(eu[,i]-thta)%*%t(eu[,i]-thta)
+}
+
+usigm=matrix(nrow=2*t, ncol=2*t)
+usigm=usig[,1:(2*t)]
+for (i in 1:(n-1))
+{
+
+usigm=usigm+usig[,(i*(2*t)+1):((i+1)*(2*t))]
+
+}
+
+usigm=4/n*usigm
+
+udev=matrix(nrow=t,ncol=2*t)
+udev[1,]=c(1/thta[2,1], -thta[1,1]/(thta[2,1]^2),0,0,0,0)
+udev[2,]=c(0,0,1/thta[4,1], -thta[3,1]/(thta[4,1]^2),0,0)
+udev[3,]=c(0,0,0,0,1/thta[6,1], -thta[5,1]/(thta[6,1]^2))
+usigk=udev%*%usigm%*%t(udev)
+
+
+uk12=thta[1,]/thta[2,]
+uk34=thta[3,]/thta[4,]
+uk56=thta[5,]/thta[6,]
+
+
+u.kappa=c(uk12, uk34, uk56)
+se.kappa=sqrt(diag(usigk)/n) #standard error
+
+###Ho: k12=k34=k56
+a=matrix(c(1,-1,0,1,0,-1), ncol=3,nrow=2, byrow=T)
+uk=matrix(nrow=1,ncol=2)
+uk[1,]=c(uk12-uk34, uk12-uk56)
+chi.stat=uk%*%solve(a%*%(usigk/n)%*%t(a))%*%t(uk)
+pvalue=1-pchisq(chi.stat,2)
+ukappa=list(c("kappa at t=1 (k1)"=u.kappa[1], "kappa at t=2 (k2)"=u.kappa[2], "kappa at t=3 (k3)"=u.kappa[3], 
+"standard error of k1"=se.kappa[1], "standard error of k2"=se.kappa[2], "standard error of k3"=se.kappa[3],
+"test statistic for testing H0:k1=k2=k3"=chi.stat, "p-value for testing H0:k1=k2=k3"=pvalue))
+return(ukappa)
+}
+}
+
+
+
+
+
+

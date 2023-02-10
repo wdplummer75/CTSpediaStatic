@@ -1,0 +1,320 @@
+### file scatter.wslope.R: This function makes a scatterplot of y versus x, then superimposes
+### either the adjusted or unadjusted regression line (or both), with or without confidence bands
+### for the regression line(s).  The adjusted line, which adjusts for all covariates identified
+### in the "covnames" arguments, shows the predicted line at mean values of all covname variables.
+### Also user has the option to add a legend to print the slope and corresponding p-value.
+### (If user wants both adjusted and unadjusted lines, and wants the legend, it will show both.)
+
+scatterWslope <- function(tdat,
+                           yname,
+                           xname,
+                           covnames=NULL,
+                           txlab=NULL,
+                           tylab=NULL,
+                           ttitle=NULL,
+                           cex.title=1,
+                           adjusted=TRUE,
+                           unadjusted=FALSE,
+                           col.adj="blue",
+                           col.unadj="darkgreen",
+                           conf.bands.adj=TRUE,
+                           conf.bands.unadj=TRUE,
+                           cex.xylab=1.5,
+                           pch.points=1,
+                           cex.points=1,
+                           print.results=FALSE,
+                           check.line=FALSE,
+                           save.plots=FALSE,
+                           type.plots="pdf",
+                           basename.plot=NULL,
+                           show.legend=FALSE,
+                           legend.loc="topleft",
+                           cex.legend=1,
+                           round.slope=2,...) {
+  
+  ### ARGUMENTS:
+  ### tdat is database
+  ### yname is name of y variable in tdat
+  ### xname is name of x variable in tdat
+  ### covnames is vector of names of remaining variables
+  ### txlab is name to go on x-axis of plot
+  ### tylab is name to go on y-axis of plot
+  ### adjusted=TRUE if want adjusted line
+  ### unadjusted=TRUE if want unadjusted line (note: can show both adjusted and unadjusted)
+  ### col.adj=color to show adjusted regression line (and associated legend)
+  ### col.unadj=color to show unadjusted regression line (and associated legend)
+  ### conf.bands.adj=TRUE if want confidence band for adjusted regression lines
+  ### conf.bands.unadj=TRUE if want confidence band for unadjusted regression lines
+  ### cex.xylab=size of x and y axis labels
+  ### pch.points=plotting character for the points (pch.points=1 is circles)
+  ### cex.points=size of points
+  ###
+  ### (Next arguments apply to optional checks)
+  ### print.results=TRUE means the program will output the sample size and regression summary
+  ### check.line=TRUE means to also show (overlay) the regression line using the abline command
+  ###         (in addition to line using predict command: normally this should be FALSE)
+  ###         (For the adjusted line, will not be the same unless covnames are centered.)
+  ###
+  ### (Next arguments apply to the case when user wants to save the file)  
+  ### save.plots=TRUE means the user wants to create a file of the plot
+  ### type.plots="eps" or "pdf" are the two options if save.plots=TRUE
+  ### basename.plot=base name of the file, e.g. basename.plot=silly and type.plots="pdf" will create silly.pdf
+  ###
+  ### (Next arguments apply to legend showing slope and p-value)
+  ### show.legend=TRUE means put slope and p-value on plot
+  ### legend.loc=location of legend
+  ### cex.legend=size of legend
+  ### round.slope=n means to round slope in legend to n digits (default=2)
+
+  if (print.results) cat("Number of observations in original data is",nrow(tdat),"\n")
+  
+  ### Check to see if variable names are valid
+  if (is.element(yname,colnames(tdat))==FALSE) stop("yname not a name in database")
+  if (is.element(xname,colnames(tdat))==FALSE) stop("xname not a name in database")
+
+  ### Allow null covnames; in this case make unadjusted plot.
+  ### However, if covnames is null, adjusted=TRUE and unadjusted=FALSE, warn user
+  if (is.null(covnames)) {
+    if (adjusted & !unadjusted) stop("Function called with adjusted=TRUE, unadjusted=FALSE, but covnames=NULL")
+    unadjusted <- TRUE
+    adjusted <- FALSE
+  } 
+  ### Check for validity of covnames
+  if (!is.null(covnames)) {
+    for (i in 1:length(covnames)) {
+      if (is.element(covnames[i],colnames(tdat))==FALSE) stop("an element of covnames not a name in database")
+    }
+  }
+  
+  # Make sure EITHER adjusted=TRUE or unadjusted=TRUE, or both
+  if (adjusted==FALSE & unadjusted==FALSE) stop("Must show either adjusted or unadjusted line or both")
+
+  ### If legend.loc is not specified, make it topleft.  Also check to see if it is valid
+  if (is.null(legend.loc)) legend.loc <- "topleft"
+  possible.legend.loc <- c("topleft","topright","bottomleft","bottomright","top","bottom","left","right","center")
+  if (is.element(legend.loc,possible.legend.loc)==FALSE & show.legend==TRUE) stop("Legend location must be correctly specified\n")
+
+  # Exclude missing values
+  use1.dat <- as.data.frame(tdat)
+  if (adjusted) {
+     use.dat <- na.exclude(use1.dat[,c(yname,xname,covnames)])
+  } else {
+    ### Only interested in unadjusted model
+     use.dat <- na.exclude(use1.dat[,c(yname,xname)])
+  }
+  if (print.results) cat("Number of observations used in the model (with complete data)",nrow(use.dat),"\n")
+
+  ### get or create name for x=axis and y-axis
+  if (is.null(txlab)) txlab <- xname
+  if (is.null(tylab)) tylab <- yname
+
+  #################################
+  #################################
+
+  plot.line <- function(use.dat,yname,xname,covnames=NULL,tmodel,col.lines="blue",conf.bands=TRUE) {
+    ### Arguments: use.dat=dataset
+    ###            yname = name of y variable
+    ###            xname = name of x variable
+    ###            covnames = name of other covariates that model adjusts for
+    ###            tmodel is model fit from lm or glm
+
+
+    if (!is.null(covnames)) {
+      ### User wants an adjusted regression
+      ### Create a covariate "dataset" with mean values of all covariates
+        mean.covars.dat <- matrix(nrow=nrow(use.dat),ncol=length(covnames))
+        colnames(mean.covars.dat) <- covnames
+        for (j in 1:length(covnames)) {
+          thiscov <- covnames[j]
+          mean.covars.dat[,thiscov] <- mean(use.dat[,thiscov])
+        }
+
+        ### Create dataset of just x and y
+        nocovars.dat <- as.data.frame(use.dat[,c(yname,xname)])
+        ### Will want to create predicted values at mean values of covariates, so put in the mean values
+        ### for covariates other than x and y
+
+        topred.dat <- as.data.frame(cbind(nocovars.dat,mean.covars.dat))
+        topred.order.dat <- topred.dat[order(topred.dat[,xname]),]
+        
+      } else {
+        ### User wants an unadjusted regression
+        ### Need to get the name of the x-variable from the lm object
+         xname <- names(coef(tmodel))[2]  # This will be "xvar" (no quotes)
+         ### Create dataset of just x and y
+         use.dat <- as.data.frame(cbind(yvar,xvar))
+         ### Put dataset in order by x variable
+         topred.order.dat <- use.dat[order(xvar),]
+      }
+
+    yfit <- predict(tmodel,newdata=topred.order.dat,type="response",interval="confidence")
+    lines(x=topred.order.dat[,xname],y=yfit[,"fit"],lty=1,col=col.lines,lwd=3)
+    if (conf.bands) {
+      lines(x=topred.order.dat[,xname],y=yfit[,"lwr"],lty=2,col=col.lines,lwd=2)
+      lines(x=topred.order.dat[,xname],y=yfit[,"upr"],lty=2,col=col.lines,lwd=2)
+    }
+
+      ### Note: the following 2 lines show the same slope, but different intercept
+      ### Probably the reason is that the following does not apply to mean values of other covariates
+#      yfit2 <- predict(tmodel,type="terms",interval="confidence")
+#      lines(x=use.dat[,"x"],y=yfit2[,"x"],col="red")
+
+  }  # end of function plot.adj.line
+
+  #################################
+  #################################
+  
+  add.legend <- function(tmodel.adj=NULL,tmodel.unadj=NULL,
+                          col.adj="blue",col.unadj="darkgreen",
+                          text.adj="slope",text.unadj="slope",
+                          cex.legend=1,legend.loc) {
+    
+    ### Add a legend to the plot
+    ### 3 possibilities: (1) only want legend to print adjusted results;
+    ### (2) only want legend to print unadjusted results; (3) want legend with both results
+
+    ### If want to print both adjusted and unadjusted slopes, might want to call
+    ### this with arguments text.adj="slope (adj)" and text.unadj="slope (unadj)"
+    
+    if (!is.null(tmodel.adj)) {
+      ### There is an adjusted model
+        tslope.adj <- round(coef(summary(tmodel.adj))[xname,"Estimate"],round.slope)
+        tslope.adj <- paste(text.adj,"=",tslope.adj,sep=" ")
+        tpval.adj <- coef(summary(tmodel.adj))[xname,"Pr(>|t|)"]
+        ### Round p-value, but show as "<0.01" if so
+        if (tpval.adj < 0.01) {
+          tpval.adj <- "p < 0.01"
+        } else {
+          tpval.adj <- paste("p =",round(tpval.adj,2),sep=" ")
+        }
+    }
+
+    if (!is.null(tmodel.unadj)) {
+      ### There is an unadjusted model
+
+      ### Get the name of the xvariable (will be called xvar)
+      xname <- names(coef(tmodel.unadj))[2]
+
+      tslope.unadj <- round(coef(summary(tmodel.unadj))[xname,"Estimate"],round.slope)
+      tslope.unadj <- paste(text.unadj,"=",tslope.unadj,sep=" ")
+      tpval.unadj <- coef(summary(tmodel.unadj))[xname,"Pr(>|t|)"]
+      
+      ### Again, round p-value, but show as <0.01 if so
+        if (tpval.unadj < 0.01) {
+          tpval.unadj <- "p < 0.01"
+        } else {
+          tpval.unadj <- paste("p =",round(tpval.unadj,2),sep=" ")
+        }
+    }
+
+    ### Here is where the function either shows adjusted OR unadjusted  OR both
+    if (!is.null(tmodel.adj) & !is.null(tmodel.unadj)) {
+      ### User has both adjusted and unadjusted models on plot
+      ### Put together slope and p-values on same line
+      text.adj <- paste(tslope.adj,", ",tpval.adj,sep="")
+      text.unadj <- paste(tslope.unadj,", ",tpval.unadj,sep="")
+      legend(legend.loc,c(text.adj,text.unadj),text.col=c(col.adj,col.unadj),cex=cex.legend,bty="n")
+      }  else {
+        ### User only shows adjusted or unadjusted model
+        if (!is.null(tmodel.adj)) legend(legend.loc,c(tslope.adj,tpval.adj),text.col=c(rep(col.adj,2)),cex=cex.legend,bty="n")
+        if (!is.null(tmodel.unadj)) legend(legend.loc,c(tslope.unadj,tpval.unadj),text.col=c(rep(col.unadj,2)),cex=cex.legend,bty="n")
+      }
+    
+}  # end of add.legend function
+                                
+ ######################
+ ######################
+  
+  ### If saving plots, open up a pdf or eps file
+  ### Make pdf be the default (e.g. if type.plots is misspelled)
+  if (save.plots)  {
+      if (type.plots=="eps") ending <- ".eps" else ending <- ".pdf"
+      fname <- (paste(basename.plot,ending,sep=""))
+      if (type.plots=="eps") postscript(fname) else pdf(fname)
+      ### if latex, print line to be able to include plot in LaTeX
+#      if (latex)  {
+#        cat(" \n")
+#        cat("\n \n")
+#        cat("\n \\includegraphics{",fname,"}\n\n",sep="")
+#      }
+    }
+
+
+  ### Start the plot
+  ### First set up plot "shell", including x and y axis labels, with size cex.xylab
+  plot(x=use.dat[,xname],y=use.dat[,yname],type="n",xlab=txlab,ylab=tylab,cex.lab=cex.xylab)
+  ### Now plot the points using the character given by pch.points
+  points(x=use.dat[,xname],y=use.dat[,yname],pch=pch.points,cex=cex.points)
+  title(ttitle,cex.main=cex.title)
+
+
+  ### define y and x for model: I believe this is needed in order to
+  ### be able to plot the unadjusted line with confidence bandd
+  yvar <- use.dat[,yname]
+  xvar <- use.dat[,xname]
+
+  #################
+
+  if (adjusted)  {
+    ### If user wants adjusted regression, fit regression model
+    XX <- use.dat[,c(xname,covnames)]
+    tmodel.adj <- lm(yvar~.,data=XX)
+    if (print.results) {
+      ### Show results, if print.results=TRUE
+      cat("\nCoefficients from adjusted regression\n")
+      print(round(summary.lm(tmodel.adj)$coefficients,4))
+    }
+    ### Now call on plot.line to show the fitted line, with confidence bands if desired
+    plot.line(use.dat,yname,xname,covnames,tmodel=tmodel.adj,col.lines=col.adj,conf.bands=conf.bands.adj)
+  }
+  
+  if (unadjusted) {
+    ### If user wants unadjusted regression, fit regression model
+    tmodel.unadj <- lm(yvar~xvar)
+    if (print.results) {
+      ### Show results, if print.results=TRUE
+      cat("\nCoefficients from unadjusted regression\n")
+      print(round(summary.lm(tmodel.unadj)$coefficients,4))
+    }
+    ### Again call on plot.line to show the fitted line, with confidence bands if desired
+    plot.line(use.dat,yname,xname,tmodel=tmodel.unadj,col.lines=col.unadj,conf.bands=conf.bands.unadj)
+  }
+
+  ################
+  ### If user wants a legend printing values of the slope and p-value, will call add.legend to do this
+  if (show.legend) {
+    ### If user wanted both adjusted and unadjusted regressions, give these arguments to add.legend
+    if (adjusted & unadjusted) add.legend(tmodel.adj,tmodel.unadj,col.adj,col.unadj,
+                                           text.adj="slope (adj)",text.unadj="slope (unadj)",legend.loc=legend.loc,cex.legend=cex.legend)
+    else {
+      ### Otherwise, just call add.legend with the relevant arguments for adjusted or unadjusted regression
+      if (adjusted) add.legend(tmodel.adj=tmodel.adj,col.adj=col.adj,legend.loc=legend.loc,cex.legend=cex.legend)
+      if (unadjusted) add.legend(tmodel.unadj=tmodel.unadj,col.unadj=col.unadj,legend.loc=legend.loc,cex.legend=cex.legend)
+    }
+  }
+
+  ### The next part is just a check to show the line using abline.  Note that
+  ### abline can't show the confidence interval for the regression .  Also, abline will
+  ### not go through the points for the adjusted regression, unless the other covariates
+  ### are centered.
+  
+  ### if check.line, draw adjusted line without using predict command
+      if (check.line) {
+        if (adjusted) {
+          intercpt <- coef(tmodel.adj)["(Intercept)"]
+          cat("Check.line=TRUE, so showing adjusted regression line in red on plot\n")
+          cat("The line will not go through the points if the mean of the other variables is not zero\n")
+          abline(intercpt,coef(tmodel.adj)[xname],lty=3,lwd=5,col="red")
+        }
+        if (unadjusted) {
+          intercpt <- coef(tmodel.unadj)["(Intercept)"]
+          xname <- names(coef(tmodel.unadj))[2]
+          cat("Check.line=TRUE, so showing unadjusted regression line in brown on plot\n")
+          abline(intercpt,coef(tmodel.unadj)[xname],lty=3,lwd=5,col="brown")
+        }
+      }
+
+  ### If user wanted to save the plots in a pdf or eps file, need to now close it.
+  if (save.plots) dev.off() 
+
+} # end of function scatter.wslope

@@ -1,0 +1,31 @@
+library(Hmisc)
+library(vcd)
+
+ed1 <- sasxport.get("//Cdsesub1/nonectd/n22071/N_000/2006-09-08/crt/datasets/2301/derived/a_eff.xpt")
+    
+ed1a <- subset(ed1, mitt==1 & vis2n==5)
+    # Create factor variables
+    ed1a$orgf <- factor(ed1a$bs.cult, levels=c(1,2,3,4,8,9,10,11,88),
+                        labels=c('T. tonsurans','T. violaceum','T. mentagrophytes',
+                                 'T.rubrum','M. canis','M. gypseum','M. audouinni',
+                                 'Microsporum vanbreuseghemii','Other'))
+    levels(ed1a$orgf)[levels(ed1a$orgf)%nin%c('T. tonsurans', 'T. violaceum', 'M. canis')] <- 'Other'
+    
+    ed1a$countryf <- factor(ed1a$country, levels=1:2, labels=c('U.S.', 'Non-U.S.'))
+    ed1a$trtf <- factor(ed1a$trt1c, levels=Cs(A,B), labels=c('T', 'G')) #T=terbinafine G=griseofulvin
+    ed1a$respf <- factor(ed1a$compc.l, levels=0:1, labels=c('No','Yes'))
+  
+    ed1b <- subset(ed1a, orgf%nin%'Other')
+           levels(ed1b$orgf) <- c('T. tonsurans', 'T. violaceum', 'M. canis', 'M. canis')    
+
+    ed1f <- ed1b[,c('orgf','countryf','trtf','respf')]
+        names(ed1f) <- c('Organism','Country','Treatment','CompleteCure')
+    
+    # Create the Mosiac Plot    
+    tab1m <- table(ed1f)
+#png('C:/Research/Graphics/Graphs4Display/webpages/classes/pages/images/mosaic.png',
+#         width=600, height=600)
+    
+    mosaic(CompleteCure~Treatment|Organism+Country, data=tab1m, zero.size=0,
+           main='Mosaic Plot for Study 2301')
+#dev.off()   
