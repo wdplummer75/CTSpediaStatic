@@ -1,0 +1,252 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Demo Clinical Trial Report</title>
+    <style type="text/css">
+      @media print{@page {size: landscape}}
+      .page-break-after { page-break-after: always }
+      h2 { font-size: 1em }
+      h3 { font-size: 1em; font-weight: normal; text-decoration: underline }
+      li { margin-bottom: 5px; }
+      .section { margin-top: 20px; }
+      .subsection { margin-bottom: 20px; }
+    </style>
+  </head>
+<body>
+
+<!-- ###################################################################################   -->
+<!-- ###################################################################################   -->
+<!-- ###################################################################################   -->
+
+<center>
+  <h1>- Demo Clinical Trial Report -</h1>
+  <%= format(Sys.time(), "%B %d, %Y %I:%M %p", usetz = TRUE) %>
+</center>
+
+<br/>
+<center>
+  <p>
+    <big> - <b>IMPORTANT</b> - </big>
+    <br/>
+    <em>This report is based on the most current information available in the REDCap database.</em>
+    <br/>
+    <em>There may be a lag in data entry and/or data entry errors (see below) that may cause discrepancies.</em>
+  </p>
+</center>
+<br/>
+
+<!-- ###################################################################################   -->
+<!-- ###################################################################################   -->
+<!-- ###################################################################################   -->
+
+<%
+# Load needed libraries
+# --> NOTE: RCurl is dependent on bitops
+library(bitops)
+library(RCurl)
+library(Hmisc)
+library(xtable)
+
+# Set secret token specific to me and my REDCap project
+secret_token = 'E0B2D098C67371448A9B7944E5BB7A7D'
+
+## If in R for Windows
+## --> NOTE: need to do this because the Curl C libraries are not "default programs" used (unlike on a Mac)
+curl_handle = getCurlHandle()
+curlSetOpt(ssl.verifypeer = FALSE, curl = curl_handle)
+## Read all data from REDCap
+y <- postForm('https://redcap.vanderbilt.edu/api/',
+   token = secret_token,
+   content = 'record',
+   format = 'csv', 
+   type = 'flat',
+   curl = curl_handle)
+
+## If in R for Linux
+## --> NOTE: need to additionally install the Curl C libraries --- not installed on default (like on a Mac)
+## --> NOTE: To install RCurl on a Linux machine
+## From terminal command line:
+# sudo apt-get install libcurl4-openssl-dev
+## Then
+# sudo R
+## Then from within R
+# install.packages("RCurl")
+# --> Code to "export" data from REDCap
+#y <- postForm('https://redcap.vanderbilt.edu/api/',
+#   token = secret_token,
+#   content = 'record',
+#   format = 'csv', 
+#   type = 'flat')
+
+# Use the output from postForm() to create a data frame of the exported data
+x <- read.table(file = textConnection(y), header = TRUE, sep = ",", na.strings = "",
+   stringsAsFactors = FALSE)
+rm(secret_token, y)
+
+## Alternative code:
+#write(y, file = "data_file.csv"); 
+#x <- read.table("data_file.csv", sep = ",", header = TRUE, na.strings = "")
+
+# Make some modifications to the data
+x$date_enroll <- as.Date(x$date_enroll)
+x$trt_arm <- factor(x$trt_arm, levels <- 0:1, labels <- c("A", "B"))
+x$dob <- as.Date(x$dob)
+x$gender <- factor(x$gender, levels <- 0:1, labels <- c("Female", "Male"))
+x$race <- factor(x$race, levels <- 0:2, labels <- c("Caucasian", "African American", "Other"))
+x$date_trt <- as.Date(x$date_trt)
+
+# Add some nice variable labels
+label(x$trt_arm) <- "Treatment Arm"
+label(x$gender) <- "Gender"
+label(x$race) <- "Race"
+label(x$age_enroll) <- "Age at enrollment (years)"
+
+# Define some additional objects
+project_startdate <- as.Date("2010-03-01")
+thisreport <- Sys.Date() 			# ie, the date the report is requested
+%>
+
+<!-- ###################################################################################   -->
+<!-- ###################################################################################   -->
+<!-- ###################################################################################   -->
+
+<ol>
+  <li class="section page-break-after">
+  <h2>SUBJECT ACCRUAL</h2>
+    <ol>
+      <li> <h3>Summary</h3>
+        <ul> 
+          <li> As of "today" (<%= format(thisreport, format = "%m/%d/%Y") %>), <%= nrow(x) %> subjects (ie, records) 
+            have been saved in REDCap for your clinical trials since the study "start date" 
+            (<%= format(project_startdate, format = "%m/%d/%Y") %>). </li>
+          <li> The first subject was enrolled on <%= format(min(x$date_enroll), format = "%m/%d/%Y") %>, while
+            the latest subject was enrolled on <%= format(max(x$date_enroll), format = "%m/%d/%Y") %>
+            (<%= as.numeric(thisreport - max(x$date_enroll)) %> day(s) ago).
+        </ul> 
+      </li>
+      <li> <h3>Accrual over time</h3>
+        <p> The following figure illustrates the accrual of subjects over time since the study "start date" 
+          (<%= format(project_startdate, format = "%m/%d/%Y") %>).  The target accrual duration was defined from 3/1/2010
+          to 9/30/2011.  The gray line depicts target accrual.  The black line indicates actual accrual, according to           
+          REDCap.
+        </p>
+
+        <%        
+        junk <- data.frame(table(sort(x$date_enroll)), stringsAsFactors = FALSE)
+        names(junk) <- c("date", "n_enroll")
+        junk$date <- as.Date(junk$date)
+        junk$cum_enroll <- cumsum(junk$n_enroll)
+        
+        target_dates <- seq.Date(from = as.Date("2010-03-01"), to = as.Date("2011-09-30"), by = "day")
+        target_n <- 150
+
+        # x11(height = 6, width = 9)
+        png("accrual.png", units = "in", height = 7, width = 7, res = 96, pointsize = 14)
+        op <- par(no.readonly = TRUE)
+        par(mar = c(4, 4, 0.5, 0.5) + 0.1, las = 1)
+        plot(x = target_dates, y = seq(from = 0, to = target_n, length = length(target_dates)),
+           type = "l", col = "gray", lwd = 2,
+           axes = FALSE, xlab = "", ylab = "No. subjects enrolled")
+        par(tcl = -0.25)
+        axis(side = 2, at = seq(0, 150, 10), labels = rep("", length(seq(0, 150, 10))))
+        axis(side = 1, at = seq.Date(from = as.Date("2010-03-01"), to = as.Date("2011-10-01"), by = "month"),
+           labels = rep("", length(seq.Date(from = as.Date("2010-03-01"), to = as.Date("2011-10-01"), by = "month"))))
+        par(tcl = -0.5)
+        axis(side = 2)
+        par(mgp = c(2.5, 1, 0), cex.axis = 0.75)
+        title(xlab = "Date")
+        axis(side = 1, at = seq.Date(from = as.Date("2010-03-01"), to = as.Date("2011-10-01"), by = "3 months"),
+           labels = format(seq.Date(from = as.Date("2010-03-01"), to = as.Date("2011-10-01"), by = "3 months"),
+              format = "%m/%d/%y"))
+        with(junk, {
+           lines(x = date, y = cum_enroll, lwd = 2)
+        })
+        box()
+        par(op)
+        dev.off()
+        %>
+ 
+        <center>
+          <img src="accrual.png" />
+        </center>
+      </li>
+    </ol>
+  </li>
+
+  <li class="section page-break-after">
+  <h2>SUBJECT DEMOGRAPHICS</h2>
+    <p> The following table describes the age (at enrollment), gender, and race of the subjects enrolled in each 
+        treatment arm of the study and overall (ie, the 'Combined' column).  Age (at enrollment) is summarized in terms of percentiles (a b c represent the lower quartile a, the median b, and the upper quartile c) and the mean +/- one standard deviation (SD). Gender and race are summarized in terms of frequencies and percentages – the numbers in parentheses after the percents are the frequencies. Also, the 'N' column refers to the number of non-missing values.  
+    </p>
+
+    <p> Signiﬁcant differences in demographics between the two treatment arms were determined using non-parametric Wilcoxon 
+        rank-sum tests and Pearson Chi-Squared tests (without a continuity correction). P-values less than 0.05 were considered statistically signiﬁcant and all tests were two-sided.
+    </p>
+
+    <pre>
+    <%    
+    print(summary(trt_arm ~ age_enroll + gender + race, data = x, method = "reverse", test = TRUE, overall = TRUE),
+       exclude1 = FALSE, long = TRUE, digits = 1, prmsd = TRUE, npct = "both", prtest = "P")
+    %>
+    </pre>
+  </li>
+
+  <li class="section page-break-after">
+  <h2>DATA ENTRY CHECKS</h2>
+    <p> Please check your REDCap records for the following possible data entry errors.  NOTE: All of your saved REDCap 
+      records are considered and the same subject may be reported for one or more data entry checks.
+    </p>
+    <ul>
+      <li>Subjects with a missing date of birth:</li>
+        <%
+        z <- subset(x, is.na(dob), select = c(study_id, dob))
+        names(z) <- c("Study ID", "DOB")
+        if(nrow(z) == 0) cat("     <b>No problems identified</b><br>") else print(xtable(z), type = "html",
+           include.rownames = FALSE, NA.string = "&nbsp;", sanitize.text.function = function(y) { return(y) })
+        rm(z)
+        %>
+      <br>
+      <li>Subjects with a missing gender:</li>
+        <%
+        z <- subset(x, is.na(gender), select = c(study_id, gender))
+        names(z) <- c("Study ID", "Gender")
+        if(nrow(z) == 0) cat("     <b>No problems identified</b><br>") else print(xtable(z), type = "html",
+           include.rownames = FALSE, NA.string = "&nbsp;", sanitize.text.function = function(y) { return(y) })
+        rm(z)
+        %>
+      <br>
+      <li>Subjects with a missing race:</li>
+        <%
+        z <- subset(x, is.na(race), select = c(study_id, race))
+        names(z) <- c("Study ID", "Race")
+        if(nrow(z) == 0) cat("     <b>No problems identified</b><br>") else print(xtable(z), type = "html",
+           include.rownames = FALSE, NA.string = "&nbsp;", sanitize.text.function = function(y) { return(y) })
+        rm(z)
+        %>
+      <br>
+      <li>Subjects with a missing date of treatment:</li>
+        <%
+        z <- subset(x, is.na(date_trt), select = c(study_id, date_trt))
+        names(z) <- c("Study ID", "Date of treatment")
+        if(nrow(z) == 0) cat("     <b>No problems identified</b><br>") else print(xtable(z), type = "html",
+           include.rownames = FALSE, NA.string = "&nbsp;", sanitize.text.function = function(y) { return(y) })
+        rm(z)
+        %>
+      <br>
+      <li>Subjects with a date of treatment occurring before their date of enrollment:</li>
+        <%
+        z <- subset(x, date_trt < date_enroll, select = c(study_id, date_enroll, date_trt))
+        z$date_enroll <- format(z$date_enroll, format = "%m/%d/%Y")
+        z$date_trt <- format(z$date_trt, format = "%m/%d/%Y")
+        names(z) <- c("Study ID", "Enroll Date", "Trt Date")
+        if(nrow(z) == 0) cat("     <b>No problems identified</b><br>") else print(xtable(z), type = "html",
+           include.rownames = FALSE, NA.string = "&nbsp;", sanitize.text.function = function(y) { return(y) })
+        rm(z)
+        %>
+    </ul>
+  </li>
+</ol>
+</body>
+</html>
