@@ -1,0 +1,54 @@
+\documentclass{article}
+%\usepackage[margin=1in]{geometry}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.7in}
+\setlength{\textheight}{9.6in}
+\usepackage{graphicx}
+\usepackage{Sweave}
+\newcounter{chunk}
+% The next line globally sets the size of plots
+\setkeys{Gin}{height=5.5in,width=5.5in}
+%\setkeys{Gin}{height=5in,width=5in}
+\parskip=11pt
+\parindent=0mm
+%********************************************************************
+
+
+%\title{}
+\begin{document}
+\begin{center}
+{\bf An example of calling the function scatterWslope}
+\end{center}
+
+The function shows adjusted and/or unadjusted regression lines (optionally with confidence bands) superimposed on a scatterplot of the {\bf raw data}.  The adjusted line shows the predicted line {\bf at mean values} of all variables in the ``covnames'' arguments.  Demonstrate options using airquality data in R, after defining log(ozone).
+
+Plot 1 (upper left): default - adjusted regression line only, with confidence intervals, and no legend or title. \\
+Plot 2 (upper right): adjusted regression line, with title, default legend, and different plotting characters\\
+Plot 3 (lower left): unadjusted regression line, different fonts and change legend location.\\
+Plot 4 (lower right): both adjusted (blue) and unadjusted (red) lines, with confidence bands for adjusted.
+
+<<echo=FALSE,fig=TRUE>>=
+#source("scatterWslope.R")
+source("http://www.ctspedia.org/wiki/pub/CTSpedia/StatToolsTopic057/Thurston_scatterWslope.R.txt")
+par(mfrow=c(2,2),mar=c(4.1,4.1,2.1,2.1))
+airquality.dat <- airquality
+airquality.dat[,"Log.Ozone"] <- log(airquality.dat[,"Ozone"])
+
+### Plot 1: default (adjusted)
+scatterWslope(airquality.dat,yname="Log.Ozone",xname="Solar.R",covnames=c("Wind","Temp","Month"))
+
+### Plot 2: still adjusted only, with title, better legends, different plotting characters
+scatterWslope(airquality.dat,yname="Log.Ozone",xname="Solar.R",covnames=c("Wind","Temp","Month"),unadjusted=FALSE,adjusted=TRUE,txlab="Solar radiation (Langleys)",tylab="Log(ozone, ppb)",ttitle="Adjusted slope",show.legend=TRUE,cex.legend=1.2,pch.points=4,cex.xylab=1.2)
+
+### Plot 3: unadjusted regression line only, with different fonts and a different location of the legend.
+scatterWslope(airquality.dat,yname="Log.Ozone",xname="Solar.R",covnames=c("Wind","Temp","Month"),unadjusted=TRUE,adjusted=FALSE,txlab="Solar radiation (Langleys)",tylab="Log(ozone, ppb)",cex.xylab=1,ttitle="Unadjusted slope",show.legend=TRUE,cex.legend=1.4,legend.loc="bottomright",round.slope=4)
+
+### Plot 4: both adjusted and unadjusted regression lines, only show confidence bands for adjusted,
+### make points smaller, and make the unadjusted slope in red.
+
+scatterWslope(airquality.dat,yname="Log.Ozone",xname="Solar.R",covnames=c("Wind","Temp","Month"),unadjusted=TRUE,adjusted=TRUE,txlab="Solar radiation (Langleys)",tylab="Log(ozone, ppb)",ttitle="Adjusted and unadjusted slopes",col.unadj="red",cex.title=1,print.results=FALSE,show.legend=TRUE,conf.bands.adj=TRUE,conf.bands.unadj=FALSE,cex.points=0.5,cex.legend=0.8,cex.xylab=1,legend.loc="bottomright",round.slope=4)
+@ 
+
+\end{document}
