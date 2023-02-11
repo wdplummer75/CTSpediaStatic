@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>AdminUser &lt; Main &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link href="../MISSING RESOURCE Main/AdminUser/favicon.ico" rel="icon" type="image/x-icon"> <link href="../MISSING RESOURCE Main/AdminUser/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link type="application/x-wiki" title="edit AdminUser" rel="alternate" href="AdminUser.html">
+<meta name="description" content="AdminUser" />
+<link media="all" class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "WIKINAME" : "WikiAdmin",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "SYSTEMWEB" : "System",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "Main",
+   "USERNAME" : "WikiAdmin",
+   "PUBURLPATH" : "/foswiki/pub",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "AdminUser"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+</head>
+<body>
+<h1 id="Wiki_Administrator_User">  Wiki Administrator User </h1>
+<p></p>
+The <a href="AdminUser.html" class="foswikiCurrentTopicLink">AdminUser</a> allows you to login without needing to register a user,
+or to temporarily login as <a href="AdminUser.html" class="foswikiCurrentTopicLink">AdminUser</a> using the password set in configure, and then log back out to the same User and Group as before.
+<p></p>
+If your system is configured using a UserMapper that permits group maintenance, (TopicUserMapping for example) it is recommended to include the <a href="../System/AdminToggle.html">AdminToggle</a> topic to obtain admin rights.
+<p></p>
+<p></p>
+<p></p>
+<h3 id="How_to_login_as_AdminUser">  How to login as <a href="AdminUser.html" class="foswikiCurrentTopicLink">AdminUser</a> </h3> <ul>
+<li> Login as the internal Wiki administrator: <ul>
+<li> <a href="AdminUser.html">internal admin login</a> (use the password set in <a href="../.html">configure</a>).
+</li></ul> 
+</li> <li> Logout from Administrator: <ul>
+<li> click the <a href="AdminUser.html">Logout link</a>
+</li></ul> 
+</li></ul> 
+<p></p>
+<strong><img width="16" title="ALERT!" height="16" alt="ALERT!" src="../System/DocumentGraphics.attachments/warning.png"> NOTE:</strong> If you lock yourself out of AdminUser during setup activities, never established a password, or have forgotten the password,
+See <a href="../System/InstallationGuide.html">InstallationGuide#InternalAdmin</a> for information on configuring the
+<em>internal admin</em> password..
+<p></p>
+<p></p>
+<h3 id="Prerequisites">  Prerequisites </h3> <ul>
+<li> <code>Security and Authentication -&gt; Sessions : Use Client Sessions:</code> must be enabled in configure (this is the default)
+</li> <li> <code>Security and Authentication, -&gt; Passwords : Internal Admin Password:</code> must be set otherwise the <em>internal admin user</em> is automatically disabled. A password is <em>not</em> set by default.
+</li> <li> If your Foswiki is configured to use ApacheLoginManager, you will need to log in as a valid user first.
+</li></ul> 
+<p></p>
+<blockquote class='foswikiAlert'>
+<img title="ALERT!" width="16" src="../System/DocumentGraphics.attachments/warning.png" alt="ALERT!" height="16"> Do not add <code>AdminUser</code> to your <code>.htpasswd</code> file or other authentication system.  You should only access the <code>AdminUser</code> by logging in
+with the the <em>internal admin user</em> <strong><em>admin</em></strong>  using the password set under the Passwords tab in <code>bin/configure</code> script. Use the login link on this page, or log in directly with
+Template Login. Logging in with the <code>AdminUser</code> WikiName through the normal authentication process will not work, and will not acquire admin rights.
+</blockquote>
+<p></p>
+<hr />
+<p></p>
+<strong>Related topics:</strong> <a href="WikiUsers.html">WikiUsers</a>, <a href="AdminGroup.html">AdminGroup</a>, <a href="WikiGroups.html">WikiGroups</a>, <a href="../System/AccessControl.html">AccessControl</a>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>

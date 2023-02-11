@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>WikiGroups &lt; Main &lt; Foswiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="icon" href="../MISSING RESOURCE Main/WikiGroups/favicon.ico" type="image/x-icon"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE Main/WikiGroups/favicon.ico">
+<link title="edit WikiGroups" rel="alternate" href="WikiGroups.html" type="application/x-wiki">
+<meta name="description" content="WikiGroups" />
+<link href="../System/JQueryPlugin.attachments/plugins/textboxlist/jquery.textboxlist.css?version=2.22" class="head JQUERYPLUGIN::TEXTBOXLIST" media="all" rel="stylesheet" type="text/css"><!--JQUERYPLUGIN::TEXTBOXLIST-->
+<link type="text/css" media="all" class="head JQUERYPLUGIN::THEME" rel="stylesheet" href="../System/JQueryPlugin.attachments/plugins/ui/themes/foswiki/jquery-ui.css"><!--JQUERYPLUGIN::THEME-->
+<link type="text/css" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0" class="head JQUERYPLUGIN::TWISTY" media="all" rel="stylesheet"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head WIKIGROUP::CSS' type='text/css' media='all'>
+.wikiGroupsTable {
+	width:100%;
+}
+.wikiGroupsTable td,
+.wikiGroupsTable th {
+	vertical-align:top;
+}
+.wikiGroupsTable td.wikiGroupsActions {
+   width:150px;
+}
+div.wikiGroupsAction {
+       width:150px;
+}
+.wikiGroupsTable .foswikiFormSteps {
+	margin:5px 0 10px 0;
+}
+.wikiGroupsAction {
+	margin:1em 0;
+}
+.wikiGroupsNoAction {
+	color:#888;
+}
+</style><!-- /WIKIGROUP::CSS --><!--WIKIGROUP::CSS-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class="script JQUERYPLUGIN::EASING" src="../System/JQueryPlugin.attachments/plugins/easing/jquery.easing.js?version=1.3"></script><!--JQUERYPLUGIN::EASING-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "PUBURLPATH" : "/foswiki/pub",
+   "USERNAME" : "WikiAdmin",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "SCRIPTURLPATHS" : {},
+   "WEB" : "Main",
+   "SERVERTIME" : "08 Feb 2023 - 15:51",
+   "TOPIC" : "WikiGroups",
+   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "USERSWEB" : "Main",
+   "SKIN" : "natedit,pattern",
+   "SCRIPTSUFFIX" : "",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "WIKINAME" : "WikiAdmin",
+   "COOKIEREALM" : "",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SYSTEMWEB" : "System",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script class="script JQUERYPLUGIN::METADATA" src="../System/JQueryPlugin.attachments/plugins/metadata/jquery.metadata.js?version=2.1ef2bb44c86f5d0e98d55"></script><!--JQUERYPLUGIN::METADATA-->
+<script src="../System/JQueryPlugin.attachments/plugins/ui/jquery-ui.js?version=1.13.1" class="script JQUERYPLUGIN::UI"></script><!--JQUERYPLUGIN::UI-->
+<script src="../System/JQueryPlugin.attachments/plugins/textboxlist/jquery.textboxlist.js?version=2.22" class="script JQUERYPLUGIN::TEXTBOXLIST"></script>
+<script src="../System/JQueryPlugin.attachments/plugins/textboxlist/jquery.textboxlist.init.js?version=2.22" class="script JQUERYPLUGIN::TEXTBOXLIST"></script><!--JQUERYPLUGIN::TEXTBOXLIST-->
+<script src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<script src="../System/JQueryPlugin.attachments/plugins/ui/jquery.ui.dialog.init.js?version=1.13.1" class="script JQUERYPLUGIN::UI::DIALOG"></script><!--JQUERYPLUGIN::UI::DIALOG-->
+</head>
+<body>
+<h1 id="Wiki_groups_dashboard">  Wiki groups dashboard </h1>
+Showing all known groups that can be used to define <a href="../System/AccessControl.html">access controls</a> in Foswiki.
+<p></p>
+<!--
+If a large number of groups are configured, the rendering performance of this
+page can be significantly improved by enabling the following Set statement.
+(Remove the #)
+<p></p> <ul>
+<li> #Set maint=off
+</li></ul> 
+<p></p>
+With this enabled, adding and removing members and also topic upgrades for each group are omitted from this page. Maintenance can be done from the individual group topics.
+-->
+<p></p>
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdMainWikiGroups3862show" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited"><img src="../System/DocumentGraphics.attachments/persons.png"> Create a new group</span></a></span><span id="twistyIdMainWikiGroups3862hide" style="display:none" class="twistyTrigger foswikiUnvisited twistyInited"><a href=".." class=""><span class="foswikiLinkLabel foswikiUnvisited"><img src="../System/DocumentGraphics.attachments/persons.png"> Create a new group</span></a></span></div><div class="twistyPlugin"><div id="twistyIdMainWikiGroups3862toggle" style="" class="twistyContent twistyInited">
+<p></p>
+<p></p>
+<form action="/foswiki/bin/manage/Main/WikiGroups" method="post">
+<input type="hidden" name="action" value="addUserToGroup"/>
+<input type="hidden" name="create" value="1"/>
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep ">
+    <h3>Group name</h3>
+    <input type="text" name="groupname" size="30" class="foswikiInputField" value="" /> 
+    <div class="foswikiFormDescription">
+      <strong>Note:</strong> 
+      A group name must be a <a href="../System/WikiWord.html">WikiWord</a> and <strong>must</strong> end in <code>...Group</code>. 
+      New topics are based on <a href="GroupTemplate.html">GroupTemplate</a>
+    </div>
+  </div>
+  <div class="foswikiFormStep">
+    <h3>Members</h3>
+    <input type="text" name="username" value="" size="60" class="foswikiInputField" />
+    <div class="foswikiFormDescription">Comma separated list. You will be added to the group automatically to allow you to continue to manage the new group.</div>
+  </div>
+  <div class="foswikiFormStep">
+    <input class="foswikiSubmit" type="submit" value="Create group"/>
+  </div>
+  <div class="foswikiFormStep foswikiLast">
+    <div class="foswikiFormDescription foswikiHelp">
+<strong>IMPORTANT NOTE:</strong> Think twice before restricting write access to a web or a topic, because an open system where everybody can contribute is the essence of <a href="../System/WikiCulture.html">WikiCulture</a>. Experience shows that unrestricted write access works very well because: <ul>
+<li> There is enough peer pressure to post only appropriate content.
+</li> <li> Content does not get lost because topics are under revision control.
+</li> <li> A topic revision can be undone by a member of the <a href="AdminGroup.html">AdminGroup</a> if necesssary.
+</li></ul> 
+<p></p>
+<strong>Related topics:</strong> <a href="../System/AccessControl.html">AccessControl</a>, <a href="WebPreferences.html">WebPreferences</a>, <a href="WikiUsers.html">WikiUsers</a>, <a href="../System/WikiCulture.html">WikiCulture</a>
+<p></p>
+<div class="foswikiHelp"><img alt="ALERT!" height="16" src="../System/DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> If a large number of groups are configured, the rendering performance of this page can be significantly improved by disabling group maintenance from this page.  Edit this topic for more information.</div>
+    </div>
+  </div>
+</div>
+</form> </div></div>
+<p></p>
+<table class='foswikiTable wikiGroupsTable'>
+             <tr>
+               <th>Group</th>
+               <th>Members</th>
+               <th>Actions</th>
+             </tr>
+<tr>
+     <td> BaseGroup</td>
+     <td> 
+       <!-- -->
+<a href="AdminUser.html">AdminUser</a>, <a href="WikiGuest.html">WikiGuest</a>, <a href="UnknownUser.html">UnknownUser</a>, <a href="ProjectContributor.html">ProjectContributor</a>, <a href="RegistrationAgent.html">RegistrationAgent</a>
+<!-- --> 
+     </td>
+     <td class="wikiGroupsActions">
+        <!-- --><div class='wikiGroupsAction'>
+<span class='wikiGroupsNoAction'>System user list.
+</span>
+</div><!-- /groupactions -->
+<p></p>
+     </td>
+   </tr>
+<tr>
+     <td> <a href="AdminGroup.html">AdminGroup</a></td>
+     <td> 
+       <!-- -->
+<a href="AdminUser.html">AdminUser</a>, <a href="WikiAdmin.html">WikiAdmin</a>
+<!-- --> 
+     </td>
+     <td class="wikiGroupsActions">
+        <!-- --><div class='wikiGroupsAction'>
+<p></p>
+<p></p>
+<span class="foswikiIcon"><img width="16" src="../System/DocumentGraphics.attachments/useradd.png" height="16" alt="useradd"></span> <a alt="Add members..." class="jqUIDialogLink  {cache:false}" href="GroupViewTemplate.html" title="Add members...">Add members...</a>
+<br /><span class="foswikiIcon"><img width="16" alt="userdelete" height="16" src="../System/DocumentGraphics.attachments/userdelete.png"></span> <a title="Remove members..." class="jqUIDialogLink {cache:false}" href="GroupViewTemplate.html" alt="Remove members...">Remove members...</a>
+<p></p>
+<!-- /changegroup -->
+</div><!-- /groupactions -->
+<p></p>
+     </td>
+   </tr>
+<tr>
+     <td> <a href="NobodyGroup.html">NobodyGroup</a></td>
+     <td> 
+       <!-- -->
+<p></p>
+<!-- --> 
+     </td>
+     <td class="wikiGroupsActions">
+        <!-- --><div class='wikiGroupsAction'>
+<span class='wikiGroupsNoAction'>This group should not have members.
+</span>
+</div><!-- /groupactions -->
+<p></p>
+     </td>
+   </tr></table>
+<p></p>
+<hr />
+<p></p>
+<hr />
+<p></p>
+</body>
