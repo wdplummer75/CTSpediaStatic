@@ -1,55 +1,69 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>WebNotify &lt; CTSpedia &lt; Foswiki</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<link rel="icon" href="../MISSING RESOURCE CTSpedia/WebNotify/favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/WebNotify/favicon.ico" type="image/x-icon">
-<link type="application/x-wiki" title="edit WebNotify" href="WebNotify.html" rel="alternate">
+<title> WebNotify &lt; CTSpedia &lt; Foswiki</title>
+		  <meta charset="utf-8" />
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		  <meta name="robots" content="noindex" />
+		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+		  <meta name="mobile-web-app-capable" content="yes" />
+		  <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+		  <meta name="apple-mobile-web-app-capable" content="yes" />
+		  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> <link title="RSS Feed" type="application/rss+xml" href="WebRss.html" rel="alternate">
+<link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/WebNotify/favicon.ico"> <link type="image/x-icon" rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/WebNotify/favicon.ico">
+<link type="application/x-wiki" title="edit WebNotify" rel="alternate" href="WebNotify.html">
 <meta name="description" content="WebNotify" />
-<link type="text/css" media="all" class="head JQUERYPLUGIN::TWISTY" rel="stylesheet" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
-<link media="all" rel="stylesheet" class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" type="text/css"><!--SMILIESPLUGIN-->
+	 <!--[if IE]></base><![endif]-->
+<link rel="stylesheet" href="../System/SkinTemplates.attachments/base.css" type="text/css" media="all">
+<link href="../System/SkinTemplates.attachments/default.css" rel="stylesheet" media="all" type="text/css">
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+
+<link type="text/css" media="all" rel="stylesheet" href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0" class="head JQUERYPLUGIN::TWISTY"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<link class="head SMILIESPLUGIN" href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" type="text/css"><!--SMILIESPLUGIN-->
 <script src="../System/JQueryPlugin.attachments/jquery-2.2.4.js" class="script JQUERYPLUGIN"></script><!--JQUERYPLUGIN-->
 <script src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1" class="script JQUERYPLUGIN::OBSERVER"></script><!--JQUERYPLUGIN::OBSERVER-->
-<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1" class="script JQUERYPLUGIN::MIGRATE"></script><!--JQUERYPLUGIN::MIGRATE-->
 <script class="script JQUERYPLUGIN::FOSWIKI" src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01"></script><!--JQUERYPLUGIN::FOSWIKI-->
-<script class="script JQUERYPLUGIN::BROWSER" src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0"></script><!--JQUERYPLUGIN::BROWSER-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
 <script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
-   "WIKINAME" : "WikiAdmin",
-   "SKIN" : "natedit,pattern",
-   "SCRIPTSUFFIX" : "",
-   "SCRIPTURLPATH" : "/foswiki/bin",
-   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
    "SYSTEMWEB" : "System",
-   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
-   "COOKIEREALM" : "",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
    "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
-   "SCRIPTURLPATHS" : {},
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "USERNAME" : "admin",
+   "WIKINAME" : "AdminUser",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
    "WEB" : "CTSpedia",
-   "PUBURLPATH" : "/foswiki/pub",
-   "USERNAME" : "WikiAdmin",
    "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
-   "WIKIUSERNAME" : "Main.WikiAdmin",
+   "SCRIPTSUFFIX" : "",
+   "WIKIUSERNAME" : "Main.AdminUser",
    "USERSWEB" : "Main",
-   "SERVERTIME" : "08 Feb 2023 - 15:51",
-   "TOPIC" : "WebNotify"
+   "COOKIEREALM" : "",
+   "PUBURLPATH" : "/foswiki/pub",
+   "SKIN" : "natedit,pattern",
+   "SERVERTIME" : "16 Feb 2023 - 10:33",
+   "TOPIC" : "WebNotify",
+   "SCRIPTURLPATHS" : {}
 }
 </script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
-<script class="script JQUERYPLUGIN::TWISTY" src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
-</head>
-<body>
-<h1 id="Web_Notify_Subscription_Service_for_the_CTSpedia_Web">  Web Notify Subscription Service for the CTSpedia Web </h1>
+<script src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+
+</head> 
+<body class="foswikiNoJs  foswikiHasChangePermission foswikiLoggedIn"><div class="foswikiPage">
+		<span id="PageTop"></span> <div class="foswikiMain"><h1>Web Notify Subscription Service for the CTSpedia Web</h1>
 <p></p>
-You can be notified nightly of changes on a topic page or in the whole web.  (See below for <a class="foswikiCurrentTopicLink" href="#FurtherInformation">further information</a>.) <strong>To subscribe</strong>, click on edit on the top of this page, add a bullet with your email address to this list: <ul>
+You can be notified nightly of changes on a topic page or in the whole web.  (See below for <a href="#FurtherInformation" class="foswikiCurrentTopicLink">further information</a>.) <strong>To subscribe</strong>, click on edit on the top of this page, add a bullet with your email address to this list: <ul>
 <li> <a href="mailto&#58;dale&#46;plummer&#64;vumc&#46;org">dale.plummer&#64;vumc.org</a>
 </li></ul> 
 <span id="FurtherInformation"></span>
 <p></p>
-<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemWebNotifyHelp1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a class="foswikiButton" href=".."><span class="foswikiLinkLabel foswikiUnvisited">&#9658; Notification help</span></a></span><span id="twistyIdSystemWebNotifyHelp1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class="foswikiButton"><span class="foswikiLinkLabel foswikiUnvisited">&#9660; Notification help</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemWebNotifyHelp1toggle" style="" class="twistyRememberSetting twistyContent twistyInited">
+<div class="twistyPlugin foswikiMakeVisible"><span id="twistyIdSystemWebNotifyHelp1show" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class="foswikiButton"><span class="foswikiLinkLabel foswikiUnvisited">&#9658; Notification help</span></a></span><span id="twistyIdSystemWebNotifyHelp1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited"><a href=".." class="foswikiButton"><span class="foswikiLinkLabel foswikiUnvisited">&#9660; Notification help</span></a></span></div><div class="twistyPlugin"><div id="twistyIdSystemWebNotifyHelp1toggle" style="" class="twistyRememberSetting twistyContent twistyInited">
 <div class="foswikiHelp">
 <h3 id="About_the_Web_changes_notification_service">  About the Web changes notification service </h3>
 <p></p>
@@ -62,7 +76,7 @@ The general format of a subscription is:
 <p></p>
 <em>three spaces</em> <code>*</code> <em>subscriber</em> [ <code>:</code> <em>topics</em> ]
 <p></p>
-Where <em>subscriber</em> can be a <a href="../System/WikiName.html">WikiName</a>, an email address, or a group name. If <em>subscriber</em> contains any characters that are not legal in an email address, then it must be enclosed in 'single' or "double" quotes. <img height="16" alt="ALERT!" src="../System/DocumentGraphics.attachments/warning.png" width="16" title="ALERT!"> <strong>Note:</strong> The guest user <a href="../Main/WikiGuest.html">WikiGuest</a> does not have an email address mapped to it, and will never receive email regardless of the configuration of that user.
+Where <em>subscriber</em> can be a <a href="../System/WikiName.html">WikiName</a>, an email address, or a group name. If <em>subscriber</em> contains any characters that are not legal in an email address, then it must be enclosed in 'single' or "double" quotes. <img height="16" title="ALERT!" src="../System/DocumentGraphics.attachments/warning.png" alt="ALERT!" width="16"> <strong>Note:</strong> The guest user <a href="../Main/WikiGuest.html">WikiGuest</a> does not have an email address mapped to it, and will never receive email regardless of the configuration of that user.
 <p></p>
 <em>topics</em> is an optional space-separated list of topics: <ul>
 <li> ... <strong>without</strong> a <em>Web.</em> prefix
@@ -114,9 +128,9 @@ A user may be listed many times in the WebNotify topic. Where a user has several
 <p></p>
 If a <em>group</em> is listed for notification, the group will be recursively expanded to the email addresses of all members.
 <p></p>
-<div class="foswikihelp"> <strong><img width="16" title="ALERT!" height="16" alt="ALERT!" src="../System/DocumentGraphics.attachments/warning.png"> Warning:</strong> Because an email address is not linked to a user name, there is no way for Foswiki to check access controls for subscribers identified by email addresses. A subscriber identified by an email address alone will only be sent change notifications if the topic they are subscribed to is readable by guest users. You can limit which email addresses can be used in WebNotify, or even block use of emails altogther, using the <code>{MailerContrib}{EmailFilterIn}</code> setting in <code>configure</code>.</div>
+<div class="foswikihelp"> <strong><img width="16" alt="ALERT!" src="../System/DocumentGraphics.attachments/warning.png" title="ALERT!" height="16"> Warning:</strong> Because an email address is not linked to a user name, there is no way for Foswiki to check access controls for subscribers identified by email addresses. A subscriber identified by an email address alone will only be sent change notifications if the topic they are subscribed to is readable by guest users. You can limit which email addresses can be used in WebNotify, or even block use of emails altogther, using the <code>{MailerContrib}{EmailFilterIn}</code> setting in <code>configure</code>.</div>
 <p></p>
-<div class="foswikiHelp"> <strong><img width="16" title="TIP" alt="TIP" height="16" src="../System/DocumentGraphics.attachments/tip.png"> Tip:</strong> List names in alphabetical order to make it easier to find the names.</div>
+<div class="foswikiHelp"> <strong><img width="16" alt="TIP" src="../System/DocumentGraphics.attachments/tip.png" title="TIP" height="16"> Tip:</strong> List names in alphabetical order to make it easier to find the names.</div>
 <p></p>
 <p></p>
 <strong>Note for System Administrators:</strong> Notification is supported by an add-on to the Foswiki kernel called the MailerContrib. See the <a href="../System/MailerContrib.html">MailerContrib</a> topic for details of how to set up this service.
@@ -131,8 +145,12 @@ If a <em>group</em> is listed for notification, the group will be recursively ex
 <p></p>
 <strong><em>Related topics:</em></strong> <a href="../System/WebNotifyHelp.html">WebNotifyHelp</a>, <a href="../Main/WikiUsers.html">WikiUsers</a>, <a href="../System/UserRegistration.html">UserRegistration</a>
 <p></p>
-<hr />
+<span id="TopicEnd"></span>
 <p></p>
+This topic: CTSpedia<span class='foswikiSeparator'>&nbsp;&gt;&nbsp;</span>WebNotify <br />
+Topic revision:  <span class='patternRevInfo'>14 Jan 2022, <a href="../Main/WikiAdmin.html">WikiAdmin</a></span>
 <hr />
-<p></p>
-</body>
+<span id="PageBottom"></span>
+<div class="foswikiCopyright"><span class="foswikiRight"> <a href="https://foswiki.org/"><img src="../System/ProjectLogos.attachments/foswiki-badge.png" title="This site is powered by Foswiki" alt="This site is powered by Foswiki"></a></span>Copyright &copy; by the contributing authors. All material on this collaboration platform is the property of the contributing authors. <br /> Ideas, requests, problems regarding Foswiki? <a href="mailto:?subject=Foswiki%20Feedback%20on%20CTSpedia.WebNotify">Send feedback</a></div></div></div>
+
+</body></html>
