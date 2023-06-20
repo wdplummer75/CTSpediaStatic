@@ -9,8 +9,8 @@
       <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <link type="image/x-icon" rel="icon" href="../MISSING RESOURCE CTSpedia/ListingRFunctions/favicon.ico">
-      <link rel="shortcut icon" href="../MISSING RESOURCE CTSpedia/ListingRFunctions/favicon.ico" type="image/x-icon">
+      <link type="image/x-icon" rel="icon" href="ListingRFunctions/favicon.ico">
+      <link rel="shortcut icon" href="ListingRFunctions/favicon.ico" type="image/x-icon">
       <link type="application/x-wiki" title="edit ListingRFunctions" href="ListingRFunctions.html" rel="alternate">
       <meta name="description" content="ListingRFunctions" />
       <link href="../System/SmiliesPlugin.attachments/smilies.css" rel="stylesheet" media="all" class="head SMILIESPLUGIN" type="text/css">
@@ -103,14 +103,14 @@
             <tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
                <td class="foswikiTableCol0 foswikiFirstCol"> <a href="StatToolsTopic046.html">Multivariate Partial Least Squares (R)</a> </td>
                <td class="foswikiTableCol1"> Danh Nguyen </td>
-               <td class="foswikiTableCol2"> <a href="http://ctspedia.org/twiki/pub/CTSpedia/PartialLeastSquaresR/PLS.r">Davis_Partial Least Squares_R Function</a> </td>
+               <td class="foswikiTableCol2"> <a href="http://ctspedia.org/twiki/pub/CTSpedia/PLS.r">Davis_Partial Least Squares_R Function</a> </td>
                <td class="foswikiTableCol3"> &nbsp; </td>
                <td class="foswikiTableCol4 foswikiLastCol"> <b>Input argument(s)</b>                                                       <br />   X_s  Matrix of predictors (genes)--standardized to mean 0 variance 1   <br />        variance 1 ("training X" of size n x p).                          <br />  Y_s  Matrix (or vector) of responses Y_s--also standardized           <br />        ("training Y" of size nxL).                                       <br />   X_ps Matrix of predictor values (test/validation X) to construct       <br />        test components, X_ps (of size mxp).                              <br />   lv   The number of PLS components (lv).                                <br />                                                                          <br /><b>Return(s)</b>:<br />   T1   n x lv matrix of PLS training components based on training        <br />        information.                                                      <br />   T2   m x lv matrix of PLS test components contructed from training     <br />        information.                                                      <br />   PVEX 1 x lv vector of cummulative percent of X-variation explained.    <br />   PVEY 1 x lv vector of cummulative percent of Y-variation explained.    <br />   W    p x lv matrix of X-weights.                                       <br />   B    p x 1 vector of "regression coefficients".                        <br />   V    p x 1 vector of linear combination of sum of squares of X-weights <br />        This is the so called 'VIP' (variable influence on projection)    <br />        (Wold 1994; SAS Institue Inc., 1999).                             <br />                                                                          <br /> </td>
             </tr>
             <tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
                <td class="foswikiTableCol0 foswikiFirstCol"> <a href="StatToolsTopic047.html">Summarize R Macro</a> </td>
                <td class="foswikiTableCol1"> <a title="Create this topic" rel="nofollow" class="foswikiNewLink" href="../Main/SallyThurston.html">SallyThurston</a> </td>
-               <td class="foswikiTableCol2"> <a href="https://www.ctspedia.org/CTSpedia/SummarizeRmacro.attachments/summarize.R">Rochester_Summarize R_Fuinction</a> </td>
+               <td class="foswikiTableCol2"> <a href="https://www.ctspedia.org/CTSpedia/SummarizeRmacro.attachments/summarize.R">Rochester_Summarize R_Function</a> </td>
                <td class="foswikiTableCol3"> &nbsp; </td>
                <td class="foswikiTableCol4 foswikiLastCol"> For (1) lookup: colname (column name of a dataframe), longnames (vector of longer variable names, where the name of longnames should include colname)<br /><br />For (2) summarize:<br />### REQUIRED arguments are:<br />  ###      tmat = dataframe containing variable for which we want a summary<br />  ### OPTIONAL arguments are:<br />  ###     digits = number of digits to show in the summary<br />  ###     quants = quantiles to be included. Default is c(0,.25,.5,.75,1)<br />  ###             If don't want quantiles, make quants=NULL<br />  ###     latex = TRUE if want output in LaTeX<br />  ###     full.latex = TRUE if want latex output to be a stand-alone<br />  ### LaTeX file.  If latex=TRUE and full.latex=FALSE, the<br />  ###             output can be included with an \include{filename} command.<br />  ###             (may be useful if output from this function will be<br />  ###             included as one part of a larger set of function calls.)<br />  ###     SD = TRUE if want to show SD<br />  ###     nmis = TRUE if want to show number missing observations<br />  ###     uniq = TRUE if want to show number of categories<br />  ###     lookup.names = vector of longer variable names, where column names<br />  ###                       should match variable names in tmat<br />  ###     filename = name of file where output should be saved<br />  ###                       (default is NULL, not to save it to a file)<br />  ###     screen = TRUE if want to view results on the screen<br />  ###     caption = caption for LaTeX format<br /> </td>
             </tr>
@@ -124,7 +124,7 @@
             <tr class="foswikiTableOdd foswikiTableRowdataBgSorted1 foswikiTableRowdataBg1">
                <td class="foswikiTableCol0 foswikiFirstCol"> <a href="StatToolsTopic065.html">Variance Smoothing of Fully Moderated t-statistic</a> </td>
                <td class="foswikiTableCol1"> Lianbo Yu </td>
-               <td class="foswikiTableCol2"> <a href="../MISSING RESOURCE CTSpedia/ListingRFunctions/fmt.R">http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/CTSpedia/ListingRFunctions/fmt.R</a> </td>
+               <td class="foswikiTableCol2"> <a href="CTSpedia/ListingRFunctions/fmt.R">fmt.R</a> </td>
                <td class="foswikiTableCol3"> &nbsp; </td>
                <td class="foswikiTableCol4 foswikiLastCol"> Amean: vector of residual variances of all genes. <br />df: degrees of freedom for sigmasq. <br />span1: span parameter in LOESS smoothing function. <br />span2: span parameter in LOESS smoothing function. <br />iter1: iteration number in LOESS smoothing function. <br />iter2: iteration number in LOESS smoothing function. <br />b: number of genes on either side of moving average window when calculating variance of log residual variances. <br /> </td>
             </tr>
