@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> WebHome &lt; CTSpedia &lt; Foswiki</title>
+		  <meta charset="utf-8" />
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		  <meta name="robots" content="noindex" />
+		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+		  <meta name="mobile-web-app-capable" content="yes" />
+		  <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+		  <meta name="apple-mobile-web-app-capable" content="yes" />
+		  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> <link href="WebRss.html" rel="alternate" title="RSS Feed" type="application/rss+xml">
+<link type="image/x-icon" rel="icon" href="WebHome.attachments/favicon.ico"> <link type="image/x-icon" href="WebHome.attachments/favicon.ico" rel="shortcut icon">
+<link title="edit WebHome" type="application/x-wiki" href="WebHome.html" rel="alternate">
+<meta name="description" content="WebHome" />
+	 <!--[if IE]></base><![endif]-->
+<link href="../System/SkinTemplates.attachments/base.css" rel="stylesheet" type="text/css" media="all">
+<link type="text/css" media="all" rel="stylesheet" href="../System/SkinTemplates.attachments/default.css">
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+
+<link href="../System/TwistyPlugin.attachments/twisty.css?version=1.6.0" rel="stylesheet" class="head JQUERYPLUGIN::TWISTY" type="text/css" media="all"><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+<style class='head MyCSS' type='text/css' media='all'> 
+         @import url('https://ctspedia.org/ctspedia/WebHome.attachments/WebHome.css'); 
+      </style><!--MyCSS-->
+<link class="head SMILIESPLUGIN" rel="stylesheet" href="../System/SmiliesPlugin.attachments/smilies.css" media="all" type="text/css"><!--SMILIESPLUGIN-->
+<style class='head TABLEPLUGIN_default' type="text/css" media="all">
+body .foswikiTable {border-width:1px}
+body .foswikiTable .tableSortIcon img {padding-left:.3em; vertical-align:text-bottom}
+body .foswikiTable td {border-style:solid none; vertical-align:top}
+body .foswikiTable th {border-style:none solid; vertical-align:top; background-color:#d6d3cf; color:#000000}
+body .foswikiTable th a:link {color:#000000}
+body .foswikiTable th a:visited {color:#000000}
+body .foswikiTable th a:hover {color:#000000; background-color:#d6d3cf}
+body .foswikiTable th.foswikiSortedCol {background-color:#c4c1ba}
+body .foswikiTable tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td {background-color:#f7f7f6}
+body .foswikiTable tr.foswikiTableRowdataBg1 td.foswikiSortedCol {background-color:#f0f0ee}
+</style><!--TABLEPLUGIN_default-->
+<style class='head TABLEPLUGIN_specific' type="text/css" media="all">
+body .foswikiTable#tableWebHome1 td {vertical-align:middle; vertical-align:top}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol0 {text-align:left}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol1 {text-align:left}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol2 {text-align:left}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol3 {text-align:right}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol4 {text-align:left}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol5 {text-align:left}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol6 {text-align:left}
+body .foswikiTable#tableWebHome1 td.foswikiTableCol7 {text-align:left}
+body .foswikiTable#tableWebHome1 th {vertical-align:middle; background-color:#ffffff; color:#0066cc; text-align:left}
+body .foswikiTable#tableWebHome1 th a:link {color:#0066cc}
+body .foswikiTable#tableWebHome1 th a:visited {color:#0066cc}
+body .foswikiTable#tableWebHome1 th a:hover {color:#0066cc; background-color:#ffffff}
+body .foswikiTable#tableWebHome1 th.foswikiSortedCol {background-color:#eeeeee}
+body .foswikiTable#tableWebHome1 tr.foswikiTableRowdataBg0 td {background-color:#ffffff}
+body .foswikiTable#tableWebHome1 tr.foswikiTableRowdataBg0 td.foswikiSortedCol {background-color:#f5f5f5}
+</style><!--TABLEPLUGIN_specific-->
+<script class='script 6161' type='text/javascript'>
+         @import url('http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub/CTSpedia/WebHome/WebHome.js');
+      </script><!--6161-->
+<script class="script JQUERYPLUGIN" src="../System/JQueryPlugin.attachments/jquery-2.2.4.js"></script><!--JQUERYPLUGIN-->
+<script class="script JQUERYPLUGIN::OBSERVER" src="../System/JQueryPlugin.attachments/plugins/observer/observer.js?version=0.1"></script><!--JQUERYPLUGIN::OBSERVER-->
+<script class="script JQUERYPLUGIN::MIGRATE" src="../System/JQueryPlugin.attachments/plugins/migrate/jquery.migrate.js?version=3.3.1"></script><!--JQUERYPLUGIN::MIGRATE-->
+<script src="../System/JQueryPlugin.attachments/plugins/foswiki/jquery.foswiki.js?version=3.01" class="script JQUERYPLUGIN::FOSWIKI"></script><!--JQUERYPLUGIN::FOSWIKI-->
+<script src="../System/JQueryPlugin.attachments/plugins/browser/jquery.browser.js?version=0.1.0" class="script JQUERYPLUGIN::BROWSER"></script><!--JQUERYPLUGIN::BROWSER-->
+<script class='script JQUERYPLUGIN::FOSWIKI::PREFERENCES foswikiPreferences' type='text/json'>{
+   "USERSWEB" : "Main",
+   "WIKIUSERNAME" : "Main.AdminUser",
+   "TOPIC" : "WebHome",
+   "SERVERTIME" : "16 Feb 2023 - 10:33",
+   "SKIN" : "natedit,pattern",
+   "PUBURLPATH" : "/foswiki/pub",
+   "COOKIEREALM" : "",
+   "SCRIPTURLPATHS" : {},
+   "SYSTEMWEB" : "System",
+   "PUBURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/pub",
+   "URLHOST" : "http://biostat1478.dhcp.mc.vanderbilt.edu",
+   "SCRIPTURL" : "http://biostat1478.dhcp.mc.vanderbilt.edu/foswiki/bin",
+   "WIKINAME" : "AdminUser",
+   "USERNAME" : "admin",
+   "SCRIPTURLPATH" : "/foswiki/bin",
+   "SCRIPTSUFFIX" : "",
+   "NAMEFILTER" : "[\\\\\\s*?~^$@%`\"'&|<:;>\\[\\]#\\x00-\\x1f]",
+   "WEB" : "CTSpedia"
+}
+</script><!--JQUERYPLUGIN::FOSWIKI::PREFERENCES-->
+<script src="../System/TwistyPlugin.attachments/jquery.twisty.js?version=1.6.0" class="script JQUERYPLUGIN::TWISTY"></script><!--JQUERYPLUGIN::TWISTY: requires= missing ids: JavascriptFiles/foswikiPref-->
+
+</head> 
+<body class="foswikiNoJs  foswikiHasChangePermission foswikiLoggedIn"><div class="foswikiPage">
+<span id="PageTop"></span> <div class="foswikiMain"><h1></h1>
+<div id="WebHome">
+<h1 id="CTSpedia:_A_Knowledge_Base_for_Clinical_and_Translational_Research"> CTSpedia: A Knowledge Base for Clinical and Translational Research </h1>
+<p></p>
+<strong>Note: Registration is not needed to view most content.  As of 7/14/2020 new registrations are not being accepted.</strong>
+<p></p>
+<p></p>
+<p></p>
+CTSpedia was created as a national effort to collect wisdom, tools, educational materials, and other items useful for clinical and translational researchers and to provide timely and useful advice to clinical and translational researchers with specific problems. For more information about the history and goals of CTSpedia see <a href="AboutUs.html">About Us</a>.  
+<p></p>
+<p></p>
+The CTSpedia <a href="HelpCenter.html">Help Center</a> is now open to assist you with navigating and work in CTSpedia.  <a href="WebNotify.html">Click here</a> to be notified of changes on the CTSpedia Web.
+<p></p>
+<strong>See us on the <a href="http://www.youtube.com/user/CTSpedia">CTSpedia Channel on YouTube</a>.</strong>
+<p></p>
+<p></p>
+<p></p>
+<div>
+<h3 id="Contribute_45_Find_HELP">  Contribute - Find HELP </h3> <ul>
+<li> <a href="WhatsNew.html">Ask an Expert</a>
+</li> <li> <a href="PresentationBERD.html">BERD Presentations</a>
+</li> <li> <a href="LinksResources.html">Links and Resources</a>
+</li> <li> <a href="ConsultingAssistance.html">Consulting Assistance</a>
+</li> <li> <a href="RevitalizeCTSpedia.html">CTSpedia Revitalization</a>
+</li></ul> 
+<p></p>
+</div>
+<p></p>
+<p></p>
+<div>
+<h3 id="Statistical_Tools_and_Graphics">  Statistical Tools and Graphics </h3> <ul>
+<li> <a href="StatToolsHome.html">Statistical Tools</a>
+</li> <li> <a href="StatGraphHome.html">Safety Graphics Home</a>
+</li> <li> <a href="GraphicsPresentationArchive.html">Graphics Presentations</a>
+</li> <li> <a href="InspiringGraphics.html">Inspiring Graphics</a>
+</li> <li> <a href="RequestRStudio.html">R-Studio GitHub</a>
+</li></ul> 
+</div>
+<div>
+<h3 id="Biostatistical_Assistance">  Biostatistical Assistance </h3> <ul>
+<li> <a href="DataSets.html">Datasets</a>
+</li> <li> <a href="OnlineCalculators.html">Online Calculators</a>
+</li> <li> <a href="WebServices.html">Web Services</a>
+</li> <li> <a href="WebServices.html">MuStat</a>, <a href="WISDOM.html">WISDOM</a>
+</li> <li> <a href="BiostatSoftware.html">Biostat Software</a>
+</li></ul> 
+<p></p>
+</div>
+<div>
+<h3 id="Ethics_in_CTS_Biostatistics">  <a href="EthicsBiostat.html">Ethics in CTS Biostatistics</a> </h3> <ul>
+<li>   <a href="EthicsGuidelines.html">Guidelines</a>
+</li> <li>  <a href="EthicsBiostatAnnotatedBiblio.html">Annotated Bibliography</a> 
+</li> <li>  <a href="StatEthicsCaseStudies.html">Stat Ethics Case Studies</a>
+</li> <li>  <a href="EthicsControversies.html">Controversies</a>
+</li> <li>  <a href="EthicsStatCalendar.html"> Talks and Events</a>
+</li> <li>  <a href="EthicsTeachingMaterials.html">Materials for Teaching</a>
+</li></ul> 
+<p></p>
+</div>
+<p></p>
+<p></p>
+<div>
+<h3 id="Educational_Materials">  <a href="EducationalMaterials.html">Educational Materials</a> </h3> <ul>
+<li> <a href="EducationalMaterialsBERD.html">BERD Educational Materials</a>
+</li> <li> <a href="EducationalMaterialsRCR.html">Research Ethics Education</a>
+</li> <li> <a href="NIHLectureSeries.html">NIH Lecture Series</a>
+</li> <li> <a href="TemplateTesting.html">Templates Scatterplots</a>
+</li> <li> <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128">PLOS Paper</a>
+</li> <li> <a href="http://www.appliedclinicaltrialsonline.com/barriers-and-solutions-smart-clinical-program-designs">ACT Design Paper</a> 
+</li></ul> 
+</div>
+<p></p>
+<div>
+<h3 id="Reproducible_Research">  <a href="ReproducibleResearch.html">Reproducible Research</a> </h3> <ul>
+<li> <a href="ReproducibleResearchStandards.html">RR Standards and Definitions</a>
+</li> <li> <a href="ReproducibleResearchPapers.html">RR Papers</a>
+</li> <li> <a href="ReproducibleResearchMethodology.html">RR Methodology</a>
+</li> <li> <a href="ReproducibleResearchTemplates.html">RR Templates</a>
+</li> <li> <a href="ReproducibleResearchGroup.html">RR Working Group</a>
+</li></ul> 
+<p></p>
+</div>
+<div>
+<h3 id="Help_for_Clinical_Researchers">  <a href="HelpClinicalResearcher.html">Help for Clinical Researchers</a> </h3> <ul>
+<li> <a href="ContentInterest.html">Articles</a>
+</li> <li> <a href="ClinicalResearchVocabulary.html">Clinical Research Vocabulary</a>
+</li> <li> <a href="CRCaseStudies.html">Case Studies</a>
+</li> <li> <a href="ResultsInterpretation.html">Interactive Tools</a>
+</li> <li> <a href="CeResearch.html">Comparative Effectiveness</a>
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div>
+<h3 id="Other_Webs">  Other Webs </h3> <ul>
+<li> <a href="../Main/WebHome.html">Main - User information</a></li> 
+<li> <a href="../System/WebHome.html">System - Foswiki system information</a></li> 
+<li> <a href="../Sandbox/WebHome.html">Sandbox - Try out wiki</a></li> 
+<li> <a href="../ReviewsBERD/WebHome.html">BERD Reviews - Private</a></li>
+</ul> 
+<p></p>
+</div>
+<p></p>
+<p></p>
+<div>
+<h3 id="BERD">  BERD </h3> <ul>
+<li> <a href="AboutUs.html">About us</a>
+</li> <li> <a href="WorkingGroups.html">Goals: Working Groups </a>
+</li> <li> <a href="ReportingCTSpedia.html">CTSpedia Reports</a> 
+</li> <li> <a href="GoogleAnalyticsUsage.html">CTSpedia Usage Reports</a>
+</li> <li> <a href="ReviewCTSpedia.html">CTSpedia Reviews</a>
+</li></ul> 
+</div>
+<p></p>
+<p></p>
+<br style="clear: both" />
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+CTSpedia is a collaborative vehicle for the <a href="CTSA.html">CTSA</a>'s Biostatistics/Epidemiology/Research/Design (BERD) Online Resources and Education taskforce to identify and share resources across the national consortium and community researchers world-wide. With the support of the national BERD consortia, the project obtained funding and support from the National Center for Research Resources (NCRR) to expand the original scope and content of CTSpedia and foster collaboration amongst <a href="CTSA.html">CTSAs</a>.
+<p></p>
+Find latest system updates or <a href="TechnicalUpdates.html">report a problem here</a>.
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div><!--
+%DISABLEEDITCHAPTER%
+-->
+<p></p>
+<span id="TopicEnd"></span>
+<div class="foswikiAttachments foswikiFormStep" style="overflow:auto">
+<div class="twistyPlugin foswikiMakeVisible"><span id="topicattachmentslist1show" style="" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited0"><a href=".." class="patternTwistyButton"><img src="../System/DocumentGraphics.attachments/toggleopen.png" border="0" alt=""><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>1</span></span></a></span><span id="topicattachmentslist1hide" style="display:none" class="twistyRememberSetting twistyTrigger foswikiUnvisited twistyInited0"><a href=".." class="patternTwistyButton"><img src="../System/DocumentGraphics.attachments/toggleclose.png" alt="" border="0"><span class="foswikiLinkLabel foswikiUnvisited">Attachments <span class='foswikiSmall foswikiGrayText'>1</span></span></a></span></div><div class="twistyPlugin"><div id="topicattachmentslist1toggle" style="" class="twistyRememberSetting twistyContent twistyInited0">
+<table class="foswikiTable" id="tableWebHome1" rules="none" summary="Topic attachments"><caption>Topic attachments</caption>
+	<thead>
+		<tr class="foswikiTableOdd foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<th class="foswikiTableCol0 foswikiFirstCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">I</a> </th>
+			<th class="foswikiTableCol1"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Attachment</a> </th>
+			<th class="foswikiTableCol2"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Action</a> </th>
+			<th class="foswikiTableCol3"> <a title="Sort by this column" href="../PublishPlugin/publish.html" rel="nofollow">Size</a> </th>
+			<th class="foswikiTableCol4"> <a rel="nofollow" href="../PublishPlugin/publish.html" title="Sort by this column">Date</a> </th>
+			<th class="foswikiTableCol5"> <a title="Sort by this column" rel="nofollow" href="../PublishPlugin/publish.html">Who</a> </th>
+			<th class="foswikiTableCol6 foswikiLastCol"> <a href="../PublishPlugin/publish.html" rel="nofollow" title="Sort by this column">Comment</a> </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="foswikiTableEven foswikiTableRowdataBgSorted0 foswikiTableRowdataBg0">
+			<td class="foswikiTableCol0 foswikiFirstCol foswikiLast"> <span class='foswikiIcon'><img alt="WebHome.css" width="16" height="16" src="../System/DocumentGraphics.attachments/css.png"></span><span class="foswikiHidden">css</span> </td>
+			<td class="foswikiTableCol1 foswikiLast"> <a href="WebHome.attachments/WebHome.css"><noautolink>WebHome.css</noautolink></a> </td>
+			<td class="foswikiTableCol2 foswikiLast"> <a href="WebHome.html" rel="nofollow" title="change, update, previous revisions, move, delete...">manage</a> </td>
+			<td class="foswikiTableCol3 foswikiLast" style="text-align:right"> 1 K </td>
+			<td class="foswikiTableCol4 foswikiLast"> <span class="foswikiNoBreak">27 Jan 2022 - 21:17</span> </td>
+			<td class="foswikiTableCol5 foswikiLast"> <a href="../Main/WikiAdmin.html">WikiAdmin</a> </td>
+			<td class="foswikiTableCol6 foswikiLastCol foswikiLast"> &nbsp; </td>
+		</tr>
+	</tbody></table>
+</div></div></div>
+This topic: CTSpedia<span class='foswikiSeparator'>&nbsp;&gt;&nbsp;</span>WebHome <br />
+Topic revision:  <span class='patternRevInfo'>27 Jan 2022, <a href="../Main/WikiAdmin.html">WikiAdmin</a></span>
+<hr />
+<span id="PageBottom"></span>
+<div class="foswikiCopyright"><span class="foswikiRight"> <a href="https://foswiki.org/"><img title="This site is powered by Foswiki" src="../System/ProjectLogos.attachments/foswiki-badge.png" alt="This site is powered by Foswiki"></a></span>Copyright &copy; by the contributing authors. All material on this collaboration platform is the property of the contributing authors. <br /> Ideas, requests, problems regarding Foswiki? <a href="mailto:?subject=Foswiki%20Feedback%20on%20CTSpedia.WebHome">Send feedback</a></div></div></div>
+
+</body></html>
